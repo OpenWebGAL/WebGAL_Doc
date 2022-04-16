@@ -1,0 +1,16 @@
+{
+  "name": "WebGAL_Doc",
+  "version": "1.0.0",
+  "description": "The document of WebGAL engine.",
+  "main": "index.js",
+  "repository": "https://github.com/MakinoharaShoko/WebGAL_Doc.git",
+  "author": "Mahiru <Mahiru_@outlook.com>",
+  "license": "MPL 2.0",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "devDependencies": {
+    "vuepress": "^1.9.7"
+  }
+}
