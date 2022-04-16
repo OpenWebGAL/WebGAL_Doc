@@ -44,9 +44,7 @@ node app.js
 
 复制/WebGAL 下的文件(不是文件夹，是/WebGAL 文件夹下的文件)到你想要部署的云服务器的指定目录下，或是部署到 GitHub Pages。
 
-如果你使用源代码进行调试，你可以通过 npm run build 或 yarn run build 来创建一个静态网页（在/build 文件夹），然后将这个文件夹内的内容部署到 GitHub Pages 或你的云服务器上。
-
-_如果你需要避免程序被破解，可解除 UserInteract.js 中 373~378 行的注释，从而使别人无法打开 F12（使用 npm/yarn build 时无须这么做）_
+如果你使用源代码进行调试，你可以通过 npm run build 或 yarn run build 来创建一个静态网页（在/dist 文件夹），然后将这个文件夹内的内容部署到 GitHub Pages 或你的云服务器上。
 
 # 游戏制作快速上手教程：
 
@@ -74,7 +72,6 @@ Game_name:WebGAL;//你的游戏名称
 Game_key:0f33fdGr;//一串识别码，你应该尽可能随机地输入一串不容易与别人重复的字符，长度最好在6-10字符之间，否则可能会引发bug
 Title_img:Title2.png;//标题的图片名称，图片放在/background 文件夹
 Title_bgm:夏影.mp3;//标题的背景音乐，音乐文件应该放在/bgm文件夹
-Loading_img:Loading_img.jpg//游戏进入时Logo，放在/background 文件夹
 ```
 
 ## 用户剧本的编写语法：
@@ -226,6 +223,34 @@ changeScene:Chapter-2.txt;
 ```
 
 通过执行这条命令，你将切换游戏场景，并使接下来的剧情发展按照新的场景剧本运行。新的剧本会在下一次鼠标点击后运行。
+
+#### 场景调用
+
+如果你需要在执行完调用的场景后回到先前的场景（即父场景），你可以使用 `callScene` 来调用场景
+
+语句：
+
+```
+callScene:Chapter-2.txt;
+```
+
+示例：
+
+```
+(Chapter-1.txt)
+......
+......
+callScene:Chapter-2.txt;
+接下来执行的就是Chapter-2.txt的内容了。
+......
+......
+(Chapter-2.txt)
+......
+(Chapter-2.txt执行完毕)
+回父场景，继续执行父场景语句。
+......
+
+```
 
 #### 分支选择：
 
@@ -470,11 +495,11 @@ label:label_1;
 
 如果把 jumpLabel 比作任意门，那么这个任意门的终点就是 label 所在的位置。
 
-#### 有了上面的基础，你就可以通过 chooseLabel 的方式来实现用分支来跳转到 label 所在的位置了：
+#### 有了上面的基础，你就可以通过 choose 来实现用分支来跳转到 label 所在的位置了：
 
 ```
 WebGAL:让我们来测试分支跳转到label！;
-chooseLabel:测试1:label_1|测试2:label_2;
+choose:测试1:label_1|测试2:label_2;
 label:label_1;
 现在应该是1号分支;
 jumpLabel:end;
@@ -489,7 +514,7 @@ label:end;
 
 ```
 WebGAL:让我们来测试分支跳转到label！;
-chooseLabel:测试1:label_1|测试2:label_2;
+choose:测试1:label_1|测试2:label_2;
 label:label_1;
 现在应该是1号分支;
 label:label_2;
@@ -501,77 +526,37 @@ label:label_2;
 
 ### 使用变量
 
-**注意：这是一个测试功能，可能会发生未知异常**
+**4.0版本的变量系统正在开发中，请耐心等待**
 
 **注意：在你弄清楚如何使用 label，如何在 label 内部跳转场景之前，请不要轻易使用变量系统，这可能会令你感到迷惑！**
 
-#### 语句介绍：
-
-```
-setVar:a=3,b=2;//a的值是3，b的值是2
-setVar:a=a+1;//a的值+1
-setVar:a=b+3;//a的值是b的值+3
-setVar:a=1+a;//错误：不支持这种写法，+的前面应该是一个变量。
-showVar:all;//该语句没有参数，直接输入 showVar:all; 即可在文本框里打印出所有的变量及其值。
-if(a>=3):label1;//当a>=3时，跳转到label1
-if(c=3):label2;//当c=3时，跳转到label2
-if(a=c):label2;//错误：不支持这种写法
-label:label1;
-......
-......
-jumpLabel:end;
-label:label2;
-......
-......
-jumpLabel:end;
-label:end;
-......
-......
-
-//备注：
-//以下是旧的写法，在现在的版本中仍然生效，并且与if语句的执行效果相同，但是不建议使用。
-//保留这种写法是为了能够向下兼容旧的脚本，但是如果你正在写新的脚本，你可以直接用上面的新脚本。
-jump_varReach:a:3,label1;//当a>=3时，跳转到label1
-jump_varBelow:a:3,label2;//当a<3时，跳转到label2
-varSet:a:1,b:1;//声明两个变量，a的值为1，b的值为1
-varUp:a:2,b:3;//a的值提升2，b的值提升3
-varDrop:a:1,b:3;//a的值降低1，b的值降低3
-```
-
-#### 如果我希望用 if 跳转到其他场景（也就是其他 txt 文件），我该怎么做？
-
-**示例：**
-
-```
-setVar:a=0;//设置一个变量a（现在是0）
-setVar:a=a+1;;//现在a=1
-if(a=1):label1;//a=1时跳到label1
-label:label1;//以下是label1的执行内容
-changeScene:Ch2.txt;//在label1执行的语句内跳到Ch2.txt
-......现在执行的是Ch2.txt的脚本了.......
-......Ch2.txt......
-```
 
 ### 添加自定义特效
 
-你可以下载源代码，然后找到 /Core/PixiController/presets 然后新建一个 `PIXI.Container`用于制作你所需要的特效。
+你可以下载源代码，然后找到 /Core/controller/perform/pixi/pixiScripts/ 然后新建一个 `PIXI.Container`用于制作你所需要的特效。
 
 ```js
-const app = currentPIXI['app'] //获取当前的Pixi
+const app = runtime_gamePlay.currentPixi; //获取当前的Pixi
 const container = new PIXI.Container() //创建自定义特效的container
 app.stage.addChild(container) //添加特效
 ```
 
 纹理文件可以放在 /game/tex 目录下。
 
-然后，在 /Core/PixiController/PixiMap.js 中加上你写的新特效。
+然后，在 /Core/controller/gamePlay/scripts/pixi.ts 中加上你写的新特效。
 
 ```js
-const presetMap = {
-    snow: () => pixiSnow(3),
-    rain: () => pixiRain2(6, 10),
-    你的新特效: () => yourEffect(),
-}
+switch (sentence.content) {
+        case 'rain':
+            container = pixiRain(6, 10);
+            break;
+        case 'snow':
+            container = pixiSnow(3);
+            break;
+        case 'yourPixiPerform':
+            container = yourPerform(args);
+            break;
+    }
 ```
 
 最后，编译出支持你自定义特效的 WebAPP
