@@ -6,7 +6,7 @@
 
 如果下载速度过慢，请尝试通过蓝奏云网盘下载(版本不一定是最新的）： 
 
-[蓝奏云](https://wwt.lanzouw.com/ieaoh03bc4of)
+[蓝奏云](https://wwt.lanzouw.com/iIUI403d2tqj)
 
 ## 如何在本地运行 WebGAL？
 
