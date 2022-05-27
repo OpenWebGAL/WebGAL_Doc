@@ -1,5 +1,5 @@
 {
-  "name": "WebGAL_Doc",
+  "name": "webgal-doc",
   "version": "1.0.0",
   "description": "The document of WebGAL engine.",
   "main": "index.js",
