@@ -560,6 +560,24 @@ changeScene:3.txt; // 如果a<=1，那么上面的语句不执行，自然就执
 
 任何语句都可以加上 `-when` 参数来控制是否执行。通过组合 `-when` 参数和 `jumpLabel` `callScene` `changeScene` ，你可以实现带条件判断的流程控制。
 
+### 在一句对话中加入演出
+
+有时候，可能你希望在某一句对话执行到某个阶段时加入演出效果，比如切换表情等。
+这时候，你可以使用 `-notend` `-concat` 参数来实现在对话中插入任意语句。
+
+`-concat` 代表本句对话连接在上一句对话之后
+
+`-notend` 代表本句对话没有结束，在后面可能连接演出或对话。
+
+示例如下：这是一个在对话进行中切换立绘的演示。
+```
+WebGAL:测试语句插演出！马上切换立绘...... -notend;
+changeFigure:k1.png -next;
+切换立绘！马上切换表情...... -notend -concat;
+changeFigure:k2.png -next;
+切换表情！ -concat;
+```
+
 ### 添加自定义特效
 
 你可以下载源代码，然后找到 /Core/controller/perform/pixi/pixiScripts/ 然后新建一个 `PIXI.Container`用于制作你所需要的特效。
