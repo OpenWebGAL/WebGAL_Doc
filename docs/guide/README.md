@@ -413,6 +413,28 @@ setBgFilter:blur(1px);//设置一个模糊效果
 
 有关效果的 CSS 语法，请参见： https://developer.mozilla.org/zh-CN/docs/Web/CSS/filter
 
+### 为立绘设置变换与效果
+
+#### 设置变换
+
+`setFigTransform`
+
+```
+setFigTransform:scale(1.15, 1.15) translate(-5%, 0);//设置一个放大1.15倍，向左移动5%的变换
+```
+
+有关变换的 CSS 语法，请参见： https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform
+
+#### 设置效果
+
+`setFigFilter`
+
+```
+setFFilter:blur(1px);//设置一个模糊效果
+```
+
+有关效果的 CSS 语法，请参见： https://developer.mozilla.org/zh-CN/docs/Web/CSS/filter
+
 ### 添加特效
 
 目前，WebGAL 的特效系统由 PixiJS 实现。
