@@ -87,11 +87,7 @@ WebGAL 内置了一些参数，用于控制基本的流程。比如说 `-next` �
 
 ### 第二步、在脚本解析器里解析你的脚本。
 
-脚本解析器的代码位于 `src/Core/parser` 目录内。
-
-首先，你需要将脚本的命令部分解析为一个引擎内部表示的命令。你需要编辑 `src/Core/interface/sceneInterface` 中的 `commandType` 枚举类型，加入你的自定义脚本的类型。
-
-然后，编辑 `src/Core/parser/scriptParser/commandParser.ts` 来将你设计的脚本命令的字符串表示与引擎的内部表示对应起来。
+编辑 `src/Core/config.ts`，将你的脚本的字符串与语句类型对应起来，语句类型在`src/interface/coreInterface/sceneInterface.ts`
 
 如果你希望你的脚本在执行时自动执行下一句脚本（比如你改变了bgm，很显然你希望这一句脚本不会导致游戏流程的暂停，而是继续执行下一条语句），那么就在文件末尾处的 `nextList` 中加入你的自定义脚本的类型。
 
@@ -193,10 +189,6 @@ export const template = (sentence: ISentence): IPerform => {
 
 ### 最后一步、将你的演出函数与命令类型对应起来。
 
-编辑 `src/Core/controller/gamePlay/runScript.ts` 中的`scriptToFuncMap` ，在数组中添加一个元素：
-
-`[commandType.performType, performFunc]`
-
-这样，你的演出调用函数就和演出类型对应起来了。
+编辑 `src/Core/config.ts` ，将你的演出函数与语句类型对应起来（这个表描述了语句字符串，语句类型和函数的对应关系）
 
 **你的自定义演出现在可以被 WebGAL 调用了。**

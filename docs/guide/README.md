@@ -483,6 +483,10 @@ pixiPerform:snow;
 
 使用 `pixiInit`来初始化，这样可以消除所有已经应用的效果。
 
+#### 电影模式（测试功能）
+
+通过执行脚本`filmMode:enable;`来开启电影模式，`filmMode:none;`可以关闭。
+
 ### 解锁BGM或CG以供鉴赏
 
 在 WebGAL 4.2 中，加入了BGM和CG的鉴赏功能，你可以执行以下语句在适当的时机解锁BGM或CG。
