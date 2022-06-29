@@ -1,8 +1,8 @@
 ---
 home: true
 heroImage: 
-actionText: 在线体验 →
-actionLink: https://demo.msfasr.com
+actionText: 立刻上手 →
+actionLink: ./guide/
 features:
 - title: 界面美观
   details: 美观优雅的图形用户界面与交互效果，一切都是为了更好的用户体验。
@@ -15,9 +15,11 @@ footer: MPL-2.0 Licensed | Copyright © 2022 Mahiru
 
 一次编写，处处运行，无需网页开发基础，3 分钟即可学会所有的语法，只要你有灵感，就可以立刻开始开始创作你自己的 Galgame！
 
-## 立即开始制作游戏吧！
+## 体验使用 WebGAL 制作的游戏
 
-[已经迫不及待地想要开始使用 WebGAL 制作游戏了？让我们开始吧！](./guide/)
+[铃色☆记忆](http://hoshinasuzu.cn/) by 星奈组
+
+[该游戏的发布视频](https://www.bilibili.com/video/BV1HY4y1n7z7)
 
 ## 开源免费
 
