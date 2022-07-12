@@ -6,6 +6,7 @@ module.exports = {
     nav: [
       { text: '主页', link: '/' },                      // 根路径
       { text: '制作游戏', link: '/guide/' },
+      { text: '更新情报',link: '/info/'},
       { text: '开发者指引', link: '/developers/' },
       { text: 'Github', link: 'https://github.com/MakinoharaShoko/WebGAL' }, // 外部链接
       {
