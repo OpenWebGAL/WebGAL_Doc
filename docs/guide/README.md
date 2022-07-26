@@ -420,8 +420,10 @@ setBgFilter:blur(1px);//设置一个模糊效果
 `setFigTransform`
 
 ```
-setFigTransform:scale(1.15, 1.15) translate(-5%, 0);//设置一个放大1.15倍，向左移动5%的变换
+setFigTransform:scale(1.15, 1.15) translate(-5%, 0) -center;//设置一个放大1.15倍，向左移动5%的变换
 ```
+
+同样地，你需要指定 -left -center -right 用于设置要作用的立绘位置。
 
 有关变换的 CSS 语法，请参见： https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform
 
