@@ -6,37 +6,23 @@
 
 如果下载速度过慢，请尝试通过蓝奏云网盘下载(版本不一定是最新的）： 
 
-[蓝奏云](https://wwt.lanzouw.com/if2Om065wo0d)
+[蓝奏云](https://wwt.lanzouw.com/iCmWh0b04u2d)
 
 ## 如何在本地运行 WebGAL？
 
-### 尝试使用图形化编辑器
+### 方法1：尝试使用图形化编辑器
 
-新手可以尝试使用 WebGAL Terre 编辑器技术预览版，这是一个图形化的 Galgame 脚本编辑器
+新手可以尝试使用 WebGAL Terre 编辑器技术预览版，这是一个图形化的 Galgame 脚本编辑器。
 
 [图形化编辑器](https://github.com/MakinoharaShoko/WebGAL_Terre)
 
 [图形化编辑器的前端代码仓库](https://github.com/MakinoharaShoko/WebGAL_Origine)
 
-**注意：图形化编辑器的功能有限，如果你需要更高级的演出，请学习本文档的脚本。**
+**注意：图形化编辑器的功能有限，如果你需要更高级的演出，请学习本文档的脚本，然后参照以下的文档调试：**
 
-### Windows 用户可以使用以下方式快速打开调试界面:
+### 方法2：在本地通过书写脚本的形式开发，并实时调试
 
-现在，你可以直接运行 WebGAL-win.exe 即可开始调试你的视觉小说。如果遇到杀毒软件拦截或防火墙拦截等情况，请放行以允许该程序运行。
-
-### 其他用户：
-
-WebGAL 理论上可以在任何浏览器上运行，但是由于浏览器的**限制跨域访问**机制，本地 JavaScript 脚本可能无法在浏览器上运行，因此，你需要在本地建立一个 http 服务器。你可以选择任何你喜爱的的 http 服务器，并通过本地 http 服务器访问 index.html 来开始游戏。如果你没有本地 http 服务器，你可以使用 Node.js 简单地搭建一个。
-
-我在**WebGAL 发行版**的根目录放置了一个 app.js 作为 Node.js 服务器脚本，在你安装了 Node.js 后，只需要通过以下命令：
-
-```shell
-npm install express
-npm install open
-node app.js
-```
-
-即可开始调试你的游戏。
+现在，你可以直接运行对应版本的 WebGAL-server 即可开始调试你的视觉小说。如果遇到杀毒软件拦截或防火墙拦截等情况，请放行以允许该程序运行。
 
 ### 如何将我的 Galgame 部署到互联网上，并使他人能够访问？
 
