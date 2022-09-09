@@ -4,6 +4,8 @@
 
 ### 新特性预告
 
+提示：如果想要即时获取 WebGAL 开发的最新进展，欢迎访问 https://github.com/MakinoharaShoko/WebGAL/projects/1
+
 #### 计划中
 
 1、将会支持更多音轨，比如效果音。
