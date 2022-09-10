@@ -4,7 +4,7 @@
 
 ### 新特性预告
 
-提示：如果想要即时获取 WebGAL 开发的最新进展，欢迎访问 https://github.com/MakinoharaShoko/WebGAL/projects/1
+提示：如果想要即时获取 WebGAL 开发的最新进展，欢迎访问 [WebGAL 进度追踪](https://github.com/MakinoharaShoko/WebGAL/projects/1)
 
 #### 计划中
 
