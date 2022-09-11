@@ -1,14 +1,6 @@
 # WebGAL 游戏开发指引
 
-## 如果你是想要开发属于自己的 Galgame 的开发者，请下载发行版：
-
-[发行版](https://github.com/MakinoharaShoko/WebGAL/releases/)
-
-如果下载速度过慢，请尝试通过蓝奏云网盘下载(版本不一定是最新的）： 
-
-[蓝奏云](https://wwt.lanzouw.com/iCmWh0b04u2d)
-
-## 如何在本地运行 WebGAL？
+## 如何开始制作 WebGAL？
 
 ### 方法1：尝试使用图形化编辑器
 
@@ -22,15 +14,24 @@
 
 ### 方法2：在本地通过书写脚本的形式开发，并实时调试
 
-现在，你可以直接运行对应版本的 WebGAL-server 即可开始调试你的视觉小说。如果遇到杀毒软件拦截或防火墙拦截等情况，请放行以允许该程序运行。
+首先，下载已经被构建为静态网页的 WebGAL 发行版以及配套的调试环境。
+
+[发行版](https://github.com/MakinoharaShoko/WebGAL/releases/)
+
+如果下载速度过慢，请尝试通过蓝奏云网盘下载，**请注意！版本不一定是最新的。**
+
+[蓝奏云](https://wwt.lanzouw.com/iCmWh0b04u2d)
+
+现在，你可以直接运行对应版本的 WebGAL-server 开始调试你的视觉小说。如果遇到杀毒软件拦截或防火墙拦截等情况，请放行以允许该程序运行。
 
 ### 如何将我的 Galgame 部署到互联网上，并使他人能够访问？
 
-首先，请知悉，可以部署到互联网的引擎应该是**发行版**，而不是源代码。
+首先，请知悉，可以部署到互联网的引擎应该是**发行版或由 WebGAL 图形化编辑器导出的构建后网页**，而不是源代码。
 
 复制/WebGAL 下的文件(不是文件夹，是/WebGAL 文件夹下的文件)到你想要部署的云服务器的指定目录下，或是部署到 GitHub Pages。
 
-如果你使用源代码进行调试，你可以通过 npm run build 或 yarn run build 来创建一个静态网页（在/dist 文件夹），然后将这个文件夹内的内容部署到 GitHub Pages 或你的云服务器上。
+如果你使用源代码进行调试，你可以通过 npm run build 或 yarn run build 来创建一个静态网页（在/dist 文件夹），然后将这个文件夹内的内容部署到
+GitHub Pages 或你的云服务器上。
 
 # 游戏制作快速上手教程：
 
@@ -40,14 +41,15 @@
 
 你的所有游戏剧本、图片、立绘都应该在放解压后目录的 WebGAL/game 文件夹下，目录对应的资源说明如下：
 
-| 文件夹     | 存放的资源                   |
-| ---------- | ---------------------------- |
+| 文件夹        | 存放的资源          |
+|------------|----------------|
 | background | 用于存放背景图片、标题页背景 |
-| figure     | 用于存放人物立绘             |
-| scene      | 用于存放用户剧本             |
-| bgm        | 用于存放背景音乐             |
-| vocal      | 用于存放配音文件             |
-| video      | 用于存放视频                 |
+| figure     | 用于存放人物立绘       |
+| scene      | 用于存放用户剧本       |
+| bgm        | 用于存放背景音乐       |
+| vocal      | 用于存放配音文件       |
+| video      | 用于存放视频         |
+| tex        | 用于存放特效纹理文件     | 
 
 ## 定制你的游戏信息
 
@@ -179,7 +181,8 @@ miniAvatar:none;//关闭这个小头像
 
 你可以将你的剧本拆分成多个 txt 文档，并使用一个简单的语句来切换当前运行的剧本。
 
-假如你现在写了两个章节的剧本，分别是 Chapter-1.txt 与 Chapter-2.txt ，在 Chapter-1.txt 运行结束后，你希望跳转到 Chapter-2.txt 对应的场景，请使用以下语句：
+假如你现在写了两个章节的剧本，分别是 Chapter-1.txt 与 Chapter-2.txt ，在 Chapter-1.txt 运行结束后，你希望跳转到
+Chapter-2.txt 对应的场景，请使用以下语句：
 
 #### 场景跳转：
 
@@ -270,7 +273,8 @@ playVideo:OP.mp4//视频应该放在/game/video/ 文件夹内
 
 ### 在显示对话时同时播放语音
 
-众所周知，Galgame 最吸引人的地方往往在于其有优秀的配音。在此版本中，你可以为对话引入配音了，将你的配音放入 vocal 文件夹，然后在参数加上语音文件名即可引入，语法示例如下：
+众所周知，Galgame 最吸引人的地方往往在于其有优秀的配音。在此版本中，你可以为对话引入配音了，将你的配音放入 vocal
+文件夹，然后在参数加上语音文件名即可引入，语法示例如下：
 
 ```
 比企谷八幡:刚到而已 -V3.ogg;
@@ -311,6 +315,8 @@ setBgAni:bg_softIn 5s;//渐入背景，执行5秒
 ```
 setFigAni:rightIn 1s -right;//对右侧立绘设置动画rightIn，执行1秒
 ```
+
+你需要指定 -left -center -right 用于设置要作用的立绘位置。
 
 人物动画不像背景动画。每次设置动画时，这个动画都会立刻执行，且只执行一遍（因为你可能会设置一些例如摇晃之类的效果，但是不想让这个动画一直在切换人物时生效）
 
@@ -478,6 +484,7 @@ pixiPerform:snow;
 ### 解锁BGM或CG以供鉴赏
 
 在 WebGAL 4.2 中，加入了BGM和CG的鉴赏功能，你可以执行以下语句在适当的时机解锁BGM或CG。
+
 ```
 unlockCg:xgmain.jpeg -name=星光咖啡馆与死神之蝶 -series=1; // 解锁CG并赋予名称
 unlockBgm:s_Title.mp3 -name=Smiling-Swinging!!; // 解锁bgm并赋予名称
@@ -540,13 +547,15 @@ label:label_2;
 现在是统一的结束;
 ```
 
-在这个剧本中，如果你选择了分支 2，那么一切看起来好像没有问题。但是如果你选择了分支 1，你会惊讶地发现，在分支 1 执行完后，竟然分支 2 又执行了一遍。那是因为程序按顺序继续执行下一行了，而你没有指定在分支结束后跳到哪里。
+在这个剧本中，如果你选择了分支 2，那么一切看起来好像没有问题。但是如果你选择了分支 1，你会惊讶地发现，在分支 1 执行完后，竟然分支
+2 又执行了一遍。那是因为程序按顺序继续执行下一行了，而你没有指定在分支结束后跳到哪里。
 
 ### 使用变量
 
 **注意：在你弄清楚如何使用 label，如何在 label 内部跳转场景之前，请不要轻易使用变量系统，这可能会令你感到迷惑！**
 
 设置变量：
+
 ```
 setVar:a=1; // 可以设置数字
 setVar:a=true // 可以设置布尔值
@@ -572,7 +581,8 @@ changeScene:2.txt -when=a>1; // a>1时跳转到场景2
 changeScene:3.txt; // 如果a<=1，那么上面的语句不执行，自然就执行这一句了。
 ```
 
-任何语句都可以加上 `-when` 参数来控制是否执行。通过组合 `-when` 参数和 `jumpLabel` `callScene` `changeScene` ，你可以实现带条件判断的流程控制。
+任何语句都可以加上 `-when` 参数来控制是否执行。通过组合 `-when` 参数和 `jumpLabel` `callScene` `changeScene`
+，你可以实现带条件判断的流程控制。
 
 ### 在一句对话中加入演出
 
@@ -584,6 +594,7 @@ changeScene:3.txt; // 如果a<=1，那么上面的语句不执行，自然就执
 `-notend` 代表本句对话没有结束，在后面可能连接演出或对话。
 
 示例如下：这是一个在对话进行中切换立绘的演示。
+
 ```
 WebGAL:测试语句插演出！马上切换立绘...... -notend;
 changeFigure:k1.png -next;
@@ -608,16 +619,16 @@ app.stage.addChild(container) //添加特效
 
 ```js
 switch (sentence.content) {
-        case 'rain':
-            container = pixiRain(6, 10);
-            break;
-        case 'snow':
-            container = pixiSnow(3);
-            break;
-        case 'yourPixiPerform':
-            container = yourPerform(args);
-            break;
-    }
+  case 'rain':
+    container = pixiRain(6, 10);
+    break;
+  case 'snow':
+    container = pixiSnow(3);
+    break;
+  case 'yourPixiPerform':
+    container = yourPerform(args);
+    break;
+}
 ```
 
 最后，编译出支持你自定义特效的 WebAPP
