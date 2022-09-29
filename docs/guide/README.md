@@ -501,7 +501,7 @@ setTextbox:hide;
 ```
 来关闭文本框。当 `setTextbox` 指令的值为 `hide` 时，会关闭文本框，且用户无法以任何方式打开。如果想要重新显示文本框，请再次调用此命令，并输入除`hide`以外的任意值。
 ```
-setTextBox:on; // 可以是除 hide 以外的任意值。
+setTextbox:on; // 可以是除 hide 以外的任意值。
 ```
 
 ## 进阶教程：
