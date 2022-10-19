@@ -8,6 +8,8 @@
 
 [图形化编辑器](https://github.com/MakinoharaShoko/WebGAL_Terre)
 
+[蓝奏云(版本不一定是最新的)](https://wwt.lanzouw.com/iCZue0e7e3mb) 密码:5h26
+
 [图形化编辑器的前端代码仓库](https://github.com/MakinoharaShoko/WebGAL_Origine)
 
 **注意：图形化编辑器的功能有限，如果你需要更高级的演出，请学习本文档的脚本，然后参照以下的文档调试：**
