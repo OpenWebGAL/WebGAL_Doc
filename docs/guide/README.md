@@ -10,9 +10,7 @@
 
 如果下载速度过慢，请尝试通过蓝奏云网盘下载，**请注意！版本不一定是最新的。**
 
-[蓝奏云](https://wwt.lanzouw.com/ing7j0e7kt3e) 密码:45vz
-
-[图形化编辑器的前端代码仓库](https://github.com/MakinoharaShoko/WebGAL_Origine)
+[蓝奏云](https://wwt.lanzouw.com/ihOoP0evdu7g) 密码:3gbk
 
 **注意：图形化编辑器的功能有限，如果你需要更高级的演出，请学习本文档的脚本，然后参照以下的文档调试：**
 
@@ -24,7 +22,7 @@
 
 如果下载速度过慢，请尝试通过蓝奏云网盘下载，**请注意！版本不一定是最新的。**
 
-[蓝奏云](https://wwt.lanzouw.com/iol8j0e7k3af)
+[蓝奏云](https://wwt.lanzouw.com/iRY5T0evdvni)
 
 现在，你可以直接运行对应版本的 WebGAL-server 开始调试你的视觉小说。如果遇到杀毒软件拦截或防火墙拦截等情况，请放行以允许该程序运行。
 
