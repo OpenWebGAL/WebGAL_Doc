@@ -4,7 +4,9 @@
 
 ### 方法1：尝试使用图形化编辑器
 
-新手可以尝试使用 WebGAL Terre 编辑器技术预览版，这是一个图形化的 Galgame 脚本编辑器。
+新手可以尝试使用 WebGAL Terre 编辑器，这是一个图形化的 Galgame 脚本编辑器。
+
+**目前，由于新编辑器正在开发中，所以引擎版本停留在4.2.15，将无法使用最新的更强大的动画系统和变换系统，在编辑器升级前建议使用方法2开发。**
 
 [图形化编辑器](https://github.com/MakinoharaShoko/WebGAL_Terre)
 
@@ -22,36 +24,38 @@
 
 如果下载速度过慢，请尝试通过蓝奏云网盘下载，**请注意！版本不一定是最新的。**
 
-[蓝奏云](https://wwt.lanzouw.com/iRY5T0evdvni)
+[蓝奏云](https://wwt.lanzouw.com/ijubC0g8izng)
 
 现在，你可以直接运行对应版本的 WebGAL-server 开始调试你的视觉小说。如果遇到杀毒软件拦截或防火墙拦截等情况，请放行以允许该程序运行。
 
 ### 如何将我的 Galgame 部署到互联网上，并使他人能够访问？
 
-首先，请知悉，可以部署到互联网的引擎应该是**发行版或由 WebGAL 图形化编辑器导出的构建后网页**，而不是源代码。
+首先，请知悉，可以部署到互联网的引擎应该是**发行版或由 WebGAL 图形化编辑器导出的网页**，而不是源代码。
 
 复制/WebGAL 下的文件(不是文件夹，是/WebGAL 文件夹下的文件)到你想要部署的云服务器的指定目录下，或是部署到 GitHub Pages。
 
-如果你使用源代码进行调试，你可以通过 npm run build 或 yarn run build 来创建一个静态网页（在/dist 文件夹），然后将这个文件夹内的内容部署到
-GitHub Pages 或你的云服务器上。
+**使用源代码开发的开发者：**
 
-# 游戏制作快速上手教程：
+如果你使用源代码进行调试，你可以通过 npm run build 或 yarn build 来创建一个静态网页（在/dist 文件夹），然后将这个文件夹内的内容部署到 GitHub Pages 或你的云服务器上。
 
-现在，你应该已经运行起来了一个调试服务器，接下来让我来教你如何编写你自己的剧本
+# 游戏制作快速上手教程
+
+现在，你应该已经运行起来了一个调试服务器，接下来介绍如何编写你自己的剧本
 
 你应该能够发现，在解压后的文件夹下，有一个 WebGAL 文件夹，在 WebGAL 文件夹下，有一个 game 文件夹，那就是你的游戏资源应该存放的地方。
 
 你的所有游戏剧本、图片、立绘都应该在放解压后目录的 WebGAL/game 文件夹下，目录对应的资源说明如下：
 
-| 文件夹        | 存放的资源          |
-|------------|----------------|
+| 文件夹     | 存放的资源                   |
+| ---------- | ---------------------------- |
+| animation  | 动画描述文件                 |
 | background | 用于存放背景图片、标题页背景 |
-| figure     | 用于存放人物立绘       |
-| scene      | 用于存放用户剧本       |
-| bgm        | 用于存放背景音乐       |
-| vocal      | 用于存放配音文件       |
-| video      | 用于存放视频         |
-| tex        | 用于存放特效纹理文件     | 
+| figure     | 用于存放人物立绘             |
+| scene      | 用于存放用户剧本             |
+| bgm        | 用于存放背景音乐             |
+| vocal      | 用于存放配音文件             |
+| video      | 用于存放视频                 |
+| tex        | 用于存放特效纹理文件         |
 
 ## 定制你的游戏信息
 
@@ -64,13 +68,22 @@ Title_img:Title2.png;//标题的图片名称，图片放在/background 文件夹
 Title_bgm:夏影.mp3;//标题的背景音乐，音乐文件应该放在/bgm文件夹
 ```
 
-## 用户剧本的编写语法：
+## 注释
 
-首先，程序会从**初始脚本**`start.txt`开始运行，在后续的脚本编写中，我会告诉你如何跳转章节或设置分支选项。
+WebGAL的脚本只会解析每一行的分号前的内容，因此分号后的内容会被视作注释
+
+```
+WebGAL:你好！; （分号后的内容会被视作注释）
+;可以直接输入一个分号，然后写一条单行注释
+```
+
+## 用户剧本的编写语法
+
+首先，程序会从**初始脚本**`start.txt`开始运行，在后续的脚本编写中，会介绍如何跳转章节或设置分支选项。
 
 **编写剧本的方式非常简单，且与自然语言几乎无异。**
 
-### 首先，让我们来学习编写基本的人物对话：
+### 基本人物对话
 
 首先，使用记事本或 VS Code 、sublime 等文本编辑器，打开游戏资源目录下 scene 文件夹中的 start.txt，然后你就可以开始编写你的第一条对话了。
 
@@ -103,6 +116,32 @@ Title_bgm:夏影.mp3;//标题的背景音乐，音乐文件应该放在/bgm文�
 比企谷八幡:刚到而已;
 ```
 
+#### 旁白
+
+如果你想要创建没有人物名称的旁白对话，请在冒号前留空（但不能省去冒号）：
+
+```
+:这是一句旁白
+```
+
+### 在显示对话时同时播放语音
+
+众所周知，Galgame 最吸引人的地方往往在于其有优秀的配音。在此版本中，你可以为对话引入配音了，将你的配音放入 vocal
+文件夹，然后在参数加上语音文件名即可引入，语法示例如下：
+
+```
+比企谷八幡:刚到而已 -V3.ogg;
+```
+
+在连续对话时，语音的引入方式也是一样的：
+
+```
+雪之下雪乃:你到得真早 -V1.ogg;
+对不起，等很久了吗？ -V2.ogg;
+```
+
+
+
 ### 黑屏文字演示
 
 在许多游戏中，会以黑屏显示一些文字，用来引入主题或表现人物的心理活动。你可以使用 intro 命令来演出独白：
@@ -119,7 +158,7 @@ intro:回忆不需要适合的剧本，|反正一说出口，|都成了戏言。
 都成了戏言。
 ```
 
-### 改变背景/人物立绘：
+### 改变背景/人物立绘
 
 要让 WebGAL 能够读取背景图片和人物立绘，你的背景图片应该被放在 background 文件夹内，而立绘图片则应该放在 figure 文件夹中。
 
@@ -168,7 +207,7 @@ changeFigure:testFigure04.png -next;
 changeFigure:testFigure03.png -right -next;
 ```
 
-### 放置小头像：
+### 放置小头像
 
 很多游戏可以在文本框的左下角放置小头像，以下是在本引擎中使用的语法：
 
@@ -177,7 +216,7 @@ miniAvatar:minipic_test.png;//在左下角显示minipic_test.png
 miniAvatar:none;//关闭这个小头像
 ```
 
-### 跳转场景与分支选择：
+### 跳转场景与分支选择
 
 在 Galgame 中，跳转章节、场景与分支选择是不可或缺的，因此，本游戏模组也支持场景跳转与分支选择。
 
@@ -186,7 +225,7 @@ miniAvatar:none;//关闭这个小头像
 假如你现在写了两个章节的剧本，分别是 Chapter-1.txt 与 Chapter-2.txt ，在 Chapter-1.txt 运行结束后，你希望跳转到
 Chapter-2.txt 对应的场景，请使用以下语句：
 
-#### 场景跳转：
+#### 场景跳转
 
 语句：
 
@@ -237,7 +276,7 @@ callScene:Chapter-2.txt;
 
 ```
 
-#### 分支选择：
+#### 分支选择
 
 如果你的剧本存在分支选项，你希望通过选择不同的选项进入不同的章节，请使用以下语句：
 
@@ -273,163 +312,178 @@ bgm:夏影.mp3;
 playVideo:OP.mp4//视频应该放在/game/video/ 文件夹内
 ```
 
-### 在显示对话时同时播放语音
+### 解锁BGM或CG以供鉴赏
 
-众所周知，Galgame 最吸引人的地方往往在于其有优秀的配音。在此版本中，你可以为对话引入配音了，将你的配音放入 vocal
-文件夹，然后在参数加上语音文件名即可引入，语法示例如下：
-
-```
-比企谷八幡:刚到而已 -V3.ogg;
-```
-
-在连续对话时，语音的引入方式也是一样的：
+在 WebGAL 4.2 中，加入了BGM和CG的鉴赏功能，你可以执行以下语句在适当的时机解锁BGM或CG。
 
 ```
-雪之下雪乃:你到得真早 -V1.ogg;
-对不起，等很久了吗？ -V2.ogg;
+unlockCg:xgmain.jpeg -name=星光咖啡馆与死神之蝶 -series=1; // 解锁CG并赋予名称
+unlockBgm:s_Title.mp3 -name=Smiling-Swinging!!; // 解锁bgm并赋予名称
+```
+
+其中，`series`参数可选，代表当前立绘属于哪个系列。同系列的立绘以后会合并展示（即展示成可以切换的同系列CG）。
+
+### 关闭文本框
+
+有时候，为了一些特殊的演出效果，可能你希望临时关闭文本框，所以你可以使用以下指令：
+
+```
+setTextbox:hide;
+```
+
+来关闭文本框。当 `setTextbox` 指令的值为 `hide` 时，会关闭文本框，且用户无法以任何方式打开。如果想要重新显示文本框，请再次调用此命令，并输入除`hide`以外的任意值。
+
+```
+setTextbox:on; // 可以是除 hide 以外的任意值。
 ```
 
 ### 使用动画效果
 
-#### 为背景设置动画
+#### 为背景或立绘设置动画
 
-使用语句 `setBgAni:动画名 时间(多少秒);`
-
-背景动画设置之后会在每次替换背景时生效，除非再次使用`setBgAni`改变。
+使用语句 `setBgAni:动画名 -target=作用目标;`
 
 **示例：**
 
 ```
-setBgAni:bg_softIn 5s;//渐入背景，执行5秒
+setAnimation:enter-from-bottom -target=fig-center -next;//为中间立绘设置一个从下方进入的动画，并转到下一句。
 ```
 
-目前，预制的动画只有两个：渐入和缩放渐入，使用的动画预设名分别为：
+目前，预制的动画有：
 
-| 动画效果 | 动画名    |
-| -------- | --------- |
-| 渐入     | bg_softIn |
-| 缩放渐入 | bg_down   |
+| 动画效果 | 动画名    | 持续时间（毫秒） |
+| -------- | --------- | --------- |
+| 渐入     | enter | 300 |
+| 渐出 | exit | 300 |
+| 左右摇晃一次     | shake    | 1000 |
+| 从下侧进入 | enter-from-bottom | 500 |
+| 从左侧进入 | enter-from-right | 500 |
+| 从右侧进入 | enter-from-right | 500 |
+| 前后移动一次   | move-front-and-back | 1000 |
 
-#### 为人物设置动画
+目前，动画的作用目标有：
 
-使用语句`setFigAni:动画名 时间（多少秒） -位置;`
+| target     | 实际目标 |
+| ---------- | -------- |
+| fig-left   | 左立绘   |
+| fig-center | 中间立绘 |
+| fig-right  | 右侧立绘 |
+| bg-main    | 背景     |
 
-```
-setFigAni:rightIn 1s -right;//对右侧立绘设置动画rightIn，执行1秒
-```
+随着今后版本自定义立绘和背景的加入，将可以设定立绘或背景的 id 作为目标。
 
-你需要指定 -left -center -right 用于设置要作用的立绘位置。
+#### 自定义动画
 
-人物动画不像背景动画。每次设置动画时，这个动画都会立刻执行，且只执行一遍（因为你可能会设置一些例如摇晃之类的效果，但是不想让这个动画一直在切换人物时生效）
+动画文件在`/game/animation`，你可以创建自己的自定义动画。
 
-所以，你每次切换人物立绘，或是想要执行动画时，都要使用`setFigAni`:
+动画文件使用 JSON 描述，你可以在 [参考文档](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects/JSON) 参考JSON语法。
 
-```
-changeFigure:testFigure03.png -left -next;
-setFigAni:leftIn 1s -left;
-//这个动画只对这一次changeFigure生效
-changeFigure:testFigure04.png -left -next;
-setFigAni:rightIn 1s -left;
-//现在你改变了左侧立绘，如果你需要一个动画，你需要再重新设置
-```
+每一个动画文件都代表一个**动画序列**，使用一个JSON数组来描述。下面是一个示例，描述了一个从左侧进入的动画：
 
-同时，在你没有改变立绘的时候，你也可以在某句对话前加上`setFigAni`，这样在播放这句对话的时候，动画会同时执行。
+`enter-from-left.json`
 
-```
-setFigAni:shake 0.5s -right;
-右侧人物:现在我正在摇晃。//动画与这句对话同时执行
-```
-
-动画的语句遵循 CSS 语法，因此，如果你需要更多参数，你可以参照
-
-https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation
-
-**注意：-right 这样的参数是 WebGAL 语法的参数，与 CSS 语法无关。请在参数之前书写 CSS 语句。**
-
-预制动画：
-
-| 动画效果     | 动画名   |
-| ------------ | -------- |
-| 摇晃         | shake    |
-| 从下向上进入 | upIn     |
-| 从左向右进入 | leftIn   |
-| 从右向左进入 | rightIn  |
-| 渐显         | centerIn |
-| 前后移动     | moveBaF  |
-
-### 自定义动画
-
-动画文件在`/game/userAnimation.css`，你可以学习 CSS 动画来自己写你想要的动画效果，然后添加到这个 CSS 里，在游戏脚本里用这个动画。
-
-如：
-
-```
-@keyframes leftIn {
-    0%{
-        opacity: 0;
-        transform: scale(1,1) translate(-5%,0);
-    }
-
-    100%{
-        opacity: 1;
-        transform: scale(1,1) translate(0,0);
-    }
-}
-```
-
-然后，你就可以使用
+```json
+[
+  {
+    "alpha": 0,
+    "scale": {
+      "x": 1,
+      "y": 1
+    },
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "position": {
+      "x": -50,
+      "y": 0
+    },
+    "rotation": 0,
+    "blur": 5,
+    "duration": 0
+  },
+  {
+    "alpha": 1,
+    "scale": {
+      "x": 1,
+      "y": 1
+    },
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "rotation": 0,
+    "blur": 0,
+    "duration": 500
+  }
+]
 
 ```
-setFigAni:leftIn 1s -left;
+
+其中各个属性代表的释义为：
+
+| 属性名   | 释义                                 |
+| -------- | ------------------------------------ |
+| alpha    | 透明度，范围0-1                      |
+| scale    | 缩放                                 |
+| pivot    | 锚点                                 |
+| position | 角度                                 |
+| rotation | 旋转角度，单位为弧度                 |
+| blur     | 高斯模糊半径                         |
+| duration | 这个时间片的持续时间，单位为毫秒(ms) |
+
+然后，你需要在 `animationTable`中加上你的自定义动画的文件名（不需要后缀名）
+
+在文件`animationTable.json`：
+
+```json
+["enter-from-left","enter-from-bottom","enter-from-right"]
 ```
 
-调用这个动画。
-
-### 为背景设置变换与效果
-
-#### 设置变换
-
-`setBgTransform`
+然后，你就可以在脚本中调用：
 
 ```
-setBgTransform:scale(1.15, 1.15) translate(-5%, 0);//设置一个放大1.15倍，向左移动5%的变换
+setAnimation:enter-from-left -target=fig-left -next;
 ```
 
-有关变换的 CSS 语法，请参见： https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform
+#### 省略部分属性
 
-#### 设置效果
+如果你的动画只需要操作部分属性，你可以将其他不参与动画的属性留空，使它们保持默认：
 
-`setBgFilter`
+**示例：`enter.json`**
 
-```
-setBgFilter:blur(1px);//设置一个模糊效果
-```
-
-有关效果的 CSS 语法，请参见： https://developer.mozilla.org/zh-CN/docs/Web/CSS/filter
-
-### 为立绘设置变换与效果
-
-#### 设置变换
-
-`setFigTransform`
-
-```
-setFigTransform:scale(1.15, 1.15) translate(-5%, 0) -center;//设置一个放大1.15倍，向左移动5%的变换
-```
-
-同样地，你需要指定 -left -center -right 用于设置要作用的立绘位置。
-
-有关变换的 CSS 语法，请参见： https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform
-
-#### 设置效果
-
-`setFigFilter`
+```json
+[
+  {
+    "alpha": 0,
+    "duration": 0
+  },
+  {
+    "alpha": 1,
+    "duration": 300
+  }
+]
 
 ```
-setFFilter:blur(1px);//设置一个模糊效果
-```
 
-有关效果的 CSS 语法，请参见： https://developer.mozilla.org/zh-CN/docs/Web/CSS/filter
+#### 使用变换
+
+一个持续时间为0毫秒，且只有一个时间片的动画就是变换。
+
+**示例：**
+
+```
+[
+  {
+    "alpha": 0,
+    "duration": 0
+  }
+]
+```
 
 ### 添加特效
 
@@ -483,29 +537,6 @@ pixiPerform:snow;
 
 通过执行脚本`filmMode:enable;`来开启电影模式，`filmMode:none;`可以关闭。
 
-### 解锁BGM或CG以供鉴赏
-
-在 WebGAL 4.2 中，加入了BGM和CG的鉴赏功能，你可以执行以下语句在适当的时机解锁BGM或CG。
-
-```
-unlockCg:xgmain.jpeg -name=星光咖啡馆与死神之蝶 -series=1; // 解锁CG并赋予名称
-unlockBgm:s_Title.mp3 -name=Smiling-Swinging!!; // 解锁bgm并赋予名称
-```
-
-其中，`series`参数可选，代表当前立绘属于哪个系列。同系列的立绘以后会合并展示（即展示成可以切换的同系列CG）。
-
-### 关闭文本框
-
-有时候，为了一些特殊的演出效果，可能你希望临时关闭文本框，所以你可以使用以下指令：
-
-```
-setTextbox:hide;
-```
-来关闭文本框。当 `setTextbox` 指令的值为 `hide` 时，会关闭文本框，且用户无法以任何方式打开。如果想要重新显示文本框，请再次调用此命令，并输入除`hide`以外的任意值。
-```
-setTextbox:on; // 可以是除 hide 以外的任意值。
-```
-
 ## 进阶教程：
 
 ### 在同一个场景（TXT 文件）内实现语句跳转、分支跳转
@@ -514,7 +545,7 @@ setTextbox:on; // 可以是除 hide 以外的任意值。
 
 **注意：如果你的分支很长，我不建议你使用这种方式，因为一个 TXT 的行数不适宜太长，否则可能会导致加载慢、响应迟钝等性能问题。**
 
-#### 首先，你必须理解如何使用 label：
+#### 首先，你必须理解如何使用 label
 
 ```
 ......
@@ -619,7 +650,7 @@ changeFigure:k2.png -next;
 
 ### 添加自定义特效
 
-你可以下载源代码，然后找到 /Core/controller/perform/pixi/pixiScripts/ 然后新建一个 `PIXI.Container`用于制作你所需要的特效。
+你可以下载源代码，然后找到 /Core/gameScripts/pixiPerformScripts/ 然后新建一个 `PIXI.Container`用于制作你所需要的特效。
 
 ```js
 const app = runtime_gamePlay.currentPixi; //获取当前的Pixi
@@ -629,20 +660,21 @@ app.stage.addChild(container) //添加特效
 
 纹理文件可以放在 /game/tex 目录下。
 
-然后，在 /Core/controller/gamePlay/scripts/pixi.ts 中加上你写的新特效。
+然后，在 /Core/gameScripts/pixi.ts 中加上你写的新特效。
 
 ```js
 switch (sentence.content) {
-  case 'rain':
-    container = pixiRain(6, 10);
-    break;
-  case 'snow':
-    container = pixiSnow(3);
-    break;
-  case 'yourPixiPerform':
-    container = yourPerform(args);
-    break;
-}
+    case 'rain':
+      res = pixiRain(6, 10);
+      container = res.container;
+      tickerKey = res.tickerKey;
+      break;
+    case 'snow':
+      res = pixiSnow(3);
+      container = res.container;
+      tickerKey = res.tickerKey;
+      break;
+  }
 ```
 
 最后，编译出支持你自定义特效的 WebAPP
