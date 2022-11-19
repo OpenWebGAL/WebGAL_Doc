@@ -441,7 +441,7 @@ setAnimation:enter-from-bottom -target=fig-center -next;//为中间立绘设置�
 | alpha    | 透明度，范围0-1                      |
 | scale    | 缩放                                 |
 | pivot    | 锚点                                 |
-| position | 角度                                 |
+| position | 位置偏移                                 |
 | rotation | 旋转角度，单位为弧度                 |
 | blur     | 高斯模糊半径                         |
 | duration | 这个时间片的持续时间，单位为毫秒(ms) |
