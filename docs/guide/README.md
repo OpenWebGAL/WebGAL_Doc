@@ -662,10 +662,11 @@ changeFigure:k2.png -next;
 
 你可以下载源代码，然后找到 /Core/gameScripts/pixiPerformScripts/ 然后新建一个 `PIXI.Container`用于制作你所需要的特效。
 
-```js
-const app = runtime_gamePlay.currentPixi; //获取当前的Pixi
-const container = new PIXI.Container() //创建自定义特效的container
-app.stage.addChild(container) //添加特效
+```ts
+const effectsContainer = RUNTIME_GAMEPLAY.pixiStage!.effectsContainer!; //获取当前的 Pixi 效果 Container
+const app = RUNTIME_GAMEPLAY.pixiStage!.currentApp!; // 调用 Pixi App 的方式，对确定屏幕尺寸等可能有用
+const container = new PIXI.Container(); //创建自定义特效的container
+effectsContainer.addChild(container); //添加特效
 ```
 
 纹理文件可以放在 /game/tex 目录下。
