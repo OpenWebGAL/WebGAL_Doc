@@ -8,7 +8,7 @@
 
 如果下载速度过慢，请尝试通过蓝奏云网盘下载，**请注意！版本不一定是最新的。**
 
-[蓝奏云](https://wwrl.lanzouw.com/iapA70hrj26h) 密码:e90r
+[蓝奏云](https://wwrl.lanzouw.com/icMH70hsozxi) 密码:ezom
 
 ### 方法2：在本地通过书写脚本的形式开发，并实时调试
 
