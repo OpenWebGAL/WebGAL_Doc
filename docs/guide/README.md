@@ -10,6 +10,14 @@
 
 [蓝奏云](https://wwrl.lanzouw.com/iWvGs0ifsp2j) 密码:b390
 
+**WebGAL 新版编辑器的可视化编辑方案（类似于填写表单的方式）尚未开发完成。如果你希望使用更为简单的可视化编辑器，请下载旧版：**
+
+[旧版本的WebGAL 编辑器](https://github.com/MakinoharaShoko/WebGAL_Terre/releases/tag/1.2.15.5)
+
+[蓝奏云](https://wwrl.lanzouw.com/i6WLW0fdjxvc) 密码:gep3
+
+**注意：旧版编辑器编辑的游戏今后将不能在新版编辑器中继续编辑，因为新版编辑器使用的是新的引擎版本。**
+
 ### 方法2：在本地通过书写脚本的形式开发，并实时调试
 
 首先，下载已经被构建为静态网页的 WebGAL 发行版以及配套的调试环境。
