@@ -8,7 +8,7 @@
 
 如果下载速度过慢，请尝试通过蓝奏云网盘下载，**请注意！版本不一定是最新的。**
 
-[蓝奏云](https://wwrl.lanzouw.com/iWvGs0ifsp2j) 密码:b390
+[蓝奏云](https://wwrl.lanzouw.com/iFAnx0jxrsha) 密码:ha02
 
 **WebGAL 新版编辑器的可视化编辑方案（类似于填写表单的方式）尚未开发完成。如果你希望使用更为简单的可视化编辑器，请下载旧版：**
 
@@ -26,7 +26,7 @@
 
 如果下载速度过慢，请尝试通过蓝奏云网盘下载，**请注意！版本不一定是最新的。**
 
-[蓝奏云](https://wwt.lanzouw.com/ijubC0g8izng)
+[蓝奏云](https://wwrl.lanzouw.com/iSNAy0jxs3la)
 
 现在，你可以直接运行对应版本的 WebGAL-server 开始调试你的视觉小说。如果遇到杀毒软件拦截或防火墙拦截等情况，请放行以允许该程序运行。
 
@@ -229,6 +229,17 @@ changeFigure:testFigure04.png -next;
 changeFigure:testFigure03.png -right -next;
 ```
 
+### 带ID的自由立绘
+
+如果你想要更精确地控制立绘，可以为立绘指定`id`和初始位置：
+
+```
+changeFigure:testFigure03.png -left -id=test1; // 一个初始位置在右侧的自由立绘
+changeFigure:none -id=test1; // 通过id关闭立绘
+```
+
+注意：如果你要重设某个带ID立绘的位置，请先关闭再重新打开
+
 ### 放置小头像
 
 很多游戏可以在文本框的左下角放置小头像，以下是在本引擎中使用的语法：
@@ -385,14 +396,13 @@ setAnimation:enter-from-bottom -target=fig-center -next;//为中间立绘设置�
 
 目前，动画的作用目标有：
 
-| target     | 实际目标 |
-| ---------- | -------- |
-| fig-left   | 左立绘   |
-| fig-center | 中间立绘 |
-| fig-right  | 右侧立绘 |
-| bg-main    | 背景     |
-
-随着今后版本自定义立绘和背景的加入，将可以设定立绘或背景的 id 作为目标。
+| target     | 实际目标       |
+| ---------- | -------------- |
+| fig-left   | 左立绘         |
+| fig-center | 中间立绘       |
+| fig-right  | 右侧立绘       |
+| bg-main    | 背景           |
+|            | 某个有id的立绘 |
 
 #### 自定义动画
 
