@@ -4,6 +4,8 @@
 
 ### 方法1（推荐）：使用 WebGAL 编辑器
 
+WebGAL 编辑器是创建、制作并发布一个 WebGAL 的最佳方式。
+
 [WebGAL 编辑器](https://github.com/MakinoharaShoko/WebGAL_Terre/releases)
 
 如果下载速度过慢，请尝试通过蓝奏云网盘下载，**请注意！版本不一定是最新的。**
@@ -30,6 +32,43 @@
 
 现在，你可以直接运行对应版本的 WebGAL-server 开始调试你的视觉小说。如果遇到杀毒软件拦截或防火墙拦截等情况，请放行以允许该程序运行。
 
+推荐使用 VS Code 进行开发，并使用插件来实现语法高亮：
+
+https://marketplace.visualstudio.com/items?itemName=c6h5-no2.webgal-script-basics
+
+（语法高亮插件的项目主页）：https://github.com/C6H5-NO2/webgal-script-basics
+
+### 方法3（适用于想要更高自定义程度的前端开发者）：从源代码开始调试
+
+```shell
+git clone https://github.com/MakinoharaShoko/WebGAL.git
+```
+
+安装并使用 yarn 安装依赖
+
+```
+npm install yarn -g
+yarn
+```
+
+进入 WebGAL 包
+
+```shell
+cd packages/webgal
+```
+
+WebGAL 使用 vite 作为打包与调试工具，进入 webgal 包下后，你可以通过运行以下脚本启动开发服务器
+
+```shell
+yarn dev
+```
+
+如果你要打包，请使用
+
+```shell
+yarn build
+```
+
 ### 如何将我的 Galgame 部署到互联网上，并使他人能够访问？
 
 首先，请知悉，可以部署到互联网的引擎应该是**发行版或由 WebGAL 图形化编辑器导出的网页**，而不是源代码。
@@ -44,15 +83,15 @@
 
 **使用源代码开发的开发者：**
 
-如果你使用源代码进行调试，你可以通过 npm run build 或 yarn build 来创建一个静态网页（在/dist 文件夹），然后将这个文件夹内的内容部署到 GitHub Pages 或你的云服务器上。
+如果你使用源代码进行调试，你可以通过 `yarn build` 来创建一个静态网页（在/dist 文件夹），然后将这个文件夹内的内容部署到 GitHub Pages 或你的云服务器上。
 
-# 游戏制作快速上手教程
+# 游戏脚本编写教程
 
-现在，你应该已经运行起来了一个调试服务器，接下来介绍如何编写你自己的剧本
+现在，你应该已经启动了 WebGAL 编辑器或运行起来了一个调试服务器，接下来介绍如何编写你自己的剧本。
 
-你应该能够发现，在解压后的文件夹下，有一个 WebGAL 文件夹，在 WebGAL 文件夹下，有一个 game 文件夹，那就是你的游戏资源应该存放的地方。
+你应该能够发现，在解压后的文件夹下，有一个 WebGAL 文件夹，在 WebGAL 文件夹下，有一个 game 文件夹，那就是你的游戏资源应该存放的地方。**（如果你使用图形化编辑器，你可以在左侧的工具栏中直接打开对应的资源文件夹）**
 
-你的所有游戏剧本、图片、立绘都应该在放解压后目录的 WebGAL/game 文件夹下，目录对应的资源说明如下：
+你的所有游戏剧本、图片、立绘都应该放在 game 文件夹下，目录对应的资源说明如下：
 
 | 文件夹     | 存放的资源                   |
 | ---------- | ---------------------------- |
@@ -67,7 +106,7 @@
 
 ## 定制你的游戏信息
 
-在/game 文件夹下，有一个文件 config.txt，你可以在这个文件中填写你游戏的相关信息：
+在/game 文件夹下，有一个文件 config.txt，你可以在这个文件中填写你游戏的相关信息（使用图形化编辑器可以直接编辑）：
 
 ```
 Game_name:WebGAL;//你的游戏名称
@@ -238,7 +277,7 @@ changeFigure:testFigure03.png -left -id=test1; // 一个初始位置在右侧的
 changeFigure:none -id=test1; // 通过id关闭立绘
 ```
 
-注意：如果你要重设某个带ID立绘的位置，请先关闭再重新打开
+注意：如果你要重设某个带ID立绘的位置，请先关闭再重新打开。
 
 ### 放置小头像
 
