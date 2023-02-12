@@ -10,7 +10,7 @@ WebGAL 编辑器是创建、制作并发布一个 WebGAL 的最佳方式。
 
 如果下载速度过慢，请尝试通过蓝奏云网盘下载，**请注意！版本不一定是最新的。**
 
-[蓝奏云](https://wwrl.lanzouw.com/ihO9h0kysufi) 密码:6f0w
+[蓝奏云](https://wwrl.lanzouw.com/iXhKY0ndo9lg) 密码:atsj
 
 **WebGAL 新版编辑器的可视化编辑方案（类似于填写表单的方式）尚未开发完成。如果你希望使用更为简单的可视化编辑器，请下载旧版：**
 
@@ -28,7 +28,7 @@ WebGAL 编辑器是创建、制作并发布一个 WebGAL 的最佳方式。
 
 如果下载速度过慢，请尝试通过蓝奏云网盘下载，**请注意！版本不一定是最新的。**
 
-[蓝奏云](https://wwrl.lanzouw.com/iOSfn0kyrr7g)
+[蓝奏云](https://wwrl.lanzouw.com/iNDoR0ndnl7i)
 
 现在，你可以直接运行对应版本的 WebGAL-server 开始调试你的视觉小说。如果遇到杀毒软件拦截或防火墙拦截等情况，请放行以允许该程序运行。
 
