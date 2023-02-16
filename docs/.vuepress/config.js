@@ -8,6 +8,7 @@ module.exports = {
       { text: '制作游戏', link: '/guide/' },
       { text: '更新情报',link: '/info/'},
       { text: '开发者指引', link: '/developers/' },
+      { text: 'WebGAL 技术介绍', link: '/tech/' },
       { text: 'Github', link: 'https://github.com/MakinoharaShoko/WebGAL' }, // 外部链接
       {
         text: '更多',
