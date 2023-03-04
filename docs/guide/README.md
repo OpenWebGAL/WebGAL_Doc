@@ -8,8 +8,6 @@
 
 [WebGAL 编辑器下载](https://github.com/MakinoharaShoko/WebGAL_Terre/releases)
 
-[//]: # (如果下载速度过慢，请尝试通过蓝奏云网盘下载，**请注意！版本不一定是最新的。**)
-
 [蓝奏云](https://wwrl.lanzouw.com/itbJ30p8f5ji)
 
 ### 方法2：在本地通过书写脚本的形式开发，并实时调试
@@ -17,8 +15,6 @@
 首先，下载已经被构建为静态网页的 WebGAL 发行版以及配套的调试环境。
 
 [发行版下载](https://github.com/MakinoharaShoko/WebGAL/releases/)
-
-[//]: # (如果下载速度过慢，请尝试通过蓝奏云网盘下载，**请注意！版本不一定是最新的。**)
 
 [蓝奏云](https://wwrl.lanzouw.com/imaam0p8f8if)
 
