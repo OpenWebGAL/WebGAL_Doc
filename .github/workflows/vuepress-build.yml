@@ -10,8 +10,8 @@ on:
 # 任务
 jobs:
   build-and-deploy:
-    # 服务器环境：最新版 windows
-    runs-on: windows-latest
+    # 服务器环境：最新版 Ubuntu
+    runs-on: ubuntu-latest
     steps:
       # 拉取代码
       - name: Checkout
@@ -21,7 +21,6 @@ jobs:
 
       # 生成静态文件
       - name: Build
-        shell: bash
         run: npm install yarn -g && yarn install && yarn build && touch docs/.vuepress/dist/.nojekyll
 
       # 部署到 GitHub Pages
