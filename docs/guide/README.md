@@ -4,39 +4,31 @@
 
 ### 方法1（推荐）：使用 WebGAL 编辑器
 
-WebGAL 编辑器是创建、制作并发布一个 WebGAL 的最佳方式。
+**WebGAL 编辑器是创建、制作并发布一个 WebGAL 的最佳方式。**
 
-[WebGAL 编辑器](https://github.com/MakinoharaShoko/WebGAL_Terre/releases)
+[WebGAL 编辑器下载](https://github.com/MakinoharaShoko/WebGAL_Terre/releases)
 
-如果下载速度过慢，请尝试通过蓝奏云网盘下载，**请注意！版本不一定是最新的。**
+[//]: # (如果下载速度过慢，请尝试通过蓝奏云网盘下载，**请注意！版本不一定是最新的。**)
 
-[蓝奏云](https://wwrl.lanzouw.com/iXhKY0ndo9lg) 密码:atsj
-
-**WebGAL 新版编辑器的可视化编辑方案（类似于填写表单的方式）尚未开发完成。如果你希望使用更为简单的可视化编辑器，请下载旧版：**
-
-[旧版本的WebGAL 编辑器](https://github.com/MakinoharaShoko/WebGAL_Terre/releases/tag/1.2.15.5)
-
-[蓝奏云](https://wwrl.lanzouw.com/i6WLW0fdjxvc) 密码:gep3
-
-**注意：旧版编辑器编辑的游戏今后将不能在新版编辑器中继续编辑，因为新版编辑器使用的是新的引擎版本。**
+[蓝奏云](https://wwrl.lanzouw.com/itbJ30p8f5ji)
 
 ### 方法2：在本地通过书写脚本的形式开发，并实时调试
 
 首先，下载已经被构建为静态网页的 WebGAL 发行版以及配套的调试环境。
 
-[发行版](https://github.com/MakinoharaShoko/WebGAL/releases/)
+[发行版下载](https://github.com/MakinoharaShoko/WebGAL/releases/)
 
-如果下载速度过慢，请尝试通过蓝奏云网盘下载，**请注意！版本不一定是最新的。**
+[//]: # (如果下载速度过慢，请尝试通过蓝奏云网盘下载，**请注意！版本不一定是最新的。**)
 
-[蓝奏云](https://wwrl.lanzouw.com/iNDoR0ndnl7i)
+[蓝奏云](https://wwrl.lanzouw.com/imaam0p8f8if)
 
 现在，你可以直接运行对应版本的 WebGAL-server 开始调试你的视觉小说。如果遇到杀毒软件拦截或防火墙拦截等情况，请放行以允许该程序运行。
 
 推荐使用 VS Code 进行开发，并使用插件来实现语法高亮：
 
-https://marketplace.visualstudio.com/items?itemName=c6h5-no2.webgal-script-basics
+[语法高亮插件的商店地址](https://marketplace.visualstudio.com/items?itemName=c6h5-no2.webgal-script-basics)
 
-（语法高亮插件的项目主页）：https://github.com/C6H5-NO2/webgal-script-basics
+[语法高亮插件的源代码仓库](https://github.com/C6H5-NO2/webgal-script-basics)
 
 ### 方法3（适用于想要更高自定义程度的前端开发者）：从源代码开始调试
 
