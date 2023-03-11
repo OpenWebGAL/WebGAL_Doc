@@ -69,6 +69,8 @@ yarn build
 
 复制/WebGAL 下的文件(不是文件夹，是/WebGAL 文件夹下的文件)到你想要部署的云服务器的指定目录下，或是部署到 GitHub Pages。
 
+[打包 WebGAL 游戏到 Android 平台](https://nini22p.github.io/post/webgal-for-android/)
+
 **使用源代码开发的开发者：**
 
 如果你使用源代码进行调试，你可以通过 `yarn build` 来创建一个静态网页（在/dist 文件夹），然后将这个文件夹内的内容部署到 GitHub Pages 或你的云服务器上。
