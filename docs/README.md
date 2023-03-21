@@ -24,3 +24,9 @@ footer: MPL-2.0 Licensed | Copyright © 2022 Mahiru
 ## 开源免费
 
 本项目以及配套的可视化编辑器皆在 GitHub 开源。仓库地址： [WebGAL](https://github.com/MakinoharaShoko/WebGAL) [WebGAL 编辑器](https://github.com/MakinoharaShoko/WebGAL_Terre)
+
+## 赞助本项目
+
+[赞助本项目](/sponsor)
+
+你的赞助可以给予开发者前进的动力，让这个项目变得更好。

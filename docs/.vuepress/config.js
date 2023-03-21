@@ -26,6 +26,12 @@ module.exports = {
               { text: 'Github', link: 'https://github.com/MakinoharaShoko' },
             ]
           },
+          {
+            text: '赞助本项目',
+            items: [
+              { text: '赞助', link: '/sponsor/' },
+            ]
+          },
         ]
       }
     ]
