@@ -8,7 +8,7 @@
 
 [WebGAL 编辑器下载](https://github.com/MakinoharaShoko/WebGAL_Terre/releases)
 
-[蓝奏云](https://wwrl.lanzouw.com/itbJ30p8f5ji)
+[蓝奏云](https://wwrl.lanzouw.com/iEz5v0r66e6f)
 
 ### 方法2：在本地通过书写脚本的形式开发，并实时调试
 
@@ -16,7 +16,7 @@
 
 [发行版下载](https://github.com/MakinoharaShoko/WebGAL/releases/)
 
-[蓝奏云](https://wwrl.lanzouw.com/imaam0p8f8if)
+[蓝奏云](https://wwrl.lanzouw.com/iXiZ10r663ad)
 
 现在，你可以直接运行对应版本的 WebGAL-server 开始调试你的视觉小说。如果遇到杀毒软件拦截或防火墙拦截等情况，请放行以允许该程序运行。
 
@@ -375,6 +375,15 @@ playEffect:xxx.mp3;
 ```
 
 可以播放一小段效果音
+
+**效果音循环**
+
+为效果音赋予一个 id 将会自动启用效果音循环，后续使用相同的 id 来停止
+
+```
+playEffect:xxx.mp3 -id=xxx;
+playEffect:none -id=xxx;停止这个循环的效果音
+```
 
 ### 播放一小段视频
 
