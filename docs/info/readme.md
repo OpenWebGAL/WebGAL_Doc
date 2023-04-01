@@ -22,7 +22,7 @@
 
 ### 新特性预告
 
-提示：如果想要即时获取 WebGAL 开发的最新进展，欢迎访问 [WebGAL 进度追踪](https://github.com/MakinoharaShoko/WebGAL/projects/1) 以及  [issues](https://github.com/MakinoharaShoko/WebGAL/issues) 。
+如果想要即时获取 WebGAL 开发的最新进展，欢迎访问 [WebGAL 进度追踪](https://github.com/MakinoharaShoko/WebGAL/projects/1) 以及  [issues](https://github.com/MakinoharaShoko/WebGAL/issues) 。
 
 #### 已确认的计划
 
@@ -38,7 +38,7 @@
 
 ### 新特性预告
 
-进度跟踪参见： [WebGAL 编辑器 进度追踪](https://github.com/users/MakinoharaShoko/projects/1)
+如果想要即时获取 WebGAL 开发的最新进展，欢迎访问 [WebGAL 编辑器 进度追踪](https://github.com/users/MakinoharaShoko/projects/1) 以及 [issues](https://github.com/MakinoharaShoko/WebGAL_Terre/issues)
 
 #### 已确认的计划
 
