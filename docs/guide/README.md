@@ -6,7 +6,13 @@
 
 **WebGAL 编辑器是创建、制作并发布一个 WebGAL 的最佳方式。**
 
-[WebGAL 编辑器下载](https://github.com/MakinoharaShoko/WebGAL_Terre/releases)
+在下载 WebGAL 编辑器后，请解压压缩包并启动 WebGAL_Terre 应用程序。WebGAL Terre 将会自动打开默认浏览器，如果没有打开，请输入 [http://localhost:3001/](http://localhost:3001/) 打开编辑器。
+
+注意：请使用现代浏览器 (Chrome / Firefox / Edge) 打开编辑器。使用其他浏览器所可能产生的问题，将不会得到解决。
+
+你可以使用以下下载链接：
+
+[GitHub](https://github.com/MakinoharaShoko/WebGAL_Terre/releases)
 
 [蓝奏云](https://wwrl.lanzouw.com/ihpcc0sxejpa)
 
@@ -14,11 +20,13 @@
 
 首先，下载已经被构建为静态网页的 WebGAL 发行版以及配套的调试环境。
 
-[发行版下载](https://github.com/MakinoharaShoko/WebGAL/releases/)
+你可以使用以下下载链接：
+
+[GitHub](https://github.com/MakinoharaShoko/WebGAL/releases/)
 
 [蓝奏云](https://wwrl.lanzouw.com/iITSY0sxehqj)
 
-现在，你可以直接运行对应版本的 WebGAL-server 开始调试你的视觉小说。如果遇到杀毒软件拦截或防火墙拦截等情况，请放行以允许该程序运行。
+下载并解压后，你可以直接运行对应版本的 WebGAL-server 开始调试你的视觉小说。如果遇到杀毒软件拦截或防火墙拦截等情况，请放行以允许该程序运行。
 
 推荐使用 VS Code 进行开发，并使用插件来实现语法高亮：
 
@@ -57,7 +65,7 @@ yarn dev
 yarn build
 ```
 
-### 如何将我的 视觉小说 部署到互联网上，并使他人能够访问？
+### 如何部署或发布我的视觉小说？
 
 首先，请知悉，可以部署到互联网的引擎应该是**发行版或由 WebGAL 图形化编辑器导出的网页**，而不是源代码。
 
@@ -68,6 +76,8 @@ yarn build
 如果你使用发行版：
 
 复制/WebGAL 下的文件(不是文件夹，是/WebGAL 文件夹下的文件)到你想要部署的云服务器的指定目录下，或是部署到 GitHub Pages。
+
+**如果你想要打包的 Android 平台，可以参考这篇文章：**
 
 [打包 WebGAL 游戏到 Android 平台](https://nini22p.github.io/post/webgal-for-android/)
 
@@ -769,6 +779,18 @@ pixiPerform:你的新特效;
 ```
 
 ## 可能遇到的问题与解决方案
+
+### 为什么我的文件没有正常被识别
+
+文件的命名应当避免使用特殊符号、空格等难以被识别的文件名。尽可能使用纯英文命名。文件的后缀名应当为完全小写字符。
+
+### 为什么我的音频文件没有被正常播放 
+
+在苹果浏览器上，不支持播放 ogg 文件，需要转换文件格式，比如转换到 mp3.
+
+### 导出的网页为什么无法打开
+
+由于浏览器安全策略，你无法从文件打开一个本地网页。你需要使用一个http 服务器，按部署网站的方法部署 WebGAL。常见的有: Nginx, Apache http server, VS Code Live Server 插件, Python http server.
 
 ## Stargazers over time
 
