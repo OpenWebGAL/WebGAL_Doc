@@ -30,6 +30,8 @@
 
 存档界面支持编辑（删除等）
 
+国际化
+
 ### BUG 修复
 
 暂无，如果你发现 BUG 需要报告，请在 [issues](https://github.com/MakinoharaShoko/WebGAL/issues) 提出 issue 或者发送电子邮件联系 Mahiru_@outlook.com 。
@@ -45,6 +47,8 @@
 动画编辑器
 
 调试器（可以查看和修改游戏内部变量和状态）
+
+导出为 Android 工程项目
 
 ### BUG 修复
 
