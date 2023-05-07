@@ -792,6 +792,10 @@ pixiPerform:你的新特效;
 
 由于浏览器安全策略，你无法从文件打开一个本地网页。你需要使用一个http 服务器，按部署网站的方法部署 WebGAL。常见的有: Nginx, Apache http server, VS Code Live Server 插件, Python http server.
 
+### Windows 7 上为什么可视化编辑器闪一下就没了
+
+由于 node.js 的版本高于 Windows 7 所支持的最高版本。请参考 [Win7 使用可视化编辑器开始制作的方法](./Win7) 解决。
+
 ## Stargazers over time
 
 [![Stargazers over time](https://starchart.cc/MakinoharaShoko/WebGAL.svg)](https://starchart.cc/MakinoharaShoko/WebGAL)
