@@ -10,6 +10,8 @@
 
 注意：请使用现代浏览器 (Chrome / Firefox / Edge) 打开编辑器。使用其他浏览器所可能产生的问题，将不会得到解决。
 
+注意: 本页方法**不支持 Windows 7** , Windows 7 用户请参考 [Windows 7 使用可视化编辑器开始制作的方法](./Win7).
+
 你可以使用以下下载链接：
 
 [GitHub](https://github.com/MakinoharaShoko/WebGAL_Terre/releases)
@@ -794,7 +796,7 @@ pixiPerform:你的新特效;
 
 ### Windows 7 上为什么可视化编辑器闪一下就没了
 
-由于 node.js 的版本高于 Windows 7 所支持的最高版本。请参考 [Win7 使用可视化编辑器开始制作的方法](./Win7) 解决。
+由于 node.js 的版本高于 Windows 7 所支持的最高版本。请参考 [Windows 7 使用可视化编辑器开始制作的方法](./Win7) 解决。
 
 ## Stargazers over time
 
