@@ -712,7 +712,10 @@ setVar:b=a+1;
 setVar:a=1;
 changeScene:2.txt -when=a>1; // a>1时跳转到场景2
 changeScene:3.txt; // 如果a<=1，那么上面的语句不执行，自然就执行这一句了。
+changeScene:3.txt -when=a==1; 只有a为1时才跳转，注意相等运算符是 ==
 ```
+
+**注意：`=` 是赋值符号，不可用于条件判断，`==`是相等运算符。**
 
 任何语句都可以加上 `-when` 参数来控制是否执行。通过组合 `-when` 参数和 `jumpLabel` `callScene` `changeScene`
 ，你可以实现带条件判断的流程控制。
