@@ -20,7 +20,7 @@
 
 [GitHub](https://github.com/MakinoharaShoko/WebGAL_Terre/releases)
 
-[蓝奏云](https://wwrl.lanzouw.com/iCLcE0uzrdpg)
+[蓝奏云](https://wwrl.lanzouw.com/ifLTJ0v3o0rg)
 
 ### 方法2：在本地通过书写脚本的形式开发，并实时调试
 
