@@ -6,7 +6,7 @@
 使用 WebGAL 编辑器自动导出工程文件的游戏开发者只需安装 android studio 即可
 :::
 
-* 下载安装 [Android Studio](https://developer.android.com/studio)。
+* 下载安装 [Android Studio](https://developer.android.google.cn/studio/)。
 * 将 [WebGAL](https://github.com/MakinoharaShoko/WebGAL) 游戏导出 Web 版本。
 * 下载 [WebGAL Android 项目模板](https://github.com/nini22P/WebGAL-Android)。
 
