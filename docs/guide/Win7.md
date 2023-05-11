@@ -1,8 +1,12 @@
 # Windows 7 使用可视化编辑器开始制作的方法
 
+**Other language versions:** 
+
+[En](./win7-en)
+
 ## 前置条件
 
-### 安装 14~16.3 版本的 node.js。
+### 安装 14~16.3 版本的 node.js
 
 1. 打开 [node.js 官网 node v16.3.0 下载地址](https://nodejs.org/dist/v16.3.0/) 下载安装包。
 
@@ -30,13 +34,15 @@
 
 ### 下载支持 Win7 的 Terre 补丁
 
-    >  下载地址：
-    >
-    > [蓝奏云（第三方补丁支持）](https://wwh.lanzoue.com/i2xqa0uy2fuh)
+>  下载地址：
+>
+>  [GitHub（第三方补丁支持）](https://github.com/hshqwq/WebGAL_Terre/releases)
+>
+>  [蓝奏云（第三方补丁支持）](https://wwh.lanzoue.com/i2xqa0uy2fuh)
 
 ### 下载可视化编辑器
 
-下载补丁对应版本的可视化编辑器并解压。  
+下载补丁对应版本的[可视化编辑器](./guide#方法1（推荐）：使用 WebGAL 编辑器)并解压。  
 对应版本请查看补丁中诸如 *使用说明, README* 等文件, 或查看 *package.json* 中 *version* 对应的值.
 
 ### 使用补丁
@@ -77,10 +83,14 @@
     node main.js
     ```
 
-*注意：如果电脑装过低于 14 版本的 node 请先切换为 14~16.3 版本的 node。*
+::: tip 注意
+
+如果电脑装过低于 14 版本的 node 请先切换为 14~16.3 版本的 node。
+
+:::
 
 ---
-    
+
 ## 方法二：从源码编译（推荐有一定编程经验的人采取）
 
 ### 获取源代码
@@ -124,7 +134,7 @@ npm i -g yarn
     yarn
     ```
 
-3. 打包服务端。
+3. 打包 *terre2*
 
     ```shell
     yarn run build
@@ -132,7 +142,7 @@ npm i -g yarn
 
 4. 删除 *dist* 目录下所有 *.d.ts* 结尾文件 (可选)。
 
-5. 在 *dist* 中添加 *package.json* 文件，内容（注意替换对应信息）：
+5. 在 *dist* 中添加 *package.json* 文件，内容（注意填写相关信息）：
 
     ```json
     {
