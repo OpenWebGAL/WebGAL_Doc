@@ -791,6 +791,12 @@ yarn run build;
 pixiPerform:你的新特效;
 ```
 
+## 其它教程
+
+### Add Other UI Language into WebGal
+
+See the [Add Other Language into WebGal](./add-lang). 
+
 ## 可能遇到的问题与解决方案
 
 ### 为什么我的文件没有正常被识别
