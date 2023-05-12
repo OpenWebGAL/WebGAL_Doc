@@ -28,6 +28,8 @@ Don't change the value in **{{}}**, it's the variable.
    For example, I will add a language named *myLang*, it will be this.
 
    ```typescript
+   import myLang from '@/translations/my-lang';
+   
    export enum language {
      zhCn,
      en,
@@ -40,6 +42,13 @@ Don't change the value in **{{}}**, it's the variable.
      en: 'English',
      jp: '日本語',
      myLang: 'Example Lang'
+   };
+   
+   export const i18nTranslationResources: Record<string, { translation: Record<string, any> }> = {
+     en: { translation: en },
+     zhCn: { translation: zhCn },
+     jp: { translation: jp },
+     myLang: {translation: myLang},
    };
    ```
 
@@ -62,6 +71,13 @@ Edit variable named **defaultLanguage** in **WebGal/packages/webgal/src/config/l
     en: 'English',
     jp: '日本語',
     myLang: 'Example Lang'
+  };
+  
+  export const i18nTranslationResources: Record<string, { translation: Record<string, any> }> = {
+    en: { translation: en },
+    zhCn: { translation: zhCn },
+    jp: { translation: jp },
+    myLang: {translation: myLang},
   };
   
   export const defaultLanguage: language = language.mylang;
