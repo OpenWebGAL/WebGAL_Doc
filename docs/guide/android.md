@@ -18,7 +18,7 @@
 
 ### 导出和修改
 
-在编辑器左边侧边栏修改`游戏标题`和`游戏包名`。游戏包名是你的网站域名反写，如果没有域名可以考虑使用开发者加游戏名的组合，比如 `webgalteam.mygalgame` 这种形式，**必须**使用**英文**。
+在编辑器左边侧边栏修改`游戏标题`和`游戏包名`。游戏包名是你的网站域名反写，如果没有域名可以考虑使用开发者加游戏名的组合，比如 `webgaldev.mygalgame` 这种形式，**必须**使用**英文**。
 
 在编辑器右上角选择导出为安卓工程文件，然后打开 android studio 选择刚刚导出的 `android` 目录，等待依赖下载完毕。
 
@@ -26,7 +26,7 @@
 
 ### 运行和编译
 
-将安卓手机的 USB 调试打开插入电脑，点击上方工具栏设备标题旁的运行图标后在手机上运行。
+打开安卓手机的 USB 调试并连接电脑，点击上方工具栏设备标题旁的运行图标后在手机上运行。
 
 点击菜单栏中 `Build -> Generate Signed Bundle or APK`，根据提示创建密钥并编译，等待编译完毕。
 
@@ -87,10 +87,19 @@ package io.github.nini22p.webgal //修改包名
 
 ### 运行和编译
 
-将安卓手机的 USB 调试打开插入电脑，点击上方工具栏设备标题旁的运行图标后在手机上运行。
+打开安卓手机的 USB 调试并连接电脑，点击上方工具栏设备标题旁的运行图标后在手机上运行。
 
 点击菜单栏中 `Build -> Generate Signed Bundle or APK`，根据提示创建密钥并编译，等待编译完毕。
 
 ## 视频教程（方法二）
 
 [使用 Android Studio 打包 WebGAL 游戏到 Android 平台](https://www.bilibili.com/video/BV1m24y1J7ct/)
+
+## 兼容性以及解决方案
+
+目前支持最低版本是安卓 5.0，并依赖于系统预装的 Android System WebView, 如果您的设备在点击首屏后黑屏，请尝试以下任意一种方案：
+
+1. 进入 Play 商店更新 [Android System WebView](https://play.google.com/store/apps/details?id=com.google.android.webview)
+2. 手动下载 Android System WebView 进行更新
+
+Android System WebView 下载链接：[Android 5.0](https://www.apkmirror.com/apk/google-inc/android-system-webview/android-system-webview-95-0-4638-74-release/) | [Android 6.0](https://www.apkmirror.com/apk/google-inc/android-system-webview/android-system-webview-106-0-5249-126-release/) | [Android 7.0 +](https://www.apkmirror.com/apk/google-inc/android-system-webview/)
