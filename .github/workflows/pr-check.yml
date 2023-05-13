@@ -1,0 +1,24 @@
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+
+# 任务
+jobs:
+  build-and-deploy:
+    # 服务器环境：最新版 Ubuntu
+    runs-on: ubuntu-latest
+    steps:
+      # 拉取代码
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      # 生成静态文件
+      - name: Build
+        run: |
+          export NODE_OPTIONS=--openssl-legacy-provider
+          npm install yarn -g && yarn install && yarn build && touch docs/.vuepress/dist/.nojekyll
