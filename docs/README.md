@@ -15,6 +15,10 @@ footer: MPL-2.0 Licensed | Copyright © 2022 Mahiru
 
 一次编写，处处运行，无需网页开发基础，3 分钟即可学会所有的语法，只要你有灵感，就可以立刻开始开始创作你自己的 视觉小说！
 
+**[Help us with translation | 协助翻译 | 翻訳のお手伝い ](https://github.com/MakinoharaShoko/WebGAL/tree/dev/packages/webgal/src/translations)**
+
+**[Join Discord Server](https://discord.gg/kPrQkJttJy)**
+
 ## 体验使用 WebGAL 制作的游戏
 
 想体验使用 WebGAL 原生开发的完整游戏，欢迎体验 [铃色☆记忆](http://hoshinasuzu.cn/) by 星奈组；在这里可以观看，[该游戏的发布视频](https://www.bilibili.com/video/BV1HY4y1n7z7)
