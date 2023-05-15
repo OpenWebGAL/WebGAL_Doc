@@ -5,14 +5,22 @@ module.exports = {
     sidebar: 'auto',
     nav: [
       {text: '主页', link: '/'},                      // 根路径
-      {text: '制作游戏', link: '/guide/'},
-      {text: '更新情报', link: '/info/'},
-      {text: '开发者指引', link: '/developers/'},
-      {text: 'WebGAL 技术介绍', link: '/tech/'},
-      {text: 'Github', link: 'https://github.com/MakinoharaShoko/WebGAL'}, // 外部链接
+      {text: '使用 WebGAL 制作游戏', link: '/guide/'},
       {
         text: '更多',
         items: [
+          {
+            text: 'WebGAL 情报',
+            items: [
+              {text: '更新情报', link: '/info/'},
+            ],
+          },
+          {
+            text: '参与开发',
+            items: [
+              {text: '开发与贡献者指引', link: '/developers/'},
+              {text: 'WebGAL 技术介绍', link: '/tech/'}],
+          },
           {
             text: '加入讨论社区',
             items: [
@@ -38,6 +46,17 @@ module.exports = {
           },
         ],
       },
+      {
+        text: 'Other Languages',
+        items: [
+          {
+            text: '日本語版',
+            link: 'https://webgal.site/dev/',
+          },
+        ],
+      },
+      {text: 'Github', link: 'https://github.com/MakinoharaShoko/WebGAL'}, // 外部链接
+
     ],
   },
 };
