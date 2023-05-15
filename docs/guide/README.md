@@ -762,21 +762,20 @@ effectsContainer.addChild(container); //添加特效
 
 纹理文件可以放在 /game/tex 目录下。
 
-然后，在 /Core/gameScripts/pixi.ts 中加上你写的新特效。
+然后，在 文件开头导入特效注册方法 注册你写的新特效。
 
-```js
-switch (sentence.content) {
-    case 'rain':
-      res = pixiRain(6, 10);
-      container = res.container;
-      tickerKey = res.tickerKey;
-      break;
-    case 'snow':
-      res = pixiSnow(3);
-      container = res.container;
-      tickerKey = res.tickerKey;
-      break;
-  }
+在文件末尾使用其注册你的特效, 第一个参数是特效名, 第二个是调用特效的方法.
+
+```typescript
+import {registerPerform} from '../pixiPerformManager';
+
+// 假设这是你的特效
+function myPerform() {
+    // ...
+}
+
+// 注册
+registerPerform('myPerform', () => myPerform(参数));
 ```
 
 最后，编译出支持你自定义特效的 WebAPP
