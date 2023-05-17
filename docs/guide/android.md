@@ -3,14 +3,14 @@
 ## 前期准备
 
 ::: tip 提示
-使用 WebGAL 编辑器自动导出工程文件的游戏开发者只需安装 android studio 即可
+使用 WebGAL 编辑器自动导出项目文件的游戏开发者只需安装 android studio 即可
 :::
 
 * 下载安装 [Android Studio](https://developer.android.google.cn/studio/)。
 * 将 [WebGAL](https://github.com/MakinoharaShoko/WebGAL) 游戏导出 Web 版本。
 * 下载 [WebGAL Android 项目模板](https://github.com/nini22P/WebGAL-Android)。
 
-## 方法一：自动导出工程文件 (适用于使用 WebGAL 编辑器的游戏开发者)
+## 方法一：自动导出项目文件 (适用于使用 WebGAL 编辑器的游戏开发者)
 
 ::: warning 注意
 如果想要使用 android studio 直接从项目导出的文件夹打开，请新建游戏时填入**英文**，如果游戏名已经是中文，请打开 `WebGAL_Terre\public\games` 修改你的游戏名，并保证项目的文件路径中不会出现英文以外的字符，否则会报错。
@@ -20,7 +20,7 @@
 
 在编辑器左边侧边栏修改`游戏标题`和`游戏包名`。游戏包名是你的网站域名反写，如果没有域名可以考虑使用开发者加游戏名的组合，比如 `webgaldev.mygalgame` 这种形式，**必须**使用**英文**。
 
-在编辑器右上角选择导出为安卓工程文件，然后打开 android studio 选择刚刚导出的 `android` 目录，等待依赖下载完毕。
+在编辑器右上角选择导出为安卓项目文件，然后打开 android studio 选择刚刚导出的 `android` 目录，等待依赖下载完毕。
 
 点击菜单栏中的 `File -> New -> Image Asset` 修改游戏图标，注意图标分为前后两层。
 
@@ -30,7 +30,7 @@
 
 点击菜单栏中 `Build -> Generate Signed Bundle or APK`，根据提示创建密钥并编译，等待编译完毕。
 
-## 方法二：手动编辑工程文件 (适用于在本地通过书写脚本的形式或者通过源码编译开发的游戏开发者)
+## 方法二：手动编辑项目文件 (适用于在本地通过书写脚本的形式或者通过源码编译开发的游戏开发者)
 
 ### 游戏导入
 
@@ -65,19 +65,19 @@ rootProject.name = "WebGAL" //修改项目标题
 ``` gradle
 ...
 android {
-    namespace 'io.github.nini22p.webgal' //修改包名
+    namespace 'com.openwebgal.demo' //修改包名
 ...
     defaultConfig {
-        applicationId "io.github.nini22p.webgal" //修改包名
+        applicationId "com.openwebgal.demo" //修改包名
 ...
 ```
 
 点击菜单栏中的 `File -> Sync Project with Gradle files` 等待同步完毕。
 
-修改 `项目文件夹\app\src\main\java\io\github\nini22p\webgal\MainActivity.kt` 首行的 `package` 字段为前面更改的目标包名。
+修改 `项目文件夹\app\src\main\java\com\openwebgal\demo\MainActivity.kt` 首行的 `package` 字段为前面更改的目标包名。
 
 ``` kotlin
-package io.github.nini22p.webgal //修改包名
+package com.openwebgal.demo //修改包名
 ...
 ```
 
