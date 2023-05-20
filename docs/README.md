@@ -34,3 +34,11 @@ footer: MPL-2.0 Licensed | Copyright © 2022 Mahiru
 [赞助本项目](/sponsor)
 
 你的赞助可以给予开发者前进的动力，让这个项目变得更好。
+
+
+## Sponsor
+
+| <img src="https://avatars.githubusercontent.com/u/91712707?v=4" alt="T2" style="zoom:25%;" /> |
+| ------------------------------------------------------------ |
+| [T2-official(T2)](https://github.com/T2-official)            |
+
