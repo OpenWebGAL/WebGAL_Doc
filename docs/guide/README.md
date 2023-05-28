@@ -20,7 +20,7 @@
 
 [GitHub](https://github.com/MakinoharaShoko/WebGAL_Terre/releases)
 
-[蓝奏云](https://wwrl.lanzouw.com/iLFoI0xh3b2h)
+[蓝奏云](https://wwrl.lanzouw.com/illWO0xhz9kf)
 
 ### 方法2：在本地通过书写脚本的形式开发，并实时调试
 
@@ -30,7 +30,7 @@
 
 [GitHub](https://github.com/MakinoharaShoko/WebGAL/releases/)
 
-[蓝奏云](https://wwrl.lanzouw.com/iVttg0wvz2pg)
+[蓝奏云](https://wwrl.lanzouw.com/iA66w0xhyndg)
 
 下载并解压后，你可以直接运行对应版本的 WebGAL-server 开始调试你的视觉小说。如果遇到杀毒软件拦截或防火墙拦截等情况，请放行以允许该程序运行。
 
