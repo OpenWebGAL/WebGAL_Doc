@@ -1,4 +1,12 @@
 module.exports = {
+  plugins: [
+    [
+      '@vuepress/google-analytics',
+      {
+        'ga': 'G-6XPF6Q2WY0' // UA-00000000-0
+      }
+    ]
+  ],
   title: 'WebGAL',
   description: '界面美观、功能强大、易于开发的全新网页端视觉小说引擎',
   themeConfig: {
