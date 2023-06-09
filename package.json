@@ -14,6 +14,6 @@
     "vuepress": "^1.9.7"
   },
   "dependencies": {
-    "@vuepress/plugin-google-analytics": "^2.0.0-beta.63"
+    "@vuepress/plugin-google-analytics": "^1.9.9"
   }
 }
