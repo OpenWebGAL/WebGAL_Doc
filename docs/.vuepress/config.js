@@ -1,11 +1,29 @@
 module.exports = {
-  plugins: [
+  /*  plugins: [
+      [
+        '@vuepress/google-analytics',
+        {
+          'ga': 'G-6XPF6Q2WY0' // UA-00000000-0
+        }
+      ]
+    ],*/
+  head: [
     [
-      '@vuepress/google-analytics',
+      'script',
       {
-        'ga': 'G-6XPF6Q2WY0' // UA-00000000-0
-      }
-    ]
+        async: true,
+        src: 'https://www.googletagmanager.com/gtag/js?id=G-6XPF6Q2WY0',
+      },
+      ''],
+    [
+      'script', {}, `
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6XPF6Q2WY0');
+    `],
+
+
   ],
   title: 'WebGAL',
   description: '界面美观、功能强大、易于开发的全新网页端视觉小说引擎',
