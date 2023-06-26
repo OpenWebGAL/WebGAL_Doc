@@ -4,7 +4,7 @@
 
 ```
 main: 稳定版
-dev: WebGAL 4.x 开发版
+dev: WebGAL 开发版
 其他分支: 旧版本的留档
 ```
 
