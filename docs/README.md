@@ -21,7 +21,11 @@ footer: MPL-2.0 Licensed | Copyright © 2022 Mahiru
 
 ## 体验使用 WebGAL 制作的游戏
 
-想体验使用 WebGAL 原生开发的完整游戏，欢迎体验 [铃色☆记忆](http://hoshinasuzu.cn/) by 星奈组；在这里可以观看，[该游戏的发布视频](https://www.bilibili.com/video/BV1HY4y1n7z7)
+想体验使用 WebGAL 原生开发的完整游戏，欢迎体验
+
+[铃色☆记忆](http://hoshinasuzu.cn/) by 星奈组；在这里可以观看，[该游戏的发布视频](https://www.bilibili.com/video/BV1HY4y1n7z7)
+
+[Elf of Era Idols Project](https://store.steampowered.com/app/2414730/Elf_of_Era_Idols_Project/) (通过 Steam 获取)
 
 想体验 WebGAL 最新的开发的特性，欢迎体验 [WebGAL 演示游戏](https://demo.openwebgal.com) ，每一次特性更新都会被发布到这个演示游戏中。
 
