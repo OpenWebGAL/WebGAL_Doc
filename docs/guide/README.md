@@ -26,7 +26,7 @@
 
 [GitHub](https://github.com/MakinoharaShoko/WebGAL_Terre/releases)
 
-[阿里云盘（所有版本被放在一个文件夹内，请下载最新版本）](https://www.aliyundrive.com/s/QCBiPt42gVB)
+[123网盘（所有版本被放在一个文件夹内，请下载最新版本）](https://www.123pan.com/s/YHszVv-jqzJ.html)
 
 ### 方法2：在本地通过书写脚本的形式开发，并实时调试
 
