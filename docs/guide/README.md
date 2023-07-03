@@ -22,21 +22,19 @@
 本页方法**不支持 Windows 7** , Windows 7 用户请参考 **[Windows 7 使用可视化编辑器开始制作的方法](./win7)**。
 :::
 
-你可以使用以下下载链接：
+下载 WebGAL 可视化编辑器：
 
 [GitHub](https://github.com/MakinoharaShoko/WebGAL_Terre/releases)
 
-[蓝奏云](https://wwrl.lanzouw.com/illWO0xhz9kf)
+[阿里云盘（所有版本被放在一个文件夹内，请下载最新版本）](https://www.aliyundrive.com/s/QCBiPt42gVB)
 
 ### 方法2：在本地通过书写脚本的形式开发，并实时调试
 
 首先，下载已经被构建为静态网页的 WebGAL 发行版以及配套的调试环境。
 
-你可以使用以下下载链接：
+下载 WebGAL 引擎本体及调试环境（不包括可视化编辑器）：
 
 [GitHub](https://github.com/MakinoharaShoko/WebGAL/releases/)
-
-[蓝奏云](https://wwrl.lanzouw.com/iA66w0xhyndg)
 
 下载并解压后，你可以直接运行对应版本的 WebGAL-server 开始调试你的视觉小说。如果遇到杀毒软件拦截或防火墙拦截等情况，请放行以允许该程序运行。
 
