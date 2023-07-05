@@ -20,6 +20,8 @@
 
 ::: tip 提示
 本页方法**不支持 Windows 7** , Windows 7 用户请参考 **[Windows 7 使用可视化编辑器开始制作的方法](./win7)**。
+
+WebGAL 编辑器目前只在 Windows 10+ 系统上经过测试，我们将逐步添加对 Mac OS 和 Linux 的支持。
 :::
 
 下载 WebGAL 可视化编辑器：
