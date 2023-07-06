@@ -39,8 +39,9 @@ footer: MPL-2.0 Licensed | Copyright © 2022 Mahiru
 
 你的赞助可以给予开发者前进的动力，让这个项目变得更好。
 
+# Sponsor
 
-## Sponsor
+## Gold Sponsors
 
 | <img src="https://avatars.githubusercontent.com/u/91712707?v=4" alt="T2" style="zoom:25%;" /> |
 | ------------------------------------------------------------ |
