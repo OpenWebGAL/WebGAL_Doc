@@ -1,4 +1,18 @@
 module.exports = {
+  locales: {
+    // The key is the path for the locale to be nested under.
+    // As a special case, the default locale can use '/' as its path.
+    '/en/': {
+      lang: 'en-US', // this will be set as the lang attribute on <html>
+      title: 'WebGAL',
+      description: 'A brand new web Visual Novel engine'
+    },
+    '/': {
+      lang: 'zh-CN',
+      title: 'WebGAL',
+      description: '全新的网页端视觉小说引擎'
+    }
+  },
   /*  plugins: [
       [
         '@vuepress/google-analytics',
@@ -34,61 +48,112 @@ module.exports = {
   title: 'WebGAL',
   description: '界面美观、功能强大、易于开发的全新网页端视觉小说引擎',
   themeConfig: {
-    sidebar: 'auto',
-    nav: [
-      {text: '主页', link: '/'},                      // 根路径
-      {text: '使用 WebGAL 制作游戏', link: '/guide/'},
-      {
-        text: '更多',
-        items: [
+    locales:{
+      '/':{
+        // text for the language dropdown
+        selectText: '选择语言',
+        // label for this locale in the language dropdown
+        label: '简体中文',
+        // Aria Label for locale in the dropdown
+        ariaLabel: '语言',
+        nav: [
+          {text: '主页', link: '/'},
+          {text: '使用 WebGAL 制作游戏', link: '/guide/'},
           {
-            text: 'WebGAL 情报',
-            items: [
-              {text: '更新情报', link: '/info/'},
-            ],
-          },
-          {
-            text: '参与开发',
-            items: [
-              {text: '开发与贡献者指引', link: '/developers/'},
-              {text: 'WebGAL 技术介绍', link: '/tech/'}],
-          },
-          {
-            text: '加入讨论社区',
+            text: '更多',
             items: [
               {
-                text: 'QQ群：709293432',
-                link: 'https://jq.qq.com/?_wv=1027&k=gYVremLy',
+                text: 'WebGAL 情报',
+                items: [
+                  {text: '更新情报', link: '/info/'},
+                ],
               },
-              {text: 'Discord', link: 'https://discord.gg/kPrQkJttJy'},
+              {
+                text: '参与开发',
+                items: [
+                  {text: '开发与贡献者指引', link: '/developers/'},
+                  {text: 'WebGAL 技术介绍', link: '/tech/'}],
+              },
+              {
+                text: '加入讨论社区',
+                items: [
+                  {
+                    text: 'QQ群：709293432',
+                    link: 'https://jq.qq.com/?_wv=1027&k=gYVremLy',
+                  },
+                  {text: 'Discord', link: 'https://discord.gg/kPrQkJttJy'},
+                ],
+              },
+              {
+                text: '关注开发者',
+                items: [
+                  {text: 'Bilibili', link: 'https://space.bilibili.com/7321105'},
+                  {text: 'Github', link: 'https://github.com/MakinoharaShoko'},
+                ],
+              },
+              {
+                text: '赞助本项目',
+                items: [
+                  {text: '赞助', link: '/sponsor/'},
+                ],
+              },
             ],
           },
-          {
-            text: '关注开发者',
-            items: [
-              {text: 'Bilibili', link: 'https://space.bilibili.com/7321105'},
-              {text: 'Github', link: 'https://github.com/MakinoharaShoko'},
-            ],
-          },
-          {
-            text: '赞助本项目',
-            items: [
-              {text: '赞助', link: '/sponsor/'},
-            ],
-          },
+          {text: 'Github', link: 'https://github.com/MakinoharaShoko/WebGAL'}, // 外部链接
         ],
-      },
-      {
-        text: 'Other Languages',
-        items: [
+      },'/en/':{
+        // text for the language dropdown
+        selectText: 'Languages',
+        // label for this locale in the language dropdown
+        label: 'English',
+        // Aria Label for locale in the dropdown
+        ariaLabel: 'Languages',
+        nav: [
+          {text: 'Home', link: '/en/index'},
+          {text: 'Start creating with WebGAL', link: '/en/guide/'},
           {
-            text: '日本語版',
-            link: 'https://webgal.site/dev/',
+            text: 'More',
+            items: [
+              {
+                text: 'WebGAL Infomations',
+                items: [
+                  {text: 'Version Updates', link: '/en/info/'},
+                ],
+              },
+              {
+                text: 'Contributing',
+                items: [
+                  {text: 'Contributing Guide', link: '/en/developers/'},
+                  {text: 'WebGAL Technology Introduction', link: '/en/tech/'}],
+              },
+              {
+                text: 'Join Discuss Community',
+                items: [
+                  {
+                    text: 'QQ Group: 709293432',
+                    link: 'https://jq.qq.com/?_wv=1027&k=gYVremLy',
+                  },
+                  {text: 'Discord', link: 'https://discord.gg/kPrQkJttJy'},
+                ],
+              },
+              {
+                text: 'Follow Developer',
+                items: [
+                  {text: 'Bilibili', link: 'https://space.bilibili.com/7321105'},
+                  {text: 'Github', link: 'https://github.com/MakinoharaShoko'},
+                ],
+              },
+              {
+                text: 'Sponsor the project',
+                items: [
+                  {text: 'Sponsor', link: '/en/sponsor/'},
+                ],
+              },
+            ],
           },
+          {text: 'Github', link: 'https://github.com/MakinoharaShoko/WebGAL'}, // 外部链接
         ],
-      },
-      {text: 'Github', link: 'https://github.com/MakinoharaShoko/WebGAL'}, // 外部链接
-
-    ],
+      }
+    },
   },
 };

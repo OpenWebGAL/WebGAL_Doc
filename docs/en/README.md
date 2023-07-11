@@ -39,7 +39,7 @@ This project and visual editor is available on GitHub
 
 ## SUPPORT US!
 
-[Support this project ！](/sponsor)
+[Support this project ！](sponsor)
 
 Your sponsorship can motivate the developers and make this project better !
 
