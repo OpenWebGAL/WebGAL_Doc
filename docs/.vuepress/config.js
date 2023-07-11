@@ -52,6 +52,7 @@ module.exports = {
       '/':{
         // text for the language dropdown
         selectText: '选择语言',
+        sidebar: 'auto',
         // label for this locale in the language dropdown
         label: '简体中文',
         // Aria Label for locale in the dropdown
@@ -104,6 +105,7 @@ module.exports = {
       },'/en/':{
         // text for the language dropdown
         selectText: 'Languages',
+        sidebar: 'auto',
         // label for this locale in the language dropdown
         label: 'English',
         // Aria Label for locale in the dropdown
