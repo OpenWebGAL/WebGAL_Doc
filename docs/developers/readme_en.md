@@ -51,4 +51,4 @@ For packaging :
 yarn build
 ```
 
-The processed file is in  `/dist` 
+The processed files are located in the `dist` directory.
