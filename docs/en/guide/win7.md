@@ -1,153 +1,146 @@
-# Windows 7 使用可视化编辑器开始制作的方法
+# How to Use WebGal Terre in Windows 7
 
-**Other language versions:** 
+## Precondition
 
-[En](./win7-en)
+### Install node.js of version 14~16.3
 
-## 前置条件
+1. Open [Node.js Official Website - Node v16.3.0 Download Address](https://nodejs.org/dist/v16.3.0/) to download installation package.
 
-### 安装 14~16.3 版本的 node.js
+    1. Download the appropriate installation package for your system，
 
-1. 打开 [node.js 官网 node v16.3.0 下载地址](https://nodejs.org/dist/v16.3.0/) 下载安装包。
+        Please choose between folder **win-x64** or folder **win-x86**，don't download other files.
 
-    镜像站: <https://registry.npmmirror.com/binary.html?path=node/v16.3.0/>
+    2. Download **node.exe** in folder.
 
-    1. 根据自己的系统选择合适的安装包，
+2. Set the environment variable to skip node.js platform check, that it is able to install node.js.
 
-        注意在 *win-x64*, *win-x86* 两个文件夹中选择，不要下载其它文件。
+    1. Right click **Computer** in desktop，Click **Attributes** in menu.
+    2. Open the **Advanced System Settings** in left panel.
+    3. Click the **Environment variable** in bottom right corner of window.
+    4. Add variable **NODE_SKIP_PLATFORM_CHECK** in system variable，value is **1**.
+    5. Save Environment variables.
 
-    2. 选择对应版本文件夹后下载里面的 *node.exe*。
-
-2. 设置绕过系统检查的环境变量
-
-    1. 右键 *我的电脑 / 计算机* ，在菜单中点击 *属性*。
-    2. 在左侧面板中打开 *高级系统设置* 。
-    3. 点击右下 *环境变量* 。
-    4. 在系统变量中添加变量 *NODE_SKIP_PLATFORM_CHECK*，值为 *1* 。
-    5. 保存。
-
-3. 运行 node.js 的安装包 (刚才下载的 *node.exe*)，安装 node.js。
+3. Run the installation package (The node.exe you just downloaded) to install node.js.
 
 ---
 
-## 方法一：使用 Terre Win7 支持补丁
+## Way 1: Use WebGal Terre Win7 Support Patch
 
-### 下载支持 Win7 的 Terre 补丁
+### Download Patch
 
->  下载地址：
+>  Download address：
 >
->  [GitHub（第三方补丁支持）](https://github.com/hshqwq/WebGAL_Terre/releases)
+>  [GitHub (Third-party patch)](https://github.com/hshqwq/WebGAL_Terre/releases)
 >
->  [蓝奏云（第三方补丁支持）](https://wwh.lanzoue.com/i2xqa0uy2fuh)
+>  [Lanzou Cloud (Third-party patch)](https://wwh.lanzoue.com/i2xqa0uy2fuh)
 
-### 下载可视化编辑器
+### Download WebGal Terre
 
-下载补丁对应版本的[可视化编辑器](./guide#方法1（推荐）：使用 WebGAL 编辑器)并解压。  
-对应版本请查看补丁中诸如 *使用说明, README* 等文件, 或查看 *package.json* 中 *version* 对应的值.
+Download the [WebGal Terre](./guide#方法1（推荐）：使用 WebGAL 编辑器) corresponding to the patch, then decompress it.  
+View file with name such as **使用说明, README** , Or View the value of **version** in **package.json**, that to obtain the corresponding version.
 
-### 使用补丁
+### Patch Usage
 
-解压补丁，并将补丁中文件复制到可视化编辑器的根目录下。
+Decompress patch, copy files in the patch to the folder of WebGal Terre.
 
-### 安装依赖
+### Install Dependencies
 
-运行 *Install_Dependencies.bat* 安装依赖，出现 *node_modules* 文件夹即代表成功。
+Run **Install_Dependencies.bat** to install dependencies. If appeared the folder *node_modules*, that meant success.
 
-手动方法：
+Manually Installation:
 
-1. 打开任意终端。
+1. Open any terminal.
 
-2. 打开编辑器所在目录。
+2. Cd to folder WebGal Terre.
 
-3. 运行以下命令：
+3. Run this command:
 
     ```bash
     npm i 
-    # 或（如果你有安装yarn）
+    # or (need to install yarn before)
     yarn
     ```
 
-### 启动可视化编辑器
+### Run the WebGal Terre
 
-运行 *WebGal_Terre-Win7.bat* 启动编辑器。
+Run **WebGal_Terre-Win7.bat**.
 
-手动方法：
+Manually Run：
 
-1. 打开任意终端。
+1. Open any terminal.
 
-2. 打开编辑器所在目录。
+2. Cd to folder WebGal Terre.
 
-3. 运行以下命令：
+3. Run this command:
 
     ```bash
     node main.js
     ```
 
-::: tip 注意
+::: tip Notice
 
-如果电脑装过低于 14 版本的 node 请先切换为 14~16.3 版本的 node。
+If your computer installed the other version node.js, please switch to version 14~16.3.
 
 :::
 
 ---
 
-## 方法二：从源码编译（推荐有一定编程经验的人采取）
+## Way 2: Build with Source Code (Someone with some programming experience is recommended)
 
-### 获取源代码
+### Get Source Code
 
-克隆 [WebGAL_Terre](https://github.com/MakinoharaShoko/WebGAL_Terre) 仓库。
+Clone [WebGAL_Terre](https://github.com/MakinoharaShoko/WebGAL_Terre) repo.
 
 ```shell
 git clone https://github.com/MakinoharaShoko/WebGAL_Terre.git
 ```
 
-### 安装包管理器 (可选)
+### Install Yarn Package Manager (Optional)
 
-安装 yarn （可选，推荐）  
+Install yarn (Optional)  
+
 ```
 npm i -g yarn
 ```
 
-### 编译可视化编辑器
+### Build WebGal Terre
 
-#### 方式一: 编译整个可视化编辑器
+#### Way 1: Build All Packages
 
-1. 安装依赖
-
-    在项目根目录执行依赖安装。
+1. Install dependencies. run in project root.
 
     ```shell
     yarn
     ```
+    
+2. See the commands in **release.sh** to build all packages except **Terre**.
 
-2. 按照 *release.sh* 中命令打包除 *Terre* 以外的 packages。
+3. Manually build **Terre**, see [**Build Terre2 Only**](./#Way 2: Build *Terre2* Only).
 
-2. 手动编译 *Terre*，参考 [*仅编译 Terre*](./#方式二: 仅编译 *Terre*)。
+#### Way 2: Build *Terre2* Only
 
-#### 方式二: 仅编译 *Terre2*
+1. open folder **packages/terre2**.
 
-1. 打开 *packages/terre2* 。
-
-2. 安装依赖
+2. Install dependencies.
 
     ```
     yarn
     ```
 
-3. 打包 *terre2*
+3. Build *terre2*.
 
     ```shell
     yarn run build
     ```
 
-4. 删除 *dist* 目录下所有 *.d.ts* 结尾文件 (可选)。
+4. Delete files ending in **.d.ts** in folder **dist**. (optional)
 
-5. 在 *dist* 中添加 *package.json* 文件，内容（注意填写相关信息）：
+5. Add **package.json** in folder **dist**，value of it is (Fill the version please)：
 
     ```json
     {
         "name": "webgal-terre-2-win7-server",
-        "version": "版本号",
+        "version": "version",
         "description": "",
         "private": true,
         "license": "MPL-2.0",
@@ -166,11 +159,11 @@ npm i -g yarn
     }
     ```
 
-6. 复制 `dist`目录到已编译的编辑器目录下。
+6. Copy folder **dist** to WebGal Terre folder which is built.
 
-### 运行可视化编辑器
+### Run WebGal Terre
 
-1. 在可视化编辑器目录下安装依赖。
+1. Install dependencies in WebGal Terre folder root.
 
     ```shell
     npm i
@@ -178,4 +171,4 @@ npm i -g yarn
     yarn
     ```
 
-2. 运行 `node main.js` 启动可视化编辑器。可根据需求写成 bat, sh 脚本。
+2. Run `node main.js` in terminal. You can code it as a bat or sh script.

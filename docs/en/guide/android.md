@@ -1,105 +1,97 @@
-# 将游戏打包到 andoird 平台
+# Package the Game to Android Platform
 
-## 前期准备
+## Preparations
 
-::: tip 提示
-使用 WebGAL 编辑器自动导出项目文件的游戏开发者只需安装 android studio 即可
-:::
+::: tip Tips For game developers using WebGAL editor to export project files automatically, just install Android Studio. :::
 
-* 下载安装 [Android Studio](https://developer.android.google.cn/studio/)。
-* 将 [WebGAL](https://github.com/MakinoharaShoko/WebGAL) 游戏导出 Web 版本。
-* 下载 [WebGAL Android 项目模板](https://github.com/nini22P/WebGAL-Android)。
+- Download and install [Android Studio](https://developer.android.google.cn/studio/).
+- Export the [WebGAL](https://github.com/MakinoharaShoko/WebGAL) game to web version.
+- Download the [WebGAL Android project template](https://github.com/nini22P/WebGAL-Android).
 
-## 方法一：自动导出项目文件 (适用于使用 WebGAL 编辑器的游戏开发者)
+## Method 1: Auto Export Project Files (For WebGAL Editor Users)
 
-::: warning 注意
-如果想要使用 android studio 直接从项目导出的文件夹打开，请新建游戏时填入**英文**，如果游戏名已经是中文，请打开 `WebGAL_Terre\public\games` 修改你的游戏名，并保证项目的文件路径中不会出现英文以外的字符，否则会报错。
-:::
+::: warning Attention If you want to open the exported folder directly from the project using Android Studio, please fill in **English** when creating a new game. If the game name is already in Chinese, please open `WebGAL_Terre\public\games` to modify your game name, and make sure there are no characters other than English in the file path of the project, otherwise it will report an error. :::
 
-### 导出和修改
+### Export and Modify
 
-在编辑器左边侧边栏修改`游戏标题`和`游戏包名`。游戏包名是你的网站域名反写，如果没有域名可以考虑使用开发者加游戏名的组合，比如 `webgaldev.mygalgame` 这种形式，**必须**使用**英文**。
+On the left sidebar of the editor, modify the `Game Title` and `Game Package Name`. The game package name is the reverse domain name of your website. If you don't have a domain name, you can consider using the combination of developer and game name, like `webgaldev.mygalgame`. It **must** be in **English**.
 
-在编辑器右上角选择导出为安卓项目文件，然后打开 android studio 选择刚刚导出的 `android` 目录，等待依赖下载完毕。
+In the upper right corner of the editor, select Export to Android Project Files, then open Android Studio and select the `android` directory just exported, and wait for the dependencies to finish downloading.
 
-点击菜单栏中的 `File -> New -> Image Asset` 修改游戏图标，注意图标分为前后两层。
+Click `File -> New -> Image Asset` in the menu bar to modify the game icon. Note that the icon is divided into front and back layers.
 
-### 运行和编译
+### Run and Compile
 
-打开安卓手机的 USB 调试并连接电脑，点击上方工具栏设备标题旁的运行图标后在手机上运行。
+Turn on USB debugging on the Android phone and connect it to the computer. Click the run icon next to the device title in the toolbar at the top to run it on the phone.
 
-点击菜单栏中 `Build -> Generate Signed Bundle or APK`，根据提示创建密钥并编译，等待编译完毕。
+Click `Build -> Generate Signed Bundle or APK` in the menu bar, create a key according to the prompts and compile, waiting for the compilation to complete.
 
-## 方法二：手动编辑项目文件 (适用于在本地通过书写脚本的形式或者通过源码编译开发的游戏开发者)
+## Method 2: Manually Edit Project Files (For developers who develop games locally by writing scripts or compiling from source)
 
-### 游戏导入
+### Import Game
 
-首先将游戏导出为 Web 网页，解压 [项目模板](https://github.com/nini22P/WebGAL-Android)，将文件夹改名（切记必须使用英文）。
-打开 `项目文件夹\app\src\main\assets\webgal` 文件夹，将你要打包的游戏放到这里。
+First export the game as a web page, unzip the [project template](https://github.com/nini22P/WebGAL-Android), and rename the folder (be sure to use English). Open the `project folder\app\src\main\assets\webgal` folder and put the game you want to package here.
 
-::: tip 提示
-游戏默认加载 `项目文件夹\app\src\main\assets\webgal\index.html`，如果想要自定义加载链接（比如在线链接），请修改  `项目文件夹\app\src\main\res\values\values.xml` 文件里面的 `load_url` 字段。
-:::
+::: tip Tips By default, the game loads `project folder\app\src\main\assets\webgal\index.html`. If you want to customize the loading link (such as online link), please modify the `load_url` field in the `project folder\app\src\main\res\values\values.xml` file. :::
 
-### 信息修改
+### Modify Info
 
-打开 Android Studio 导入项目。
-修改`项目文件夹\settings.gradle` 文件中的 `rootProject.name` 字段。
+Open Android Studio to import the project. Modify the `rootProject.name` field in the `project folder\settings.gradle` file.
 
-``` gradle
+```gradle
 ...
-rootProject.name = "WebGAL" //修改项目标题
+rootProject.name = "WebGAL" // Modify project title
 ...
 ```
 
-修改 `项目文件夹\app\src\main\res\values\strings.xml` 中的标题信息。
+Modify the title information in `project folder\app\src\main\res\values\strings.xml`.
 
-``` xml
+```xml
 <resources>
-    <string name="app_name">WebGAL</string> //修改游戏标题
+    <string name="app_name">WebGAL</string> // Modify game title
 </resources>
 ```
 
-修改 `项目文件夹\app\build.gradle` 中的 `namespace` 和 `applicationId` 字段，格式为域名反写。
+Modify the `namespace` and `applicationId` fields in `project folder\app\build.gradle`, formatted as reverse domain names.
 
-``` gradle
+```gradle
 ...
 android {
-    namespace 'com.openwebgal.demo' //修改包名
+    namespace 'com.openwebgal.demo' // Modify package name
 ...
     defaultConfig {
-        applicationId "com.openwebgal.demo" //修改包名
+        applicationId "com.openwebgal.demo" // Modify package name
 ...
 ```
 
-点击菜单栏中的 `File -> Sync Project with Gradle files` 等待同步完毕。
+Click `File -> Sync Project with Gradle files` in the menu bar to wait for sync to complete.
 
-修改 `项目文件夹\app\src\main\java\com\openwebgal\demo\MainActivity.kt` 首行的 `package` 字段为前面更改的目标包名。
+Modify the `package` field in the first line of `project folder\app\src\main\java\com\openwebgal\demo\MainActivity.kt` to the target package name changed earlier.
 
-``` kotlin
-package com.openwebgal.demo //修改包名
+```kotlin
+package com.openwebgal.demo // Modify package name 
 ...
 ```
 
-上面这个字段修改后会报错，这时候点击刚刚修改的包名，然后点击“黄色灯泡”选择 `Move file to '目标包名'`，再将原本包名文件夹删掉。
+After modifying this field, an error will be reported. At this point, click on the package name just modified, then click the "yellow bulb" and select `Move file to 'target package name'`, and then delete the original package name folder.
 
-点击菜单栏中的 `File -> New -> Image Asset` 修改游戏图标，注意图标分为前后两层。
+Click `File -> New -> Image Asset` in the menu bar to modify the game icon. Note that the icon is divided into front and back layers.
 
-### 运行和编译
+### Run and Compile
 
-打开安卓手机的 USB 调试并连接电脑，点击上方工具栏设备标题旁的运行图标后在手机上运行。
+Turn on USB debugging on the Android phone and connect it to the computer. Click the run icon next to the device title in the toolbar at the top to run it on the phone.
 
-点击菜单栏中 `Build -> Generate Signed Bundle or APK`，根据提示创建密钥并编译，等待编译完毕。
+Click `Build -> Generate Signed Bundle or APK` in the menu bar, create a key according to the prompts and compile, waiting for the compilation to complete.
 
-## 视频教程（方法二）
+## Video Tutorial (Method 2)
 
-[使用 Android Studio 打包 WebGAL 游戏到 Android 平台](https://www.bilibili.com/video/BV1m24y1J7ct/)
+[Package WebGAL Game to Android Platform Using Android Studio](https://www.bilibili.com/video/BV1m24y1J7ct/) (Chinese)
 
-## 兼容性以及解决方案
+## Compatibility and Solutions
 
-目前支持最低版本是安卓 5.0，并依赖于系统预装的 Android System WebView, 如果您的设备在点击首屏后黑屏，请尝试以下任意一种方案：
+The currently supported minimum version is Android 5.0, and it relies on the system pre-installed Android System WebView. If your device blacks out after clicking the home screen, please try any of the following solutions:
 
-1. 进入 Play 商店更新 [Android System WebView](https://play.google.com/store/apps/details?id=com.google.android.webview)
-2. 手动下载 Android System WebView 进行更新
+1. Go to Play Store to update [Android System WebView](https://play.google.com/store/apps/details?id=com.google.android.webview)
+2. Manually download and update Android System WebView
 
-Android System WebView 下载链接：[Android 5.0](https://www.apkmirror.com/apk/google-inc/android-system-webview/android-system-webview-95-0-4638-74-release/) | [Android 6.0](https://www.apkmirror.com/apk/google-inc/android-system-webview/android-system-webview-106-0-5249-126-release/) | [Android 7.0 +](https://www.apkmirror.com/apk/google-inc/android-system-webview/)
+Android System WebView download links: [Android 5.0](https://www.apkmirror.com/apk/google-inc/android-system-webview/android-system-webview-95-0-4638-74-release/) | [Android 6.0](https://www.apkmirror.com/apk/google-inc/android-system-webview/android-system-webview-106-0-5249-126-release/) | [Android 7.0+](https://www.apkmirror.com/apk/google-inc/android-system-webview/)
