@@ -128,10 +128,6 @@ All your game scripts, pictures, character sprites, etc. should be placed under 
 
 Under the /game folder, there is a file config.txt where you can fill in relevant information about your game (you can edit it directly using the visual editor):
 
-scss
-
-
-
 ```
 Game_name:WebGAL;//Your game name 
 Game_key:0f33fdGr;//A string of identification codes, you should input a string of characters that is not easy to duplicate with others as randomly as possible, preferably 6-10 characters long, otherwise bugs may occur
@@ -563,11 +559,9 @@ Each animation file represents an **animation sequence**, described using a JSON
 enter-from-left.json
 ```
 
-json
 
 
-
-```
+```json
 [
   {
     "alpha": 0, 
@@ -624,11 +618,7 @@ Then, you need to add the file name of your custom animation (without the extens
 
 In file `animationTable.json`:
 
-json
-
-
-
-```
+```json
 ["enter-from-left","enter-from-bottom","enter-from-right"]
 ```
 
@@ -646,11 +636,9 @@ If your animation only needs to operate some attributes, you can leave other att
 
 **Example: `enter.json`**
 
-json
 
 
-
-```
+```json
 [
   {
     "alpha": 0,
@@ -671,7 +659,7 @@ An animation with a duration of 0 milliseconds and only one time slice is a tran
 
 
 
-```
+```json
 [
   {
     "alpha": 0, 
@@ -891,11 +879,7 @@ Then, at the beginning of the file, import the effect registration method to reg
 
 At the end of the file, use it to register your effect. The first parameter is the effect name, and the second is the method to call the effect.
 
-typescript
-
-
-
-```
+```typescript
 import {registerPerform} from '../pixiPerformManager';
 
 // Assume this is your effect  
