@@ -1,14 +1,14 @@
-# WebGAL 游戏开发指引
+# WebGAL Development Guide
 
-## 如何开始制作 WebGAL？
+## How To Start with WebGAL？
 
-::: warning 警告
-无论你使用何种方式制作 WebGAL 游戏，你都应该花一点时间将本页的全部内容阅读一遍。这不需要多长时间，并且将有利于你避开一些因操作不当导致的问题。
+::: warning
+Regardless of the method you use to create a WebGAL game , you SHOULD take some time to read through all the content on this page. It won't take long , and it will help you avoid some issues that may arise due to improper operation.
 
-你知道吗，大多数你感到疑惑的问题都可以在文档中找到答案。如果你坚信你遇到了 Bug，请在 [issues](https://github.com/MakinoharaShoko/WebGAL/issues) 提出问题或者发送电子邮件联系 Mahiru_@outlook.com，你也可以在网站的右上角的“更多”一栏找到加入 WebGAL 讨论社区的方法。
+Did you know ? Most of the questions you're unsure about can be found in the documentation . If you're sure that you met a  bug , please shuttle [issues](https://github.com/MakinoharaShoko/WebGAL/issues) or contact Mahiru_@outlook.com . Discuss Community Links can be found in the top menu 'more'.
 :::
 
-### 方法1（推荐）：使用 WebGAL 编辑器
+### Method 1（Recommended）：Use WebGAL Terre
 
 **WebGAL 编辑器是创建、制作并发布一个 WebGAL 的最佳方式。**
 
