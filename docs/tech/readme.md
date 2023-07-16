@@ -1,107 +1,109 @@
-# Technical Introduction to WebGAL
+# WebGAL 技术介绍
 
-## Scene System and Preloading
+## 场景系统与预加载
 
-### Getting Scenes
+### 场景获取
 
-Scenes in WebGAL are file-based, usually WebGAL script files with the `.txt` extension. Like many programming languages have a `main` function as the entry point, the entry scene for WebGAL is `start.txt`. WebGAL will first try to get `start.txt`, then use the WebGAL parser to parse the script file into a scene object that the WebGAL engine can execute. In any scene, you can switch or "call" scenes using `choose`, `changeScene`, `callScene` and so on. Switching scenes will directly replace the current scene, while "calling" a scene will push a new scene onto the scene call stack to start executing, and return to the parent scene after execution.
+WebGAL 的场景是以文件为单位的，一般来说是后缀名为`.txt`的WebGAL 脚本文件。就像很多编程语言有一个 `main`函数作为入口一样，WebGAL 的入口场景是`start.txt`。WebGAL 会首先尝试获取 `start.txt`，然后调用WebGAL 解析器将脚本文件解析为 WebGAL 引擎可以执行的场景对象。在任何一个场景中，都可以使用`choose`、`changeScene`、`callScene`这样的方式切换或“调用”场景。切换场景会直接替换当前的场景，而“调用”场景则会向场景调用栈中推入一个新的场景开始执行，并在执行后回到调用该场景的父场景。
 
-### Preloading Resources in Scenes
+### 预加载场景中的资源
 
-While WebGAL is parsing the scene, the resources contained in the scene will also be parsed out. For each scene file, WebGAL will take all the resources it contains, including images, audio and video files. These files will start preloading after the scene is fully parsed, in order to minimize the possibility of users having to wait for resources to load during the game flow as much as possible. At the same time, to make the game switch between scenes more smoothly, WebGAL will also load resources from scene files referenced by the current scene file. To prevent waste of resources, WebGAL will only expand one layer of scenes for preloading.
+在 WebGAL 解析场景的同时，场景所包含的资源也会被解析出来。对于每个场景文件，WebGAL 都会将其包含的所有资源，包括图片、音频以及视频文件。这些文件会在场景被解析完后开始预加载，以尽可能减少用户在游戏流程中等待资源加载的可能性。同时，为了使游戏在切换场景时更为顺畅，WebGAL 也会加载被当前的场景文件引用的场景文件的资源。为了防止资源浪费，WebGAL 只会拓展一层场景做预加载。
 
-## WebGAL Parser
+## WebGAL 解析器
 
-### Statement Parsing I - Splitting Scenes
+### 语句解析 Ⅰ 拆分场景
 
-WebGAL scene files are mainly separated by lines to distinguish between scripts. At the beginning of parsing, the WebGAL parser will split the script according to newlines. If there are semicolons, the characters before the semicolon will be taken. So the commenting style in WebGAL scripts is to write the script after semicolons.
+WebGAL 场景文件主要是以行来区分脚本的。在解析的一开始，WebGAL 解析器就会按照换行符将脚本分割开。如果有分号，则会取分号前的字符。所以，WebGAL 脚本的注释方式就是将脚本写在分号后。
 
-### Statement Parsing II - Parsing Script Types 
+### 语句解析 Ⅱ 脚本类型解析
 
-WebGAL scripts generally take the form:
+WebGAL 的脚本一般是形如
 
 ```
 command:content -arg1 -arg2 ......;comment
 ```
 
-Where `command` represents the statement directive, such as `bgm`, `changeFigure`, `choose` etc, used to indicate the control action corresponding to the statement. `content` represents the main content of the statement, for example `bgm:Teabreak.mp3` means playing an audio file as bgm.
+的形式。
 
-### Statement Parsing III - Special Handling of Dialogue
+其中，command 代表语句指令，比如 `bgm`、`changeFigure`、`choose`这样的指令，用于标明该语句对应的控制动作。而 `content`则代表语句的主要内容，比如 `bgm:Teabreak.mp3`表示的是播放一段音频文件作为 bgm。
 
-Dialogue in WebGAL is generally written in the following form:
+### 语句解析 Ⅲ 对话的特殊处理
 
-```
-Character: Dialogue content -voice_1.ogg;
-```
-
-For visual novels, since dialogues are usually the main part of the script, WebGAL designed a syntax sugar. If the `command` part of a script cannot be parsed as any directive, then WebGAL will treat it as a dialogue. The voice can also be abbreviated to just the filename. The dialogue above will actually be parsed into a `say` directive in the end.
-
-So the actual representation of this dialogue should be:
+WebGAL 的对话一般以如下形式书写：
 
 ```
-say:Dialogue content -speaker=Character vocal=voice_1.ogg;
+森川由绮:胸につかえていることを、时は解决してくれない。忘却のラベルを贴るだけで -voice_1.ogg;
 ```
 
-In addition, if the dialogue is spoken by one character, the character name can be omitted before the speaker changes:
+对于视觉小说来说，由于对话一般是脚本的主要组成部分，所以 WebGAL 设计了一个语法糖。如果任何一个脚本的 command 部分无法被解析为任何一种指令，那么 WebGAL 就会将其视为对话。而语音也可以简写其参数，只需要给出文件名即可。如上的对话实际上最终会被解析成 `say` 指令。
+
+所以，这段对话的真正表示应该为：
 
 ```
-Character: Dialogue 1;
-Dialogue 2; 
-Dialogue 3;
+say:胸につかえていることを、时は解决してくれない。忘却のラベルを贴るだけで -speaker=森川由绮 vocal=voice_1.ogg;
 ```
 
-The special handling of dialogues greatly improves script writing efficiency.
+除此以外，如果对话由一个人物发出，那么在对话人发生改变前，还可以省略人物名称：
 
-### Statement Parsing IV - Parsing Parameters
+```
+森川由绮:胸につかえていることを;
+时は解决してくれない;
+忘却のラベルを贴るだけで;
+```
 
-Anything separated by `-` after `content` is an additional parameter. Note in particular that the hyphen `-` before the additional parameters needs to have a space, otherwise WebGAL may not recognize it as a parameter but a normal hyphen.
+对于对话的特殊处理大大提高了脚本编写的效率。
 
-Parameters in WebGAL are represented as `-key=value`, where `key` is of `string` type, and `value` can be dynamically determined, and can exist in three possible types: `string`, `number`, `boolean`.
+### 语句解析 Ⅳ 参数解析
 
-For example, `-key=s` has a `string` `value`; `-key=1` has a `number` `value`, and `-key=true` or `-key=false` has a `boolean` `value`.
+在 content 后以` -`分隔的是附加参数。格外需要注意的是，附加参数的连字符`-`前需要有空格，否则 WebGAL 可能会认为这不是一个参数而是一个正常的连字符。
 
-Parameters with only `key` and omitting `value` will be parsed as `-key=true`, which is a shorthand syntax sugar. This syntax sugar is very important because WebGAL has an important parameter `-next` to indicate that the next statement should be executed immediately after the current statement is finished. Without the shorthand, `-next=true` would need to be written every time.
+WebGAL 的参数是以 `-key=value`的形式表示的，其中，`key` 的类型为`string`，而`value`的类型则可以动态决定，并可以以下三种可能的类型存在： `string`、`number`、`boolean`。
 
-### Statement Parsing V - Resource Handling and Preloading
+比如 `-key=s`的`value`是 `string`；`-key=1`的`value`是`number`，`-key=true`或`-key=false`的`value`是`boolean`。
 
-The resources required by statements can be obtained during statement parsing. For example, `bgm` statements generally need audio resources, `playVideo` statements generally need video resources, and `changeBg` statements generally need image resources. The WebGAL scene parser will merge all the resources required by statements in the scenes, to hand over to the preloader for preloading resources. At the same time, when encountering situations that require calling subscenes such as `changeScene`, `choose`, `callScene`, etc., the subscenes will also be scanned out, parsed and their resources preloaded.
+其中，只写出 `key`而省略`value`的参数会被解析成 `-key=true`，这是一个简写的语法糖。这个语法糖非常重要，因为WebGAL 中有一个重要参数 `-next`，用于表示在执行完当前语句后立刻执行下一条语句。如果没有省略表示，则每次都需要书写`-next=true`。
 
-## Flow Control System 
+### 语句解析 Ⅴ 资源处理与预加载
 
-### Preparation Phase: Before Step Operation
+在进行语句解析的时候，就可以获得语句所需要的资源了。比如，`bgm`语句一般需要音频资源，`playVideo`语句一般需要视频资源，`changeBg`语句一般需要图片资源。WebGAL 场景解析器会将所有场景中语句需要的资源合并起来，用于交给预加载器来预加载资源。同时，当遇到形如`changeScene`、`choose`、`callScene`等需要调用子场景的情况时，子场景也会被扫描出，解析并对其中的资源进行预加载。
 
-### Formal Phase I: Read Instructions, Execute Conditional Judgments
+## 流程控制系统
 
-### Formal Phase II: Invoke, Obtain Perform Controller from Perform Control Module 
+### 准备阶段：步进前操作
 
-### End Phase: Handle Continuous Perform, Update Backlog
+### 正式阶段 Ⅰ：读指令、执行条件判断
 
-### Auto and Fast Forward
+### 正式阶段 Ⅱ：调用、获取演出控制模块送演出控制器
 
-## Perform Control 
+### 结束阶段：处理连续演出、更新 Backlog
 
-### WebGAL Perform Types
+### 自动与快进
 
-### Auto Destroy, End Judgment, Blocking Logic of Performs
+## 演出控制
 
-## Stage Controller and Animation Control
+### WebGAL 演出类型
 
-### Data Driven Pixi Stage Controller
+### 演出的自动销毁、结束判断、阻塞逻辑
 
-### Animation and "Transform" Control
+## 舞台控制器与动画控制
 
-## Save, Load, Rollback and User Data
+### 数据驱动的 Pixi 舞台控制器
 
-### Introduction to WebGAL State Table
+### 动画与“变换”控制
 
-### Storage and Recovery of Perform States 
+## 存读档、回溯与用户数据
 
-### Storage of Save Data and Other User Data
+### WebGAL 状态表介绍
 
-## Appreciation Module, and Some Details
+### 演出状态的存储与恢复
 
-### Appreciation Module
+### 存档与其他用户数据的存储
 
-### Maintaining State on Leaving Browser and "Continue Game" 
+## 鉴赏模块，以及一些细枝末节
 
-### Keyboard Shortcuts and Mouse Operations
+### 鉴赏模块
+
+### 离开浏览器状态保持与“继续游戏”
+
+### 快捷键与鼠标操作
