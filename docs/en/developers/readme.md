@@ -39,7 +39,7 @@ There are 3 package in this project :
 
 ## Run Local WebGAL Project
 
-WebGAL uses `vite` for packaging and testing . Under `webgal` project directory , you can shuttle the local server through the following command .
+Then, you can shuttle the local server through the following command .
 
 ```shell
 yarn dev
