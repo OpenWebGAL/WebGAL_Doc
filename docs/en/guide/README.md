@@ -12,7 +12,7 @@ Did you know that you can find answers to most of the issues you find confusing 
 
 **The WebGAL editor is the best way to create, produce, and publish a WebGAL game.**
 
-After downloading the WebGAL editor, unzip the compressed package and launch the WebGAL_Terre application. WebGAL Terre will automatically open the default browser, or go to [http://localhost:3001/ ](http://localhost:3001/) to open the editor if it does not open automatically.
+After downloading the WebGAL editor, unzip the compressed package and launch the WebGAL_Terre application. WebGAL Terre will automatically open the default browser, or go to [http://localhost:3001/](http://localhost:3001/) to open the editor if it does not open automatically.
 
 ::: danger Warning
 Please use a modern browser (Chrome / Firefox / Edge) to open WebGAL and the editor. Issues that may arise from using other browsers will not be addressed.
@@ -26,9 +26,9 @@ The WebGAL editor has only been tested on Windows 10+ systems so far. We will gr
 
 Download the WebGAL visual editor:
 
-[GitHub ](https://github.com/MakinoharaShoko/WebGAL_Terre/releases)
+[GitHub](https://github.com/MakinoharaShoko/WebGAL_Terre/releases)
 
-[123 Cloud Disk (All versions are placed in one folder, please download the latest version) ](https://www.123pan.com/s/YHszVv-jqzJ.html)
+[123 Cloud Disk (All versions are placed in one folder, please download the latest version)](https://www.123pan.com/s/YHszVv-jqzJ.html)
 
 ### Method 2: Develop locally by writing scripts and debug in real time
 
@@ -36,15 +36,15 @@ First, download the WebGAL distribution that has been built into a static web pa
 
 Download the WebGAL engine itself and debugging environment (does not include visual editor):
 
-[GitHub ](https://github.com/MakinoharaShoko/WebGAL/releases/)
+[GitHub](https://github.com/MakinoharaShoko/WebGAL/releases/)
 
 After downloading and unzipping, you can directly run the corresponding version of WebGAL-server to debug your visual novel. If you encounter interception by antivirus software or firewall, please allow it to run.
 
 It is recommended to use VS Code for development and use plugins to enable syntax highlighting:
 
-[Store address of syntax highlighting plugin ](https://marketplace.visualstudio.com/items?itemName=c6h5-no2.webgal-script-basics)
+[Store address of syntax highlighting plugin](https://marketplace.visualstudio.com/items?itemName=c6h5-no2.webgal-script-basics)
 
-[Source code repository of syntax highlighting plugin ](https://github.com/C6H5-NO2/webgal-script-basics)
+[Source code repository of syntax highlighting plugin](https://github.com/C6H5-NO2/webgal-script-basics)
 
 ### Method 3 (suitable for front-end developers who want higher customizability): Debug from source code
 
@@ -77,13 +77,13 @@ If you want to package, please use:
 yarn build 
 ```
 
-### How to deploy or publish my visual novel?
+## How to deploy or publish my visual novel?
 
 First, please be aware that the engine that can be deployed to the Internet should be a **release or web page exported from the WebGAL visual editor**, not the source code.
 
 **If you use the WebGAL editor, you can select Export Game in the top right corner. Generally, File Explorer will open automatically after export is complete. If it does not open automatically, you can find it under Exported_Games in the WebGAL editor directory.**
 
-**Web page:**
+### Web page
 
 *If you use the **editor***:
 
@@ -97,13 +97,13 @@ In the upper right corner of the editor, select Export to Web Page. The method o
 
 If you use the source code for debugging, you can create a static web page (in the /dist folder) by `yarn build`, and then deploy the content of this folder to GitHub Pages or your cloud server.
 
-**Windows:**
+### Windows / macOS / Linux
 
-In the upper right corner of the editor, select Export to Executable File. The executable file can run directly on Windows.
+In the upper right corner of the editor, select Export to Executable File. The executable file can run directly on current system.
 
-**Android:**
+### Android
 
-Package the game for android platforms
+[Package the game for android platforms](./android.md)
 
 ## Game script writing tutorial
 
@@ -139,8 +139,6 @@ Title_bgm:夏影.mp3;//The title background music, the music file should be plac
 
 The WebGAL script will only parse the content before the semicolon on each line, so the content after the semicolon will be treated as comments.
 
-
-
 ```
 WebGAL:Hello!; // The content after the semicolon will be treated as comments
 ;You can directly input a semicolon and then write a single line comment
@@ -153,8 +151,6 @@ You can add the parameter `-next` after any statement to jump to the next statem
 Example:
 
 smali
-
-
 
 ```
 changeBg:testBG03.jpg -next; // Will immediately execute the next statement
@@ -178,15 +174,11 @@ The method of writing character dialogue is very simple. You just need to enter:
 
 **Note that the colons and semicolons for each line of dialogue should be English characters!**
 
-
-
 ```
 Character: Dialogue; 
 ```
 
 Example:
-
-
 
 ```
 Yukino: Please have some tea;
@@ -195,13 +187,11 @@ Komachi: Thank you, Sister Yukino!;
 Isshiki: Thank you, senpai.
 ```
 
-After each dialogue/script, use a semicolon as the ending. (If you don't use a semicolon sometimes, it might still work, but the author suggests adding a semicolon to prevent bugs). 
+After each dialogue/script, use a semicolon as the ending. (If you don't use a semicolon sometimes, it might still work, but the author suggests adding a semicolon to prevent bugs).
 
 ### Continuous dialogue
 
 If you don't change the character name in multiple lines of dialogue, you can use continuous dialogue and omit the character name, then use it again when needed:
-
-
 
 ```
 Yukino: You're here early;  
@@ -213,8 +203,6 @@ Yui: I just got here;
 
 If you want to create narration dialogue without a character name, leave it blank before the colon (but keep the colon):
 
-
-
 ```
 :This is a line of narration;
 ```
@@ -223,15 +211,11 @@ If you want to create narration dialogue without a character name, leave it blan
 
 As we all know, what often attracts people most to visual novels is the excellent dubbing. In this version, you can introduce dubbing in the dialogue. Put your dubbing in the vocal folder, then add the audio file name in the parameters to introduce it. Syntax example:
 
-
-
 ```
 Yui: I just got here -V3.ogg;
 ```
 
 The introduction of dubbing is the same in continuous dialogue:
-
-
 
 ```
 Yukino: You're here early -V1.ogg;  
@@ -242,15 +226,11 @@ Sorry, have you been waiting long? -V2.ogg;
 
 In many games, some text will be displayed in black screens, used to introduce themes or show characters' psychological activities. You can use the intro command to play a monologue:
 
-
-
 ```
 intro:Memories don't need a suitable script,|After all, once spoken,|it all becomes empty words.;
 ```
 
 The monologue is separated by separators (|), which means that each | represents a new line. In actual performance, the above text will become:
-
-
 
 ```
 Memories don't need a suitable script,
@@ -264,8 +244,6 @@ For WebGAL to be able to read background images and character sprites, your back
 
 Next, you can use the following simple statements to change the currently displayed background image and character sprite:
 
-
-
 ```
 changeBg:testBG03.jpg;//Change background
 changeFigure:testFigure02.png;//Change character sprite
@@ -274,8 +252,6 @@ changeFigure:none;//Close character sprite
 ```
 
 You may find that after you change the background image or character sprite, you need to click the mouse again to display the next line of dialogue. If you want to execute the content of the next statement immediately after changing the background image/sprite, please use:
-
-
 
 ```
 changeBg:testBG03.jpg -next;  
@@ -289,8 +265,6 @@ If you do this, the program will immediately execute the next statement after re
 
 Now you can place different sprites in three different positions on the page. You just need to add the position you want to place in the statement that places the sprite. Examples are as follows:
 
-
-
 ```
 changeFigure:testFigure03.png -left;
 changeFigure:testFigure04.png;  
@@ -299,8 +273,6 @@ changeFigure:testFigure03.png -right;
 
 The above three lines correspond to the left, middle and right three different positions. The sprites in the three different positions are independent of each other, so if you need to clear the sprite, you must clear them independently:
 
-
-
 ```
 changeFigure:none -left;
 changeFigure:none;
@@ -308,8 +280,6 @@ changeFigure:none -right;
 ```
 
 If you want to execute the statement immediately after changing the sprite, the operation method is the same as before, that is, add the parameter `-next`:
-
-
 
 ```
 changeFigure:testFigure03.png -left -next;
@@ -321,8 +291,6 @@ changeFigure:testFigure03.png -right -next;
 
 If you want to control sprites more precisely, you can specify an `id` and initial position for the sprite:
 
-
-
 ```
 changeFigure:testFigure03.png -left -id=test1; // A free sprite with initial position on the right
 changeFigure:none -id=test1; // Close sprite by id
@@ -333,8 +301,6 @@ Note: If you want to reset the position of a sprite with ID, close it first and 
 ### Place mini avatar
 
 Many games can place a mini avatar in the lower left corner of the text box. The following is the syntax used in this engine:
-
-
 
 ```
 miniAvatar:minipic_test.png;//Display minipic_test.png in the lower left corner
@@ -359,8 +325,6 @@ For example, if you have now written the scripts for two chapters, Chapter-1.txt
 
 Statement:
 
-
-
 ```
 changeScene:Chapter-2.txt; 
 ```
@@ -368,8 +332,6 @@ changeScene:Chapter-2.txt;
 Example:
 
 asciidoc
-
-
 
 ```
 (Chapter-1.txt) 
@@ -390,8 +352,6 @@ If you need to return to the previous scene (parent scene) after executing the c
 
 Statement:
 
-
-
 ```
 callScene:Chapter-2.txt;
 ```
@@ -399,8 +359,6 @@ callScene:Chapter-2.txt;
 Example:
 
 asciidoc
-
-
 
 ```
 (Chapter-1.txt)
@@ -423,8 +381,6 @@ If your script has branch options, and you want to enter different chapters by c
 
 Where `|` is the separator.
 
-
-
 ```
 choose:Call out to her:Chapter-2.txt|Go home:Chapter-3.txt;
 ```
@@ -434,8 +390,6 @@ You just need to correspond the text of the options one-to-one with the script n
 ### End game and return to title
 
 If you want to end the game after the plot ends and return to the title, please use:
-
-
 
 ```
 end;
@@ -447,15 +401,11 @@ This will make the game return to the title screen.
 
 The way to introduce background music is extremely simple. You just need to place the background music in the /bgm directory, then you can simply play it when needed:
 
-
-
 ```
 bgm:夏影.mp3;
 ```
 
 ### Use sound effects
-
-
 
 ```
 playEffect:xxx.mp3;
@@ -467,16 +417,12 @@ Can play a short sound effect
 
 Giving an id to a sound effect will automatically enable sound effect looping. Use the same id later to stop it.
 
-
-
 ```
 playEffect:xxx.mp3 -id=xxx;  
 playEffect:none -id=xxx; //Stop this looping sound effect
 ```
 
 ### Play a short video
-
-
 
 ```
 playVideo:OP.mp4 //The video should be placed in the /game/video/ folder
@@ -497,15 +443,11 @@ Among them, the "series" parameter is optional and represents which series the c
 
 Sometimes, for some special performance effects, you may want to temporarily hide the text box. So you can use the following instructions:
 
-
-
 ```
 setTextbox:hide;  
 ```
 
 to close the text box. When the value of the `setTextbox` instruction is `hide`, the text box will be closed and the user will not be able to open it in any way. If you want to redisplay the text box, call this command again and enter any value except `hide`.
-
-
 
 ```
 setTextbox:on; // Can be any value except hide.
@@ -518,8 +460,6 @@ setTextbox:on; // Can be any value except hide.
 Use statement `setAnimation:animation name -target=target object;`
 
 **Example:**
-
-
 
 ```
 setAnimation:enter-from-bottom -target=fig-center -next;//Set an animation of entering from the bottom for the middle sprite, and go to the next sentence.
@@ -551,15 +491,13 @@ Currently, the animation target objects are:
 
 Animation files are in `/game/animation`. You can create your own custom animations.
 
-The animation file uses JSON to describe. You can refer to the JSON syntax in the [reference document ](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON).
+The animation file uses JSON to describe. You can refer to the JSON syntax in the [reference document](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON).
 
 Each animation file represents an **animation sequence**, described using a JSON array. Here is a sample describing an animation entering from the left:
 
 ```
 enter-from-left.json
 ```
-
-
 
 ```json
 [
@@ -624,8 +562,6 @@ In file `animationTable.json`:
 
 Then, you can call it in the script:
 
-
-
 ```
 setAnimation:enter-from-left -target=fig-left -next; 
 ```
@@ -635,8 +571,6 @@ setAnimation:enter-from-left -target=fig-left -next;
 If your animation only needs to operate some attributes, you can leave other attributes that do not participate in the animation empty to keep them default:
 
 **Example: `enter.json`**
-
-
 
 ```json
 [
@@ -656,8 +590,6 @@ If your animation only needs to operate some attributes, you can leave other att
 An animation with a duration of 0 milliseconds and only one time slice is a transform.
 
 **Example:**
-
-
 
 ```json
 [
@@ -679,8 +611,6 @@ Currently, WebGAL's effect system is implemented by PixiJS.
 pixiInit
 ```
 
-
-
 ```
 pixiInit; 
 ```
@@ -696,8 +626,6 @@ pixiInit;
 ```
 pixiPerform
 ```
-
-
 
 ```
 pixiPerform:rain;//Add a raining effect
@@ -715,8 +643,6 @@ Note: After the effect is applied, it will keep running if not initialized.
 #### Superimpose effects
 
 If you want to superimpose two or more effects, you can superimpose different effects without using the `pixiInit` command.
-
-
 
 ```
 pixiPerform:rain;
@@ -743,8 +669,6 @@ If you want to create a branch but feel it is too troublesome to create a new TX
 
 asciidoc
 
-
-
 ```
 ......
 jumpLabel:label_1; 
@@ -767,8 +691,6 @@ If jumpLabel is compared to a portal, then the destination of this portal is the
 
 vbnet
 
-
-
 ```
 WebGAL: Let's test jumping to label through branch!;
 choose:Test 1:label_1|Test 2:label_2;
@@ -783,8 +705,6 @@ Now is the unified end;
 ```
 
 Note that at the end of each branch, you should use jumpLabel to jump to where you want. Since the program executes linearly, if you do not jump at the end of the branch, the program will continue to run down, for example:
-
-
 
 ```
 WebGAL: Let's test jumping to label through branch!;
@@ -806,8 +726,6 @@ Set variable:
 
 jboss-cli
 
-
-
 ```
 setVar:a=1; // Can set numbers
 setVar:a=true // Can set boolean values 
@@ -823,8 +741,6 @@ Add the parameter `-when=(condition)` after the statement to determine whether t
 For example:
 
 ini
-
-
 
 ```
 setVar:a=1;
@@ -848,8 +764,6 @@ At this time, you can use the `-notend` `-concat` parameters to insert any state
 
 Example as follows: This is a demo of switching sprites during dialogue.
 
-
-
 ```
 WebGAL: Test inserting effects during dialogue! Switching sprite now... -notend;
 changeFigure:k1.png -next;
@@ -863,8 +777,6 @@ Switched expression! -concat;
 You can download the source code, then find /Core/gameScripts/pixiPerformScripts/, then create a `PIXI.Container` for the effect you need.
 
 ts
-
-
 
 ```
 const effectsContainer = RUNTIME_GAMEPLAY.pixiStage!.effectsContainer!; //Get the current Pixi effect Container
@@ -893,17 +805,11 @@ registerPerform('myPerform', () => myPerform(parameters));
 
 Finally, compile the WebAPP that supports your custom effects
 
-
-
-
-
 ```
 yarn run build; 
 ```
 
 Now you can call your effects in the script
-
-
 
 ```
 pixiPerform:your new effect;
@@ -914,6 +820,10 @@ pixiPerform:your new effect;
 ### Add other UI languages into WebGal
 
 See the [Add Other Language into WebGal](add-lang).
+
+### Showcase your game on WebGAL homepage
+
+see the [Showcase your game](./showcase-your-game)
 
 ## Possible issues and solutions
 

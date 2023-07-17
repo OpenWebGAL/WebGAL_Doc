@@ -5,7 +5,7 @@
 ::: warning 警告
 无论你使用何种方式制作 WebGAL 游戏，你都应该花一点时间将本页的全部内容阅读一遍。这不需要多长时间，并且将有利于你避开一些因操作不当导致的问题。
 
-你知道吗，大多数你感到疑惑的问题都可以在文档中找到答案。如果你坚信你遇到了 Bug，请在 [issues](https://github.com/MakinoharaShoko/WebGAL/issues) 提出问题或者发送电子邮件联系 Mahiru_@outlook.com，你也可以在网站的右上角的“更多”一栏找到加入 WebGAL 讨论社区的方法。
+你知道吗，大多数你感到疑惑的问题都可以在文档中找到答案。如果你坚信你遇到了 Bug，请在 [issues](https://github.com/MakinoharaShoko/WebGAL/issues) 提出问题或者发送电子邮件联系 <Mahiru_@outlook.com>，你也可以在网站的右上角的“更多”一栏找到加入 WebGAL 讨论社区的方法。
 :::
 
 ### 方法1（推荐）：使用 WebGAL 编辑器
@@ -77,13 +77,13 @@ yarn dev
 yarn build
 ```
 
-### 如何部署或发布我的视觉小说？
+## 如何部署或发布我的视觉小说？
 
 首先，请知悉，可以部署到互联网的引擎应该是**发行版或由 WebGAL 图形化编辑器导出的网页**，而不是源代码。
 
 **如果你使用 WebGAL 编辑器，你可以在右上角选择导出游戏。一般来说，在导出完成后，文件资源管理器会自动打开。如果没有自动打开，你可以在 WebGAL 编辑器目录下的 Exported_Games 找到。**
 
-**Web 网页：**
+### Web 网页
 
 *如果你使用**编辑器**：*
 
@@ -97,11 +97,11 @@ yarn build
 
 如果你使用源代码进行调试，你可以通过 `yarn build` 来创建一个静态网页（在/dist 文件夹），然后将这个文件夹内的内容部署到 GitHub Pages 或你的云服务器上。
 
-**Windows：**
+### Windows / macOS / Linux
 
-在编辑器右上角选择导出为可执行文件，可执行文件可以直接在 Windows 上运行。
+在编辑器右上角选择导出为可执行文件，可执行文件可以直接在当前系统上运行。
 
-**Android：**
+### Android
 
 [将游戏打包到 andoird 平台](./android.md)
 
@@ -808,7 +808,11 @@ pixiPerform:你的新特效;
 
 ### Add Other UI Language into WebGal
 
-See the [Add Other Language into WebGal](./add-lang). 
+See the [Add Other Language into WebGal](./add-lang).
+
+### 在 WebGAL 主页展示您的游戏
+
+查看 [展示您的游戏](./showcase-your-game)
 
 ## 可能遇到的问题与解决方案
 
