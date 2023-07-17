@@ -7,13 +7,14 @@
   "author": "Mahiru <Mahiru_@outlook.com>",
   "license": "MPL 2.0",
   "scripts": {
-    "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider && vuepress dev docs",
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider && vuepress build docs"
   },
   "devDependencies": {
     "vuepress": "^1.9.7"
   },
   "dependencies": {
-    "@vuepress/plugin-google-analytics": "^1.9.9"
+    "@vuepress/plugin-google-analytics": "^1.9.9",
+    "cross-env": "^7.0.3"
   }
 }
