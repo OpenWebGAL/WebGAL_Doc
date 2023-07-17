@@ -13,9 +13,9 @@ features:
 footer: MPL-2.0 Licensed | Copyright © 2022 Mahiru
 ---
 
-Once coding , it can run on most platforms . There is no need of Html5 knowledge . You can learn and understand the core function within 3 minutes . With your idea , strat creating your OWN visual novel !
+Once coding, it can run on most platforms. There is no need of Html5 knowledge. You can learn and understand the core function within 3 minutes. With your idea, strat creating your OWN visual novel!
 
-**[Help us with translation | 协助翻译 | 翻訳のお手伝い ](https://github.com/MakinoharaShoko/WebGAL/tree/dev/packages/webgal/src/translations)**
+**[Help us with translation | 协助翻译 | 翻訳のお手伝い](https://github.com/MakinoharaShoko/WebGAL/tree/dev/packages/webgal/src/translations)**
 
 **[Join Discord Server](https://discord.gg/kPrQkJttJy)**
 
@@ -27,17 +27,17 @@ You're welcomed to try complete games developed natively by WebGAL !
 
 [Elf of Era Idols Project](https://store.steampowered.com/app/2414730/Elf_of_Era_Idols_Project/) (STEAM Available)
 
-If you want to experience new features of each update , try [WebGAL DEMO](https://demo.openwebgal.com) 
+If you want to experience new features of each update , try [WebGAL DEMO](https://demo.openwebgal.com)
 
 ## OPEN and FREE
 
-This project and visual editor is available on GitHub 
+This project and visual editor is available on GitHub
 
-[WebGAL](https://github.com/MakinoharaShoko/WebGAL) 
+[WebGAL](https://github.com/MakinoharaShoko/WebGAL)
 
 [WebGAL Terre](https://github.com/MakinoharaShoko/WebGAL_Terre)
 
-## SUPPORT US!
+## SUPPORT US
 
 [Support this project ！](sponsor)
 
@@ -50,4 +50,3 @@ Your sponsorship can motivate the developers and make this project better !
 | <img src="https://avatars.githubusercontent.com/u/91712707?v=4" alt="T2" style="zoom:25%;" /> |
 | ------------------------------------------------------------ |
 | [T2-official(T2)](https://github.com/T2-official)            |
-
