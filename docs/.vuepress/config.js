@@ -15,7 +15,7 @@ module.exports = {
         '/ja/': {
             lang: 'ja-JP',
             title: 'WebGAL',
-            description: '全新的网页端视觉小说引擎'
+            description: '未だかつてない Web ベースビジュアルノベルエンジン'
         }
     },
     /*  plugins: [
