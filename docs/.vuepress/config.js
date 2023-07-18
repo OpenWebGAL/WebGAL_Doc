@@ -155,6 +155,59 @@ module.exports = {
           },
           {text: 'Github', link: 'https://github.com/MakinoharaShoko/WebGAL'}, // 外部链接
         ],
+      },'/ja/':{
+        // text for the language dropdown
+        selectText: 'Languages',
+        sidebar: 'auto',
+        // label for this locale in the language dropdown
+        label: 'English',
+        // Aria Label for locale in the dropdown
+        ariaLabel: 'Languages',
+        nav: [
+          {text: 'Home', link: '/ja/index'},
+          {text: 'Start creating with WebGAL', link: '/ja/guide/'},
+          {
+            text: 'More',
+            items: [
+              {
+                text: 'WebGAL Infomations',
+                items: [
+                  {text: 'Version Updates', link: '/ja/info/'},
+                ],
+              },
+              {
+                text: 'Contributing',
+                items: [
+                  {text: 'Contributing Guide', link: '/ja/developers/'},
+                  {text: 'WebGAL Technology Introduction', link: '/ja/tech/'}],
+              },
+              {
+                text: 'Join Discuss Community',
+                items: [
+                  {
+                    text: 'QQ Group: 709293432',
+                    link: 'https://jq.qq.com/?_wv=1027&k=gYVremLy',
+                  },
+                  {text: 'Discord', link: 'https://discord.gg/kPrQkJttJy'},
+                ],
+              },
+              {
+                text: 'Follow Developer',
+                items: [
+                  {text: 'Bilibili', link: 'https://space.bilibili.com/7321105'},
+                  {text: 'Github', link: 'https://github.com/MakinoharaShoko'},
+                ],
+              },
+              {
+                text: 'Sponsor the project',
+                items: [
+                  {text: 'Sponsor', link: '/ja/sponsor/'},
+                ],
+              },
+            ],
+          },
+          {text: 'Github', link: 'https://github.com/MakinoharaShoko/WebGAL'}, // 外部链接
+        ],
       }
     },
   },
