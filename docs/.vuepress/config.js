@@ -157,51 +157,51 @@ module.exports = {
         ],
       },'/ja/':{
         // text for the language dropdown
-        selectText: 'Languages',
+        selectText: '言語',
         sidebar: 'auto',
         // label for this locale in the language dropdown
-        label: 'English',
+        label: '日本語',
         // Aria Label for locale in the dropdown
-        ariaLabel: 'Languages',
+        ariaLabel: '言語',
         nav: [
-          {text: 'Home', link: '/ja/index'},
-          {text: 'Start creating with WebGAL', link: '/ja/guide/'},
+          {text: 'トップページ', link: '/ja/index'},
+          {text: 'ゲーム開発ガイド', link: '/ja/guide/'},
           {
-            text: 'More',
+            text: 'その他',
             items: [
               {
-                text: 'WebGAL Infomations',
+                text: 'WebGAL 情報',
                 items: [
-                  {text: 'Version Updates', link: '/ja/info/'},
+                  {text: '最新情報', link: '/ja/info/'},
                 ],
               },
               {
-                text: 'Contributing',
+                text: 'コントリビューション',
                 items: [
-                  {text: 'Contributing Guide', link: '/ja/developers/'},
-                  {text: 'WebGAL Technology Introduction', link: '/ja/tech/'}],
+                  {text: '開発者向けガイド', link: '/ja/developers/'},
+                  {text: 'WebGAL 技術紹介', link: '/ja/tech/'}],
               },
               {
-                text: 'Join Discuss Community',
+                text: 'コンミュニティ',
                 items: [
                   {
-                    text: 'QQ Group: 709293432',
+                    text: 'QQ グループ: 709293432',
                     link: 'https://jq.qq.com/?_wv=1027&k=gYVremLy',
                   },
                   {text: 'Discord', link: 'https://discord.gg/kPrQkJttJy'},
                 ],
               },
               {
-                text: 'Follow Developer',
+                text: '開発者',
                 items: [
                   {text: 'Bilibili', link: 'https://space.bilibili.com/7321105'},
                   {text: 'Github', link: 'https://github.com/MakinoharaShoko'},
                 ],
               },
               {
-                text: 'Sponsor the project',
+                text: 'スポンサー',
                 items: [
-                  {text: 'Sponsor', link: '/ja/sponsor/'},
+                  {text: 'スポンサーとなる', link: '/ja/sponsor/'},
                 ],
               },
             ],

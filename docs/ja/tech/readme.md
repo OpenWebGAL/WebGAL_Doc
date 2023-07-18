@@ -1,107 +1,107 @@
-# Technical Introduction to WebGAL
+# WebGAL 技術紹介
 
-## Scene System and Preloading
+## シーンシステム & プリロード
 
-### Getting Scenes
+### シーンの取得
 
-Scenes in WebGAL are file-based, usually WebGAL script files with the `.txt` extension. Like many programming languages have a `main` function as the entry point, the entry scene for WebGAL is `start.txt`. WebGAL will first try to get `start.txt`, then use the WebGAL parser to parse the script file into a scene object that the WebGAL engine can execute. In any scene, you can switch or "call" scenes using `choose`, `changeScene`, `callScene` and so on. Switching scenes will directly replace the current scene, while "calling" a scene will push a new scene onto the scene call stack to start executing, and return to the parent scene after execution.
+WebGAL のシーンは、ファイル単位で管理されます。一般的に、WebGAL シナリオファイルの拡張子は `.txt` です。多くのプログラミング言語が `main` 関数をエントリーポイントとして持つように、WebGAL のエントリーシーンは `start.txt` です。WebGAL は最初に `start.txt` を取得し、それを WebGAL パーサーによってシーンオブジェクトに解析します。任意のシーンでは、`choose`、`changeScene`、`callScene` といった方法を使用してシーンの切り替えや呼び出しが行えます。シーンの切り替えは現在のシーンを直接置き換えますが、シーンの呼び出しは新しいシーンをスタックにプッシュして実行し、実行後に呼び出し元の親シーンに戻ります。
 
-### Preloading Resources in Scenes
+### シーンの事前読み込み
 
-While WebGAL is parsing the scene, the resources contained in the scene will also be parsed out. For each scene file, WebGAL will take all the resources it contains, including images, audio and video files. These files will start preloading after the scene is fully parsed, in order to minimize the possibility of users having to wait for resources to load during the game flow as much as possible. At the same time, to make the game switch between scenes more smoothly, WebGAL will also load resources from scene files referenced by the current scene file. To prevent waste of resources, WebGAL will only expand one layer of scenes for preloading.
+WebGAL は、シーンの解析と同時に、シーンに含まれるリソースも解析します。各シーンファイルには、画像、音声、およびビデオファイルなどのリソースが含まれています。これらのファイルは、シーンの解析が完了した後にプリロードが開始され、ユーザーがゲームプレイ中にリソースの読み込みを待つ可能性を最小限に抑えます。また、シーンの切り替え時にゲームのスムーズな動作を実現するために、WebGAL は現在のシーンファイルから参照されているシーンファイルのリソースも読み込みます。ただし、リソースの無駄を防ぐため、WebGAL はシーンの一層のみをプリロードします。
 
-## WebGAL Parser
+## WebGAL パーサー
 
-### Statement Parsing I - Splitting Scenes
+### シナリオ解析 Ⅰ - シーンの分割
 
-WebGAL scene files are mainly separated by lines to distinguish between scripts. At the beginning of parsing, the WebGAL parser will split the script according to newlines. If there are semicolons, the characters before the semicolon will be taken. So the commenting style in WebGAL scripts is to write the script after semicolons.
+WebGAL のシーンファイルは主に改行でステートメントを区切ります。解析の最初に、WebGAL パーサーは改行コードに基づいてステートメントを分割します。セミコロンがある場合は、セミコロンの前の文字列を取得します。つまり、WebGAL シナリオのコメント方法は、セミコロンの後に記述することです。
 
-### Statement Parsing II - Parsing Script Types 
+### シナリオ解析 Ⅱ - ステートメントタイプの解析
 
-WebGAL scripts generally take the form:
-
-```
-command:content -arg1 -arg2 ......;comment
-```
-
-Where `command` represents the statement directive, such as `bgm`, `changeFigure`, `choose` etc, used to indicate the control action corresponding to the statement. `content` represents the main content of the statement, for example `bgm:Teabreak.mp3` means playing an audio file as bgm.
-
-### Statement Parsing III - Special Handling of Dialogue
-
-Dialogue in WebGAL is generally written in the following form:
+WebGAL のステートメントは一般的に次のような形式です。
 
 ```
-Character: Dialogue content -voice_1.ogg;
+command:content -arg1 -arg2 ......;コメント
 ```
 
-For visual novels, since dialogues are usually the main part of the script, WebGAL designed a syntax sugar. If the `command` part of a script cannot be parsed as any directive, then WebGAL will treat it as a dialogue. The voice can also be abbreviated to just the filename. The dialogue above will actually be parsed into a `say` directive in the end.
+ここで、command はステートメントのコマンドを表し、`bgm`、`changeFigure`、`choose` などのコマンドがあります。これはステートメントに対する制御アクションを示します。`content` はステートメントの主要な内容を表します。例えば、`bgm:Teabreak.mp3` は、BGM として音声ファイルを再生することを表します。
 
-So the actual representation of this dialogue should be:
+### シナリオ解析 Ⅲ - 会話の特殊処理
 
-```
-say:Dialogue content -speaker=Character vocal=voice_1.ogg;
-```
-
-In addition, if the dialogue is spoken by one character, the character name can be omitted before the speaker changes:
+WebGALのシナリオファイルでは、通常以下の形式で会話が書かれます。
 
 ```
-Character: Dialogue 1;
-Dialogue 2; 
-Dialogue 3;
+森川由綺: 胸につかえていることを、时は解决してくれない。忘却のラベルを贴るだけで -voice_1.ogg;
 ```
 
-The special handling of dialogues greatly improves script writing efficiency.
+ビジュアルノベルでは、会話がシナリオの主要な構成要素であるため、WebGAL ではシンタックスシュガーが設計されています。もしシナリオの command 部分がどのコマンドとも解析できない場合、WebGAL はそれを会話として扱います。また、音声の指定もシンプルにされており、ファイル名のみを指定すれば十分です。上記の会話は実際に say コマンドとして解析されます。
 
-### Statement Parsing IV - Parsing Parameters
+したがって、この会話の正しい表現は次のようになります。
 
-Anything separated by `-` after `content` is an additional parameter. Note in particular that the hyphen `-` before the additional parameters needs to have a space, otherwise WebGAL may not recognize it as a parameter but a normal hyphen.
+```
+say:胸につかえていることを、时は解决してくれない。忘却のラベルを贴るだけで -speaker=森川由綺 vocal=voice_1.ogg;
+```
 
-Parameters in WebGAL are represented as `-key=value`, where `key` is of `string` type, and `value` can be dynamically determined, and can exist in three possible types: `string`, `number`, `boolean`.
+また、もし対話が一人のキャラクターによって行われる場合、話者が変わる前にキャラクター名を省略することができます。
 
-For example, `-key=s` has a `string` `value`; `-key=1` has a `number` `value`, and `-key=true` or `-key=false` has a `boolean` `value`.
+```
+森川由綺: 胸につかえていることを;
+时は解决してくれない; 
+忘却のラベルを贴るだけで;
+```
 
-Parameters with only `key` and omitting `value` will be parsed as `-key=true`, which is a shorthand syntax sugar. This syntax sugar is very important because WebGAL has an important parameter `-next` to indicate that the next statement should be executed immediately after the current statement is finished. Without the shorthand, `-next=true` would need to be written every time.
+会話の特殊な処理により、シナリオの作成効率が大幅に向上します。
 
-### Statement Parsing V - Resource Handling and Preloading
+### シナリオ解析 Ⅳ - パラメータ解析
 
-The resources required by statements can be obtained during statement parsing. For example, `bgm` statements generally need audio resources, `playVideo` statements generally need video resources, and `changeBg` statements generally need image resources. The WebGAL scene parser will merge all the resources required by statements in the scenes, to hand over to the preloader for preloading resources. At the same time, when encountering situations that require calling subscenes such as `changeScene`, `choose`, `callScene`, etc., the subscenes will also be scanned out, parsed and their resources preloaded.
+content の後に ` -` で区切られたものは追加パラメータです。特に注意が必要なのは、追加パラメータの `-` の前にはスペースが必要であることです。そうでない場合、WebGAL はそれを追加パラメータではなく普通の `-` とみなします。
 
-## Flow Control System 
+WebGAL のパラメータは `-key=value` の形式で表されます。ここで、`key` の型は `string` であり、`value` の型は動的に決定され、次の3つの可能な型のいずれかで存在することができます: `string`、`number`、`boolean`。
 
-### Preparation Phase: Before Step Operation
+例えば、`-key=s` の `value` は `string` です。`-key=1` の `value` は `number` です。`-key=true` または `-key=false` の `value` は `boolean` です。
 
-### Formal Phase I: Read Instructions, Execute Conditional Judgments
+また、`value` を省略して `key` のみを記述するパラメータは `-key=true` と解釈され、これは省略された形式のシンタックスシュガーです。このシンタックスシュガーは非常に重要であり、WebGAL には `-next` という重要なパラメータがあります。これは、現在のステートメントの実行後に直ちに次のステートメントを実行することを示すために使用されます。このシンタックスシュガーがなっかた場合、常に `-next=true` と書く必要があります。
 
-### Formal Phase II: Invoke, Obtain Perform Controller from Perform Control Module 
+### シナリオ解析 Ⅴ - リソースの処理とプリロード
 
-### End Phase: Handle Continuous Perform, Update Backlog
+シナリオの解析中に、シナリオが必要とするリソースを取得することができます。例えば、`bgm` ステートメントでは通常音声リソースが必要であり、`playVideo` ステートメントでは通常ビデオリソースが必要です。また、`changeBg` ステートメントでは通常画像リソースが必要です。WebGAL のシーンパーサーは、すべてのシーンのステートメントが必要とするリソースをまとめて、プリローダーに渡してリソースをプリロードします。また、`changeScene`、`choose`、`callScene` など、サブシーンを呼び出す必要がある場合には、サブシーンもスキャンされ、解析され、その中のリソースがプリロードされます。
 
-### Auto and Fast Forward
+## 実行制御システム
 
-## Perform Control 
+### スタンバイフェイズ: 開始準備
 
-### WebGAL Perform Types
+### メインフェイズ I: コマンドの読み取り、条件判断の実行
 
-### Auto Destroy, End Judgment, Blocking Logic of Performs
+### メインフェイズ II: コマンド制御モジュールからコマンドコントローラーの呼び出し、取得
 
-## Stage Controller and Animation Control
+### エンドフェイズ: 連続コマンドの処理、バックログの更新
 
-### Data Driven Pixi Stage Controller
+### オートモード & スキップモード
 
-### Animation and "Transform" Control
+## コマンド制御
 
-## Save, Load, Rollback and User Data
+### WebGAL コマンドタイプ
 
-### Introduction to WebGAL State Table
+### コマンドの自動破棄、終了判定、ブロックロジック
 
-### Storage and Recovery of Perform States 
+## シーン制御 & アニメーション制御
 
-### Storage of Save Data and Other User Data
+### データ駆動型 Pixi シーンコントローラー
 
-## Appreciation Module, and Some Details
+### アニメーション & トランスフォム制御
 
-### Appreciation Module
+## セーブ、ロード、ロールバックとユーザーデータ
 
-### Maintaining State on Leaving Browser and "Continue Game" 
+### WebGAL ステートテーブルの紹介
 
-### Keyboard Shortcuts and Mouse Operations
+### 実行状態の保存 & 復元
+
+### セーブデータ & その他のユーザーデータの保存
+
+## 鑑賞モジュール & 細かい機能
+
+### 鑑賞モジュール
+
+### ブラウザを離れた際の状態保持 & 「続きから」
+
+### ショートカットキー & マウス操作
