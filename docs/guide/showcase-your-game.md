@@ -7,7 +7,7 @@
 * 开发者信息：开发者名字
 * 发布日期：使用 xxxx-xx-xx 这种格式
 * 发布地址：什么链接都可以
-* 游戏封面：不宜过大，建议使用 webp
+* 游戏封面：宽度 616 像素，高度 353 像素，建议使用 webp
 
 ## 通过 Pull Requests 提交您的游戏
 
@@ -34,7 +34,7 @@ Fork [WebGAL_HomePage](https://github.com/MakinoharaShoko/WebGAL_HomePage) 这�
 
 打开 WebGAL_HomePage 仓库的 [Issues 页面](https://github.com/MakinoharaShoko/WebGAL_HomePage/issues) 。
 
-点击 `New issue` ，填入准备好的信息，确认无误后点击 `Submit new issue` 即可。
+点击 `New issue` ，填入准备好的信息，确认无误后点击 `Submit new issue` 。
 
 ## 通过其他渠道提交您的游戏
 
