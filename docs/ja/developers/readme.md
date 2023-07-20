@@ -1,54 +1,54 @@
-# For Developers and Contributors
+# 開発者向けガイド
 
-## Branches and their meanings
+## ブランチについて
 
 ```
-main: LTS
-dev: WebGAL Develop
-others: previous version
+main: 安定版(master ブランチ)
+dev: 開発版(dev ブランチ)
+others: 古いバージョンのアーカイブ(作業用ブランチ)
 ```
 
-## Update Plan
+## 更新計画
 
-See [WebGAL INFO](/info)
+[WebGAL 情報](/info)を参照
 
-## Illustrates for Contributors
+## 開発ガイドライン
 
-WebGAL uses *yarn* and *yarn workspace monorepo* for package management .
+WebGAL は現在、パッケージ管理に yarn と yarn workspace monorepo を使用しています。
 
-To install *yarn* , enter the following command :
+yarn をお持ちでない場合は、次のコマンドを入力してインストールしてください。
 
 ```shell
 npm install yarn -g
 ```
 
-Then Clone This project , and rename the project's root directory as :
+次に、プロジェクトをクローンし、プロジェクトのルートディレクトリで以下のコマンドを入力してください。
 
 ```shell
 yarn
 ```
 
-There are 3 package in this project :
+このプロジェクトには 3 つのパッケージがあります。
 
-| 包名   | 内容                             |
-| ------ | -------------------------------- |
-| parser | WebGAL Parser                    |
-| server | WebGAL local testing server      |
-| webgal | Main Engine                      |
-| yukimi | Library for *yukimi*  (Planning) |
+| 包名   | 内容                               |
+| ------ | --------------------------------- |
+| parser | WebGAL パーサー                    |
+| server | WebGAL ローカル デバッグ サーバー   |
+| webgal | エンジン本体                       |
+| yukimi | yukimiサポートライブラリー (計画中) |
 
-## Run Local WebGAL Project
+## WebGAL のローカル開発
 
-Then, you can shuttle the local server through the following command .
+以下のコマンドを実行して、WebGAL プロジェクトをローカルサーバーで起動する。
 
 ```shell
 yarn dev
 ```
 
-For packaging :
+アプリケーションのパッケージは、
 
 ```shell
 yarn build
 ```
 
-The processed files are located in the `dist` directory.
+パッケージ化されたアプリケーションが `dist` フォルダに出力される。

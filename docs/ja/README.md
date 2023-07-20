@@ -4,22 +4,22 @@ heroImage:
 actionText: 今すぐ始まる →
 actionLink: ./guide/
 features:
-- title: 良いデザイン
-  details: 美しく洗練された画面、使いやすさを追求し、より良い体験を提供。
+- title: より良いデザイン
+  details: 美しく洗練されたゲーム画面、ユーザービリティを追求し、より良いユーザー体験を提供。
 - title: 高機能
-  details: 主流のビジュアルノベルエンジンのほぼすべての機能をサポート。PixiJS を使って、さまざまなカスタマイズが可能。
+  details: 主流のビジュアルノベルエンジンのほぼすべての機能をサポート。PixiJSを使って、さまざまなカスタマイズが可能。
 - title: 気軽に開発
-  details: WebGAL スクリプトまたはビジュアルエディターから始まり、いずれにしてもシンプル。
+  details: ビジュアルエディターを使い、ノンプログラミングで開発が可能。独自のWebGAL スクリプトはシンプルかつ容易。
 footer: MPL-2.0 Licensed | Copyright © 2022 Mahiru
 ---
 
-開発一回で、ほぼすべての端末で対応可能！Web開発の知識は必要なし！操作を覚えるのにかかる時間 3 分だけ。インスピレーションさえあれば、経験ゼロでノベルゲームを作れる！
+開発したゲームは、ほぼすべての端末（PC、SP）で出力可能。プログラミングの知識は必要なし。ビジュアルエディターの操作を覚えるのにかかる時間は、たったの3分。構想さえあれば、ゲーム開発経験ゼロでノベルゲームが作れる！
 
 **[Help us with translation | 协助翻译 | 翻訳のお手伝い](https://github.com/MakinoharaShoko/WebGAL/tree/dev/packages/webgal/src/translations)**
 
 **[Join Discord Server](https://discord.gg/kPrQkJttJy)**
 
-## WebGAL 製ゲームへようこそ
+## WebGAL で制作されたゲーム
 
 現在公開されているゲーム（中国語）:
 
@@ -43,9 +43,9 @@ WebGAL の最新機能を体験したい方は [こちら](https://webgal-jp-dem
 
 このプロジェクトをより良くさせるために、ご協力をよろしくお願いします！
 
-# Sponsor
+# スポンサー
 
-## Gold Sponsors
+## ゴールドスポンサー
 
 | <img src="https://avatars.githubusercontent.com/u/91712707?v=4" alt="T2" style="zoom:25%;" /> |
 | ------------------------------------------------------------ |

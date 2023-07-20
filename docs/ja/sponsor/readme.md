@@ -1,12 +1,12 @@
-# Support us
+# ご協力
 
-WebGAL is an open-source software, so you are free to use this software within the scope of the MPL-2.0 open-source license. This includes the ability to use it for commercial purposes.
+WebGALはオープンソースのソフトウェアであり、MPL-2.0のオープンソースライセンスの範囲内で自由に使用することができます。これには商業目的での使用も含まれます。
 
-But even so, your sponsorship can motivation developers to make this project better.
+そうは言っても、あなたのスポンサーシップは開発者にとって前進の励みとなり、このプロジェクトをより良くすることに繋がります。
 
 ## Patreon
 
-[Use Patreon](https://www.patreon.com/WebGAL)
+Patreon は[こちら](https://www.patreon.com/WebGAL)
 
 ## Alipay
 
