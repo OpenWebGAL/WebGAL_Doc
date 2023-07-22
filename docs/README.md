@@ -47,3 +47,7 @@ footer: MPL-2.0 Licensed | Copyright © 2022 Mahiru
 | ------------------------------------------------------------ |
 | [T2-official(T2)](https://github.com/T2-official)            |
 
+## Silver Sponsors
+| <img src="https://avatars.githubusercontent.com/u/103700780?v=4" alt="IdrilK" style="zoom:25%;" /> |
+| ------------------------------------------------------------ |
+| [IdrilK](https://github.com/IdrilK)            |

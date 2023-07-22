@@ -50,3 +50,8 @@ Your sponsorship can motivate the developers and make this project better !
 | <img src="https://avatars.githubusercontent.com/u/91712707?v=4" alt="T2" style="zoom:25%;" /> |
 | ------------------------------------------------------------ |
 | [T2-official(T2)](https://github.com/T2-official)            |
+
+## Silver Sponsors
+| <img src="https://avatars.githubusercontent.com/u/103700780?v=4" alt="IdrilK" style="zoom:25%;" /> |
+| ------------------------------------------------------------ |
+| [IdrilK](https://github.com/IdrilK)            |
