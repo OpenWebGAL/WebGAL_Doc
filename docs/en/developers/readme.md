@@ -22,7 +22,7 @@ To install *yarn* , enter the following command :
 npm install yarn -g
 ```
 
-Then Clone This project , and rename the project's root directory as :
+Then Clone This project , and run this command in the root of the repo :
 
 ```shell
 yarn

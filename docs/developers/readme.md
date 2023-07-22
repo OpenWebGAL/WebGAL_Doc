@@ -22,7 +22,7 @@ WebGAL 目前使用 yarn 作为包管理器，以及 yarn workspace monorepo 管
 npm install yarn -g
 ```
 
-然后 Clone 本项目，在项目根目录输入
+然后 Clone 本项目，在项目根目录执行
 
 ```shell
 yarn
