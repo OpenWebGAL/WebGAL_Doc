@@ -45,13 +45,13 @@ WebGAL の最新機能を体験したい方は [こちら](https://webgal-jp-dem
 
 # スポンサー
 
-## ゴールドスポンサー
+## ゴールド スポンサー
 
 | <img src="https://avatars.githubusercontent.com/u/91712707?v=4" alt="T2" style="zoom:25%;" /> |
 | ------------------------------------------------------------ |
 | [T2-official(T2)](https://github.com/T2-official)            |
 
-## Silver Sponsors
+## シルバー スポンサー
 | <img src="https://avatars.githubusercontent.com/u/103700780?v=4" alt="IdrilK" style="zoom:25%;" /> |
 | ------------------------------------------------------------ |
-| [IdrilK](https://github.com/IdrilK)            |
+| [IdrilK](https://github.com/IdrilK)                          |
