@@ -6,7 +6,7 @@
 * 游戏标题
 * 开发者信息：开发者名字
 * 发布日期：使用 xxxx-xx-xx 这种格式
-* 发布地址：什么链接都可以
+* 发布地址：游戏发布链接
 * 游戏封面：宽度 616 像素，高度 353 像素，建议使用 webp
 
 ## 通过 Pull Requests 提交您的游戏
@@ -22,9 +22,9 @@ Fork [WebGAL_HomePage](https://github.com/MakinoharaShoko/WebGAL_HomePage) 这�
     id: '游戏 ID',
     title: '游戏标题',
     developer: '开发者信息',
-    releaseDate: '2023-06-22',
+    releaseDate: 'xxxx-xx-xx',
     url: 'https://example.com/',
-    cover: '/images/games/游戏封面标题.webp'
+    cover: '游戏封面文件名.webp'
   },
 ```
 
