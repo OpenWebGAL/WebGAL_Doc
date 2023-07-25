@@ -22,6 +22,6 @@
 在这里展示具体出现故障的代码或编辑器编辑页面的截图
 ```
 
-如果你发现 BUG 需要报告，请在  [WebGAL issues](https://github.com/MakinoharaShoko/WebGAL/issues) 或 [WebGAL Terre issues](https://github.com/MakinoharaShoko/WebGAL_Terre/issues) 提出 issue 或者发送电子邮件联系 Mahiru_@outlook.com 。
+如果你发现 BUG 需要报告，请在  [WebGAL issues](https://github.com/MakinoharaShoko/WebGAL/issues) 或 [WebGAL Terre issues](https://github.com/MakinoharaShoko/WebGAL_Terre/issues) 提出 issue 或者发送电子邮件联系 contact@openwebgal.com 。
 
 
