@@ -329,8 +329,6 @@ changeScene:Chapter-2.txt;
 
 Example:
 
-asciidoc
-
 ```
 (Chapter-1.txt) 
 ......
@@ -356,7 +354,6 @@ callScene:Chapter-2.txt;
 
 Example:
 
-asciidoc
 
 ```
 (Chapter-1.txt)
@@ -665,7 +662,6 @@ If you want to create a branch but feel it is too troublesome to create a new TX
 
 #### First, you must understand how to use label
 
-asciidoc
 
 ```
 ......
@@ -686,8 +682,6 @@ In short, jumpLabel is similar to a goto statement, which can immediately make y
 If jumpLabel is compared to a portal, then the destination of this portal is the position where the label is located.
 
 #### With the above basis, you can use choose to jump to the position where label is located through branches
-
-vbnet
 
 ```
 WebGAL: Let's test jumping to label through branch!;
@@ -722,7 +716,6 @@ In this script, if you select branch 2, everything seems okay. But if you select
 
 Set variable:
 
-jboss-cli
 
 ```
 setVar:a=1; // Can set numbers
@@ -738,7 +731,6 @@ Add the parameter `-when=(condition)` after the statement to determine whether t
 
 For example:
 
-ini
 
 ```
 setVar:a=1;
@@ -774,9 +766,7 @@ Switched expression! -concat;
 
 You can download the source code, then find /Core/gameScripts/pixiPerformScripts/, then create a `PIXI.Container` for the effect you need.
 
-ts
-
-```
+```typescript
 const effectsContainer = RUNTIME_GAMEPLAY.pixiStage!.effectsContainer!; //Get the current Pixi effect Container
 const app = RUNTIME_GAMEPLAY.pixiStage!.currentApp!; // Way to call Pixi App, may be useful for determining screen size, etc.
 const container = new PIXI.Container(); //Create container for custom effects
