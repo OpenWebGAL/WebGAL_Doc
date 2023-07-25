@@ -59,13 +59,7 @@ npm install yarn -g
 yarn
 ```
 
-进入 WebGAL 包
-
-```shell
-cd packages/webgal
-```
-
-WebGAL 使用 vite 作为打包与调试工具，进入 webgal 包下后，你可以通过运行以下脚本启动开发服务器
+WebGAL 使用 vite 作为打包与调试工具，你可以通过运行以下脚本启动开发服务器
 
 ```shell
 yarn dev
@@ -76,6 +70,8 @@ yarn dev
 ```shell
 yarn build
 ```
+
+打包产物在 packages/webgal/dist 目录下
 
 ## 如何部署或发布我的视觉小说？
 
@@ -95,7 +91,7 @@ yarn build
 
 *使用**源代码开发**的开发者：*
 
-如果你使用源代码进行调试，你可以通过 `yarn build` 来创建一个静态网页（在/dist 文件夹），然后将这个文件夹内的内容部署到 GitHub Pages 或你的云服务器上。
+如果你使用源代码进行调试，你可以通过 `yarn build` 来创建一个静态网页（在 packages/webgal/dist 文件夹），然后将这个文件夹内的内容部署到 GitHub Pages 或你的云服务器上。
 
 ### Windows / macOS / Linux
 
