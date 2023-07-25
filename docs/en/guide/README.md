@@ -150,8 +150,6 @@ You can add the parameter `-next` after any statement to jump to the next statem
 
 Example:
 
-smali
-
 ```
 changeBg:testBG03.jpg -next; // Will immediately execute the next statement
 ```
