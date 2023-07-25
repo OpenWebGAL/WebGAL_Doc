@@ -1,10 +1,10 @@
 # For Developers and Contributors
 
-## Branches and their meanings
+## Branches and descriptions
 
 ```
-main: LTS
-dev: WebGAL Develop
+main: stable branch
+dev: current developing branch
 others: previous version
 ```
 
@@ -12,7 +12,7 @@ others: previous version
 
 See [WebGAL INFO](/info)
 
-## Illustrates for Contributors
+## Guide for Contributors
 
 WebGAL uses *yarn* and *yarn workspace monorepo* for package management .
 
@@ -33,7 +33,7 @@ There are 3 package in this project :
 | 包名   | 内容                             |
 | ------ | -------------------------------- |
 | parser | WebGAL Parser                    |
-| server | WebGAL local testing server      |
+| server | WebGAL local developing server      |
 | webgal | Main Engine                      |
 | yukimi | Library for *yukimi*  (Planning) |
 
