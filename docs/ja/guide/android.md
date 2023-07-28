@@ -1,97 +1,107 @@
-# Package the Game to Android Platform
+# ゲームを Android プラットフォームにパッケージ化する
 
-## Preparations
+## 事前準備
 
-::: tip Tips For game developers using WebGAL editor to export project files automatically, just install Android Studio. :::
+::: tip ヒント
+WebGAL エディターを使用してゲームを自動的にエクスポートするゲーム開発者は、Android Studio をインストールするだけです。
+:::
 
-- Download and install [Android Studio](https://developer.android.google.cn/studio/).
-- Export the [WebGAL](https://github.com/MakinoharaShoko/WebGAL) game to web version.
-- Download the [WebGAL Android project template](https://github.com/nini22P/WebGAL-Android).
+- [Android Studio](https://developer.android.google.cn/studio/) をダウンロードして、インストールする.
+- [WebGAL](https://github.com/MakinoharaShoko/WebGAL) を使用して開発したゲームをウェブバージョンにエクスポートする。
+- [WebGAL Android ゲームのテンプレート](https://github.com/nini22P/WebGAL-Android) をダウンロードする.
 
-## Method 1: Auto Export Project Files (For WebGAL Editor Users)
+## その 1: ゲームを自動的にエクスポートする
 
-::: warning Attention If you want to open the exported folder directly from the project using Android Studio, please fill in **English** when creating a new game. If the game name is already in Chinese, please open `WebGAL_Terre\public\games` to modify your game name, and make sure there are no characters other than English in the file path of the project, otherwise it will report an error. :::
+**WebGAL エディターユーザー向け**
 
-### Export and Modify
+::: warning 注意
+Android Studio を使用してプロジェクトから直接にエクスポートしたフォルダーを開きたい場合は、新しいゲームを作成するときに**英語**のゲーム名を入力してください。ゲーム名がすでに中国語の場合は、`WebGAL_Terre\public\games` を開いてゲーム名を変更し、プロジェクトのファイルパスに英語以外の文字がないことを確認してください。
+:::
 
-On the left sidebar of the editor, modify the `Game Title` and `Game Package Name`. The game package name is the reverse domain name of your website. If you don't have a domain name, you can consider using the combination of developer and game name, like `webgaldev.mygalgame`. It **must** be in **English**.
+### エクスポートとゲーム情報の変更
 
-In the upper right corner of the editor, select Export to Android Project Files, then open Android Studio and select the `android` directory just exported, and wait for the dependencies to finish downloading.
+WebGAL エディターの左側のサイドバーで、`ゲーム名`と`パッケージ名`を変更することができます。パッケージ名は、逆に書かれたウェブサイトのドメイン名です。ドメイン名をお持ちでない場合は、`webgaldev.mygalgame` のように、開発者とゲーム名の組み合わせの使用することを検討してください。**半角英字**のみ使用可能**です。
 
-Click `File -> New -> Image Asset` in the menu bar to modify the game icon. Note that the icon is divided into front and back layers.
+WebGAL エディターの右上隅にある**ゲームを出力**をクリックし、**Androidアプリとしてエクスポート**を選択します。Android Studio を開いて、エクスポートした `android` フォルダーを選択し、依存関係のダウンロードが完了するのを待ちます。
 
-### Run and Compile
+メニューバーの `File -> New -> Image Asset` をクリックして、ゲームアイコンを変更します。アイコンは前面と背面のレイヤーに分割されていることに注意してください。
 
-Turn on USB debugging on the Android phone and connect it to the computer. Click the run icon next to the device title in the toolbar at the top to run it on the phone.
+### 実行とコンパイル
 
-Click `Build -> Generate Signed Bundle or APK` in the menu bar, create a key according to the prompts and compile, waiting for the compilation to complete.
+Android スマートフォンで USB デバッグをオンにして、コンピューターに接続します。上部のツールバーのデバイスタイトルの横にある実行アイコンをクリックして、スマホで実行します。
 
-## Method 2: Manually Edit Project Files (For developers who develop games locally by writing scripts or compiling from source)
+メニューバーの `Build -> Generate Signed Bundle or APK` をクリックし、プロンプトに従ってキーを作成してコンパイルし、コンパイルが完了するのを待ちます。
 
-### Import Game
+## その 2: ゲームを手動編集する
 
-First export the game as a web page, unzip the [project template](https://github.com/nini22P/WebGAL-Android), and rename the folder (be sure to use English). Open the `project folder\app\src\main\assets\webgal` folder and put the game you want to package here.
+**スクリプトの作成やソースからコンパイルしてローカルでゲームを開発する開発者向け**
 
-::: tip Tips By default, the game loads `project folder\app\src\main\assets\webgal\index.html`. If you want to customize the loading link (such as online link), please modify the `load_url` field in the `project folder\app\src\main\res\values\values.xml` file. :::
+### ゲームのインポート
 
-### Modify Info
+まずゲームを Web ページとしてエクスポートし、[WebGAL Android ゲームのテンプレート](https://github.com/nini22P/WebGAL-Android)を解凍し、フォルダーの名前を変更します(必ず半角英字を使用してください)。`ルート\app\src\main\assets\webgal` フォルダーを開き、パッケージ化するゲームをここに配置します。
 
-Open Android Studio to import the project. Modify the `rootProject.name` field in the `project folder\settings.gradle` file.
+::: tip ヒント
+`ルート\app\src\main\assets\webgal\index.html` を読み込むのはゲームのデフォルト設定です。読み込みリンク(オンラインリンクなど)をカスタマイズする場合は、`ルート\app\src\main\res\values\values.xml` ファイルにある `load_url` の値を変更してください。
+:::
+
+### 情報の変更
+
+Android Studio を開いてゲームをインポートします。`ルート\settings.gradle` ファイルにある `rootProject.name` の値を変更します。
 
 ```gradle
 ...
-rootProject.name = "WebGAL" // Modify project title
+rootProject.name = "WebGAL" // ゲーム名を変更する
 ...
 ```
 
-Modify the title information in `project folder\app\src\main\res\values\strings.xml`.
+`ルート\app\src\main\res\values\strings.xml` ファイルにあるゲーム名を変更します。
 
 ```xml
 <resources>
-    <string name="app_name">WebGAL</string> // Modify game title
+    <string name="app_name">WebGAL</string> // ゲーム名を変更する
 </resources>
 ```
 
-Modify the `namespace` and `applicationId` fields in `project folder\app\build.gradle`, formatted as reverse domain names.
+`ルート\app\build.gradle` にある `namespace` と `applicationId` の値を逆に書かれたウェブサイトのドメイン名に変更します。
 
 ```gradle
 ...
 android {
-    namespace 'com.openwebgal.demo' // Modify package name
+    namespace 'com.openwebgal.demo' // パッケージ名を変更する
 ...
     defaultConfig {
-        applicationId "com.openwebgal.demo" // Modify package name
+        applicationId "com.openwebgal.demo" // パッケージ名を変更する
 ...
 ```
 
-Click `File -> Sync Project with Gradle files` in the menu bar to wait for sync to complete.
+メニューバーの `File -> Sync Project with Gradle files` をクリックして、同期が完了するのを待ちます。
 
-Modify the `package` field in the first line of `project folder\app\src\main\java\com\openwebgal\demo\MainActivity.kt` to the target package name changed earlier.
+`ルート\app\src\main\java\com\openwebgal\demo\MainActivity.kt` の最初の行の `package` の値を変更したパッケージ名に変更します。
 
 ```kotlin
-package com.openwebgal.demo // Modify package name 
+package com.openwebgal.demo // パッケージ名を変更す
 ...
 ```
 
-After modifying this field, an error will be reported. At this point, click on the package name just modified, then click the "yellow bulb" and select `Move file to 'target package name'`, and then delete the original package name folder.
+このフィールドを変更すると、エラーが報告されます。この時点で、変更したパッケージ名をクリックし、「黄色の電球」をクリックして `Move file to 'パッケージ名'` を選択し、元のパッケージ名のフォルダーを削除します。
 
-Click `File -> New -> Image Asset` in the menu bar to modify the game icon. Note that the icon is divided into front and back layers.
+メニューバーの `File -> New -> Image Asset` をクリックして、ゲームアイコンを変更します。アイコンは二つのレイヤーに分割されていることに注意してください。
 
-### Run and Compile
+### 実行とコンパイル
 
-Turn on USB debugging on the Android phone and connect it to the computer. Click the run icon next to the device title in the toolbar at the top to run it on the phone.
+Android スマートフォンで USB デバッグをオンにして、コンピューターに接続します。上部のツールバーのデバイスタイトルの横にある実行アイコンをクリックして、スマホで実行します。
 
-Click `Build -> Generate Signed Bundle or APK` in the menu bar, create a key according to the prompts and compile, waiting for the compilation to complete.
+メニューバーの `Build -> Generate Signed Bundle or APK` をクリックし、プロンプトに従ってキーを作成してコンパイルし、コンパイルが完了するのを待ちます。
 
-## Video Tutorial (Method 2)
+## ビデオチュートリアル (その 2)
 
-[Package WebGAL Game to Android Platform Using Android Studio](https://www.bilibili.com/video/BV1m24y1J7ct/) (Chinese)
+[Android Studio を使用して WebGAL ゲームを Android プラットフォームにパッケージ化する](https://www.bilibili.com/video/BV1m24y1J7ct/) (Chinese)
 
-## Compatibility and Solutions
+## 互換性とソリューション
 
-The currently supported minimum version is Android 5.0, and it relies on the system pre-installed Android System WebView. If your device blacks out after clicking the home screen, please try any of the following solutions:
+現在サポートされている最も古いバージョンは Android 5.0 であり、システムにプリインストールされている Android System WebView に依存しています。ホーム画面をクリックした後にデバイスがブラックアウトする場合は、次のいずれかの解決策を試してください。
 
-1. Go to Play Store to update [Android System WebView](https://play.google.com/store/apps/details?id=com.google.android.webview)
-2. Manually download and update Android System WebView
+1. [Android System WebView](https://play.google.com/store/apps/details?id=com.google.android.webview)を更新するために Google Play Store に移動する
+2. 手動で Android System WebView をダウンロードして更新する
 
-Android System WebView download links: [Android 5.0](https://www.apkmirror.com/apk/google-inc/android-system-webview/android-system-webview-95-0-4638-74-release/) | [Android 6.0](https://www.apkmirror.com/apk/google-inc/android-system-webview/android-system-webview-106-0-5249-126-release/) | [Android 7.0+](https://www.apkmirror.com/apk/google-inc/android-system-webview/)
+Android System WebView のダウンロードリンク: [Android 5.0](https://www.apkmirror.com/apk/google-inc/android-system-webview/android-system-webview-95-0-4638-74-release/) | [Android 6.0](https://www.apkmirror.com/apk/google-inc/android-system-webview/android-system-webview-106-0-5249-126-release/) | [Android 7.0+](https://www.apkmirror.com/apk/google-inc/android-system-webview/)

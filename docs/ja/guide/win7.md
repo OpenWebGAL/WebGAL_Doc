@@ -1,146 +1,146 @@
-# How to Use WebGal Terre in Windows 7
+# Windows 7 でビジュアルエディタを使用してゲーム開発を行う方法
 
-## Precondition
+## 前提条件
 
-### Install node.js of version 14~16.3
+### バージョン 14 ~ 16.3 の node.js をインストール
 
-1. Open [Node.js Official Website - Node v16.3.0 Download Address](https://nodejs.org/dist/v16.3.0/) to download installation package.
+1. [node.js 公式サイト](https://nodejs.org/dist/v16.3.0/) でバージョン 16.3.0 の node.js のダウンロードリンクをクリック、インストールパッケージをダウンロードする。
 
-    1. Download the appropriate installation package for your system，
+    1. システムに適したインストールパッケージを選ぶ。
 
-        Please choose between folder **win-x64** or folder **win-x86**，don't download other files.
+        フォルダ **win-x64** またはフォルダ **win-x86** から選択してください。
 
-    2. Download **node.exe** in folder.
+    2. その中の **node.exe** をダウンロードする。
 
-2. Set the environment variable to skip node.js platform check, that it is able to install node.js.
+2. システムチェックをバイパスするように環境変数を設定する。
 
-    1. Right click **Computer** in desktop，Click **Attributes** in menu.
-    2. Open the **Advanced System Settings** in left panel.
-    3. Click the **Environment variable** in bottom right corner of window.
-    4. Add variable **NODE_SKIP_PLATFORM_CHECK** in system variable，value is **1**.
-    5. Save Environment variables.
+    1. デスクトップで **コンピュータ** を右クリックし、メニューの **アトリビューション** をクリックする。
+    2. 左側のパネルで **システムの詳細設定** を開く。
+    3. ウィンドウの右下隅にある **環境変数** をクリックしする。
+    4. システム変数に変数 **NODE_SKIP_PLATFORM_CHECK** を追加し、値は **1** にする。
+    5. 環境変数を保存する。
 
-3. Run the installation package (The node.exe you just downloaded) to install node.js.
+3. インストールパッケージ(ダウンロードした **node.exe**)を実行して、node.js をインストールする。
 
 ---
 
-## Way 1: Use WebGal Terre Win7 Support Patch
+## その 1: WebGAL Terre Win7 サポートパッチを使用する
 
-### Download Patch
+### パッチをダウンロードする
 
->  Download address：
+>  ダウンロードリンク：
 >
->  [GitHub (Third-party patch)](https://github.com/hshqwq/WebGAL_Terre/releases)
->
->  [Lanzou Cloud (Third-party patch)](https://wwh.lanzoue.com/i2xqa0uy2fuh)
+>  [GitHub (サードパーティのパッチ)](https://github.com/hshqwq/WebGAL_Terre/releases)
 
-### Download WebGal Terre
+### WebGAL Terre をダウンロードする
 
-Download the [WebGal Terre](./guide#方法1（推荐）：使用 WebGAL 编辑器) corresponding to the patch, then decompress it.  
-View file with name such as **使用说明, README** , Or View the value of **version** in **package.json**, that to obtain the corresponding version.
+パッチに対応する[WebGal Terre](./README###その1：WebGALエディターを使用(推奨))をダウンロードし、解凍してください。 
+対応するバージョンについては、**使用说明、README** などの名前のファイルを確認するか、または **package.json** 内の **version** の値を確認してください。
 
-### Patch Usage
+### パッチを使用する
 
-Decompress patch, copy files in the patch to the folder of WebGal Terre.
+パッチを解凍し、パッチ内のファイルを WebGAL Terre のフォルダにコピーする。
 
-### Install Dependencies
+### 依存関係のインストール
 
-Run **Install_Dependencies.bat** to install dependencies. If appeared the folder *node_modules*, that meant success.
+**Install_Dependencies.bat** を実行して依存関係をインストールする。フォルダ **node_modules** が表示された場合は成功を意味する。
 
-Manually Installation:
+手動インストール：
 
-1. Open any terminal.
+1. 任意のターミナルを開く。
 
-2. Cd to folder WebGal Terre.
+2. WebGAL Terre のフォルダに移動する。
 
-3. Run this command:
+3. 次のコマンドを実行する。
 
-    ```bash
-    npm i 
-    # or (need to install yarn before)
-    yarn
-    ```
+```bash
+npm i 
+# または (yarnをインストールする必要がある)
+yarn
+```
 
-### Run the WebGal Terre
+### WebGAL Terre を起動する
 
-Run **WebGal_Terre-Win7.bat**.
+**WebGal_Terre-Win7.bat** を実行する。
 
-Manually Run：
+手動で実行する:
 
-1. Open any terminal.
+1. 任意のターミナルを開く。
 
-2. Cd to folder WebGal Terre.
+2. WebGAL Terre のフォルダに移動する。
 
-3. Run this command:
+3. 次のコマンドを実行する。
 
-    ```bash
-    node main.js
-    ```
+```bash
+node main.js
+```
 
-::: tip Notice
+::: tip 注意
 
-If your computer installed the other version node.js, please switch to version 14~16.3.
+お使いのパソコンに他のバージョンの node.js がインストールされている場合は、バージョン 14 ~ 16.3 に切り替えてください。
 
 :::
 
 ---
 
-## Way 2: Build with Source Code (Someone with some programming experience is recommended)
+## その 2：ソースコードをコンパイルする(プログラミング経験のある人に推奨)
 
-### Get Source Code
+### ソースコードの取得
 
-Clone [WebGAL_Terre](https://github.com/MakinoharaShoko/WebGAL_Terre) repo.
+[WebGAL_Terre](https://github.com/MakinoharaShoko/WebGAL_Terre) リポジトリをクローンする。
 
 ```shell
 git clone https://github.com/MakinoharaShoko/WebGAL_Terre.git
 ```
 
-### Install Yarn Package Manager (Optional)
+### パッケージマネージャーをインストールする(オプション)
 
-Install yarn (Optional)  
+yarn をインストールする(オプション) 
 
-```
+```shell
 npm i -g yarn
 ```
 
-### Build WebGal Terre
+### WebGAL Terre をコンパイルする
 
-#### Way 1: Build All Packages
+#### その1：すべてのパッケージをコンパイルする
 
-1. Install dependencies. run in project root.
+1. 依存関係をインストールする。
 
-    ```shell
-    yarn
-    ```
+    WebGAL Terre フォルダーのルートで実行する。
+
+```shell
+yarn
+```
     
-2. See the commands in **release.sh** to build all packages except **Terre**.
+2. **release.sh** のコマンドを参照して、**Terre** を除くすべてのパッケージをコンパイルする。
 
-3. Manually build **Terre**, see [**Build Terre2 Only**](./#Way 2: Build *Terre2* Only).
+3. 手動で **Terre** をコンパイルする方法については、[**Terre2のみをコンパイルする**](####その2：Terre2のみをコンパイルする)を参照してください。
 
-#### Way 2: Build *Terre2* Only
+#### その2：Terre2のみをコンパイルする
 
-1. open folder **packages/terre2**.
+1. **packages/terre2** フォルダを開く。
 
-2. Install dependencies.
+2. 依存関係をインストールする。
 
-    ```
-    yarn
-    ```
+```shell
+yarn
+```
 
-3. Build *terre2*.
+3. **terre2** をパッケージする
 
     ```shell
     yarn run build
     ```
 
-4. Delete files ending in **.d.ts** in folder **dist**. (optional)
+4. フォルダー **dist** 内の **.d.ts** で終わるファイルを削除する。(オプション)
 
-5. Add **package.json** in folder **dist**，value of it is (Fill the version please)：
+5. ファイル **package.json** をフォルダー **dist** に追加し、内容を以下のように変更してください。
 
     ```json
     {
         "name": "webgal-terre-2-win7-server",
-        "version": "version",
+        "version": "バージョン",
         "description": "",
         "private": true,
         "license": "MPL-2.0",
@@ -159,16 +159,16 @@ npm i -g yarn
     }
     ```
 
-6. Copy folder **dist** to WebGal Terre folder which is built.
+6. フォルダー **dist** をコンパイルされた WebGAL Terre フォルダにコピーする。
 
-### Run WebGal Terre
+### WebGAL Terre を起動する
 
-1. Install dependencies in WebGal Terre folder root.
+1.依存関係を WebGAL Terre フォルダーのルートで実行する。
 
-    ```shell
-    npm i
-    # 或（推荐yarn）
-    yarn
-    ```
+```shell
+npm i
+# 或（推荐yarn）
+yarn
+```
 
-2. Run `node main.js` in terminal. You can code it as a bat or sh script.
+2.ターミナルで `node main.js` を実行して、WebGAL Terre を起動する。bat または sh スクリプトとしてコーディングできます。

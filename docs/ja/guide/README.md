@@ -8,7 +8,7 @@ WebGAL ゲームを作成するために使用する方法にかかわらず、�
 WebGAL のドキュメンテーションには、ほとんどの疑問に対する回答が見つかることをご存知でしょうか？もしバグに遭遇したと確信している場合は、[issues](https://github.com/MakinoharaShoko/WebGAL/issues) でバグを報告するか、[contact@openwebgal.com](mailto:contact@openwebgal.com) に連絡してください。また、WebGAL コミュニティに参加する方法は、サイトの右上隅にある`その他`セクションで見つけることができます。
 :::
 
-### その1 : WebGAL エディターを使用(推奨)
+### その1：WebGALエディターを使用(推奨)
 
 **WebGAL エディターは、WebGAL でゲームを作成し、開発し、公開するための最良の方法です。**
 
@@ -28,7 +28,7 @@ WebGAL エディターのダウンロードリンク:
 
 [GitHub](https://github.com/MakinoharaShoko/WebGAL_Terre/releases)
 
-### その2 : スクリプトを作成してローカルで開発し、リアルタイムでデバッグ
+### その2：スクリプトを作成してローカルで開発し、リアルタイムでデバッグ
 
 まず、静的なウェブページとデバッグ環境が組み込まれた WebGAL 配布をダウンロードしてください。
 
@@ -44,7 +44,7 @@ WebGAL エンジンとデバッグ環境（ビジュアルエディターは含�
 
 [シンタックスハイライトプラグインのソースコードリポジトリ](https://github.com/C6H5-NO2/webgal-script-basics)
 
-### その3 : ソースコードからデバッグ（高いカスタマイズ性を望むフロントエンド開発者向け）
+### その3：ソースコードからデバッグ（高いカスタマイズ性を望むフロントエンド開発者向け）
 
 ```
 git clone https://github.com/MakinoharaShoko/WebGAL.git
@@ -801,7 +801,7 @@ pixiPerform:myPerform; // 特殊効果名を指定して特殊効果を呼び出
 
 ## その他のチュートリアル
 
-### 他のUI言語をWebGALに追加する
+### WebGALのUIを他の言語に書き換える
 
 WebGAL に他の言語を追加したい方は[こちら](./add-lang)。
 

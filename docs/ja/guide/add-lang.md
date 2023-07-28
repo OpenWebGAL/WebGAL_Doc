@@ -1,31 +1,31 @@
-# Add Other Language into WebGal
+# WebGALのUIを他の言語に書き換える
 
-## Get Source Code
+## ソースコードを取得する
 
-See the [How to Start with Source Code](./guide#方法3（适用于想要更高自定义程度的前端开发者）：从源代码开始调试).
+[こちら](./README###その3：ソースコードからデバッグ（高いカスタマイズ性を望むフロントエンド開発者向け）)を参照してください。
 
-## Create Language Config File
+## 言語設定ファイルの作成
 
-1. Open folder **WebGal/packages/webgal/src/translations**.
-2. Copy *en.ts*, rename it like *yourlang.ts*.
+1. フォルダー **WebGal/packages/webgal/src/translations** をオープンする
+2. *en.ts* をコピーし、*yourlang.ts* のようにファイル名を変更する。
 
-## Translate
+## 翻訳
 
-Translate the config file's value.
+言語設定ファイルの内容を翻訳する。
 
-::: warning Warning
+::: warning 警告
 
-Don't change the value in **{{}}**, it's the variable.
+**{{}}** の内容は変更しないでください、それは変数です。
 
 :::
 
-## Add Your Language into WebGal
+## あなたの言語をWebGALに追加する
 
-1. Open file **WebGal/packages/webgal/src/config/language.ts**.
+1. ファイル **WebGal/packages/webgal/src/config/language.ts** をオープンする。
 
-2. Add you language into it.
+2. あなたの言語をこれに追加する。
 
-   For example, I will add a language named *myLang*, it will be this.
+   たとえば、*myLang* という言語を追加します。
 
    ```typescript
    import myLang from '@/translations/my-lang';
@@ -52,9 +52,9 @@ Don't change the value in **{{}}**, it's the variable.
    };
    ```
 
-### Change Default Language
+### デフォルト言語の変更
 
-Edit variable named **defaultLanguage** in **WebGal/packages/webgal/src/config/language.ts**. The value must be a key in **language**.
+**WebGAL/packages/webgal/src/config/language.ts** で変数 **defaultLanguage** を編集します。変数の値は **language** のキーである必要があります。
 
 - Example:
 
@@ -83,12 +83,12 @@ Edit variable named **defaultLanguage** in **WebGal/packages/webgal/src/config/l
   export const defaultLanguage: language = language.mylang;
   ```
 
-## Finally - Build WebGal
+## 最後に、WebGALをビルドする
 
-Run this command in project root folder:
+プロジェクトのルートフォルダーで次のコマンドを実行します。
 
 ```shell
 yarn run build
 ```
 
-After, you can see a folder named **build** in *packages/parser/*, another folder named **dist** in *packages/webgal/*, that's the built file of WebGal. 
+その後、*packages/parser/* に **build** というフォルダーがアウトプットされ、*packages/webgal/* に **dist** という別のフォルダーが表示され、それがビルドされた WebGAL だ。
