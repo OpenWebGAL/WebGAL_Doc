@@ -2,12 +2,12 @@
 
 首先需要准备好以下信息：
 
-* 游戏 ID：游戏唯一 ID，不能与其他游戏重复
+* 游戏 ID：游戏唯一 ID，使用英文，不能与其他游戏重复
 * 游戏标题
-* 开发者信息：开发者名字
-* 发布日期：使用 xxxx-xx-xx 这种格式
-* 发布地址：游戏发布链接
-* 游戏封面：宽度 616 像素，高度 353 像素，建议使用 webp
+* 开发者名称
+* 发布日期
+* 发布地址：可公开访问的页面链接，比如项目主页、商店、博客、视频等
+* 游戏封面：宽度 616 像素，高度 353 像素
 
 ## 通过 Pull Requests 提交您的游戏
 
@@ -15,16 +15,16 @@ Fork [WebGAL_HomePage](https://github.com/MakinoharaShoko/WebGAL_HomePage) 这�
 
 将准备好的封面添加到 `/public/images/games`。
 
-打开文件 `/data/gamesData.ts` ，找到 `gamesData` ，在 json 数组的结尾根据以下模板添加：
+打开文件 `/data/gamesData.ts` ，找到 `gamesData` ，在结尾根据以下模板添加：
 
 ``` typescript
   {
     id: '游戏 ID',
     title: '游戏标题',
-    developer: '开发者信息',
+    developer: '开发者名称',
     releaseDate: 'xxxx-xx-xx',
     url: 'https://example.com/',
-    cover: '游戏封面文件名.webp'
+    cover: '游戏封面文件名.webp',
   },
 ```
 
