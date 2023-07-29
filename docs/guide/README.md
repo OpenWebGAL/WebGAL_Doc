@@ -5,7 +5,7 @@
 ::: warning 警告
 无论你使用何种方式制作 WebGAL 游戏，你都应该花一点时间将本页的全部内容阅读一遍。这不需要多长时间，并且将有利于你避开一些因操作不当导致的问题。
 
-你知道吗，大多数你感到疑惑的问题都可以在文档中找到答案。如果你坚信你遇到了 Bug，请在 [issues](https://github.com/MakinoharaShoko/WebGAL/issues) 提出问题或者发送电子邮件联系 <Mahiru_@outlook.com>，你也可以在网站的右上角的“更多”一栏找到加入 WebGAL 讨论社区的方法。
+你知道吗，大多数你感到疑惑的问题都可以在文档中找到答案。如果你坚信你遇到了 Bug，请在 [issues](https://github.com/MakinoharaShoko/WebGAL/issues) 提出问题或者发送电子邮件联系 <contact@openwebgal.com>，你也可以在网站的右上角的“更多”一栏找到加入 WebGAL 讨论社区的方法。
 :::
 
 ### 方法1（推荐）：使用 WebGAL 编辑器
@@ -59,13 +59,7 @@ npm install yarn -g
 yarn
 ```
 
-进入 WebGAL 包
-
-```shell
-cd packages/webgal
-```
-
-WebGAL 使用 vite 作为打包与调试工具，进入 webgal 包下后，你可以通过运行以下脚本启动开发服务器
+WebGAL 使用 vite 作为打包与调试工具，你可以通过运行以下脚本启动开发服务器
 
 ```shell
 yarn dev
@@ -76,6 +70,8 @@ yarn dev
 ```shell
 yarn build
 ```
+
+打包产物在 packages/webgal/dist 目录下
 
 ## 如何部署或发布我的视觉小说？
 
@@ -95,7 +91,7 @@ yarn build
 
 *使用**源代码开发**的开发者：*
 
-如果你使用源代码进行调试，你可以通过 `yarn build` 来创建一个静态网页（在/dist 文件夹），然后将这个文件夹内的内容部署到 GitHub Pages 或你的云服务器上。
+如果你使用源代码进行调试，你可以通过 `yarn build` 来创建一个静态网页（在 packages/webgal/dist 文件夹），然后将这个文件夹内的内容部署到 GitHub Pages 或你的云服务器上。
 
 ### Windows / macOS / Linux
 

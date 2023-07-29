@@ -22,5 +22,5 @@ WebGAL エンジンやエディタの新しい機能をリクエストしたい�
 ここにエラーコードまたはエディタのスクリーンショットを挿入
 ```
 
-バグを報告する必要がある場合は、[WebGAL issues](https://github.com/MakinoharaShoko/WebGAL/issues) または [WebGAL Terre issues](https://github.com/MakinoharaShoko/WebGAL_Terre/issues) で新しいissueを作ってレポートしてください。また、Mahiru_@outlook.com までご連絡ください。
+バグを報告する必要がある場合は、[WebGAL issues](https://github.com/MakinoharaShoko/WebGAL/issues) または [WebGAL Terre issues](https://github.com/MakinoharaShoko/WebGAL_Terre/issues) で新しいissueを作ってレポートしてください。また、contact@openwebgal.com までご連絡ください。
 

@@ -45,7 +45,7 @@ WebGAL の最新機能を体験したい方は [こちら](https://webgal-jp-dem
 
 # スポンサー
 
-## ゴールドスポンサー
+## ゴールド スポンサー
 
 | <img src="https://avatars.githubusercontent.com/u/91712707?v=4" alt="T2" style="zoom:25%;" width="150px" height="150px" /> |
 | ------------------------------------------------------------ |

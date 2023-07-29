@@ -1,277 +1,273 @@
-# WebGAL Game Development Guide
+# WebGAL ゲーム開発ガイド
 
-## How to start making a WebGAL game?
+## WebGAL でゲーム開発を行う方法
 
-::: warning Warning
-No matter which method you use to make a WebGAL game, you should take some time to read through this entire page. It won't take long, and it will help you avoid some issues that might arise from improper operation.
+::: warning 警告
+WebGAL ゲームを作成するために使用する方法にかかわらず、このページ全体をじっくりと読むことをお勧めします。それほど時間はかかりませんが、不適切な操作から生じる可能性のある問題を回避するのに役立ちます。
 
-Did you know that you can find answers to most of the issues you find confusing in the documentation? If you are convinced you have encountered a bug, please raise the issue in [issues](https://github.com/MakinoharaShoko/WebGAL/issues) or contact [Mahiru_@outlook.com](mailto:Mahiru_@outlook.com). You can also find ways to join the WebGAL community discussion in the "More" section in the top right corner of the site.
+WebGAL のドキュメンテーションには、ほとんどの疑問に対する回答が見つかることをご存知でしょうか？もしバグに遭遇したと確信している場合は、[issues](https://github.com/MakinoharaShoko/WebGAL/issues) でバグを報告するか、[contact@openwebgal.com](mailto:contact@openwebgal.com) に連絡してください。また、WebGAL コミュニティに参加する方法は、サイトの右上隅にある`その他`セクションで見つけることができます。
 :::
 
-### Method 1 (Recommended): Use the WebGAL Editor
+### その1 : WebGAL エディターを使用(推奨)
 
-**The WebGAL editor is the best way to create, produce, and publish a WebGAL game.**
+**WebGAL エディターは、WebGAL でゲームを作成し、開発し、公開するための最良の方法です。**
 
-After downloading the WebGAL editor, unzip the compressed package and launch the WebGAL_Terre application. WebGAL Terre will automatically open the default browser, or go to [http://localhost:3001/](http://localhost:3001/) to open the editor if it does not open automatically.
+WebGAL エディターをダウンロードした後、zipを解凍し、WebGAL_Terre.exe を起動します。WebGAL_Terre はブラウザを自動的に開きます。開かない場合は、ブラウザから [http://localhost:3001/](http://localhost:3001/)にアクセスしてください。
 
-::: danger Warning
-Please use a modern browser (Chrome / Firefox / Edge) to open WebGAL and the editor. Issues that may arise from using other browsers will not be addressed.
+::: danger 警告
+エディターを開くには、最新のブラウザ (Chrome / Firefox / Edge) を使用してください。その他のブラウザはサポート対象外です。
 :::
 
-::: tip Tip
-The method on this page **does not support Windows 7**. Windows 7 users please refer to **[Method to start production with visual editor on Windows 7](win7)**.
+::: tip ヒント
+このページの内容は Windows 7 にサポートしていません。Windows 7 をご利用の方は、**[Windows 7 でビジュアルエディターを使用してゲーム開発を行う方法](./win7)** を参照してください。
 
-The WebGAL editor has only been tested on Windows 10+ systems so far. We will gradually add support for Mac OS and Linux.
+WebGAL エディターは現在 Windows 10+ システムでのみテストされています。Mac OS および Linux のサポートは、今後順次追加していく予定です。
 :::
 
-Download the WebGAL visual editor:
+WebGAL エディターのダウンロードリンク:
 
 [GitHub](https://github.com/MakinoharaShoko/WebGAL_Terre/releases)
 
-[123 Cloud Disk (All versions are placed in one folder, please download the latest version)](https://www.123pan.com/s/YHszVv-jqzJ.html)
+### その2 : スクリプトを作成してローカルで開発し、リアルタイムでデバッグ
 
-### Method 2: Develop locally by writing scripts and debug in real time
+まず、静的なウェブページとデバッグ環境が組み込まれた WebGAL 配布をダウンロードしてください。
 
-First, download the WebGAL distribution that has been built into a static web page and the accompanying debugging environment.
-
-Download the WebGAL engine itself and debugging environment (does not include visual editor):
+WebGAL エンジンとデバッグ環境（ビジュアルエディターは含まれていません）をダウンロードします。
 
 [GitHub](https://github.com/MakinoharaShoko/WebGAL/releases/)
 
-After downloading and unzipping, you can directly run the corresponding version of WebGAL-server to debug your visual novel. If you encounter interception by antivirus software or firewall, please allow it to run.
+ダウンロードして解凍した後、対応するバージョンの WebGAL-server を直接実行して、ビジュアルノベルゲームをデバッグできます。もしアンチウイルスソフトウェアやファイアウォールによる遮断が発生した場合は、実行を許可してください。
 
-It is recommended to use VS Code for development and use plugins to enable syntax highlighting:
+開発には VS Code を使用することをお勧めし、シンタックスハイライトを有効にするためにプラグインを利用してください：
 
-[Store address of syntax highlighting plugin](https://marketplace.visualstudio.com/items?itemName=c6h5-no2.webgal-script-basics)
+[シンタックスハイライトプラグインのストアリンク](https://marketplace.visualstudio.com/items?itemName=c6h5-no2.webgal-script-basics)
 
-[Source code repository of syntax highlighting plugin](https://github.com/C6H5-NO2/webgal-script-basics)
+[シンタックスハイライトプラグインのソースコードリポジトリ](https://github.com/C6H5-NO2/webgal-script-basics)
 
-### Method 3 (suitable for front-end developers who want higher customizability): Debug from source code
+### その3 : ソースコードからデバッグ（高いカスタマイズ性を望むフロントエンド開発者向け）
 
 ```
 git clone https://github.com/MakinoharaShoko/WebGAL.git
 ```
 
-Install and use yarn to install dependencies
+yarn をインストールします。次に、yarn を使用して依存関係をインストールします
 
 ```
 npm install yarn -g
 yarn
 ```
 
-Enter the WebGAL package
+WebGAL パッケージに移動します
 
 ```
 cd packages/webgal
 ```
 
-WebGAL uses vite as the bundling and debugging tool. After entering the webgal package, you can start the development server by running the following script:
+WebGAL は、vite をパッケージ化およびデバッグツールとして使用します。webgal パッケージを入力した後、次のコマンドを実行してローカルサーバーを起動します
 
 ```
 yarn dev
 ```
 
-If you want to package, please use:
+パッケージは、
 
 ```
 yarn build 
 ```
 
-## How to deploy or publish my visual novel?
+## ビジュアルノベルゲームのデプロイまたは公開方法
 
-First, please be aware that the engine that can be deployed to the Internet should be a **release or web page exported from the WebGAL visual editor**, not the source code.
+まず、インターネットにデプロイ可能なエンジンは、**WebGAL リリース バージョン または WebGAL エディタから Web ページとしてエクスポートされたもの**であることに注意してください。ソースコードではありません。
 
-**If you use the WebGAL editor, you can select Export Game in the top right corner. Generally, File Explorer will open automatically after export is complete. If it does not open automatically, you can find it under Exported_Games in the WebGAL editor directory.**
+**WebGAL エディタを使用する場合、右上隅にある`ゲームを出力`をクリックします。一般的に、エクスポートが完了すると自動的にファイルエクスプローラーが開きます。自動的に開かれない場合は、WebGAL エディタのディレクトリの中にある `Exported_Games` フォルダーの中に見つけることができます。**
 
-### Web page
+### ウェブページ
 
-*If you use the **editor***:
+*　**WebGAL エディタ**を使用する場合：*
 
-In the upper right corner of the editor, select Export to Web Page. The method of deploying web pages is no different from deploying a normal website. You can purchase cloud servers (Tencent Cloud, Alibaba Cloud) and other deployment methods, or use GitHub Pages.
+WebGAL エディタの右上隅で`ゲームを出力`をクリックし、`ウェブとしてエクスポート`を選択します。Web ページのデプロイ方法は通常のウェブサイトのデプロイ方法と同じです。クラウドサーバー（Tencent Cloud、Alibaba Cloud）を購入するか、GitHub Pages を使用することができます。
 
-*If you use the **release version***:
+*　**WebGAL リリースバージョン**を使用する場合：*
 
- the files under /WebGAL (not the folders, the files under the /WebGAL folder) to the specified directory on your cloud server where you want to deploy, or deploy to GitHub Pages.
+`/WebGAL`フォルダーのファイル（フォルダーではなく、`/WebGAL`フォルダーの中のファイル）を、デプロイするクラウドサーバーの指定したディレクトリにコピーするか、GitHub Pages にデプロイできます。
 
-*For developers using **source code development***:
+*　**ソースコード**を使用して開発する場合：*
 
-If you use the source code for debugging, you can create a static web page (in the /dist folder) by `yarn build`, and then deploy the content of this folder to GitHub Pages or your cloud server.
+ソースコードを使用してデバッグする場合、`yarn build` を実行して静的ウェブページ（`/dist`フォルダーの中）を作成し、それをデプロイするクラウドサーバーの指定したディレクトリにコピーするか、GitHub Pages にデプロイできます。
 
 ### Windows / macOS / Linux
 
-In the upper right corner of the editor, select Export to Executable File. The executable file can run directly on current system.
+WebGAL エディタの右上隅で`ゲームを出力`をクリックし、`実行可能ファイルとしてエクスポート`を選択します。実行可能ファイルが WebGAL エディタを起動するシステム(Windows / macOS / Linux)で直接実行できます。
 
 ### Android
 
-[Package the game for android platforms](./android.md)
+ゲームを Android プラットフォームにパッケージ化したい方は[こちら](./android)。
 
-## Game script writing tutorial
+## ゲームスクリプトのチュートリアル
 
-Now, you should have started the WebGAL editor or started a debugging server. Next, I will introduce how to write your own scripts.
+これで、WebGAL エディタを起動するか、デバッグサーバーを起動したはずです。次に、スクリプトの書き方について紹介します。
 
-You should be able to find that under the unzipped folder, there is a WebGAL folder. Under the WebGAL folder, there is a game folder, which is where your game resources should be stored. **(If you use the visual editor, you can directly open the corresponding resource folder in the left toolbar)**
+解凍されたフォルダーの中に、WebGAL フォルダーがあるはずです。WebGAL フォルダーの中には、ゲームフォルダーがあります。このフォルダーは、あなたのゲームのリソースを保存するべきところです。**（ビジュアルエディタを使用する場合は、左のツールバーで対応するリソースフォルダーを直接開くことができます）**
 
-All your game scripts, pictures, character sprites, etc. should be placed under the game folder. The resource description corresponding to the directory is as follows:
+ゲームのすべてのスクリプト、画像、立ち絵などは、ゲームフォルダーの中に配置する必要があります。ディレクトリに対応するリソースの説明は次のとおりです：
 
-| Folder     | Resources stored                                          |
-| :--------- | :-------------------------------------------------------- |
-| animation  | Animation description file                                |
-| background | Used to store background pictures, title page backgrounds |
-| figure     | Used to store character sprites                           |
-| scene      | Used to store user scripts                                |
-| bgm        | Used to store background music                            |
-| vocal      | Used to store dubbing files                               |
-| video      | Used to store videos                                      |
-| tex        | Used to store effect texture files                        |
+| フォルダー  | 保存されるリソース :-------------------------------------- |
+| ---------- | -------------------------------------------------------- |
+| animation  | アニメーション記述ファイル                                  |
+| background | 背景画像、タイトルページの背景                              |
+| figure     | 立ち絵                                                    |
+| scene      | スクリプト                                                |
+| bgm        | BGM                                                      |
+| vocal      | ボイス、SEなど                                            |
+| video      | ビデオ、動画　　　　　                                      |
+| tex        | 特殊効果用　　　　　　　　　　　　　　                       |
 
-## Customize your game info
+## ゲーム情報のカスタマイズ
 
-Under the /game folder, there is a file config.txt where you can fill in relevant information about your game (you can edit it directly using the visual editor):
-
-```
-Game_name:WebGAL;//Your game name 
-Game_key:0f33fdGr;//A string of identification codes, you should input a string of characters that is not easy to duplicate with others as randomly as possible, preferably 6-10 characters long, otherwise bugs may occur
-Title_img:Title2.png;//The name of the title picture, the picture is placed in the /background folder
-Title_bgm:夏影.mp3;//The title background music, the music file should be placed in the /bgm folder
-```
-
-## Comments
-
-The WebGAL script will only parse the content before the semicolon on each line, so the content after the semicolon will be treated as comments.
+`/game`フォルダーの下には、`config.txt`というファイルがあります。ここにゲームに関する情報を入力できます（ビジュアルエディタを使用して直接編集することもできます）：
 
 ```
-WebGAL:Hello!; // The content after the semicolon will be treated as comments
-;You can directly input a semicolon and then write a single line comment
+Game_name:WebGAL;//ゲーム名
+Game_key:0f33fdGr;//識別コードの文字列。できるだけ6-10文字の長さの文字列をランダムに入力してください。他のゲームと重複しないようにする必要があります。そうしないとバグが発生する可能性があります。
+Title_img:Title2.png;//タイトル画像の名前。画像は /background フォルダーに保存してください。
+Title_bgm:夏影.mp3;//タイトルの BGM。音楽ファイルは /bgm フォルダーに保存してください。
 ```
 
-## `-next` parameter
+## コメント
 
-You can add the parameter `-next` after any statement to jump to the next statement immediately after executing this statement. This is very useful when you need to perform multiple steps at the same time.
-
-Example:
-
-smali
+WebGAL のスクリプトでは、各行のセミコロンの前の内容のみが解析されます。そのため、セミコロン以降はコメントとみなされます。
 
 ```
-changeBg:testBG03.jpg -next; // Will immediately execute the next statement
+WebGAL:こんにちは！; // セミコロン以降はコメントとみなされます
+;行の先頭にセミコロンを入力することで、1行のコメントを書くこともできます。
 ```
 
-## `none` keyword
+## `-next` パラメータ
 
-When setting **resources** such as sprites, bgm, backgrounds, etc., set it to the `none` keyword to close that object.
+`-next` パラメータは、任意のステートメントの後に追加することができます。これにより、そのステートメントが実行された後、直ちに次のステートメントを実行することができます。特に、複数の操作を同時に実行する必要がある場合に便利です。
 
-## Syntax for writing user scripts
-
-First, the program will start running from the **initial script** `start.txt`. In subsequent script writing, I will introduce how to jump chapters or set branch options.
-
-**The way to write scripts is very simple and almost identical to natural language.**
-
-### Basic character dialogue
-
-First, use Notepad, VS Code, Sublime Text and other text editors to open start.txt in the scene folder under the game resource directory, and then you can start writing your first line of dialogue.
-
-The method of writing character dialogue is very simple. You just need to enter:
-
-**Note that the colons and semicolons for each line of dialogue should be English characters!**
+例:
 
 ```
-Character: Dialogue; 
+changeBg:testBG03.jpg -next; // このステートメントが実行された後、直ちに次のステートメントを実行します
 ```
 
-Example:
+## `none` キーワード
+
+`none` キーワードを使用することで、立ち絵、BGM、背景などの**リソース**を無効にすることができます。
+
+## スクリプトの構文
+
+まず、ゲームは**最初のスクリプト**である`start.txt`から実行を開始します。シーンジャンプや選択肢の設定方法については[こちら](#シーンジャンプと選択肢)。
+
+**スクリプトを記述方法は非常に簡単であり、自然言語とほとんど変わりません。**
+
+### キャラクターの会話
+
+まず、メモ帳、VS Code、Sublime などのテキストエディタを使用して、ゲームリソースディレクトリの `scene` フォルダーの中の `start.txt` を開き、最初の会話を書き始めることができます。
+
+キャラクターの会話を書く方法は非常に簡単です。次のように入力するだけです。
+
+**各行のコロンとセミコロンは半角文字である必要があることに注意してください！**
 
 ```
-Yukino: Please have some tea;
-Yui: Oh, thank you;
-Komachi: Thank you, Sister Yukino!;
-Isshiki: Thank you, senpai.
+キャラクター:セリフ; 
 ```
 
-After each dialogue/script, use a semicolon as the ending. (If you don't use a semicolon sometimes, it might still work, but the author suggests adding a semicolon to prevent bugs).
-
-### Continuous dialogue
-
-If you don't change the character name in multiple lines of dialogue, you can use continuous dialogue and omit the character name, then use it again when needed:
+例:
 
 ```
-Yukino: You're here early;  
-Sorry, have you been waiting long?; // At this point, the character for the dialogue is still "Yukino".
-Yui: I just got here;
+雪ノ下 雪乃: お茶、どうぞ。;
+由比ヶ浜 結衣: あ、ありがとうございます。;
+比企谷 小町: 雪乃さん、ありがとうございます！;
+一色 いろは: 先輩、ありがとうございます！;
 ```
 
-#### Narration
+各行の後にはセミコロンを使用して終了してください。（セミコロンを書かなくても機能する場合もありますが、バグを防ぐためにセミコロンを追加することをお勧めです）。
 
-If you want to create narration dialogue without a character name, leave it blank before the colon (but keep the colon):
+### 連続セリフ
 
-```
-:This is a line of narration;
-```
-
-### Play voice while displaying dialogue
-
-As we all know, what often attracts people most to visual novels is the excellent dubbing. In this version, you can introduce dubbing in the dialogue. Put your dubbing in the vocal folder, then add the audio file name in the parameters to introduce it. Syntax example:
+連続した複数行のセリフでキャラクターが変更されない場合は、キャラクター名を省略できます。 キャラクターを変更する必要がある場合は、キャラクター名を再度使用します。
 
 ```
-Yui: I just got here -V3.ogg;
+雪ノ下雪乃: 早かったわね;
+結構待ったの？;//この時点では、セリフのキャラクター名は「雪ノ下雪乃」のままです。
+比企谷八幡:今着いたところ;
 ```
 
-The introduction of dubbing is the same in continuous dialogue:
+#### ナレーター
+
+キャラクターの名前なしでナレーターを作成する場合は、コロンの前に空白のままにします(コロンは省略しないでください)。
 
 ```
-Yukino: You're here early -V1.ogg;  
-Sorry, have you been waiting long? -V2.ogg;
+:これはナレーターです。
 ```
 
-### Black screen text display
+### セリフを表示しながら音声を再生する
 
-In many games, some text will be displayed in black screens, used to introduce themes or show characters' psychological activities. You can use the intro command to play a monologue:
-
-```
-intro:Memories don't need a suitable script,|After all, once spoken,|it all becomes empty words.;
-```
-
-The monologue is separated by separators (|), which means that each | represents a new line. In actual performance, the above text will become:
+ご存知のように、ビジュアルノベルゲームの最も魅力的な部分は、優れた吹き替えです。このバージョンでは、セリフに音声を導入することができます。音声ファイルを `vocal` フォルダーに入れ、パラメータとしてセリフに追加します。構文の例は次のとおりです。
 
 ```
-Memories don't need a suitable script,
-After all, once spoken,
-it all becomes empty words.
+比企谷八幡:今着いたところ -V3.ogg;
 ```
 
-### Change background/character sprite
-
-For WebGAL to be able to read background images and character sprites, your background images should be placed in the background folder, and sprite images should be placed in the figure folder.
-
-Next, you can use the following simple statements to change the currently displayed background image and character sprite:
+連続セリフの場合は、同じ方法で音声を導入します。
 
 ```
-changeBg:testBG03.jpg;//Change background
-changeFigure:testFigure02.png;//Change character sprite
-changeBg:none;//Close background 
-changeFigure:none;//Close character sprite
+雪之下雪乃:早かったわね -V1.ogg;
+結構待ったの？ -V2.ogg;
 ```
 
-You may find that after you change the background image or character sprite, you need to click the mouse again to display the next line of dialogue. If you want to execute the content of the next statement immediately after changing the background image/sprite, please use:
+### モノローグ
+
+多くのゲームでは、テーマを紹介したり、キャラクターの心理活動を示したりするために、モノローグを使用します。`intro` コマンドを利用して、モノローグを使用することができます。
 
 ```
-changeBg:testBG03.jpg -next;  
-changeFigure:testFigure02.png -next;//Change character sprite
-Isshiki: Thank you, senpai!;
+intro:思い出には適切な台本は必要ありません。| とにかく一度言ってしまうと、| それはすべて冗談になりました。;
 ```
 
-If you do this, the program will immediately execute the next statement after replacing the background image/sprite.
+モノローグの分割は、区切り文字 `|` で区切られており、各 | は改行を表します。実際のプレゼンテーションでは、上記のモノローグは次のようになります。
 
-### Place sprites in different positions
+```
+思い出には適切な台本は必要ありません。
+とにかく一度言ってしまうと、
+それはすべて冗談になりました。
+```
 
-Now you can place different sprites in three different positions on the page. You just need to add the position you want to place in the statement that places the sprite. Examples are as follows:
+### 背景画像と立ち絵の変更
+
+WebGAL が背景画像と立ち絵を読み取れるようにするには、背景画像を `background` フォルダーに配置し、立ち絵を `figure` フォルダーに配置する必要があります。
+
+次に、次の簡単なステートメントを使用して、現在表示されている背景画像と立ち絵を変更します。
+
+```
+changeBg:testBG03.jpg;//背景画像を変更する
+changeFigure:testFigure02.png;//立ち絵を変更する
+changeBg:none;//背景を表示しない
+changeFigure:none;//立ち絵を表示しない
+```
+
+背景画像または立ち絵を変更した後、次のステートメントを実行するためにマウスをもう一度クリックする必要があります。背景画像と立ち絵を変更した直後に次のステートメントの内容を実行したい場合は、`-next` を使用してください。
+
+```
+changeBg:testBG03.jpg -next; //背景画像を変更する
+changeFigure:testFigure02.png -next;//立ち絵を変更する
+一色:先輩、ありがとうございます！;
+```
+
+こうしたら、ゲームは背景画像または立ち絵を変更した直後に、次のステートメントを実行します。
+
+### 立ち絵を異なる位置に配置する
+
+3つの異なる位置に立ち絵を配置することができます。立ち絵を配置するステートメントに、パラメータとして、位置を追加するだけです。
 
 ```
 changeFigure:testFigure03.png -left;
-changeFigure:testFigure04.png;  
-changeFigure:testFigure03.png -right;
+changeFigure:testFigure04.png;
+changeFigure:testFigure05.png -right;
 ```
 
-The above three lines correspond to the left, middle and right three different positions. The sprites in the three different positions are independent of each other, so if you need to clear the sprite, you must clear them independently:
+上記のは、左、中央、右の3つの位置に3つの異なる立ち絵を配置しています。3つの異なる位置の立ち絵は互いに独立しているため、クリアする必要がある場合は、別々にクリアする必要があります。
 
 ```
 changeFigure:none -left;
@@ -279,7 +275,7 @@ changeFigure:none;
 changeFigure:none -right;
 ```
 
-If you want to execute the statement immediately after changing the sprite, the operation method is the same as before, that is, add the parameter `-next`:
+立ち絵を変更した直後にステートメントを実行したい場合、`-next` を使用してください。
 
 ```
 changeFigure:testFigure03.png -left -next;
@@ -287,213 +283,209 @@ changeFigure:testFigure04.png -next;
 changeFigure:testFigure03.png -right -next;
 ```
 
-### Free sprites with ID
+### ID 付きの立ち絵
 
-If you want to control sprites more precisely, you can specify an `id` and initial position for the sprite:
-
-```
-changeFigure:testFigure03.png -left -id=test1; // A free sprite with initial position on the right
-changeFigure:none -id=test1; // Close sprite by id
-```
-
-Note: If you want to reset the position of a sprite with ID, close it first and then reopen it.
-
-### Place mini avatar
-
-Many games can place a mini avatar in the lower left corner of the text box. The following is the syntax used in this engine:
+立ち絵をより正確に制御したい場合は、立ち絵に `id` を指定することがお勧めです。
 
 ```
-miniAvatar:minipic_test.png;//Display minipic_test.png in the lower left corner
-miniAvatar:none;//Close this mini avatar
+changeFigure:testFigure03.png -id=test1; // ID 付きの立ち絵を表示する
+changeFigure:none -id=test1; // ID で立ち絵を表示しない
 ```
 
-### Jump scenes and branch choices
+注意: ID 付きの立ち絵の位置をリセットしたい場合は、まず表示しないようにしてから再度表示してください。
 
-In visual novels, jumping chapters and scenes and branch choices are indispensable. Therefore, this game module also supports scene jumps and branch choices.
+### ミニアバターを配置する
 
-You can split your scripts into multiple txt documents, and use a simple statement to switch the currently running script.
+多くのゲームでは、テキストボックスの左下隅にミニアバターを配置できます。このエンジンで使用される構文は次のとおりです。
 
-::: warning Warning
-When jumping scenes, branch choices, or calling scenes, the stage will not be cleared. This also means that effects such as background music, sprites, and background images applied in the previous scene will be inherited to the next scene.
+```
+miniAvatar:minipic_test.png;// minipic_test.png をミニアバターとして表示する
+miniAvatar:none;// ミニアバターを表示しない
+```
 
-If you use the WebGAL editor, you should pay extra attention, because the WebGAL editor does not care about the effects the previous scene will bring when previewing a single scene alone. Therefore, the preview effect and the actual game running effect may differ. You should consider properly handling the stage cleanup before the scene jump.
+### シーンジャンプと選択肢
+
+ビジュアルノベルゲームでは、シーンジャンプと選択肢が欠かせないです。WebGAL でも、シーンジャンプと選択肢をサポートしています。
+
+スクリプトを複数の `txt` ファイルに分割し、簡単なステートメントを使用して現在実行中のシーンを切り替えることができます。
+
+::: warning 警告
+シーンジャンプまたはシーンコールの後、シーンはクリアされません。これは、前のシーンの BGM 、立ち絵、背景画像、およびその他のリソースが次のシーンに継承されることも意味します。
+
+WebGAL エディターを使用する場合は、WebGAL エディターは、1つのシーンのみをプレビューするときに前のシーンの効果が表示されないため、特に注意を払う必要があります。そのため、プレビュー効果と実際のゲーム実行効果は異なる場合があります。シーンジャンプの前にシーンクリーンアップを適切に処理することを検討する必要があります。
 :::
 
-For example, if you have now written the scripts for two chapters, Chapter-1.txt and Chapter-2.txt respectively, after Chapter-1.txt finishes running, you want to jump to the scene corresponding to Chapter-2.txt, please use the following statement:
+`Chapter-1.txt` と `Chapter-2.txt` の 2 つのスクリプトがある場合、`Chapter-1.txt` の実行が終了した後に `Chapter-2.txt` に対応するシーンにジャンプする場合は、次のステートメントを使用します。
 
-#### Jump scenes
+#### シーンジャンプ
 
-Statement:
+ステートメント:
 
 ```
 changeScene:Chapter-2.txt; 
 ```
 
-Example:
-
-asciidoc
+例:
 
 ```
 (Chapter-1.txt) 
 ......
 ......
 changeScene:Chapter-2.txt;
-The content of Chapter-2.txt will be executed next.
+次に実行するのは、Chapter-2.txt の内容です。
 ...... 
 ......
 (Chapter-2.txt)
 ```
 
-By executing this command, you will switch the game scene and the subsequent plot will run according to the new scene script. The new script will run after the next mouse click.
+このコマンドを実行すると、新しいシーンに切り替えてゲームを続行します。新しいシーンは、次にマウスをクリックした後に実行されます。
 
-#### Call scenes
+#### シーンコール
 
-If you need to return to the previous scene (parent scene) after executing the called scene, you can use `callScene` to call the scene.
+呼び出したシーンを実行した後、前のシーン(親シーン)に戻る必要がある場合は、`callScene` コマンドを使用してシーンを呼び出す必要があります。
 
-Statement:
+ステートメント:
 
 ```
 callScene:Chapter-2.txt;
 ```
 
-Example:
-
-asciidoc
+例:
 
 ```
 (Chapter-1.txt)
 ...... 
 ......
 callScene:Chapter-2.txt;
-The content of Chapter-2.txt will be executed next.
+次に実行するのは、Chapter-2.txt の内容です。
 ......
 ......
 (Chapter-2.txt) 
 ......
-(After Chapter-2.txt execution is complete)  
-Return to parent scene and continue executing parent scene statements.
+(Chapter-2.txt の実行が完了しました)  
+親シーンに戻り、親シーンの実行を続行します。
 ......
 ```
 
-#### Branch choices
+#### 選択肢
 
-If your script has branch options, and you want to enter different chapters by choosing different options, please use the following statement:
+スクリプトに選択肢があり、異なるオプションを選択して異なるシーンに入りたい場合は、次のステートメントを使用してください。
 
-Where `|` is the separator.
+ここで、`|` は区切り文字です。
 
 ```
-choose:Call out to her:Chapter-2.txt|Go home:Chapter-3.txt;
+choose:彼女に声をかける:Chapter-2.txt|家に帰る:Chapter-3.txt;
 ```
 
-You just need to correspond the text of the options one-to-one with the script name to enter after selecting the option to achieve the function of branch choices.
+オプションのテキストを、オプションを選択した後に入りたいスクリプトファイルと 1 対 1 で対応させるだけで、選択肢の機能を実現できます。
 
-### End game and return to title
+### ゲームを終了してタイトルに戻る
 
-If you want to end the game after the plot ends and return to the title, please use:
+スクリプトが終了した後にゲームを終了してタイトルに戻りたい場合は、次のステートメントを使用してください。
 
 ```
 end;
 ```
 
-This will make the game return to the title screen.
+これにより、ゲームはタイトル画面に戻ります。
 
-### Introduce background music (BGM)
+### BGMの使用
 
-The way to introduce background music is extremely simple. You just need to place the background music in the /bgm directory, then you can simply play it when needed:
+BGM を使用する方法は非常に簡単です。BGM ファイル を /bgm フォルダーに配置し、必要なときに再生するだけです。
 
 ```
 bgm:夏影.mp3;
 ```
 
-### Use sound effects
+### 効果音の使用
 
 ```
 playEffect:xxx.mp3;
 ```
 
-Can play a short sound effect
+短い効果音を再生できます。
 
-**Loop sound effects**
+**効果音のループ**
 
-Giving an id to a sound effect will automatically enable sound effect looping. Use the same id later to stop it.
-
-```
-playEffect:xxx.mp3 -id=xxx;  
-playEffect:none -id=xxx; //Stop this looping sound effect
-```
-
-### Play a short video
+効果音に ID を指定すると、効果音のループが自動的に有効になります。後で同じ ID を使用して停止します。
 
 ```
-playVideo:OP.mp4 //The video should be placed in the /game/video/ folder
+playEffect:xxx.mp3 -id=xxx; // 効果音のループを有効にする
+playEffect:none -id=xxx; // 効果音のループを停止する
 ```
 
-### Unlock BGM or CG for appreciation
+### 短い動画を再生する
 
-In WebGAL 4.2, the appreciation functions of BGM and CG are added. You can execute the following statements at the appropriate time to unlock BGM or CG.
+```
+playVideo:OP.mp4; // 動画は /game/video フォルダーに配置する必要があります
+```
+
+### 鑑賞のためにBGMやCGのアンロック
+
+バージョン4.2以降、WebGAL は BGM と CG の鑑賞機能を追加しました。次のステートメントを実行することで、BGM または CG をタイミングよくアンロックすることができます。
 
 ```text
-unlockCg:xgmain.jpeg -name=星光咖啡馆与死神之蝶 -series=1; // 解锁CG并赋予名称
-unlockBgm:s_Title.mp3 -name=Smiling-Swinging!!; // 解锁bgm并赋予名称
+unlockCg:xgmain.jpeg -name=喫茶ステラと死神の蝶 -series=1; // CG をアンロックする
+unlockBgm:s_Title.mp3 -name=Smiling-Swinging!!; // BGM をアンロックする
 ```
 
-Among them, the "series" parameter is optional and represents which series the current CG belongs to. CGs from the same series will be merged and displayed together in the future (i.e., displayed as switchable CGs from the same series).
+その中で、`series` パラメータはオプションであり、CG がどのシリーズに属しているかを表します。同じシリーズの CG は、将来統合されて一緒に表示されます(つまり、同じシリーズの切り替え可能な CG として表示されます)。
 
-### Hide text box
+### テキストボックスを閉じる
 
-Sometimes, for some special performance effects, you may want to temporarily hide the text box. So you can use the following instructions:
+一部の特殊効果を表示するために、テキストボックスを一時的に閉じたい場合は、次のステートメントを使用してください。
 
 ```
 setTextbox:hide;  
 ```
 
-to close the text box. When the value of the `setTextbox` instruction is `hide`, the text box will be closed and the user will not be able to open it in any way. If you want to redisplay the text box, call this command again and enter any value except `hide`.
+`setTextbox` コマンドの内容が `hide` の場合、テキストボックスは閉じられ、ユーザーはそれを開くことができなくなります。テキストボックスを再表示する場合は、このコマンドを再度使用して、`hide` 以外の内容を入力してください。
 
 ```
-setTextbox:on; // Can be any value except hide.
+setTextbox:on; // hide 以外の内容を入力してください。
 ```
 
-### Use animation effects
+### アニメーション効果の使用
 
-#### Set animation for background or sprite
+#### 背景画像または立ち絵にアニメーションを設定する
 
 Use statement `setAnimation:animation name -target=target object;`
 
-**Example:**
+**例:**
 
 ```
-setAnimation:enter-from-bottom -target=fig-center -next;//Set an animation of entering from the bottom for the middle sprite, and go to the next sentence.
+setAnimation:enter-from-bottom -target=fig-center -next; // 真ん中の立ち絵に下から入るアニメーションを設定し、次のステートメントに進む。
 ```
 
-Currently, the preset animations are:
+#### 事前に作成されたアニメーション
 
-| Animation effect          | Animation name      | Duration (ms) |
-| :------------------------ | :------------------ | :------------ |
-| Fade in                   | enter               | 300           |
-| Fade out                  | exit                | 300           |
-| Shake left and right once | shake               | 1000          |
-| Enter from bottom         | enter-from-bottom   | 500           |
-| Enter from right          | enter-from-right    | 500           |
-| Enter from left           | enter-from-left     | 500           |
-| Move front and back once  | move-front-and-back | 1000          |
+| アニメーション             | ファイル                  | 継続時間 (ミリ秒) |
+| :------------------------ | :----------------------- | :--------------- |
+| フェードイン               | enter.json               | 300              |
+| フェードアウト             | exit.json                | 300              |
+| 左右に振る                 | shake.json               | 1000             |
+| 下から入る                 | enter-from-bottom.json   | 500              |
+| 左から入る                 | enter-from-right.json    | 500              |
+| 右から入る                 | enter-from-left.json     | 500              |
+| 1回前後に動かす            | move-front-and-back.json | 1000             |
 
-Currently, the animation target objects are:
+現在、アニメーション化できるオブジェクトは次のとおりです。
 
-| target     | Actual target    |
-| :--------- | :--------------- |
-| fig-left   | Left sprite      |
-| fig-center | Middle sprite    |
-| fig-right  | Right sprite     |
-| bg-main    | Background       |
-|            | A sprite with id |
+| オブジェクト     | 実際のオブジェクト    |
+| :--------- | :----------------------- |
+| fig-left   | 左の立ち絵                |
+| fig-center | 真ん中の立ち絵            |
+| fig-right  | 右の立ち絵                |
+| bg-main    | 背景                     |
+|            | ID 付き立ち絵             |
 
-#### Custom animation
+#### カスタムアニメーション
 
-Animation files are in `/game/animation`. You can create your own custom animations.
+アニメーションファイルは `/game/animation` にあります。独自のカスタムアニメーションを作成することができます。
 
-The animation file uses JSON to describe. You can refer to the JSON syntax in the [reference document](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON).
+アニメーションファイルは JSON を使用して記述します。JSON 構文を知りたい方は [こちら](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON) 。
 
-Each animation file represents an **animation sequence**, described using a JSON array. Here is a sample describing an animation entering from the left:
+各アニメーションファイルは、JSON 配列を使用して記述された **アニメーションシーケンス** を表します。サンプルとして、「左から入る」のアニメーションを次に示します。
 
 ```
 enter-from-left.json
@@ -540,37 +532,37 @@ enter-from-left.json
 ]
 ```
 
-The meaning of each attribute is:
+各アトリビュートの意味は次のとおりです。
 
-| Attribute | Meaning                                                |
-| :-------- | :----------------------------------------------------- |
-| alpha     | Transparency, range 0-1                                |
-| scale     | Scale                                                  |
-| pivot     | Anchor point                                           |
-| position  | Position offset                                        |
-| rotation  | Rotation angle, unit is radian                         |
-| blur      | Gaussian blur radius                                   |
-| duration  | Duration of this time slice, unit is milliseconds (ms) |
+| アトリビュート | 意味                                               |
+| :------------ | :------------------------------------------------- |
+| alpha         | 透明度、範囲 0 ～ 1                                 |
+| scale         | ズーム                                              |
+| pivot         | アンカーポイント                                    |
+| position      | 位置オフセット                                      |
+| rotation      | 回転角度                                            |
+| blur          | ガススぼかし                                        |
+| duration      | 継続時間 (ミリ秒 (ms) 単位)                          |
 
-Then, you need to add the file name of your custom animation (without the extension) in the `animationTable`
+次に、カスタムアニメーションのファイル名(拡張子なし)を `animationTable` に追加する必要があります。
 
-In file `animationTable.json`:
+ファイル `animationTable.json` で:
 
 ```json
 ["enter-from-left","enter-from-bottom","enter-from-right"]
 ```
 
-Then, you can call it in the script:
+次に、スクリプトでそれを呼び出すことができます。
 
 ```
-setAnimation:enter-from-left -target=fig-left -next; 
+setAnimation:enter-from-left -target=fig-left -next;
 ```
 
-#### Omit some attributes
+#### 一部の属性を省略する
 
-If your animation only needs to operate some attributes, you can leave other attributes that do not participate in the animation empty to keep them default:
+アニメーションで一部のアトリビュートのみを操作する必要がある場合は、ほかのアトリビュートを空のままにして、デフォルトのままにすることができます。
 
-**Example: `enter.json`**
+**例:`enter.json`**
 
 ```json
 [
@@ -578,271 +570,263 @@ If your animation only needs to operate some attributes, you can leave other att
     "alpha": 0,
     "duration": 0
   },
-  { 
+  {
     "alpha": 1,
     "duration": 300
   }
 ]
 ```
 
-#### Use transforms
+#### 変換の使用
 
-An animation with a duration of 0 milliseconds and only one time slice is a transform.
+継続時間が 0 ミリ秒で、タイムスライスが 1 つだけのアニメーションは変換です。
 
-**Example:**
+**例:**
 
 ```json
 [
   {
     "alpha": 0, 
- 
     "duration": 0
-  }  
+  }
 ]
 ```
 
-### Add special effects
+### 特殊効果の追加
 
-Currently, WebGAL's effect system is implemented by PixiJS.
+現在、WebGAL の特殊効果システムは PixiJS によって実装されています。
 
-#### Initialize Pixi
+#### Pixiの初期化
 
-```
-pixiInit
-```
+`pixiInit`
 
 ```
 pixiInit; 
 ```
 
-**Note:**
+**注意:**
 
-**1. If you want to use effects, you must run this command first to initialize Pixi.**
+**1. 特殊効果を追加したい場合は、まずこのコマンドを実行して Pixi を初期化する必要があります。**
 
-**2. If you want to eliminate the effects that have been applied, you can use this syntax to clear the effects.**
+**2. 追加した特殊効果をクリアしたい場合も、このコマンドを実行してください。**
 
-#### Add effects
+#### 特殊効果の追加
 
-```
-pixiPerform
-```
+`pixiPerform`
 
 ```
-pixiPerform:rain;//Add a raining effect
+pixiPerform:rain; // 雨の特殊効果を追加する
 ```
 
-Note: After the effect is applied, it will keep running if not initialized.
+注意: 特殊効果が追加した後、初期化されていない場合は継続して実行されます。
 
-#### List of preset effects
+#### 事前に作成された特殊効果
 
 | Effect | Command           |
 | :----- | :---------------- |
-| Rain   | pixiPerform:rain; |
-| Snow   | pixiPerform:snow; |
+| 雨     | pixiPerform:rain; |
+| 雪     | pixiPerform:snow; |
 
-#### Superimpose effects
+#### 重ね合わせた特殊効果
 
-If you want to superimpose two or more effects, you can superimpose different effects without using the `pixiInit` command.
+2 つ以上の特殊効果を重ね合わせたい場合は、`pixiInit` コマンドを使用せずに異なる特殊効果を重ね合わせることができます。
 
 ```
 pixiPerform:rain;
 pixiPerform:snow;
 ```
 
-#### Clear superimposed effects
+#### 特殊効果のクリア
 
-Use `pixiInit` to initialize, this can eliminate all effects that have been applied.
+`pixiInit` を使用して初期化すると、追加したすべての特殊効果をクリアすることができます。
 
-#### Movie mode (test function)
+#### ムービーモード(テスト機能)
 
-Turn on movie mode by executing the script `filmMode:enable;`, `filmMode:none;` can turn it off.
+ムービーモードのオンとオフを切り替えるには、次のスクリプトを実行します。
 
-## Advanced tutorials
+```
+filmMode:enable; // ムービーモードをオンにする
+filmMode:none; // ムービーモードをオフにする
+```
 
-### Implement statement jumps and branch jumps within the same scene (TXT file)
+## 上級者向けチュートリアル
 
-If you want to create a branch but feel it is too troublesome to create a new TXT file, you can try the following to implement creating branches and jumping statements within the same file.
+### ステートメントジャンプと選択肢ジャンプ(同じTXTファイル内)
 
-**Note: If your branch is very long, I do not recommend using this method, because the number of lines in a single TXT is not suitable for being too long, otherwise it may cause performance problems such as slow loading and sluggish response.**
+分岐を作成したいが、新しい TXT ファイルを作成するのが面倒だと感じた場合は、以下を読んでみてください。
 
-#### First, you must understand how to use label
+**注意:分岐が非常に長い場合は、1 つの TXT の行数が長すぎてはいけないため、この方法を使用することはお勧めしません。**
 
-asciidoc
+#### まず、ラベルを作成する
 
 ```
 ......
 jumpLabel:label_1; 
-// The following lines will be ignored:
+; // 次の行は無視される。
 ...... 
 ......
 ......
-// Then, you need to create the label:
+; // 次に、ラベルを作成する。
 label:label_1;
-The program will continue executing here.;
+ゲームはここで継続して実行されます。;
 ......
 ......
 ```
 
-In short, jumpLabel is similar to a goto statement, which can immediately make your script jump to any position in the scene (TXT file), and this position needs you to create it with label.
+つまり、`jumpLabel` は `goto` ステートメントに似ており、スクリプトをシーン内の任意の位置(TXT ファイル)にすぐにジャンプさせることができ、この位置は ラベルを使用して作成する必要があります。
 
-If jumpLabel is compared to a portal, then the destination of this portal is the position where the label is located.
+`jumpLabel` を任意のゲートと比較すると、この任意のゲートの終点はラベルが配置されている位置になります。
 
-#### With the above basis, you can use choose to jump to the position where label is located through branches
+#### 次に、選択肢を作成する
 
-vbnet
+choose コマンドを使用して選択肢を作成することができます。オプションを選択して、対応するラベルの位置にジャンプします。
 
 ```
-WebGAL: Let's test jumping to label through branch!;
-choose:Test 1:label_1|Test 2:label_2;
+WebGAL: 選択肢ジャンプをテストしましょう！;
+choose:テスト 1:label_1|テスト 2:label_2;
 label:label_1;  
-It should now be branch 1;
+ここは分岐 1 です。;
 jumpLabel:end;
 label:label_2;
-It should now be branch 2;
+ここは分岐 2 です。;
 jumpLabel:end; 
 label:end;
-Now is the unified end;
+分岐はここで統一されます;
 ```
 
-Note that at the end of each branch, you should use jumpLabel to jump to where you want. Since the program executes linearly, if you do not jump at the end of the branch, the program will continue to run down, for example:
+各分岐の最後に、`jumpLabel` を使用して目的の場所にジャンプする必要があることに注意してください。ゲームは直線的に実行されるため、分岐の最後にジャンプしないと、ゲームは次のように継続して実行されます。
 
 ```
-WebGAL: Let's test jumping to label through branch!;
-choose:Test 1:label_1|Test 2:label_2;  
+WebGAL: 選択肢ジャンプをテストしましょう！;
+choose:テスト 1:label_1|テスト 2:label_2;  
 label:label_1;
-It should now be branch 1;
+ここは分岐 1 です。;
 label:label_2;
-It should now be branch 2;  
-Now is the unified end;
+ここは分岐 2 です。;
+分岐はここで統一されます;
 ```
 
-In this script, if you select branch 2, everything seems okay. But if you select branch 1, you will be surprised to find that after branch 1 executes, branch 2 executes again. This is because the program continues to execute the next line in order, and you did not specify where to jump after the branch ends.
+このスクリプトでは、テスト 2 を選択すると、すべて問題ないように見えます。ただし、テスト 1 を選択すると、テスト 1 の実行後にテスト 2 が実行されることに驚かれることでしょう。これは、ゲームが順番に継続して実行され、分岐の終了後にジャンプするラベルを指定しなかったためです。
 
-### Use variables
+### 変数の使用
 
-**Note: Before you figure out how to use labels and how to jump scenes within labels, please do not easily use the variable system, as this may confuse you!**
+**注意: ラベルの作成と選択肢ジャンプを理解する前に、混乱を招く可能性があるため、変数を軽々しく使用しないでください。**
 
-Set variable:
-
-jboss-cli
+変数を設定します。
 
 ```
-setVar:a=1; // Can set numbers
-setVar:a=true // Can set boolean values 
-setVar:a=Character name // Can set strings
+setVar:a=1; // 数値の設定が可能
+setVar:a=true // ブール値の設定が可能
+setVar:a=Character name // 文字列の設定が可能
 ```
 
-If you have defined other variables before, you can also use them when setting variables.
+以前に変数を設定した場合でも、変数を設定するときに再利用できます。
 
-### Conditional execution
+### 条件付き実行
 
-Add the parameter `-when=(condition)` after the statement to determine whether to execute the current statement based on the condition.
+ステートメントの後に `-when=(condition)` を追加することで、条件に基づいて現在のステートメントを実行するかどうかを決定します。
 
-For example:
-
-ini
+例:
 
 ```
 setVar:a=1;
-changeScene:2.txt -when=a>1; // Jump to scene 2 when a>1
-changeScene:3.txt; // If a<=1, the above statement is not executed, so naturally this one is executed
-changeScene:3.txt -when=a==1; // Only jump when a equals 1, note that the equality operator is ==
+changeScene:1.txt -when=a>1; // a > 1 の場合、シーン 1 にジャンプする
+changeScene:2.txt -when=a==1; // a が 1 の場合にのみジャンプし、等価演算子は == であることに注意してください
+changeScene:3.txt; // a < 1 の場合, 上記のステートメントは実行されないので、当然これは実行される
 ```
 
-**Note: `=` is the assignment symbol and cannot be used for conditional judgment. `==` is the equality operator.**
+**注意: `=` は代入記号であり、条件付き実行には使用できません。`==` は等値演算子です。**
 
-Any statement can be added with the `-when` parameter to control whether to execute it. By combining the `-when` parameter and `jumpLabel` `callScene` `changeScene`, you can achieve conditional flow control.
+`-when` パラメータを任意のステートメントに追加して、実行するかどうかを制御できます。`-when` パラメータと `jumpLabel` `callScene` `changeScene` を組み合わせることで、条件付き実行による実行制御を実現できます。
 
-### Insert effects in one line of dialogue
+### 会話文に効果を追加する
 
-Sometimes, you may want to insert effects like changing expressions at a certain stage when a line of dialogue is executed.
-At this time, you can use the `-notend` `-concat` parameters to insert any statement in the dialogue.
+キャラクターが話している間に表情などを切り替えたい場合があります。
+`-notend` と `-concat` パラメータを使用して、会話に任意のステートメントを挿入することができます。
 
-`-concat` means this line of dialogue is connected after the previous line of dialogue
+`-concat` は、このセリフは前のセリフの後につながっていることを意味します。
 
-`-notend` means this line of dialogue does not end, and effects or dialogue may be connected afterwards.
+`-notend` は、このセリフはまだ終わっておらず、後で効果やセリフがつながることを意味します。
 
-Example as follows: This is a demo of switching sprites during dialogue.
+例: 会話の進行中に立ち絵と表情を切り替える。
 
 ```
-WebGAL: Test inserting effects during dialogue! Switching sprite now... -notend;
+WebGAL: 会話の進行中に立ち絵の切り替えをテストしてみましょう!今すぐに...... -notend;
 changeFigure:k1.png -next;
-Switched sprite! Switching expression now... -notend -concat; 
+立ち絵の切り替えが成功しました！表情の切り替えをテストしてみましょう...... -notend -concat; 
 changeFigure:k2.png -next;
-Switched expression! -concat;
+表情の切り替えも成功しました！ -concat;
 ```
 
-### Add custom effects
+### カスタム特殊効果の追加
 
-You can download the source code, then find /Core/gameScripts/pixiPerformScripts/, then create a `PIXI.Container` for the effect you need.
+ソースコードをダウンロードし、`/Core/gameScripts/pixiPerformScripts` に移動し、カスタム特殊効果のために `PIXI.Container` を作成します。
 
-ts
-
-```
-const effectsContainer = RUNTIME_GAMEPLAY.pixiStage!.effectsContainer!; //Get the current Pixi effect Container
-const app = RUNTIME_GAMEPLAY.pixiStage!.currentApp!; // Way to call Pixi App, may be useful for determining screen size, etc.
-const container = new PIXI.Container(); //Create container for custom effects
-effectsContainer.addChild(container); //Add effects
+```ts
+const effectsContainer = RUNTIME_GAMEPLAY.pixiStage!.effectsContainer!; // 現在の Pixi.Container の特殊効果を取得する
+const app = RUNTIME_GAMEPLAY.pixiStage!.currentApp!; // Pixi アプリのインターフェースを呼び出すと、画面サイズなどの確認に役立つ場合があります
+const container = new PIXI.Container(); // カスタム特殊効果のコンテナを作成する
+effectsContainer.addChild(container); // カスタム特殊効果を追加する
 ```
 
-Texture files can be placed in the /game/tex directory.
+テクスチャファイルは `/game/tex` フォルダーに配置する必要があります。
 
-Then, at the beginning of the file, import the effect registration method to register your new effect.
+次に、ファイルの先頭でカスタム特殊効果の登録メソッドを導入します。
 
-At the end of the file, use it to register your effect. The first parameter is the effect name, and the second is the method to call the effect.
+ファイルの末尾で、登録メソッドを使用して、カスタム特殊効果を登録します。最初のパラメータは特殊効果名で、2 番目のパラメータは特殊効果を呼び出すメソッドです。
 
 ```typescript
 import {registerPerform} from '../pixiPerformManager';
 
-// Assume this is your effect  
-function myPerform() {
+// 特殊効果の定義
+function myPerform(parameters) {
   // ...
 }
 
-// Register
+// 登録
 registerPerform('myPerform', () => myPerform(parameters)); 
 ```
 
-Finally, compile the WebAPP that supports your custom effects
+最後に、カスタム特殊効果をサポートする WebAPP をコンパイルします
 
-```
-yarn run build; 
-```
-
-Now you can call your effects in the script
-
-```
-pixiPerform:your new effect;
+```shell
+yarn run build;
 ```
 
-## Other tutorials
+これで、スクリプトでカスタム特殊効果を呼び出すことができます。
 
-### Add other UI languages into WebGal
+```
+pixiPerform:myPerform; // 特殊効果名を指定して特殊効果を呼び出す
+```
 
-See the [Add Other Language into WebGal](add-lang).
+## その他のチュートリアル
 
-### Showcase your game on WebGAL homepage
+### 他のUI言語をWebGALに追加する
 
-see the [Showcase your game](./showcase-your-game)
+WebGAL に他の言語を追加したい方は[こちら](./add-lang)。
 
-## Possible issues and solutions
+### WebGAL ホームページでゲームを出展しましょう。
 
-### Why are my files not recognized properly
+[作品を出展しよう](./showcase-your-game) をご覧ください。
 
-File names should avoid using special symbols, spaces and other hard-to-recognize names. Use pure English naming as much as possible. The file extensions should be all lowercase.
+## よくある問題と解決策
 
-### Why is my audio file not playing properly
+### ファイルが正しく認識されないのはなぜですか
 
-On Apple browsers, ogg files are not supported. You need to convert the file format, for example, to mp3.
+ファイル名には、特殊記号、スペース、その他の認識しにくいファイル名を使用しないでください。可能な限り純粋な英語のファイル名を使用してください。ファイル拡張子はすべて小文字にする必要があります。
 
-### Why can't I open the exported web page
+### オーディオファイルが正しく再生されないのはなぜですか
 
-Due to browser security policies, you cannot open a local web page from a file. You need to use an http server, deploy WebGAL in the same way as deploying a website. Common ones are: Nginx, Apache http server, VS Code Live Server plugin, Python http server.
+Apple のブラウザでは、ogg ファイルはサポートされていないため、ファイル形式を mp3 に変換する必要があります。
 
-### Why does the visual editor flash briefly and disappear on Windows 7
+### エクスポートした Web ページを開けないのはなぜですか
 
-Due to the node.js version being higher than the highest version supported by Windows 7. Please refer to [Method to start production with visual editor on Windows 7](win7) to resolve.
+ブラウザのセキュリティポリシーにより、ファイルからローカル Web ページを開くことはできません。http サーバーを使用し、Web サイトを展開するのと同じ方法で WebGAL を展開する必要があります。一般的なものは、Nginx、Apache http server、VS Code Live Server プラグイン、Python http server です。
 
-## Stargazers over time
+### ビジュアルエディタが Windows 7 で一瞬でなくなったのはなぜですか
 
-[![Stargazers over time](https://starchart.cc/MakinoharaShoko/WebGAL.svg)](https://starchart.cc/MakinoharaShoko/WebGAL)
+node.js のバージョンが Windows 7 でサポートされている最新バージョンよりも高いからです。解決するには[Windows 7 でビジュアルエディタを使用してゲーム開発を行う方法](./win7)を参照してください。
+
+## スターゲイザーの時間変化
+
+[![スターゲイザーの時間変化](https://starchart.cc/MakinoharaShoko/WebGAL.svg)](https://starchart.cc/MakinoharaShoko/WebGAL)
