@@ -57,6 +57,6 @@ Your sponsorship can motivate the developers and make this project better !
 | [IdrilK](https://github.com/IdrilK)            |
 
 ## Sponsors
-| <img src="https://avatars.githubusercontent.com/u/71590526?v=4" alt="Yuji Sakai"  width="150px" height="150px" /> |
-| ------------------------------------------------------------ |
-| [Yuji Sakai (generalfreed)](https://github.com/generalfreed) |
+| <img src="https://avatars.githubusercontent.com/u/71590526?v=4" alt="Yuji Sakai"  width="150px" height="150px" /> | <img src="https://avatars.githubusercontent.com/u/49630998?v=4" alt="Iara"  width="150px" height="150px" /> |
+| ------------------------------------------------------------ |------------------------------------------------------------ |
+| [Yuji Sakai (generalfreed)](https://github.com/generalfreed) |[Iara (labiker)](https://github.com/labiker) |
