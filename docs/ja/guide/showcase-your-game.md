@@ -17,14 +17,14 @@
 
 `/data/gamesData.ts` ファイルを開き、`gamesData` を検索し、以下のテンプレートに従って、JSON 配列の最後に追加します：
 
-``` typescript
+```typescript
   {
     id: 'ゲーム ID',
-    title: 'ゲームのタイトル',
+    title: 'ゲーム名',
     developer: '開発者情報',
-    releaseDate: '2023-06-22',
+    releaseDate: 'YYYY-MM-DD',
     url: 'https://example.com/',
-    cover: '/images/games/ゲームのカバー画像.webp'
+    cover: '幅616ピクセル、高さ353ピクセル、webpファイルを推奨'
   },
 ```
 
