@@ -220,6 +220,16 @@ Yukino: You're here early -V1.ogg;
 Sorry, have you been waiting long? -V2.ogg;
 ```
 
+You can set a `-volume` parameter for a voice to adjust its volume.
+
+```
+Yui: I just got here -V3.ogg -volume=30; // Available when volume is numeric and the value is in the range 0 ~ 100
+```
+
+::: tip Tip
+This is an optional parameter. When not used, or when a value other than 0 ~ 100 is used, the default value of 100 is used.
+:::
+
 ### Black screen text display
 
 In many games, some text will be displayed in black screens, used to introduce themes or show characters' psychological activities. You can use the intro command to play a monologue:
@@ -397,8 +407,33 @@ This will make the game return to the title screen.
 The way to introduce background music is extremely simple. You just need to place the background music in the /bgm directory, then you can simply play it when needed:
 
 ```
-bgm:夏影.mp3;
+bgm:XiaYing.mp3;
 ```
+
+You can set a `-volume` parameter for background music to adjust its volume.
+
+```
+bgm:XiaYing.mp3 -volume=30; // Available when volume is numeric and the value is in the range 0 ~ 100
+```
+
+In addition, you can use the `-enter` parameter for fade-in playback.
+
+```
+bgm:XiaYing.mp3 -enter=3000; // Available when enter is numeric and the value is greater than or equal to 0
+```
+
+Finally, you can use the following statement to fade out the background music.
+
+```
+bgm:none -enter=3000; // Available when enter is numeric and the value is greater than or equal to 0
+```
+
+::: tip Tip
+`-volume` and `-enter` are optional parameters.
+When `-volume` is not used, or when an unusable value is used, the default value of 100 is used.
+When `-enter` is not used, or when an unusable value is used, the default value of 0 is used.
+:::
+
 
 ### Use sound effects
 
