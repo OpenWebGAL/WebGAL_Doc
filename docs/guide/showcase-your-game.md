@@ -15,7 +15,7 @@ Fork [WebGAL_HomePage](https://github.com/MakinoharaShoko/WebGAL_HomePage) 这�
 
 将准备好的封面添加到 `/public/images/games`。
 
-打开文件 `/data/gamesData.ts` ，找到 `gamesData` ，在结尾根据以下模板添加：
+打开文件 `/data/games.ts` ，找到 `games` ，在结尾根据以下模板添加：
 
 ``` typescript
   {

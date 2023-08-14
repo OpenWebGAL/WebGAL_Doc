@@ -15,7 +15,7 @@
 
 準備したカバー画像を `/public/images/games` フォルダに追加します。
 
-`/data/gamesData.ts` ファイルを開き、`gamesData` を検索し、以下のテンプレートに従って、JSON 配列の最後に追加します：
+`/data/games.ts` ファイルを開き、`games` を検索し、以下のテンプレートに従って、JSON 配列の最後に追加します：
 
 ```typescript
   {

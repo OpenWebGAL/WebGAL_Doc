@@ -15,7 +15,7 @@ Fork [WebGAL_HomePage](https://github.com/MakinoharaShoko/WebGAL_HomePage) this 
 
 Add the prepared cover to `/public/images/games`.
 
-Open the file `/data/gamesData.ts`, find `gamesData` and add at the end according to the following template:
+Open the file `/data/games.ts`, find `games` and add at the end according to the following template:
 
 ``` typescript
   {
