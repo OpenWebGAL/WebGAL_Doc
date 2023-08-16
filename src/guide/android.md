@@ -91,7 +91,7 @@ package com.openwebgal.demo //修改包名
 
 点击菜单栏中 `Build -> Generate Signed Bundle or APK`，根据提示创建密钥并编译，等待编译完毕。
 
-## 视频教程（方法二）
+## 视频教程
 
 [使用 Android Studio 打包 WebGAL 游戏到 Android 平台](https://www.bilibili.com/video/BV1m24y1J7ct/)
 

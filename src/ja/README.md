@@ -1,8 +1,10 @@
 ---
 home: true
-heroImage: 
-actionText: 今すぐ始まる →
-actionLink: ./guide/
+title: トップページ
+heroImage: /favicon.ico
+actions:
+  - text: 今すぐ始まる →
+    link: ./guide/
 features:
 - title: より良いデザイン
   details: 美しく洗練されたゲーム画面、ユーザービリティを追求し、より良いユーザー体験を提供。
@@ -10,7 +12,6 @@ features:
   details: 主流のビジュアルノベルエンジンのほぼすべての機能をサポート。PixiJSを使って、さまざまなカスタマイズが可能。
 - title: 気軽に開発
   details: ビジュアルエディターを使い、ノンプログラミングで開発が可能。独自のWebGAL スクリプトはシンプルかつ容易。
-footer: MPL-2.0 Licensed | Copyright © 2022 Mahiru
 ---
 
 開発したゲームは、ほぼすべての端末（PC、SP）で出力可能。プログラミングの知識は必要なし。ビジュアルエディターの操作を覚えるのにかかる時間は、たったの3分。構想さえあれば、ゲーム開発経験ゼロでノベルゲームが作れる！
@@ -52,11 +53,13 @@ WebGAL の最新機能を体験したい方は [こちら](https://webgal-jp-dem
 | [T2-official(T2)](https://github.com/T2-official)            |
 
 ## Silver Sponsors
+
 | <img src="https://avatars.githubusercontent.com/u/103700780?v=4" alt="IdrilK"  width="150px" height="150px" /> |
 | ------------------------------------------------------------ |
 | [IdrilK](https://github.com/IdrilK)            |
 
 ## Sponsors
+
 | <img src="https://avatars.githubusercontent.com/u/71590526?v=4" alt="Yuji Sakai"  width="150px" height="150px" /> | <img src="https://avatars.githubusercontent.com/u/49630998?v=4" alt="Iara"  width="150px" height="150px" /> |
 | ------------------------------------------------------------ |------------------------------------------------------------ |
 | [Yuji Sakai (generalfreed)](https://github.com/generalfreed) |[Iara (labiker)](https://github.com/labiker) |

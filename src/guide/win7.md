@@ -1,9 +1,5 @@
 # Windows 7 使用可视化编辑器开始制作的方法
 
-**Other language versions:** 
-
-[En](./win7-en)
-
 ## 前置条件
 
 ### 安装 14~16.3 版本的 node.js
@@ -34,11 +30,11 @@
 
 ### 下载支持 Win7 的 Terre 补丁
 
->  下载地址：
+> 下载地址：
 >
->  [GitHub（第三方补丁支持）](https://github.com/hshqwq/WebGAL_Terre/releases)
+> [GitHub（第三方补丁支持）](https://github.com/hshqwq/WebGAL_Terre/releases)
 >
->  [蓝奏云（第三方补丁支持）](https://wwh.lanzoue.com/i2xqa0uy2fuh)
+> [蓝奏云（第三方补丁支持）](https://wwh.lanzoue.com/i2xqa0uy2fuh)
 
 ### 下载可视化编辑器
 
@@ -104,7 +100,8 @@ git clone https://github.com/MakinoharaShoko/WebGAL_Terre.git
 ### 安装包管理器 (可选)
 
 安装 yarn （可选，推荐）  
-```
+
+``` Shell
 npm i -g yarn
 ```
 
@@ -122,7 +119,7 @@ npm i -g yarn
 
 2. 按照 *release.sh* 中命令打包除 *Terre* 以外的 packages。
 
-2. 手动编译 *Terre*，参考 [*仅编译 Terre*](./#方式二: 仅编译 *Terre*)。
+3. 手动编译 *Terre*，参考 [*仅编译 Terre*](./#方式二: 仅编译 *Terre*)。
 
 #### 方式二: 仅编译 *Terre2*
 
@@ -130,13 +127,13 @@ npm i -g yarn
 
 2. 安装依赖
 
-    ```
+    ``` Shell
     yarn
     ```
 
 3. 打包 *terre2*
 
-    ```shell
+    ``` Shell
     yarn run build
     ```
 

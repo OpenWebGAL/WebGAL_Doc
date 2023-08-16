@@ -1,8 +1,10 @@
 ---
 home: true
-heroImage: 
-actionText: Start Creating →
-actionLink: ./guide/
+title: Home
+heroImage: /favicon.ico
+actions:
+  - text: Start Creating →
+    link: ./guide/
 features:
 - title: Aesthetically pleasing UI
   details: Aesthetically pleasing and elegant graphical user interface with interactive effects, are all aimed at enhancing the user experience.
@@ -10,7 +12,6 @@ features:
   details: WebGAL not only supports most of the features in mainstream visual novel engines, but you can also use Pixi.js to add custom effects to your game.
 - title: Easy to develop
   details: Whether you use WebGAL scripting or the visual editor for development, it is simple and natural.
-footer: MPL-2.0 Licensed | Copyright © 2022 Mahiru
 ---
 
 Write once, run anywhere. There is no need of coding knowledge. You can learn and understand the basics within 3 minutes. With an idea, start creating your own visual novel!
@@ -52,11 +53,13 @@ Your sponsorship can motivate the developers and make this project better !
 | [T2-official(T2)](https://github.com/T2-official)            |
 
 ## Silver Sponsors
+
 | <img src="https://avatars.githubusercontent.com/u/103700780?v=4" alt="IdrilK"   width="150px" height="150px" /> |
 | ------------------------------------------------------------ |
 | [IdrilK](https://github.com/IdrilK)            |
 
 ## Sponsors
+
 | <img src="https://avatars.githubusercontent.com/u/71590526?v=4" alt="Yuji Sakai"  width="150px" height="150px" /> | <img src="https://avatars.githubusercontent.com/u/49630998?v=4" alt="Iara"  width="150px" height="150px" /> |
 | ------------------------------------------------------------ |------------------------------------------------------------ |
 | [Yuji Sakai (generalfreed)](https://github.com/generalfreed) |[Iara (labiker)](https://github.com/labiker) |
