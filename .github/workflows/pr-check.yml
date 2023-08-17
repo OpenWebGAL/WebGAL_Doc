@@ -20,4 +20,4 @@ jobs:
       # 生成静态文件
       - name: Build
         run: |
-          npm install yarn -g && yarn install && yarn build && touch docs/.vuepress/dist/.nojekyll
+          npm install yarn -g && yarn install && yarn build
