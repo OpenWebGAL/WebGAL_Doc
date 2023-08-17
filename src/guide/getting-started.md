@@ -1,14 +1,14 @@
 # 如何开始制作 WebGAL？
 
+::: danger 警告
+请使用现代浏览器 (Chrome / Firefox / Edge) 打开 WebGAL 和编辑器。使用其他浏览器所可能产生的问题，将不会得到解决。
+:::
+
 ## 方法1：使用 WebGAL 可视化编辑器（推荐）
 
 **WebGAL 编辑器是创建、制作并发布一个 WebGAL 的最佳方式。**
 
 在下载 WebGAL 编辑器后，请解压压缩包并启动 WebGAL_Terre 应用程序。WebGAL Terre 将会自动打开默认浏览器，如果没有打开，请输入 [http://localhost:3001/](http://localhost:3001/) 打开编辑器。
-
-::: danger 警告
-请使用现代浏览器 (Chrome / Firefox / Edge) 打开 WebGAL 和编辑器。使用其他浏览器所可能产生的问题，将不会得到解决。
-:::
 
 ::: tip 提示
 本页方法**不支持 Windows 7** , Windows 7 用户请参考 **[Windows 7 使用可视化编辑器开始制作的方法](./win7)**。

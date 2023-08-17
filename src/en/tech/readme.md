@@ -1,4 +1,4 @@
-# Technical Introduction to WebGAL
+# WebGAL Technical Introduction
 
 ## Scene System and Preloading
 
@@ -16,7 +16,7 @@ While WebGAL is parsing the scene, the resources contained in the scene will als
 
 WebGAL scene files are mainly separated by lines to distinguish between scripts. At the beginning of parsing, the WebGAL parser will split the script according to newlines. If there are semicolons, the characters before the semicolon will be taken. So the commenting style in WebGAL scripts is to write the script after semicolons.
 
-### Statement Parsing II - Parsing Script Types 
+### Statement Parsing II - Parsing Script Types
 
 WebGAL scripts generally take the form:
 
@@ -66,19 +66,19 @@ Parameters with only `key` and omitting `value` will be parsed as `-key=true`, w
 
 The resources required by statements can be obtained during statement parsing. For example, `bgm` statements generally need audio resources, `playVideo` statements generally need video resources, and `changeBg` statements generally need image resources. The WebGAL scene parser will merge all the resources required by statements in the scenes, to hand over to the preloader for preloading resources. At the same time, when encountering situations that require calling subscenes such as `changeScene`, `choose`, `callScene`, etc., the subscenes will also be scanned out, parsed and their resources preloaded.
 
-## Flow Control System 
+## Flow Control System
 
 ### Preparation Phase: Before Step Operation
 
 ### Formal Phase I: Read Instructions, Execute Conditional Judgments
 
-### Formal Phase II: Invoke, Obtain Perform Controller from Perform Control Module 
+### Formal Phase II: Invoke, Obtain Perform Controller from Perform Control Module
 
 ### End Phase: Handle Continuous Perform, Update Backlog
 
 ### Auto and Fast Forward
 
-## Perform Control 
+## Perform Control
 
 ### WebGAL Perform Types
 
@@ -94,7 +94,7 @@ The resources required by statements can be obtained during statement parsing. F
 
 ### Introduction to WebGAL State Table
 
-### Storage and Recovery of Perform States 
+### Storage and Recovery of Perform States
 
 ### Storage of Save Data and Other User Data
 
@@ -102,6 +102,6 @@ The resources required by statements can be obtained during statement parsing. F
 
 ### Appreciation Module
 
-### Maintaining State on Leaving Browser and "Continue Game" 
+### Maintaining State on Leaving Browser and "Continue Game"
 
 ### Keyboard Shortcuts and Mouse Operations

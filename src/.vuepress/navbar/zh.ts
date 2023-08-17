@@ -6,8 +6,9 @@ export const zhNavbar = navbar([
   {
     text: '参与开发',
     children: [
-      { text: '开发与贡献者指引', link: '/developers/' },
-      { text: 'WebGAL 技术介绍', link: '/tech/' }],
+      '/developers/',
+      '/tech/',
+    ],
   },
   {
     text: '更多',

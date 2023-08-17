@@ -1,8 +1,15 @@
 import { navbar } from "vuepress-theme-hope";
 
 export const jaNavbar = navbar([
-  { text: 'トップページ', link: '/ja/index' },
+  { text: 'トップページ', link: '/ja/' },
   { text: 'ゲーム開発ガイド', link: '/ja/guide/' },
+  {
+    text: 'コントリビューション',
+    children: [
+      '/ja/developers/',
+      '/ja/tech/',
+    ],
+  },
   {
     text: 'その他',
     children: [
@@ -11,12 +18,6 @@ export const jaNavbar = navbar([
         children: [
           { text: '最新情報', link: '/ja/info/' },
         ],
-      },
-      {
-        text: 'コントリビューション',
-        children: [
-          { text: '開発者向けガイド', link: '/ja/developers/' },
-          { text: 'WebGAL 技術紹介', link: '/ja/tech/' }],
       },
       {
         text: 'コンミュニティ',

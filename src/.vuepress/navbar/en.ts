@@ -1,8 +1,15 @@
 import { navbar } from "vuepress-theme-hope";
 
 export const enNavbar = navbar([
-  { text: 'Home', link: '/en/index' },
+  { text: 'Home', link: '/en/' },
   { text: 'Start creating with WebGAL', link: '/en/guide/' },
+  {
+    text: 'Contributing',
+    children: [
+      '/en/developers/',
+      '/en/tech/',
+    ],
+  },
   {
     text: 'More',
     children: [
@@ -11,12 +18,6 @@ export const enNavbar = navbar([
         children: [
           { text: 'Version Updates', link: '/en/info/' },
         ],
-      },
-      {
-        text: 'Contributing',
-        children: [
-          { text: 'Contributing Guide', link: '/en/developers/' },
-          { text: 'WebGAL Technology Introduction', link: '/en/tech/' }],
       },
       {
         text: 'Join Discuss Community',
