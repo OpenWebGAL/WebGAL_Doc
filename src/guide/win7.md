@@ -101,7 +101,7 @@ git clone https://github.com/MakinoharaShoko/WebGAL_Terre.git
 
 安装 yarn （可选，推荐）  
 
-``` Shell
+``` shell
 npm i -g yarn
 ```
 
@@ -127,13 +127,13 @@ npm i -g yarn
 
 2. 安装依赖
 
-    ``` Shell
+    ``` shell
     yarn
     ```
 
 3. 打包 *terre2*
 
-    ``` Shell
+    ``` shell
     yarn run build
     ```
 

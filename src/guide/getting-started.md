@@ -4,19 +4,17 @@
 请使用现代浏览器 (Chrome / Firefox / Edge) 打开 WebGAL 和编辑器。使用其他浏览器所可能产生的问题，将不会得到解决。
 :::
 
-## 方法1：使用 WebGAL 可视化编辑器（推荐）
+## 方法1：使用 WebGAL Terre 可视化编辑器（推荐）
 
-**WebGAL 编辑器是创建、制作并发布一个 WebGAL 的最佳方式。**
+**WebGAL Terre 可视化编辑器是创建、制作并发布一个 WebGAL 的最佳方式。**
 
-在下载 WebGAL 编辑器后，请解压压缩包并启动 WebGAL_Terre 应用程序。WebGAL Terre 将会自动打开默认浏览器，如果没有打开，请输入 [http://localhost:3001/](http://localhost:3001/) 打开编辑器。
+在下载 WebGAL Terre 可视化编辑器后，请解压压缩包并启动 WebGAL_Terre 可执行文件。WebGAL Terre 将会自动打开默认浏览器，如果没有打开，请输入 [http://localhost:3001/](http://localhost:3001/) 打开编辑器。
 
 ::: tip 提示
-本页方法**不支持 Windows 7** , Windows 7 用户请参考 **[Windows 7 使用可视化编辑器开始制作的方法](./win7)**。
-
-WebGAL 编辑器目前只在 Windows 10+ 系统上经过测试，我们将逐步添加对 Mac OS 和 Linux 的支持。
+WebGAL Terre 可视化编辑器默认 **不支持 Windows 7** , Windows 7 用户请参考 **[Windows 7 使用可视化编辑器开始制作的方法](./win7)**。
 :::
 
-下载 WebGAL 可视化编辑器：
+下载 WebGAL Terre 可视化编辑器：
 
 [GitHub](https://github.com/MakinoharaShoko/WebGAL_Terre/releases)
 
@@ -40,26 +38,26 @@ WebGAL 编辑器目前只在 Windows 10+ 系统上经过测试，我们将逐步
 
 ## 方法3：从源代码开始调试（适用于想要更高自定义程度的前端开发者）
 
-``` Shell
+``` shell
 git clone https://github.com/MakinoharaShoko/WebGAL.git
 ```
 
 安装并使用 yarn 安装依赖
 
-``` Shell
+``` shell
 npm install yarn -g
 yarn
 ```
 
 WebGAL 使用 vite 作为打包与调试工具，你可以通过运行以下脚本启动开发服务器
 
-``` Shell
+``` shell
 yarn dev
 ```
 
 如果你要打包，请使用
 
-``` Shell
+``` shell
 yarn build
 ```
 

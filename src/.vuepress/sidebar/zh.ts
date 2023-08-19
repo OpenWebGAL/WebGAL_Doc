@@ -7,19 +7,26 @@ export const zhSidebar = sidebar({
       prefix: "guide/",
       children: [
         "getting-started",
-        "manage-game-resources",
-        "customize-game-info",
-        {
-          text: "WebGAL 脚本编写教程",
-          children: [
-            "special-scripts",
-            "base-scripts",
-            "advanced-scripts",
-          ]
-        },
+        "resources",
+        "config",
         "publish",
         "faq",
       ],
+    },
+    {
+      text: "WebGAL 脚本教程",
+      prefix: "webgal-script/",
+      children: [
+        "base",
+        "dialogue",
+        "images",
+        "audio",
+        "video",
+        "scenes",
+        "variable",
+        "animation",
+        "special-effects",
+      ]
     },
     {
       text: "参与开发",
