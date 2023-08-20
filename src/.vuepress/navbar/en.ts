@@ -2,9 +2,9 @@ import { navbar } from "vuepress-theme-hope";
 
 export const enNavbar = navbar([
   { text: 'HOME', link: 'https://openwebgal.com/en/' },
-  { text: 'DOCUMENT', link: '/en/guide/' },
+  // { text: 'DOCUMENT', link: '/en/' },
   {
-    text: 'More',
+    text: 'MORE',
     children: [
       {
         text: 'WebGAL Infomations',

@@ -4,7 +4,7 @@ export const jaSidebar = sidebar({
   "/ja/": [
     {
       text: "ゲーム開発ガイド",
-      prefix: "guide/",
+      // prefix: "/",
       children: [
         "getting-started",
         "resources",
@@ -31,8 +31,8 @@ export const jaSidebar = sidebar({
     {
       text: "コントリビューション",
       children: [
-        "developers/",
-        "tech/"
+        "developers",
+        "tech"
       ]
     },
   ],

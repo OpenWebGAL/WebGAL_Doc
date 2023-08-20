@@ -1,65 +1,37 @@
----
-home: true
-title: WebGAL Doc
-heroImage: /favicon.ico
-actions:
-  - text: Start Creating →
-    link: ./guide/
-features:
-- title: Aesthetically pleasing UI
-  details: Aesthetically pleasing and elegant graphical user interface with interactive effects, are all aimed at enhancing the user experience.
-- title: Full Function
-  details: WebGAL not only supports most of the features in mainstream visual novel engines, but you can also use Pixi.js to add custom effects to your game.
-- title: Easy to develop
-  details: Whether you use WebGAL scripting or the visual editor for development, it is simple and natural.
----
+# WebGAL Doc
 
-Write once, run anywhere. There is no need of coding knowledge. You can learn and understand the basics within 3 minutes. With an idea, start creating your own visual novel!
+## Game Development Guide
 
-**[Help us with translation | 协助翻译 | 翻訳のお手伝い](https://github.com/MakinoharaShoko/WebGAL/tree/dev/packages/webgal/src/translations)**
+- [How to start making a WebGAL game?](getting-started.md)
 
-**[Join Discord Server](https://discord.gg/kPrQkJttJy)**
+- [Manage game resources](resources.md)
 
-## Try WebGAL Games
+- [Edit game config](config.md)
 
-Welcome to try complete games developed natively by WebGAL !
+- [How to deploy or publish my visual novel?](publish.md)
 
-[铃色☆记忆](http://hoshinasuzu.cn/) by 星奈组；Watch the [Video on Bilibili](https://www.bilibili.com/video/BV1HY4y1n7z7).
+- [FAQ](faq.md)
 
-[Elf of Era Idols Project](https://store.steampowered.com/app/2414730/Elf_of_Era_Idols_Project/) (STEAM Available)
+## WebGAL Script Tutorial
 
-If you want to experience new features, try [WebGAL DEMO](https://demo.openwebgal.com)
+- [Base](base.md)
 
-## Open-source and free
+- [Dialogue](dialogue.md)
 
-This project and visual editor are available on GitHub
+- [Background and Figure](bg-and-figure.md)
 
-[WebGAL](https://github.com/MakinoharaShoko/WebGAL)
+- [Audio](audio.md)
 
-[WebGAL Terre](https://github.com/MakinoharaShoko/WebGAL_Terre)
+- [Video](video.md)
 
-## Support this project
+- [Scenes and Branch](scenes.md)
 
-[Support this project ！](sponsor)
+- [Variable](variable.md)
 
-Your sponsorship can motivate the developers and make this project better !
+- [Animation effect](animation.md)
 
-# Sponsor
+- [Special effect](special-effect.md)
 
-## Gold Sponsors
+## Stargazers over time
 
-| <img src="https://avatars.githubusercontent.com/u/91712707?v=4" alt="T2"  width="150px" height="150px" /> |
-| ------------------------------------------------------------ |
-| [T2-official(T2)](https://github.com/T2-official)            |
-
-## Silver Sponsors
-
-| <img src="https://avatars.githubusercontent.com/u/103700780?v=4" alt="IdrilK"   width="150px" height="150px" /> |
-| ------------------------------------------------------------ |
-| [IdrilK](https://github.com/IdrilK)            |
-
-## Sponsors
-
-| <img src="https://avatars.githubusercontent.com/u/71590526?v=4" alt="Yuji Sakai"  width="150px" height="150px" /> | <img src="https://avatars.githubusercontent.com/u/49630998?v=4" alt="Iara"  width="150px" height="150px" /> |
-| ------------------------------------------------------------ |------------------------------------------------------------ |
-| [Yuji Sakai (generalfreed)](https://github.com/generalfreed) |[Iara (labiker)](https://github.com/labiker) |
+[![Stargazers over time](https://starchart.cc/MakinoharaShoko/WebGAL.svg)](https://starchart.cc/MakinoharaShoko/WebGAL)

@@ -2,7 +2,7 @@ import { navbar } from "vuepress-theme-hope";
 
 export const zhNavbar = navbar([
   { text: '主页', link: 'https://openwebgal.com/zh-cn/' },
-  { text: '文档', link: '/guide/' },
+  // { text: '文档', link: '/' },
   {
     text: '更多',
     children: [

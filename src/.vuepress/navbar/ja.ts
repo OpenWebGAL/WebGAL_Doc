@@ -2,7 +2,7 @@ import { navbar } from "vuepress-theme-hope";
 
 export const jaNavbar = navbar([
   { text: 'ホームページ', link: 'https://openwebgal.com/ja/' },
-  { text: 'ドキュメント', link: '/ja/guide/' },
+  // { text: 'ドキュメント', link: '/ja/' },
   {
     text: 'その他',
     children: [
