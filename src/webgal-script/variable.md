@@ -8,7 +8,7 @@
 
 设置变量：
 
-```
+``` ws
 setVar:a=1; // 可以设置数字
 setVar:a=true // 可以设置布尔值
 setVar:a=人物名称 // 可以设置字符串
@@ -16,7 +16,7 @@ setVar:a=人物名称 // 可以设置字符串
 
 如果先前你定义过其他变量，也可以在设置变量时使用。
 
-```
+``` ws
 setVar:a=1;
 setVar:b=a+1;
 ```
@@ -27,13 +27,18 @@ setVar:b=a+1;
 
 例如：
 
-```
+``` ws
 setVar:a=1;
-changeScene:2.txt -when=a>1; // a>1时跳转到场景2
-changeScene:3.txt; // 如果a<=1，那么上面的语句不执行，自然就执行这一句了。
-changeScene:3.txt -when=a==1; 只有a为1时才跳转，注意相等运算符是 ==
+; // 当 a 大于 1 时跳转到场景2
+changeScene:2.txt -when=a>1;
+; // 如果 a 小于 1，那么上面的语句不执行，自然就执行这一句了。
+changeScene:3.txt;
+; // 只有a为1时才跳转，注意相等运算符是 ==
+changeScene:3.txt -when=a==1;
 ```
 
-**注意：`=` 是赋值符号，不可用于条件判断，`==`是相等运算符。**
+::: tip 提示
+`=` 是赋值符号，不可用于条件判断，`==`是相等运算符。
+:::
 
 任何语句都可以加上 `-when` 参数来控制是否执行。通过组合 `-when` 参数和 `jumpLabel` `callScene` `changeScene`，你可以实现带条件判断的流程控制。

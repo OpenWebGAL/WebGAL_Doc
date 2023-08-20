@@ -1,15 +1,8 @@
 import { navbar } from "vuepress-theme-hope";
 
 export const zhNavbar = navbar([
-  { text: '主页', link: '/' },
-  { text: '使用 WebGAL 制作游戏', link: '/guide/' },
-  {
-    text: '参与开发',
-    children: [
-      '/developers/',
-      '/tech/',
-    ],
-  },
+  { text: '主页', link: 'https://openwebgal.com/zh-cn/' },
+  { text: '文档', link: '/guide/' },
   {
     text: '更多',
     children: [
@@ -17,6 +10,13 @@ export const zhNavbar = navbar([
         text: 'WebGAL 情报',
         children: [
           { text: '更新情报', link: '/info/' },
+        ],
+      },
+      {
+        text: '参与开发',
+        children: [
+          '/developers/',
+          '/tech/',
         ],
       },
       {

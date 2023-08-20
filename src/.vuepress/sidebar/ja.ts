@@ -7,19 +7,26 @@ export const jaSidebar = sidebar({
       prefix: "guide/",
       children: [
         "getting-started",
-        "manage-game-resources",
-        "customize-game-info",
-        {
-          text: "WebGAL Script チュートリアル",
-          children: [
-            "special-scripts",
-            "base-scripts",
-            "advanced-scripts",
-          ]
-        },
+        "resources",
+        "config",
         "publish",
         "faq",
       ],
+    },
+    {
+      text: "WebGAL Script チュートリアル",
+      prefix: "webgal-script/",
+      children: [
+        "base",
+        "dialogue",
+        "bg-and-figure",
+        "audio",
+        "video",
+        "scenes",
+        "variable",
+        "animation",
+        "special-effect",
+      ]
     },
     {
       text: "コントリビューション",

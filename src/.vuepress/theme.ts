@@ -75,8 +75,9 @@ export default hopeTheme({
   //导航栏布局
   navbarLayout: {
     start: ["Brand"],
-    center: ["Links"],
+    center: [],
     end: [
+      "Links",
       "Language",
       // "Repo",
       "Outlook",

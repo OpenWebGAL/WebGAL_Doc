@@ -1,16 +1,14 @@
-# Package the Game to Android Platform
+# Build the Game to Android Platform
+
+## Method 1: Auto Export Project Files (For WebGAL Terre Visual Editor Users)
+
+::: warning Warning
+If you want to open the exported folder directly from the project using Android Studio, please fill in **English** when creating a new game. If the game name is already in Chinese, please open `WebGAL_Terre\public\games` to modify your game name, and make sure there are no characters other than English in the file path of the project, otherwise it will report an error.
+:::
 
 ## Preparations
 
-::: tip Tips For game developers using WebGAL editor to export project files automatically, just install Android Studio. :::
-
-- Download and install [Android Studio](https://developer.android.google.cn/studio/).
-- Export the [WebGAL](https://github.com/MakinoharaShoko/WebGAL) game to web version.
-- Download the [WebGAL Android project template](https://github.com/nini22P/WebGAL-Android).
-
-## Method 1: Auto Export Project Files (For WebGAL Editor Users)
-
-::: warning Attention If you want to open the exported folder directly from the project using Android Studio, please fill in **English** when creating a new game. If the game name is already in Chinese, please open `WebGAL_Terre\public\games` to modify your game name, and make sure there are no characters other than English in the file path of the project, otherwise it will report an error. :::
+- Download and install [Android Studio](https://developer.android.com/studio/)
 
 ### Export and Modify
 
@@ -20,7 +18,7 @@ In the upper right corner of the editor, select Export to Android Project Files,
 
 Click `File -> New -> Image Asset` in the menu bar to modify the game icon. Note that the icon is divided into front and back layers.
 
-### Run and Compile
+### Run and Build
 
 Turn on USB debugging on the Android phone and connect it to the computer. Click the run icon next to the device title in the toolbar at the top to run it on the phone.
 
@@ -28,17 +26,25 @@ Click `Build -> Generate Signed Bundle or APK` in the menu bar, create a key acc
 
 ## Method 2: Manually Edit Project Files (For developers who develop games locally by writing scripts or compiling from source)
 
+## Preparations
+
+- Download and install [Android Studio](https://developer.android.com/studio/)
+- Export the [WebGAL](https://github.com/MakinoharaShoko/WebGAL) game to web version
+- Download the [WebGAL Android project template](https://github.com/nini22P/WebGAL-Android)
+
 ### Import Game
 
 First export the game as a web page, unzip the [project template](https://github.com/nini22P/WebGAL-Android), and rename the folder (be sure to use English). Open the `project folder\app\src\main\assets\webgal` folder and put the game you want to package here.
 
-::: tip Tips By default, the game loads `project folder\app\src\main\assets\webgal\index.html`. If you want to customize the loading link (such as online link), please modify the `load_url` field in the `project folder\app\src\main\res\values\values.xml` file. :::
+::: tip Tips
+By default, the game loads `project folder\app\src\main\assets\webgal\index.html`. If you want to customize the loading link (such as online link), please modify the `load_url` field in the `project folder\app\src\main\res\values\values.xml` file.
+:::
 
 ### Modify Info
 
 Open Android Studio to import the project. Modify the `rootProject.name` field in the `project folder\settings.gradle` file.
 
-```gradle
+``` gradle
 ...
 rootProject.name = "WebGAL" // Modify project title
 ...
@@ -46,7 +52,7 @@ rootProject.name = "WebGAL" // Modify project title
 
 Modify the title information in `project folder\app\src\main\res\values\strings.xml`.
 
-```xml
+``` xml
 <resources>
     <string name="app_name">WebGAL</string> // Modify game title
 </resources>
@@ -54,7 +60,7 @@ Modify the title information in `project folder\app\src\main\res\values\strings.
 
 Modify the `namespace` and `applicationId` fields in `project folder\app\build.gradle`, formatted as reverse domain names.
 
-```gradle
+``` gradle
 ...
 android {
     namespace 'com.openwebgal.demo' // Modify package name
@@ -68,7 +74,7 @@ Click `File -> Sync Project with Gradle files` in the menu bar to wait for sync 
 
 Modify the `package` field in the first line of `project folder\app\src\main\java\com\openwebgal\demo\MainActivity.kt` to the target package name changed earlier.
 
-```kotlin
+``` kotlin
 package com.openwebgal.demo // Modify package name 
 ...
 ```
@@ -77,13 +83,13 @@ After modifying this field, an error will be reported. At this point, click on t
 
 Click `File -> New -> Image Asset` in the menu bar to modify the game icon. Note that the icon is divided into front and back layers.
 
-### Run and Compile
+### Run and Build
 
 Turn on USB debugging on the Android phone and connect it to the computer. Click the run icon next to the device title in the toolbar at the top to run it on the phone.
 
 Click `Build -> Generate Signed Bundle or APK` in the menu bar, create a key according to the prompts and compile, waiting for the compilation to complete.
 
-## Video Tutorial (Method 2)
+## Video Tutorial
 
 [Package WebGAL Game to Android Platform Using Android Studio](https://www.bilibili.com/video/BV1m24y1J7ct/) (Chinese)
 

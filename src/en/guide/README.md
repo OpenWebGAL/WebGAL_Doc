@@ -1,10 +1,36 @@
 # WebGAL Game Development Guide
 
-::: warning Warning
-No matter which method you use to make a WebGAL game, you should take some time to read through this entire page. It won't take long, and it will help you avoid some issues that might arise from improper operation.
+## Game Development Guide
 
-Did you know that you can find answers to most of the issues you find confusing in the documentation? If you are convinced you have encountered a bug, please raise the issue in [issues](https://github.com/MakinoharaShoko/WebGAL/issues) or contact [contact@openwebgal.com](mailto:contact@openwebgal.com). You can also find ways to join the WebGAL community discussion in the "More" section in the top right corner of the site.
-:::
+- [How to start making a WebGAL game?](getting-started.md)
+
+- [Manage game resources](resources.md)
+
+- [Edit game config](config.md)
+
+- [How to deploy or publish my visual novel?](publish.md)
+
+- [FAQ](faq.md)
+
+## WebGAL Script Tutorial
+
+- [Base](base.md)
+
+- [Dialogue](dialogue.md)
+
+- [Background and Figure](bg-and-figure.md)
+
+- [Audio](audio.md)
+
+- [Video](video.md)
+
+- [Scenes and Branch](scenes.md)
+
+- [Variable](variable.md)
+
+- [Animation effect](animation.md)
+
+- [Special effect](special-effect.md)
 
 ## Stargazers over time
 

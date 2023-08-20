@@ -6,23 +6,23 @@
 
 ### 初始化 Pixi
 
-`pixiInit`
+使用 `pixiInit` 初始化 Pixi。
 
-```
+``` ws
 pixiInit;
 ```
 
-**注意：**
+::: tip 提示
+如果你要使用特效，那么你必须先运行这个命令来初始化 Pixi。
 
-**1.如果你要使用特效，那么你必须先运行这个命令来初始化 Pixi。**
-
-**2.如果你想要消除已经作用的效果，你可以使用这个语法来清空效果。**
+如果你想要消除已经作用的效果，你可以使用这个语法来清空效果。
+:::
 
 ### 添加特效
 
-`pixiPerform`
+使用 `pixiPerform` 添加特效。
 
-```
+``` ws
 pixiPerform:rain; // 添加一个下雨的特效
 ```
 
@@ -31,7 +31,7 @@ pixiPerform:rain; // 添加一个下雨的特效
 ### 预制特效列表
 
 | 效果 | 指令                        |
-| ---- | -------------------------- |
+| :--- | :-------------------------- |
 | 下雨 | pixiPerform:rain;           |
 | 下雪 | pixiPerform:snow;           |
 | 樱花 | pixiPerform:cherryBlossoms; |
@@ -40,7 +40,7 @@ pixiPerform:rain; // 添加一个下雨的特效
 
 如果你想要叠加两种及以上效果，你可以在不使用 `pixiInit` 指令的情况下叠加不同的效果。
 
-```
+``` ws
 pixiPerform:rain;
 pixiPerform:snow;
 ```
@@ -51,7 +51,7 @@ pixiPerform:snow;
 
 ## 添加自定义特效
 
-你可以下载源代码，然后找到 /Core/gameScripts/pixiPerformScripts/ 然后新建一个 `PIXI.Container` 用于制作你所需要的特效。
+你可以下载源代码，然后找到 `/Core/gameScripts/pixiPerformScripts/` 然后新建一个 `PIXI.Container` 用于制作你所需要的特效。
 
 ``` ts
 // 获取当前的 Pixi 效果 Container
@@ -66,11 +66,11 @@ effectsContainer.addChild(container);
 
 纹理文件可以放在 `game/tex` 目录下。
 
-然后，在 `文件开头导入特效注册方法` 注册你写的新特效。
+然后，在 文件开头导入 `特效注册方法` 注册你写的新特效。
 
 在文件末尾使用其注册你的特效, 第一个参数是特效名, 第二个是调用特效的方法.
 
-```typescript
+``` ts
 import {registerPerform} from '../pixiPerformManager';
 
 // 假设这是你的特效
@@ -90,6 +90,6 @@ yarn run build;
 
 这样，你就可以在脚本中调用你的特效了
 
-```
+``` ws
 pixiPerform:你的新特效;
 ```

@@ -93,7 +93,7 @@
 
 克隆 [WebGAL_Terre](https://github.com/MakinoharaShoko/WebGAL_Terre) 仓库。
 
-```shell
+``` shell
 git clone https://github.com/MakinoharaShoko/WebGAL_Terre.git
 ```
 
@@ -169,7 +169,7 @@ npm i -g yarn
 
 1. 在可视化编辑器目录下安装依赖。
 
-    ```shell
+    ``` shell
     npm i
     # 或（推荐yarn）
     yarn

@@ -7,19 +7,26 @@ export const enSidebar = sidebar({
       prefix: "guide/",
       children: [
         "getting-started",
-        "manage-game-resources",
-        "customize-game-info",
-        {
-          text: "WebGAL Script Tutorial",
-          children: [
-            "special-scripts",
-            "base-scripts",
-            "advanced-scripts",
-          ]
-        },
+        "resources",
+        "config",
         "publish",
         "faq",
       ],
+    },
+    {
+      text: "WebGAL Script Tutorial",
+      prefix: "webgal-script/",
+      children: [
+        "base",
+        "dialogue",
+        "bg-and-figure",
+        "audio",
+        "video",
+        "scenes",
+        "variable",
+        "animation",
+        "special-effect",
+      ]
     },
     {
       text: "Contributing",

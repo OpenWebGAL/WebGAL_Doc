@@ -7,17 +7,17 @@ export default defineUserConfig({
   locales: {
     '/': {
       lang: 'zh-CN',
-      title: 'WebGAL',
+      title: 'WebGAL 文档',
       description: '全新的网页端视觉小说引擎'
     },
     '/en/': {
       lang: 'en-US',
-      title: 'WebGAL',
+      title: 'WebGAL Doc',
       description: 'A brand new web Visual Novel engine'
     },
     '/ja/': {
       lang: 'ja-JP',
-      title: 'WebGAL',
+      title: 'WebGAL Doc',
       description: '未だかつてない Web ベースビジュアルノベルエンジン'
     }
   },

@@ -1,6 +1,6 @@
 ---
 home: true
-title: 主页
+title: WebGAL 文档
 heroImage: /favicon.ico
 actions:
   - text: 立刻上手 →

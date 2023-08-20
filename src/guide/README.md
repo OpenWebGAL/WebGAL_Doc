@@ -1,10 +1,36 @@
 # WebGAL 游戏开发指引
 
-::: warning 警告
-无论你使用何种方式制作 WebGAL 游戏，你都应该花一点时间将开发指引的全部内容阅读一遍。这不需要多长时间，并且将有利于你避开一些因操作不当导致的问题。
+## 游戏开发指引
 
-你知道吗，大多数你感到疑惑的问题都可以在文档中找到答案。如果你坚信你遇到了 Bug，请在 [issues](https://github.com/MakinoharaShoko/WebGAL/issues) 提出问题或者发送电子邮件联系 <contact@openwebgal.com>，你也可以在网站的右上角的“更多”一栏找到加入 WebGAL 讨论社区的方法。
-:::
+- [如何开始制作 WebGAL？](getting-started.md)
+
+- [管理游戏资源](resources.md)
+
+- [定制游戏信息](config.md)
+
+- [如何部署或发布我的视觉小说？](publish.md)
+
+- [可能遇到的问题与解决方案](faq.md)
+
+## WebGAL 脚本教程
+
+- [基础](base.md)
+
+- [对话](dialogue.md)
+
+- [背景与立绘](bg-and-figure.md)
+
+- [音频](audio.md)
+
+- [视频](video.md)
+
+- [场景与分支](scenes.md)
+
+- [变量](variable.md)
+
+- [动画效果](animation.md)
+
+- [特效](special-effect.md)
 
 ## Stargazers over time
 

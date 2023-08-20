@@ -1,6 +1,6 @@
 ---
 home: true
-title: Home
+title: WebGAL Doc
 heroImage: /favicon.ico
 actions:
   - text: Start Creating →

@@ -19,13 +19,13 @@ export const zhSidebar = sidebar({
       children: [
         "base",
         "dialogue",
-        "images",
+        "bg-and-figure",
         "audio",
         "video",
         "scenes",
         "variable",
         "animation",
-        "special-effects",
+        "special-effect",
       ]
     },
     {

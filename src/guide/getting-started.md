@@ -1,5 +1,11 @@
 # 如何开始制作 WebGAL？
 
+::: warning 警告
+无论你使用何种方式制作 WebGAL 游戏，你都应该花一点时间将开发指引的全部内容阅读一遍。这不需要多长时间，并且将有利于你避开一些因操作不当导致的问题。
+
+你知道吗，大多数你感到疑惑的问题都可以在文档中找到答案。如果你坚信你遇到了 Bug，请在 [issues](https://github.com/MakinoharaShoko/WebGAL/issues) 提出问题或者发送电子邮件联系 <contact@openwebgal.com>，你也可以在网站的右上角的“更多”一栏找到加入 WebGAL 讨论社区的方法。
+:::
+
 ::: danger 警告
 请使用现代浏览器 (Chrome / Firefox / Edge) 打开 WebGAL 和编辑器。使用其他浏览器所可能产生的问题，将不会得到解决。
 :::
@@ -10,15 +16,18 @@
 
 在下载 WebGAL Terre 可视化编辑器后，请解压压缩包并启动 WebGAL_Terre 可执行文件。WebGAL Terre 将会自动打开默认浏览器，如果没有打开，请输入 [http://localhost:3001/](http://localhost:3001/) 打开编辑器。
 
-::: tip 提示
-WebGAL Terre 可视化编辑器默认 **不支持 Windows 7** , Windows 7 用户请参考 **[Windows 7 使用可视化编辑器开始制作的方法](./win7)**。
-:::
-
 下载 WebGAL Terre 可视化编辑器：
 
-[GitHub](https://github.com/MakinoharaShoko/WebGAL_Terre/releases)
+[WebGAL 主页](https://openwebgal.com/zh-cn/download/)
 
-[123网盘（所有版本被放在一个文件夹内，请下载最新版本）](https://www.123pan.com/s/YHszVv-jqzJ.html)
+[GitHub Releases](https://github.com/MakinoharaShoko/WebGAL_Terre/releases)
+
+[123网盘](https://www.123pan.com/s/YHszVv-jqzJ.html)
+
+::: tip 提示
+WebGAL Terre 可视化编辑器默认 **不支持 Windows 7**。
+Windows 7 用户请参考 **[Windows 7 使用可视化编辑器开始制作的方法](./win7)**。
+:::
 
 ## 方法2：在本地通过书写脚本的形式开发，并实时调试
 
@@ -26,7 +35,7 @@ WebGAL Terre 可视化编辑器默认 **不支持 Windows 7** , Windows 7 用户
 
 下载 WebGAL 引擎本体及调试环境（不包括可视化编辑器）：
 
-[GitHub](https://github.com/MakinoharaShoko/WebGAL/releases/)
+[GitHub Releases](https://github.com/MakinoharaShoko/WebGAL/releases/)
 
 下载并解压后，你可以直接运行对应版本的 WebGAL-server 开始调试你的视觉小说。如果遇到杀毒软件拦截或防火墙拦截等情况，请放行以允许该程序运行。
 

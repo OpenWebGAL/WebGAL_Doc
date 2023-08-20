@@ -1,6 +1,6 @@
 ---
 home: true
-title: トップページ
+title: WebGAL Doc
 heroImage: /favicon.ico
 actions:
   - text: 今すぐ始まる →
