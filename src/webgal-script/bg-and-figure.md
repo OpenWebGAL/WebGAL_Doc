@@ -60,7 +60,7 @@ changeFigure:testFigure03.png -left -id=test1;
 changeFigure:none -id=test1;
 ```
 
-::: tip 提示
+::: tip
 如果你要重设某个带ID立绘的位置，请先关闭再重新打开。
 :::
 

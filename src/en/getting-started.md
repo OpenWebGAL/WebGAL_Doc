@@ -1,12 +1,12 @@
 # How to start making a WebGAL game?
 
-::: warning Warning
+::: warning
 No matter which method you use to make a WebGAL game, you should take some time to read through this entire page. It won't take long, and it will help you avoid some issues that might arise from improper operation.
 
 Did you know that you can find answers to most of the issues you find confusing in the documentation? If you are convinced you have encountered a bug, please raise the issue in [issues](https://github.com/MakinoharaShoko/WebGAL/issues) or contact [contact@openwebgal.com](mailto:contact@openwebgal.com). You can also find ways to join the WebGAL community discussion in the "More" section in the top right corner of the site.
 :::
 
-::: danger Warning
+::: danger
 Please use a modern browser (Chrome / Firefox / Edge) to open WebGAL and the editor. Issues that may arise from using other browsers will not be addressed.
 :::
 
@@ -22,7 +22,7 @@ Download the WebGAL visual editor:
 
 [GitHub Releases](https://github.com/MakinoharaShoko/WebGAL_Terre/releases)
 
-::: tip Tip
+::: tip
 The method on this page **does not support Windows 7**.
 Windows 7 users please refer to **[Method to start production with visual editor on Windows 7](win7)**.
 :::

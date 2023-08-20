@@ -2,7 +2,7 @@
 
 ## 方法一：自动导出项目文件 (适用于使用 WebGAL Terre 可视化编辑器的游戏开发者)
 
-::: warning 注意
+::: warning
 如果想要使用 android studio 直接从项目导出的文件夹打开，请新建游戏时填入**英文**，如果游戏名已经是中文，请打开 `WebGAL_Terre\public\games` 修改你的游戏名，并保证项目的文件路径中不会出现英文以外的字符，否则会报错。
 :::
 
@@ -37,7 +37,7 @@
 首先将游戏导出为 Web 网页，解压 [项目模板](https://github.com/nini22P/WebGAL-Android)，将文件夹改名（切记必须使用英文）。
 打开 `项目文件夹\app\src\main\assets\webgal` 文件夹，将你要打包的游戏放到这里。
 
-::: tip 提示
+::: tip
 游戏默认加载 `项目文件夹\app\src\main\assets\webgal\index.html`，如果想要自定义加载链接（比如在线链接），请修改 `项目文件夹\app\src\main\res\values\values.xml` 文件里面的 `load_url` 字段。
 :::
 

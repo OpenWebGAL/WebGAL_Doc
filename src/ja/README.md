@@ -1,10 +1,36 @@
 # WebGAL Doc
 
-::: warning 警告
-WebGAL ゲームを作成するために使用する方法にかかわらず、このページ全体をじっくりと読むことをお勧めします。それほど時間はかかりませんが、不適切な操作から生じる可能性のある問題を回避するのに役立ちます。
+## ゲーム開発ガイド
 
-WebGAL のドキュメンテーションには、ほとんどの疑問に対する回答が見つかることをご存知でしょうか？もしバグに遭遇したと確信している場合は、[issues](https://github.com/MakinoharaShoko/WebGAL/issues) でバグを報告するか、[contact@openwebgal.com](mailto:contact@openwebgal.com) に連絡してください。また、WebGAL コミュニティに参加する方法は、サイトの右上隅にある`その他`セクションで見つけることができます。
-:::
+- [WebGAL でゲーム開発を行う方法](getting-started.md)
+
+- [ゲームリソースの管理](resources.md)
+
+- [ゲーム情報のカスタマイズ](config.md)
+
+- [ビジュアルノベルゲームのデプロイまたは公開方法](publish.md)
+
+- [よくある問題と解決策](faq.md)
+
+## WebGAL Script チュートリアル
+
+- [基础](webgal-script/base.md)
+
+- [会話](webgal-script/dialogue.md)
+
+- [背景と立绘](webgal-script/bg-and-figure.md)
+
+- [オーディオ](webgal-script/audio.md)
+
+- [動画](webgal-script/video.md)
+
+- [シーンとブランチ](webgal-script/scenes.md)
+
+- [変数](webgal-script/variable.md)
+
+- [アニメーション効果](webgal-script/animation.md)
+
+- [特殊効果](webgal-script/special-effect.md)
 
 ## スターゲイザーの時間変化
 

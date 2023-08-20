@@ -1,5 +1,9 @@
 # Base
 
+First of all, the program will start from **initial script** `start.txt` when it starts, please do not rename or delete it.
+
+The following tutorial will show you how to use WebGAL scripts.
+
 ## Comments
 
 The WebGAL script will only parse the content before the semicolon on each line, so the content after the semicolon will be treated as comments.

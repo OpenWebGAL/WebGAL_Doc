@@ -1,22 +1,16 @@
 # ゲームを Android プラットフォームにパッケージ化する
 
-## 事前準備
-
-::: tip ヒント
-WebGAL エディターを使用してゲームを自動的にエクスポートするゲーム開発者は、Android Studio をインストールするだけです。
-:::
-
-- [Android Studio](https://developer.android.google.cn/studio/) をダウンロードして、インストールする.
-- [WebGAL](https://github.com/MakinoharaShoko/WebGAL) を使用して開発したゲームをウェブバージョンにエクスポートする。
-- [WebGAL Android ゲームのテンプレート](https://github.com/nini22P/WebGAL-Android) をダウンロードする.
-
 ## その 1: ゲームを自動的にエクスポートする
 
 **WebGAL エディターユーザー向け**
 
-::: warning 注意
+::: warning
 Android Studio を使用してプロジェクトから直接にエクスポートしたフォルダーを開きたい場合は、新しいゲームを作成するときに**英語**のゲーム名を入力してください。ゲーム名がすでに中国語の場合は、`WebGAL_Terre\public\games` を開いてゲーム名を変更し、プロジェクトのファイルパスに英語以外の文字がないことを確認してください。
 :::
+
+### 事前準備
+
+- [Android Studio](https://developer.android.com/studio/) をダウンロードして、インストールする
 
 ### エクスポートとゲーム情報の変更
 
@@ -36,11 +30,17 @@ Android スマートフォンで USB デバッグをオンにして、コンピ�
 
 **スクリプトの作成やソースからコンパイルしてローカルでゲームを開発する開発者向け**
 
+### 事前準備
+
+- [Android Studio](https://developer.android.com/studio/) をダウンロードして、インストールする
+- [WebGAL](https://github.com/MakinoharaShoko/WebGAL) を使用して開発したゲームをウェブバージョンにエクスポートする
+- [WebGAL Android ゲームのテンプレート](https://github.com/nini22P/WebGAL-Android) をダウンロードする
+
 ### ゲームのインポート
 
 まずゲームを Web ページとしてエクスポートし、[WebGAL Android ゲームのテンプレート](https://github.com/nini22P/WebGAL-Android)を解凍し、フォルダーの名前を変更します(必ず半角英字を使用してください)。`ルート\app\src\main\assets\webgal` フォルダーを開き、パッケージ化するゲームをここに配置します。
 
-::: tip ヒント
+::: tip
 `ルート\app\src\main\assets\webgal\index.html` を読み込むのはゲームのデフォルト設定です。読み込みリンク(オンラインリンクなど)をカスタマイズする場合は、`ルート\app\src\main\res\values\values.xml` ファイルにある `load_url` の値を変更してください。
 :::
 
@@ -93,7 +93,7 @@ Android スマートフォンで USB デバッグをオンにして、コンピ�
 
 メニューバーの `Build -> Generate Signed Bundle or APK` をクリックし、プロンプトに従ってキーを作成してコンパイルし、コンパイルが完了するのを待ちます。
 
-## ビデオチュートリアル (その 2)
+## ビデオチュートリアル
 
 [Android Studio を使用して WebGAL ゲームを Android プラットフォームにパッケージ化する](https://www.bilibili.com/video/BV1m24y1J7ct/) (Chinese)
 

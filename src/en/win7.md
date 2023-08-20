@@ -28,11 +28,11 @@
 
 ### Download Patch
 
->  Download address：
+> Download address：
 >
->  [GitHub (Third-party patch)](https://github.com/hshqwq/WebGAL_Terre/releases)
+> [GitHub (Third-party patch)](https://github.com/hshqwq/WebGAL_Terre/releases)
 >
->  [Lanzou Cloud (Third-party patch)](https://wwh.lanzoue.com/i2xqa0uy2fuh)
+> [Lanzou Cloud (Third-party patch)](https://wwh.lanzoue.com/i2xqa0uy2fuh)
 
 ### Download WebGal Terre
 
@@ -77,7 +77,7 @@ Manually Run：
     node main.js
     ```
 
-::: tip Notice
+::: tip
 
 If your computer installed the other version node.js, please switch to version 14~16.3.
 
@@ -112,7 +112,7 @@ npm i -g yarn
     ```shell
     yarn
     ```
-    
+
 2. See the commands in **release.sh** to build all packages except **Terre**.
 
 3. Manually build **Terre**, see [**Build Terre2 Only**](./#Way 2: Build *Terre2* Only).

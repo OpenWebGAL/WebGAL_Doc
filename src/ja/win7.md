@@ -28,13 +28,13 @@
 
 ### パッチをダウンロードする
 
->  ダウンロードリンク：
+> ダウンロードリンク：
 >
->  [GitHub (サードパーティのパッチ)](https://github.com/hshqwq/WebGAL_Terre/releases)
+> [GitHub (サードパーティのパッチ)](https://github.com/hshqwq/WebGAL_Terre/releases)
 
 ### WebGAL Terre をダウンロードする
 
-パッチに対応する[WebGal Terre](./README###その1：WebGALエディターを使用(推奨))をダウンロードし、解凍してください。 
+パッチに対応する[WebGal Terre](./README###その1：WebGALエディターを使用(推奨))をダウンロードし、解凍してください。
 対応するバージョンについては、**使用说明、README** などの名前のファイルを確認するか、または **package.json** 内の **version** の値を確認してください。
 
 ### パッチを使用する
@@ -75,7 +75,7 @@ yarn
 node main.js
 ```
 
-::: tip 注意
+::: tip
 
 お使いのパソコンに他のバージョンの node.js がインストールされている場合は、バージョン 14 ~ 16.3 に切り替えてください。
 
@@ -95,7 +95,7 @@ git clone https://github.com/MakinoharaShoko/WebGAL_Terre.git
 
 ### パッケージマネージャーをインストールする(オプション)
 
-yarn をインストールする(オプション) 
+yarn をインストールする(オプション)
 
 ```shell
 npm i -g yarn
@@ -112,7 +112,7 @@ npm i -g yarn
 ```shell
 yarn
 ```
-    
+
 2. **release.sh** のコマンドを参照して、**Terre** を除くすべてのパッケージをコンパイルする。
 
 3. 手動で **Terre** をコンパイルする方法については、[**Terre2のみをコンパイルする**](####その2：Terre2のみをコンパイルする)を参照してください。

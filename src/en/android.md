@@ -2,7 +2,7 @@
 
 ## Method 1: Auto Export Project Files (For WebGAL Terre Visual Editor Users)
 
-::: warning Warning
+::: warning
 If you want to open the exported folder directly from the project using Android Studio, please fill in **English** when creating a new game. If the game name is already in Chinese, please open `WebGAL_Terre\public\games` to modify your game name, and make sure there are no characters other than English in the file path of the project, otherwise it will report an error.
 :::
 
@@ -36,7 +36,7 @@ Click `Build -> Generate Signed Bundle or APK` in the menu bar, create a key acc
 
 First export the game as a web page, unzip the [project template](https://github.com/nini22P/WebGAL-Android), and rename the folder (be sure to use English). Open the `project folder\app\src\main\assets\webgal` folder and put the game you want to package here.
 
-::: tip Tips
+::: tip
 By default, the game loads `project folder\app\src\main\assets\webgal\index.html`. If you want to customize the loading link (such as online link), please modify the `load_url` field in the `project folder\app\src\main\res\values\values.xml` file.
 :::
 

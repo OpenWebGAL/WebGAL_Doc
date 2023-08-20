@@ -37,11 +37,11 @@ setAnimation:enter-from-bottom -target=fig-center -next;
 
 ### 创建动画
 
-动画文件在`game/animation`，你可以创建自己的自定义动画。
+动画文件在 `game/animation`，你可以创建自己的自定义动画。
 
 动画文件使用 JSON 描述，你可以在 [参考文档](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects/JSON) 参考JSON语法。
 
-每一个动画文件都代表一个**动画序列**，使用一个JSON数组来描述。下面是一个示例，描述了一个从左侧进入的动画：
+每一个动画文件都代表一个**动画序列**，使用一个 JSON 数组来描述。下面是一个示例，描述了一个从左侧进入的动画：
 
 **示例: `enter-from-left.json`**
 
@@ -115,7 +115,7 @@ setAnimation:enter-from-left -target=fig-left -next;
 
 ### 省略部分属性
 
-如果你的动画只需要操作部分属性，你可以将其他不参与动画的属性留空，使它们保持默认：
+如果你的动画只需要操作部分属性，你可以将其他不参与动画的属性留空，使它们保持默认。
 
 **示例：`enter.json`**
 

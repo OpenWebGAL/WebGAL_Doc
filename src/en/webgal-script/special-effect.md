@@ -12,7 +12,7 @@ Use `pixiInit` to initialize Pixi.
 pixiInit; 
 ```
 
-::: tip Tip
+::: warning
 If you want to use effects, you must run this command first to initialize Pixi.
 
 If you want to eliminate the effects that have been applied, you can use this syntax to clear the effects.
