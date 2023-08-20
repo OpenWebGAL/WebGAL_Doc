@@ -3,7 +3,7 @@
 
 First, please be aware that the engine that can be deployed to the Internet should be a **release or web page exported from the WebGAL visual editor**, not the source code.
 
-::: tip Tip
+::: tip
 If you use the WebGAL editor, you can select Export Game in the top right corner. Generally, File Explorer will open automatically after export is complete. If it does not open automatically, you can find it under `Exported_Games` in the WebGAL editor directory.
 :::
 
@@ -27,4 +27,4 @@ In the upper right corner of the editor, select Export to Executable File. The e
 
 ## Android
 
-[Build the game for android platforms](./android.md)
+[Build the game for android platforms](android.md)

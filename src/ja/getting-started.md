@@ -1,6 +1,12 @@
 # WebGAL でゲーム開発を行う方法
 
-::: danger 警告
+::: warning
+WebGAL ゲームを作成するために使用する方法にかかわらず、このページ全体をじっくりと読むことをお勧めします。それほど時間はかかりませんが、不適切な操作から生じる可能性のある問題を回避するのに役立ちます。
+
+WebGAL のドキュメンテーションには、ほとんどの疑問に対する回答が見つかることをご存知でしょうか？もしバグに遭遇したと確信している場合は、[issues](https://github.com/MakinoharaShoko/WebGAL/issues) でバグを報告するか、[contact@openwebgal.com](mailto:contact@openwebgal.com) に連絡してください。また、WebGAL コミュニティに参加する方法は、サイトの右上隅にある`その他`セクションで見つけることができます。
+:::
+
+::: danger
 エディターを開くには、最新のブラウザ (Chrome / Firefox / Edge) を使用してください。その他のブラウザはサポート対象外です。
 :::
 
@@ -10,7 +16,7 @@
 
 WebGAL エディターをダウンロードした後、zipを解凍し、WebGAL_Terre.exe を起動します。WebGAL_Terre はブラウザを自動的に開きます。開かない場合は、ブラウザから [http://localhost:3001/](http://localhost:3001/)にアクセスしてください。
 
-::: tip ヒント
+::: tip
 このページの内容は Windows 7 にサポートしていません。Windows 7 をご利用の方は、**[Windows 7 でビジュアルエディターを使用してゲーム開発を行う方法](./win7)** を参照してください。
 
 WebGAL エディターは現在 Windows 10+ システムでのみテストされています。Mac OS および Linux のサポートは、今後順次追加していく予定です。

@@ -14,23 +14,23 @@
 
 ## WebGAL Script Tutorial
 
-- [Base](base.md)
+- [Base](webgal-script/base.md)
 
-- [Dialogue](dialogue.md)
+- [Dialogue](webgal-script/dialogue.md)
 
-- [Background and Figure](bg-and-figure.md)
+- [Background and Figure](webgal-script/bg-and-figure.md)
 
-- [Audio](audio.md)
+- [Audio](webgal-script/audio.md)
 
-- [Video](video.md)
+- [Video](webgal-script/video.md)
 
-- [Scenes and Branch](scenes.md)
+- [Scenes and Branch](webgal-script/scenes.md)
 
-- [Variable](variable.md)
+- [Variable](webgal-script/variable.md)
 
-- [Animation effect](animation.md)
+- [Animation effect](webgal-script/animation.md)
 
-- [Special effect](special-effect.md)
+- [Special effect](webgal-script/special-effect.md)
 
 ## Stargazers over time
 

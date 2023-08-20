@@ -13,7 +13,7 @@ See the [How to Start with Source Code](./guide#方法3（适用于想要更高�
 
 Translate the config file's value.
 
-::: warning Warning
+::: warning
 
 Don't change the value in **{{}}**, it's the variable.
 
@@ -91,4 +91,4 @@ Run this command in project root folder:
 yarn run build
 ```
 
-After, you can see a folder named **build** in *packages/parser/*, another folder named **dist** in *packages/webgal/*, that's the built file of WebGal. 
+After, you can see a folder named **build** in *packages/parser/*, another folder named **dist** in *packages/webgal/*, that's the built file of WebGal.

@@ -6,7 +6,7 @@
 
 - [管理游戏资源](resources.md)
 
-- [定制游戏信息](config.md)
+- [编辑游戏配置](config.md)
 
 - [如何部署或发布我的视觉小说？](publish.md)
 
@@ -14,23 +14,23 @@
 
 ## WebGAL 脚本教程
 
-- [基础](base.md)
+- [基础](webgal-script/base.md)
 
-- [对话](dialogue.md)
+- [对话](webgal-script/dialogue.md)
 
-- [背景与立绘](bg-and-figure.md)
+- [背景与立绘](webgal-script/bg-and-figure.md)
 
-- [音频](audio.md)
+- [音频](webgal-script/audio.md)
 
-- [视频](video.md)
+- [视频](webgal-script/video.md)
 
-- [场景与分支](scenes.md)
+- [场景与分支](webgal-script/scenes.md)
 
-- [变量](variable.md)
+- [变量](webgal-script/variable.md)
 
-- [动画效果](animation.md)
+- [动画效果](webgal-script/animation.md)
 
-- [特效](special-effect.md)
+- [特效](webgal-script/special-effect.md)
 
 ## Stargazers over time
 

@@ -1,9 +1,5 @@
 # WebGAL Script Tutorial
 
-First of all, the program will start from **initial script** `start.txt` when it starts, please do not rename or delete it.
-
-The following tutorial will show you how to use WebGAL scripts.
-
 ## Index
 
 - [Base](base.md)

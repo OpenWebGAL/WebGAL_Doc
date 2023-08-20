@@ -2,7 +2,7 @@
 
 ## Use variables
 
-::: warning Warning
+::: warning
 Do not use the variable system lightly until you have figured out how to use scene jumping and branch jumping, which can be confusing!
 ::::
 
@@ -29,15 +29,15 @@ For example:
 
 ``` ws
 setVar:a=1;
-; // Jump to scene 2 when a>1
-changeScene:2.txt -when=a>1;
-; // If a<=1, the above statement is not executed, so naturally this one is executed
-changeScene:3.txt;
+; // Jump to scene 1 when a > 1
+changeScene:1.txt -when=a>1;
 ; // Only jump when a equals 1, note that the equality operator is ==
-changeScene:3.txt -when=a==1;
+changeScene:2.txt -when=a==1;
+; // If a < 1, the above statement is not executed, so naturally this one is executed
+changeScene:3.txt;
 ```
 
-::: tip Tip
+::: tip
 `=` is the assignment symbol and cannot be used for conditional judgment. `==` is the equality operator.
 :::
 

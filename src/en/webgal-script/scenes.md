@@ -4,7 +4,7 @@ In visual novels, jumping chapters and scenes and branch choices are indispensab
 
 You can split your scripts into multiple txt documents, and use a simple statement to switch the currently running script.
 
-::: warning Warning
+::: warning
 When jumping scenes, branch choices, or calling scenes, the stage will not be cleared. This also means that effects such as background music, sprites, and background images applied in the previous scene will be inherited to the next scene.
 
 If you use the WebGAL Terre visual editor, you should pay extra attention, because the editor does not care about the effects the previous scene will bring when previewing a single scene alone. Therefore, the preview effect and the actual game running effect may differ. You should consider properly handling the stage cleanup before the scene jump.
@@ -65,7 +65,10 @@ callScene:Chapter-2.txt;
 ## Branch choose
 
 If branching options exist in your script and you want to go to a different chapter by selecting a different option, use `choose`.
-Use `choose text:chapter filename` to define a choice. Use `|` to separate selections. An example is shown below:
+
+Use `choose text:chapter filename` to define a choice. Use `|` to separate selections.
+
+An example is shown below:
 
 ``` ws
 choose:Call out to her:Chapter-2.txt|Go home:Chapter-3.txt;
@@ -77,24 +80,26 @@ You just need to correspond the text of the options one-to-one with the script n
 
 If you want to create a branch but feel it is too troublesome to create a new TXT file, you can try the following to implement creating branches and jumping statements within the same file.
 
-::: warning Warning
+::: warning
 If your branch is very long, I do not recommend using this method, because the number of lines in a single TXT is not suitable for being too long, otherwise it may cause performance problems such as slow loading and sluggish response.
 :::
 
-First, you must understand how to use `label`
+### Create label
 
 ``` ws
 ......
 jumpLabel:label_1; // Jump to label_1
 ...... 
 ......
-label:label_1; // Create a label named label_1 for jumpLabel to call
+label:label_1; // Create a label named label_1
 ......
 ```
 
 In short, `jumpLabel` is similar to a `goto` statement, which can immediately make your script jump to any position in the scene (TXT file), and this position needs you to create it with `label`.
 
 If `jumpLabel` is compared to a portal, then the destination of this portal is the position where the `label` is located.
+
+### Create choose
 
 With the above basis, you can use `choose` to jump to the position where `label` is located through branches.
 

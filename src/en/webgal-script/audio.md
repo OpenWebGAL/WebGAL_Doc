@@ -29,7 +29,7 @@ Finally, you can use the following statement to fade out the background music.
 bgm:none -enter=3000;
 ```
 
-::: tip Tip
+::: tip
 `-volume` and `-enter` are optional parameters.
 When `-volume` is not used, or when an unusable value is used, the default value of 100 is used.
 When `-enter` is not used, or when an unusable value is used, the default value of 0 is used.
@@ -51,13 +51,13 @@ Sorry, have you been waiting long? -V2.ogg;
 ```
 
 You can set a `-volume` parameter for a voice to adjust its volume.
-`-volume` should be a numeric value greater than or equal to 0.
+`-volume` should be a numeric value between 0 and 100.
 
 ``` ws
 Yui: I just got here -V3.ogg -volume=30;
 ```
 
-::: tip Tip
+::: tip
 `-volume` is an optional parameter. When not used, or when a value other than 0 ~ 100 is used, the default value of 100 is used.
 :::
 
