@@ -2,19 +2,18 @@
   "name": "webgal-doc",
   "version": "1.0.0",
   "description": "The document of WebGAL engine.",
-  "main": "index.js",
-  "repository": "https://github.com/MakinoharaShoko/WebGAL_Doc.git",
-  "author": "Mahiru <Mahiru_@outlook.com>",
   "license": "MPL 2.0",
+  "type": "module",
   "scripts": {
-    "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider && vuepress dev docs",
-    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider && vuepress build docs"
+    "build": "vuepress build src",
+    "clean-dev": "vuepress dev src --clean-cache",
+    "dev": "vuepress dev src",
+    "update-package": "yarn dlx vp-update"
   },
   "devDependencies": {
-    "vuepress": "^1.9.7"
-  },
-  "dependencies": {
-    "@vuepress/plugin-google-analytics": "^1.9.9",
-    "cross-env": "^7.0.3"
+    "@vuepress/client": "2.0.0-beta.66",
+    "vue": "^3.3.4",
+    "vuepress": "2.0.0-beta.66",
+    "vuepress-theme-hope": "2.0.0-beta.235"
   }
 }
