@@ -75,14 +75,14 @@ miniAvatar:minipic_test.png;
 miniAvatar:none;
 ```
 
-## Unlock CG for appreciation
+## CGをアンロックして鑑賞可能
 
-Use `unlockCg` to unlock a CG for appreciation.
+鑑賞用CGのロックを解除するにはを `unlockCg` 使用します。
 
 ``` ws
-; // Unlock the CG and give it a name
+; // CG のロックを解除し、名前を付けます
 unlockCg:xgmain.jpeg -name=Starlight Café and the Butterfly of Death -series=1;
 
 ```
 
-The `-series` parameter is optional, and represents which series the current CG belongs to. Tachis from the same series will be shown together later (i.e. shown as switchable CGs from the same series).
+`-series` パラメータはオプションで、アンロックしたい CG がどのシリーズに属しているかを表します。 同じシリーズの CG は組み合わせて表示され、切り替えるようになります。
