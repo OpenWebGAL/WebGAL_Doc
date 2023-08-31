@@ -2,7 +2,9 @@
 
 ## 背景画像または立ち絵にアニメーションを設定する
 
-Use statement `setAnimation:animation name -target=target object;`
+ステートメントの形式は次のとおりです。 
+
+`setAnimation:アニメーション -target=オブジェクト;`
 
 **例:**
 
