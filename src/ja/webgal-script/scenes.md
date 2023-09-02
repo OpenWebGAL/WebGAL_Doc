@@ -132,4 +132,4 @@ label:label_2; // label_2 というラベルを作成する
 ......
 ```
 
-In this scenes, if you select `Branch 2`, everything seems to be fine. But if you choose `Branch 1`, you'll be surprised to find that after `Branch 1` finishes executing, `Branch 2` continues. That's because the program went on to the next line in order, and you didn't specify where to jump to at the end of the branch.
+このスクリプトでは、`テスト 2` を選択すると、すべて問題ないように見えます。ただし、`テスト 1` を選択すると、`テスト 1` の実行後に `テスト 2` が実行されることに驚かれることでしょう。これは、ゲームが順番に継続し実行され、分岐の終了後にジャンプするラベルを指定しなかったためです。
