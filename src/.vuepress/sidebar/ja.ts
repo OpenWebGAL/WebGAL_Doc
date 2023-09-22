@@ -11,6 +11,7 @@ export const jaSidebar = sidebar({
         "config",
         "publish",
         "faq",
+        "live2D",
       ],
     },
     {

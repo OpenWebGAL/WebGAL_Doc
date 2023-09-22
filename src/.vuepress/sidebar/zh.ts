@@ -10,7 +10,8 @@ export const zhSidebar = sidebar({
         "resources",
         "config",
         "publish",
-        "faq",
+        "faq", 
+        "live2D",
       ],
     },
     {

@@ -11,6 +11,7 @@ export const enSidebar = sidebar({
         "config",
         "publish",
         "faq",
+        "live2D",
       ],
     },
     {
