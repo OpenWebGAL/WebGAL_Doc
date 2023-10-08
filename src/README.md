@@ -2,13 +2,13 @@
 
 ## WebGAL 的一些信息
 
-- [我想要知道更新情报或反馈建议](/info)
+- [我想要知道更新情报或反馈建议](info)
 
-- [我想要参与引擎开发或了解如何定制 WebGAL](/developers)
+- [我想要参与引擎开发或了解如何定制 WebGAL](developers)
 
-- [我想要了解 WebGAL 引擎的技术实现](/tech)
+- [我想要了解 WebGAL 引擎的技术实现](tech)
 
-- [我想要赞助 WebGAL](/sponsor)
+- [我想要赞助 WebGAL](sponsor)
 
 ## 游戏开发指引
 
