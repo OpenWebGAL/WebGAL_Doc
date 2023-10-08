@@ -1,5 +1,15 @@
 # WebGAL 文档
 
+## WebGAL 的一些信息
+
+- [我想要知道更新情报或反馈建议](info.md)
+
+- [我想要参与引擎开发或了解如何定制 WebGAL](developers.md)
+
+- [我想要了解 WebGAL 引擎的技术实现](tech.md)
+
+- [我想要赞助 WebGAL](sponsor.md)
+
 ## 游戏开发指引
 
 - [如何开始制作 WebGAL？](getting-started.md)
