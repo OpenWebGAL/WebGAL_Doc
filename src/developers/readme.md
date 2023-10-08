@@ -51,4 +51,4 @@ yarn dev
 yarn build
 ```
 
-打包产物在  `dist` 目录下。
+打包产物在  `packages/webgal/dist` 目录下。
