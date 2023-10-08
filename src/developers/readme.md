@@ -1,5 +1,9 @@
 # 开发与贡献者信息
 
+## WebGAL 源代码仓库的地址
+
+[https://github.com/MakinoharaShoko/WebGAL](https://github.com/MakinoharaShoko/WebGAL)
+
 ## 分支说明
 
 ```
