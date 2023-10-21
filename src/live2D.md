@@ -5,13 +5,15 @@
 
 2、到 https://cdn.jsdelivr.net/gh/dylanNew/live2d/webgl/Live2D/lib/live2d.min.js 和 https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js 分别下载 live2D 和 cubismcore
 
-3、分别重命名为 `l2d.js` 和 `live2dcubismcore.min.js` ，然后将文件放到`packages/webgal/src/assets/lib`，然后到 `packages/webgal/index.html`,取消注释以下两行，使其变为：
+3、分别重命名为 `live2d.min.js` 和 `live2dcubismcore.min.js` ，然后将文件放到`packages/webgal/public/lib`，然后到 `packages/webgal/index.html`,取消注释以下两行，使其变为：
 ```html
-<script src="/src/assets/lib/l2d.js"></script>
-<script src="/src/assets/lib/live2dcubismcore.min.js"></script>
+<script src="lib/live2d.min.js" ></script>
+<script src="lib/live2dcubismcore.min.js"></script>
 ```
 4、到 `packages/webgal/src/Core/controller/stage/pixi/PixiController.ts` ，取消注释
 `import { Live2DModel, SoundManager } from 'pixi-live2d-display';` 和 `public addLive2dFigure(key: string, jsonPath: string, pos: string, motion: string) {...... 取消注释这一整个函数}`
+
+注意：如果 IDE 提示有未导入的变量，请根据提示导入。
 
 5、到 `packages/webgal/src/Components/Stage/MainStage/useSetFigure.ts` 取消注释 `return WebGAL.gameplay.pixiStage?.addLive2dFigure(...args);`
 
