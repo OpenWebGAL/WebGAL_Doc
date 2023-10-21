@@ -2,7 +2,7 @@
 
 ## 新特性预告
 
-如果想要即时获取 WebGAL 及编辑器开发的最新进展，欢迎访问 [WebGAL Project](https://github.com/users/MakinoharaShoko/projects/1)
+WebGAL 的开发计划基本上是用 issues 跟踪的，请访问   [WebGAL issues](https://github.com/MakinoharaShoko/WebGAL/issues) 或 [WebGAL Terre issues](https://github.com/MakinoharaShoko/WebGAL_Terre/issues)  来查看。
 
 ## 特性请求与缺陷报告
 

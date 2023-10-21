@@ -1,5 +1,9 @@
 # 开发与贡献者信息
 
+## WebGAL 源代码仓库的地址
+
+[https://github.com/MakinoharaShoko/WebGAL](https://github.com/MakinoharaShoko/WebGAL)
+
 ## 分支说明
 
 ```
@@ -51,4 +55,4 @@ yarn dev
 yarn build
 ```
 
-打包产物在  `dist` 目录下。
+打包产物在  `packages/webgal/dist` 目录下。
