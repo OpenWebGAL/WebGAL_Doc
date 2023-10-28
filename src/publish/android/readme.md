@@ -1,49 +1,52 @@
-# 将游戏打包到 Andoird 平台
+# Andoird
 
-## 方法一：自动导出项目文件 (适用于使用 WebGAL Terre 可视化编辑器的游戏开发者)
+推荐使用 WebGAL Terre 可视化编辑器，提供了一键导出安卓项目文件的选项。
 
-::: warning
-如果想要使用 android studio 直接从项目导出的文件夹打开，请新建游戏时填入**英文**，如果游戏名已经是中文，请打开 `WebGAL_Terre\public\games` 修改你的游戏名，并保证项目的文件路径中不会出现英文以外的字符，否则会报错。
-:::
+如果你使用源代码构建项目请切换到源代码选项卡。
 
-### 前期准备
+## 前期准备
 
-* 下载安装 [Android Studio](https://developer.android.google.cn/studio/)
+::: tabs#android
 
-### 导出和修改
-
-在编辑器左边侧边栏修改 `游戏标题` 和 `游戏包名`。游戏包名是你的网站域名反写，如果没有域名可以考虑使用开发者加游戏名的组合，比如 `webgaldev.mygalgame` 这种形式，**必须**使用**英文**。
-
-在编辑器右上角选择导出为安卓项目文件，然后打开 android studio 选择刚刚导出的 `android` 目录，等待依赖下载完毕。
-
-点击菜单栏中的 `File -> New -> Image Asset` 修改游戏图标，注意图标分为前后两层。
-
-### 运行和编译
-
-打开安卓手机的 USB 调试并连接电脑，点击上方工具栏设备标题旁的运行图标后在手机上运行。
-
-点击菜单栏中 `Build -> Generate Signed Bundle or APK`，根据提示创建密钥并编译，等待编译完毕。
-
-## 方法二：手动编辑项目文件 (适用于在本地通过书写脚本的形式或者通过源码编译开发的游戏开发者)
-
-### 前期准备
+@tab WebGAL Terre
 
 * 下载安装 [Android Studio](https://developer.android.google.cn/studio/)
-* 将 [WebGAL](https://github.com/MakinoharaShoko/WebGAL) 游戏导出 Web 版本
+
+@tab 源代码
+
+* 下载安装 [Android Studio](https://developer.android.google.cn/studio/)
+* 将 [WebGAL](https://github.com/MakinoharaShoko/WebGAL) 编译为 Web 网页
 * 下载 [WebGAL Android 项目模板](https://github.com/nini22P/WebGAL-Android)
 
-### 游戏导入
-
-首先将游戏导出为 Web 网页，解压 [项目模板](https://github.com/nini22P/WebGAL-Android)，将文件夹改名（切记必须使用英文）。
-打开 `项目文件夹\app\src\main\assets\webgal` 文件夹，将你要打包的游戏放到这里。
-
-::: tip
-游戏默认加载 `项目文件夹\app\src\main\assets\webgal\index.html`，如果想要自定义加载链接（比如在线链接），请修改 `项目文件夹\app\src\main\res\values\values.xml` 文件里面的 `load_url` 字段。
 :::
 
-### 信息修改
+## 在 Android Studio 中打开项目
 
-打开 Android Studio 导入项目。
+::: warning
+如果想要使用 Android Studio 直接从项目导出的文件夹打开，请新建游戏时填入**英文**，如果游戏文件夹名不是英文，请在更多菜单中重命名为英文或者打开 `WebGAL_Terre\public\games` 修改你的游戏名，并保证项目的文件路径中不会出现英文以外的字符，否则会报错
+:::
+
+::: tabs#android
+
+@tab WebGAL Terre
+
+在编辑器左边侧边栏修改游戏配置中的 `游戏标题` 和 `游戏包名`。
+游戏包名是你的网站域名反写，如果没有域名可以考虑使用开发者加游戏名的组合，比如 `webgaldev.mygalgame` 这种形式，**必须**使用**英文**。
+
+在编辑器右上角选择导出为安卓项目文件，系统会自动打开文件夹。
+
+打开 android studio 选择刚刚导出的 `android` 目录，等待依赖下载完毕。
+
+![在 Android Studio 中打开项目](open-in-android-studio.jpg)
+
+@tab 源代码
+
+下载并解压 [项目模板](https://github.com/nini22P/WebGAL-Android)，将文件夹改名（切记必须使用英文）。
+打开 `项目文件夹\app\src\main\assets\webgal` 文件夹，将你要打包的游戏放到这里。
+
+游戏默认加载 `项目文件夹\app\src\main\assets\webgal\index.html`，如果想要自定义加载链接（比如在线链接），请修改 `项目文件夹\app\src\main\res\values\values.xml` 文件里面的 `load_url` 字段。
+
+打开 Android Studio 打开项目。
 修改 `项目文件夹\settings.gradle` 文件中的 `rootProject.name` 字段。
 
 ``` gradle
@@ -83,13 +86,31 @@ package com.openwebgal.demo //修改包名
 
 上面这个字段修改后会报错，这时候点击刚刚修改的包名，然后点击“黄色灯泡”选择 `Move file to '目标包名'`，再将原本包名文件夹删掉。
 
+:::
+
 点击菜单栏中的 `File -> New -> Image Asset` 修改游戏图标，注意图标分为前后两层。
 
-### 运行和编译
+![创建图标](create-icons.jpg)
+
+## 调试运行
 
 打开安卓手机的 USB 调试并连接电脑，点击上方工具栏设备标题旁的运行图标后在手机上运行。
 
-点击菜单栏中 `Build -> Generate Signed Bundle or APK`，根据提示创建密钥并编译，等待编译完毕。
+![在设备上运行](run-app.jpg)
+
+## 编译 APK
+
+点击菜单栏中 `Build -> Generate Signed Bundle or APK` ，在弹出的菜单中选择 `APK`。
+
+根据提示创建或者选择密钥。
+
+![创建或者选择密钥](keystore.jpg)
+
+选择 `release` 后点击 `Create` 等待编译完毕。
+
+![选择编译变体](build.jpg)
+
+![编译完毕](finsh.jpg)
 
 ## 视频教程
 
