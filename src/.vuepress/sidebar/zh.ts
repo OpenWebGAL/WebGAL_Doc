@@ -9,7 +9,17 @@ export const zhSidebar = sidebar({
         "getting-started",
         "resources",
         "config",
-        "publish",
+        {
+          text: "部署或发布我的视觉小说？",
+          link: "publish/",
+          collapsible: true, // 是否可折叠
+          prefix: "publish/",
+          children: [
+            "web",
+            "desktop",
+            "android",
+          ]
+        },
         "faq", 
         "live2D",
       ],
