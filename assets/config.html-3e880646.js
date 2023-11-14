@@ -1,0 +1,5 @@
+import{_ as e}from"./plugin-vue_export-helper-c27b6911.js";import{o as n,c as i,d as a}from"./app-12c0bc9f.js";const d={},t=a(`<h1 id="ゲーム情報のカスタマイズ" tabindex="-1"><a class="header-anchor" href="#ゲーム情報のカスタマイズ" aria-hidden="true">#</a> ゲーム情報のカスタマイズ</h1><p><code>/game</code>フォルダーの下には、<code>config.txt</code>というファイルがあります。ここにゲームに関する情報を入力できます（ビジュアルエディタを使用して直接編集することもできます）：</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>Game_name:WebGAL;//ゲーム名
+Game_key:0f33fdGr;//識別コードの文字列。できるだけ6-10文字の長さの文字列をランダムに入力してください。他のゲームと重複しないようにする必要があります。そうしないとバグが発生する可能性があります。
+Title_img:Title2.png;//タイトル画像の名前。画像は /background フォルダーに保存してください。
+Title_bgm:夏影.mp3;//タイトルの BGM。音楽ファイルは /bgm フォルダーに保存してください。
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,3),c=[t];function s(r,o){return n(),i("div",null,c)}const _=e(d,[["render",s],["__file","config.html.vue"]]);export{_ as default};
