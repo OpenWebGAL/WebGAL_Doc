@@ -7,3 +7,5 @@
 ``` ws
 playVideo:OP.mp4;
 ```
+
+如果要组织用户跳过视频，你可以使用 `-skipOff` 参数。

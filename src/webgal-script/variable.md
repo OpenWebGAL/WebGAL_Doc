@@ -43,3 +43,14 @@ changeScene:3.txt;
 :::
 
 任何语句都可以加上 `-when` 参数来控制是否执行。通过组合 `-when` 参数和 `jumpLabel` `callScene` `changeScene`，你可以实现带条件判断的流程控制。
+
+## 变量插值
+
+可以在语句中使用 `{}` 语法来进行变量插值，将某个变量传入语句中，例如：
+
+```
+setVar:name=WebGAL;
+setVar:engine=WebGAL;
+{name}:欢迎使用 {engine}！这是一款全新的网页端视觉小说引擎。;
+```
+

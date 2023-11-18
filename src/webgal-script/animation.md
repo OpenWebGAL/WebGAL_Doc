@@ -31,7 +31,7 @@ setAnimation:enter-from-bottom -target=fig-center -next;
 | fig-center | 中间立绘       |
 | fig-right  | 右侧立绘       |
 | bg-main    | 背景           |
-|            | 某个有id的立绘 |
+| id | 某个有id的立绘 |
 
 ## 自定义动画
 
@@ -53,10 +53,6 @@ setAnimation:enter-from-bottom -target=fig-center -next;
       "x": 1,
       "y": 1
     },
-    "pivot": {
-      "x": 0.5,
-      "y": 0.5
-    },
     "position": {
       "x": -50,
       "y": 0
@@ -70,10 +66,6 @@ setAnimation:enter-from-bottom -target=fig-center -next;
     "scale": {
       "x": 1,
       "y": 1
-    },
-    "pivot": {
-      "x": 0.5,
-      "y": 0.5
     },
     "position": {
       "x": 0,
@@ -93,11 +85,16 @@ setAnimation:enter-from-bottom -target=fig-center -next;
 | :------- | :--------------------------------- |
 | alpha    | 透明度，范围0-1                     |
 | scale    | 缩放                               |
-| pivot    | 锚点                               |
 | position | 位置偏移                           |
 | rotation | 旋转角度，单位为弧度                |
 | blur     | 高斯模糊半径                        |
 | duration | 这个时间片的持续时间，单位为毫秒(ms) |
+| oldFilm         | 老电影效果，0代表关闭，1代表开启       |
+| dotFilm         | 点状电影效果，0代表关闭，1代表开启     |
+| reflectionFilm  | 反射电影效果，0代表关闭，1代表开启     |
+| glitchFilm      | 故障电影效果，0代表关闭，1代表开启     |
+| rgbFilm         | RGB电影效果，0代表关闭，1代表开启      |
+| godrayFilm      | 光辉效果，0代表关闭，1代表开启         |
 
 然后，你需要在 `animationTable`中加上你的自定义动画的文件名（不需要后缀名）
 
@@ -147,3 +144,13 @@ setAnimation:enter-from-left -target=fig-left -next;
   }
 ]
 ```
+
+## 设置进出场效果
+
+你还可以覆盖 WebGAL 默认的渐变进出场效果，替换为自己的动画效果，例如：
+
+```
+setTransition: -target=fig-center -enter=enter-from-bottom -exit=exit;
+```
+
+注意：只有当立绘被设置后，你才能为其设置进出场效果。设置进出场效果的代码写在立绘设置代码**后**
