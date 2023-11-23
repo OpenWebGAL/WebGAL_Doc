@@ -44,6 +44,16 @@ changeScene:3.txt;
 
 任何语句都可以加上 `-when` 参数来控制是否执行。通过组合 `-when` 参数和 `jumpLabel` `callScene` `changeScene`，你可以实现带条件判断的流程控制。
 
+## 获取用户输入
+
+使用`getUserInput` 指令来获取用户输入，例如：
+
+```
+getUserInput:name -title=如何称呼你 -buttonText=确认; 将用户输入写入 name 变量中
+```
+
+其中，`title` 参数是提示的文本，`buttonText` 是确认按钮的文本
+
 ## 变量插值
 
 可以在语句中使用 `{}` 语法来进行变量插值，将某个变量传入语句中，例如：
