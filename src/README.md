@@ -10,6 +10,8 @@
 
 - [我想要赞助 WebGAL](sponsor)
 
+- [我想要加入 WebGAL 制作组！](developers/joinus)
+
 ## 游戏开发指引
 
 - [如何开始制作 WebGAL？](getting-started.md)
