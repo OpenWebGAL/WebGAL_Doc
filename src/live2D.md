@@ -20,3 +20,11 @@
 6、现在开始你可以使用 live2D 作为立绘了。你需要将整个模型的目录放入 `game/figure` 目录中，调用立绘的方法是调用立绘的 json 文件。
 
 **注意：本项目的作者没有使用任何 live2D SDK 的源码和模型，由于使用 live2D 造成的任何版权纠纷，皆由二次开发者或制作者自行承担！**
+
+## 切换动作和表情
+
+你可以使用 `-motion=motionName` 或 `-expression=expressionName` 参数来切换表情，如：
+
+```
+changeFigure:xxx.json -motion=angry -expression=angry01;
+```
