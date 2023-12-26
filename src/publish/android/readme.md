@@ -10,11 +10,11 @@
 
 @tab WebGAL Terre
 
-* 下载安装 [Android Studio](https://developer.android.google.cn/studio/)
+* 下载安装 [Android Studio](https://developer.android.com/studio)
 
 @tab 源代码
 
-* 下载安装 [Android Studio](https://developer.android.google.cn/studio/)
+* 下载安装 [Android Studio](https://developer.android.com/studio)
 * 将 [WebGAL](https://github.com/MakinoharaShoko/WebGAL) 编译为 Web 网页
 * 下载 [WebGAL Android 项目模板](https://github.com/nini22P/WebGAL-Android)
 
