@@ -1,35 +1,30 @@
 # About Live2D
-The engine now supports the use of Live2D character models. If you want to use Live2D models, please follow these steps:
+The engine now supports using Live2D illustrations. If you want to use Live2D illustrations, please:
 
-1. Obtain the necessary authorization for using Live2D.
+1. Obtain the authorization of Live2D by yourself
 
-2. Download Live2D and CubismCore from the following links:
+2. Download Live2D and Cubismcore from https://cdn.jsdelivr.net/gh/dylanNew/live2d/webgl/Live2D/lib/live2d.min.js and https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js respectively
 
-   - Live2D: https://cdn.jsdelivr.net/gh/dylanNew/live2d/webgl/Live2D/lib/live2d.min.js
-   - CubismCore: https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js
+3. Rename them to `live2d.min.js` and `live2dcubismcore.min.js` respectively, then put the files in `packages/webgal/public/lib`, then go to `packages/webgal/index.html`, uncomment the following two lines to make them:
+```html
+<script src="lib/live2d.min.js" ></script>
+<script src="lib/live2dcubismcore.min.js"></script>
+```
+4. Go to `packages/webgal/src/Core/controller/stage/pixi/PixiController.ts`, uncomment
+`import { Live2DModel, SoundManager } from 'pixi-live2d-display';` and `public addLive2dFigure(key: string, jsonPath: string, pos: string, motion: string) {...... uncomment this whole function}`
 
-3. Rename `l2d.js` and `live2dcubismcore.min.js` respectively, then put the files in `packages/webgal/src/assets/lib`, and then go to `packages/webgal/index.html`, and uncomment the following two lines so that they become:
-   ```
-   htmlCopy code<script src="/src/assets/lib/l2d.js"></script>
-   <script src="/src/assets/lib/live2dcubismcore.min.js"></script>
-   ```
+Note: If the IDE prompts that there are unimported variables, please import them according to the prompts.
 
-4. In the `packages/webgal/src/Core/controller/stage/pixi/PixiController.ts` file, uncomment the following lines:
+5. Go to `packages/webgal/src/Components/Stage/MainStage/useSetFigure.ts` and uncomment `return WebGAL.gameplay.pixiStage?.addLive2dFigure(...args);`
 
-   ```
-   javascriptCopy codeimport { Live2DModel, SoundManager } from 'pixi-live2d-display';
-   public addLive2dFigure(key: string, jsonPath: string, pos: string, motion: string) {
-      // ...
-   }
-   ```
+6. Now you can start using Live2D as illustrations. You need to put the directory of the entire model in the `game/figure` directory. The way to call the illustration is to call the JSON file of the illustration.
 
-5. In the `packages/webgal/src/Components/Stage/MainStage/useSetFigure.ts` file, uncomment the following line:
+**Note: The author of this project did not use any source code and models of Live2D SDK. Any copyright disputes caused by the use of Live2D shall be borne by the secondary developer or producer!**
 
-   ```
-   javascriptCopy code
-   return WebGAL.gameplay.pixiStage?.addLive2dFigure(...args);
-   ```
+## Switch actions and expressions
 
-6. You can now use Live2D character models as part of your illustrations. Place the entire model directory inside the `game/figure` directory. To display a character model, call the corresponding JSON file.
+You can use the `-motion=motionName` or `-expression=expressionName` parameters to switch expressions, such as:
 
-**Note: The author of this project has not used any Live2D SDK source code or models. Any copyright disputes arising from the use of Live2D are the sole responsibility of the developers or creators of the modified project!**
+```
+changeFigure:xxx.json -motion=angry -expression=angry01;
+```

@@ -1,42 +1,42 @@
-# Special effect
+# Effects
 
-## Use special effect
+Currently, WebGAL's effect system is powered by PixiJS.
 
-Currently, WebGAL's effect system is implemented by PixiJS.
+## Using Effects
 
 ### Initialize Pixi
 
-Use `pixiInit` to initialize Pixi.
+Initialize Pixi using `pixiInit`.
 
 ``` ws
-pixiInit; 
+pixiInit;
 ```
 
 ::: warning
-If you want to use effects, you must run this command first to initialize Pixi.
+If you want to use effects, you must run this command to initialize Pixi first.
 
-If you want to eliminate the effects that have been applied, you can use this syntax to clear the effects.
+If you want to clear the effects that have already taken effect, you can use this syntax to clear the effects.
 :::
 
-#### Add effects
+### Add Effects
 
-Use `pixiPerform` to add effects.
+Add effects using `pixiPerform`.
 
 ``` ws
-pixiPerform:rain; // Add a raining effect
+pixiPerform:rain; // Add a rain effect
 ```
 
-Note: After the effect is applied, it will keep running if not initialized.
+Note: After the effect takes effect, if it is not initialized, the effect will continue to run.
 
-### List of preset effects
+### List of Built-in Effects
 
-| Effect          | Command                     |
-| :-------------- | :-------------------------- |
-| Rain            | pixiPerform:rain;           |
-| Snow            | pixiPerform:snow;           |
+| Effect | Command |
+| :--- | :--- |
+| Rain | pixiPerform:rain; |
+| Snow | pixiPerform:snow; |
 | Cherry Blossoms | pixiPerform:cherryBlossoms; |
 
-### Superimpose effects
+### Superimpose Effects
 
 If you want to superimpose two or more effects, you can superimpose different effects without using the `pixiInit` command.
 
@@ -45,20 +45,20 @@ pixiPerform:rain;
 pixiPerform:snow;
 ```
 
-### Clear superimposed effects
+### Clear Superimposed Effects
 
-Use `pixiInit` to initialize, this can eliminate all effects that have been applied.
+Initialize using `pixiInit` to clear all effects that have been applied.
 
-## Add custom effects
+## Adding Custom Effects
 
-You can download the source code, then find `/Core/gameScripts/pixiPerformScripts/`, then create a `PIXI.Container` for the effect you need.
+You can download the source code, then find `/Core/gameScripts/pixiPerformScripts/` and create a new `PIXI.Container` to create the effects you need.
 
 ``` ts
 // Get the current Pixi effect Container
 const effectsContainer = RUNTIME_GAMEPLAY.pixiStage!.effectsContainer!;
-// Way to call Pixi App, may be useful for determining screen size, etc.
+// Call the Pixi App method, which may be useful for determining screen size, etc.
 const app = RUNTIME_GAMEPLAY.pixiStage!.currentApp!;
-// Create container for custom effects
+// Create a container for custom effects
 const container = new PIXI.Container();
 // Add effects
 effectsContainer.addChild(container);
@@ -66,29 +66,29 @@ effectsContainer.addChild(container);
 
 Texture files can be placed in the `game/tex` directory.
 
-Then, at the beginning of the file, import `the effect registration method` to register your new effect.
+Then, import the `effect registration method` at the beginning of the file to register the new effect you wrote.
 
-At the end of the file, use it to register your effect. The first parameter is the effect name, and the second is the method to call the effect.
+At the end of the file, use it to register your effect, the first parameter is the effect name, and the second parameter is the method to call the effect.
 
 ``` ts
 import {registerPerform} from '../pixiPerformManager';
 
-// Assume this is your effect  
+// Let's say this is your effect
 function myPerform() {
-  // ...
+    // ...
 }
 
 // Register
-registerPerform('myPerform', () => myPerform(parameters)); 
+registerPerform('myPerform', () => myPerform(parameters));
 ```
 
-Finally, compile the WebGAL that supports your custom effects
+Finally, compile WebGAL with support for your custom effects
 
 ``` shell
-yarn run build; 
+yarn run build;
 ```
 
-Now you can call your effects in the script
+This way, you can call your effects in the script
 
 ``` ws
 pixiPerform:your new effect;

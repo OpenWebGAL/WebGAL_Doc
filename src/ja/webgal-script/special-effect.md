@@ -1,95 +1,95 @@
-# 特殊効果
+# エフェクト
 
-現在、WebGAL の特殊効果システムは PixiJS によって実装されています。
+現在、WebGAL のエフェクトシステムは PixiJS で実装されています。
 
-## 特殊効果の使用
+## エフェクトを使用する
 
-### Pixiの初期化
+### Pixi を初期化する
 
-`pixiInit` 初期化 Pixi。
+`pixiInit` を使用して Pixi を初期化します。
 
 ``` ws
-pixiInit; 
+pixiInit;
 ```
 
 ::: warning
-特殊効果を追加したい場合は、まずこのコマンドを実行して Pixi を初期化する必要があります。
+エフェクトを使用する場合は、このコマンドを最初に実行して Pixi を初期化する必要があります。
 
-追加した特殊効果をクリアしたい場合も、このコマンドを実行してください。
+すでに適用されているエフェクトを消去したい場合は、この構文を使用してエフェクトをクリアできます。
 :::
 
-### 特殊効果の追加
+### エフェクトを追加する
 
-`pixiPerform` 追加特殊効果
+`pixiPerform` を使用してエフェクトを追加します。
 
 ``` ws
-pixiPerform:rain; // 雨の特殊効果を追加する
+pixiPerform:rain; // 雨のエフェクトを追加する
 ```
 
-注意: 特殊効果が追加した後、初期化されていない場合は継続して実行されます。
+注意：エフェクトを適用した後、初期化しないと、エフェクトは常に実行されます。
 
-### 事前に作成された特殊効果
+### プリセットエフェクト一覧
 
-| Effect | Command                   |
-| :----- | :------------------------ |
-| 雨     | pixiPerform:rain;         |
-| 雪     | pixiPerform:snow;         |
-| 樱花 | pixiPerform:cherryBlossoms; |
+| エフェクト | コマンド                        |
+| :--- | :-------------------------- |
+| 雨 | pixiPerform:rain;           |
+| 雪 | pixiPerform:snow;           |
+| 桜 | pixiPerform:cherryBlossoms; |
 
-### 重ね合わせた特殊効果
+### エフェクトを重ねる
 
-2 つ以上の特殊効果を重ね合わせたい場合は、`pixiInit` コマンドを使用せずに異なる特殊効果を重ね合わせることができます。
+2 つ以上エフェクトを重ねたい場合は、`pixiInit` コマンドを使用せずに異なるエフェクトを重ねることができます。
 
 ``` ws
 pixiPerform:rain;
 pixiPerform:snow;
 ```
 
-### 特殊効果のクリア
+### 重ねたエフェクトをクリアする
 
-`pixiInit` を使用して初期化すると、追加したすべての特殊効果をクリアすることができます。
+`pixiInit` を使用して初期化します。これにより、適用されているすべてエフェクトを消去できます。
 
-## カスタム特殊効果の追加
+## カスタムエフェクトを追加する
 
-ソースコードをダウンロードし、`/Core/gameScripts/pixiPerformScripts` に移動し、カスタム特殊効果のために `PIXI.Container` を作成します。
+ソースコードをダウンロードして `/Core/gameScripts/pixiPerformScripts/` に移動し、必要なエフェクトを作成するために `PIXI.Container` を新規作成します。
 
 ``` ts
-// 現在の Pixi.Container の特殊効果を取得する
+// 現在の Pixi エフェクト Container を取得する
 const effectsContainer = RUNTIME_GAMEPLAY.pixiStage!.effectsContainer!;
-// Pixi アプリのインターフェースを呼び出すと、画面サイズなどの確認に役立つ場合があります
+// Pixi App の呼び出し方法で、画面のサイズなどを決定するのに役立ちます
 const app = RUNTIME_GAMEPLAY.pixiStage!.currentApp!;
-// カスタム特殊効果のコンテナを作成する
+// カスタムエフェクトのコンテナを作成する
 const container = new PIXI.Container();
-// カスタム特殊効果を追加する
+// エフェクトを追加する
 effectsContainer.addChild(container);
 ```
 
-テクスチャファイルは `game/tex` フォルダーに配置する必要があります。
+テクスチャ ファイルは `game/tex` ディレクトリに配置できます。
 
-次に、ファイルの先頭でカスタム特殊効果の登録メソッドを導入します。
+次に、ファイルの先頭で `エフェクト登録メソッド` をインポートして、新しく記述したエフェクトを登録します。
 
-ファイルの末尾で、登録メソッドを使用して、カスタム特殊効果を登録します。最初のパラメータは特殊効果名で、2 番目のパラメータは特殊効果を呼び出すメソッドです。
+ファイルの末尾で登録したエフェクトを使用します。最初のパラメータはエフェクト名、2 番目のパラメータはエフェクトを呼び出すメソッドです。
 
 ``` ts
 import {registerPerform} from '../pixiPerformManager';
 
-// 特殊効果の定義
-function myPerform(parameters) {
-  // ...
+// これがエフェクトだと仮定します
+function myPerform() {
+    // ...
 }
 
-// 登録
-registerPerform('myPerform', () => myPerform(parameters)); 
+// 登録する
+registerPerform('myPerform', () => myPerform(パラメータ));
 ```
 
-最後に、カスタム特殊効果をサポートする WebGAL をコンパイルします
+最後に、カスタムエフェクトをサポートする WebGAL をコンパイルします。
 
 ``` shell
 yarn run build;
 ```
 
-これで、スクリプトでカスタム特殊効果を呼び出すことができます。
+これで、スクリプトでエフェクトを呼び出すことができます。
 
 ``` ws
-pixiPerform:myPerform;
+pixiPerform:新しいエフェクト;
 ```

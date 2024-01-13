@@ -1,41 +1,41 @@
-# Showcase your game
+# Showcase Your Game
 
-First you need to prepare the following information:
+First, you need to prepare the following information:
 
-* Game ID: the unique ID of the game, cannot be duplicated with other games
-* Game title
-* Developer name
-* Release date
-* Publishing address: a link to a publicly accessible page, such as the project homepage, store, blog, video, etc.
-* Game cover: width 616 pixels, height 353 pixels
+* Game ID: The unique ID of your game, use English, cannot be duplicated with other games
+* Game Title
+* Developer Name
+* Release Date
+* Release URL: A link to a publicly accessible page, such as project homepage, store, blog, video, etc.
+* Game Cover: 616 pixels in width, 353 pixels in height
 
-## Submit your game via Pull Requests
+## Submit Your Game via Pull Requests
 
-Fork [WebGAL_HomePage](https://github.com/MakinoharaShoko/WebGAL_HomePage) this repository.
+Fork the [WebGAL_HomePage](https://github.com/MakinoharaShoko/WebGAL_HomePage) repository.
 
-Add the prepared cover to `/public/images/games`.
+Add your prepared cover to `/public/images/games`.
 
-Open the file `/data/games.ts`, find `games` and add at the end according to the following template:
+Open the file `/data/games.ts`, find `games`, add the following template at the end:
 
 ``` typescript
   {
     id: 'Game ID',
-    title: 'Game title',
-    developer: 'Developer name',
+    title: 'Game Title',
+    developer: 'Developer Name',
     releaseDate: 'xxxx-xx-xx',
     url: 'https://example.com/',
-    cover: 'Game cover filename.webp',
+    cover: 'Game Cover File Name.webp',
   },
 ```
 
-Confirm that there are no errors and launch a pull requests request.
+After confirming that there are no errors, initiate a pull request.
 
-## Submit your game via Issues
+## Submit Your Game via Issues
 
 Open the [Issues page](https://github.com/MakinoharaShoko/WebGAL_HomePage/issues) of the WebGAL_HomePage repository.
 
-Click `New issue`, fill in the information you have prepared, and then click `Submit new issue`.
+Click `New issue`, fill in the prepared information, and click `Submit new issue` after confirming that there are no errors.
 
-## Submit your game through other channels
+## Submit Your Game via Other Channels
 
-Once you've prepared the necessary information, you can submit your game by contacting us via the community or email.
+After preparing the required information, you can submit your game by contacting us via the discussion community or email.

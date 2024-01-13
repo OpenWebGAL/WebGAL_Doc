@@ -15,5 +15,9 @@
     "vue": "^3.3.4",
     "vuepress": "2.0.0-beta.66",
     "vuepress-theme-hope": "2.0.0-beta.235"
+  },
+  "dependencies": {
+    "axios": "^1.6.5",
+    "fs-extra": "^11.2.0"
   }
 }

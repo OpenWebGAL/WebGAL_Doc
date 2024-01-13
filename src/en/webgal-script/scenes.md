@@ -1,42 +1,42 @@
-# Scenes and Branch
+# Scene and Branch
 
-In visual novels, jumping chapters and scenes and branch choices are indispensable. Therefore, WebGAL also supports scene jumps and branch choices.
+In Visual Novels, jumping to chapters, scenes and selecting branches are indispensable, so WebGAL also supports scene jumping and branch selection.
 
-You can split your scripts into multiple txt documents, and use a simple statement to switch the currently running script.
+You can split your script into multiple txt documents, and use a simple statement to switch the currently running script.
 
 ::: warning
-When jumping scenes, branch choices, or calling scenes, the stage will not be cleared. This also means that effects such as background music, sprites, and background images applied in the previous scene will be inherited to the next scene.
+After jumping scenes, selecting branches or calling scenes, the stage will not be cleared. This means that the background music, portraits, background images and other effects applied in the previous scene will be inherited to the next scene.
 
-If you use the WebGAL Terre visual editor, you should pay extra attention, because the editor does not care about the effects the previous scene will bring when previewing a single scene alone. Therefore, the preview effect and the actual game running effect may differ. You should consider properly handling the stage cleanup before the scene jump.
+If you are using WebGAL Terre visual editor, you should pay special attention to it, because the editor does not care about the effects of the previous scene when previewing a single scene. Therefore, the preview effect and the actual game running effect may be different. You should consider handling the stage cleanup work before the scene jump properly.
 :::
 
-## Jump scenes
+## Scene Jumping
 
-For example, if you have now written the scripts for two chapters, `Chapter-1.txt` and `Chapter-2.txt` respectively, after `Chapter-1.txt` finishes running, you want to jump to the scene corresponding to `Chapter-2.txt`, please use the following statement:
+Suppose you have written two chapters of the script, namely `Chapter-1.txt` and `Chapter-2.txt`. After `Chapter-1.txt` is finished running, you want to jump to the scene corresponding to `Chapter-2.txt`, please use the following statement:
 
 ``` ws
-changeScene:Chapter-2.txt; 
+changeScene:Chapter-2.txt;
 ```
 
 Example:
 
 ``` ws
-(Chapter-1.txt) 
+(Chapter-1.txt)
 ......
 ......
-; // The content of Chapter-2.txt will be executed next
+; // The following is the content of Chapter-2.txt
 changeScene:Chapter-2.txt;
-...... 
+......
 ......
 (Chapter-2.txt)
 ......
 ```
 
-By executing this command, you will switch the game scene and the subsequent plot will run according to the new scene script. The new script will run after the next mouse click.
+By executing this command, you will switch the game scene and make the subsequent plot development run according to the new scene script. The new script will run after the next mouse click.
 
-## Call scenes
+## Scene Calling
 
-If you need to call another scene within a scene, you can use `callScene`, which will return to the original scene after the called scene finishes running.
+If you need to call another scene in a scene, you can use `callScene`, and the original scene will be returned after the called scene is finished running.
 
 Statement:
 
@@ -48,64 +48,61 @@ Example:
 
 ``` ws
 (Chapter-1.txt)
-...... 
+......
 ......
 callScene:Chapter-2.txt;
-; // The content of Chapter-2.txt will be executed next
+; // The following is the content of Chapter-2.txt
 ......
 ......
 (Chapter-2.txt)
 ......
 ......
-(After Chapter-2.txt execution is complete)
-; // Return to parent scene and continue executing parent scene statements
+(Chapter-2.txt execution completed)
+; // Return to the parent scene and continue to execute the parent scene statement
 ......
 ```
 
-## Branch choose
+## Branch Selection
 
-If branching options exist in your script and you want to go to a different chapter by selecting a different option, use `choose`.
-
-Use `choose text:chapter filename` to define a choice. Use `|` to separate selections.
-
-An example is shown below:
+If there are branch options in your script, and you want to enter different chapters by selecting different options, please use `choose`.
+Use `Option text: Chapter file name` to define an option. Use `|` to separate different options. An example is as follows:
 
 ``` ws
-choose:Call out to her:Chapter-2.txt|Go home:Chapter-3.txt;
+choose:Stop her:Chapter-2.txt|Go home:Chapter-3.txt;
 ```
 
-You just need to correspond the text of the options one-to-one with the script name to enter after selecting the option to achieve the function of branch choices.
+You only need to match the text of the option with the name of the script to be entered after the option is selected, and you can realize the function of branch selection.
 
-## Jumps label
+## Label Jump
 
-If you want to create a branch but feel it is too troublesome to create a new TXT file, you can try the following to implement creating branches and jumping statements within the same file.
+If you want to create a branch, but you think it is too troublesome to create a new TXT file for this, you can try the following method to create a branch and jump statement in the same file.
 
 ::: warning
-If your branch is very long, I do not recommend using this method, because the number of lines in a single TXT is not suitable for being too long, otherwise it may cause performance problems such as slow loading and sluggish response.
+If your branch is very long, I do not recommend that you use this method, because the number of lines in a TXT should not be too long, otherwise it may cause performance problems such as slow loading and slow response.
 :::
 
-### Create label
+### Create a label (`label`)
 
 ``` ws
 ......
 jumpLabel:label_1; // Jump to label_1
-...... 
+......
 ......
 label:label_1; // Create a label named label_1
 ......
 ```
 
-In short, `jumpLabel` is similar to a `goto` statement, which can immediately make your script jump to any position in the scene (TXT file), and this position needs you to create it with `label`.
+In short, `jumpLabel` is similar to the `goto` statement, which can immediately jump your script to any position in the scene (TXT file), and this position needs to be created by you with `label`.
 
-If `jumpLabel` is compared to a portal, then the destination of this portal is the position where the `label` is located.
+If `jumpLabel` is compared to any door, then the end point of this any door is the position of `label`.
 
-### Create choose
+### Add options
 
-With the above basis, you can use `choose` to jump to the position where `label` is located through branches.
+With the above foundation, you can use `choose` to implement the use of branches to jump to the position of `label`:
 
 ``` ws
 ......
-choose:Test 1:label_1|Test 2:label_2;
+choose:Branch 1:label_1|Branch 2:label_2;
 label:label_1; // Create a label named label_1
 ......
 ......
@@ -118,16 +115,16 @@ label:end; // Create a label named end
 ......
 ```
 
-Note that at the end of each branch, you should use `jumpLabel` to jump to the position you want. Since the program executes linearly, if you don't jump at the end of a branch, then the program will continue down the line, for example:
+Note that at the end of each branch, you should use `jumpLabel` to jump to the position you want. Since the program is executed linearly, if you do not jump to a location at the end of the branch, the program will continue to run down, for example:
 
 ``` ws
 ......
-choose:branch 1:label_1|branch 2:label_2; label:label_1;
+choose:Branch 1:label_1|Branch 2:label_2;
 label:label_1; // Create a label named label_1
 ......
 ......
-label:label_2; // create a label named label_2
+label:label_2; // Create a label named label_2
 ......
 ```
 
-In this scenes, if you select `Branch 2`, everything seems to be fine. But if you choose `Branch 1`, you'll be surprised to find that after `Branch 1` finishes executing, `Branch 2` continues. That's because the program went on to the next line in order, and you didn't specify where to jump to at the end of the branch.
+In this script, if you select `Branch 2`, everything seems to be fine. But if you select `Branch 1`, you will be surprised to find that after `Branch 1` is executed, `Branch 2` will continue to be executed. That's because the program continues to execute the next line in order, and you didn't specify where to jump after the branch ended.

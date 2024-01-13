@@ -1,19 +1,23 @@
-# Edit game config
+# Edit Game Configuration
 
-Under the `game` folder, there is a file config.txt where you can fill in relevant information about your game (you can edit it directly using the visual editor).
+Under the `game` folder, there is a file named `config.txt`, you can fill in the relevant information of your game in this file (you can edit it directly using a graphical editor).
 
-| Parameters | Description |
-| :---------- | :---------------------------------------------- |
+| Parameter | Description |
+| :------------ | :----------------------------------------------- |
 | Game_name | Game name |
-| Game_key | Game identifier, 6-10 characters long, not to duplicate it with other games |
-| Title_img | Title image, placed in the `background` folder |
-| Title_bgm | title background music, placed in `bgm` folder |
+| Game_key | Game identification code, 6-10 characters in length, do not repeat with other games |
+| Title_img | Title picture, put it in the `background` folder |
+| Title_bgm | Title background music, put it in the `bgm` folder |
+| Game_Logo | Game Logo, multiple can be displayed, separated by \| |
+| Textbox_theme | Game dialog style, you can choose imss style or standard style |
 
-Below is a sample configuration file:
+The following is a sample configuration file:
 
 ``` text
 Game_name:WebGAL;
 Game_key:0f33fdGr;
-Title_img:Title2.png;
-Title_bgm:summer.mp3;
+Title_img:Title.png;
+Title_bgm:夏影.mp3;
+Game_Logo:WebGalEnter.png|bg.png;
+Textbox_theme:imss;
 ```

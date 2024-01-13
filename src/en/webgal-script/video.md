@@ -1,9 +1,11 @@
 # Video
 
-## Play a video
+## Play Video
 
-Place the video in the `video` folder and play it using `playVideo`.
+Put the video inside `video` folder, then use `playVideo` to play it.
 
 ``` ws
-playVideo:OP.mp4
+playVideo:OP.mp4;
 ```
+
+If you want to prevent user from skipping the video, you can use `-skipOff` parameter.

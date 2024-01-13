@@ -1,49 +1,33 @@
-# How to start making a WebGAL game?
+# How to start making a WebGAL?
 
 ::: warning
-No matter which method you use to make a WebGAL game, you should take some time to read through this entire page. It won't take long, and it will help you avoid some issues that might arise from improper operation.
+No matter which way you choose to make a WebGAL game, you should spend some time reading through the entirety of the development guide. It won't take long, and it will save you from running into problems due to improper operation.
 
-Did you know that you can find answers to most of the issues you find confusing in the documentation? If you are convinced you have encountered a bug, please raise the issue in [issues](https://github.com/MakinoharaShoko/WebGAL/issues) or contact [contact@openwebgal.com](mailto:contact@openwebgal.com). You can also find ways to join the WebGAL community discussion in the "More" section in the top right corner of the site.
+You know, most of the questions you are wondering about can be found in the documentation. If you firmly believe that you have encountered a bug, please raise an issue at [issues](https://github.com/MakinoharaShoko/WebGAL/issues) or send an email to <contact@openwebgal.com>, you can also find a way to join the WebGAL discussion community in the "More" column at the top right corner of the website.
 :::
 
 ::: danger
-Please use a modern browser (Chrome / Firefox / Edge) to open WebGAL and the editor. Issues that may arise from using other browsers will not be addressed.
+Please use a modern browser (Chrome / Firefox / Edge) to open WebGAL and the editor. Problems that may be caused by using other browsers will not be solved.
 :::
 
-## Method 1: Use the WebGAL Terre Visual Editor (Recommended)
+## Method 1: Use WebGAL Terre Visual Editor (Recommended, but less customizable)
 
-**The WebGAL editor is the best way to create, produce, and publish a WebGAL game.**
+**WebGAL Terre Visual Editor is the best way to create, make and publish a WebGAL.**
 
-After downloading the WebGAL Terre Visual editor, unzip the compressed package and launch the WebGAL_Terre application. WebGAL Terre will automatically open the default browser, or go to [http://localhost:3001/](http://localhost:3001/) to open the editor if it does not open automatically.
+After downloading the WebGAL Terre Visual Editor, please unzip the package and launch the WebGAL_Terre executable file. WebGAL Terre will automatically open the default browser, if not, please enter [http://localhost:3001/](http://localhost:3001/) to open the editor.
 
-Download the WebGAL visual editor:
+Download WebGAL Terre Visual Editor:
 
-[WebGAL HomePage](https://openwebgal.com/en/download/)
+[WebGAL Homepage (Recommended)](https://openwebgal.com/en/download/)
 
 [GitHub Releases](https://github.com/MakinoharaShoko/WebGAL_Terre/releases)
 
 ::: tip
-The method on this page **does not support Windows 7**.
-Windows 7 users please refer to **[Method to start production with visual editor on Windows 7](win7)**.
+WebGAL Terre Visual Editor does not support Windows 7 by default.
+Windows 7 users please refer to **[How to start making with Visual Editor on Windows 7](./win7)**.
 :::
 
-## Method 2: Develop locally by writing scripts and debug in real time
-
-First, download the WebGAL distribution that has been built into a static web page and the accompanying debugging environment.
-
-Download the WebGAL engine itself and debugging environment (does not include visual editor):
-
-[GitHub Releases](https://github.com/MakinoharaShoko/WebGAL/releases/)
-
-After downloading and unzipping, you can directly run the corresponding version of WebGAL-server to debug your visual novel. If you encounter interception by antivirus software or firewall, please allow it to run.
-
-It is recommended to use VS Code for development and use plugins to enable syntax highlighting:
-
-[Store address of syntax highlighting plugin](https://marketplace.visualstudio.com/items?itemName=c6h5-no2.webgal-script-basics)
-
-[Source code repository of syntax highlighting plugin](https://github.com/C6H5-NO2/webgal-script-basics)
-
-## Method 3: Debug from source code (suitable for front-end developers who want higher customizability)
+## Method 2: Start debugging from source code (For makers who want higher customization)
 
 ``` shell
 git clone https://github.com/MakinoharaShoko/WebGAL.git
@@ -56,20 +40,26 @@ npm install yarn -g
 yarn
 ```
 
-Enter the WebGAL package
-
-``` shell
-cd packages/webgal
-```
-
-WebGAL uses vite as the bundling and debugging tool. After entering the webgal package, you can start the development server by running the following script:
+WebGAL uses vite as a packaging and debugging tool, you can start the development server by running the following script
 
 ``` shell
 yarn dev
 ```
 
-If you want to build, please use:
+It is recommended to use VS Code for development, and use plugins to achieve syntax highlighting:
+
+[Marketplace address of syntax highlighting plugin](https://marketplace.visualstudio.com/items?itemName=c6h5-no2.webgal-script-basics)
+
+[Source code repository of syntax highlighting plugin](https://github.com/C6H5-NO2/webgal-script-basics)
+
+If you want to package, please use
 
 ``` shell
-yarn build 
+yarn build
 ```
+
+The packaged product is in the packages/webgal/dist directory
+
+::: tip
+After you have finished customizing, if you want to use the WebGAL editor to easily preview and manage resources in real time, you can copy and paste the packaged product and replace the `packages/terre2/assets/templates/WebGAL_Template` in the editor directory, so that you can replace the built-in engine of the WebGAL editor with your own customized one. If your WebGAL repository and WebGAL_Terre repository are in the same directory, you can use the `release-to-terre` quick script to execute
+:::

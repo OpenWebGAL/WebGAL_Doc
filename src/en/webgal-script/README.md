@@ -1,6 +1,6 @@
 # WebGAL Script Tutorial
 
-## Index
+## Table of Contents
 
 - [Base](base.md)
 
@@ -12,10 +12,10 @@
 
 - [Video](video.md)
 
-- [Scenes and Branch](scenes.md)
+- [Scenes and Branches](scenes.md)
 
-- [Variable](variable.md)
+- [Variables](variable.md)
 
-- [Animation effect](animation.md)
+- [Animation Effects](animation.md)
 
-- [Special effect](special-effect.md)
+- [Special Effects](special-effect.md)

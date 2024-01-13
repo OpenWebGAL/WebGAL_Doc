@@ -1,74 +1,65 @@
-# WebGAL でゲーム開発を行う方法
+# WebGAL **美しいUI、強力な機能、開発が容易な全く新しいウェブ用ビジュアルノベルエンジン**
 
 ::: warning
-WebGAL ゲームを作成するために使用する方法にかかわらず、このページ全体をじっくりと読むことをお勧めします。それほど時間はかかりませんが、不適切な操作から生じる可能性のある問題を回避するのに役立ちます。
+WebGALゲームを作る方法に関係なく、開発ガイドのすべてを一度読んでおくべきです。そう長くはかかりませんし、操作ミスによる問題を避けるのに役立ちます。
 
-WebGAL のドキュメンテーションには、ほとんどの疑問に対する回答が見つかることをご存知でしょうか？もしバグに遭遇したと確信している場合は、[issues](https://github.com/MakinoharaShoko/WebGAL/issues) でバグを報告するか、[contact@openwebgal.com](mailto:contact@openwebgal.com) に連絡してください。また、WebGAL コミュニティに参加する方法は、サイトの右上隅にある`その他`セクションで見つけることができます。
+ご存知ですか？疑問に思うことのほとんどはドキュメントで答えが見つかります。バグに遭遇したと確信する場合は、[issues](https://github.com/MakinoharaShoko/WebGAL/issues)で問題を報告するか、<contact@openwebgal.com>にメールを送信してください。また、WebGALディスカッションコミュニティに参加する方法については、Webサイトの右上にある「その他」セクションを参照してください。
 :::
 
 ::: danger
-エディターを開くには、最新のブラウザ (Chrome / Firefox / Edge) を使用してください。その他のブラウザはサポート対象外です。
+WebGALとエディターを開くには、最新のブラウザ（Chrome / Firefox / Edge）を使用してください。他のブラウザで発生する可能性のある問題は解決されません。
 :::
 
-## その1：WebGALエディターを使用 (推奨)
+## 方法1：WebGAL Terreビジュアルエディターを使用する（推奨されますが、カスタマイズの程度は低くなります）
 
-**WebGAL エディターは、WebGAL でゲームを作成し、開発し、公開するための最良の方法です。**
+**WebGAL Terreビジュアルエディターは、WebGALを作成、制作、公開するための最良の方法です。**
 
-WebGAL エディターをダウンロードした後、zipを解凍し、WebGAL_Terre.exe を起動します。WebGAL_Terre はブラウザを自動的に開きます。開かない場合は、ブラウザから [http://localhost:3001/](http://localhost:3001/)にアクセスしてください。
+WebGAL Terreビジュアルエディターをダウンロードしたら、圧縮ファイルを解凍してWebGAL_Terre実行ファイルを開始してください。WebGAL Terreはデフォルトのブラウザを自動的に開きます。開かない場合は、[http://localhost:3001/](http://localhost:3001/)を入力してエディターを開きます。
+
+WebGAL Terreビジュアルエディターをダウンロードする：
+
+[WebGALホームページ（推奨）](https://openwebgal.com/zh-cn/download/)
+
+[GitHubリリース](https://github.com/MakinoharaShoko/WebGAL_Terre/releases)
 
 ::: tip
-このページの内容は Windows 7 にサポートしていません。Windows 7 をご利用の方は、**[Windows 7 でビジュアルエディターを使用してゲーム開発を行う方法](./win7)** を参照してください。
-
-WebGAL エディターは現在 Windows 10+ システムでのみテストされています。Mac OS および Linux のサポートは、今後順次追加していく予定です。
+WebGAL Terreビジュアルエディターはデフォルトで**Windows 7をサポートしません**。
+Windows 7ユーザーは**[Windows 7でビジュアルエディターを使用して制作を開始する方法](./win7)**を参照してください。
 :::
 
-WebGAL エディターのダウンロードリンク:
+## 方法2：ソースコードからデバッグを開始する（より高いカスタマイズの程度を望む制作者向け）
 
-[GitHub](https://github.com/MakinoharaShoko/WebGAL_Terre/releases)
-
-## その2：スクリプトを作成してローカルで開発し、リアルタイムでデバッグ
-
-まず、静的なウェブページとデバッグ環境が組み込まれた WebGAL 配布をダウンロードしてください。
-
-WebGAL エンジンとデバッグ環境（ビジュアルエディターは含まれていません）をダウンロードします。
-
-[GitHub](https://github.com/MakinoharaShoko/WebGAL/releases/)
-
-ダウンロードして解凍した後、対応するバージョンの WebGAL-server を直接実行して、ビジュアルノベルゲームをデバッグできます。もしアンチウイルスソフトウェアやファイアウォールによる遮断が発生した場合は、実行を許可してください。
-
-開発には VS Code を使用することをお勧めし、シンタックスハイライトを有効にするためにプラグインを利用してください：
-
-[シンタックスハイライトプラグインのストアリンク](https://marketplace.visualstudio.com/items?itemName=c6h5-no2.webgal-script-basics)
-
-[シンタックスハイライトプラグインのソースコードリポジトリ](https://github.com/C6H5-NO2/webgal-script-basics)
-
-## その3：ソースコードからデバッグ（高いカスタマイズ性を望むフロントエンド開発者向け）
-
-```
+``` shell
 git clone https://github.com/MakinoharaShoko/WebGAL.git
 ```
 
-yarn をインストールします。次に、yarn を使用して依存関係をインストールします
+yarnをインストールして依存関係をインストールします
 
-```
+``` shell
 npm install yarn -g
 yarn
 ```
 
-WebGAL パッケージに移動します
+WebGALはviteをバンドルとデバッグのツールとして使用しています。以下のスクリプトを実行して開発サーバーを起動することができます。
 
-```
-cd packages/webgal
-```
-
-WebGAL は、vite をパッケージ化およびデバッグツールとして使用します。webgal パッケージを入力した後、次のコマンドを実行してローカルサーバーを起動します
-
-```
+``` shell
 yarn dev
 ```
 
-パッケージは、
+開発にはVS Codeの使用と、構文のハイライトを実現するためのプラグインの使用をお勧めします：
 
+[構文ハイライトプラグインのストアアドレス](https://marketplace.visualstudio.com/items?itemName=c6h5-no2.webgal-script-basics)
+
+[構文ハイライトプラグインのソースコードリポジトリ](https://github.com/C6H5-NO2/webgal-script-basics)
+
+バンドルする場合は、以下を使用してください。
+
+``` shell
+yarn build
 ```
-yarn build 
-```
+
+バンドルされた製品はpackages/webgal/distディレクトリにあります。
+
+::: tip
+カスタマイズが完了したら、WebGALエディターを使用してリアルタイムでプレビューしたりリソースを管理したりできるように、バンドルされた製品をコピーして貼り付け、エディターディレクトリ内の`packages/terre2/assets/templates/WebGAL_Template`を置き換えることができます。これにより、WebGALエディターに組み込まれているエンジンを独自のカスタマイズしたものに変更することができます。WebGALリポジトリとWebGAL_Terreリポジトリが同じディレクトリにある場合、`release-to-terre`ショートカットスクリプトを使用して実行することができます。
+:::

@@ -1,77 +1,80 @@
-# How to Use WebGal Terre in Windows 7
+# Windows 7 Using Visual Editor to Start Making
 
-## Precondition
+## Prerequisites
 
-### Install node.js of version 14~16.3
+### Install node.js version 14~16.3
 
-1. Open [Node.js Official Website - Node v16.3.0 Download Address](https://nodejs.org/dist/v16.3.0/) to download installation package.
+1. Open [node.js official website node v16.3.0 download address](https://nodejs.org/dist/v16.3.0/) to download the installation package.
 
-    1. Download the appropriate installation package for your system，
+    Mirror site: <https://registry.npmmirror.com/binary.html?path=node/v16.3.0/>
 
-        Please choose between folder **win-x64** or folder **win-x86**，don't download other files.
+    1. Select the appropriate installation package according to your system.
 
-    2. Download **node.exe** in folder.
+        Be careful to select from the *win-x64*, *win-x86* folders, do not download other files.
 
-2. Set the environment variable to skip node.js platform check, that it is able to install node.js.
+    2. Download *node.exe* inside the corresponding version folder after selecting it.
 
-    1. Right click **Computer** in desktop，Click **Attributes** in menu.
-    2. Open the **Advanced System Settings** in left panel.
-    3. Click the **Environment variable** in bottom right corner of window.
-    4. Add variable **NODE_SKIP_PLATFORM_CHECK** in system variable，value is **1**.
-    5. Save Environment variables.
+2. Set environment variables to bypass system checks
 
-3. Run the installation package (The node.exe you just downloaded) to install node.js.
+    1. Right-click *My Computer / Computer*, and click *Properties* in the menu.
+    2. Open *Advanced system settings* in the left panel.
+    3. Click *Environment Variables* in the lower right corner.
+    4. Add the variable *NODE_SKIP_PLATFORM_CHECK* in the system variables, with a value of *1*.
+    5. Save.
+
+3. Run the node.js installation package (the *node.exe* you just downloaded) to install node.js.
 
 ---
 
-## Way 1: Use WebGal Terre Win7 Support Patch
+## Method 1: Use Terre Win7 Support Patch
 
-### Download Patch
+### Download Terre patch that supports Win7
 
-> Download address：
+> Download address:
 >
-> [GitHub (Third-party patch)](https://github.com/hshqwq/WebGAL_Terre/releases)
+> [GitHub (third-party patch support)](https://github.com/hshqwq/WebGAL_Terre/releases)
 >
-> [Lanzou Cloud (Third-party patch)](https://wwh.lanzoue.com/i2xqa0uy2fuh)
+> [LanZou Cloud (third-party patch support)](https://wwh.lanzoue.com/i2xqa0uy2fuh)
 
-### Download WebGal Terre
+### Download the visual editor
 
-Download the [WebGal Terre](./guide#方法1（推荐）：使用 WebGAL 编辑器) corresponding to the patch, then decompress it.  
-View file with name such as **使用说明, README** , Or View the value of **version** in **package.json**, that to obtain the corresponding version.
+Download the [visual editor](./guide#Method 1 (Recommended): Using WebGAL Editor) corresponding to the patch version and unzip it.
 
-### Patch Usage
+For the corresponding version, please check files such as *Instructions, README* in the patch, or check the value corresponding to *version* in *package.json*.
 
-Decompress patch, copy files in the patch to the folder of WebGal Terre.
+### Use patch
 
-### Install Dependencies
+Unzip the patch and copy the files in the patch to the root directory of the visual editor.
 
-Run **Install_Dependencies.bat** to install dependencies. If appeared the folder *node_modules*, that meant success.
+### Install dependencies
 
-Manually Installation:
+Run *Install_Dependencies.bat* to install dependencies. The appearance of the *node_modules* folder indicates success.
+
+Manual method:
 
 1. Open any terminal.
 
-2. Cd to folder WebGal Terre.
+2. Open the directory where the editor is located.
 
-3. Run this command:
+3. Run the following command:
 
     ```bash
     npm i 
-    # or (need to install yarn before)
+    # or (if you have yarn installed)
     yarn
     ```
 
-### Run the WebGal Terre
+### Start the visual editor
 
-Run **WebGal_Terre-Win7.bat**.
+Run *WebGal_Terre-Win7.bat* to start the editor.
 
-Manually Run：
+Manual method:
 
 1. Open any terminal.
 
-2. Cd to folder WebGal Terre.
+2. Open the directory where the editor is located.
 
-3. Run this command:
+3. Run the following command:
 
     ```bash
     node main.js
@@ -79,68 +82,70 @@ Manually Run：
 
 ::: tip
 
-If your computer installed the other version node.js, please switch to version 14~16.3.
+If your computer has installed a version of node lower than 14, please switch to node version 14~16.3 first.
 
 :::
 
 ---
 
-## Way 2: Build with Source Code (Someone with some programming experience is recommended)
+## Method 2: Compile from source code (recommended for people with certain programming experience)
 
-### Get Source Code
+### Get the source code
 
-Clone [WebGAL_Terre](https://github.com/MakinoharaShoko/WebGAL_Terre) repo.
+Clone the [WebGAL_Terre](https://github.com/MakinoharaShoko/WebGAL_Terre) repository.
 
-```shell
+``` shell
 git clone https://github.com/MakinoharaShoko/WebGAL_Terre.git
 ```
 
-### Install Yarn Package Manager (Optional)
+### Package manager (optional)
 
-Install yarn (Optional)  
+Install yarn (optional, recommended)
 
-```
+``` shell
 npm i -g yarn
 ```
 
-### Build WebGal Terre
+### Compile the visual editor
 
-#### Way 1: Build All Packages
+#### Method 1: Compile the entire visual editor
 
-1. Install dependencies. run in project root.
+1. Install dependencies
+
+    Install dependencies in the project root directory.
 
     ```shell
     yarn
     ```
 
-2. See the commands in **release.sh** to build all packages except **Terre**.
+2. Package the packages other than *Terre* according to the commands in *release.sh*.
 
-3. Manually build **Terre**, see [**Build Terre2 Only**](./#Way 2: Build *Terre2* Only).
+3. Compile *Terre* manually, refer to [*Compile Terre Only*](./#Method 2: Compile *Terre* Only).
 
-#### Way 2: Build *Terre2* Only
+#### Method 2: Compile *Terre2* Only
 
-1. open folder **packages/terre2**.
+1. Open *packages/terre2*.
 
-2. Install dependencies.
+2. Install dependencies
 
-    ```
+    ``` shell
     yarn
     ```
 
-3. Build *terre2*.
+3. Package *terre2*
 
-    ```shell
+    ``` shell
     yarn run build
     ```
 
-4. Delete files ending in **.d.ts** in folder **dist**. (optional)
+4. Delete all *.d.ts* ending files in the *dist* directory (optional).
 
-5. Add **package.json** in folder **dist**，value of it is (Fill the version please)：
+5. Add a *package.json* file in *dist*, content (note to fill in the relevant information):
 
     ```json
     {
         "name": "webgal-terre-2-win7-server",
-        "version": "version",
+        "version": "version number",
         "description": "",
         "private": true,
         "license": "MPL-2.0",
@@ -159,16 +164,16 @@ npm i -g yarn
     }
     ```
 
-6. Copy folder **dist** to WebGal Terre folder which is built.
+6. Copy the `dist` directory to the compiled editor directory.
 
-### Run WebGal Terre
+### Run the visual editor
 
-1. Install dependencies in WebGal Terre folder root.
+1. Install dependencies in the visual editor directory.
 
-    ```shell
+    ``` shell
     npm i
-    # 或（推荐yarn）
+    # or (yarn recommended)
     yarn
     ```
 
-2. Run `node main.js` in terminal. You can code it as a bat or sh script.
+2. Run `node main.js` to start the visual editor. It can be written as a bat, sh script according to needs.

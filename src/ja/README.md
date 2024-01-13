@@ -1,18 +1,30 @@
-# WebGAL Doc
+# WebGAL ドキュメント
+
+## WebGAL についての情報
+
+- [更新情報を知りたい、またはフィードバックや提案をしたい](info)
+
+- [エンジンの開発に参加したい、または WebGAL のカスタマイズ方法を知りたい](developers)
+
+- [WebGAL エンジンの技術的な実装について知りたい](tech)
+
+- [WebGAL をスポンサーしたい](sponsor)
+
+- [WebGAL 制作チームに参加したい！](developers/joinus)
 
 ## ゲーム開発ガイド
 
-- [WebGAL でゲーム開発を行う方法](getting-started.md)
+- [WebGAL での制作を始めるには？](getting-started.md)
 
-- [ゲームリソースの管理](resources.md)
+- [ゲームリソースを管理する](resources.md)
 
-- [ゲーム情報のカスタマイズ](config.md)
+- [ゲーム設定を編集する](config.md)
 
-- [ゲームのデプロイまたは公開方法](publish.md)
+- [ビジュアルノベルをデプロイまたは公開するには？](publish.md)
 
-- [よくある問題と解決策](faq.md)
+- [発生する可能性のある問題とその解決策](faq.md)
 
-## WebGAL Script チュートリアル
+## WebGAL スクリプトチュートリアル
 
 - [基本](webgal-script/base.md)
 
@@ -22,9 +34,9 @@
 
 - [オーディオ](webgal-script/audio.md)
 
-- [動画](webgal-script/video.md)
+- [ビデオ](webgal-script/video.md)
 
-- [シーンの切り替えと選択肢](webgal-script/scenes.md)
+- [シーンと分岐](webgal-script/scenes.md)
 
 - [変数](webgal-script/variable.md)
 
@@ -32,6 +44,6 @@
 
 - [特殊効果](webgal-script/special-effect.md)
 
-## スターゲイザーの時間変化
+## スターゲイザーの推移
 
-[![スターゲイザーの時間変化](https://starchart.cc/MakinoharaShoko/WebGAL.svg)](https://starchart.cc/MakinoharaShoko/WebGAL)
+[![Stargazers over time](https://starchart.cc/MakinoharaShoko/WebGAL.svg)](https://starchart.cc/MakinoharaShoko/WebGAL)

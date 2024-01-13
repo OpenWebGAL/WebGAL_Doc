@@ -2,8 +2,8 @@
 
 首先，请知悉，可以部署到互联网的引擎应该是**发行版或由 WebGAL 图形化编辑器导出的网页**，而不是源代码。
 
-- [Web 网页](web)
+- [Web 网页](web/readme.md)
 
-- [Windows / macOS / Linux](desktop)
+- [Windows / macOS / Linux](desktop/readme.md)
 
-- [Android](android)
+- [Android](android/readme.md)

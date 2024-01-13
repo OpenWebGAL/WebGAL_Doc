@@ -1,17 +1,17 @@
-# FAQ
+# Possible Problems and Solutions
 
-## Why are my files not recognized properly
+## Why my files are not recognized properly
 
-File names should avoid using special symbols, spaces and other hard-to-recognize names. Use pure English naming as much as possible. The file extensions should be all lowercase.
+The file names should avoid using special symbols, spaces and other hard-to-recognize characters. Use pure English names as much as possible. The file extensions should be all lowercase.
 
-## Why is my audio file not playing properly
+## Why my audio files are not played properly
 
-On Apple browsers, ogg files are not supported. You need to convert the file format, for example, to mp3.
+On Apple's Safari browser, ogg files are not supported. You need to convert the file format, for example, to mp3.
 
-## Why can't I open the exported web page
+## Why the exported web page cannot be opened
 
-Due to browser security policies, you cannot open a local web page from a file. You need to use an http server, deploy WebGAL in the same way as deploying a website. Common ones are: Nginx, Apache http server, VS Code Live Server plugin, Python http server.
+Due to browser security policy, you cannot open a local web page from a file. You need to use a http server, deploy WebGAL by the same way as deploying a website. Common choices are: Nginx, Apache http server, VS Code Live Server extension, Python http server.
 
-## Why does the visual editor flash briefly and disappear on Windows 7
+## Why the visual editor flashes and disappears on Windows 7
 
-Due to the node.js version being higher than the highest version supported by Windows 7. Please refer to [Method to start production with visual editor on Windows 7](win7) to resolve.
+This is because the version of node.js is higher than the highest version supported by Windows 7. Please refer to [How to use the visual editor on Windows 7](./win7) to solve the problem.

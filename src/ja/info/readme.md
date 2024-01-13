@@ -1,26 +1,25 @@
 # WebGAL 情報
 
-## 新機能
+## 新機能予告
 
-WebGAL および WebGAL Terre ビジュアルエディターの最新情報をいち早く入手したい場合は、[WebGAL Project](https://github.com/users/MakinoharaShoko/projects/1)をご訪問ください。
+WebGAL の開発予定は基本的に issues で管理していますので、[WebGAL issues](https://github.com/MakinoharaShoko/WebGAL/issues) または [WebGAL Terre issues](https://github.com/MakinoharaShoko/WebGAL_Terre/issues) をご覧下さい。
 
-## 機能リクエスト & バグレポート
+## 機能リクエストと不具合報告
 
-WebGAL エンジンやエディタの新しい機能をリクエストしたい場合や、バグをレポートしたい場合は、以下に記載されている Issues ページを使用するか、開発者にメールを送信してレポートしてください。Issues ページやメールはより公式であり、長期的に保管されるため、この方法で記録する必要があります。
+WebGAL エンジン本体およびエディタの新機能リクエストや不具合報告は、下記の Issues ページかメールにて開発者までご連絡ください。Issues およびメールはより正式な記録として長期的に保存されますので、これらでの報告をお願いします。
 
-### レポートの例
+### 説明テンプレート
 
-こんにちは、私は [お名前またはニックネーム] です。WebGAL [エンジン/エディタ] を使用している間、次の問題に遭遇しました：
+初めまして、[名前またはハンドルネーム]と申します。WebGAL の [エンジン/エディタ] を使用していて、以下の問題が発生しました。
 
-[問題を説明する]
+[問題の現象を簡潔に説明]
 
-[必要な場合はスクリーンショットを添付する]
+[関連するスクリーンショットがあれば添付]
 
-こちらはコンソールの出力です（通常 F12 キーで表示できます）：
+問題が発生した具体的なコードは以下の通りです。
 
 ```
-ここにエラーコードまたはエディタのスクリーンショットを挿入
+不具合が発生した具体的なコードまたはエディタの編集画面のスクリーンショットを掲載
 ```
 
-バグを報告する必要がある場合は、[WebGAL issues](https://github.com/MakinoharaShoko/WebGAL/issues) または [WebGAL Terre issues](https://github.com/MakinoharaShoko/WebGAL_Terre/issues) で新しいissueを作ってレポートしてください。また、contact@openwebgal.com までご連絡ください。
-
+不具合の報告は [WebGAL issues](https://github.com/MakinoharaShoko/WebGAL/issues) または [WebGAL Terre issues](https://github.com/MakinoharaShoko/WebGAL_Terre/issues) にて Issue を立てていただくか、contact@openwebgal.com までメールにてご連絡ください。

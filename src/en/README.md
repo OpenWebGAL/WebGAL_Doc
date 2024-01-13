@@ -1,36 +1,48 @@
-# WebGAL Doc
+# WebGAL Documentation
+
+## Some Information about WebGAL
+
+- [I want to know the latest news or give feedback](info)
+
+- [I want to contribute to the engine development or learn how to customize WebGAL](developers)
+
+- [I want to learn about the technical implementation of WebGAL engine](tech)
+
+- [I want to sponsor WebGAL](sponsor)
+
+- [I want to join the WebGAL team!](developers/joinus)
 
 ## Game Development Guide
 
-- [How to start making a WebGAL game?](getting-started.md)
+- [How to start making a WebGAL?](getting-started.md)
 
-- [Manage game resources](resources.md)
+- [Managing Game Resources](resources.md)
 
-- [Edit game config](config.md)
+- [Editing Game Configuration](config.md)
 
 - [How to deploy or publish my visual novel?](publish.md)
 
-- [FAQ](faq.md)
+- [Possible Problems and Solutions](faq.md)
 
 ## WebGAL Script Tutorial
 
-- [Base](webgal-script/base.md)
+- [The Basics](webgal-script/base.md)
 
-- [Dialogue](webgal-script/dialogue.md)
+- [Dialogues](webgal-script/dialogue.md)
 
-- [Background and Figure](webgal-script/bg-and-figure.md)
+- [Backgrounds and Figures](webgal-script/bg-and-figure.md)
 
 - [Audio](webgal-script/audio.md)
 
 - [Video](webgal-script/video.md)
 
-- [Scenes and Branch](webgal-script/scenes.md)
+- [Scenes and Branches](webgal-script/scenes.md)
 
-- [Variable](webgal-script/variable.md)
+- [Variables](webgal-script/variable.md)
 
-- [Animation effect](webgal-script/animation.md)
+- [Animation Effects](webgal-script/animation.md)
 
-- [Special effect](webgal-script/special-effect.md)
+- [Special Effects](webgal-script/special-effect.md)
 
 ## Stargazers over time
 

@@ -1,28 +1,25 @@
-# WebGAL INFO
+# WebGAL News
 
-## New Functions
+## New Features Preview
 
-To see the plan of new functions , please visit [WebGAL Project](https://github.com/users/MakinoharaShoko/projects/1).
+WebGAL's development plan is basically tracked by issues, please visit [WebGAL issues](https://github.com/MakinoharaShoko/WebGAL/issues) or [WebGAL Terre issues](https://github.com/MakinoharaShoko/WebGAL_Terre/issues) to check.
 
-## Whishes and Bug Report
+## Feature Requests & Bug Reports
 
-If you would like to request any new features in the WebGAL engine and the visual editor, or report any bugs, please report them to the developer using Github's Issues page or sending an email below. Issues and emails are more formal and long-term, so they can be recorded in this way.
+If you want to request any new features for WebGAL engine and editor, or report any bugs, please use the Issues page or send email to the developer as described below to report it. Issues and emails are more formal and will be kept in the long term, so we need to record them in this way.
 
-### Example of reporting
+### Template of Description
 
-Hi there , I'm [ name ] , I've met the following problems while using WebGAL [engine or editor] :
+Hello, I am [Your name or nickname], I met a problem when using WebGAL [engine/editor]:
 
-[Describe your problem]
+[Simply describe the problem phenomenon here]
 
-[Attach your screenshot if needed]
+[Attach related screenshots if any]
 
-The specific code where the issue occurred is as follows:
+The specific code with the problem is like this:
 
 ```
-[Put the code you write or the screenshot of the editor here.]
+Show the specific code or screenshot of editor edit page where the fault occurs here
 ```
 
-If you find a bug that is needed to be reported , open an issue at  [WebGAL issues](https://github.com/MakinoharaShoko/WebGAL/issues) or [WebGAL Terre issues](https://github.com/MakinoharaShoko/WebGAL_Terre/issues) 
-
-You can also send a e-mail to contact@openwebgal.com 。
-
+If you find a BUG that needs to be reported, please create an issue at [WebGAL issues](https://github.com/MakinoharaShoko/WebGAL/issues) or [WebGAL Terre issues](https://github.com/MakinoharaShoko/WebGAL_Terre/issues) or send an email to contact@openwebgal.com.

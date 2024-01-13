@@ -1,18 +1,18 @@
-# WebGAL Script チュートリアル
+# WebGAL スクリプトチュートリアル
 
-## Index
+## 目次
 
-- [基础](base.md)
+- [基礎](base.md)
 
 - [会話](dialogue.md)
 
-- [背景と立绘](bg-and-figure.md)
+- [背景と立ち絵](bg-and-figure.md)
 
 - [オーディオ](audio.md)
 
-- [動画](video.md)
+- [ビデオ](video.md)
 
-- [シーンとブランチ](scenes.md)
+- [シーンと分岐](scenes.md)
 
 - [変数](variable.md)
 
