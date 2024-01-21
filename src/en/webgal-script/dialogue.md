@@ -62,6 +62,12 @@ Anyway, once you say it,
 It all becomes a joke.
 ```
 
+If you want to keep the monologue UI after the monologue ends instead of continuing the game flow, use the ` -hold` parameter.
+
+``` ws
+intro:Recalling doesn't need a suitable script,|anyway, once it's spoken,|it all becomes a joke. -hold;
+```
+
 ## Get User Input
 
 Use the `getUserInput` instruction to get user input and write it into a variable, for example:

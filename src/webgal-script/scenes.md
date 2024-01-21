@@ -73,6 +73,16 @@ choose:叫住她:Chapter-2.txt|回家:Chapter-3.txt;
 
 你只需要将选项的文本与选择选项后要进入的剧本名称一一对应起来，就可以实现分支选择的功能了。
 
+### 条件展示和选择
+
+你也可以根据变量，有条件地展示选项或允许用户点击选项，语法如下：
+
+```ws
+(showConditionVar>1)[enableConditionVar>2]->叫住她:Chapter-2.txt|回家:Chapter-3.txt;
+```
+
+这里，showConditionVar>1 时才会展示第一个选项，enableConditionVar>2 时才会允许用户点击。
+
 ## 标签跳转
 
 如果你想要创建一个分支，但是却觉得为此新建一个 TXT 文件太麻烦，你可以尝试使用以下方式在同一文件内实现创建分支和跳转语句。

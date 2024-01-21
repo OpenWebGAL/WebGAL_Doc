@@ -73,6 +73,16 @@ choose:Stop her:Chapter-2.txt|Go home:Chapter-3.txt;
 
 You only need to match the text of the option with the name of the script to be entered after the option is selected, and you can realize the function of branch selection.
 
+### Conditional Display and Selection
+
+You can also conditionally display choices or allow the user to click on them based on variables, with the following syntax:
+
+```ws
+(showConditionVar>1)[enableConditionVar>2]->Call out to her:Chapter-2.txt|Go home:Chapter-3.txt;
+```
+
+Here, the first choice will only be displayed if showConditionVar is greater than 1, and the user will only be allowed to click on it if enableConditionVar is greater than 2.
+
 ## Label Jump
 
 If you want to create a branch, but you think it is too troublesome to create a new TXT file for this, you can try the following method to create a branch and jump statement in the same file.
