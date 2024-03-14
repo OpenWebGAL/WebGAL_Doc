@@ -78,7 +78,7 @@ You only need to match the text of the option with the name of the script to be 
 You can also conditionally display choices or allow the user to click on them based on variables, with the following syntax:
 
 ```ws
-(showConditionVar>1)[enableConditionVar>2]->Call out to her:Chapter-2.txt|Go home:Chapter-3.txt;
+choose:(showConditionVar>1)[enableConditionVar>2]->Call out to her:Chapter-2.txt|Go home:Chapter-3.txt;
 ```
 
 Here, the first choice will only be displayed if showConditionVar is greater than 1, and the user will only be allowed to click on it if enableConditionVar is greater than 2.

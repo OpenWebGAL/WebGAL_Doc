@@ -78,7 +78,7 @@ choose:叫住她:Chapter-2.txt|回家:Chapter-3.txt;
 你也可以根据变量，有条件地展示选项或允许用户点击选项，语法如下：
 
 ```ws
-(showConditionVar>1)[enableConditionVar>2]->叫住她:Chapter-2.txt|回家:Chapter-3.txt;
+choose:(showConditionVar>1)[enableConditionVar>2]->叫住她:Chapter-2.txt|回家:Chapter-3.txt;
 ```
 
 这里，showConditionVar>1 时才会展示第一个选项，enableConditionVar>2 时才会允许用户点击。

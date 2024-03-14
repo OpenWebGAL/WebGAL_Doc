@@ -79,7 +79,7 @@ choose:彼女を呼び止める:Chapter-2.txt|家に帰る:Chapter-3.txt;
 変数に応じて、オプションを条件付きで表示したり、ユーザーがオプションをクリックできるようにしたりすることもできます。構文は次のとおりです。
 
 ```ws
-(showConditionVar>1)[enableConditionVar>2]->彼女に声を掛ける:Chapter-2.txt|家に帰る:Chapter-3.txt;
+choose:(showConditionVar>1)[enableConditionVar>2]->彼女に声を掛ける:Chapter-2.txt|家に帰る:Chapter-3.txt;
 ```
 
 ここでは、showConditionVar>1 の場合にのみ最初のオプションが表示され、enableConditionVar>2 の場合にのみユーザーがクリックできます。
