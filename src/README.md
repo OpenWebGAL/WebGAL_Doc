@@ -24,6 +24,8 @@
 
 - [可能遇到的问题与解决方案](faq.md)
 
+- [在编辑器更新后迁移游戏文件](migration.md)
+
 ## WebGAL 脚本教程
 
 - [基础](webgal-script/base.md)

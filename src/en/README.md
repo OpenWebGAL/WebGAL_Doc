@@ -24,6 +24,8 @@
 
 - [Possible Problems and Solutions](faq.md)
 
+- [Migrating Game Files After Editor Update](migration.md)
+
 ## WebGAL Script Tutorial
 
 - [The Basics](webgal-script/base.md)

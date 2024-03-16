@@ -24,6 +24,8 @@
 
 - [発生する可能性のある問題とその解決策](faq.md)
 
+- [移行ゲームファイル](migration.md)
+
 ## WebGAL スクリプトチュートリアル
 
 - [基本](webgal-script/base.md)
