@@ -12,6 +12,8 @@ export const enSidebar = sidebar({
         "publish",
         "faq",
         "live2D",
+        "migration",
+        "derivative",
       ],
     },
     {
@@ -30,10 +32,13 @@ export const enSidebar = sidebar({
       ]
     },
     {
-      text: "Contributing",
+      text: "Development Information",
       children: [
         "developers",
-        "tech"
+        "tech",
+        "info",
+        "sponsor",
+        "developers/joinus",
       ]
     },
   ],

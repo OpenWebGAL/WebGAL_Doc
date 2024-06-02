@@ -1,4 +1,4 @@
-# Development and Contributors' Information
+# Custom development and participation contribution
 
 ## WebGAL Source Code Repository
 

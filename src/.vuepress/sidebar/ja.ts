@@ -12,6 +12,8 @@ export const jaSidebar = sidebar({
         "publish",
         "faq",
         "live2D",
+        "migration",
+        "derivative",
       ],
     },
     {
@@ -30,10 +32,13 @@ export const jaSidebar = sidebar({
       ]
     },
     {
-      text: "コントリビューション",
+      text: "開発情報",
       children: [
         "developers",
-        "tech"
+        "tech",
+        "info",
+        "sponsor",
+        "developers/joinus",
       ]
     },
   ],

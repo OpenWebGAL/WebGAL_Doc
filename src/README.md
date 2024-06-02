@@ -4,7 +4,9 @@
 
 - [我想要知道更新情报或反馈建议](info)
 
-- [我想要参与引擎开发或了解如何定制 WebGAL](developers)
+- [我想要参与引擎开发或了解如何从源代码开发 WebGAL](developers)
+
+- [如何在编辑器中使用自己或他人开发的定制引擎](derivative)
 
 - [我想要了解 WebGAL 引擎的技术实现](tech)
 

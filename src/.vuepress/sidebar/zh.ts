@@ -22,6 +22,8 @@ export const zhSidebar = sidebar({
         },
         "faq", 
         "live2D",
+        "migration",
+        "derivative",
       ],
     },
     {
@@ -40,10 +42,13 @@ export const zhSidebar = sidebar({
       ]
     },
     {
-      text: "参与开发",
+      text: "开发信息",
       children: [
         "developers",
-        "tech"
+        "tech",
+        "info",
+        "sponsor",
+        "developers/joinus",
       ]
     },
   ],

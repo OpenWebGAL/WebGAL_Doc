@@ -4,7 +4,9 @@
 
 - [I want to know the latest news or give feedback](info)
 
-- [I want to contribute to the engine development or learn how to customize WebGAL](developers)
+- [I want to contribute to the engine development or learn how to develop WebGAL from source](developers)
+
+- [How to use custom engine developed by yourself or others in the editor](derivative)
 
 - [I want to learn about the technical implementation of WebGAL engine](tech)
 
