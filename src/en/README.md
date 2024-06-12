@@ -22,7 +22,7 @@
 
 - [Editing Game Configuration](config.md)
 
-- [How to deploy or publish my visual novel?](publish.md)
+- [How to deploy or publish my visual novel?](publish)
 
 - [Possible Problems and Solutions](faq.md)
 
