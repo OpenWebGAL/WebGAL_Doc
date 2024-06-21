@@ -10,7 +10,7 @@ You know, most of the questions you are wondering about can be found in the docu
 Please use a modern browser (Chrome / Firefox / Edge) to open WebGAL and the editor. Problems that may be caused by using other browsers will not be solved.
 :::
 
-## Method 1: Use WebGAL Terre Visual Editor (Recommended, but less customizable)
+## Method 1: Use WebGAL Terre Visual Editor (Recommended)
 
 **WebGAL Terre Visual Editor is the best way to create, make and publish a WebGAL.**
 

@@ -10,7 +10,7 @@
 请使用现代浏览器 (Chrome / Firefox / Edge) 打开 WebGAL 和编辑器。使用其他浏览器所可能产生的问题，将不会得到解决。
 :::
 
-## 方法1：使用 WebGAL Terre 可视化编辑器（推荐，但可自定义程度低）
+## 方法1：使用 WebGAL Terre 可视化编辑器（推荐）
 
 **WebGAL Terre 可视化编辑器是创建、制作并发布一个 WebGAL 的最佳方式。**
 
