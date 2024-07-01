@@ -104,6 +104,44 @@ Example:
 『[笑顔](えがお)』なんて、『[笑う](わらう)』なんて、[誰](だれ)でも[出来](でき)るもん…！
 ```
 
+## Text Enhancement Syntax
+
+In WebGAL 4.5.3, the "text enhancement syntax" feature has been added. This syntax allows you to add text styles to specific text.
+
+Text enhancement syntax is an enhancement to a specific piece of text. Text enclosed in [] and followed by () as a text enhancement description is text that conforms to the text enhancement syntax definition.
+
+In simple terms, it takes the following form:
+
+```
+(Text)[style-alltext=font-style:italic\; style=color:#66327C\; ruby=wen ben]
+```
+
+This means that the font size of this text is smaller, and it is bold, the color is #005CAF, and it has phonetic annotations and tooltips.
+
+For different parameters in the text enhancement syntax, use spaces to separate them, and the form is always `argk=argv`.
+
+It is important to note that because ; is the comment syntax of WebGAL, you need to add \ to escape it in the text enhancement syntax, which becomes \;.
+
+### Scope of Style Effects for Different Parameters
+
+![text-enhance](text-enhance.png)
+
+In the previous example syntax, notice that there are two different parameters that can define styles for text: `style` and `style-alltext`.
+
+The reason for distinguishing the scope of text styles is that in order to provide a better stroke effect for text, WebGAL divides a character into three layers: text, stroke, and placeholder.
+
+Text is the topmost part and the main part. The stroke is below the text and is covered by the text to provide a white stroke without destroying the internal shape of the text. The bottom layer is a transparent placeholder that provides positioning.
+
+In short, if you only need to change the text color, you only need to use the `style` parameter. If you want to apply effects such as italics, text size, internal and external margins, you need to set the effects for `style-alltext` at the same time.
+
+**Special note: Due to a bug in version 4.5.3, it is currently not possible to apply only the style-alltext parameter, because the text enhancement syntax is only activated when the syntax `style=` is detected.**
+
+### Compatibility with Phonetic Annotations
+
+For compatibility with the previous syntax, if the syntax `style=` is not recognized, then we will treat the `()[]` syntax as a phonetic annotation.
+
+If the new text enhancement syntax is used, the phonetic annotation is written in the `ruby=` parameter, as illustrated in the example above.
+
 ## Close the Text Box
 
 Sometimes, for some special performance effects, you may want to temporarily close the text box, so you can use the following instructions to close the text box:
