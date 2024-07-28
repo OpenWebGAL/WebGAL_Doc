@@ -45,3 +45,10 @@ Switch 立ち絵！Switch expression immediately...... -notend -concat;
 changeFigure:k2.png -next;
 Switch expression！ -concat;
 ```
+
+You can also use only the `-concat` parameter to connect the next sentence after the previous dialogue, because the `-notend` parameter will move to the next sentence after the dialogue fades in.
+
+```ws
+This is the first sentence...;
+This sentence will only appear after the user clicks the mouse -concat;
+```

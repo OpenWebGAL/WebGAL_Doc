@@ -45,3 +45,10 @@ changeFigure:k1.png -next;
 changeFigure:k2.png -next;
 切换表情！ -concat;
 ```
+
+你也可以只使用 `-concat` 参数，将下一句连接在上一句对话之后，因为 `-notend` 参数会在对话渐显完成后转到下一句。
+
+``` ws
+这是第一句......;
+用户点击鼠标后才会转到第二句 -concat;
+```
