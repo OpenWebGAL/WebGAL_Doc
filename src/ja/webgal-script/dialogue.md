@@ -113,7 +113,7 @@ WebGAL 4.5.3 では、「テキスト拡張文法」機能が追加されまし�
 簡単に言うと、次の形式になります。
 
 ```
-(テキスト)[style-alltext=font-style:italic\; style=color:#66327C\; ruby=wen ben]
+[テキスト](style-alltext=font-style:italic\; style=color:#66327C\; ruby=wen ben)
 ```
 
 これは、このテキストのフォントサイズが小さく、太字で、色が #005CAF で、ルビとヒントがあることを表しています。

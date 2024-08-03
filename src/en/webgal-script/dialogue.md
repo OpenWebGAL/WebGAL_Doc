@@ -113,7 +113,7 @@ Text enhancement syntax is an enhancement to a specific piece of text. Text encl
 In simple terms, it takes the following form:
 
 ```
-(Text)[style-alltext=font-style:italic\; style=color:#66327C\; ruby=wen ben]
+[Text](style-alltext=font-style:italic\; style=color:#66327C\; ruby=wen ben)
 ```
 
 This means that the font size of this text is smaller, and it is bold, the color is #005CAF, and it has phonetic annotations and tooltips.
