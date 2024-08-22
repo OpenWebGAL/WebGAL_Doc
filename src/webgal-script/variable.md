@@ -150,8 +150,8 @@ WebGAL:当前的游戏标题为{Game_name};
 :::
 
 ::: tip
-可以修改的原始配置变量`Title_img`、`Title_bgm`、`Game_name`、`Game_key`
-想要恢复则可以在游戏选项中使用`清空所有数据`即可恢复
+可以修改的原始配置变量`Title_img`、`Title_bgm`、`Game_name`、`Game_key`。
+想要恢复则可以在游戏选项中使用`清空所有数据`即可恢复。
 :::
 
 当然，你也可以在`config.txt`中创建一个自定义配置变量，如 创建一个版本号：
@@ -176,5 +176,5 @@ WebGAL:当前被修改的版本号为{version};
 ```
 
 ::: warning
-`config.txt`暂未做特殊符号的转义处理
+`config.txt`暂未做特殊符号的转义处理。
 :::

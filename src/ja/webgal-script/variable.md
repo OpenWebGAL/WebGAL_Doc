@@ -100,3 +100,81 @@ label:turn-2;
 2周目;
 changeScene:二周目ストーリー.txt;
 ```
+
+## 高级用法（`>=4.5.4`）
+組み込み変数は、構成変数の変更や、組み込み変数に基づいて論理的に実行して条件を指定するなど、より高度な操作に使用します。
+
+WebGal には現在、`stage` と `userData` の 2 つの組み込み変数フィールドがあります。
+
+::: tip
+`stage` はランタイム組み込み変数で、`userData` はアーカイブ組み込み変数です。
+
+`stage`はWebGalエディタの下の`state`タブにあり、`userData`は開発者ツールの`indexedDB`で表示できます。
+:::
+
+それらにアクセスするには `$` を使用します (例: BGM の値を取得します)。
+
+```ws
+setVar:a=($stage.bgm.volume);
+WebGAL:現在のBGMボリュームは、以下の通りです{a};
+```
+
+もちろん、会話で直接使用することもできます：
+
+```ws
+WebGAL:現在のBGMボリュームは、以下の通りです{$stage.bgm.volume};
+```
+
+::: warning
+`括弧付き`ラッパーは、`単一値`の変数を取得するために必要ですが、数学には必要ありません。
+:::
+
+また、`config.txt` のグローバル変数にもアクセスできます：
+
+```ws
+setVar:title=(Game_name);
+WebGAL:現在のゲームのタイトルは次のとおりです{title};
+```
+
+変更も例外ではなく、ゲームタイトルを新しいゲームタイトルに変更し、setVar の変数名は変更する必要がある変数名です
+
+`global`パラメータを追加して、構成変数を変更していることを示します：
+
+```ws
+setVar:Game_name=新しいゲームタイトル -global;
+WebGAL:現在のゲームのタイトルは次のとおりです{Game_name};
+```
+
+::: warning
+`global` を指定しない場合、構成変数はローカル変数にコピーされます。`global` パラメーターをいつ使用するかに注意してください。
+:::
+
+::: tip
+変更可能な元の構成変数 `Title_img`、`Title_bgm`、`Game_name`、`Game_key`。
+回復したい場合は、ゲームオプションの`すべてのデータを消去`を使用して回復できます。
+:::
+
+もちろん、`config.txt`でカスタム構成変数を作成することもできます。たとえば、バージョン番号を作成します：
+
+```text
+Game_name:欢迎使用WebGAL！;
+Game_key:f60ad5725c1588;
+Title_img:WebGAL_New_Enter_Image.png;
+Title_bgm:s_Title.mp3;
+Textbox_theme:imss;
+; バージョン番号を増やす
+version:1;
+```
+
+次に、スクリプトでそれを取得して変更できます：
+
+```ws
+setVar:v=(version);
+WebGAL:現在のバージョン番号は{v};
+setVar:version=version*2 -global;
+WebGAL:変更された現在のバージョン番号は次のとおりです{version};
+```
+
+::: warning
+`config.txt`は、特別なシンボルとしてまだ逃れられていません。
+:::
