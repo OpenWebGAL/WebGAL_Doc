@@ -100,3 +100,81 @@ label:turn-2;
 Second playthrough;
 changeScene:Second playthrough plot.txt;
 ```
+
+## Advanced Usage（`>=4.5.4`）
+Use built-in variables to perform more advanced operations, such as making changes to configuration variables, executing logic based on specified conditions, and so on.
+
+WebGAL currently has two built-in variable domains: `stage` and `userData`.
+
+::: tip
+`stage` is a **runtime built-in variable** and `userData` is an **archive built-in variable**.
+
+The properties for `stage` can be found in the `state` TAB under the WebGAL editor, and `userData` can be found in `indexedDB` in the DevTools.
+:::
+
+You can access them using `$`, for example to get the value of BGM:
+
+```ws
+setVar:a=($stage.bgm.volume);
+WebGAL:The current BGM volume is{a};
+```
+
+Of course, you can also use it directly in a conversation:
+
+```ws
+WebGAL:The current BGM volume is{$stage.bgm.volume};
+```
+
+::: warning
+`Parentheses` are needed to get a **single-valued variable**, but not to do math.
+:::
+
+We can also access the global variables in `config.txt` :
+
+```ws
+setVar:title=(Game_name);
+WebGAL:The current title of the game is{title};
+```
+
+The same goes for modifications. When changing the game title to a new one, the variable name in setVar needs to be set to the name of the variable we are modifying. 
+
+Adding the `global` flag indicates that we are modifying a configuration variable:
+
+```ws
+setVar:Game_name=('New Game Title') -global;
+WebGAL:The current title of the game is{Game_name};
+```
+
+::: warning
+If `global` is not added, it will be assigned to the in-game variable. Please be aware of when to use the `global` parameter.
+:::
+
+::: tip
+The original configuration variables `Title_img`、`Title_bgm`、`Game_name`、`Game_key`.
+To do this, use `Clear all data` in the game options.
+:::
+
+Of course, you can also create a custom configuration variable in `config.txt`, such as a version number:
+
+```text
+Game_name:欢迎使用WebGAL！;
+Game_key:f60ad5725c1588;
+Title_img:WebGAL_New_Enter_Image.png;
+Title_bgm:s_Title.mp3;
+Textbox_theme:imss;
+; Add version variable
+version:1;
+```
+
+Then we can access it, modify it, and so on in a script:
+
+```ws
+setVar:v=(version);
+WebGAL:The current version number is{v};
+setVar:version=version*2 -global;
+WebGAL:The current modified version number is{version};
+```
+
+::: warning
+`config.txt` hasn't escaped any special symbols yet.
+:::

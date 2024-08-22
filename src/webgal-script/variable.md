@@ -100,3 +100,81 @@ label:turn-2;
 二周目;
 changeScene:二周目剧情.txt;
 ```
+
+## 高级用法（`>=4.5.4`）
+使用内置变量进行更为高级的操作，如对配置变量进行修改，根据内置变量进行指定条件的逻辑运行等。
+
+WebGAL 目前内置变量域有两个：`stage`和`userData`。
+
+::: tip
+`stage` 为**运行时内置变量**，`userData` 为**存档内置变量**。
+
+`stage` 可在 WebGAL 编辑器下面的`state`选项卡查看有哪些属性，`userData`则是可以在开发者工具中`indexedDB`查看。
+:::
+
+使用`$`可以访问他们，如获取BGM的值：
+
+```ws
+setVar:a=($stage.bgm.volume);
+WebGAL:当前的BGM音量为{a};
+```
+
+当然，你也可以直接在对话中使用它：
+
+```ws
+WebGAL:当前的BGM音量为{$stage.bgm.volume};
+```
+
+::: warning
+获取**单值变量**时需要使用`括号`包裹，但进行数学运算时不需要。
+:::
+
+我们还可以访问`config.txt`中的全局变量：
+
+```ws
+setVar:title=(Game_name);
+WebGAL:当前的游戏标题为{title};
+```
+
+修改也不例外，当要修改游戏标题为新游戏标题时，setVar的变量名称需要设置为我们将修改的变量名称
+
+加`global`参数表示我们要修改的是配置变量：
+
+```ws
+setVar:Game_name=新游戏标题 -global;
+WebGAL:当前的游戏标题为{Game_name};
+```
+
+::: warning
+不加`global`则会赋值到游戏内变量，请注意何时使用`global`参数。
+:::
+
+::: tip
+可以修改的原始配置变量`Title_img`、`Title_bgm`、`Game_name`、`Game_key`。
+想要恢复则可以在游戏选项中使用`清空所有数据`即可恢复。
+:::
+
+当然，你也可以在`config.txt`中创建一个自定义配置变量，如 创建一个版本号：
+
+```text
+Game_name:欢迎使用WebGAL！;
+Game_key:f60ad5725c1588;
+Title_img:WebGAL_New_Enter_Image.png;
+Title_bgm:s_Title.mp3;
+Textbox_theme:imss;
+; 增加版本号
+version:1;
+```
+
+那么我们就可以在脚本里面对它进行获取，修改等操作：
+
+```ws
+setVar:v=(version);
+WebGAL:当前的版本号为{v};
+setVar:version=version*2 -global;
+WebGAL:当前被修改的版本号为{version};
+```
+
+::: warning
+`config.txt`暂未做特殊符号的转义处理。
+:::
