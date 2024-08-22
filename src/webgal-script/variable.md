@@ -104,12 +104,12 @@ changeScene:二周目剧情.txt;
 ## 高级用法（`>=4.5.4`）
 使用内置变量进行更为高级的操作，如对配置变量进行修改，根据内置变量进行指定条件的逻辑运行等。
 
-WebGal目前内置变量域有两个：`stage`和`userData`。
+WebGAL 目前内置变量域有两个：`stage`和`userData`。
 
 ::: tip
 `stage` 为**运行时内置变量**，`userData` 为**存档内置变量**。
 
-`stage` 可在WebGal编辑器下面的`state`选项卡查看有哪些属性，`userData`则是可以在开发者工具中`indexedDB`查看。
+`stage` 可在 WebGAL 编辑器下面的`state`选项卡查看有哪些属性，`userData`则是可以在开发者工具中`indexedDB`查看。
 :::
 
 使用`$`可以访问他们，如获取BGM的值：
@@ -136,7 +136,7 @@ setVar:title=(Game_name);
 WebGAL:当前的游戏标题为{title};
 ```
 
-修改也不例外，修改游戏标题为新游戏标题，setVar的变量名称为我们需要修改的变量名称
+修改也不例外，当要修改游戏标题为新游戏标题时，setVar的变量名称需要设置为我们将修改的变量名称
 
 加`global`参数表示我们要修改的是配置变量：
 
@@ -146,7 +146,7 @@ WebGAL:当前的游戏标题为{Game_name};
 ```
 
 ::: warning
-不加`global`则是将配置变量复制到本地变量，请注意何时使用`global`参数。
+不加`global`则会赋值到游戏内变量，请注意何时使用`global`参数。
 :::
 
 ::: tip

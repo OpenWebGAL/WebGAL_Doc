@@ -104,12 +104,12 @@ changeScene:Second playthrough plot.txt;
 ## Advanced Usage（`>=4.5.4`）
 Use built-in variables to perform more advanced operations, such as making changes to configuration variables, executing logic based on specified conditions, and so on.
 
-WebGal currently has two built-in variable domains: `stage` and `userData`.
+WebGAL currently has two built-in variable domains: `stage` and `userData`.
 
 ::: tip
 `stage` is a **runtime built-in variable** and `userData` is an **archive built-in variable**.
 
-The properties for `stage` can be found in the `state` TAB under the WebGal editor, and `userData` can be found in `indexedDB` in the DevTools.
+The properties for `stage` can be found in the `state` TAB under the WebGAL editor, and `userData` can be found in `indexedDB` in the DevTools.
 :::
 
 You can access them using `$`, for example to get the value of BGM:
@@ -136,7 +136,7 @@ setVar:title=(Game_name);
 WebGAL:The current title of the game is{title};
 ```
 
-Changes are no exception, changing the game title to the new game title and setVar variable names to the variable names we want to change
+The same goes for modifications. When changing the game title to a new one, the variable name in setVar needs to be set to the name of the variable we are modifying. 
 
 Adding the `global` flag indicates that we are modifying a configuration variable:
 
@@ -146,7 +146,7 @@ WebGAL:The current title of the game is{Game_name};
 ```
 
 ::: warning
-Without `global`, the configuration variable is copied to a local variable. Be careful when to use the `global` parameter.
+If `global` is not added, it will be assigned to the in-game variable. Please be aware of when to use the `global` parameter.
 :::
 
 ::: tip
