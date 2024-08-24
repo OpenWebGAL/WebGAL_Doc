@@ -27,6 +27,8 @@
 
 **注意：本项目的作者没有使用任何 live2D SDK 的源码和模型，由于使用 live2D 造成的任何版权纠纷，皆由二次开发者或制作者自行承担！**
 
+7、如果你需要构建生产包，或在 WebGAL Terre 中使用，请运行 `yarn build` 指令构建 WebGAL。完成后，请参考 [如何使用定制引擎](derivative) 使用修改后的引擎。
+
 ## 切换动作和表情
 
 你可以使用 `-motion=motionName` 或 `-expression=expressionName` 参数来切换表情，如：
@@ -34,5 +36,3 @@
 ```
 changeFigure:xxx.json -motion=angry -expression=angry01;
 ```
-
-完成后，请参考 [如何使用定制引擎](derivative) 使用修改后的引擎。
