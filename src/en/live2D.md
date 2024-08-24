@@ -1,5 +1,11 @@
 # About Live2D
-The engine now supports using Live2D illustrations. If you want to use Live2D illustrations, please:
+This engine now supports using live2D models. If you want to use live2D models, please follow the steps below:
+
+:::info
+Note: The following steps are all based on the WebGAL source code, you can find the WebGAL source code on GitHub.
+
+[WebGAL Source Code](https://github.com/OpenWebGAL/WebGAL)
+:::
 
 1. Obtain the authorization of Live2D by yourself
 
@@ -28,3 +34,5 @@ You can use the `-motion=motionName` or `-expression=expressionName` parameters 
 ```
 changeFigure:xxx.json -motion=angry -expression=angry01;
 ```
+
+After finishing, please refer to [How to use customized engine](derivative) to use the modified engine. 

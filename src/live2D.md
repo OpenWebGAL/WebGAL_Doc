@@ -1,5 +1,11 @@
 # 关于Live2D
-本引擎现已支持使用 live2D 立绘。如果你要使用 live2D 立绘，请：
+本引擎现已支持使用 live2D 立绘。如果你要使用 live2D 立绘，请遵循以下步骤：
+
+:::info
+注意：以下步骤都需要基于 WebGAL 源代码操作，你可以在 GitHub 找到 WebGAL 的源代码。
+
+[WebGAL 源代码](https://github.com/OpenWebGAL/WebGAL)
+:::
 
 1、自行取得 live2D 的授权
 
@@ -28,3 +34,5 @@
 ```
 changeFigure:xxx.json -motion=angry -expression=angry01;
 ```
+
+完成后，请参考 [如何使用定制引擎](derivative) 使用修改后的引擎。

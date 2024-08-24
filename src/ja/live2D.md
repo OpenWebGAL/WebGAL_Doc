@@ -1,5 +1,11 @@
 # Live2Dについて
-このエンジンは現在、Live2Dの立ち絵を使用することをサポートしています。Live2Dの立ち絵を使用する場合は、次の手順に従ってください。
+本エンジンはlive2D立ち絵の使用をサポートするようになりました。live2D立ち絵を使用する場合は、以下の手順に従ってください。
+
+:::info
+注意：以下の手順はすべてWebGALのソースコードに基づいて操作する必要があります。WebGALのソースコードはGitHubにあります。
+
+[WebGAL ソースコード](https://github.com/OpenWebGAL/WebGAL)
+:::
 
 1、Live2Dのライセンスを自分で取得する
 
@@ -27,3 +33,5 @@
 ```
 changeFigure:xxx.json -motion=angry -expression=angry01;
 ```
+
+変更後のエンジンを使用するには、[カスタムエンジンの使用方法](derivative) を参照してください。
