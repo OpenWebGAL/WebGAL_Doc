@@ -39,6 +39,7 @@ export const jaSidebar = sidebar({
         "info",
         "sponsor",
         "developers/joinus",
+        "developers/terre",
       ]
     },
   ],

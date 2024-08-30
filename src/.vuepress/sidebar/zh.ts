@@ -49,6 +49,7 @@ export const zhSidebar = sidebar({
         "info",
         "sponsor",
         "developers/joinus",
+        "developers/terre",
       ]
     },
   ],

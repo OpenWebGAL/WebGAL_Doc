@@ -39,6 +39,7 @@ export const enSidebar = sidebar({
         "info",
         "sponsor",
         "developers/joinus",
+        "developers/terre",
       ]
     },
   ],
