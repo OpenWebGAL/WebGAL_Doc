@@ -53,6 +53,53 @@ You need to run the build script to generate a releasable version.
 
 After the build is complete, you can find the build artifacts in the `release` directory.
 
+## Update the WebGAL Engine Template Included in Terre
+
+Generally, we will update the latest version of the engine template to the Terre project after the WebGAL update. If you want to use your customized WebGAL engine in Terre, please follow these steps:
+
+1. Clone the WebGAL engine project (it is recommended to clone in the adjacent directory, so that you can use the automation script)
+
+```
+git clone https://github.com/OpenWebGAL/WebGAL.git
+```
+
+2. **(Assuming you cloned the WebGAL project in the directory adjacent to the Terre project, developers who did not do this please ignore)** Run the automation script in the WebGAL engine repository to build WebGAL to WebGAL Terre
+
+```
+sh release-to-terre.sh
+```
+
+:::warning
+**The following steps apply to manually building and updating the engine template in Terre. Developers using automated scripts please ignore!**
+:::
+
+2. Build the WebGAL project (this step is executed in the WebGAL engine repository)
+
+```
+yarn
+yarn build
+```
+
+3. Delete the engine template in WebGAL Terre and move the build product of the engine project to the template directory of WebGAL Terre
+
+**Here we assume that you cloned the WebGAL project in the directory adjacent to the Terre project. If you have a different directory structure, please modify it according to the actual situation.**
+
+```
+# Enter the Terre directory
+cd ../WebGAL_Terre/packages/terre2/assets/templates/WebGAL_Template || exit
+# Delete other files
+rm -r assets
+rm -r index.html
+rm -r webgal-serviceworker.js
+
+# Enter the WebGAL build directory
+cd ../../../../../../WebGAL/packages/webgal || exit
+# Copy
+cp -r dist/index.html ../../../WebGAL_Terre/packages/terre2/assets/templates/WebGAL_Template
+cp -r dist/assets ../../../WebGAL_Terre/packages/terre2/assets/templates/WebGAL_Template
+cp -r dist/webgal-serviceworker.js ../../../WebGAL_Terre/packages/terre2/assets/templates/WebGAL_Template
+```
+
 ## Package Introduction
 
 | Package Name                                     | Description                                                                                |

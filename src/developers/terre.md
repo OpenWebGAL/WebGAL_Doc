@@ -53,6 +53,53 @@ yarn dev
 
 构建完成后，您可以在 `release` 目录下找到构建产物。
 
+## 更新 Terre 附带的 WebGAL 引擎模板
+
+一般来说，我们会在 WebGAL 更新后将最新版本的引擎模板更新到 Terre 项目中。假如你想在 Terre 中使用你定制的 WebGAL 引擎，请遵循以下步骤：
+
+1、Clone WebGAL 引擎项目（推荐在相邻目录 Clone，这样可以使用自动化脚本）
+
+```
+git clone https://github.com/OpenWebGAL/WebGAL.git
+```
+
+2、**（假设你在 Terre 项目的相邻目录 Clone WebGAL 项目，未这样做的开发者请忽略）** 在 WebGAL 引擎仓库运行自动化脚本构建 WebGAL 到 WebGAL Terre 
+
+```
+sh release-to-terre.sh
+```
+
+:::warning
+**以下步骤适用于手动构建并更新 Terre 中的引擎模板的情况。使用自动化脚本的开发者请忽略！**
+:::
+
+2、构建 WebGAL 项目（此步骤在 WebGAL 引擎仓库中执行）
+
+```
+yarn
+yarn build
+```
+
+3、删除 WebGAL Terre 里的引擎模板，并移动引擎项目的构建产物到 WebGAL Terre 的模板目录
+
+**此处假设你在 Terre 项目的相邻目录 Clone WebGAL 项目，如果你有不同的目录结构，请根据实际情况修改。**
+
+```
+# 进入 Terre 目录
+cd ../WebGAL_Terre/packages/terre2/assets/templates/WebGAL_Template || exit
+# 删除其他文件
+rm -r assets
+rm -r index.html
+rm -r webgal-serviceworker.js
+
+# 进入 WebGAL 构建目录
+cd ../../../../../../WebGAL/packages/webgal || exit
+# 复制
+cp -r dist/index.html ../../../WebGAL_Terre/packages/terre2/assets/templates/WebGAL_Template
+cp -r dist/assets ../../../WebGAL_Terre/packages/terre2/assets/templates/WebGAL_Template
+cp -r dist/webgal-serviceworker.js ../../../WebGAL_Terre/packages/terre2/assets/templates/WebGAL_Template
+```
+
 ## 包介绍
 
 | 包名                                     | 说明                                                                                |

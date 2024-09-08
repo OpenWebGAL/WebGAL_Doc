@@ -53,6 +53,53 @@ yarn dev
 
 ビルドが完了すると、`release` ディレクトリにビルド成果物が配置されます。
 
+## Terre に同梱されている WebGAL エンジンテンプレートの更新
+
+通常、WebGAL の更新後、最新バージョンのエンジンテンプレートを Terre プロジェクトに更新します。Terre でカスタマイズした WebGAL エンジンを使用する場合は、次の手順に従ってください。
+
+1. WebGAL エンジンリポジトリをクローンします（隣接ディレクトリにクローンすることをお勧めします。これにより、自動化スクリプトを使用できます）
+
+```
+git clone https://github.com/OpenWebGAL/WebGAL.git
+```
+
+2. **（Terre プロジェクトの隣接ディレクトリに WebGAL プロジェクトをクローンした場合、そうでない開発者は無視してください）** WebGAL エンジンリポジトリで自動化スクリプトを実行して、WebGAL を WebGAL Terre にビルドします
+
+```
+sh release-to-terre.sh
+```
+
+:::warning
+**以下の手順は、手動でビルドして Terre のエンジンテンプレートを更新する場合に適用されます。自動化スクリプトを使用する開発者は無視してください！**
+:::
+
+2. WebGAL プロジェクトをビルドします（この手順は WebGAL エンジンリポジトリで実行します）
+
+```
+yarn
+yarn build
+```
+
+3. WebGAL Terre のエンジンテンプレートを削除し、エンジンプロジェクトのビルド成果物を WebGAL Terre のテンプレートディレクトリに移動します
+
+**ここでは、Terre プロジェクトの隣接ディレクトリに WebGAL プロジェクトをクローンしていると想定しています。異なるディレクトリ構造を使用している場合は、それに応じて変更してください。**
+
+```
+# Terre ディレクトリに移動します
+cd ../WebGAL_Terre/packages/terre2/assets/templates/WebGAL_Template || exit
+# 他のファイルを削除します
+rm -r assets
+rm -r index.html
+rm -r webgal-serviceworker.js
+
+# WebGAL ビルドディレクトリに移動します
+cd ../../../../../../WebGAL/packages/webgal || exit
+# コピーします
+cp -r dist/index.html ../../../WebGAL_Terre/packages/terre2/assets/templates/WebGAL_Template
+cp -r dist/assets ../../../WebGAL_Terre/packages/terre2/assets/templates/WebGAL_Template
+cp -r dist/webgal-serviceworker.js ../../../WebGAL_Terre/packages/terre2/assets/templates/WebGAL_Template
+```
+
 ## パッケージ紹介
 
 | パッケージ名                                     | 説明                                                                                |

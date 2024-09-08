@@ -6,6 +6,8 @@
 
 - [WebGAL の開発に参加したり、ソースコードから WebGAL を開発する方法を学びたい](developers)
 
+- [WebGAL Terre エディターのカスタマイズ開発や貢献について](developers/terre)
+
 - [エディタで自分や他の人が開発したカスタムエンジンを使用する方法](derivative)
 
 - [WebGAL エンジンの技術的な実装について知りたい](tech)

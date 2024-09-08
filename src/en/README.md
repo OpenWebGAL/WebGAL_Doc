@@ -6,6 +6,8 @@
 
 - [I want to contribute to the engine development or learn how to develop WebGAL from source](developers)
 
+- [I want to learn how to customize, develop, or contribute to the WebGAL Terre editor](developers/terre)
+
 - [How to use custom engine developed by yourself or others in the editor](derivative)
 
 - [I want to learn about the technical implementation of WebGAL engine](tech)
