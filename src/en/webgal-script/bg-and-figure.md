@@ -51,7 +51,7 @@ changeFigure:testFigure03.png -right -next;
 
 ## Free Figures with ID
 
-If you want to control the figure more precisely, you can specify the `id` and initial position for the figure:
+If you want to control the position of the character sprites more precisely, or use more than 3 character sprites, you can specify `id` and initial position for them:
 
 ``` ws
 ; // A free figure with an initial position on the right
