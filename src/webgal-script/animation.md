@@ -19,7 +19,7 @@ setAnimation:enter-from-bottom -target=fig-center -next;
 | 渐出          | exit               | 300            |
 | 左右摇晃一次  | shake               | 1000           |
 | 从下侧进入    | enter-from-bottom   | 500            |
-| 从左侧进入    | enter-from-right    | 500            |
+| 从左侧进入    | enter-from-left     | 500            |
 | 从右侧进入    | enter-from-right    | 500            |
 | 前后移动一次  | move-front-and-back | 1000           |
 
