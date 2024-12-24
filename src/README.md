@@ -30,6 +30,10 @@
 
 - [在编辑器更新后迁移游戏文件](migration.md)
 
+- [如何添加 Live2D 支持](live2D.md)
+
+- [如何添加 Spine 支持](spine.md)
+
 ## WebGAL 脚本教程
 
 - [基础](webgal-script/base.md)

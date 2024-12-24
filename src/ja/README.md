@@ -30,6 +30,10 @@
 
 - [移行ゲームファイル](migration.md)
 
+- [Live2Dサポートの追加方法](live2D.md)
+
+- [Spineサポートの追加方法](spine.md)
+
 ## WebGAL スクリプトチュートリアル
 
 - [基本](webgal-script/base.md)

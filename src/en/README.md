@@ -30,6 +30,11 @@
 
 - [Migrating Game Files After Editor Update](migration.md)
 
+- [How to add Live2D support](live2d.md)
+
+- [How to add Spine support](spine.md)
+
+
 ## WebGAL Script Tutorial
 
 - [The Basics](webgal-script/base.md)
