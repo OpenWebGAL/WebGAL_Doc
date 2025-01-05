@@ -5,6 +5,8 @@ This engine now supports using live2D models. If you want to use live2D models, 
 Note: The following steps are all based on the WebGAL source code, you can find the WebGAL source code on GitHub.
 
 [WebGAL Source Code](https://github.com/OpenWebGAL/WebGAL)
+
+About building WebGAL from source, please refer to [WebGAL Build](developers)
 :::
 
 1. Obtain the authorization of Live2D by yourself

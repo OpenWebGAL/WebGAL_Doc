@@ -5,6 +5,8 @@
 注意：以下步骤都需要基于 WebGAL 源代码操作，你可以在 GitHub 找到 WebGAL 的源代码。
 
 [WebGAL 源代码](https://github.com/OpenWebGAL/WebGAL)
+
+关于如何从源代码构建 WebGAL，请参考 [WebGAL 构建](developers)
 :::
 
 1、自行取得 live2D 的授权

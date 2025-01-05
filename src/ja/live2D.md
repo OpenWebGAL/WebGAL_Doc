@@ -5,6 +5,8 @@
 注意：以下の手順はすべてWebGALのソースコードに基づいて操作する必要があります。WebGALのソースコードはGitHubにあります。
 
 [WebGAL ソースコード](https://github.com/OpenWebGAL/WebGAL)
+
+WebGAL のソースコードからのビルド方法については、[WebGAL ビルド](developers) を参照してください。
 :::
 
 1、Live2Dのライセンスを自分で取得する
