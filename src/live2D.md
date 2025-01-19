@@ -13,7 +13,7 @@
 
 2、到 https://cdn.jsdelivr.net/gh/dylanNew/live2d/webgl/Live2D/lib/live2d.min.js 和 https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js 分别下载 live2D 和 cubismcore
 
-3、分别重命名为 `live2d.min.js` 和 `live2dcubismcore.min.js` ，然后将文件放到**指定目录**
+3、分别重命名为 `live2d.min.js` 和 `live2dcubismcore.min.js` ，然后将文件放到**其中一个指定目录**
 
 - 定制引擎目录：`[WebGal]/assets/templates/Derivative_Engine/[你的定制引擎]/lib`
 - 游戏目录（作用于单个项目）：`[WebGal]/public/games/[你的游戏]/lib`
