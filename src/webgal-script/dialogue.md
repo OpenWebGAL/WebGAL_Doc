@@ -113,9 +113,9 @@ WebGAL:很高兴遇见你，{name}！
 简单来说，形如以下形式：
 
 ```
-[文本](style-alltext=font-style:italic\; style=color:#66327C\; ruby=wen ben)
+WebGAL:[文本](style-alltext=font-style:italic\;font-size:80%\; style=color:#66327C\; ruby=wen ben)
 ```
-这代表这段文本的字体大小是偏小的，并应用了加粗，颜色为 #005CAF，并具有注音和提示。
+这代表这段文本的字体大小是偏小的，并应用了斜体，颜色为 #66327C，并具有注音。
 
 对于文本拓展语法中的不同参数，使用空格分开，并且形式总是 `argk=argv` 这样的形式
 

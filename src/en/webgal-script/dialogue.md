@@ -113,10 +113,10 @@ Text enhancement syntax is an enhancement to a specific piece of text. Text encl
 In simple terms, it takes the following form:
 
 ```
-[Text](style-alltext=font-style:italic\; style=color:#66327C\; ruby=wen ben)
+WebGAL:[Text](style-alltext=font-style:italic\;font-size:80%\; style=color:#66327C\; ruby=wen ben)
 ```
 
-This means that the font size of this text is smaller, and it is bold, the color is #005CAF, and it has phonetic annotations and tooltips.
+This means that the font size of this text is smaller, italicized, the color is #66327C, and it has ruby annotation.
 
 For different parameters in the text enhancement syntax, use spaces to separate them, and the form is always `argk=argv`.
 
