@@ -1849,6 +1849,19 @@
     "@vuepress/core" "2.0.0-beta.66"
     prismjs "^1.29.0"
 
+"@vuepress/plugin-search@2.0.0-beta.66":
+  version "2.0.0-beta.66"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-search/-/plugin-search-2.0.0-beta.66.tgz#5e531fd71514a6d9919cff5f92c597476778e303"
+  integrity sha512-OeAaTOBnBwIH1xyleyHGOVjgJNdGvbCPocNbnJOAjTaV6K5FeNgBlX338Kqw0adu2E4DK90UapYDmiXZH/BLAg==
+  dependencies:
+    "@vuepress/client" "2.0.0-beta.66"
+    "@vuepress/core" "2.0.0-beta.66"
+    "@vuepress/shared" "2.0.0-beta.66"
+    "@vuepress/utils" "2.0.0-beta.66"
+    chokidar "^3.5.3"
+    vue "^3.3.4"
+    vue-router "^4.2.4"
+
 "@vuepress/plugin-theme-data@2.0.0-beta.66":
   version "2.0.0-beta.66"
   resolved "https://registry.yarnpkg.com/@vuepress/plugin-theme-data/-/plugin-theme-data-2.0.0-beta.66.tgz#52c87db594763b5c38913f5a2e417599b080b536"
