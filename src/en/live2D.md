@@ -1,37 +1,29 @@
 # About Live2D
-This engine now supports using live2D models. If you want to use live2D models, please follow the steps below:
+This engine now supports the use of Live2D models. If you want to use Live2D models, please follow these steps:
 
 :::info
-Note: The following steps are all based on the WebGAL source code, you can find the WebGAL source code on GitHub.
+Note: Some of the following steps are based on the WebGAL source code, which you can find on GitHub.
 
 [WebGAL Source Code](https://github.com/OpenWebGAL/WebGAL)
 
-About building WebGAL from source, please refer to [WebGAL Build](developers)
+For information on how to build WebGAL from source, please refer to [WebGAL Build](developers)
 :::
 
-1. Obtain the authorization of Live2D by yourself
+1. Obtain a Live2D license yourself.
 
-2. Download Live2D and Cubismcore from https://cdn.jsdelivr.net/gh/dylanNew/live2d/webgl/Live2D/lib/live2d.min.js and https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js respectively
+2. Go to https://cdn.jsdelivr.net/gh/dylanNew/live2d/webgl/Live2D/lib/live2d.min.js and https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js to download Live2D and cubismcore respectively.
 
-3. Rename them to `live2d.min.js` and `live2dcubismcore.min.js` respectively, then put the files in `packages/webgal/public/lib`, then go to `packages/webgal/index.html`, uncomment the following two lines to make them:
-```html
-<script src="lib/live2d.min.js" ></script>
-<script src="lib/live2dcubismcore.min.js"></script>
-```
-4. Go to `packages/webgal/src/Core/controller/stage/pixi/PixiController.ts`, uncomment
-`import { Live2DModel, SoundManager } from 'pixi-live2d-display';` and `public addLive2dFigure(key: string, jsonPath: string, pos: string, motion: string) {...... uncomment this whole function}`
+3. Rename them to `live2d.min.js` and `live2dcubismcore.min.js` respectively, and then put the files in **one of the specified directories**.
 
-Note: If the IDE prompts that there are unimported variables, please import them according to the prompts.
+- Custom engine directory: `[WebGal]/assets/templates/Derivative_Engine/[Your custom engine]/lib`
+- Game directory (applies to a single project): `[WebGal]/public/games/[Your game]/lib`
+- WebGal source code directory: `[WebGal source code]/packages/webgal/public/lib`
 
-5. Go to `packages/webgal/src/Components/Stage/MainStage/useSetFigure.ts` and uncomment `return WebGAL.gameplay.pixiStage?.addLive2dFigure(...args);`
+4. Now you can start using Live2D as a figure. You need to put the entire model directory into the `game/figure` directory. The way to call the figure is to call the figure's json file.
 
-6. Now you can start using Live2D as illustrations. You need to put the directory of the entire model in the `game/figure` directory. The way to call the illustration is to call the JSON file of the illustration.
+**Note: The author of this project does not use any source code or models of the Live2D SDK. Any copyright disputes arising from the use of Live2D are the sole responsibility of the secondary developer or creator!**
 
-7. If you need to build a production package, or use it in WebGAL Terre, please run the `yarn build` command to build WebGAL. After completion, please refer to [How to use a custom engine](derivative) to use the modified engine. 
-
-**Note: The author of this project did not use any source code and models of Live2D SDK. Any copyright disputes caused by the use of Live2D shall be borne by the secondary developer or producer!**
-
-## Switch actions and expressions
+## Switching Motions and Expressions
 
 You can use the `-motion=motionName` or `-expression=expressionName` parameters to switch expressions, such as:
 
