@@ -9,7 +9,7 @@
 | Title_img | タイトル画像、`background` フォルダに入れてください |
 | Title_bgm | タイトルの BGM、`bgm` フォルダに入れてください |
 | Game_Logo | ゲームのロゴ、複数表示することができ、\| で区切ります |
-| Textbox_theme | ゲームのダイアログスタイル、imss スタイルまたは standard スタイルを選択できます |
+| Enable_Appreciation     | 鑑賞機能（CGおよび背景音楽の鑑賞を含む）を有効にするかどうか。    |
 
 以下は設定ファイルの例です。
 
@@ -19,5 +19,5 @@ Game_key:0f33fdGr;
 Title_img:Title.png;
 Title_bgm:夏影.mp3;
 Game_Logo:WebGalEnter.png|bg.png;
-Textbox_theme:imss;
+Enable_Appreciation:true;
 ```

@@ -9,7 +9,7 @@ Under the `game` folder, there is a file named `config.txt`, you can fill in the
 | Title_img | Title picture, put it in the `background` folder |
 | Title_bgm | Title background music, put it in the `bgm` folder |
 | Game_Logo | Game Logo, multiple can be displayed, separated by \| |
-| Textbox_theme | Game dialog style, you can choose imss style or standard style |
+| Enable_Appreciation     | Whether to enable the Appreciation feature, including CG and background music appreciation.    |
 
 The following is a sample configuration file:
 
@@ -19,5 +19,5 @@ Game_key:0f33fdGr;
 Title_img:Title.png;
 Title_bgm:夏影.mp3;
 Game_Logo:WebGalEnter.png|bg.png;
-Textbox_theme:imss;
+Enable_Appreciation:true;
 ```
