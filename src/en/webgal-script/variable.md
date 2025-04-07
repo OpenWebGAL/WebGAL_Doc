@@ -32,12 +32,12 @@ Instead of writing arguments, it generates a floating-point number in the range 
 setVar:a=random();
 ```
 
-Of course, we can also specify **Range**. For example, if you want a random number between 5 and 10, you need to perform the following operations:
+Of course, we can also specify **Range**. For example, if you want a random number between 5 and 10, You can write:
 ```ws
 SetVar: a = the random (5, 10);
 ```
 
-But you want it to use ranges to generate values that also have decimals, then specify a third argument:
+Of course you want it to use ranges to generate values that also have decimals, then specify a third argument:
 ```ws
 SetVar: a = the random (5, 10, true); # will generate a floating point number between 5 and 10
 ```
