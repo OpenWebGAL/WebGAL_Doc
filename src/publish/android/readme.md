@@ -30,8 +30,8 @@
 
 @tab WebGAL Terre
 
-在编辑器左边侧边栏修改游戏配置中的 `游戏标题` 和 `游戏包名`。
-游戏包名是你的网站域名反写，如果没有域名可以考虑使用开发者加游戏名的组合，比如 `webgaldev.mygalgame` 这种形式，**必须**使用**英文**。
+在编辑器顶栏修改游戏配置中的 `游戏标题` 、 `游戏包名` 和 `游戏图标`。
+游戏包名是你的网站域名反写，如果没有域名可以考虑使用开发者加游戏名的组合，比如 `webgaldev.mygame` 这种形式，**必须**使用**英文**。
 
 在编辑器右上角选择导出为安卓项目文件，系统会自动打开文件夹。
 
@@ -86,11 +86,11 @@ package com.openwebgal.demo //修改包名
 
 上面这个字段修改后会报错，这时候点击刚刚修改的包名，然后点击“黄色灯泡”选择 `Move file to '目标包名'`，再将原本包名文件夹删掉。
 
-:::
-
 点击菜单栏中的 `File -> New -> Image Asset` 修改游戏图标，注意图标分为前后两层。
 
 ![创建图标](create-icons.jpg)
+
+:::
 
 ## 调试运行
 
@@ -118,9 +118,8 @@ package com.openwebgal.demo //修改包名
 
 ## 兼容性以及解决方案
 
-目前支持最低版本是安卓 5.0，并依赖于系统预装的 Android System WebView, 如果您的设备在点击首屏后黑屏，请尝试以下任意一种方案：
+目前支持最低版本是安卓 5.0，并依赖于系统预装的 Android System WebView, 如果您的设备在点击首屏后黑屏或者有其他问题，请尝试以下任意一种方案：
 
-1. 进入 Play 商店更新 [Android System WebView](https://play.google.com/store/apps/details?id=com.google.android.webview)
-2. 手动下载 Android System WebView 进行更新
-
-Android System WebView 下载链接：[Android 5.0](https://www.apkmirror.com/apk/google-inc/android-system-webview/android-system-webview-95-0-4638-74-release/) | [Android 6.0](https://www.apkmirror.com/apk/google-inc/android-system-webview/android-system-webview-106-0-5249-126-release/) | [Android 7.0 +](https://www.apkmirror.com/apk/google-inc/android-system-webview/)
+* 进入 Play 商店更新 [Android System WebView](https://play.google.com/store/apps/details?id=com.google.android.webview)
+* 手动下载 [Android System WebView](https://www.apkmirror.com/apk/google-inc/android-system-webview/) 进行更新
+* 如果是华为安卓设备，可以尝试下载安装 [Huawei WebView](https://www.apkmirror.com/apk/huawei/huawei-webview-2/)

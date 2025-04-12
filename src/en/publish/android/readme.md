@@ -30,8 +30,8 @@ If you want to use Android Studio to open the folder directly exported from the 
 
 @tab WebGAL Terre
 
-Modify the `Game title` and `Game package name` in the game configuration in the left sidebar of the editor.
-The game package name is the reverse of your website domain name. If you don't have a domain name, you can consider using the combination of developer plus game name, such as `webgaldev.mygalgame`, **must** use **English**.
+In the editor's top bar, modify the `Game Title`, `Game Package Name`, and `Game Icon` in the game configuration.
+The game package name is the reverse of your website domain name. If you don't have a domain name, you can consider using the combination of developer plus game name, such as `webgaldev.mygame`, **must** use **English**.
 
 Select Export to Android project file in the upper right corner of the editor, and the system will automatically open the folder.
 
@@ -86,11 +86,11 @@ package com.openwebgal.demo //Modify the package name
 
 After modifying this field, an error will be reported. At this time, click the package name just modified, and then click the "yellow light bulb" to select `Move file to 'target package name'`, and then delete the original package name folder.
 
-:::
-
 Click `File -> New -> Image Asset` in the menu bar to modify the game icon. Note that the icon is divided into two layers, front and back.
 
 ![Create icons](create-icons.jpg)
+
+:::
 
 ## Debug and run
 
@@ -116,11 +116,10 @@ Select `release` and click `Create` to wait for the compilation to complete.
 
 [Use Android Studio to package WebGAL games to the Android platform](https://www.bilibili.com/video/BV1m24y1J7ct/)
 
-## Compatibility and solutions
+## Compatibility and Solutions
 
-Currently, the minimum supported version is Android 5.0, and it depends on the pre-installed Android System WebView of the system. If your device goes black after clicking the first screen, please try any of the following solutions:
+The minimum supported version is Android 5.0, and it relies on the system-preinstalled Android System WebView. If your device experiences a black screen or other issues after clicking the initial screen, please try any of the following solutions:
 
-1. Enter the Play Store to update [Android System WebView](https://play.google.com/store/apps/details?id=com.google.android.webview)
-2. Manually download Android System WebView for update
-
-Android System WebView download link: [Android 5.0](https://www.apkmirror.com/apk/google-inc/android-system-webview/android-system-webview-95-0-4638-74-release/) | [Android 6.0](https://www.apkmirror.com/apk/google-inc/android-system-webview/android-system-webview-106-0-5249-126-release/) | [Android 7.0 +](https://www.apkmirror.com/apk/google-inc/android-system-webview/)
+* Go to the Play Store and update [Android System WebView](https://play.google.com/store/apps/details?id=com.google.android.webview).
+* Manually download and update [Android System WebView](https://www.apkmirror.com/apk/google-inc/android-system-webview/).
+* If you are using a Huawei Android device, you can try downloading and installing [Huawei WebView](https://www.apkmirror.com/apk/huawei/huawei-webview-2/).
