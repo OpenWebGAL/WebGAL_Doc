@@ -30,8 +30,8 @@ WebGAL Terre 可視化編輯器をお勧めします。一键でアンドロイ�
 
 @tab WebGAL Terre
 
-エディタの左側のサイドバーで、ゲーム設定の「ゲームタイトル」と「ゲームパッケージ名」を変更します。
-ゲームパッケージ名は、あなたのウェブサイトのドメインを逆にしたものです。ドメインがない場合は、デベロッパーとゲーム名を組み合わせたもの、例えば「webgaldev.mygalgame」のような形式を検討してください。**必ず****英語**を使用してください。
+エディタのトップバーで、ゲーム設定の `ゲームタイトル`、`ゲームパッケージ名`、および `ゲームアイコン` を変更します。
+ゲームパッケージ名は、あなたのウェブサイトのドメインを逆にしたものです。ドメインがない場合は、デベロッパーとゲーム名を組み合わせたもの、例えば「webgaldev.mygame」のような形式を検討してください。**必ず****英語**を使用してください。
 
 エディタの右上にある「アンドロイドプロジェクトファイルにエクスポート」を選択すると、システムが自動的にフォルダを開きます。
 
@@ -86,11 +86,11 @@ package com.openwebgal.demo //パッケージ名を変更
 
 このフィールドを変更するとエラーが発生します。このとき、変更したばかりのパッケージ名をクリックして、「黄色い電球」をクリックし、「ファイルを「ターゲットパッケージ名」に移動」を選択し、元の「パッケージ名」フォルダを削除します。
 
-:::
-
-メニューバーの「ファイル -> 新規 -> 画像アセット」をクリックしてゲームアイコンを変更します。アイコンは前後2層に分かれています。
+メニューバーの `File -> New -> Image Asset` をクリックしてゲームアイコンを変更します。アイコンは前後2層に分かれています。
 
 ![アイコンを作成する](create-icons.jpg)
+
+:::
 
 ## デバッグ実行
 
@@ -116,11 +116,10 @@ package com.openwebgal.demo //パッケージ名を変更
 
 [Android Studioを使ってWebGALゲームをAndroidプラットフォームにパッケージする](https://www.bilibili.com/video/BV1m24y1J7ct/)
 
-## 互換性とソリューション
+## 互換性と解決策
 
-現在サポートされている最低バージョンはAndroid 5.0で、システムにプリインストールされているAndroid System WebViewに依存しています。デバイスで最初の画面をクリックした後に黒くなる場合は、以下のいずれかの方法を試してください。
+サポートされている最小バージョンはAndroid 5.0で、システムにプリインストールされたAndroid System WebViewに依存しています。初回画面をクリックした後に黒い画面やその他の問題が発生した場合は、以下のいずれかの解決策を試してください。
 
-1. Playストアにアクセスして[Android System WebView](https://play.google.com/store/apps/details?id=com.google.android.webview)を更新する。
-2. Android System WebViewを手動でダウンロードして更新する
-
-Android System WebViewのダウンロードリンク：[Android 5.0](https://www.apkmirror.com/apk/google-inc/android-system-webview/android-system-webview-95-0-4638-74-release/) | [Android 6.0](https://www.apkmirror.com/apk/google-inc/android-system-webview/android-system-webview-106-0-5249-126-release/) | [Android 7.0 +](https://www.apkmirror.com/apk/google-inc/android-system-webview/)
+* Playストアにアクセスして、[Android System WebView](https://play.google.com/store/apps/details?id=com.google.android.webview)を更新します。
+* [Android System WebView](https://www.apkmirror.com/apk/google-inc/android-system-webview/) を手動でダウンロードして更新します。
+* HuaweiのAndroidデバイスを使用している場合は、[Huawei WebView](https://www.apkmirror.com/apk/huawei/huawei-webview-2/)をダウンロードしてインストールしてみてください。
