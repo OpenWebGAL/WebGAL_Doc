@@ -10,6 +10,7 @@
 | Title_bgm | タイトルの BGM、`bgm` フォルダに入れてください |
 | Game_Logo | ゲームのロゴ、複数表示することができ、\| で区切ります |
 | Enable_Appreciation     | 鑑賞機能（CGおよび背景音楽の鑑賞を含む）を有効にするかどうか。    |
+| Default_Language     | デフォルト言語、「zh_CN」、「zh_TW」、「en」、「ja」、「fr」、「de」に設定可能。 |
 
 以下は設定ファイルの例です。
 

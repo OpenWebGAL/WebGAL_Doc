@@ -10,6 +10,7 @@
 | Title_bgm     | 标题背景音乐，放在 `bgm` 文件夹        |
 | Game_Logo     | 游戏 Logo，可以显示多个，用 \| 分割     |
 | Enable_Appreciation     | 是否启用鉴赏功能，包括 CG 和背景音乐鉴赏。    |
+| Default_Language     | 默认语言，可设置为 'zh_CN', 'zh_TW', 'en', 'ja', 'fr', 'de' |
 
 以下是配置文件示例：
 
