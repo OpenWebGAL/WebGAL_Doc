@@ -26,14 +26,15 @@ pixiInit;
 pixiPerform:rain; // 添加一个下雨的特效
 ```
 
-注意：特效作用后，如果没有初始化，特效会一直运行。
+注意：特效作用后，如果没有重新初始化，特效会一直运行。
 
 ### 预制特效列表
 
 | 效果 | 指令                        |
 | :--- | :-------------------------- |
-| 下雨 | pixiPerform:rain;           |
-| 下雪 | pixiPerform:snow;           |
+| 雨 | pixiPerform:rain;             |
+| 雪 | pixiPerform:snow;             |
+| 大雪 | pixiPerform:heavySnow;      |
 | 樱花 | pixiPerform:cherryBlossoms; |
 
 ### 叠加特效
@@ -53,11 +54,13 @@ pixiPerform:snow;
 
 你可以下载源代码，然后找到 `/Core/gameScripts/pixiPerformScripts/` 然后新建一个 `PIXI.Container` 用于制作你所需要的特效。
 
+特效层分为前景层和背景层，这里以前景层为例。
+
 ``` ts
 // 获取当前的 Pixi 效果 Container
-const effectsContainer = RUNTIME_GAMEPLAY.pixiStage!.effectsContainer!;
+const effectsContainer = WebGAL.gameplay.pixiStage!.foregroundEffectsContainer!;
 // 调用 Pixi App 的方式，对确定屏幕尺寸等可能有用
-const app = RUNTIME_GAMEPLAY.pixiStage!.currentApp!;
+const app = WebGAL.gameplay.pixiStage!.currentApp!;
 // 创建自定义特效的container
 const container = new PIXI.Container();
 // 添加特效
@@ -79,7 +82,7 @@ function myPerform() {
 }
 
 // 注册
-registerPerform('myPerform', () => myPerform(参数));
+registerPerform('myPerform', { fg: () => myPerform(参数) });
 ```
 
 最后，编译出支持你自定义特效的 WebGAL
@@ -91,5 +94,5 @@ yarn run build;
 这样，你就可以在脚本中调用你的特效了
 
 ``` ws
-pixiPerform:你的新特效;
+pixiPerform:myPerform;
 ```
