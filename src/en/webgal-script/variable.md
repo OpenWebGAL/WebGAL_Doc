@@ -20,9 +20,26 @@ To set a random number, use `random()`
 setVar:a=random();
 ```
 
-The random number is between 0 and 1, if you want to specify a range, you need to do some math. For example, if you want a random number between 5 and 10, you need to do:
+`random([lower=0], [upper=1], [floating])` Random number is a **built-in function** that supports multiple parameters:
+
+**Parameter** :
+1. [lower=0] (number): indicates the lower limit.
+2. [upper=1] (number): indicates the upper limit.
+3. [floating] (boolean): Specifies whether to return a floating-point number.
+
+Instead of writing arguments, it generates a floating-point number in the range 0-1
 ```ws
-setVar:a=5+a*5;
+setVar:a=random();
+```
+
+Of course, we can also specify **Range**. For example, if you want a random number between 5 and 10, You can write:
+```ws
+SetVar: a = the random (5, 10);
+```
+
+Of course you want it to use ranges to generate values that also have decimals, then specify a third argument:
+```ws
+SetVar: a = the random (5, 10, true); # will generate a floating point number between 5 and 10
 ```
 
 You can also use previously defined variables when setting variables.
