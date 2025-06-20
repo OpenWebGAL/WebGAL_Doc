@@ -2,7 +2,7 @@
 
 ## 新特性预告
 
-WebGAL 的开发计划基本上是用 issues 跟踪的，请访问   [WebGAL issues](https://github.com/MakinoharaShoko/WebGAL/issues) 或 [WebGAL Terre issues](https://github.com/MakinoharaShoko/WebGAL_Terre/issues)  来查看。
+WebGAL 的开发计划基本上是用 issues 跟踪的，请访问   [WebGAL issues](https://github.com/OpenWebGAL/WebGAL/issues) 或 [WebGAL Terre issues](https://github.com/OpenWebGAL/WebGAL_Terre/issues)  来查看。
 
 ## 特性请求与缺陷报告
 
@@ -22,6 +22,6 @@ WebGAL 的开发计划基本上是用 issues 跟踪的，请访问   [WebGAL iss
 在这里展示具体出现故障的代码或编辑器编辑页面的截图
 ```
 
-如果你发现 BUG 需要报告，请在  [WebGAL issues](https://github.com/MakinoharaShoko/WebGAL/issues) 或 [WebGAL Terre issues](https://github.com/MakinoharaShoko/WebGAL_Terre/issues) 提出 issue 或者发送电子邮件联系 contact@openwebgal.com 。
+如果你发现 BUG 需要报告，请在  [WebGAL issues](https://github.com/OpenWebGAL/WebGAL/issues) 或 [WebGAL Terre issues](https://github.com/OpenWebGAL/WebGAL_Terre/issues) 提出 issue 或者发送电子邮件联系 contact@openwebgal.com 。
 
 

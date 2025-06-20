@@ -91,10 +91,10 @@
 
 ### 获取源代码
 
-克隆 [WebGAL_Terre](https://github.com/MakinoharaShoko/WebGAL_Terre) 仓库。
+克隆 [WebGAL_Terre](https://github.com/OpenWebGAL/WebGAL_Terre) 仓库。
 
 ``` shell
-git clone https://github.com/MakinoharaShoko/WebGAL_Terre.git
+git clone https://github.com/OpenWebGAL/WebGAL_Terre.git
 ```
 
 ### 安装包管理器 (可选)

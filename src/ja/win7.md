@@ -91,10 +91,10 @@
 
 ### ソースコードを取得する
 
-[WebGAL_Terre](https://github.com/MakinoharaShoko/WebGAL_Terre) リポジトリをクローンする。
+[WebGAL_Terre](https://github.com/OpenWebGAL/WebGAL_Terre) リポジトリをクローンする。
 
 ``` shell
-git clone https://github.com/MakinoharaShoko/WebGAL_Terre.git
+git clone https://github.com/OpenWebGAL/WebGAL_Terre.git
 ```
 
 ### パッケージマネージャー（任意）

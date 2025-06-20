@@ -14,7 +14,7 @@ export default hopeTheme({
 
   logo: "/favicon.ico",
 
-  repo: "MakinoharaShoko/WebGAL_Doc",
+  repo: "OpenWebGAL/WebGAL_Doc",
 
   docsDir: "src",
 

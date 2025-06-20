@@ -2,7 +2,7 @@
 
 ## New Features Preview
 
-WebGAL's development plan is basically tracked by issues, please visit [WebGAL issues](https://github.com/MakinoharaShoko/WebGAL/issues) or [WebGAL Terre issues](https://github.com/MakinoharaShoko/WebGAL_Terre/issues) to check.
+WebGAL's development plan is basically tracked by issues, please visit [WebGAL issues](https://github.com/OpenWebGAL/WebGAL/issues) or [WebGAL Terre issues](https://github.com/OpenWebGAL/WebGAL_Terre/issues) to check.
 
 ## Feature Requests & Bug Reports
 
@@ -22,4 +22,4 @@ The specific code with the problem is like this:
 Show the specific code or screenshot of editor edit page where the fault occurs here
 ```
 
-If you find a BUG that needs to be reported, please create an issue at [WebGAL issues](https://github.com/MakinoharaShoko/WebGAL/issues) or [WebGAL Terre issues](https://github.com/MakinoharaShoko/WebGAL_Terre/issues) or send an email to contact@openwebgal.com.
+If you find a BUG that needs to be reported, please create an issue at [WebGAL issues](https://github.com/OpenWebGAL/WebGAL/issues) or [WebGAL Terre issues](https://github.com/OpenWebGAL/WebGAL_Terre/issues) or send an email to contact@openwebgal.com.

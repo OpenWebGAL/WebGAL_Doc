@@ -2,7 +2,7 @@
 
 ## 新機能予告
 
-WebGAL の開発予定は基本的に issues で管理していますので、[WebGAL issues](https://github.com/MakinoharaShoko/WebGAL/issues) または [WebGAL Terre issues](https://github.com/MakinoharaShoko/WebGAL_Terre/issues) をご覧下さい。
+WebGAL の開発予定は基本的に issues で管理していますので、[WebGAL issues](https://github.com/OpenWebGAL/WebGAL/issues) または [WebGAL Terre issues](https://github.com/OpenWebGAL/WebGAL_Terre/issues) をご覧下さい。
 
 ## 機能リクエストと不具合報告
 
@@ -22,4 +22,4 @@ WebGAL エンジン本体およびエディタの新機能リクエストや不�
 不具合が発生した具体的なコードまたはエディタの編集画面のスクリーンショットを掲載
 ```
 
-不具合の報告は [WebGAL issues](https://github.com/MakinoharaShoko/WebGAL/issues) または [WebGAL Terre issues](https://github.com/MakinoharaShoko/WebGAL_Terre/issues) にて Issue を立てていただくか、contact@openwebgal.com までメールにてご連絡ください。
+不具合の報告は [WebGAL issues](https://github.com/OpenWebGAL/WebGAL/issues) または [WebGAL Terre issues](https://github.com/OpenWebGAL/WebGAL_Terre/issues) にて Issue を立てていただくか、contact@openwebgal.com までメールにてご連絡ください。

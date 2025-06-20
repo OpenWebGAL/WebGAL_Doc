@@ -2,7 +2,7 @@
 
 ## WebGAL Source Code Repository
 
-[https://github.com/MakinoharaShoko/WebGAL](https://github.com/MakinoharaShoko/WebGAL)
+[https://github.com/OpenWebGAL/WebGAL](https://github.com/OpenWebGAL/WebGAL)
 
 ## Branch Description
 

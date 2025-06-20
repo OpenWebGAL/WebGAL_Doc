@@ -11,7 +11,7 @@
 
 ## 通过 Pull Requests 提交您的游戏
 
-Fork [WebGAL_HomePage](https://github.com/MakinoharaShoko/WebGAL_HomePage) 这个仓库。
+Fork [WebGAL_HomePage](https://github.com/OpenWebGAL/WebGAL_HomePage) 这个仓库。
 
 将准备好的封面添加到 `/public/images/games`。
 
@@ -32,7 +32,7 @@ Fork [WebGAL_HomePage](https://github.com/MakinoharaShoko/WebGAL_HomePage) 这�
 
 ## 通过 Issues 提交您的游戏
 
-打开 WebGAL_HomePage 仓库的 [Issues 页面](https://github.com/MakinoharaShoko/WebGAL_HomePage/issues) 。
+打开 WebGAL_HomePage 仓库的 [Issues 页面](https://github.com/OpenWebGAL/WebGAL_HomePage/issues) 。
 
 点击 `New issue` ，填入准备好的信息，确认无误后点击 `Submit new issue` 。
 

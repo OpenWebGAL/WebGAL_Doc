@@ -56,4 +56,4 @@
 
 ## スターゲイザーの推移
 
-[![Stargazers over time](https://starchart.cc/MakinoharaShoko/WebGAL.svg)](https://starchart.cc/MakinoharaShoko/WebGAL)
+[![Stargazers over time](https://starchart.cc/OpenWebGAL/WebGAL.svg)](https://starchart.cc/OpenWebGAL/WebGAL)

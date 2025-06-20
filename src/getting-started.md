@@ -3,7 +3,7 @@
 ::: warning
 无论你使用何种方式制作 WebGAL 游戏，你都应该花一点时间将开发指引的全部内容阅读一遍。这不需要多长时间，并且将有利于你避开一些因操作不当导致的问题。
 
-你知道吗，大多数你感到疑惑的问题都可以在文档中找到答案。如果你坚信你遇到了 Bug，请在 [issues](https://github.com/MakinoharaShoko/WebGAL/issues) 提出问题或者发送电子邮件联系 <contact@openwebgal.com>，你也可以在网站的右上角的“更多”一栏找到加入 WebGAL 讨论社区的方法。
+你知道吗，大多数你感到疑惑的问题都可以在文档中找到答案。如果你坚信你遇到了 Bug，请在 [issues](https://github.com/OpenWebGAL/WebGAL/issues) 提出问题或者发送电子邮件联系 <contact@openwebgal.com>，你也可以在网站的右上角的“更多”一栏找到加入 WebGAL 讨论社区的方法。
 :::
 
 ::: danger
@@ -20,7 +20,7 @@
 
 [WebGAL 主页（推荐）](https://openwebgal.com/zh-cn/download/)
 
-[GitHub Releases](https://github.com/MakinoharaShoko/WebGAL_Terre/releases)
+[GitHub Releases](https://github.com/OpenWebGAL/WebGAL_Terre/releases)
 
 ::: tip
 WebGAL Terre 可视化编辑器默认 **不支持 Windows 7**。
@@ -30,7 +30,7 @@ Windows 7 用户请参考 **[Windows 7 使用可视化编辑器开始制作的�
 ## 方法2：从源代码开始调试（适用于想要更高自定义程度的制作者）
 
 ``` shell
-git clone https://github.com/MakinoharaShoko/WebGAL.git
+git clone https://github.com/OpenWebGAL/WebGAL.git
 ```
 
 安装并使用 yarn 安装依赖

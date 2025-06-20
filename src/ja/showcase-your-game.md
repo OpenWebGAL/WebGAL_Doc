@@ -11,7 +11,7 @@
 
 ## プルリクエストであなたのゲームを提出する
 
-[WebGAL_HomePage](https://github.com/MakinoharaShoko/WebGAL_HomePage) リポジトリをフォークします。
+[WebGAL_HomePage](https://github.com/OpenWebGAL/WebGAL_HomePage) リポジトリをフォークします。
 
 準備したカバー画像を `/public/images/games` に追加します。
 
@@ -32,7 +32,7 @@
 
 ## イシューであなたのゲームを提出する
 
-WebGAL_HomePage リポジトリの [イシューページ](https://github.com/MakinoharaShoko/WebGAL_HomePage/issues) を開きます。
+WebGAL_HomePage リポジトリの [イシューページ](https://github.com/OpenWebGAL/WebGAL_HomePage/issues) を開きます。
 
 `New issue` をクリックし、準備した情報を入力します。間違いがないことを確認したら、`Submit new issue` をクリックします。
 

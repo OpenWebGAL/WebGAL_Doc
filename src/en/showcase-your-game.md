@@ -11,7 +11,7 @@ First, you need to prepare the following information:
 
 ## Submit Your Game via Pull Requests
 
-Fork the [WebGAL_HomePage](https://github.com/MakinoharaShoko/WebGAL_HomePage) repository.
+Fork the [WebGAL_HomePage](https://github.com/OpenWebGAL/WebGAL_HomePage) repository.
 
 Add your prepared cover to `/public/images/games`.
 
@@ -32,7 +32,7 @@ After confirming that there are no errors, initiate a pull request.
 
 ## Submit Your Game via Issues
 
-Open the [Issues page](https://github.com/MakinoharaShoko/WebGAL_HomePage/issues) of the WebGAL_HomePage repository.
+Open the [Issues page](https://github.com/OpenWebGAL/WebGAL_HomePage/issues) of the WebGAL_HomePage repository.
 
 Click `New issue`, fill in the prepared information, and click `Submit new issue` after confirming that there are no errors.
 

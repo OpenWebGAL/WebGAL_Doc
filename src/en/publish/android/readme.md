@@ -15,7 +15,7 @@ If you build the project using source code, please switch to the source code tab
 @tab Source code
 
 * Download and install [Android Studio](https://developer.android.com/studio)
-* Compile [WebGAL](https://github.com/MakinoharaShoko/WebGAL) to Web page
+* Compile [WebGAL](https://github.com/OpenWebGAL/WebGAL) to Web page
 * Download [WebGAL Android project template](https://github.com/nini22P/WebGAL-Android)
 
 :::

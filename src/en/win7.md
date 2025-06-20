@@ -92,10 +92,10 @@ If your computer has installed a version of node lower than 14, please switch to
 
 ### Get the source code
 
-Clone the [WebGAL_Terre](https://github.com/MakinoharaShoko/WebGAL_Terre) repository.
+Clone the [WebGAL_Terre](https://github.com/OpenWebGAL/WebGAL_Terre) repository.
 
 ``` shell
-git clone https://github.com/MakinoharaShoko/WebGAL_Terre.git
+git clone https://github.com/OpenWebGAL/WebGAL_Terre.git
 ```
 
 ### Package manager (optional)

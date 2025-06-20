@@ -2,7 +2,7 @@
 
 ## WebGAL 源代码仓库的地址
 
-[https://github.com/MakinoharaShoko/WebGAL](https://github.com/MakinoharaShoko/WebGAL)
+[https://github.com/OpenWebGAL/WebGAL](https://github.com/OpenWebGAL/WebGAL)
 
 ## 分支说明
 

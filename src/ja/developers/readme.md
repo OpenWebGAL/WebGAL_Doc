@@ -2,7 +2,7 @@
 
 ## WebGAL ソースコードリポジトリ
 
-[https://github.com/MakinoharaShoko/WebGAL](https://github.com/MakinoharaShoko/WebGAL)
+[https://github.com/OpenWebGAL/WebGAL](https://github.com/OpenWebGAL/WebGAL)
 
 ## ブランチの説明
 

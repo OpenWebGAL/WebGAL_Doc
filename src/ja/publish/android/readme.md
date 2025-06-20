@@ -15,7 +15,7 @@ WebGAL Terre 可視化編輯器をお勧めします。一键でアンドロイ�
 @tab ソースコード
 
 * [Android Studio](https://developer.android.com/studio)をダウンロードしてインストールします。
-* [WebGAL](https://github.com/MakinoharaShoko/WebGAL)をWebウェブにコンパイルします。
+* [WebGAL](https://github.com/OpenWebGAL/WebGAL)をWebウェブにコンパイルします。
 * [WebGAL Android プロジェクトテンプレート](https://github.com/nini22P/WebGAL-Android)をダウンロードします。
 
 :::

@@ -3,7 +3,7 @@
 ::: warning
 WebGALゲームを作る方法に関係なく、開発ガイドのすべてを一度読んでおくべきです。そう長くはかかりませんし、操作ミスによる問題を避けるのに役立ちます。
 
-ご存知ですか？疑問に思うことのほとんどはドキュメントで答えが見つかります。バグに遭遇したと確信する場合は、[issues](https://github.com/MakinoharaShoko/WebGAL/issues)で問題を報告するか、<contact@openwebgal.com>にメールを送信してください。また、WebGALディスカッションコミュニティに参加する方法については、Webサイトの右上にある「その他」セクションを参照してください。
+ご存知ですか？疑問に思うことのほとんどはドキュメントで答えが見つかります。バグに遭遇したと確信する場合は、[issues](https://github.com/OpenWebGAL/WebGAL/issues)で問題を報告するか、<contact@openwebgal.com>にメールを送信してください。また、WebGALディスカッションコミュニティに参加する方法については、Webサイトの右上にある「その他」セクションを参照してください。
 :::
 
 ::: danger
@@ -20,7 +20,7 @@ WebGAL Terreビジュアルエディターをダウンロードする：
 
 [WebGALホームページ（推奨）](https://openwebgal.com/zh-cn/download/)
 
-[GitHubリリース](https://github.com/MakinoharaShoko/WebGAL_Terre/releases)
+[GitHubリリース](https://github.com/OpenWebGAL/WebGAL_Terre/releases)
 
 ::: tip
 WebGAL Terreビジュアルエディターはデフォルトで**Windows 7をサポートしません**。
@@ -30,7 +30,7 @@ Windows 7ユーザーは**[Windows 7でビジュアルエディターを使用�
 ## 方法2：ソースコードからデバッグを開始する（より高いカスタマイズの程度を望む制作者向け）
 
 ``` shell
-git clone https://github.com/MakinoharaShoko/WebGAL.git
+git clone https://github.com/OpenWebGAL/WebGAL.git
 ```
 
 yarnをインストールして依存関係をインストールします

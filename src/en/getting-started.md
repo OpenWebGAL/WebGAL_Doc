@@ -3,7 +3,7 @@
 ::: warning
 No matter which way you choose to make a WebGAL game, you should spend some time reading through the entirety of the development guide. It won't take long, and it will save you from running into problems due to improper operation.
 
-You know, most of the questions you are wondering about can be found in the documentation. If you firmly believe that you have encountered a bug, please raise an issue at [issues](https://github.com/MakinoharaShoko/WebGAL/issues) or send an email to <contact@openwebgal.com>, you can also find a way to join the WebGAL discussion community in the "More" column at the top right corner of the website.
+You know, most of the questions you are wondering about can be found in the documentation. If you firmly believe that you have encountered a bug, please raise an issue at [issues](https://github.com/OpenWebGAL/WebGAL/issues) or send an email to <contact@openwebgal.com>, you can also find a way to join the WebGAL discussion community in the "More" column at the top right corner of the website.
 :::
 
 ::: danger
@@ -20,7 +20,7 @@ Download WebGAL Terre Visual Editor:
 
 [WebGAL Homepage (Recommended)](https://openwebgal.com/en/download/)
 
-[GitHub Releases](https://github.com/MakinoharaShoko/WebGAL_Terre/releases)
+[GitHub Releases](https://github.com/OpenWebGAL/WebGAL_Terre/releases)
 
 ::: tip
 WebGAL Terre Visual Editor does not support Windows 7 by default.
@@ -30,7 +30,7 @@ Windows 7 users please refer to **[How to start making with Visual Editor on Win
 ## Method 2: Start debugging from source code (For makers who want higher customization)
 
 ``` shell
-git clone https://github.com/MakinoharaShoko/WebGAL.git
+git clone https://github.com/OpenWebGAL/WebGAL.git
 ```
 
 Install and use yarn to install dependencies
