@@ -88,6 +88,13 @@ setAnimation:enter-from-bottom -target=fig-center -next;
 | position | 位置オフセット |
 | rotation | 回転角度、単位はラジアン |
 | blur | ガウスぼかしの半径 |
+| brightness  | 輝度                        |
+| contrast    | コントラスト比                       |
+| saturation  | 彩度                     |
+| gamma       | ガンマ                      |
+| colorRed    | 赤の量, 範囲は 0-255          |
+| colorGreen  | 緑の量, 範囲は 0-255          |
+| colorBlue   | 青の量, 範囲は 0-255          |
 | duration | このタイムスライスの持続時間、単位はミリ秒 (ms) |
 | oldFilm | オールドフィルム効果、0 はオフ、1 はオン |
 | dotFilm | ドット状のフィルム効果、0 はオフ、1 はオン |
