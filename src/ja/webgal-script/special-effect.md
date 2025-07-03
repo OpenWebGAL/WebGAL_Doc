@@ -26,7 +26,7 @@ pixiInit;
 pixiPerform:rain; // 雨のエフェクトを追加する
 ```
 
-注意：エフェクトを適用した後、初期化しないと、エフェクトは常に実行されます。
+注意：エフェクトを適用した後、再度初期化しないと、エフェクトは常に実行されます。
 
 ### プリセットエフェクト一覧
 
@@ -34,6 +34,7 @@ pixiPerform:rain; // 雨のエフェクトを追加する
 | :--- | :-------------------------- |
 | 雨 | pixiPerform:rain;           |
 | 雪 | pixiPerform:snow;           |
+| 大雪 | pixiPerform:heavySnow;    |
 | 桜 | pixiPerform:cherryBlossoms; |
 
 ### エフェクトを重ねる
@@ -53,9 +54,11 @@ pixiPerform:snow;
 
 ソースコードをダウンロードして `/Core/gameScripts/pixiPerformScripts/` に移動し、必要なエフェクトを作成するために `PIXI.Container` を新規作成します。
 
+エフェクトコンテナは前景コンテナと背景コンテナに分割され、ここでは前景コンテナを例としています。
+
 ``` ts
 // 現在の Pixi エフェクト Container を取得する
-const effectsContainer = RUNTIME_GAMEPLAY.pixiStage!.effectsContainer!;
+const effectsContainer = WebGAL.gameplay.pixiStage!.foregroundEffectsContainer!;
 // Pixi App の呼び出し方法で、画面のサイズなどを決定するのに役立ちます
 const app = RUNTIME_GAMEPLAY.pixiStage!.currentApp!;
 // カスタムエフェクトのコンテナを作成する
@@ -79,7 +82,7 @@ function myPerform() {
 }
 
 // 登録する
-registerPerform('myPerform', () => myPerform(パラメータ));
+registerPerform('myPerform', { fg: () => myPerform(パラメータ) });
 ```
 
 最後に、カスタムエフェクトをサポートする WebGAL をコンパイルします。
@@ -91,5 +94,5 @@ yarn run build;
 これで、スクリプトでエフェクトを呼び出すことができます。
 
 ``` ws
-pixiPerform:新しいエフェクト;
+pixiPerform:myPerform;
 ```

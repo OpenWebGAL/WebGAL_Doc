@@ -26,7 +26,7 @@ Add effects using `pixiPerform`.
 pixiPerform:rain; // Add a rain effect
 ```
 
-Note: After the effect takes effect, if it is not initialized, the effect will continue to run.
+Note: After the effect takes effect, if it is not re initialized, the effect will continue to run.
 
 ### List of Built-in Effects
 
@@ -34,6 +34,7 @@ Note: After the effect takes effect, if it is not initialized, the effect will c
 | :--- | :--- |
 | Rain | pixiPerform:rain; |
 | Snow | pixiPerform:snow; |
+| Heavy Snow | pixiPerform:heavySnow; |
 | Cherry Blossoms | pixiPerform:cherryBlossoms; |
 
 ### Superimpose Effects
@@ -53,9 +54,11 @@ Initialize using `pixiInit` to clear all effects that have been applied.
 
 You can download the source code, then find `/Core/gameScripts/pixiPerformScripts/` and create a new `PIXI.Container` to create the effects you need.
 
+The effects container is divided into a foreground container and a background container, and the foreground container is used here as an example.
+
 ``` ts
 // Get the current Pixi effect Container
-const effectsContainer = RUNTIME_GAMEPLAY.pixiStage!.effectsContainer!;
+const effectsContainer = WebGAL.gameplay.pixiStage!.foregroundEffectsContainer!;
 // Call the Pixi App method, which may be useful for determining screen size, etc.
 const app = RUNTIME_GAMEPLAY.pixiStage!.currentApp!;
 // Create a container for custom effects
@@ -79,7 +82,7 @@ function myPerform() {
 }
 
 // Register
-registerPerform('myPerform', () => myPerform(parameters));
+registerPerform('myPerform', { fg: () => myPerform(parameters) });
 ```
 
 Finally, compile WebGAL with support for your custom effects
@@ -91,5 +94,5 @@ yarn run build;
 This way, you can call your effects in the script
 
 ``` ws
-pixiPerform:your new effect;
+pixiPerform:myPerform;
 ```
