@@ -79,6 +79,131 @@ changeFigure:exampleSpine/data.json?type=spine;
 
 6. 本番用パッケージをビルドする場合、またはWebGAL Terreで使用する場合は、`yarn build`コマンドを実行してWebGALをビルドします。完了したら、[カスタムエンジンの使用方法](derivative) を参照して、変更後のエンジンを使用してください。
 
+## Spineアニメーション使用ガイド
+
+上記のライセンス要件と技術統合を完了した後、以下の説明に従ってWebGALでSpineアニメーション機能を使用できます。
+
+### ファイル形式
+
+Spineアニメーションには通常、以下のファイルが含まれます：
+- `.skel` - 骨格データファイル（バイナリ形式）
+- `.json` - 骨格データファイル（JSON形式）
+- `.atlas` - テクスチャアトラス記述ファイル
+- `.png` - テクスチャ画像ファイル
+
+### 基本的な使用方法
+
+#### Spine立ち絵の設定
+
+`.skel`ファイル拡張子または`type=spine`パラメータを使用してSpineアニメーションを指定します：
+
+``` ws
+changeFigure:character.skel;
+changeFigure:character.json?type=spine;
+```
+
+#### Spine背景の設定
+
+同様に、Spineアニメーションを背景として使用できます：
+
+``` ws
+changeBg:background.skel;
+changeBg:background.json?type=spine;
+```
+
+#### 立ち絵位置の設定
+
+Spine立ち絵は、通常の立ち絵と同じプリセット位置をサポートします：
+
+``` ws
+changeFigure:character.skel -left;
+changeFigure:character.skel -right;
+changeFigure:character.skel; // デフォルトは中央位置
+```
+
+### アニメーション制御
+
+#### アクションの切り替え
+
+Live2Dと同様に、`-motion`パラメータを使用してSpineアニメーションを切り替えることができます：
+
+``` ws
+changeFigure:character.skel -motion=idle;
+changeFigure:character.skel -motion=walk -left;
+```
+
+#### カスタムIDのSpine立ち絵
+
+Spine立ち絵にカスタムIDを指定し、`-motion`パラメータを使用してアニメーションを制御できます：
+
+``` ws
+changeFigure:character.skel -id=mainCharacter -left;
+changeFigure:character.skel -id=mainCharacter -motion=happy;
+```
+
+### アニメーションの動作
+
+- Spineアニメーションの読み込み時に、最初に利用可能なアニメーションが自動的に再生されます
+- ステートで特定のアニメーションが指定されている場合、指定されたアニメーションが優先的に再生されます
+- Spineアニメーションは画面サイズに合わせて自動的にスケーリングされます
+
+### 使用例
+
+``` ws
+; 主人公の立ち絵を設定
+changeFigure:mainCharacter.skel -id=hero -center;
+
+; 歩行アニメーションを再生
+changeFigure:hero.skel -motion=walk -id=hero;
+
+; 脇役の立ち絵を設定
+changeFigure:sidekick.skel -left;
+
+; 動的背景を設定
+changeBg:forest.skel;
+```
+
+### 他機能との組み合わせ使用
+
+Spineアニメーションは他のWebGAL機能と組み合わせて使用できます：
+
+``` ws
+; 音声再生と組み合わせ
+キャラクター名:こんにちは！ -V1.ogg -figureId=hero;
+changeFigure:character.skel -id=hero -motion=speaking;
+
+; シーン切り替えと組み合わせ
+changeFigure:character.skel -id=hero;
+changeFigure:character.skel -id=hero -motion=idle;
+changeScene:next_scene.txt;
+```
+
+### パフォーマンス考慮
+
+1. **メモリ使用量**：Spineアニメーションは静的画像よりも多くのメモリを使用します
+2. **読み込み時間**：初回読み込みに時間がかかる場合があります
+3. **互換性**：ブラウザのWebGLサポートが必要です
+
+### トラブルシューティング
+
+#### よくある問題
+
+1. **アニメーションが再生されない**：アニメーション名がSpineファイルで定義された名前と一致しているか確認してください
+2. **ファイルの読み込みに失敗**：`.skel`、`.atlas`、テクスチャファイルがすべて同じディレクトリにあることを確認してください
+3. **表示異常**：Spineバージョンの互換性を確認してください
+
+#### デバッグのヒント
+
+- ブラウザの開発者ツールを使用してコンソールログを確認する
+- ネットワークパネルでファイルが正しく読み込まれているかを確認する
+- Spineファイルのエクスポート設定が正しいことを確認する
+
+### 注意事項
+
+- アニメーション名はSpineファイルで定義されたアニメーション名と一致している必要があります
+- 立ち絵は縦横比を保持し、画面に合わせてスケーリングされます
+- 背景は画面全体を埋めるように伸縮またはスケーリングされます
+- すべてのSpineライセンス要件を遵守してください
 
 ### 重要な注意点
 

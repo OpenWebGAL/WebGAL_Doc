@@ -86,6 +86,83 @@ unlockCg:xgmain.jpeg -name="Starlight Cafe and the Butterfly of Death" -series=1
 
 Among them, the `-series` parameter is optional, which represents which series the current figure belongs to. Figures of the same series will be merged and displayed later (ie, displayed as switchable CGs of the same series).
 
+## Advanced Background Switching Features
+
+### Unlock Background CG
+
+The `changeBg` command also supports CG unlock functionality, allowing you to unlock CGs while switching backgrounds:
+
+``` ws
+changeBg:cg_scene1.jpg -unlockname="Chapter 1 Scene" -series="Main Story CG";
+```
+
+### Background Transform Effects
+
+You can set transform effects for background switching:
+
+``` ws
+changeBg:bg_night.jpg -transform={"position":{"x":-100,"y":0},"scale":{"x":1.2,"y":1.2}} -duration=3000;
+```
+
+### Preset Animation Effects
+
+You can use preset enter and exit animations:
+
+``` ws
+changeBg:bg_morning.jpg -enter=fadeIn -exit=fadeOut;
+```
+
+## Advanced Figure Features
+
+### Live2D Support
+
+WebGAL supports Live2D figures, allowing you to control motions and expressions:
+
+``` ws
+changeFigure:live2d/model.json -motion=idle -expression=happy;
+```
+
+### Figure Mouth and Eye Animation
+
+You can set mouth and eye animation materials for figures:
+
+``` ws
+changeFigure:char.png -mouthOpen=mouth_open.png -mouthClose=mouth_close.png -eyesOpen=eyes_open.png -eyesClose=eyes_close.png;
+```
+
+### Figure Layer Control
+
+You can control the layer order of figures using the `zIndex` parameter:
+
+``` ws
+changeFigure:foreground_char.png -zIndex=100;
+changeFigure:background_char.png -zIndex=1;
+```
+
+### Different Ways to Clear Figures
+
+Besides using `none`, you can also use the `clear` parameter to clear figures:
+
+``` ws
+changeFigure:any -left -clear;
+```
+
+### Live2D Boundary Settings
+
+For Live2D models, you can set display boundaries:
+
+``` ws
+changeFigure:live2d/model.json -bounds=0,0,800,600;
+```
+
+### Figure Animation Effects
+
+You can set animation effects for figures:
+
+``` ws
+changeFigure:char.png -duration=2000 -ease=easeInOut;
+```
+
 ## Set Effects When Setting Figures
 
 For a description of the effect fields, please refer to [Animation](animation.md)

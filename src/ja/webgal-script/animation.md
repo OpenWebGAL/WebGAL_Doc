@@ -9,6 +9,8 @@
 ``` ws
 ; // 中央の立ち絵に下から入ってくるアニメーションを設定し、次の行に移動します
 setAnimation:enter-from-bottom -target=fig-center -next;
+; // 継続的にアニメーションを再生する
+setAnimation:shake -target=bg-main -keep;
 ```
 
 現在、プリセットされたアニメーションは以下の通りです。
@@ -19,7 +21,7 @@ setAnimation:enter-from-bottom -target=fig-center -next;
 | フェードアウト | exit | 300 |
 | 左右に一度揺れる | shake | 1000 |
 | 下側から入ってくる | enter-from-bottom | 500 |
-| 左側から入ってくる | enter-from-right | 500 |
+| 左側から入ってくる | enter-from-left | 500 |
 | 右側から入ってくる | enter-from-right | 500 |
 | 前後に一度移動する | move-front-and-back | 1000 |
 
@@ -89,6 +91,26 @@ setAnimation:enter-from-bottom -target=fig-center -next;
 | rotation | 回転角度、単位はラジアン |
 | blur | ガウスぼかしの半径 |
 | duration | このタイムスライスの持続時間、単位はミリ秒 (ms) |
+| brightness | 明度調整 |
+| contrast | コントラスト調整 |
+| saturation | 彩度調整 |
+| gamma | ガンマ値調整 |
+| colorRed | 赤色チャンネル調整（0-255） |
+| colorGreen | 緑色チャンネル調整（0-255） |
+| colorBlue | 青色チャンネル調整（0-255） |
+| bevel | ベベル効果の強度 |
+| bevelThickness | ベベルの厚さ |
+| bevelRotation | ベベルの回転 |
+| bevelSoftness | ベベルの柔らかさ |
+| bevelRed | ベベルの赤色チャンネル（0-255） |
+| bevelGreen | ベベルの緑色チャンネル（0-255） |
+| bevelBlue | ベベルの青色チャンネル（0-255） |
+| bloom | 発光効果 |
+| bloomBrightness | 発光の明度 |
+| bloomBlur | 発光のぼかし |
+| bloomThreshold | 発光の閾値 |
+| shockwaveFilter | 衝撃波効果 |
+| radiusAlphaFilter | 放射状透明度 |
 | oldFilm | オールドフィルム効果、0 はオフ、1 はオン |
 | dotFilm | ドット状のフィルム効果、0 はオフ、1 はオン |
 | reflectionFilm | 反射フィルム効果、0 はオフ、1 はオン |
@@ -162,5 +184,58 @@ setTransition: -target=fig-center -enter=enter-from-bottom -exit=exit;
 
 立ち絵や背景を設定した後、すぐに登場・退場エフェクトを設定するステートメントを実行すると、デフォルトの登場・退場アニメーションを上書きして、登場・退場エフェクトをカスタマイズすることができます。設定しない場合は、登場・退場時にデフォルトのアニメーションが実行されます。
 
-立ち絵や背景を設定した後、すぐに登場・退場エフェクトを設定せずに、画像がすでに登場してから登場アニメーションを上書きしても意味がありません。しかし、この時点で画像がまだ登場していない場合は、設定した登場アニメーションに意味があります。立ち絵や背景が登場する際に正しく適用されます。
+立ち絵や背景を設定した後、すぐに登場・退場エフェクトを設定せずに、画像がすでに登場してから登場アニメーションを上書きしても意味がありません。しかし、この時点で画像がまだ退場していない場合は、設定した退場アニメーションに意味があります。立ち絵や背景が退場する際に正しく適用されます。
 :::
+
+## 高度なアニメーション機能
+
+### 一時的なアニメーション (setTempAnimation)
+
+JSON形式でアニメーション効果を定義して、一時的なカスタムアニメーションを作成・実行します：
+
+``` ws
+setTempAnimation:[{"alpha":0,"duration":0},{"alpha":1,"duration":300}] -target=fig-center;
+```
+
+### 変換アニメーション (setTransform)
+
+現在の状態から目標状態への変換アニメーションを作成します：
+
+``` ws
+setTransform:{"position":{"x":100,"y":0},"scale":{"x":1.2,"y":1.2}} -duration=1000 -ease=easeInOut -target=fig-center;
+```
+
+サポートされるパラメータ：
+- `duration` - アニメーションの持続時間（ミリ秒）
+- `ease` - イージング関数名（easeInOut、easeIn、easeOut など）
+- `target` - 作用対象
+- `keep` - 最終状態を維持するかどうか
+
+### 複雑なアニメーション (setComplexAnimation)
+
+事前に登録された複雑なアニメーション関数を実行します：
+
+``` ws
+setComplexAnimation:customEffect -duration=2000 -target=bg-main;
+```
+
+### アニメーションパラメータの説明
+
+#### 共通パラメータ
+- `target` - 作用対象（fig-left、fig-center、fig-right、bg-main または カスタム ID）
+- `writeDefault` - デフォルト値を書き込むかどうか（オプション、デフォルト false）
+- `keep` - アニメーションを継続するか最終状態を維持するかどうか（オプション、デフォルト false）
+
+#### イージング関数
+WebGALは複数のイージング関数をサポートしています：
+- `easeIn` - ゆっくり開始
+- `easeOut` - ゆっくり終了
+- `easeInOut` - ゆっくり開始・終了
+- その他多くのイージング関数
+
+### アニメーションのベストプラクティス
+
+1. **パフォーマンスの考慮**：同時に実行する複雑なアニメーションが多すぎないよう注意
+2. **ユーザーエクスペリエンス**：アニメーションがテキストの読み取りを妨げないよう確認
+3. **組み合わせ使用**：異なるタイプのアニメーションを適切に組み合わせて、より豊かな効果を作成
+4. **デバッグのコツ**：テスト時には短い持続時間を使用し、効果を確認した後に調整

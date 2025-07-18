@@ -26,10 +26,19 @@ bgm:夏影.mp3 -enter=3000;
 bgm:none -enter=3000;
 ```
 
+### 解锁BGM功能
+
+在播放BGM的同时，也可以解锁BGM到鉴赏模式：
+
+``` ws
+bgm:夏影.mp3 -unlockname=夏之影 -series=season;
+```
+
 ::: tip
 `-volume` 和 `-enter` 都是可选参数。
 `-volume` 未使用时，或使用了 0 ~ 100 以外的值时，将使用默认值 100。
 `-enter`  未使用时，或使用了 0 ~ 以外的值时，将使用默认值 0。
+`-unlockname` 和 `-series` 参数用于解锁BGM到鉴赏模式。
 :::
 
 ## 播放语音
@@ -53,9 +62,20 @@ bgm:none -enter=3000;
 比企谷八幡:刚到而已 -V3.ogg -volume=30;
 ```
 
+### 语音与立绘动画联动
+
+语音播放时可以与立绘动画联动，实现口型和眨眼动画：
+
+``` ws
+角色名:这段对话有语音 -V1.ogg -left; // 关联左侧立绘
+角色名:这段对话有语音 -V2.ogg -figureId=char1; // 关联指定ID的立绘
+```
+
 ::: tip
 `-volume` 是可选参数。
 `-volume` 未设置时，或使用了 0 ~ 100 以外的值时，将使用默认值 100。
+`-left`、`-right`、`-center` 参数用于指定语音关联的立绘位置。
+`-figureId` 参数用于指定特定的立绘ID。
 :::
 
 ## 播放效果音
@@ -93,4 +113,7 @@ playEffect:none -id=xxx; // 停止这个循环的效果音
 ``` ws
 ; // 解锁bgm并赋予名称
 unlockBgm:s_Title.mp3 -name=Smiling-Swinging!!!;
+unlockBgm:s_Title.mp3 -name=主题曲 -series=OP;
 ```
+
+`-series` 参数用于设置音频的所属系列，便于在鉴赏模式中分类管理。
