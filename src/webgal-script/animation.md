@@ -88,6 +88,13 @@ setAnimation:enter-from-bottom -target=fig-center -next;
 | position | 位置偏移                           |
 | rotation | 旋转角度，单位为弧度                |
 | blur     | 高斯模糊半径                        |
+| brightness  | 调节亮度                        |
+| contrast    | 调节对比度                       |
+| saturation  | 调节饱和度                      |
+| gamma       | 调节伽马值                      |
+| colorRed    | 颜色分量:红色, 范围0-255          |
+| colorGreen  | 颜色分量:绿色, 范围0-255          |
+| colorBlue   | 颜色分量:蓝色, 范围0-255          |
 | duration | 这个时间片的持续时间，单位为毫秒(ms) |
 | oldFilm         | 老电影效果，0代表关闭，1代表开启       |
 | dotFilm         | 点状电影效果，0代表关闭，1代表开启     |

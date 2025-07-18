@@ -88,6 +88,13 @@ The following table explains each property:
 | position | Position offset                           |
 | rotation | Rotation angle, in radians                |
 | blur     | Gaussian blur radius                        |
+| brightness  | Amount of brightness                        |
+| contrast    | Amount of contrast                       |
+| saturation  | Amount of saturation                     |
+| gamma       | Amount of gamma                      |
+| colorRed    | Amount of red color, range 0-255          |
+| colorGreen  | Amount of green color, range 0-255          |
+| colorBlue   | Amount of blue color, range 0-255          |
 | duration | Duration of this time slice, in milliseconds (ms) |
 | oldFilm         | Old film effect, 0 to disable, 1 to enable       |
 | dotFilm         | Dot film effect, 0 to disable, 1 to enable     |
