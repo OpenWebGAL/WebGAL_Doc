@@ -24,11 +24,19 @@ If you wish to contribute to the WebGAL Terre visual editor, please refer to the
 
 To help us better understand and review your contribution, please note the following:
 
+**Pre-Pull Request Preparation:**
+
+* **Submit an Issue First:** **Before starting any development work, please submit an Issue to discuss your ideas and design proposal**. This helps avoid duplicate work, ensures your contribution aligns with the project direction, and prevents PRs from being unable to merge due to design issues.
+
+* **RFC (Request for Comments):** For major changes or new features, we recommend submitting an RFC or detailed design proposal first to discuss the feasibility of the technical approach with maintainers and community members.
+
+**Code Quality Requirements:**
+
 * **Code Comments:** To help us understand your code logic, we recommend adding comments to key sections.
 
 * **Functional Testing:** If you add or modify functionality, please provide corresponding test methods to ensure the functionality works as expected. If you refactor code, please also provide test methods to cover the affected areas and ensure the refactoring does not introduce new issues.
 
-* **Clear Explanation:** When submitting a Pull Request, please briefly describe the changes you made and the reasons behind them. This will help us understand your contribution more quickly.
+* **Clear Explanation:** When submitting a Pull Request, please briefly describe the changes you made and the reasons behind them, and reference the related Issue. This will help us understand your contribution more quickly.
 
 ### Starting the WebGAL Project Locally
 
