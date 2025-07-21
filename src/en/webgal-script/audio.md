@@ -26,10 +26,19 @@ Finally, you can use the following statement to fade out the background music.
 bgm:none -enter=3000;
 ```
 
+### BGM Unlock Feature
+
+While playing BGM, you can also unlock BGM to appreciation mode:
+
+``` ws
+bgm:Summer_Shadow.mp3 -unlockname=Summer Shadow -series=season;
+```
+
 ::: tip
 `-volume` and `-enter` are both optional parameters.
 When `-volume` is not used, or a value other than 0 to 100 is used, the default value of 100 will be used.
 When `-enter` is not used, or a value other than 0 to is used, the default value of 0 will be used.
+`-unlockname` and `-series` parameters are used to unlock BGM to appreciation mode.
 :::
 
 ## Playing Voice
@@ -53,9 +62,20 @@ At the same time, you can set a `-volume` parameter to adjust its volume.
 Hachiman Hikigaya:Just arrived -V3.ogg -volume=30;
 ```
 
+### Voice and Character Animation Integration
+
+Voice playback can be integrated with character animation to achieve lip-sync and blinking animations:
+
+``` ws
+Character Name:This dialogue has voice -V1.ogg -left; // Associated with left character
+Character Name:This dialogue has voice -V2.ogg -figureId=char1; // Associated with specific ID character
+```
+
 ::: tip
 `-volume` is an optional parameter.
 When `-volume` is not set, or a value other than 0 to 100 is used, the default value of 100 will be used.
+`-left`, `-right`, `-center` parameters are used to specify the character position associated with the voice.
+`-figureId` parameter is used to specify a specific character ID.
 :::
 
 ## Playing Sound Effects
@@ -93,4 +113,7 @@ Use `unlockBgm` to unlock the audio in the audio appreciation.
 ``` ws
 ; // Unlock bgm and give it a name
 unlockBgm:s_Title.mp3 -name=Smiling-Swinging!!!;
+unlockBgm:s_Title.mp3 -name=Theme Song -series=OP;
 ```
+
+The `-series` parameter is used to set the audio's series category, making it easier to manage classifications in appreciation mode.

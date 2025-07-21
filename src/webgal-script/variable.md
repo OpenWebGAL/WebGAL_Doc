@@ -10,8 +10,9 @@
 
 ``` ws
 setVar:a=1; // 可以设置数字
-setVar:a=true // 可以设置布尔值
-setVar:a=人物名称 // 可以设置字符串
+setVar:a=true; // 可以设置布尔值
+setVar:a=人物名称; // 可以设置字符串
+setVar:a=; // 可以设置空值（空字符串）
 ```
 
 设置随机数，请使用 `random()`
@@ -49,6 +50,25 @@ setVar:a=1;
 setVar:b=a+1;
 ```
 
+### 高级表达式支持
+
+`setVar` 支持复杂的数学表达式和字符串运算：
+
+``` ws
+; 支持括号和运算优先级
+setVar:result=(a+b)*2-c/3;
+
+; 字符串会自动拼接
+setVar:a=hello;
+setVar:b=world;
+setVar:c=a+b; // c 的值将是 "helloworld"
+
+; 变量引用
+setVar:baseScore=100;
+setVar:bonus=50;
+setVar:totalScore=baseScore+bonus; // totalScore 将是 150
+```
+
 ## 条件执行
 
 在语句后加上 `-when=(condition)` 参数，可以根据条件判断当前语句是否要执行。
@@ -80,7 +100,36 @@ changeScene:3.txt;
 getUserInput:name -title=如何称呼你 -buttonText=确认; 将用户输入写入 name 变量中
 ```
 
-其中，`title` 参数是提示的文本，`buttonText` 是确认按钮的文本
+其中，`title` 参数是提示的文本，`buttonText` 是确认按钮的文本，`defaultValue` 是默认值。
+
+## 调试变量
+
+使用 `showVars` 指令可以显示当前所有变量的值，包括普通变量和全局变量：
+
+``` ws
+setVar:score=100;
+setVar:playerName=Alice -global;
+showVars:; // 将在对话框中显示所有变量的 JSON 格式
+```
+
+这个指令主要用于调试，可以帮助你了解当前游戏中所有变量的状态。
+
+## 动态切换 UI 样式
+
+使用 `applyStyle` 指令可以动态替换 UI 元素的 CSS 类名：
+
+``` ws
+; 切换单个样式
+applyStyle:textbox-default->textbox-dark;
+
+; 批量切换样式
+applyStyle:btn-primary->btn-dark,text-light->text-dark,bg-light->bg-dark;
+```
+
+这个功能可以用于实现：
+- 动态主题切换（如日间/夜间模式）
+- 特定场景的 UI 风格变化
+- 根据剧情需要改变界面样式
 
 ## 变量插值
 

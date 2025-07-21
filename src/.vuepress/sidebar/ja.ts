@@ -9,9 +9,20 @@ export const jaSidebar = sidebar({
         "getting-started",
         "resources",
         "config",
-        "publish",
+        {
+          text: "ビジュアルノベルをデプロイまたは公開する？",
+          link: "publish/",
+          collapsible: true,
+          prefix: "publish/",
+          children: [
+            "web",
+            "desktop",
+            "android",
+          ]
+        },
         "faq",
         "live2D",
+        "spine",
         "migration",
         "derivative",
       ],
@@ -20,15 +31,47 @@ export const jaSidebar = sidebar({
       text: "WebGAL Script チュートリアル",
       prefix: "webgal-script/",
       children: [
-        "base",
-        "dialogue",
-        "bg-and-figure",
-        "audio",
-        "video",
-        "scenes",
-        "variable",
-        "animation",
-        "special-effect",
+        {
+          text: "基本機能",
+          collapsible: true,
+          children: [
+            "base",
+            "dialogue",
+          ]
+        },
+        {
+          text: "視覚コンテンツ",
+          collapsible: true,
+          children: [
+            "bg-and-figure",
+            "animation",
+            "special-effect",
+          ]
+        },
+        {
+          text: "音声・映像",
+          collapsible: true,
+          children: [
+            "audio",
+            "video",
+          ]
+        },
+        {
+          text: "インタラクション・フロー",
+          collapsible: true,
+          children: [
+            "scenes",
+            "variable",
+          ]
+        },
+        {
+          text: "高度な機能",
+          collapsible: true,
+          children: [
+            "intro",
+            "other-features",
+          ]
+        },
       ]
     },
     {

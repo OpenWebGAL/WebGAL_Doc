@@ -86,6 +86,83 @@ unlockCg:xgmain.jpeg -name=星光咖啡馆与死神之蝶 -series=1;
 
 ここで、`-series`パラメータはオプションであり、現在の立ち絵がどのシリーズに属するかを表します。同じシリーズの立ち絵は、後で統合して表示されます（つまり、同じシリーズのCGを切り替えて表示できます）。
 
+## 高度な背景切り替え機能
+
+### 背景CGのアンロック
+
+`changeBg`コマンドも CGアンロック機能をサポートしており、背景の切り替えと同時にCGをアンロックできます：
+
+``` ws
+changeBg:cg_scene1.jpg -unlockname=第一章場景 -series=主線CG;
+```
+
+### 背景変換エフェクト
+
+背景切り替えに変換エフェクトを設定できます：
+
+``` ws
+changeBg:bg_night.jpg -transform={"position":{"x":-100,"y":0},"scale":{"x":1.2,"y":1.2}} -duration=3000;
+```
+
+### プリセットアニメーションエフェクト
+
+プリセットの入場・退場アニメーションを使用できます：
+
+``` ws
+changeBg:bg_morning.jpg -enter=fadeIn -exit=fadeOut;
+```
+
+## 高度な立ち絵機能
+
+### Live2D サポート
+
+WebGAL は Live2D 立ち絵をサポートし、動作と表情を制御できます：
+
+``` ws
+changeFigure:live2d/model.json -motion=idle -expression=happy;
+```
+
+### 立ち絵の口の動きとまばたきアニメーション
+
+立ち絵に口の動きとまばたきアニメーションの素材を設定できます：
+
+``` ws
+changeFigure:char.png -mouthOpen=mouth_open.png -mouthClose=mouth_close.png -eyesOpen=eyes_open.png -eyesClose=eyes_close.png;
+```
+
+### 立ち絵レイヤー制御
+
+`zIndex`パラメータで立ち絵のレイヤーを制御できます：
+
+``` ws
+changeFigure:foreground_char.png -zIndex=100;
+changeFigure:background_char.png -zIndex=1;
+```
+
+### 立ち絵を消去する異なる方法
+
+`none`を使用する以外に、`clear`パラメータを使用して立ち絵を消去することもできます：
+
+``` ws
+changeFigure:any -left -clear;
+```
+
+### Live2D 境界設定
+
+Live2D モデルの場合、表示境界を設定できます：
+
+``` ws
+changeFigure:live2d/model.json -bounds=0,0,800,600;
+```
+
+### 立ち絵アニメーションエフェクト
+
+立ち絵にアニメーションエフェクトを設定できます：
+
+``` ws
+changeFigure:char.png -duration=2000 -ease=easeInOut;
+```
+
 ## 立ち絵を設定するときにエフェクトを設定する
 
 エフェクトのフィールドの説明については、[アニメーション](animation.md)を参照してください。

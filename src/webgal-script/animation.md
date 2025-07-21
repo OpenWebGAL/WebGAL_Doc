@@ -9,6 +9,8 @@
 ``` ws
 ; // 为中间立绘设置一个从下方进入的动画，并转到下一句
 setAnimation:enter-from-bottom -target=fig-center -next;
+; // 持续播放动画
+setAnimation:shake -target=bg-main -keep;
 ```
 
 目前，预制的动画有：
@@ -96,6 +98,26 @@ setAnimation:enter-from-bottom -target=fig-center -next;
 | colorGreen  | 颜色分量:绿色, 范围0-255          |
 | colorBlue   | 颜色分量:蓝色, 范围0-255          |
 | duration | 这个时间片的持续时间，单位为毫秒(ms) |
+| brightness | 亮度调整 |
+| contrast | 对比度调整 |
+| saturation | 饱和度调整 |
+| gamma | 伽马值调整 |
+| colorRed | 红色通道调整（0-255） |
+| colorGreen | 绿色通道调整（0-255） |
+| colorBlue | 蓝色通道调整（0-255） |
+| bevel | 斜面效果强度 |
+| bevelThickness | 斜面厚度 |
+| bevelRotation | 斜面旋转 |
+| bevelSoftness | 斜面柔和度 |
+| bevelRed | 斜面红色通道（0-255） |
+| bevelGreen | 斜面绿色通道（0-255） |
+| bevelBlue | 斜面蓝色通道（0-255） |
+| bloom | 发光效果 |
+| bloomBrightness | 发光亮度 |
+| bloomBlur | 发光模糊 |
+| bloomThreshold | 发光阈值 |
+| shockwaveFilter | 冲击波效果 |
+| radiusAlphaFilter | 径向透明度 |
 | oldFilm         | 老电影效果，0代表关闭，1代表开启       |
 | dotFilm         | 点状电影效果，0代表关闭，1代表开启     |
 | reflectionFilm  | 反射电影效果，0代表关闭，1代表开启     |
@@ -171,3 +193,56 @@ setTransition: -target=fig-center -enter=enter-from-bottom -exit=exit;
 
 如果不在立绘或背景设置后立即执行进出场效果的设置，等到图像已经进场了，再覆盖进场动画就没有意义了。但如果此时图像还没有出场，设置的出场动画仍有意义。其会在立绘或背景出场时正确地被应用。
 :::
+
+## 高级动画功能
+
+### 临时动画 (setTempAnimation)
+
+创建并执行临时的自定义动画，通过 JSON 格式定义动画效果：
+
+``` ws
+setTempAnimation:[{"alpha":0,"duration":0},{"alpha":1,"duration":300}] -target=fig-center;
+```
+
+### 变换动画 (setTransform)
+
+创建从当前状态到目标状态的变换动画：
+
+``` ws
+setTransform:{"position":{"x":100,"y":0},"scale":{"x":1.2,"y":1.2}} -duration=1000 -ease=easeInOut -target=fig-center;
+```
+
+支持的参数：
+- `duration` - 动画持续时间（毫秒）
+- `ease` - 缓动函数名称（如 easeInOut、easeIn、easeOut 等）
+- `target` - 作用目标
+- `keep` - 是否保持最终状态
+
+### 复杂动画 (setComplexAnimation)
+
+执行预注册的复杂动画函数：
+
+``` ws
+setComplexAnimation:customEffect -duration=2000 -target=bg-main;
+```
+
+### 动画参数说明
+
+#### 通用参数
+- `target` - 作用目标（fig-left、fig-center、fig-right、bg-main 或自定义 ID）
+- `writeDefault` - 是否写入默认值（可选，默认 false）
+- `keep` - 是否保持动画持续或保持最终状态（可选，默认 false）
+
+#### 缓动函数
+WebGAL 支持多种缓动函数，包括：
+- `easeIn` - 缓慢开始
+- `easeOut` - 缓慢结束
+- `easeInOut` - 缓慢开始和结束
+- 以及其他更多缓动函数
+
+### 动画最佳实践
+
+1. **性能考虑**：避免同时运行过多复杂动画
+2. **用户体验**：确保动画不会影响文本阅读
+3. **组合使用**：合理组合不同类型的动画创造更丰富的效果
+4. **调试技巧**：使用较短的持续时间进行测试，确认效果后再调整

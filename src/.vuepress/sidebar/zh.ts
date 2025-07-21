@@ -22,6 +22,7 @@ export const zhSidebar = sidebar({
         },
         "faq", 
         "live2D",
+        "spine",
         "migration",
         "derivative",
       ],
@@ -30,15 +31,47 @@ export const zhSidebar = sidebar({
       text: "WebGAL 脚本教程",
       prefix: "webgal-script/",
       children: [
-        "base",
-        "dialogue",
-        "bg-and-figure",
-        "audio",
-        "video",
-        "scenes",
-        "variable",
-        "animation",
-        "special-effect",
+        {
+          text: "基础功能",
+          collapsible: true,
+          children: [
+            "base",
+            "dialogue",
+          ]
+        },
+        {
+          text: "视觉内容",
+          collapsible: true,
+          children: [
+            "bg-and-figure",
+            "animation",
+            "special-effect",
+          ]
+        },
+        {
+          text: "音视频",
+          collapsible: true,
+          children: [
+            "audio",
+            "video",
+          ]
+        },
+        {
+          text: "交互与流程",
+          collapsible: true,
+          children: [
+            "scenes",
+            "variable",
+          ]
+        },
+        {
+          text: "高级功能",
+          collapsible: true,
+          children: [
+            "intro",
+            "other-features",
+          ]
+        },
       ]
     },
     {

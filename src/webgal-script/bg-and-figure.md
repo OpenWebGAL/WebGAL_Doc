@@ -86,6 +86,83 @@ unlockCg:xgmain.jpeg -name=星光咖啡馆与死神之蝶 -series=1;
 
 其中，`-series` 参数可选，代表当前立绘属于哪个系列。同系列的立绘以后会合并展示（即展示成可以切换的同系列CG）。
 
+## 高级背景切换功能
+
+### 解锁背景CG
+
+`changeBg` 命令也支持解锁CG功能，可以在切换背景的同时解锁CG：
+
+``` ws
+changeBg:cg_scene1.jpg -unlockname=第一章场景 -series=主线CG;
+```
+
+### 背景变换效果
+
+可以为背景切换设置变换效果：
+
+``` ws
+changeBg:bg_night.jpg -transform={"position":{"x":-100,"y":0},"scale":{"x":1.2,"y":1.2}} -duration=3000;
+```
+
+### 预设动画效果
+
+可以使用预设的进入和退出动画：
+
+``` ws
+changeBg:bg_morning.jpg -enter=fadeIn -exit=fadeOut;
+```
+
+## 高级立绘功能
+
+### Live2D 支持
+
+WebGAL 支持 Live2D 立绘，可以控制动作和表情：
+
+``` ws
+changeFigure:live2d/model.json -motion=idle -expression=happy;
+```
+
+### 立绘口型和眨眼动画
+
+可以为立绘设置口型和眨眼动画素材：
+
+``` ws
+changeFigure:char.png -mouthOpen=mouth_open.png -mouthClose=mouth_close.png -eyesOpen=eyes_open.png -eyesClose=eyes_close.png;
+```
+
+### 立绘层级控制
+
+可以通过 `zIndex` 参数控制立绘的层级：
+
+``` ws
+changeFigure:foreground_char.png -zIndex=100;
+changeFigure:background_char.png -zIndex=1;
+```
+
+### 清除立绘的不同方式
+
+除了使用 `none` 外，还可以使用 `clear` 参数清除立绘：
+
+``` ws
+changeFigure:any -left -clear;
+```
+
+### Live2D 边界设置
+
+对于 Live2D 模型，可以设置显示边界：
+
+``` ws
+changeFigure:live2d/model.json -bounds=0,0,800,600;
+```
+
+### 立绘动画效果
+
+可以为立绘设置动画效果：
+
+``` ws
+changeFigure:char.png -duration=2000 -ease=easeInOut;
+```
+
 ## 设置立绘时设置效果
 
 有关效果的字段说明，请参考 [动画](animation.md)

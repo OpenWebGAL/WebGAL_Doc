@@ -10,8 +10,9 @@ To set a variable:
 
 ``` ws
 setVar:a=1; // You can set a number
-setVar:a=true // You can set a boolean
-setVar:a=Character Name // You can set a string
+setVar:a=true; // You can set a boolean
+setVar:a=Character Name; // You can set a string
+setVar:a=; // You can set an empty value (empty string)
 ```
 
 To set a random number, use `random()`
@@ -34,12 +35,12 @@ setVar:a=random();
 
 Of course, we can also specify **Range**. For example, if you want a random number between 5 and 10, You can write:
 ```ws
-SetVar: a = the random (5, 10);
+setVar:a=random(5,10);
 ```
 
 Of course you want it to use ranges to generate values that also have decimals, then specify a third argument:
 ```ws
-SetVar: a = the random (5, 10, true); # will generate a floating point number between 5 and 10
+setVar:a=random(5,10,true); // Will generate a floating point number between 5 and 10
 ```
 
 You can also use previously defined variables when setting variables.
@@ -47,6 +48,25 @@ You can also use previously defined variables when setting variables.
 ``` ws
 setVar:a=1;
 setVar:b=a+1;
+```
+
+### Advanced Expression Support
+
+`setVar` supports complex mathematical expressions and string operations:
+
+``` ws
+// Supports parentheses and operator precedence
+setVar:result=(a+b)*2-c/3;
+
+// Strings are automatically concatenated
+setVar:a=hello;
+setVar:b=world;
+setVar:c=a+b; // c will be "helloworld"
+
+// Variable references
+setVar:baseScore=100;
+setVar:bonus=50;
+setVar:totalScore=baseScore+bonus; // totalScore will be 150
 ```
 
 ## Conditional Execution
@@ -80,7 +100,36 @@ Use the `getUserInput` statement to get user input, for example:
 getUserInput:name -title=What's your name? -buttonText=OK; Store the user input in the variable name
 ```
 
-Where `title` is the prompt text, `buttonText` is the text on the OK button
+Where `title` is the prompt text, `buttonText` is the text on the OK button, and `defaultValue` is the default value.
+
+## Debugging Variables
+
+Use the `showVars` command to display the current values of all variables, including normal variables and global variables:
+
+``` ws
+setVar:score=100;
+setVar:playerName=Alice -global;
+showVars:; // Will display all variables in JSON format in the dialog box
+```
+
+This command is mainly used for debugging and helps you understand the state of all variables in the current game.
+
+## Dynamic UI Style Switching
+
+Use the `applyStyle` command to dynamically replace CSS class names of UI elements:
+
+``` ws
+// Switch single style
+applyStyle:textbox-default->textbox-dark;
+
+// Batch switch styles
+applyStyle:btn-primary->btn-dark,text-light->text-dark,bg-light->bg-dark;
+```
+
+This feature can be used to implement:
+- Dynamic theme switching (such as day/night mode)
+- UI style changes for specific scenes
+- Interface style changes based on story needs
 
 ## Variable Interpolation
 
@@ -158,7 +207,7 @@ The same goes for modifications. When changing the game title to a new one, the 
 Adding the `global` flag indicates that we are modifying a configuration variable:
 
 ```ws
-setVar:Game_name=('New Game Title') -global;
+setVar:Game_name=New Game Title -global;
 WebGAL:The current title of the game is{Game_name};
 ```
 
@@ -174,7 +223,7 @@ To do this, use `Clear all data` in the game options.
 Of course, you can also create a custom configuration variable in `config.txt`, such as a version number:
 
 ```text
-Game_name:欢迎使用WebGAL！;
+Game_name:Welcome to WebGAL!;
 Game_key:f60ad5725c1588;
 Title_img:WebGAL_New_Enter_Image.png;
 Title_bgm:s_Title.mp3;
