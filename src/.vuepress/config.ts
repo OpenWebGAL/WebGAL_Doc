@@ -1,6 +1,8 @@
 import { defineUserConfig } from "vuepress";
 import theme from "./theme.js";
 import { searchPlugin } from "@vuepress/plugin-search";
+import { shikiPlugin } from "@vuepress/plugin-shiki";
+import path from 'path'
 export default defineUserConfig({
   base: "/",
   plugins: [
@@ -13,6 +15,28 @@ export default defineUserConfig({
           placeholder: "搜索",
         },
       },
+    }),
+    shikiPlugin({
+      theme: "dracula",
+      langs: [
+        {
+          id: "webgal",
+          aliases: [
+            "webgal",
+            "WebGAL",
+            "Webgal",
+            "ws",
+            "webgal-script",
+            "WebgalScript",
+            "Webgal Script",
+            "WebGAL Script",
+          ],
+          scopeName: "source.webgal",
+          path: path.resolve(__dirname, "../grammar/webgal.tmLanguage.json"),
+        },
+        "ts", "bash", "json", "xml", "kotlin", 
+      ],
+      
     }),
   ],
   locales: {

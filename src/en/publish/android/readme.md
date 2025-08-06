@@ -49,7 +49,7 @@ The game loads `project folder\app\src\main\assets\webgal\index.html` by default
 Open Android Studio to open the project.
 Modify the `rootProject.name` field in the `project folder\settings.gradle` file.
 
-``` gradle
+```
 ...
 rootProject.name = "WebGAL" //Modify the project title
 ...
@@ -65,7 +65,7 @@ Modify the title information in `project folder\app\src\main\res\values\strings.
 
 Modify the `namespace` and `applicationId` fields in `project folder\app\build.gradle` to the reverse of the domain name.
 
-``` gradle
+```
 ...
 android {
     namespace 'com.openwebgal.demo' //Modify the package name

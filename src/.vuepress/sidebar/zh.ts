@@ -52,5 +52,56 @@ export const zhSidebar = sidebar({
         "developers/terre",
       ]
     },
+    {
+      text: "脚本参考",
+      prefix: "script-reference/",
+      children: [
+        {
+          text: "命令",
+          prefix: "commands/",
+          children:[
+            "global",
+            "say",
+            "changeBg",
+            "changeFigure",
+            "bgm",
+            "playVideo",
+            "pixiPerform",
+            "pixiInit",
+            "intro",
+            "miniAvatar",
+            "changeScene",
+            "choose",
+            "end",
+            "setComplexAnimation",
+            "label",
+            "jumpLabel",
+            "setVar",
+            "callScene",
+            "showVars",
+            "unlockCg",
+            "unlockBgm",
+            "filmMode",
+            "setTextbox",
+            "setAnimation",
+            "playEffect",
+            "setTempAnimation",
+            "comment",
+            "setTransform",
+            "setTransition",
+            "getUserInput",
+            "applyStyle",
+            "wait",
+          ]
+        },
+        {
+          text: "其他",
+          prefix: "others/",
+          children:[
+            "transform-reference",
+          ]
+        },
+      ],
+    },
   ],
 });
