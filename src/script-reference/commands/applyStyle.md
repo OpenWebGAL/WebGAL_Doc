@@ -18,7 +18,7 @@ applyStyle:TextBox_ShowName_Background->TextBox_ShowName_Background_Green,TextBo
 
 无论原样式被替换为什么新样式，替换样式依旧是原样式名在前;
 
-```
+```webgal
 applyStyle:原样式名->新样式名1;
 applyStyle:新样式名1->新样式名2; 错误
 applyStyle:原样式名->新样式名2;

@@ -60,7 +60,7 @@ setTransform:{"position":{"x":-200,"y":50}} -target=aaa -duration=500;
 - 默认值：0
 - 单位：弧度
 
-旋转。改变对象的旋转弧度，以顺时针为正方形。
+旋转。改变对象的旋转弧度，以顺时针为正方向。
 
 ```webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"rotation":-3.14};
