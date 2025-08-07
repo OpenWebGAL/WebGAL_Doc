@@ -49,7 +49,7 @@ android studioを開き、エクスポートしたばかりの「android」デ�
 Android Studioを開いてプロジェクトを開きます。
 「プロジェクトフォルダ\settings.gradle」ファイルの「rootProject.name」フィールドを変更します。
 
-``` gradle
+```
 ...
 rootProject.name = "WebGAL" //プロジェクトタイトルを変更
 ...
@@ -65,7 +65,7 @@ rootProject.name = "WebGAL" //プロジェクトタイトルを変更
 
 「プロジェクトフォルダ\app\build.gradle」の「namespace」と「applicationId」フィールドを、ドメインを逆にした形式に変更します。
 
-``` gradle
+```
 ...
 android {
     namespace 'com.openwebgal.demo' //パッケージ名を変更

@@ -49,7 +49,7 @@
 打开 Android Studio 打开项目。
 修改 `项目文件夹\settings.gradle` 文件中的 `rootProject.name` 字段。
 
-``` gradle
+```
 ...
 rootProject.name = "WebGAL" //修改项目标题
 ...
@@ -65,7 +65,7 @@ rootProject.name = "WebGAL" //修改项目标题
 
 修改 `项目文件夹\app\build.gradle` 中的 `namespace` 和 `applicationId` 字段，格式为域名反写。
 
-``` gradle
+```
 ...
 android {
     namespace 'com.openwebgal.demo' //修改包名
