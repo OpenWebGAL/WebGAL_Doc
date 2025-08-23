@@ -9,9 +9,20 @@ export const enSidebar = sidebar({
         "getting-started",
         "resources",
         "config",
-        "publish",
+        {
+          text: "Deploy or Publish My Visual Novel?",
+          link: "publish/",
+          collapsible: true,
+          prefix: "publish/",
+          children: [
+            "web",
+            "desktop",
+            "android",
+          ]
+        },
         "faq",
         "live2D",
+        "spine",
         "migration",
         "derivative",
       ],
@@ -20,15 +31,47 @@ export const enSidebar = sidebar({
       text: "WebGAL Script Tutorial",
       prefix: "webgal-script/",
       children: [
-        "base",
-        "dialogue",
-        "bg-and-figure",
-        "audio",
-        "video",
-        "scenes",
-        "variable",
-        "animation",
-        "special-effect",
+        {
+          text: "Basic Features",
+          collapsible: true,
+          children: [
+            "base",
+            "dialogue",
+          ]
+        },
+        {
+          text: "Visual Content",
+          collapsible: true,
+          children: [
+            "bg-and-figure",
+            "animation",
+            "special-effect",
+          ]
+        },
+        {
+          text: "Audio & Video",
+          collapsible: true,
+          children: [
+            "audio",
+            "video",
+          ]
+        },
+        {
+          text: "Interaction & Flow",
+          collapsible: true,
+          children: [
+            "scenes",
+            "variable",
+          ]
+        },
+        {
+          text: "Advanced Features",
+          collapsible: true,
+          children: [
+            "intro",
+            "other-features",
+          ]
+        },
       ]
     },
     {

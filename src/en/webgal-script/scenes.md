@@ -138,3 +138,75 @@ label:label_2; // Create a label named label_2
 ```
 
 In this script, if you select `Branch 2`, everything seems to be fine. But if you select `Branch 1`, you will be surprised to find that after `Branch 1` is executed, `Branch 2` will continue to be executed. That's because the program continues to execute the next line in order, and you didn't specify where to jump after the branch ended.
+
+## User Input
+
+WebGAL supports obtaining user text input and saving it to variables.
+
+### Getting User Input
+
+Use `getUserInput` to display an input box for players to enter text content:
+
+``` ws
+getUserInput:playerName -title=Please enter your name -buttonText=Confirm;
+```
+
+### Supported Parameters
+
+- `title` - Title text for the input box
+- `buttonText` - Text for the confirmation button
+- `defaultValue` - Default value for the input box
+
+### Usage Examples
+
+``` ws
+getUserInput:playerName -title=Please enter your name -buttonText=Confirm;
+Hello, {playerName}! Welcome to our world.;
+
+getUserInput:answer -title=What is 1+1? -buttonText=Submit Answer;
+choose:(answer==2)->Correct answer:correct|(answer!=2)->Wrong answer:wrong;
+```
+
+### Notes
+
+- Input content is automatically saved to the specified variable
+- Variables can be used in subsequent scripts, including conditional judgments and dialogue display
+- The game will pause during input, waiting for user input completion
+
+## Advanced Branch Features
+
+### Complex Conditions for Choice Options
+
+Choice options support complex conditional expressions:
+
+``` ws
+choose:(score>50&&hasKey)->Open the treasure chest:treasure.txt|(score<=50)->Insufficient strength:fail.txt|Turn back and leave:leave.txt;
+```
+
+### Scene Jump vs Label Jump
+
+- **Scene Jump**: Used to jump to other `.txt` files, suitable for chapter switching
+- **Label Jump**: Used to jump within the same file, suitable for simple branches
+
+Recognition method: If the jump target contains a `.` character, it is treated as a scene jump; otherwise it is treated as a label jump.
+
+``` ws
+choose:Next chapter:Chapter-2.txt|Retry:retry; // The first is scene jump, the second is label jump
+```
+
+### Label Jump Limitations
+
+- Label jumps can only be performed within the current scene file
+- Cannot jump to labels in other files
+- Label names must be unique within the same file
+
+## Film Mode
+
+WebGAL supports film mode, which can create a more immersive viewing experience:
+
+``` ws
+filmMode:on; // Enable film mode
+filmMode:; // Disable film mode
+```
+
+Film mode will hide some UI elements, creating a "cinema mode" effect similar to video players.

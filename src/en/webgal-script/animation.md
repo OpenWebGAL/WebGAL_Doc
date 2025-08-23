@@ -9,6 +9,8 @@ Use the statement `setAnimation:animation name -target=target;`
 ``` ws
 ; // Set an animation for the center sprite to enter from the bottom, and proceed to the next line
 setAnimation:enter-from-bottom -target=fig-center -next;
+; // Continuously play animation
+setAnimation:shake -target=bg-main -keep;
 ```
 
 Currently, the following preset animations are available:
@@ -19,7 +21,7 @@ Currently, the following preset animations are available:
 | Fade Out          | exit               | 300            |
 | Shake Once          | shake               | 1000           |
 | Enter from Bottom    | enter-from-bottom   | 500            |
-| Enter from Left    | enter-from-right    | 500            |
+| Enter from Left    | enter-from-left     | 500            |
 | Enter from Right    | enter-from-right    | 500            |
 | Move Front and Back Once  | move-front-and-back | 1000           |
 
@@ -96,6 +98,26 @@ The following table explains each property:
 | colorGreen  | Amount of green color, range 0-255          |
 | colorBlue   | Amount of blue color, range 0-255          |
 | duration | Duration of this time slice, in milliseconds (ms) |
+| brightness | Brightness adjustment |
+| contrast | Contrast adjustment |
+| saturation | Saturation adjustment |
+| gamma | Gamma adjustment |
+| colorRed | Red channel adjustment (0-255) |
+| colorGreen | Green channel adjustment (0-255) |
+| colorBlue | Blue channel adjustment (0-255) |
+| bevel | Bevel effect intensity |
+| bevelThickness | Bevel thickness |
+| bevelRotation | Bevel rotation |
+| bevelSoftness | Bevel softness |
+| bevelRed | Bevel red channel (0-255) |
+| bevelGreen | Bevel green channel (0-255) |
+| bevelBlue | Bevel blue channel (0-255) |
+| bloom | Bloom effect |
+| bloomBrightness | Bloom brightness |
+| bloomBlur | Bloom blur |
+| bloomThreshold | Bloom threshold |
+| shockwaveFilter | Shockwave effect |
+| radiusAlphaFilter | Radial alpha |
 | oldFilm         | Old film effect, 0 to disable, 1 to enable       |
 | dotFilm         | Dot film effect, 0 to disable, 1 to enable     |
 | reflectionFilm  | Reflection film effect, 0 to disable, 1 to enable     |
@@ -169,5 +191,58 @@ When setting a sprite or background, an entrance and exit animation will be set 
 
 If you execute the statement for setting entrance and exit effects immediately after setting the sprite or background, you can override the default entrance and exit animations, thus achieving custom entrance and exit effects. If you do not set them, the default animations will be executed when entering or exiting.
 
-If you do not execute the statement for setting entrance and exit effects immediately after setting the sprite or background, it will be meaningless to override the entrance animation after the image has already entered. However, if the image has not yet entered at this time, the set entrance animation will still be meaningful. It will be applied correctly when the sprite or background enters.
+If you do not execute the statement for setting entrance and exit effects immediately after setting the sprite or background, it will be meaningless to override the entrance animation after the image has already entered. However, if the image has not yet exited at this time, the set exit animation will still be meaningful. It will be applied correctly when the sprite or background exits.
 :::
+
+## Advanced Animation Features
+
+### Temporary Animation (setTempAnimation)
+
+Create and execute temporary custom animations defined in JSON format:
+
+``` ws
+setTempAnimation:[{"alpha":0,"duration":0},{"alpha":1,"duration":300}] -target=fig-center;
+```
+
+### Transform Animation (setTransform)
+
+Create transformation animations from current state to target state:
+
+``` ws
+setTransform:{"position":{"x":100,"y":0},"scale":{"x":1.2,"y":1.2}} -duration=1000 -ease=easeInOut -target=fig-center;
+```
+
+Supported parameters:
+- `duration` - Animation duration in milliseconds
+- `ease` - Easing function name (such as easeInOut, easeIn, easeOut, etc.)
+- `target` - Target object
+- `keep` - Whether to maintain the final state
+
+### Complex Animation (setComplexAnimation)
+
+Execute pre-registered complex animation functions:
+
+``` ws
+setComplexAnimation:customEffect -duration=2000 -target=bg-main;
+```
+
+### Animation Parameter Reference
+
+#### Common Parameters
+- `target` - Target object (fig-left, fig-center, fig-right, bg-main, or custom ID)
+- `writeDefault` - Whether to write default values (optional, default false)
+- `keep` - Whether to keep animation running or maintain final state (optional, default false)
+
+#### Easing Functions
+WebGAL supports various easing functions, including:
+- `easeIn` - Slow start
+- `easeOut` - Slow end
+- `easeInOut` - Slow start and end
+- And many other easing functions
+
+### Animation Best Practices
+
+1. **Performance Considerations**: Avoid running too many complex animations simultaneously
+2. **User Experience**: Ensure animations don't interfere with text reading
+3. **Combination Usage**: Properly combine different types of animations to create richer effects
+4. **Debugging Tips**: Use shorter durations for testing, then adjust after confirming the effect

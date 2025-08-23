@@ -98,3 +98,130 @@ changeFigure:exampleSpine/data.json?type=spine;
 总而言之，如果您选择在 WebGAL 中集成或使用 Spine 功能，您必须确保已经合法获得了 Spine 编辑器的授权许可证，并且承诺遵守所有相关的许可证条款与规定。否则，所有由此产生的风险、责任及后果，均由您个人或您的组织承担，与 WebGAL 项目团队无关。
 
 使用本软件即表示您已阅读、理解并同意以上免责声明的全部内容。如果您不同意这些条款，请立即停止使用集成了 Spine 功能的 WebGAL 版本。
+
+## Spine 动画使用指南
+
+在完成上述许可证要求和技术集成后，您可以按照以下说明在 WebGAL 中使用 Spine 动画功能。
+
+### 文件格式
+
+Spine 动画通常包含以下文件：
+- `.skel` - 骨骼数据文件（二进制格式）
+- `.json` - 骨骼数据文件（JSON格式）
+- `.atlas` - 纹理图集描述文件
+- `.png` - 纹理图片文件
+
+### 基本使用方法
+
+#### 设置 Spine 立绘
+
+使用 `.skel` 文件扩展名或 `type=spine` 参数来指定 Spine 动画：
+
+``` ws
+changeFigure:character.skel;
+changeFigure:character.json?type=spine;
+```
+
+#### 设置 Spine 背景
+
+同样可以将 Spine 动画用作背景：
+
+``` ws
+changeBg:background.skel;
+changeBg:background.json?type=spine;
+```
+
+#### 立绘位置设置
+
+Spine 立绘支持预设位置，与普通立绘相同：
+
+``` ws
+changeFigure:character.skel -left;
+changeFigure:character.skel -right;
+changeFigure:character.skel; // 默认为中间位置
+```
+
+### 动画控制
+
+#### 切换动作
+
+可以使用 `-motion` 参数来切换 Spine 动画，就像 Live2D 一样：
+
+``` ws
+changeFigure:character.skel -motion=idle;
+changeFigure:character.skel -motion=walk -left;
+```
+
+#### 自定义ID的Spine立绘
+
+可以为 Spine 立绘指定自定义ID，然后使用 `-motion` 参数控制动画：
+
+``` ws
+changeFigure:character.skel -id=mainCharacter -left;
+changeFigure:character.skel -id=mainCharacter -motion=happy;
+```
+
+
+### 动画行为
+
+- 当 Spine 动画加载时，会自动播放第一个可用动画
+- 如果状态中指定了特定动画，会优先播放指定动画
+- Spine 动画会自动缩放以适应屏幕大小
+
+### 使用示例
+
+``` ws
+; 设置主角立绘
+changeFigure:mainCharacter.skel -id=hero -center;
+
+; 播放问候动画
+changeFigure:hero.skel -motion=greeting -id=hero;
+
+; 设置配角立绘
+changeFigure:sidekick.skel -left;
+
+; 设置动态背景
+changeBg:forest.skel;
+```
+
+### 与其他功能的组合使用
+
+Spine 动画可以与其他 WebGAL 功能结合使用：
+
+``` ws
+; 结合语音播放
+角色名:你好！ -V1.ogg -figureId=hero;
+changeFigure:character.skel -id=hero -motion=speaking;
+
+; 结合场景切换
+changeFigure:character.skel -id=hero;
+changeFigure:character.skel -id=hero -motion=idle;
+changeScene:next_scene.txt;
+```
+
+### 性能考虑
+
+1. **内存使用**：Spine 动画比静态图片占用更多内存
+2. **加载时间**：首次加载可能需要更长时间
+3. **兼容性**：需要浏览器支持 WebGL
+
+### 故障排除
+
+#### 常见问题
+
+1. **动画不播放**：检查动画名称是否与 Spine 文件中定义的名称一致
+2. **文件加载失败**：确保 `.skel`、`.atlas` 和纹理文件都在同一目录
+3. **显示异常**：检查 Spine 版本兼容性
+
+#### 调试提示
+
+- 使用浏览器开发者工具查看控制台日志
+- 检查网络面板确认所有文件都已正确加载
+- 确认 Spine 文件导出设置正确
+
+### 注意事项
+
+- 动画名称必须与 Spine 文件中定义的动画名称一致
+- 立绘会保持宽高比，并缩放至适合屏幕
+- 背景会拉伸或缩放以填充整个屏幕
+- 请确保遵守所有 Spine 许可证要求
