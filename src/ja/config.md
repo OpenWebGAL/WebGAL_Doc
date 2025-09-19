@@ -11,6 +11,7 @@
 | Game_Logo | ゲームのロゴ、複数表示することができ、\| で区切ります |
 | Enable_Appreciation     | 鑑賞機能（CGおよび背景音楽の鑑賞を含む）を有効にするかどうか。    |
 | Default_Language     | デフォルト言語、「zh_CN」、「zh_TW」、「en」、「ja」、「fr」、「de」に設定可能。 |
+| Show_panic     | パニックボタン機能を有効にするかどうか、true または false に設定 |
 
 以下は設定ファイルの例です。
 
