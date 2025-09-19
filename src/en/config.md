@@ -12,6 +12,7 @@ Under the `game` folder, there is a file named `config.txt`, you can fill in the
 | Enable_Appreciation     | Whether to enable the Appreciation feature, including CG and background music appreciation.    |
 | Default_Language     | Default language, can be set to 'zh_CN', 'zh_TW', 'en', 'ja', 'fr', 'de' |
 | Show_panic     | Whether to enable the panic button feature, set to true or false |
+| Legacy_Expression_Blend_Mode     | Whether to enable legacy expression blend mode for Live2D, set to true or false |
 
 The following is a sample configuration file:
 

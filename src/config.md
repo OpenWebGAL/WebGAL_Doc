@@ -12,6 +12,7 @@
 | Enable_Appreciation     | 是否启用鉴赏功能，包括 CG 和背景音乐鉴赏。    |
 | Default_Language     | 默认语言，可设置为 'zh_CN', 'zh_TW', 'en', 'ja', 'fr', 'de' |
 | Show_panic     | 是否启用紧急回避功能，设置为 true 或 false |
+| Legacy_Expression_Blend_Mode     | 是否启用 Live2D 的旧表情混合模式，设置为 true 或 false |
 
 以下是配置文件示例：
 
