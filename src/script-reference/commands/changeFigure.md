@@ -214,7 +214,7 @@ changeFigure:1/open_eyes.png -eyesOpen=1/open_eyes.png;
 ### eyesClose
 - 字符串
 
-填写图片立绘的路径，作为睁眼时的立绘差分。
+填写图片立绘的路径，作为闭眼时的立绘差分。
 
 ```webgal
 changeFigure:1/open_eyes.png -eyesClose=1/closed_eyes.png;
