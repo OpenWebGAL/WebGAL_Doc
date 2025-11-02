@@ -99,6 +99,7 @@ export const zhSidebar = sidebar({
           prefix: "others/",
           children:[
             "transform-reference",
+            "animation-reference",
           ]
         },
       ],
