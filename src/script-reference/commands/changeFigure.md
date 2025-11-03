@@ -214,7 +214,7 @@ changeFigure:1/open_eyes.png -eyesOpen=1/open_eyes.png;
 ### eyesClose
 - 字符串
 
-填写图片立绘的路径，作为睁眼时的立绘差分。
+填写图片立绘的路径，作为闭眼时的立绘差分。
 
 ```webgal
 changeFigure:1/open_eyes.png -eyesClose=1/closed_eyes.png;
@@ -245,6 +245,7 @@ changeFigure:character_a/model.json -expression=sad;
 
 对于 Live2D 立绘，填写 number[4] 数组，拓展或收缩立绘的显示区域。
 以向右和向下为正方向，顺序为 `左,上,右,下`。
+x 轴以向右为正方形向，y 轴以向下为正方向。
 
 ::: warning
 此参数仅在立绘出场，或替换立绘时生效。
@@ -253,4 +254,37 @@ changeFigure:character_a/model.json -expression=sad;
 ```webgal
 ; 往左和往右拓展 300 像素
 changeFigure:character_a/model.json -bounds=-300,0,300,0;
+```
+
+### blink
+- 字符串
+
+对于 Live2D 立绘，填写 json 字符串，控制眨眼参数。
+通常不需要书写所有的属性, 没填写的属性会继承上一次设置的值, 立绘出场时会继承默认值。
+
+参数有
+- `"blinkInterval"`: 数字，眨眼间隔，单位毫秒，默认值 24 小时
+- `"blinkIntervalRandom"`: 数字，眨眼间隔随机值，单位毫秒，默认值 1000
+- `"closingDuration"`: 数字，闭眼持续时间，单位毫秒，默认值 100
+- `"closedDuration"`: 数字，闭眼时间，单位毫秒，默认值 50
+- `"openingDuration"`: 数字，睁眼持续时间，单位毫秒，默认值 150
+
+```webgal
+changeFigure:character_a/model.json -blink={"blinkInterval":5000,"blinkIntervalRandom":2000,"closingDuration":100,"closedDuration":50,"openingDuration":150};
+```
+
+### focus
+- 字符串
+
+对于 Live2D 立绘，填写 json 字符串，控制立绘的注视参数。
+通常不需要书写所有的属性, 没填写的属性会继承上一次设置的值, 立绘出场时会继承默认值。
+x 轴以向右为正方形向，y 轴以向上为正方向。
+
+参数有
+- `"x"`: 数字，注视点的 x 坐标，范围 -1 到 1，默认值 0
+- `"y"`: 数字，注视点的 y 坐标，范围 -1 到 1，默认值 0
+- `"instant"`: 布尔值，是否立即转向注视点，默认值 false
+
+```webgal
+changeFigure:character_a/model.json -focus={"x":0.5,"y":0.2,"instant":false};
 ```
