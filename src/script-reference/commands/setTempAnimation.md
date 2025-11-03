@@ -4,7 +4,7 @@
 
 ## 语句内容
 
-与 `setAnimation` 读取动画文件不同，`setTempAnimation` 允许用户直接在代码里定义多段动画。
+与 `setAnimation` 读取动画文件不同，`setTempAnimation` 允许用户直接在代码里定义多段动画，详见[动画参考](../others/animation-reference.md)。
 语句内容格式为动画文件的单行形式，即 `[{},{},{}]` 。
 
 :::info

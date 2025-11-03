@@ -5,7 +5,7 @@
 ## 语句内容
 
 填写自定义动画名称，驱动指定目标的舞台对象执行多段动画。
-详情请见[自定义动画](../../webgal-script/animation.md#自定义动画)。
+详情请见[自定义动画](../../webgal-script/animation.md#自定义动画)和[动画参考](../others/animation-reference.md)。
 
 :::info
 如果您想直接在脚本里设置多段动画，请使用 [setTempAnimation](setTempAnimation.md) 命令。
