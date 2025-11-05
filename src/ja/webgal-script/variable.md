@@ -10,8 +10,9 @@
 
 ``` ws
 setVar:a=1; // 数字を設定可能
-setVar:a=true // 真偽値を設定可能
-setVar:a=キャラクター名 // 文字列を設定可能
+setVar:a=true; // 真偽値を設定可能
+setVar:a=キャラクター名; // 文字列を設定可能
+setVar:a=; // 空の値（空の文字列）を設定可能
 ```
 
 乱数を設定する場合は、`random()` を使用してください。
@@ -49,6 +50,25 @@ setVar:a=1;
 setVar:b=a+1;
 ```
 
+### 高度な式サポート
+
+`setVar` は複雑な数学式と文字列演算をサポートしています：
+
+``` ws
+; 括弧と演算子優先度をサポート
+setVar:result=(a+b)*2-c/3;
+
+; 文字列は自動的に連結されます
+setVar:a=hello;
+setVar:b=world;
+setVar:c=a+b; // c の値は "helloworld" になります
+
+; 変数参照
+setVar:baseScore=100;
+setVar:bonus=50;
+setVar:totalScore=baseScore+bonus; // totalScore は 150 になります
+```
+
 ## 条件付き実行
 
 文の後に `-when=(condition)` パラメータを追加すると、現在の文を実行するかどうかを条件で判断することができます。
@@ -80,7 +100,36 @@ changeScene:3.txt;
 getUserInput:name -title=あなたの名前を教えてください -buttonText=確認; ユーザー入力を name 変数に書き込む
 ```
 
-ここで、`title` パラメータはプロンプトのテキストで、`buttonText` は確認ボタンのテキストです。
+ここで、`title` パラメータはプロンプトのテキストで、`buttonText` は確認ボタンのテキストで、`defaultValue` はデフォルト値です。
+
+## 変数のデバッグ
+
+`showVars` 命令を使用すると、現在のすべての変数の値（通常の変数とグローバル変数の両方）を表示できます：
+
+``` ws
+setVar:score=100;
+setVar:playerName=Alice -global;
+showVars:; // すべての変数のJSON形式をダイアログボックスに表示
+```
+
+この命令は主にデバッグ用で、ゲーム内のすべての変数の状態を理解するのに役立ちます。
+
+## 動的なUIスタイル切り替え
+
+`applyStyle` 命令を使用すると、UI要素のCSSクラス名を動的に置き換えることができます：
+
+``` ws
+; 単一のスタイルを切り替え
+applyStyle:textbox-default->textbox-dark;
+
+; 複数のスタイルを一括切り替え
+applyStyle:btn-primary->btn-dark,text-light->text-dark,bg-light->bg-dark;
+```
+
+この機能は以下の用途に使用できます：
+- 動的なテーマ切り替え（昼間/夜間モードなど）
+- 特定シーンでのUIスタイル変更
+- ストーリーに応じたインターフェイススタイルの変更
 
 ## 変数補間
 
@@ -118,7 +167,7 @@ label:turn-2;
 changeScene:二周目ストーリー.txt;
 ```
 
-## 高级用法（`>=4.5.4`）
+## 高度な使用法（`>=4.5.4`）
 組み込み変数は、構成変数の変更や、組み込み変数に基づいて論理的に実行して条件を指定するなど、より高度な操作に使用します。
 
 WebGAL には現在、`stage` と `userData` の 2 つの組み込み変数フィールドがあります。
@@ -174,7 +223,7 @@ WebGAL:現在のゲームのタイトルは次のとおりです{Game_name};
 もちろん、`config.txt`でカスタム構成変数を作成することもできます。たとえば、バージョン番号を作成します：
 
 ```text
-Game_name:欢迎使用WebGAL！;
+Game_name:WebGALへようこそ！;
 Game_key:f60ad5725c1588;
 Title_img:WebGAL_New_Enter_Image.png;
 Title_bgm:s_Title.mp3;

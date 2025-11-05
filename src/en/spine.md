@@ -98,3 +98,129 @@ Furthermore, the WebGAL project team expressly disclaims any responsibility for 
 In summary, if you choose to integrate or use Spine functionality in WebGAL, you must ensure that you have legally obtained a Spine Editor license and commit to complying with all relevant license terms and regulations. Otherwise, all risks, liabilities, and consequences arising therefrom shall be borne by you or your organization and are unrelated to the WebGAL project team.
 
 By using this software, you acknowledge that you have read, understood, and agreed to all contents of the above disclaimer. If you do not agree to these terms, please immediately cease using the WebGAL version integrated with Spine functionality.
+
+## Spine Animation Usage Guide
+
+After completing the above license requirements and technical integration, you can follow the instructions below to use Spine animation functionality in WebGAL.
+
+### File Format
+
+Spine animations typically include the following files:
+- `.skel` - Skeleton data file (binary format)
+- `.json` - Skeleton data file (JSON format)
+- `.atlas` - Texture atlas description file
+- `.png` - Texture image files
+
+### Basic Usage
+
+#### Setting Spine Figures
+
+Use the `.skel` file extension or `type=spine` parameter to specify Spine animation:
+
+``` ws
+changeFigure:character.skel;
+changeFigure:character.json?type=spine;
+```
+
+#### Setting Spine Backgrounds
+
+Spine animations can also be used as backgrounds:
+
+``` ws
+changeBg:background.skel;
+changeBg:background.json?type=spine;
+```
+
+#### Figure Position Settings
+
+Spine figures support preset positions, same as regular figures:
+
+``` ws
+changeFigure:character.skel -left;
+changeFigure:character.skel -right;
+changeFigure:character.skel; // Default is center position
+```
+
+### Animation Control
+
+#### Switching Actions
+
+You can use the `-motion` parameter to switch Spine animations, just like Live2D:
+
+``` ws
+changeFigure:character.skel -motion=idle;
+changeFigure:character.skel -motion=walk -left;
+```
+
+#### Custom ID Spine Figures
+
+You can specify custom IDs for Spine figures and then use the `-motion` parameter to control animations:
+
+``` ws
+changeFigure:character.skel -id=mainCharacter -left;
+changeFigure:character.skel -id=mainCharacter -motion=happy;
+```
+
+### Animation Behavior
+
+- When Spine animation loads, it automatically plays the first available animation
+- If a specific animation is specified in the state, it will be played preferentially
+- Spine animations automatically scale to fit the screen
+
+### Usage Examples
+
+``` ws
+; Set main character figure
+changeFigure:mainCharacter.skel -id=hero -center;
+
+; Play walking animation
+changeFigure:hero.skel -motion=walk -id=hero;
+
+; Set side character figure
+changeFigure:sidekick.skel -left;
+
+; Set dynamic background
+changeBg:forest.skel;
+```
+
+### Integration with Other Features
+
+Spine animations can be combined with other WebGAL features:
+
+``` ws
+; Combined with voice playback
+Character Name:Hello! -V1.ogg -figureId=hero;
+changeFigure:character.skel -id=hero -motion=speaking;
+
+; Combined with scene switching
+changeFigure:character.skel -id=hero;
+changeFigure:character.skel -id=hero -motion=idle;
+changeScene:next_scene.txt;
+```
+
+### Performance Considerations
+
+1. **Memory Usage**: Spine animations use more memory than static images
+2. **Loading Time**: Initial loading may take longer
+3. **Compatibility**: Requires browser WebGL support
+
+### Troubleshooting
+
+#### Common Issues
+
+1. **Animation not playing**: Check if animation name matches the name defined in the Spine file
+2. **File loading failed**: Ensure `.skel`, `.atlas`, and texture files are in the same directory
+3. **Display abnormalities**: Check Spine version compatibility
+
+#### Debug Tips
+
+- Use browser developer tools to check console logs
+- Check network panel to confirm all files are loaded correctly
+- Verify Spine file export settings are correct
+
+### Important Notes
+
+- Animation names must match the animation names defined in the Spine file
+- Figures maintain aspect ratio and scale to fit the screen
+- Backgrounds stretch or scale to fill the entire screen
+- Please ensure compliance with all Spine license requirements
