@@ -13,7 +13,7 @@
 | Default_Language             | デフォルト言語、「zh_CN」、「zh_TW」、「en」、「ja」、「fr」、「de」に設定可能。 |
 | Show_panic                   | パニックボタン機能を有効にするかどうか、true または false に設定                 |
 | Legacy_Expression_Blend_Mode | Live2D の旧表情ブレンドモードを有効にするかどうか、true または false に設定      |
-| Max_line                     | textbox行数を制限しなかったら起用の設置は黙認論理(2 em)                          |
+| Max_line                     | textbox行数を制限しなかったら起用の設置は黙認論理                          |
 | Max_lineHeight               | textbox行高、max_line開くとき発効し、単位はem                                    |
 
 以下は設定ファイルの例です。
