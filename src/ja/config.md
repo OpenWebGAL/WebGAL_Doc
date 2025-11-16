@@ -14,7 +14,7 @@
 | Show_panic                   | パニックボタン機能を有効にするかどうか、true または false に設定                 |
 | Legacy_Expression_Blend_Mode | Live2D の旧表情ブレンドモードを有効にするかどうか、true または false に設定      |
 | Max_line                     | テキストボックスの最大行数。未設定の場合はデフォルトの動作になります。                        |
-| Max_lineHeight               | textbox行高、max_line開くとき発効し、単位はem                                    |
+| Max_lineHeight               | テキストボックスの行の高さ（単位: em）。`Max_line` が設定されている場合にのみ有効です。      |
 
 以下は設定ファイルの例です。
 
