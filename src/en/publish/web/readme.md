@@ -49,7 +49,7 @@ jobs:
               uses: actions/deploy-pages@v4
 ```
 
-4. In the `Pages` menu item under the storage repository settings you created, select `Build and deployment > Source > GitHub Actions`. This will enable `GitHub Actions` 
+4. In your repository's **Settings**, go to the **Pages** section. Under **Build and deployment**, set the **Source** to **GitHub Actions**.
 
 5. Push the code to the `main` branch and wait for the `GitHub Action` to complete. You should see the site deployed to `https://<username>.github.io/[repository]/` or `https://<custom-domain>/`, depending on your settings. From then on, the deployment will be automatically triggered every time you push to the `main` branch.
 
