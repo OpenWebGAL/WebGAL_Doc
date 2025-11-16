@@ -14,7 +14,7 @@ Under the `game` folder, there is a file named `config.txt`, you can fill in the
 | Show_panic                   | Whether to enable the panic button feature, set to true or false                                        |
 | Legacy_Expression_Blend_Mode | Whether to enable legacy expression blend mode for Live2D, set to true or false                         |
 | Max_line                     | The limit for the number of lines in the text box. If not set, the default logic will be enabled. |
-| Max_lineHeight               | The height of each line in the text box. It takes effect when Max_line is enabled. Unit: em             |
+| Max_lineHeight               | The line height of the text box, in `em`. Takes effect only when `Max_line` is set.             |
 
 The following is a sample configuration file:
 
