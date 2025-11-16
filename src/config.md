@@ -14,7 +14,7 @@
 | Show_panic                   | 是否启用紧急回避功能，设置为 true 或 false                  |
 | Legacy_Expression_Blend_Mode | 是否启用 Live2D 的旧表情混合模式，设置为 true 或 false      |
 | Max_line                     | 文本框的最大行数。如果未设置，则启用默认逻辑。           |
-| Max_lineHeight               | textBox行高，当开启Max_line时生效，单位:em                  |
+| Max_lineHeight               | 文本框的行高（单位：em），仅当设置了 `Max_line` 时生效。     |
 
 以下是配置文件示例：
 
