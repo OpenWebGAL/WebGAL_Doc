@@ -13,7 +13,8 @@
 | Default_Language             | 默认语言，可设置为 'zh_CN', 'zh_TW', 'en', 'ja', 'fr', 'de' |
 | Show_panic                   | 是否启用紧急回避功能，设置为 true 或 false                  |
 | Legacy_Expression_Blend_Mode | 是否启用 Live2D 的旧表情混合模式，设置为 true 或 false      |
-| Max_lineHeight               | 文本框的行高（单位：em）                                    |
+| Max_line                     | 文本框的最大显示行数                                        |
+| Line_height                  | 文本框的行高（单位：em）                                    |
 
 以下是配置文件示例：
 
