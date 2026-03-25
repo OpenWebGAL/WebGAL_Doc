@@ -77,6 +77,14 @@ If you are using a JSON format Spine sprite, you need to pass in the type using 
 changeFigure:exampleSpine/data.json?type=spine;
 ```
 
+Use the `motion` argument to switch Spine animations. If you also need to switch the Spine skin, pass the `skin` argument.
+
+```
+changeFigure:exampleSpine/data.json?type=spine -motion=anime_00_wait;
+changeFigure:exampleSpine/data.json?type=spine -skin=default;
+changeFigure:exampleSpine/data.json?type=spine -motion=anime_03_surprise -skin=03_surprise;
+```
+
 6. If you need to build a production package or use it in WebGAL Terre, run the `yarn build` command to build WebGAL. After completion, please refer to [How to use a custom engine](derivative) to use the modified engine.
 
 ### Important Notice

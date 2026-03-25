@@ -77,6 +77,14 @@ game/
 changeFigure:exampleSpine/data.json?type=spine;
 ```
 
+如果你需要切换 Spine 动画，继续使用 `motion` 参数；如果你需要切换 Spine 的皮肤，则使用 `skin` 参数。
+
+```
+changeFigure:exampleSpine/data.json?type=spine -motion=anime_00_wait;
+changeFigure:exampleSpine/data.json?type=spine -skin=default;
+changeFigure:exampleSpine/data.json?type=spine -motion=anime_03_surprise -skin=03_surprise;
+```
+
 6、如果你需要构建生产包，或在 WebGAL Terre 中使用，请运行 `yarn build` 指令构建 WebGAL。完成后，请参考 [如何使用定制引擎](derivative) 使用修改后的引擎。
 
 ### 重要提示

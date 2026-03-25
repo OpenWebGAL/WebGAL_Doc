@@ -77,6 +77,14 @@ JSON形式のSpine立ち絵を使用している場合は、エンジンがSpine
 changeFigure:exampleSpine/data.json?type=spine;
 ```
 
+Spineのアニメーションを切り替える場合は `motion` 引数を使います。Spineのskinも切り替えたい場合は、追加で `skin` 引数を指定します。
+
+```
+changeFigure:exampleSpine/data.json?type=spine -motion=anime_00_wait;
+changeFigure:exampleSpine/data.json?type=spine -skin=default;
+changeFigure:exampleSpine/data.json?type=spine -motion=anime_03_surprise -skin=03_surprise;
+```
+
 6. 本番用パッケージをビルドする場合、またはWebGAL Terreで使用する場合は、`yarn build`コマンドを実行してWebGALをビルドします。完了したら、[カスタムエンジンの使用方法](derivative) を参照して、変更後のエンジンを使用してください。
 
 
