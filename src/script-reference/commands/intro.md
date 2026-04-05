@@ -93,7 +93,7 @@ intro:这是一段话 -hold;
 ### useForward
 - 布尔值
 
-当值为 `true` 时，需要用户手动点击屏幕，才会显示下一行文字，并设置 `hold` 为 `true`。
+当值为 `true` 时，需要用户手动点击屏幕，才会显示下一行文字，并设置 `hold` 为 `true`，忽略 `delayTime`。
 当值为 `false` 时，自动显示下一行文字。
 
 ```webgal
