@@ -68,14 +68,16 @@ intro:这是一段话 -backgroundImage=bg.png;
 intro:这是第一行文字|这是第二行文字|这是第三行文字 -animation=slideIn;
 ```
 
-### delay
+### delayTime
 - 数字
 - 单位：毫秒
+- 范围：0 到正无穷
+- 默认值：1500
 
 设置每行文字的显示延迟时间。
 
 ```webgal
-intro:这是第一行文字|这是第二行文字|这是第三行文字 -delay=1000;
+intro:这是第一行文字|这是第二行文字|这是第三行文字 -delayTime=1000;
 ```
 
 ### hold
