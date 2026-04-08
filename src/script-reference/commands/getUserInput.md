@@ -64,7 +64,7 @@ getUserInput:player_name -rule=^.{1,2}$ -ruleFlag=g;
 ### ruleText
 - 字符串
 
-设置校验不通过时显示的弹出的错误弹窗的提示文本。可使用 `$0` 获取用户输入的内容。
+设置校验不通过时弹出的错误弹窗的提示文本，可使用 `$0` 获取用户输入的内容。
 
 ```webgal
 getUserInput:player_name -rule=^.{1,2}$ -ruleText=$0不符合1-2个字符;
