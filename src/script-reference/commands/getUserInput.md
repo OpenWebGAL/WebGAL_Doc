@@ -40,3 +40,43 @@ getUserInput:player_name -buttonText=确认;
 ```webgal
 getUserInput:player_name -defaultValue=Bob;
 ```
+
+### rule
+- 字符串
+
+设置输入验证的正则表达式规则。输入的内容将以此正则进行校验。
+
+```webgal
+getUserInput:player_name -rule=^.{1,2}$;
+```
+
+### ruleFlag
+- 字符串
+
+设置正则表达式的标识，如 `g`（全局匹配）、`i`（不区分大小写）等。
+
+具体参数详情请查看 [MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/RegExp#flags)。
+
+```webgal
+getUserInput:player_name -rule=^.{1,2}$ -ruleFlag=g;
+```
+
+### ruleText
+- 字符串
+
+设置校验不通过时弹出的错误弹窗的提示文本，可使用 `$0` 获取用户输入的内容。
+
+```webgal
+getUserInput:player_name -rule=^.{1,2}$ -ruleText=$0不符合1-2个字符;
+```
+
+### ruleButtonText
+- 字符串
+
+设置校验不通过时弹出的错误弹窗的按钮文本。
+
+默认为`OK`
+
+```webgal
+getUserInput:player_name -rule=^.{1,2}$ -ruleText=$0不符合1-2个字符 -ruleButtonText=确定;
+```
