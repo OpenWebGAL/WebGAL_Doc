@@ -230,6 +230,17 @@ changeFigure:character_a/model.json -motion=sad;
 changeFigure:character_a/model.json -motion=smile;
 ```
 
+### skin
+- 字符串
+
+对于 Spine 立绘，填写皮肤名称，切换到对应的 skin。
+如需同时切换 Spine 的动画与皮肤，继续使用 `motion` 指定动画，使用 `skin` 指定皮肤。
+
+```webgal
+changeFigure:character_x/model.json?type=spine -skin=default;
+changeFigure:character_x/model.json?type=spine -motion=anime_00_wait -skin=03_surprise;
+```
+
 ### expression
 - 字符串
 
