@@ -26,3 +26,31 @@ Title_bgm:夏影.mp3;
 Game_Logo:WebGalEnter.png|bg.png;
 Enable_Appreciation:true;
 ```
+
+## Switching Languages
+
+`Default_Language` only sets the default interface language when the player launches the game for the first time. Players can still switch languages later in `Menu -> Options -> System -> Language`, and the selected language will be saved locally and reused on the next launch.
+
+If you also prepare multiple script languages, read the current interface language in your script and jump to the corresponding scene file. You can use the internal variable `$userData.optionData.language`:
+
+```webgal
+setVar:lang=($userData.optionData.language);
+changeScene:start_zh.txt -when=lang==0;
+changeScene:start_en.txt -when=lang==1;
+changeScene:start_ja.txt -when=lang==2;
+```
+
+The numeric values map to languages as follows:
+
+| Value | Language |
+| :-- | :-- |
+| 0 | Simplified Chinese |
+| 1 | English |
+| 2 | Japanese |
+| 3 | French |
+| 4 | German |
+| 5 | Traditional Chinese |
+
+::: tip
+Changing the language from the menu only changes the engine UI language. If you want the game script itself to switch too, branch to different scene files in your script as shown above.
+:::

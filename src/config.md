@@ -26,3 +26,31 @@ Title_bgm:夏影.mp3;
 Game_Logo:WebGalEnter.png|bg.png;
 Enable_Appreciation:true;
 ```
+
+## 切换语言
+
+`Default_Language` 只用于设置玩家首次进入游戏时的默认界面语言。玩家之后仍可在游戏菜单的 `选项 -> 系统 -> Language` 中切换语言，所选结果会保存在本地，下次进入游戏时优先使用本地设置。
+
+如果你同时准备了多语言剧本，需要在脚本中读取当前界面语言，并跳转到对应的场景文件。可以使用内部变量 `$userData.optionData.language`：
+
+```webgal
+setVar:lang=($userData.optionData.language);
+changeScene:start_zh.txt -when=lang==0;
+changeScene:start_en.txt -when=lang==1;
+changeScene:start_ja.txt -when=lang==2;
+```
+
+其中，不同数字对应的语言如下：
+
+| 值 | 语言 |
+| :-- | :-- |
+| 0 | 简体中文 |
+| 1 | English |
+| 2 | 日本語 |
+| 3 | Français |
+| 4 | Deutsch |
+| 5 | 繁體中文 |
+
+::: tip
+菜单中的语言切换会改变引擎界面语言。如果你希望游戏正文也跟随切换，需要像上面这样在脚本里自行分流到不同语言的场景。
+:::
