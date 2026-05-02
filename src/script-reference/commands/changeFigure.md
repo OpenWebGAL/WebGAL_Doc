@@ -117,6 +117,10 @@ changeFigure:1/open_eyes.png -left;
 此参数仅在立绘出场，或替换立绘时生效。如果需要修改在场立绘的坐标，请使用 `setTransform`、`setAnimation`、`setTempAnimation` 等命令。
 :::
 
+::: warning
+`right` 参数优先级大于 `left`，两者同时出现时立绘将设置在右侧。
+:::
+
 ```webgal
 changeFigure:1/open_eyes.png -right;
 ```
