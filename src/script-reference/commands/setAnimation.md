@@ -33,10 +33,10 @@ setAnimation:shake -target=aaa -writeDefault;
 <!-- @include: ../arguments/keep.md -->
 ```webgal
 ; 假设这是一个特别长的动画
-setAnimation:shake -target=aaa -keep;
+setAnimation:shake -target=aaa -keep -next;
 角色A: 第一句话;
 角色A: 第二句话;
 角色A: 第三句话;
 ; 这会打断 aaa 的跨语句动画，并播放新动画
-setAnimation:rotate -target=aaa -keep;
+setAnimation:rotate -target=aaa -keep -next;
 ```

@@ -47,6 +47,7 @@ bgm:02.wav -enter=1500;
 
 ### unlockname
 <!-- @include: ../arguments/name-bgm.md -->
+如果不填写该参数，或名称为空，则不会收录此音乐。
 ```webgal
 bgm:01.wav -unlockname=MyBgm01;
 ```
