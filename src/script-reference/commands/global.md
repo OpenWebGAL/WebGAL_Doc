@@ -52,13 +52,15 @@ setVar:coin=10;
 ;
 label:buy;
 ;
-setVar:coin=coin-3 -when=coin>=3;
-角色名:花 3 块钱买汽水，剩下 {coin} 块。
+jumpLabel:not_enough_coin -when=coin<3;
 ;
-角色名:没钱买 3 块钱的汽水了，只剩下 {coin} 块。 -when=coin<3; 
-jumpLabel:start -when=coin<3;
-;
+setVar:coin=coin-3;
+角色名:花 3 块钱买汽水，剩下 {coin} 块。;
 jumpLabel:buy;
+;
+label:not_enough_coin;
+角色名:没钱买 3 块钱的汽水了，只剩下 {coin} 块。;
+jumpLabel:start;
 ```
 
 ### continue

@@ -16,29 +16,35 @@ WebGAL 会尝试将无法识别的值类型，转换为字符串。
 
 ```webgal
 setVar:char_b_fav=15; 角色 B 初始好感度
-角色B:呐呐，看不看得出来我今天哪里不一样？;
-choose:缎带:add|你变胖了:minus;
 ;
-label:add;
-角色A:是换了缎带吧。;
+角色B:呐呐，看不看得出来我今天哪里不一样？;
+choose:缎带:good_answer|你变胖了:bad_answer; 根据玩家的选择，跳转到不同的标签位置
+;
+label:good_answer;
+玩家:是换了缎带吧。;
 setVar:char_b_fav=char_b_fav+10; 角色 B 好感度 +10;
 角色B:答对了，怎么样，你觉得好看吗？;
-角色A:嗯，很适合你。;
-jumpLabel:go_out;
+玩家:嗯，很适合你。;
+jumpLabel:ask_go_out; 跳转到 ask_go_out 标签，避开下面的 bad_answer 部分
 ;
-label:minus;
-角色A:你变胖了。;
+label:bad_answer;
+玩家:你变胖了。;
 setVar:char_b_fav=char_b_fav-10; 角色 B 好感度 -10;
 角色B:你这人好无趣唉......;
 ;
-label:go_out;
-角色A:对了，今天晚上你有空吗？;
+label:ask_go_out;
+玩家:对了，今天晚上你有空吗？;
 ;
-角色B:今晚没有安排，怎么了？ -when=char_b_fav>10;
-changeScene:chapter_01/part_02.txt -when=char_b_fav>10;
+jumpLabel:not_enough_fav -when=char_b_fav<10; 如果好感度小于 10，跳转到 not_enough_fav 标签
+;
+角色B:今晚没有安排，怎么了？;
+changeScene:chapter_01/part_02.txt;
+;
+label:not_enough_fav;
 ;
 角色B:没有。不好意思我先走了。;
 :角色 B 离开了。;
+changeScene:chapter_02/part_01.txt;
 ;
 ```
 
@@ -52,15 +58,21 @@ changeScene:chapter_01/part_02.txt -when=char_b_fav>10;
 
 ```webgal
 ; 假设这是新游戏的开头
+; 如果已经是多周目了，就直接跳到多周目专用的剧情
 jumpLabel:another_life -when=multiple_playthroughs;
 ;
-setVar:multiple_playthroughs=false -global; 是否为多周目游戏
+; 否则认为是第一周目，初始化变量并进入第一周目的剧情
+setVar:multiple_playthroughs=false -global; 初始化为非多周目
 changeScene:chapter_01/part_01.txt;
 ;
+; 这里是多周目专用的剧情
+; 只有当 multiple_playthroughs 为 true 时才会跳转到这里
 label:another_life;
 神秘的声音:如果有机会，你会选择过另一种人生吗？;
 changeScene:chapter_01/part_01_extra.txt;
 ;
+; ......
+;
 ; 假设这是最后一章的结束部分
-setVar:multiple_playthroughs=true -global; 设置为多周目游戏
+setVar:multiple_playthroughs=true -global; 设置为多周目
 ```
