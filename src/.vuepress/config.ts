@@ -34,7 +34,7 @@ export default defineUserConfig({
           scopeName: "source.webgal",
           path: path.resolve(__dirname, "../grammar/webgal.tmLanguage.json"),
         },
-        "ts", "bash", "json", "xml", "kotlin", 
+        "ts", "bash", "json", "xml", "kotlin", "yaml"
       ],
       
     }),
