@@ -20,3 +20,21 @@ jumpLabel:think;
 label:correct;
 角色A:对，是兔子玩偶。;
 ```
+
+### 条件跳转
+
+`jumpLabel` 可以配合通用参数 `-when` 使用。条件不满足时，本句会被跳过，剧情继续执行下一句。
+
+```webgal
+setVar:score=2;
+jumpLabel:scoreHigh -when=score>1;
+角色A:分数不足时会看到这里。;
+jumpLabel:scoreEnd;
+;
+label:scoreHigh;
+角色A:分数大于 1，跳转成功。;
+;
+label:scoreEnd;
+```
+
+条件表达式的写法请见 [(global)](global.md#when)。

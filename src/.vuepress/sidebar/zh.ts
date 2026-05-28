@@ -92,6 +92,7 @@ export const zhSidebar = sidebar({
             "getUserInput",
             "applyStyle",
             "wait",
+            "callSteam",
           ]
         },
         {

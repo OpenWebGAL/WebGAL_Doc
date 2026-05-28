@@ -13,15 +13,27 @@ setAnimation:enter-from-bottom -target=fig-center -next;
 
 目前，预制的动画有：
 
-| 动画效果      | 动画名              | 持续时间（毫秒）|
-| :------------ | :----------------- | :------------- |
-| 渐入          | enter              | 300            |
-| 渐出          | exit               | 300            |
-| 左右摇晃一次  | shake               | 1000           |
-| 从下侧进入    | enter-from-bottom   | 500            |
-| 从左侧进入    | enter-from-left     | 500            |
-| 从右侧进入    | enter-from-right    | 500            |
-| 前后移动一次  | move-front-and-back | 1000           |
+| 动画效果 | 动画名 | 持续时间（毫秒） |
+| :--- | :--- | :--- |
+| 渐入 | enter | 300 |
+| 渐出 | exit | 300 |
+| 左右摇晃一次 | shake | 1000 |
+| 从下侧进入 | enter-from-bottom | 500 |
+| 从左侧进入 | enter-from-left | 500 |
+| 从右侧进入 | enter-from-right | 500 |
+| 前后移动一次 | move-front-and-back | 1000 |
+| 模糊进入 | blur | 300 |
+| 老电影滤镜 | oldFilm | 0 |
+| 点状滤镜 | dotFilm | 0 |
+| 反射滤镜 | reflectionFilm | 0 |
+| 故障滤镜 | glitchFilm | 0 |
+| RGB 分离滤镜 | rgbFilm | 0 |
+| 光辉滤镜 | godrayFilm | 0 |
+| 移除电影类滤镜 | removeFilm | 0 |
+| 冲击波入场 | shockwaveIn | 2000 |
+| 冲击波退场 | shockwaveOut | 2000 |
+
+这些名称来自 `game/animation/animationTable.json`。持续时间为 0 的预设通常用于立刻设置或清除滤镜状态。
 
 目前，动画的作用目标有：
 
@@ -171,3 +183,50 @@ setTransition: -target=fig-center -enter=enter-from-bottom -exit=exit;
 
 如果不在立绘或背景设置后立即执行进出场效果的设置，等到图像已经进场了，再覆盖进场动画就没有意义了。但如果此时图像还没有出场，设置的出场动画仍有意义。其会在立绘或背景出场时正确地被应用。
 :::
+
+## 图片立绘嘴型同步
+
+WebGAL 支持通过差分图片实现图片立绘的嘴型同步动画。
+
+### 准备差分图片
+
+为角色准备以下差分立绘：
+
+- 默认图（通常为闭嘴状态）
+- 张嘴差分
+- 半张嘴差分
+- 闭嘴差分（可与默认图相同）
+- 可选：睁眼差分、闭眼差分
+
+### 最小示例
+
+**1. 注册差分并上场立绘**
+
+```webgal
+changeFigure:1/normal.png -id=charA -mouthOpen=1/mouth_open.png -mouthHalfOpen=1/mouth_half.png -mouthClose=1/normal.png;
+```
+
+**2. 播放语音并驱动嘴型**
+
+```webgal
+; 通过 id 驱动自由立绘
+角色A:你好，世界！ -vocal=charA_hello.wav -figureId=charA;
+```
+
+引擎会根据语音的实时音量，在 `mouthOpen`、`mouthHalfOpen`、`mouthClose` 三个差分之间切换，模拟嘴型动画。
+
+### 位置立绘示例
+
+```webgal
+; 上场中间立绘并注册差分
+changeFigure:1/normal.png -mouthOpen=1/mouth_open.png -mouthHalfOpen=1/mouth_half.png -mouthClose=1/normal.png;
+
+; 驱动中间立绘嘴型
+角色A:你好，世界！ -vocal=charA_hello.wav -center;
+```
+
+### 限制
+
+- 使用 `vocal` 时，引擎会根据语音音量驱动嘴型；未提供 `vocal` 但指定了 `figureId`、`left`、`right` 或 `center` 时，引擎会用模拟音量驱动目标立绘的嘴型差分。
+- 此功能仅适用于图片立绘。Live2D 立绘有独立的嘴型参数体系，不使用此差分方式。
+- 眨眼差分（`eyesOpen`、`eyesClose`）可选，注册后引擎会自动触发随机眨眼动画。

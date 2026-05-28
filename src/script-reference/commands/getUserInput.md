@@ -12,6 +12,8 @@ getUserInput:player_name -title=您的名字 -buttonText=确认 -defaultValue=Bo
 角色B:{player_name}，我记住了。;
 ```
 
+玩家确认输入后，引擎会写入变量、关闭输入框，并继续执行下一句。若设置了输入校验且校验失败，则会停留在输入框，不会写入变量。
+
 ## 参数
 
 ### title
@@ -40,6 +42,8 @@ getUserInput:player_name -buttonText=确认;
 ```webgal
 getUserInput:player_name -defaultValue=Bob;
 ```
+
+如果玩家没有输入内容就确认，引擎会把 `defaultValue` 写入变量；如果没有设置 `defaultValue`，则写入一个空格。
 
 ### rule
 - 字符串

@@ -23,3 +23,19 @@ applyStyle:原样式名->新样式名1;
 applyStyle:新样式名1->新样式名2; 错误
 applyStyle:原样式名->新样式名2;
 ```
+
+## 常用可替换样式
+
+选择枝使用以下样式名：
+
+| 样式名 | 作用 |
+| :--- | :--- |
+| `Choose_Main` | 选项列表容器 |
+| `Choose_item_outer` | 单个选项的外层容器 |
+| `Choose_item` | 可点击选项 |
+| `Choose_item_disabled` | 条件未满足、不可点击的选项 |
+
+```webgal
+; 将可点击选项替换成模板中定义的 Choose_item_Red
+applyStyle:Choose_item->Choose_item_Red;
+```

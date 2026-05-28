@@ -60,3 +60,25 @@ changeBg:bg.png -unlockname=MyCg01;
 ```webgal
 changeBg:bg.png -unlockname=MyCg01 -series=MySeries01;
 ```
+
+### enterDuration
+- 数字
+- 单位：毫秒
+- 范围：0 到正无穷
+
+入场动画时长。若未填写，默认取 `duration` 的值。
+
+```webgal
+changeBg:bg.png -enterDuration=500;
+```
+
+### exitDuration
+- 数字
+- 单位：毫秒
+- 范围：0 到正无穷
+
+退场动画时长。若未填写，默认值为 1500。
+
+```webgal
+changeBg:bg.png -exitDuration=800;
+```

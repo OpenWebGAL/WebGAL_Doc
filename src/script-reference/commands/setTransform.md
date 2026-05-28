@@ -32,6 +32,12 @@ changeFigure:1/open_eyes.png -id=aaa;
 setTransform:{"brightness":0.5} -target=aaa -duration=500;
 ```
 
+<!-- @include: ../arguments/ease.md -->
+```webgal
+changeFigure:1/open_eyes.png -id=aaa;
+setTransform:{"position":{"x":-200}} -target=aaa -duration=500 -ease=easeOut;
+```
+
 <!-- @include: ../arguments/writeDefault.md -->
 ```webgal
 changeFigure:1/open_eyes.png -id=aaa;

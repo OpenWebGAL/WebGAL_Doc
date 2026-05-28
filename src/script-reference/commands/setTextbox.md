@@ -5,6 +5,7 @@
 ## 语句内容
 
 填写 `hide` 时，隐藏对话框，其他任何字符串均表示显示对话框。
+常用写法是 `setTextbox:hide;` 隐藏文本框，`setTextbox:on;` 或 `setTextbox:show;` 恢复显示。
 
 ::: info
 用 `setTextbox` 隐藏对话框后，若后续没有其他 `setTextbox` 命令显示对话框，则对话框将一直保持隐藏状态。
@@ -18,6 +19,6 @@
 角色A:带你去一个地方。;
 setTextbox:hide;
 changeBg:shop.png;
-setTextbox:show;
+setTextbox:on;
 角色A:我们到了。;
 ```

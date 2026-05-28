@@ -11,6 +11,8 @@
 intro:这是第一行文字|这是第二行文字|这是第三行文字;
 ```
 
+全屏文字演出结束后会自动关闭，不会遮挡后续对话。连续执行多条 `intro` 时，只会显示当前这一次的全屏文字。
+
 ## 参数
 
 ### fontSize
@@ -90,12 +92,12 @@ intro:这是第一行文字|这是第二行文字|这是第三行文字 -delayTi
 intro:这是一段话 -hold;
 ```
 
-### useForward
+### userForward
 - 布尔值
 
 当值为 `true` 时，需要用户手动点击屏幕，才会显示下一行文字，并设置 `hold` 为 `true`，忽略 `delayTime`。
 当值为 `false` 时，自动显示下一行文字。
 
 ```webgal
-intro:这是一段话 -useForward;
+intro:这是一段话 -userForward;
 ```
