@@ -42,6 +42,10 @@ changeFigure:1/closed_eyes.png -next;
 没眼看了！ -concat;
 ```
 
+::: tip
+如果在拼接文本前使用了 applyStyle 修改文本框文本的样式，如让文字变色，由于 outer 与 inner 作用于整个文本框的文本，因此无法通过这种方式单独更改个别文本的颜色，反而会因为样式的更新导致完整的拼接文本会重新播放一遍。
+:::
+
 ### speaker
 - 字符串
 
@@ -71,7 +75,8 @@ WebGAL 支持说话者的简化写法。
 
 ```webgal
 say:这是一句话。 -speaker=角色A;
-say:这是一个旁白。 -clear;
+say:这是一个旁白。 -clear;  没有值的情况默认关闭说话者栏
+say:这是一个旁白。 -clear=true;
 say:这是一句话。 -speaker=角色B;
 ```
 
