@@ -5,4 +5,5 @@
 
 ::: warning
 此参数仅在对象入场，或替换对象时生效。如果需要修改在场对象的变换效果，请使用 `setTransform`、`setAnimation`、`setTempAnimation` 等命令。
+若使用了 `enter` 参数指定入场动画，该参数将不起作用。
 :::

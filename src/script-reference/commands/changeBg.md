@@ -49,6 +49,7 @@ changeBg:bg.png -ease=easeOut;
 
 ### unlockname
 <!-- @include: ../arguments/name-cg.md -->
+如果不填写该参数，或名称为空，则不会收录此图片。
 ```webgal
 changeBg:bg.png -unlockname=MyCg01;
 ```

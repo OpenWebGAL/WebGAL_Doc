@@ -35,7 +35,7 @@ setTransform:{"brightness":0.5} -target=aaa -duration=500;
 <!-- @include: ../arguments/ease.md -->
 ```webgal
 changeFigure:1/open_eyes.png -id=aaa;
-setTransform:{"position":{"x":-200}} -target=aaa -duration=500 -ease=easeOut;
+setTransform:{"brightness":0.5} -target=aaa -duration=500 -ease=linear;
 ```
 
 <!-- @include: ../arguments/writeDefault.md -->
@@ -47,10 +47,10 @@ setTransform:{"brightness":0.5} -target=aaa -duration=500 -writeDefault;
 <!-- @include: ../arguments/keep.md -->
 ```webgal
 ; 假设这是一个特别长的动画
-setTransform:{"scale":{"x":2,"y":2}} -target=aaa -duration=10000 -keep;
+setTransform:{"scale":{"x":2,"y":2}} -target=aaa -duration=10000 -keep -next;
 角色A: 第一句话;
 角色A: 第二句话;
 角色A: 第三句话;
 ; 这会打断 aaa 的跨语句动画，并播放新动画
-setTransform:{"scale":{"x":1,"y":1}} -target=aaa -duration=10000 -keep;
+setTransform:{"scale":{"x":1,"y":1}} -target=aaa -duration=10000 -keep -next;
 ```

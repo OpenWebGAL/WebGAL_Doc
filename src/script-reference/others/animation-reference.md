@@ -70,7 +70,7 @@ setTempAnimation:[{"duration":0},{"position":{"x":500},"duration":500},{"positio
 您仍然可以为第一个片段设置变换效果属性，这样可以在动画开始时直接跳转到指定状态。
 
 ```webgal
-; 立绘对象初始坐标为 (-500,0)
+; 立绘对象初始坐标为 (0,0)
 changeFigure:character_a/normal.png -id=aaa;
 ; 从左走到右，动画开始时直接跳转到左边
 setTempAnimation:[{"position":{"x":-500},"duration":0},{"position":{"x":500},"duration":1000}] -target=aaa;
@@ -90,26 +90,7 @@ changeFigure:1/open_eyes.png -id=aaa;
 setTempAnimation:[{"position":{"x":-500},"duration":0},{"position":{"x":500},"duration":1000}] -target=aaa;
 ```
 
-### ease
-- 字符串
-
-填写缓动类型，控制动画的缓动效果，默认值为 `easeInOut`，可选值包括
-- `linear`：线性
-- `easeIn`：缓入
-- `easeOut`：缓出
-- `easeInOut`：缓入缓出
-- `circIn`：圆形缓入
-- `circOut`：圆形缓出
-- `circInOut`：圆形缓入缓出
-- `backIn`：起点回弹
-- `backOut`：终点回弹
-- `backInOut`：起止回弹
-- `bounceIn`：起点弹跳
-- `bounceOut`：终点弹跳
-- `bounceInOut`：起止弹跳
-- `anticipate`：预先反向
-
-任何其他字符串都会回退到默认值。
+<!-- @include: ../arguments/ease.md -->
 
 ```webgal
 changeFigure:1/open_eyes.png -id=aaa;

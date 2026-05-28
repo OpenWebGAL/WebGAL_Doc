@@ -288,7 +288,7 @@ changeFigure:character_a/model.json -expression=sad;
 
 对于 Live2D 立绘，填写 number[4] 数组，拓展或收缩立绘的显示区域。
 以向右和向下为正方向，顺序为 `左,上,右,下`。
-x 轴以向右为正方形向，y 轴以向下为正方向。
+x 轴以向右为正方向，y 轴以向下为正方向。
 
 ::: warning
 此参数仅在立绘出场，或替换立绘时生效。
@@ -321,7 +321,7 @@ changeFigure:character_a/model.json -blink={"blinkInterval":5000,"blinkIntervalR
 
 对于 Live2D 立绘，填写 json 字符串，控制立绘的注视参数。
 通常不需要书写所有的属性, 没填写的属性会继承上一次设置的值, 立绘出场时会继承默认值。
-x 轴以向右为正方形向，y 轴以向上为正方向。
+x 轴以向右为正方向，y 轴以向上为正方向。
 
 参数有
 - `"x"`: 数字，注视点的 x 坐标，范围 -1 到 1，默认值 0
