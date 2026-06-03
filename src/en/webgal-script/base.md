@@ -13,6 +13,28 @@ WebGAL:Hello!; The content after semicolon will be regarded as a comment
 ; You can directly input a semicolon, then write a single-line comment
 ```
 
+## Escaping Special Characters
+
+WebGAL scripts use the English colon `:` to separate commands and content, the English semicolon `;` to end statements and start inline comments, and some commands also use symbols such as `|`, `,`, and `.` as part of their content syntax. If you want these symbols to be displayed as plain text, add a backslash `\` before the symbol.
+
+Common symbols that need escaping:
+
+| Original Symbol | Writing |
+| :--- | :--- |
+| `:` | `\:` |
+| `,` | `\,` |
+| `.` | `\.` |
+| `;` | `\;` |
+| `|` | `\|` |
+
+```ws
+intro:I will display these symbols\: \:\,\.\; just look -hold;
+WebGAL:I will display these symbols\: \:\,\.\; just look;
+choose:I will display these symbols\: \:\,\.\; just look:nextLabel;
+```
+
+When writing CSS in text extension syntax, semicolons also need to be written as `\;`; otherwise, they will be treated as the start of a WebGAL statement comment.
+
 ## `none` Keyword
 
 When setting **resources** such as立ち絵, BGM, backgrounds, you can turn off this object by setting it to `none`.

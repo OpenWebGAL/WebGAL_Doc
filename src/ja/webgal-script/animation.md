@@ -14,14 +14,26 @@ setAnimation:enter-from-bottom -target=fig-center -next;
 現在、プリセットされたアニメーションは以下の通りです。
 
 | アニメーション効果 | アニメーション名 | 持続時間（ミリ秒） |
-| :------------ | :----------------- | :------------- |
+| :--- | :--- | :--- |
 | フェードイン | enter | 300 |
 | フェードアウト | exit | 300 |
 | 左右に一度揺れる | shake | 1000 |
-| 下側から入ってくる | enter-from-bottom | 500 |
-| 左側から入ってくる | enter-from-right | 500 |
-| 右側から入ってくる | enter-from-right | 500 |
+| 下側から入る | enter-from-bottom | 500 |
+| 左側から入る | enter-from-left | 500 |
+| 右側から入る | enter-from-right | 500 |
 | 前後に一度移動する | move-front-and-back | 1000 |
+| ぼかしながら入る | blur | 300 |
+| オールドフィルムフィルター | oldFilm | 0 |
+| ドットフィルター | dotFilm | 0 |
+| 反射フィルター | reflectionFilm | 0 |
+| グリッチフィルター | glitchFilm | 0 |
+| RGB 分離フィルター | rgbFilm | 0 |
+| ゴッドレイフィルター | godrayFilm | 0 |
+| フィルム系フィルターを削除 | removeFilm | 0 |
+| 衝撃波入場 | shockwaveIn | 2000 |
+| 衝撃波退場 | shockwaveOut | 2000 |
+
+これらの名前は `game/animation/animationTable.json` に由来します。持続時間が 0 のプリセットは、通常、フィルター状態を即時に設定または解除するために使われます。
 
 現在、アニメーションの作用対象は以下の通りです。
 
@@ -171,3 +183,50 @@ setTransition: -target=fig-center -enter=enter-from-bottom -exit=exit;
 
 立ち絵や背景を設定した後、すぐに登場・退場エフェクトを設定せずに、画像がすでに登場してから登場アニメーションを上書きしても意味がありません。しかし、この時点で画像がまだ登場していない場合は、設定した登場アニメーションに意味があります。立ち絵や背景が登場する際に正しく適用されます。
 :::
+
+## 画像立ち絵の口パク同期
+
+WebGAL は差分画像を使って、画像立ち絵の口パク同期アニメーションを実現できます。
+
+### 差分画像を準備する
+
+キャラクターには次の差分立ち絵を用意してください。
+
+- デフォルト画像（通常は口を閉じた状態）
+- 口開き差分
+- 半開き口差分
+- 口閉じ差分（デフォルト画像と同じでも構いません）
+- 任意: 目開き差分、目閉じ差分
+
+### 最小例
+
+**1. 差分を登録して立ち絵を登場させる**
+
+```webgal
+changeFigure:1/normal.png -id=charA -mouthOpen=1/mouth_open.png -mouthHalfOpen=1/mouth_half.png -mouthClose=1/normal.png;
+```
+
+**2. 音声を再生して口パクを駆動する**
+
+```webgal
+; id で自由立ち絵を駆動する
+キャラA:こんにちは、世界！ -vocal=charA_hello.wav -figureId=charA;
+```
+
+エンジンは音声のリアルタイム音量に応じて、`mouthOpen`、`mouthHalfOpen`、`mouthClose` の 3 つの差分を切り替え、口パクを模擬します。
+
+### 位置立ち絵の例
+
+```webgal
+; 中央立ち絵を登場させ、差分を登録する
+changeFigure:1/normal.png -mouthOpen=1/mouth_open.png -mouthHalfOpen=1/mouth_half.png -mouthClose=1/normal.png;
+
+; 中央立ち絵の口パクを駆動する
+キャラA:こんにちは、世界！ -vocal=charA_hello.wav -center;
+```
+
+### 制限
+
+- `vocal` を使用する場合、エンジンは音声音量に応じて口パクを駆動します。`vocal` がなくても `figureId`、`left`、`right`、`center` のいずれかを指定した場合は、模擬音量で対象立ち絵の口差分を駆動します。
+- この機能は画像立ち絵にのみ適用されます。Live2D 立ち絵には独立した口パクパラメータ体系があり、この差分方式は使用しません。
+- まばたき差分（`eyesOpen`、`eyesClose`）は任意です。登録後、エンジンはランダムまばたきアニメーションを自動的に発火します。

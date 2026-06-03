@@ -15,6 +15,7 @@
 | Legacy_Expression_Blend_Mode | Live2D の旧表情ブレンドモードを有効にするかどうか、true または false に設定      |
 | Max_line                     | テキスト表示フレームの最大行数                                                   |
 | Line_height                  | テキストフレームの行高(単位:em)                                                  |
+| Steam_AppID                  | Steam アプリ ID。Steam 連携の初期化に使用します。Electron ビルド環境でのみ有効です |
 
 以下は設定ファイルの例です。
 
