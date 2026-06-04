@@ -83,13 +83,13 @@ changeFigure:1/open_eyes.png -exit=exit-to-right;
 ```
 
 <!-- @include: ../arguments/duration.md -->
-デフォルトの登場・退場アニメーションに適用されます。デフォルト値は 1000 です。
+デフォルトの登場アニメーションに適用されます。デフォルト値は 300 です。
 ```webgal
 changeFigure:1/open_eyes.png -duration=200;
 ```
 
 <!-- @include: ../arguments/ease.md -->
-デフォルトの登場・退場アニメーションに適用されます。
+デフォルトの登場アニメーションに適用されます。
 ```webgal
 changeFigure:1/open_eyes.png -ease=easeOut;
 ```

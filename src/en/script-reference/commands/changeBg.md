@@ -36,13 +36,13 @@ changeBg:bg.png -exit=exit-to-right;
 ```
 
 <!-- @include: ../arguments/duration.md -->
-Applied to default entrance and exit animations. Default value: 1000.
+Applied to the default entrance animation. Default value: 1500.
 ```webgal
 changeBg:bg.png -duration=200;
 ```
 
 <!-- @include: ../arguments/ease.md -->
-Applied to default entrance and exit animations.
+Applied to the default entrance animation.
 ```webgal
 changeBg:bg.png -ease=easeOut;
 ```
@@ -67,7 +67,7 @@ changeBg:bg.png -unlockname=MyCg01 -series=MySeries01;
 - Unit: milliseconds
 - Range: 0 to positive infinity
 
-The entrance animation duration. If omitted, it defaults to the value of `duration`.
+The entrance animation duration. If omitted, it defaults to the value of `duration`, whose default is 1500.
 
 ```webgal
 changeBg:bg.png -enterDuration=500;

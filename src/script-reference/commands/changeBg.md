@@ -36,13 +36,13 @@ changeBg:bg.png -exit=exit-to-right;
 ```
 
 <!-- @include: ../arguments/duration.md -->
-作用于默认入场退场动画，默认值为 1000。
+作用于默认入场动画，默认值为 1500。
 ```webgal
 changeBg:bg.png -duration=200;
 ```
 
 <!-- @include: ../arguments/ease.md -->
-作用于默认入场退场动画。
+作用于默认入场动画。
 ```webgal
 changeBg:bg.png -ease=easeOut;
 ```
@@ -67,7 +67,7 @@ changeBg:bg.png -unlockname=MyCg01 -series=MySeries01;
 - 单位：毫秒
 - 范围：0 到正无穷
 
-入场动画时长。若未填写，默认取 `duration` 的值。
+入场动画时长。若未填写，默认取 `duration` 的值（默认 1500）。
 
 ```webgal
 changeBg:bg.png -enterDuration=500;

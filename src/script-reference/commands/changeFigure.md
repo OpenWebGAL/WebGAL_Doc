@@ -82,13 +82,13 @@ changeFigure:1/open_eyes.png -exit=exit-to-right;
 ```
 
 <!-- @include: ../arguments/duration.md -->
-作用于默认入场退场动画，默认值为 1000。
+作用于默认入场动画，默认值为 300。
 ```webgal
 changeFigure:1/open_eyes.png -duration=200;
 ```
 
 <!-- @include: ../arguments/ease.md -->
-作用于默认入场退场动画。
+作用于默认入场动画。
 ```webgal
 changeFigure:1/open_eyes.png -ease=easeOut;
 ```

@@ -36,13 +36,13 @@ changeBg:bg.png -exit=exit-to-right;
 ```
 
 <!-- @include: ../arguments/duration.md -->
-デフォルトの登場・退場アニメーションに適用されます。デフォルト値は 1000 です。
+デフォルトの登場アニメーションに適用されます。デフォルト値は 1500 です。
 ```webgal
 changeBg:bg.png -duration=200;
 ```
 
 <!-- @include: ../arguments/ease.md -->
-デフォルトの登場・退場アニメーションに適用されます。
+デフォルトの登場アニメーションに適用されます。
 ```webgal
 changeBg:bg.png -ease=easeOut;
 ```
@@ -67,7 +67,7 @@ changeBg:bg.png -unlockname=MyCg01 -series=MySeries01;
 - 単位: ミリ秒
 - 範囲: 0 から正の無限大
 
-登場アニメーションの持続時間です。省略した場合は `duration` の値を使用します。
+登場アニメーションの持続時間です。省略した場合は `duration` の値を使用します（デフォルト 1500）。
 
 ```webgal
 changeBg:bg.png -enterDuration=500;

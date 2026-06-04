@@ -83,13 +83,13 @@ changeFigure:1/open_eyes.png -exit=exit-to-right;
 ```
 
 <!-- @include: ../arguments/duration.md -->
-Applied to default entrance and exit animations. Default value: 1000.
+Applied to the default entrance animation. Default value: 300.
 ```webgal
 changeFigure:1/open_eyes.png -duration=200;
 ```
 
 <!-- @include: ../arguments/ease.md -->
-Applied to default entrance and exit animations.
+Applied to the default entrance animation.
 ```webgal
 changeFigure:1/open_eyes.png -ease=easeOut;
 ```
