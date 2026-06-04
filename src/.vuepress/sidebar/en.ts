@@ -42,5 +42,44 @@ export const enSidebar = sidebar({
         "developers/terre",
       ]
     },
+    {
+      text: "Script Reference",
+      prefix: "script-reference/",
+      children: [
+        {
+          text: "Commands",
+          prefix: "commands/",
+          children: [
+            "global",
+            "say",
+            "changeBg",
+            "changeFigure",
+            "bgm",
+            "intro",
+            "changeScene",
+            "choose",
+            "label",
+            "jumpLabel",
+            "setVar",
+            "setTextbox",
+            "setAnimation",
+            "playEffect",
+            "setTempAnimation",
+            "setTransform",
+            "getUserInput",
+            "applyStyle",
+            "callSteam",
+          ],
+        },
+        {
+          text: "Other",
+          prefix: "others/",
+          children: [
+            "transform-reference",
+            "animation-reference",
+          ],
+        },
+      ],
+    },
   ],
 });

@@ -42,5 +42,44 @@ export const jaSidebar = sidebar({
         "developers/terre",
       ]
     },
+    {
+      text: "スクリプトリファレンス",
+      prefix: "script-reference/",
+      children: [
+        {
+          text: "コマンド",
+          prefix: "commands/",
+          children: [
+            "global",
+            "say",
+            "changeBg",
+            "changeFigure",
+            "bgm",
+            "intro",
+            "changeScene",
+            "choose",
+            "label",
+            "jumpLabel",
+            "setVar",
+            "setTextbox",
+            "setAnimation",
+            "playEffect",
+            "setTempAnimation",
+            "setTransform",
+            "getUserInput",
+            "applyStyle",
+            "callSteam",
+          ],
+        },
+        {
+          text: "その他",
+          prefix: "others/",
+          children: [
+            "transform-reference",
+            "animation-reference",
+          ],
+        },
+      ],
+    },
   ],
 });

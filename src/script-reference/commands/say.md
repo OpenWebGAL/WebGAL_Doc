@@ -151,3 +151,9 @@ WebGAL 支持声音文件的简化写法。
 ```webgal
 角色A:你好，世界！ -figureId=aaa;
 ```
+
+## 嘴型同步工作流
+
+`vocal`、`left`、`right`、`center`、`figureId` 参数共同构成图片立绘嘴型同步的驱动端。使用前需先通过 `changeFigure` 注册差分图片。
+
+完整工作流请参见[动画效果 - 图片立绘嘴型同步](../../webgal-script/animation.md#图片立绘嘴型同步)。

@@ -32,3 +32,14 @@ playEffect:rain.wav -id=rain;
 ; 播放一次雷声
 playEffect:thunder.wav;
 ```
+
+### volume
+- 数字
+- 范围：0 到 100
+- 默认值：100
+
+设置音效的音量百分比，0 为静音，100 为最大音量。
+
+```webgal
+playEffect:rain.wav -id=rain -volume=60;
+```

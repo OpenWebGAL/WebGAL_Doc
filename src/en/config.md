@@ -15,6 +15,7 @@ Under the `game` folder, there is a file named `config.txt`, you can fill in the
 | Legacy_Expression_Blend_Mode | Whether to enable legacy expression blend mode for Live2D, set to true or false             |
 | Max_line                     | Maximum number of displayed lines in the text box                                           |
 | Line_height                  | Line height of the text box (unit: em)                                                      |
+| Steam_AppID                  | Steam App ID, used to initialize Steam integration. Only effective in Electron builds        |
 
 The following is a sample configuration file:
 

@@ -82,15 +82,37 @@ changeFigure:1/open_eyes.png -exit=exit-to-right;
 ```
 
 <!-- @include: ../arguments/duration.md -->
-作用于默认入场退场动画，默认值为 1000。
+作用于默认入场动画，默认值为 300。
 ```webgal
 changeFigure:1/open_eyes.png -duration=200;
 ```
 
 <!-- @include: ../arguments/ease.md -->
-作用于默认入场退场动画。
+作用于默认入场动画。
 ```webgal
 changeFigure:1/open_eyes.png -ease=easeOut;
+```
+
+### enterDuration
+- 数字
+- 单位：毫秒
+- 范围：0 到正无穷
+
+入场动画时长。若未填写，默认取 `duration` 的值（默认 300）。
+
+```webgal
+changeFigure:1/open_eyes.png -enterDuration=200;
+```
+
+### exitDuration
+- 数字
+- 单位：毫秒
+- 范围：0 到正无穷
+
+退场动画时长。若未填写，默认值为 450。
+
+```webgal
+changeFigure:1/open_eyes.png -exitDuration=300;
 ```
 
 ### left
@@ -152,6 +174,16 @@ changeFigure:1/open_eyes.png -id=aaa -zIndex=2;
 changeFigure:2/open_eyes.png -id=bbb -zIndex=1;
 ```
 
+### blendMode
+- 字符串
+- 默认值：`normal`
+
+设置立绘的混合模式。仅在立绘出场或替换立绘时生效。
+
+```webgal
+changeFigure:1/open_eyes.png -id=aaa -blendMode=add;
+```
+
 ### clear
 - 布尔值
 
@@ -173,7 +205,7 @@ changeFigure:1/open_eyes.png -none;
 ### animationFlag
 - 字符串
 
-动画标志，暂无实际作用。
+图片立绘差分动画标志。当前云端引擎会将此值写入 `figureAssociatedAnimation`，但嘴型同步和眨眼动画实际按目标立绘 id 读取 `mouthOpen`、`mouthHalfOpen`、`mouthClose`、`eyesOpen`、`eyesClose` 等差分资源；`animationFlag` 本身暂未被后续逻辑读取。
 
 ### mouthOpen
 - 字符串

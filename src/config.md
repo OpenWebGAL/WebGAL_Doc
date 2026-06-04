@@ -15,6 +15,7 @@
 | Legacy_Expression_Blend_Mode | 是否启用 Live2D 的旧表情混合模式，设置为 true 或 false      |
 | Max_line                     | 文本框的最大显示行数                                        |
 | Line_height                  | 文本框的行高（单位：em）                                    |
+| Steam_AppID                  | Steam 应用 ID，用于初始化 Steam 集成，仅在 Electron 构建环境下有效 |
 
 以下是配置文件示例：
 

@@ -13,15 +13,27 @@ setAnimation:enter-from-bottom -target=fig-center -next;
 
 Currently, the following preset animations are available:
 
-| Animation Effect      | Animation Name              | Duration (ms) |
-| :------------ | :----------------- | :------------- |
-| Fade In          | enter              | 300            |
-| Fade Out          | exit               | 300            |
-| Shake Once          | shake               | 1000           |
-| Enter from Bottom    | enter-from-bottom   | 500            |
-| Enter from Left    | enter-from-right    | 500            |
-| Enter from Right    | enter-from-right    | 500            |
-| Move Front and Back Once  | move-front-and-back | 1000           |
+| Animation Effect | Animation Name | Duration (ms) |
+| :--- | :--- | :--- |
+| Fade in | enter | 300 |
+| Fade out | exit | 300 |
+| Shake once | shake | 1000 |
+| Enter from bottom | enter-from-bottom | 500 |
+| Enter from left | enter-from-left | 500 |
+| Enter from right | enter-from-right | 500 |
+| Move front and back once | move-front-and-back | 1000 |
+| Blur in | blur | 300 |
+| Old film filter | oldFilm | 0 |
+| Dot film filter | dotFilm | 0 |
+| Reflection filter | reflectionFilm | 0 |
+| Glitch filter | glitchFilm | 0 |
+| RGB split filter | rgbFilm | 0 |
+| Godray filter | godrayFilm | 0 |
+| Remove film filters | removeFilm | 0 |
+| Shockwave in | shockwaveIn | 2000 |
+| Shockwave out | shockwaveOut | 2000 |
+
+These names come from `game/animation/animationTable.json`. Presets with a duration of 0 are usually used to set or clear filter states immediately.
 
 Currently, the following animation targets are available:
 
@@ -171,3 +183,50 @@ If you execute the statement for setting entrance and exit effects immediately a
 
 If you do not execute the statement for setting entrance and exit effects immediately after setting the sprite or background, it will be meaningless to override the entrance animation after the image has already entered. However, if the image has not yet entered at this time, the set entrance animation will still be meaningful. It will be applied correctly when the sprite or background enters.
 :::
+
+## Image Sprite Mouth Sync
+
+WebGAL supports mouth sync animation for image sprites through differential images.
+
+### Prepare Differential Images
+
+Prepare the following differential sprites for the character:
+
+- Default image, usually the closed-mouth state
+- Open-mouth differential image
+- Half-open-mouth differential image
+- Closed-mouth differential image, which can be the same as the default image
+- Optional: eyes-open and eyes-closed differential images
+
+### Minimal Example
+
+**1. Register differential images and show the sprite**
+
+```webgal
+changeFigure:1/normal.png -id=charA -mouthOpen=1/mouth_open.png -mouthHalfOpen=1/mouth_half.png -mouthClose=1/normal.png;
+```
+
+**2. Play voice and drive the mouth shape**
+
+```webgal
+; Drive a free sprite by id
+CharacterA:Hello, world! -vocal=charA_hello.wav -figureId=charA;
+```
+
+The engine switches between `mouthOpen`, `mouthHalfOpen`, and `mouthClose` according to the real-time voice volume to simulate mouth movement.
+
+### Positioned Sprite Example
+
+```webgal
+; Show the center sprite and register differential images
+changeFigure:1/normal.png -mouthOpen=1/mouth_open.png -mouthHalfOpen=1/mouth_half.png -mouthClose=1/normal.png;
+
+; Drive the center sprite mouth shape
+CharacterA:Hello, world! -vocal=charA_hello.wav -center;
+```
+
+### Limitations
+
+- When `vocal` is used, the engine drives the mouth shape according to voice volume. If `vocal` is not provided but `figureId`, `left`, `right`, or `center` is specified, the engine uses simulated volume to drive the target sprite's mouth differential images.
+- This feature only applies to image sprites. Live2D sprites have an independent mouth-parameter system and do not use this differential-image workflow.
+- Eye-blink differential images (`eyesOpen`, `eyesClose`) are optional. Once registered, the engine automatically triggers random blinking animation.
