@@ -61,5 +61,5 @@ yarn build
 バンドルされた製品はpackages/webgal/distディレクトリにあります。
 
 ::: tip
-カスタマイズが完了したら、WebGALエディターを使用してリアルタイムでプレビューしたりリソースを管理したりできるように、バンドルされた製品をコピーして貼り付け、エディターディレクトリ内の`packages/terre2/assets/templates/WebGAL_Template`を置き換えることができます。これにより、WebGALエディターに組み込まれているエンジンを独自のカスタマイズしたものに変更することができます。WebGALリポジトリとWebGAL_Terreリポジトリが同じディレクトリにある場合、`release-to-terre`ショートカットスクリプトを使用して実行することができます。
+カスタマイズが完了し、WebGAL エディターでリアルタイムプレビューやリソース管理を行いたい場合は、ビルド成果物をカスタムエンジンとして WebGAL Terre に導入してください。詳しくは [カスタムエンジンを使用する方法](derivative) を参照してください。WebGAL Terre のソースコードを開発している場合は、`packages/terre2/assets/templates/WebGAL_Template` を置き換えて組み込みエンジンテンプレートを更新することもできます。
 :::

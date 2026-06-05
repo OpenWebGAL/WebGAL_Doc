@@ -15,9 +15,11 @@ For information on how to build WebGAL from source, please refer to [WebGAL Buil
 
 3. Rename them to `live2d.min.js` and `live2dcubismcore.min.js` respectively, and then put the files in **one of the specified directories**.
 
-- Custom engine directory: `[WebGal]/assets/templates/Derivative_Engine/[Your custom engine]/lib`
-- Game directory (applies to a single project): `[WebGal]/public/games/[Your game]/lib`
+- Custom engine directory: `[user data directory]/derivative-engines/[Your custom engine]/lib`
+- Game directory (applies to a single project): `[user data directory]/games/[Your game]/lib`
 - WebGal source code directory: `[WebGal source code]/packages/webgal/public/lib`
+
+If you use WebGAL Terre 4.6 portable mode, `[user data directory]` is the `data` folder inside the installation directory.
 
 4. Now you can start using Live2D as a figure. You need to put the entire model directory into the `game/figure` directory. The way to call the figure is to call the figure's json file.
 

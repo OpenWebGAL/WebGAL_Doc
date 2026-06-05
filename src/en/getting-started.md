@@ -61,5 +61,5 @@ yarn build
 The packaged product is in the packages/webgal/dist directory
 
 ::: tip
-After you have finished customizing, if you want to use the WebGAL editor to easily preview and manage resources in real time, you can copy and paste the packaged product and replace the `packages/terre2/assets/templates/WebGAL_Template` in the editor directory, so that you can replace the built-in engine of the WebGAL editor with your own customized one. If your WebGAL repository and WebGAL_Terre repository are in the same directory, you can use the `release-to-terre` quick script to execute
+After you have finished customizing, if you want to use the WebGAL editor to preview and manage resources in real time, import the build output into WebGAL Terre as a custom engine. See [How to use custom engine](derivative). If you are developing WebGAL Terre from source, you can also replace `packages/terre2/assets/templates/WebGAL_Template` to update the built-in engine template.
 :::

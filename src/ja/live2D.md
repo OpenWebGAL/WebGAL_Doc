@@ -15,9 +15,11 @@
 
 3.  それぞれ`live2d.min.js`と`live2dcubismcore.min.js`にリネームし、ファイルを**指定されたディレクトリのいずれか**に配置してください。
 
-    -   カスタムエンジンディレクトリ：`[WebGal]/assets/templates/Derivative_Engine/[あなたのカスタムエンジン]/lib`
-    -   ゲームディレクトリ（単一のプロジェクトに適用）：`[WebGal]/public/games/[あなたのゲーム]/lib`
+    -   カスタムエンジンディレクトリ：`[ユーザーデータディレクトリ]/derivative-engines/[あなたのカスタムエンジン]/lib`
+    -   ゲームディレクトリ（単一のプロジェクトに適用）：`[ユーザーデータディレクトリ]/games/[あなたのゲーム]/lib`
     -   WebGalソースコードディレクトリ：`[WebGalソースコード]/packages/webgal/public/lib`
+
+    WebGAL Terre 4.6 の portable モードを使用している場合、`[ユーザーデータディレクトリ]` はインストールディレクトリ内の `data` フォルダーです。
 
 4.  これで、Live2Dを立ち絵として使用できるようになりました。モデル全体のディレクトリを`game/figure`ディレクトリに配置する必要があります。立ち絵を呼び出す方法は、立ち絵のjsonファイルを呼び出すことです。
 

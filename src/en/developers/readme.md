@@ -92,5 +92,5 @@ In addition, we will also provide some documentation in some key directories of 
 ## Importing the Built WebGAL into the WebGAL Terre Editor
 
 ::: tip
-After you have finished your customization, if you want to use the WebGAL editor to easily preview and manage resources in real-time, you can copy and paste the packaged product and replace the `packages/terre2/assets/templates/WebGAL_Template` directory under the editor directory. This way, you can replace the engine built into the WebGAL editor with your customized one. If your WebGAL repository and WebGAL_Terre repository are in the same directory, you can use the `release-to-terre` shortcut script to execute this.
+After you have finished your customization, if you want to use the WebGAL editor to preview and manage resources in real time, import the build output into WebGAL Terre as a custom engine. See [How to use custom engine](/en/derivative). If you are developing WebGAL Terre from source, you can also replace `packages/terre2/assets/templates/WebGAL_Template` to update the built-in engine template.
 :::
