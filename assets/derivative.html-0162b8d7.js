@@ -1,0 +1,17 @@
+import{_ as s}from"./plugin-vue_export-helper-c27b6911.js";import{o as e,c as n,d as a}from"./app-db6fe934.js";const l={},i=a(`<h1 id="カスタムエンジンを使用する方法" tabindex="-1"><a class="header-anchor" href="#カスタムエンジンを使用する方法" aria-hidden="true">#</a> カスタムエンジンを使用する方法</h1><p>WebGAL Terre 4.6 以降では、カスタムエンジンはインストールディレクトリ内の旧 <code>assets/templates/Derivative_Engine</code> ではなく、ユーザーデータディレクトリ内の <code>derivative-engines</code> に配置します。</p><h2 id="カスタムエンジンのファイル構造" tabindex="-1"><a class="header-anchor" href="#カスタムエンジンのファイル構造" aria-hidden="true">#</a> カスタムエンジンのファイル構造</h2><p>カスタムエンジンは通常、圧縮ファイル形式で配布されます。解凍すると、カスタムエンジンを名前とするディレクトリが得られ、ディレクトリ構造はおおよそ次のようになります（name は WebGAL Terre で表示されるカスタムエンジンの名前です）。</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="shiki dracula" style="background-color:#282A36;" tabindex="0"><code><span class="line"><span style="color:#F8F8F2;">name</span></span>
+<span class="line"><span style="color:#F8F8F2;">├── assets</span></span>
+<span class="line"><span style="color:#F8F8F2;">├── game</span></span>
+<span class="line"><span style="color:#F8F8F2;">├── icons</span></span>
+<span class="line"><span style="color:#F8F8F2;">├── index.html</span></span>
+<span class="line"><span style="color:#F8F8F2;">├── manifest.json</span></span>
+<span class="line"><span style="color:#F8F8F2;">└── webgal-serviceworker.js</span></span>
+<span class="line"><span style="color:#F8F8F2;"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>次に、WebGAL Terre の設定からユーザーデータディレクトリを開き、このようなディレクトリを <code>derivative-engines</code> に配置して、次のようなファイル構造にします（そうしないと、正常にゲームを作成できません）。</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="shiki dracula" style="background-color:#282A36;" tabindex="0"><code><span class="line"><span style="color:#F8F8F2;">derivative-engines</span></span>
+<span class="line"><span style="color:#F8F8F2;">└── name</span></span>
+<span class="line"><span style="color:#F8F8F2;">    ├── assets</span></span>
+<span class="line"><span style="color:#F8F8F2;">    ├── game</span></span>
+<span class="line"><span style="color:#F8F8F2;">    ├── icons</span></span>
+<span class="line"><span style="color:#F8F8F2;">    ├── index.html</span></span>
+<span class="line"><span style="color:#F8F8F2;">    ├── manifest.json</span></span>
+<span class="line"><span style="color:#F8F8F2;">    └── webgal-serviceworker.js</span></span>
+<span class="line"><span style="color:#F8F8F2;"></span></span>
+<span class="line"><span style="color:#F8F8F2;"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>portable モードを使用している場合、ユーザーデータディレクトリは WebGAL Terre インストールディレクトリ内の <code>data</code> フォルダーです。この場合は <code>data/derivative-engines/name</code> に配置してください。</p><p>WebGAL Terre を起動すると、ゲームを作成するときにカスタムエンジンを使用してゲームを作成できるようになります。</p>`,9),c=[i];function r(d,p){return e(),n("div",null,c)}const v=s(l,[["render",r],["__file","derivative.html.vue"]]);export{v as default};
