@@ -2,7 +2,7 @@ import { defineUserConfig } from "vuepress";
 import theme from "./theme.js";
 import { searchPlugin } from "@vuepress/plugin-search";
 import { shikiPlugin } from "@vuepress/plugin-shiki";
-import path from 'path'
+import path from "path";
 export default defineUserConfig({
   base: "/",
   plugins: [
@@ -34,9 +34,15 @@ export default defineUserConfig({
           scopeName: "source.webgal",
           path: path.resolve(__dirname, "../grammar/webgal.tmLanguage.json"),
         },
-        "ts", "bash", "json", "xml", "kotlin", 
+        "ts",
+        "bash",
+        "json",
+        "xml",
+        "kotlin",
+        "tsx",
+        "scss",
+        "html",
       ],
-      
     }),
   ],
   locales: {
