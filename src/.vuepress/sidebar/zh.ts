@@ -39,6 +39,7 @@ export const zhSidebar = sidebar({
         "variable",
         "animation",
         "special-effect",
+        "custom-ui",
       ]
     },
     {
@@ -104,6 +105,28 @@ export const zhSidebar = sidebar({
           ]
         },
       ],
+    },
+    {
+      text: "模板参考",
+      prefix: "template-reference/",
+      children: [
+        {
+          text: "用户界面",
+          prefix: "ui/",
+          children: [
+            "choose",
+            "textbox",
+            "title",
+          ],
+        },
+        {
+          text: "其他",
+          prefix: "others/",
+          children: [
+            "config",
+          ],
+        },
+      ]
     },
   ],
 });
