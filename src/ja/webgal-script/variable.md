@@ -8,7 +8,7 @@
 
 変数を設定する：
 
-``` ws
+``` webgal
 setVar:a=1; // 数字を設定可能
 setVar:a=true // 真偽値を設定可能
 setVar:a=キャラクター名 // 文字列を設定可能
@@ -16,7 +16,7 @@ setVar:a=キャラクター名 // 文字列を設定可能
 
 乱数を設定する場合は、`random()` を使用してください。
 
-```ws
+``` webgal
 setVar:a=random();
 ```
 
@@ -28,23 +28,23 @@ setVar:a=random();
 3. [floating] (boolean): 浮動小数点数を返すかどうかを指定します。
 
 パラメータを書かずに0-1区間の浮動小数点数ですを生成します
-```ws
+``` webgal
 setVar:a=random();
 ```
 
 もちろん、私たちは**範囲**を指定することもできます。たとえば、5～10の間の乱数が必要な場合は、書くことができます：
-```ws
+``` webgal
 setVar:a=random(5,10);
 ```
 
 もちろん、範囲を使用して生成したい数値にも小数があるので、3番目のパラメータを指定することができます。
-```ws
+``` webgal
 setVar:a=random(5,10,true); # 5～10の浮動小数点数が生成されます
 ```
 
 以前に他の変数を定義している場合は、変数を設定する際にそれらを使用することもできます。
 
-``` ws
+``` webgal
 setVar:a=1;
 setVar:b=a+1;
 ```
@@ -55,7 +55,7 @@ setVar:b=a+1;
 
 例えば：
 
-``` ws
+``` webgal
 setVar:a=1;
 ; // a が 1 より大きい場合、シーン 1 にジャンプする
 changeScene:1.txt -when=a>1;
@@ -76,7 +76,7 @@ changeScene:3.txt;
 
 `getUserInput` 命令を使用してユーザー入力を取得します。例えば：
 
-```
+``` webgal
 getUserInput:name -title=あなたの名前を教えてください -buttonText=確認; ユーザー入力を name 変数に書き込む
 ```
 
@@ -86,7 +86,7 @@ getUserInput:name -title=あなたの名前を教えてください -buttonText=
 
 `{}` 構文を使用して文の中で変数補間を行い、変数を文に挿入することができます。例えば：
 
-```
+``` webgal
 setVar:name=WebGAL;
 setVar:engine=WebGAL;
 {name}: {engine} へようこそ！これは、まったく新しいウェブベースのビジュアルノベルエンジンです。;
@@ -100,7 +100,7 @@ WebGAL の通常の変数はセーブデータに依存します。つまり、�
 
 `-global` パラメータを追加すると、永続（グローバル）変数を設定することができます。
 
-```ws
+``` webgal
 setVar:a=1 -global;
 ```
 
@@ -108,7 +108,7 @@ setVar:a=1 -global;
 
 使用例：
 
-```ws
+``` webgal
 jumpLabel:turn-2 -when=a>0;
 setVar:a=1 -global;
 1周目;
@@ -131,14 +131,14 @@ WebGAL には現在、`stage` と `userData` の 2 つの組み込み変数フ�
 
 それらにアクセスするには `$` を使用します (例: BGM の値を取得します)。
 
-```ws
+``` webgal
 setVar:a=($stage.bgm.volume);
 WebGAL:現在のBGMボリュームは、以下の通りです{a};
 ```
 
 もちろん、会話で直接使用することもできます：
 
-```ws
+``` webgal
 WebGAL:現在のBGMボリュームは、以下の通りです{$stage.bgm.volume};
 ```
 
@@ -148,7 +148,7 @@ WebGAL:現在のBGMボリュームは、以下の通りです{$stage.bgm.volume}
 
 また、`config.txt` のグローバル変数にもアクセスできます：
 
-```ws
+``` webgal
 setVar:title=(Game_name);
 WebGAL:現在のゲームのタイトルは次のとおりです{title};
 ```
@@ -157,7 +157,7 @@ WebGAL:現在のゲームのタイトルは次のとおりです{title};
 
 `global`パラメータを追加して、構成変数を変更していることを示します：
 
-```ws
+``` webgal
 setVar:Game_name=新しいゲームタイトル -global;
 WebGAL:現在のゲームのタイトルは次のとおりです{Game_name};
 ```
@@ -173,7 +173,7 @@ WebGAL:現在のゲームのタイトルは次のとおりです{Game_name};
 
 もちろん、`config.txt`でカスタム構成変数を作成することもできます。たとえば、バージョン番号を作成します：
 
-```text
+``` text
 Game_name:欢迎使用WebGAL！;
 Game_key:f60ad5725c1588;
 Title_img:WebGAL_New_Enter_Image.png;
@@ -185,7 +185,7 @@ version:1;
 
 次に、スクリプトでそれを取得して変更できます：
 
-```ws
+``` webgal
 setVar:v=(version);
 WebGAL:現在のバージョン番号は{v};
 setVar:version=version*2 -global;

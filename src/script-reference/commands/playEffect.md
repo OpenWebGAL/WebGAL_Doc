@@ -7,7 +7,7 @@
 填写音效文件的路径。当文件路径为空或为 `none` 时，表示停止播放音效。
 详情请见[播放效果音](../../webgal-script/audio.md#播放效果音)。
 
-```webgal
+``` webgal
 ; 如果没有音效存在，则此句表示播放音效。
 playEffect:rain.wav;
 ; 如果已有音效存在，则此句表示替换音效。
@@ -24,7 +24,7 @@ playEffect:none;
 为音效设置 id 后，音效可以循环播放。
 不同 id 的音效与无 id 的音效可以叠加播放。
 
-```webgal
+``` webgal
 ; 循环播放脚步声
 playEffect:footsteps.wav -id=footsteps;
 ; 循环播放雨声
@@ -40,6 +40,6 @@ playEffect:thunder.wav;
 
 设置音效的音量百分比，0 为静音，100 为最大音量。
 
-```webgal
+``` webgal
 playEffect:rain.wav -id=rain -volume=60;
 ```

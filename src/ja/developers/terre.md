@@ -32,13 +32,13 @@ WebGAL Terre のリポジトリは [WebGAL Terre - GitHub](https://github.com/Op
 
 ### 依存関係のインストール
 
-```bash
+``` bash
 yarn
 ```
 
 ### 開発サーバーの起動
 
-```bash
+``` bash
 yarn dev
 ```
 
@@ -59,13 +59,13 @@ yarn dev
 
 1. WebGAL エンジンリポジトリをクローンします（隣接ディレクトリにクローンすることをお勧めします。これにより、自動化スクリプトを使用できます）
 
-```
+``` bash
 git clone https://github.com/OpenWebGAL/WebGAL.git
 ```
 
 2. **（Terre プロジェクトの隣接ディレクトリに WebGAL プロジェクトをクローンした場合、そうでない開発者は無視してください）** WebGAL エンジンリポジトリで自動化スクリプトを実行して、WebGAL を WebGAL Terre にビルドします
 
-```
+``` bash
 sh release-to-terre.sh
 ```
 
@@ -75,7 +75,7 @@ sh release-to-terre.sh
 
 2. WebGAL プロジェクトをビルドします（この手順は WebGAL エンジンリポジトリで実行します）
 
-```
+``` bash
 yarn
 yarn build
 ```
@@ -84,7 +84,7 @@ yarn build
 
 **ここでは、Terre プロジェクトの隣接ディレクトリに WebGAL プロジェクトをクローンしていると想定しています。異なるディレクトリ構造を使用している場合は、それに応じて変更してください。**
 
-```
+``` bash
 # Terre ディレクトリに移動します
 cd ../WebGAL_Terre/packages/terre2/assets/templates/WebGAL_Template || exit
 # 他のファイルを削除します
@@ -122,7 +122,7 @@ WebGAL Terre は、TypeScript を使用したフルスタックプロジェク�
 
 次のコード例は、バックエンドインターフェースに必要な主要なアノテーションを示しています。
 
-```typescript
+``` typescript
 @Post('createGame')
   @ApiOperation({ summary: 'Create a new game' })
   @ApiResponse({ status: 200, description: 'Game creation result.' })

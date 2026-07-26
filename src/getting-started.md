@@ -29,20 +29,20 @@ Windows 7 用户请参考 **[Windows 7 使用可视化编辑器开始制作的�
 
 ## 方法2：从源代码开始调试（适用于想要更高自定义程度的制作者）
 
-``` shell
+``` bash
 git clone https://github.com/OpenWebGAL/WebGAL.git
 ```
 
 安装并使用 yarn 安装依赖
 
-``` shell
+``` bash
 npm install yarn -g
 yarn
 ```
 
 WebGAL 使用 vite 作为打包与调试工具，你可以通过运行以下脚本启动开发服务器
 
-``` shell
+``` bash
 yarn dev
 ```
 
@@ -54,7 +54,7 @@ yarn dev
 
 如果你要打包，请使用
 
-``` shell
+``` bash
 yarn build
 ```
 

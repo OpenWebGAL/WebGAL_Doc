@@ -10,7 +10,7 @@ Electron / Steam ブリッジを通じて Steam 実績を解除します。
 
 `game/config.txt` に `Steam_AppID` を記入します。WebGAL は起動時に Steam 連携を初期化します。
 
-```text
+``` text
 Steam_AppID:480;
 ```
 
@@ -27,13 +27,13 @@ Steam_AppID:480;
 
 解除する Steam 実績 ID を指定します。Steam バックエンドで設定した実績 API 名と一致している必要があります。
 
-```webgal
+``` webgal
 callSteam: -achievementId=ACH_WIN_ONE_GAME;
 ```
 
 ## 例
 
-```webgal
+``` webgal
 ; 実績を解除
 callSteam: -achievementId=ACH_WIN_ONE_GAME;
 ```

@@ -30,7 +30,7 @@ THE SPINE RUNTIMES ARE PROVIDED BY ESOTERIC SOFTWARE LLC "AS IS" AND ANY EXPRESS
 
 2、在 `package/webgal` 包中使用 yarn 安装 pixi-spine
 
-```
+``` bash
 cd package/webgal
 yarn add pixi-spine@3.1.2
 ```
@@ -39,7 +39,7 @@ yarn add pixi-spine@3.1.2
 
 注意到以下被注释的行（大约从 30 行开始），取消注释即可。
 
-```
+``` typescript
   // pixiSpineLoading = import('pixi-spine')
   //   .then((module) => {
   //     spineLoader = new PIXI.Loader();
@@ -63,23 +63,23 @@ yarn add pixi-spine@3.1.2
 
 例如：
 ```
-game/
-  figure/
-    exampleSpine/
-      data.json
-      atlas.atlas
-      skeleton.skel
+game
+└── figure
+    └── exampleSpine
+        ├── data.json
+        ├── atlas.atlas
+        └── skeleton.skel
 ```
 
 如果你使用的是 JSON 格式的 Spine 立绘，你需要使用类似以下脚本的方式传入类型，以使引擎识别其类型为 Spine。
 
-```
+``` webgal
 changeFigure:exampleSpine/data.json?type=spine;
 ```
 
 如果你需要切换 Spine 动画，继续使用 `motion` 参数；如果你需要切换 Spine 的皮肤，则使用 `skin` 参数。
 
-```
+``` webgal
 changeFigure:exampleSpine/data.json?type=spine -motion=anime_00_wait;
 changeFigure:exampleSpine/data.json?type=spine -skin=default;
 changeFigure:exampleSpine/data.json?type=spine -motion=anime_03_surprise -skin=03_surprise;

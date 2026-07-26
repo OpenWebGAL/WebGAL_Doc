@@ -13,7 +13,7 @@
 - `snow`：下雪
 - `heavySnow`：下大雪
 
-```webgal
+``` webgal
 pixiInit; 初始化舞台特效
 pixiPerform:rain;
 说话者:下雨了。;
@@ -23,7 +23,7 @@ pixiInit; 清除所有舞台特效
 
 您可以叠加使用两种不同的舞台特效。
 
-```webgal
+``` webgal
 pixiInit;
 pixiPerform:rain;
 pixiPerform:snow;

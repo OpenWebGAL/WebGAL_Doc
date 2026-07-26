@@ -6,7 +6,7 @@ WebGALで背景と立ち絵を読み込むには、背景画像は`background`�
 
 次に、以下の簡単な文で現在表示されている背景画像と立ち絵を変更することができます。
 
-``` ws
+``` webgal
 changeBg:testBG03.jpg; // 背景を変更
 changeFigure:testFigure02.png; // 立ち絵を変更
 changeBg:none; // 背景を閉じる
@@ -15,7 +15,7 @@ changeFigure:none; // 立ち絵を閉じる
 
 背景画像や立ち絵を変更した後、次の会話を表示するために再度マウスをクリックする必要があることに気付くかもしれません。背景/立ち絵を変更した後、すぐに次の文の内容を実行したい場合は、`-next`パラメータを使用してください。
 
-``` ws
+``` webgal
 changeBg:testBG03.jpg -next;
 changeFigure:testFigure02.png -next; // 立ち絵を変更
 一色:先輩ありがとう！;
@@ -27,7 +27,7 @@ changeFigure:testFigure02.png -next; // 立ち絵を変更
 
 現在、ページの3つの異なる位置に異なる立ち絵を配置できます。立ち絵を配置する文に配置する位置を追加するだけで済みます。例を以下に示します。
 
-``` ws
+``` webgal
 changeFigure:testFigure03.png -left;
 changeFigure:testFigure04.png;
 changeFigure:testFigure03.png -right;
@@ -35,7 +35,7 @@ changeFigure:testFigure03.png -right;
 
 上記の3行は、それぞれ左、中央、右の3つの異なる位置に対応しています。3つの異なる位置の立ち絵は相互に独立しているため、立ち絵を消去する必要がある場合は、それぞれ独立して消去する必要があります。
 
-``` ws
+``` webgal
 changeFigure:none -left;
 changeFigure:none;
 changeFigure:none -right;
@@ -43,7 +43,7 @@ changeFigure:none -right;
 
 立ち絵を変更した後、すぐに次の文を実行したい場合は、以前と同様に`-next`パラメータを追加します。
 
-``` ws
+``` webgal
 changeFigure:testFigure03.png -left -next;
 changeFigure:testFigure04.png -next;
 changeFigure:testFigure03.png -right -next;
@@ -53,7 +53,7 @@ changeFigure:testFigure03.png -right -next;
 
 もし、より詳細に立ち絵を制御したい場合や、3つ以上の立ち絵を使用したい場合は、立ち絵に `id` と初期位置を指定することができます。 
 
-``` ws
+``` webgal
 ; // 右側に初期位置がある自由な立ち絵
 changeFigure:testFigure03.png -left -id=test1;
 ; // idで立ち絵を閉じる
@@ -68,7 +68,7 @@ ID付きの立ち絵の位置をリセットする場合は、まず閉じてか
 
 多くのゲームでは、テキストボックスの左下にミニアバターを配置できます。以下は、このエンジンで使用される構文です。
 
-``` ws
+``` webgal
 ; // 左下にminipic_test.pngを表示する
 miniAvatar:minipic_test.png;
 ; // このミニアバターを閉じる
@@ -79,7 +79,7 @@ miniAvatar:none;
 
 `unlockCg`を使用して、CG鑑賞のCGをアンロックします。
 
-``` ws
+``` webgal
 ; // CGをアンロックして名前を付ける
 unlockCg:xgmain.jpeg -name=星光咖啡馆与死神之蝶 -series=1;
 ```
@@ -92,7 +92,7 @@ unlockCg:xgmain.jpeg -name=星光咖啡馆与死神之蝶 -series=1;
 
 立ち絵を設定するときに、立ち絵にいくつかの変換とフィルターエフェクトを設定できます。以下に例を示します。
 
-```
+``` webgal
 changeFigure:stand.png -transform={"alpha":1,"position":{"x":0,"y":500},"scale":{"x":1,"y":1},"rotation":0,"blur":0,"brightness":1,"contrast":1,"saturation":1,"gamma":1,"colorRed":255,"colorGreen":255,"colorBlue":255,"oldFilm":0,"dotFilm":0,"reflectionFilm":0,"glitchFilm":0,"rgbFilm":0,"godrayFilm":0} -next;
 ```
 
@@ -102,7 +102,7 @@ changeFigure:stand.png -transform={"alpha":1,"position":{"x":0,"y":500},"scale":
 
 また、`setTransform`を使用して、既存の立ち絵に直接エフェクトを設定することもできます。例えば、
 
-```
+``` webgal
 setTransform:{"position":{"x":100,"y":0}} -target=fig-center -duration=0;
 ```
 

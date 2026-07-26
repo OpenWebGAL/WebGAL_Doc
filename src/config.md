@@ -34,7 +34,7 @@ Enable_Appreciation:true;
 
 如果你同时准备了多语言剧本，需要在脚本中读取当前界面语言，并跳转到对应的场景文件。可以使用内部变量 `$userData.optionData.language`：
 
-```webgal
+``` webgal
 setVar:lang=($userData.optionData.language);
 changeScene:start_zh.txt -when=lang==0;
 changeScene:start_en.txt -when=lang==1;

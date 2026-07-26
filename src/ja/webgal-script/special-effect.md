@@ -8,7 +8,7 @@
 
 `pixiInit` を使用して Pixi を初期化します。
 
-``` ws
+``` webgal
 pixiInit;
 ```
 
@@ -22,7 +22,7 @@ pixiInit;
 
 `pixiPerform` を使用してエフェクトを追加します。
 
-``` ws
+``` webgal
 pixiPerform:rain; // 雨のエフェクトを追加する
 ```
 
@@ -41,7 +41,7 @@ pixiPerform:rain; // 雨のエフェクトを追加する
 
 2 つ以上エフェクトを重ねたい場合は、`pixiInit` コマンドを使用せずに異なるエフェクトを重ねることができます。
 
-``` ws
+``` webgal
 pixiPerform:rain;
 pixiPerform:snow;
 ```
@@ -56,7 +56,7 @@ pixiPerform:snow;
 
 エフェクトコンテナは前景コンテナと背景コンテナに分割され、ここでは前景コンテナを例としています。
 
-``` ts
+``` typescript
 // 現在の Pixi エフェクト Container を取得する
 const effectsContainer = WebGAL.gameplay.pixiStage!.foregroundEffectsContainer!;
 // Pixi App の呼び出し方法で、画面のサイズなどを決定するのに役立ちます
@@ -73,7 +73,7 @@ effectsContainer.addChild(container);
 
 ファイルの末尾で登録したエフェクトを使用します。最初のパラメータはエフェクト名、2 番目のパラメータはエフェクトを呼び出すメソッドです。
 
-``` ts
+``` typescript
 import {registerPerform} from '../pixiPerformManager';
 
 // これがエフェクトだと仮定します
@@ -87,12 +87,12 @@ registerPerform('myPerform', { fg: () => myPerform(パラメータ) });
 
 最後に、カスタムエフェクトをサポートする WebGAL をコンパイルします。
 
-``` shell
+``` bash
 yarn run build;
 ```
 
 これで、スクリプトでエフェクトを呼び出すことができます。
 
-``` ws
+``` webgal
 pixiPerform:myPerform;
 ```

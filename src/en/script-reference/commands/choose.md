@@ -11,7 +11,7 @@ Currently, choices can jump to:
 - A scene file
 - A label in the current scene
 
-```webgal
+``` webgal
 CharacterA:Where should we go today?;
 choose:Go to the shop:chapter_01/shop.txt|Someone's house:chapter_01/house_b.txt|Stay home:home;
 ;
@@ -32,7 +32,7 @@ Each option can add condition prefixes before the option text:
 - `[condition expression]`: controls whether the option can be clicked.
 - `->`: separates condition prefixes from the actual option content.
 
-```webgal
+``` webgal
 setVar:hasTicket=true;
 setVar:doorPower=1;
 choose:(hasTicket==true)->Show ticket:ticket|(doorPower>0)[doorPower>1]->Force the door:force|Go home:home;

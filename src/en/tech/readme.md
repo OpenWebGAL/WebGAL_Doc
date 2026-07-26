@@ -20,7 +20,7 @@ WebGAL scene files are mainly divided by lines to distinguish scripts. At the be
 
 WebGAL scripts are generally in the form of
 
-```
+``` webgal
 command:content -arg1 -arg2 ......;comment
 ```
 
@@ -30,7 +30,7 @@ Among them, `command` represents the statement instruction, such as `bgm`, `chan
 
 WebGAL's dialogues are generally written in the following form:
 
-```
+``` webgal
 森川由绮:胸につかえていることを、时は解决してくれない。忘却のラベルを贴るだけで -voice_1.ogg;
 ```
 
@@ -38,13 +38,13 @@ For visual novels, since dialogues are generally the main part of the script, We
 
 Therefore, the true representation of this dialogue should be:
 
-```
+``` webgal
 say:胸につかえていることを、时は解决してくれない。忘却のラベルを贴るだけで -speaker=森川由绮 vocal=voice_1.ogg;
 ```
 
 In addition, if the dialogue is spoken by one person, the person's name can be omitted before the speaker changes:
 
-```
+``` webgal
 森川由绮:胸につかえていることを;
 时は解决してくれない;
 忘却のラベルを贴るだけで;

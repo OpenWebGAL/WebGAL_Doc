@@ -9,7 +9,7 @@
 
 このコマンドが成功した場合、現在のシーン内で後続のコマンドは実行されません。
 
-```webgal
+``` webgal
 キャラA:そろそろ出発しよう。;
 changeScene:chapter_01/part_02.txt;
 デバッグ:この文が見えた場合、シーン切り替えに失敗しています。;
@@ -21,7 +21,7 @@ changeScene:chapter_01/part_02.txt;
 :::
 
 - chapter_01/part_01.txt
-```webgal
+``` webgal
 changeBg:home/character_a/bedroom.png;
 changeFigure:main_character/character_a/thinking.png -next;
 キャラA:今日は彼女の家に行こう！;
@@ -31,7 +31,7 @@ changeFigure:none -next; 立ち絵を手動で閉じる
 changeScene:chapter_01/part_02.txt;
 ```
 - chapter_01/part_02.txt
-```webgal
+``` webgal
 changeBg:home/character_b/living_room.png;
 changeFigure:main_character/character_b/smile.png -next;
 キャラB:あなたでしたか。何か用ですか？;

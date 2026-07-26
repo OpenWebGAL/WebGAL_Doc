@@ -6,7 +6,7 @@
 
 ## 结构 {#structure}
 
-```tsx
+``` tsx
 // 小头像组件
 const renderAvatar = () => {
   return (

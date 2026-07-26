@@ -6,7 +6,7 @@
 
 填写图片的路径。
 
-```webgal
+``` webgal
 unlockCg:chapter_03/date.png -name=第一次约会;
 ```
 
@@ -16,12 +16,12 @@ unlockCg:chapter_03/date.png -name=第一次约会;
 <!-- @include: ../arguments/name-cg.md -->
 若不填写 `name`，则以图片的路径作为名称。
 
-```webgal
+``` webgal
 unlockCg:chapter_03/date.png -name=第一次约会;
 ```
 
 ### series
 <!-- @include: ../arguments/series-cg.md -->
-```webgal
+``` webgal
 unlockCg:chapter_03/date.png -name=第一次约会 -series=角色B;
 ```

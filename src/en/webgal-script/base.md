@@ -8,7 +8,7 @@ The following tutorials will teach you how to use WebGAL script.
 
 WebGAL script will only parse the content before the semicolon in each line, so the content after the semicolon will be regarded as a comment.
 
-``` ws
+``` webgal
 WebGAL:Hello!; The content after semicolon will be regarded as a comment
 ; You can directly input a semicolon, then write a single-line comment
 ```
@@ -27,7 +27,7 @@ Common symbols that need escaping:
 | `;` | `\;` |
 | `|` | `\|` |
 
-```ws
+``` webgal
 intro:I will display these symbols\: \:\,\.\; just look -hold;
 WebGAL:I will display these symbols\: \:\,\.\; just look;
 choose:I will display these symbols\: \:\,\.\; just look:nextLabel;
@@ -45,7 +45,7 @@ You can add the parameter `-next` after any statement. This will cause the next 
 
 Example:
 
-``` ws
+``` webgal
 changeBg:testBG03.jpg -next; // Will execute the next statement immediately
 ```
 
@@ -60,7 +60,7 @@ At this time, you can use the `-notend` `-concat` parameters to insert any state
 
 An example is given below: This is a demonstration of switching 立ち絵 in the middle of a dialogue.
 
-``` ws
+``` webgal
 WebGAL:Test statement insert 演出！Switch 立ち絵 immediately...... -notend;
 changeFigure:k1.png -next;
 Switch 立ち絵！Switch expression immediately...... -notend -concat;
@@ -70,7 +70,7 @@ Switch expression！ -concat;
 
 You can also use only the `-concat` parameter to connect the next sentence after the previous dialogue, because the `-notend` parameter will move to the next sentence after the dialogue fades in.
 
-```ws
+``` webgal
 This is the first sentence...;
 This sentence will only appear after the user clicks the mouse -concat;
 ```

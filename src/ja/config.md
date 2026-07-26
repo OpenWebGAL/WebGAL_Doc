@@ -34,7 +34,7 @@ Enable_Appreciation:true;
 
 複数言語のスクリプトも用意している場合は、スクリプト内で現在の UI 言語を読み取り、対応するシーンファイルへ分岐してください。内部変数 `$userData.optionData.language` を利用できます。
 
-```webgal
+``` webgal
 setVar:lang=($userData.optionData.language);
 changeScene:start_zh.txt -when=lang==0;
 changeScene:start_en.txt -when=lang==1;

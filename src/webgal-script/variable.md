@@ -8,7 +8,7 @@
 
 设置变量：
 
-``` ws
+``` webgal
 setVar:a=1; // 可以设置数字
 setVar:a=true // 可以设置布尔值
 setVar:a=人物名称 // 可以设置字符串
@@ -16,7 +16,7 @@ setVar:a=人物名称 // 可以设置字符串
 
 设置随机数，请使用 `random()`
 
-```ws
+``` webgal
 setVar:a=random();
 ```
 
@@ -28,23 +28,23 @@ setVar:a=random();
 3. [floating] (boolean): 指定是否返回浮点数。
 
 不写参数，它会生成一个是一个0-1区间的浮点数
-```ws
+``` webgal
 setVar:a=random();
 ```
 
 当然，我们也可以指定**范围**。比如，你想要5-10之间的随机数，你可以写成：
-```ws
+``` webgal
 setVar:a=random(5,10);
 ```
 
 当然你想要它使用范围生成的数值也有小数，那么可指定第三个参数：
-```ws
+``` webgal
 setVar:a=random(5,10,true); # 将会生成5-10之间的浮点数
 ```
 
 如果先前你定义过其他变量，也可以在设置变量时使用。
 
-``` ws
+``` webgal
 setVar:a=1;
 setVar:b=a+1;
 ```
@@ -55,7 +55,7 @@ setVar:b=a+1;
 
 例如：
 
-``` ws
+``` webgal
 setVar:a=1;
 ; // 当 a 大于 1 时跳转到场景 1
 changeScene:1.txt -when=a>1;
@@ -76,7 +76,7 @@ changeScene:3.txt;
 
 使用`getUserInput` 指令来获取用户输入，例如：
 
-```
+``` webgal
 getUserInput:name -title=如何称呼你 -buttonText=确认; 将用户输入写入 name 变量中
 ```
 
@@ -86,7 +86,7 @@ getUserInput:name -title=如何称呼你 -buttonText=确认; 将用户输入写�
 
 可以在语句中使用 `{}` 语法来进行变量插值，将某个变量传入语句中，例如：
 
-```
+``` webgal
 setVar:name=WebGAL;
 setVar:engine=WebGAL;
 {name}:欢迎使用 {engine}！这是一款全新的网页端视觉小说引擎。;
@@ -100,7 +100,7 @@ WebGAL 的普通变量是跟随存档的，也就是说，任何变量只存在�
 
 加上 `-global` 参数可以设置长效（全局）变量
 
-```ws
+``` webgal
 setVar:a=1 -global;
 ```
 
@@ -108,7 +108,7 @@ setVar:a=1 -global;
 
 使用例：
 
-```ws
+``` webgal
 jumpLabel:turn-2 -when=a>0;
 setVar:a=1 -global;
 一周目;
@@ -131,14 +131,14 @@ WebGAL 目前内置变量域有两个：`stage`和`userData`。
 
 使用`$`可以访问他们，如获取BGM的值：
 
-```ws
+``` webgal
 setVar:a=($stage.bgm.volume);
 WebGAL:当前的BGM音量为{a};
 ```
 
 当然，你也可以直接在对话中使用它：
 
-```ws
+``` webgal
 WebGAL:当前的BGM音量为{$stage.bgm.volume};
 ```
 
@@ -148,7 +148,7 @@ WebGAL:当前的BGM音量为{$stage.bgm.volume};
 
 我们还可以访问`config.txt`中的全局变量：
 
-```ws
+``` webgal
 setVar:title=(Game_name);
 WebGAL:当前的游戏标题为{title};
 ```
@@ -157,7 +157,7 @@ WebGAL:当前的游戏标题为{title};
 
 加`global`参数表示我们要修改的是配置变量：
 
-```ws
+``` webgal
 setVar:Game_name=新游戏标题 -global;
 WebGAL:当前的游戏标题为{Game_name};
 ```
@@ -173,7 +173,7 @@ WebGAL:当前的游戏标题为{Game_name};
 
 当然，你也可以在`config.txt`中创建一个自定义配置变量，如 创建一个版本号：
 
-```text
+``` text
 Game_name:欢迎使用WebGAL！;
 Game_key:f60ad5725c1588;
 Title_img:WebGAL_New_Enter_Image.png;
@@ -185,7 +185,7 @@ version:1;
 
 那么我们就可以在脚本里面对它进行获取，修改等操作：
 
-```ws
+``` webgal
 setVar:v=(version);
 WebGAL:当前的版本号为{v};
 setVar:version=version*2 -global;

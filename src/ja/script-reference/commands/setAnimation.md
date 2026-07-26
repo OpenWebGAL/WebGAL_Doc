@@ -12,26 +12,26 @@
 単段アニメーションだけを設定したい場合は、[setTransform](setTransform.md) コマンドを使用してください。
 :::
 
-```webgal
+``` webgal
 setAnimation:shake -target=aaa;
 ```
 
 ## パラメータ
 
 <!-- @include: ../arguments/target.md -->
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa;
 setAnimation:shake -target=aaa;
 ```
 
 <!-- @include: ../arguments/writeDefault.md -->
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa;
 setAnimation:shake -target=aaa -writeDefault;
 ```
 
 <!-- @include: ../arguments/keep.md -->
-```webgal
+``` webgal
 ; とても長いアニメーションだと仮定
 setAnimation:shake -target=aaa -keep -next;
 キャラA: 1行目;

@@ -14,7 +14,7 @@ Supported value types:
 
 WebGAL attempts to convert unrecognized value types into strings.
 
-```webgal
+``` webgal
 setVar:char_b_fav=15; Character B initial favor
 ;
 CharacterB:Hey, can you tell what's different about me today?;
@@ -56,7 +56,7 @@ changeScene:chapter_02/part_01.txt;
 When the value is `true`, sets a persistent global variable. Persistent variables take effect throughout the whole game unless the user clears all data.
 When the value is `false`, sets a normal variable. Normal variables only take effect in the current scene, are saved in save data, and restored when the save is loaded.
 
-```webgal
+``` webgal
 ; Assume this is the beginning of a new game
 ; If this is already another playthrough, jump directly to the extra-playthrough story
 jumpLabel:another_life -when=multiple_playthroughs;

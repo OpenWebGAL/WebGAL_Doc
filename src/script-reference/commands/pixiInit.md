@@ -7,7 +7,7 @@
 不需要填写任何内容。
 详情请见[特效](../../webgal-script/special-effect.md)。
 
-```webgal
+``` webgal
 pixiInit; 初始化舞台特效
 pixi:rain;
 说话者:下雨了。;

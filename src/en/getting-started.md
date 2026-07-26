@@ -29,20 +29,20 @@ Windows 7 users please refer to **[How to start making with Visual Editor on Win
 
 ## Method 2: Start debugging from source code (For makers who want higher customization)
 
-``` shell
+``` bash
 git clone https://github.com/OpenWebGAL/WebGAL.git
 ```
 
 Install and use yarn to install dependencies
 
-``` shell
+``` bash
 npm install yarn -g
 yarn
 ```
 
 WebGAL uses vite as a packaging and debugging tool, you can start the development server by running the following script
 
-``` shell
+``` bash
 yarn dev
 ```
 
@@ -54,7 +54,7 @@ It is recommended to use VS Code for development, and use plugins to achieve syn
 
 If you want to package, please use
 
-``` shell
+``` bash
 yarn build
 ```
 

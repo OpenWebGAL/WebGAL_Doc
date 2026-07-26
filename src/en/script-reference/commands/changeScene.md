@@ -9,7 +9,7 @@ See [Scene and Branch](../../webgal-script/scenes.md) for details.
 
 If this command succeeds, subsequent commands in the current scene will not be executed.
 
-```webgal
+``` webgal
 CharacterA:Time to go.;
 changeScene:chapter_01/part_02.txt;
 Debug:If you see this line, the scene switch failed.;
@@ -21,7 +21,7 @@ Switching scenes does not clear the current scene, such as figures and backgroun
 :::
 
 - chapter_01/part_01.txt
-```webgal
+``` webgal
 changeBg:home/character_a/bedroom.png;
 changeFigure:main_character/character_a/thinking.png -next;
 CharacterA:Let's go to her house today!;
@@ -31,7 +31,7 @@ changeFigure:none -next; Manually close figure
 changeScene:chapter_01/part_02.txt;
 ```
 - chapter_01/part_02.txt
-```webgal
+``` webgal
 changeBg:home/character_b/living_room.png;
 changeFigure:main_character/character_b/smile.png -next;
 CharacterB:Oh, it's you. What can I do for you?;

@@ -4,7 +4,7 @@
 
 動画は `video` フォルダに置き、`playVideo` を使用して再生します。
 
-``` ws
+``` webgal
 playVideo:OP.mp4;
 ```
 

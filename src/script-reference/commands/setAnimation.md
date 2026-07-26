@@ -12,26 +12,26 @@
 如果您只想设置单段动画，请使用 [setTransform](setTransform.md) 命令。
 :::
 
-```webgal
+``` webgal
 setAnimation:shake -target=aaa;
 ```
 
 ## 参数
 
 <!-- @include: ../arguments/target.md -->
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa;
 setAnimation:shake -target=aaa;
 ```
 
 <!-- @include: ../arguments/writeDefault.md -->
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa;
 setAnimation:shake -target=aaa -writeDefault;
 ```
 
 <!-- @include: ../arguments/keep.md -->
-```webgal
+``` webgal
 ; 假设这是一个特别长的动画
 setAnimation:shake -target=aaa -keep -next;
 角色A: 第一句话;

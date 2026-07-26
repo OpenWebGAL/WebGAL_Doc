@@ -32,13 +32,13 @@ WebGAL Terre 的仓库在 [WebGAL Terre - GitHub](https://github.com/OpenWebGAL/
 
 ### 安装依赖
 
-```bash
+``` bash
 yarn
 ```
 
 ### 启动开发服务器
 
-```bash
+``` bash
 yarn dev
 ```
 
@@ -59,13 +59,13 @@ yarn dev
 
 1、Clone WebGAL 引擎项目（推荐在相邻目录 Clone，这样可以使用自动化脚本）
 
-```
+``` bash
 git clone https://github.com/OpenWebGAL/WebGAL.git
 ```
 
 2、**（假设你在 Terre 项目的相邻目录 Clone WebGAL 项目，未这样做的开发者请忽略）** 在 WebGAL 引擎仓库运行自动化脚本构建 WebGAL 到 WebGAL Terre 
 
-```
+``` bash
 sh release-to-terre.sh
 ```
 
@@ -75,7 +75,7 @@ sh release-to-terre.sh
 
 2、构建 WebGAL 项目（此步骤在 WebGAL 引擎仓库中执行）
 
-```
+``` bash
 yarn
 yarn build
 ```
@@ -84,7 +84,7 @@ yarn build
 
 **此处假设你在 Terre 项目的相邻目录 Clone WebGAL 项目，如果你有不同的目录结构，请根据实际情况修改。**
 
-```
+``` bash
 # 进入 Terre 目录
 cd ../WebGAL_Terre/packages/terre2/assets/templates/WebGAL_Template || exit
 # 删除其他文件
@@ -122,7 +122,7 @@ WebGAL Terre 是一个 TypeScript 全栈项目，使用 OpenAPI 来生成请求�
 
 以下代码示例展示了后端接口需要使用的关键注解：
 
-```typescript
+``` typescript
 @Post('createGame')
   @ApiOperation({ summary: 'Create a new game' })
   @ApiResponse({ status: 200, description: 'Game creation result.' })

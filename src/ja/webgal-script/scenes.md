@@ -14,13 +14,13 @@ WebGAL Terreビジュアルエディタを使用している場合は、エデ�
 
 現在、2つの章のスクリプト、つまり`Chapter-1.txt`と`Chapter-2.txt`を作成したとします。`Chapter-1.txt`の実行が終了したら、`Chapter-2.txt`に対応するシーンにジャンプするには、次のステートメントを使用します。
 
-``` ws
+``` webgal
 changeScene:Chapter-2.txt;
 ```
 
 例：
 
-``` ws
+``` webgal
 (Chapter-1.txt)
 ......
 ......
@@ -40,13 +40,13 @@ changeScene:Chapter-2.txt;
 
 ステートメント：
 
-``` ws
+``` webgal
 callScene:Chapter-2.txt;
 ```
 
 例：
 
-``` ws
+``` webgal
 (Chapter-1.txt)
 ......
 ......
@@ -68,7 +68,7 @@ callScene:Chapter-2.txt;
 
 `選択肢のテキスト:章ファイル名`を使用して選択肢を定義します。異なる選択肢を区切るには`|`を使用します。例を以下に示します。
 
-``` ws
+``` webgal
 choose:彼女を呼び止める:Chapter-2.txt|家に帰る:Chapter-3.txt;
 ```
 
@@ -78,7 +78,7 @@ choose:彼女を呼び止める:Chapter-2.txt|家に帰る:Chapter-3.txt;
 
 変数に応じて、オプションを条件付きで表示したり、ユーザーがオプションをクリックできるようにしたりすることもできます。構文は次のとおりです。
 
-```ws
+``` webgal
 choose:(showConditionVar>1)[enableConditionVar>2]->彼女に声を掛ける:Chapter-2.txt|家に帰る:Chapter-3.txt;
 ```
 
@@ -94,7 +94,7 @@ choose:(showConditionVar>1)[enableConditionVar>2]->彼女に声を掛ける:Chap
 
 ### ラベル（`label`）の作成
 
-``` ws
+``` webgal
 ......
 jumpLabel:label_1; // label_1にジャンプします
 ......
@@ -111,7 +111,7 @@ label:label_1; // label_1という名前のラベルを作成します
 
 上記の基本事項がわかれば、`choose`を使用して分岐を使用して`label`のある場所にジャンプできます。
 
-``` ws
+``` webgal
 ......
 choose:分岐1:label_1|分岐2:label_2;
 label:label_1; // label_1という名前のラベルを作成します
@@ -128,7 +128,7 @@ label:end; // endという名前のラベルを作成します
 
 各分岐の最後に、希望する場所にジャンプするために`jumpLabel`を使用する必要があります。プログラムは線形に実行されるため、分岐の最後にジャンプしない場合、プログラムは次の行に実行を続行します。例えば、以下のような場合です。
 
-``` ws
+``` webgal
 ......
 choose:分岐1:label_1|分岐2:label_2;
 label:label_1; // label_1という名前のラベルを作成します

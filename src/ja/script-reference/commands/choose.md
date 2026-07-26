@@ -11,7 +11,7 @@
 - シーンファイル
 - 現在のシーン内のラベル
 
-```webgal
+``` webgal
 キャラA:今日はどこへ行こう？;
 choose:店へ行く:chapter_01/shop.txt|誰かの家:chapter_01/house_b.txt|家にいる:home;
 ;
@@ -32,7 +32,7 @@ label:home;
 - `[条件式]`: 選択肢をクリック可能にするかどうかを制御します。
 - `->`: 条件プレフィックスと実際の選択肢内容を区切ります。
 
-```webgal
+``` webgal
 setVar:hasTicket=true;
 setVar:doorPower=1;
 choose:(hasTicket==true)->チケットを見せる:ticket|(doorPower>0)[doorPower>1]->力ずくで開ける:force|家に帰る:home;

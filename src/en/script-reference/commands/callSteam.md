@@ -10,7 +10,7 @@ This command only works in builds that provide Steam / Electron bridge support. 
 
 Fill in `Steam_AppID` in `game/config.txt`. WebGAL initializes Steam integration when the game starts.
 
-```text
+``` text
 Steam_AppID:480;
 ```
 
@@ -27,13 +27,13 @@ There is no statement content. All values are passed through named parameters.
 
 Sets the Steam achievement ID to unlock. It must match the achievement API name configured in the Steam backend.
 
-```webgal
+``` webgal
 callSteam: -achievementId=ACH_WIN_ONE_GAME;
 ```
 
 ## Example
 
-```webgal
+``` webgal
 ; Unlock achievement
 callSteam: -achievementId=ACH_WIN_ONE_GAME;
 ```

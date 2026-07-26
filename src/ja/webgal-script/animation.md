@@ -6,7 +6,7 @@
 
 **例：**
 
-``` ws
+``` webgal
 ; // 中央の立ち絵に下から入ってくるアニメーションを設定し、次の行に移動します
 setAnimation:enter-from-bottom -target=fig-center -next;
 ```
@@ -125,7 +125,7 @@ setAnimation:enter-from-bottom -target=fig-center -next;
 
 その後、スクリプトで呼び出すことができます。
 
-``` ws
+``` webgal
 setAnimation:enter-from-left -target=fig-left -next;
 ```
 
@@ -168,7 +168,7 @@ setAnimation:enter-from-left -target=fig-left -next;
 
 WebGAL のデフォルトのフェードイン・フェードアウトの登場・退場エフェクトを上書きして、独自のエフェクトに置き換えることもできます。例えば、以下のようにします。
 
-```
+``` webgal
 setTransition: -target=fig-center -enter=enter-from-bottom -exit=exit;
 ```
 
@@ -202,13 +202,13 @@ WebGAL は差分画像を使って、画像立ち絵の口パク同期アニメ�
 
 **1. 差分を登録して立ち絵を登場させる**
 
-```webgal
+``` webgal
 changeFigure:1/normal.png -id=charA -mouthOpen=1/mouth_open.png -mouthHalfOpen=1/mouth_half.png -mouthClose=1/normal.png;
 ```
 
 **2. 音声を再生して口パクを駆動する**
 
-```webgal
+``` webgal
 ; id で自由立ち絵を駆動する
 キャラA:こんにちは、世界！ -vocal=charA_hello.wav -figureId=charA;
 ```
@@ -217,7 +217,7 @@ changeFigure:1/normal.png -id=charA -mouthOpen=1/mouth_open.png -mouthHalfOpen=1
 
 ### 位置立ち絵の例
 
-```webgal
+``` webgal
 ; 中央立ち絵を登場させ、差分を登録する
 changeFigure:1/normal.png -mouthOpen=1/mouth_open.png -mouthHalfOpen=1/mouth_half.png -mouthClose=1/normal.png;
 

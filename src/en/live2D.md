@@ -29,6 +29,6 @@ If you use WebGAL Terre 4.6 portable mode, `[user data directory]` is the `data`
 
 You can use the `-motion=motionName` or `-expression=expressionName` parameters to switch expressions, such as:
 
-```
+``` webgal
 changeFigure:xxx.json -motion=angry -expression=angry01;
 ```

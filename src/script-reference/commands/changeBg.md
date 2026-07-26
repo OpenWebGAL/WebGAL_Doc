@@ -7,7 +7,7 @@
 填写背景图片的路径。当文件路径为空或为 `none` 时，表示背景退场。
 详情请见[背景与立绘](../../webgal-script/bg-and-figure.md)。
 
-```webgal
+``` webgal
 ; 如果没有背景存在，则此句表示背景入场。
 changeBg:bg.png;
 ; 如果已有背景存在，则此句表示替换背景。
@@ -21,36 +21,36 @@ changeBg:none;
 ## 参数
 
 <!-- @include: ../arguments/transform.md -->
-```webgal
+``` webgal
 changeBg:bg.png -transform={"position":{"x":-50,"y":-20},"rotation":0.1,"scale":{"x":1.2,"y":1.2},"brightness":0.5,"blur":10};
 ```
 
 <!-- @include: ../arguments/enter.md -->
-```webgal
+``` webgal
 changeBg:bg.png -enter=enter-from-left;
 ```
 
 <!-- @include: ../arguments/exit.md -->
-```webgal
+``` webgal
 changeBg:bg.png -exit=exit-to-right;
 ```
 
 <!-- @include: ../arguments/duration.md -->
 作用于默认入场动画，默认值为 1500。
-```webgal
+``` webgal
 changeBg:bg.png -duration=200;
 ```
 
 <!-- @include: ../arguments/ease.md -->
 作用于默认入场动画。
-```webgal
+``` webgal
 changeBg:bg.png -ease=easeOut;
 ```
 
 ### unlockname
 <!-- @include: ../arguments/name-cg.md -->
 如果不填写该参数，或名称为空，则不会收录此图片。
-```webgal
+``` webgal
 changeBg:bg.png -unlockname=MyCg01;
 ```
 
@@ -58,7 +58,7 @@ changeBg:bg.png -unlockname=MyCg01;
 <!-- @include: ../arguments/series-cg.md -->
 单独填写 `series` 不会进行收录，请确保同时填写了 `unlockname`。
 
-```webgal
+``` webgal
 changeBg:bg.png -unlockname=MyCg01 -series=MySeries01;
 ```
 
@@ -69,7 +69,7 @@ changeBg:bg.png -unlockname=MyCg01 -series=MySeries01;
 
 入场动画时长。若未填写，默认取 `duration` 的值（默认 1500）。
 
-```webgal
+``` webgal
 changeBg:bg.png -enterDuration=500;
 ```
 
@@ -80,6 +80,6 @@ changeBg:bg.png -enterDuration=500;
 
 退场动画时长。若未填写，默认值为 1500。
 
-```webgal
+``` webgal
 changeBg:bg.png -exitDuration=800;
 ```
