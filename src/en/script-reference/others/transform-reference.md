@@ -2,13 +2,13 @@
 
 `transform` is the stage object's transform and effect property set. It includes position, rotation, scale, and filter properties. Its format looks like this:
 
-```json
+``` json
 {"position":{"x":0,"y":0},"rotation":0,"scale":{"x":1,"y":1},"alpha":1,"blur":0,"colorRed":255,"colorGreen":255,"colorBlue":255}
 ```
 
 You usually do not need to write every property. Write only the properties you want to modify. Unmodified properties inherit existing values or use defaults depending on the situation.
 
-```webgal
+``` webgal
 setTransform:{"position":{"x":100},"rotation":45} -target=aaa -duration=500;
 ; This inherits the existing transform and changes only the blur filter value
 setTransform:{"blur":20} -target=aaa -duration=500;
@@ -18,7 +18,7 @@ setTransform:{"saturation":0} -target=aaa -duration=500 -writeDefault;
 
 For filter properties, a filter is fully disabled only when all values of that filter are set to defaults. Otherwise, the filter remains until the object exits, which may cause unnecessary performance cost. When needed, explicitly set related properties to default values to disable filters.
 
-```webgal
+``` webgal
 changeBg:bg.png -transform={"brightness":0.5,"blur":10} -next;
 changeFigure:1/open_eyes.png -id=aaa;
 ;
@@ -53,7 +53,7 @@ Filters are currently applied to the image in this order:
 
 Position. Modify its x and y properties to change the object's coordinates on the stage.
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"position":{"x":500,"y":-50}};
 setTransform:{"position":{"x":-200,"y":50}} -target=aaa -duration=500;
 ```
@@ -64,7 +64,7 @@ setTransform:{"position":{"x":-200,"y":50}} -target=aaa -duration=500;
 
 Rotation. Changes the object's rotation in radians. Clockwise is positive.
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"rotation":-3.14};
 setTransform:{"rotation":1.57} -target=aaa -duration=500;
 ```
@@ -74,7 +74,7 @@ setTransform:{"rotation":1.57} -target=aaa -duration=500;
 
 Scale. Modify its x and y properties to change the object's scale ratio.
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"scale":{"x":0.5,"y":0.5}};
 setTransform:{"scale":{"x":2,"y":2}} -target=aaa -duration=500;
 ```
@@ -87,7 +87,7 @@ setTransform:{"scale":{"x":2,"y":2}} -target=aaa -duration=500;
 
 Opacity.
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"alpha":0.8};
 setTransform:{"alpha":0.2} -target=aaa -duration=500;
 ```
@@ -99,7 +99,7 @@ setTransform:{"alpha":0.2} -target=aaa -duration=500;
 
 Blur.
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"blur":10};
 setTransform:{"blur":30} -target=aaa -duration=500;
 ```
@@ -132,7 +132,7 @@ Gamma.
 
 The red, green, and blue components of the color tone.
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"brightness":0.3,"colorRed":128};
 setTransform:{"contrast":2,"colorBlue":64} -target=aaa -duration=500;
 ```
@@ -163,7 +163,7 @@ Bloom blur amount. If both `bloom` and `bloomBrightness` are default values, adj
 
 Bloom threshold. Higher values make only brighter parts of the image produce bloom.
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"bloom":1,"bloomBlur":10,"bloomThreshold":0};
 setTransform:{"bloom":1,"bloomBlur":10,"bloomThreshold":0.8} -target=aaa -duration=500;
 ```
@@ -189,7 +189,7 @@ Bevel thickness.
 
 The red, green, and blue components of the bevel color.
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"bevel":1,"bevelThickness":20,"bevelRed":128};
 setTransform:{"bevel":1,"bevelThickness":20,"bevelBlue":64} -target=aaa -duration=500;
 ```
@@ -202,7 +202,7 @@ setTransform:{"bevel":1,"bevelThickness":20,"bevelBlue":64} -target=aaa -duratio
 
 Switches for old film, dot, RGB split, glitch, godray, and reflection filters.
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"oldFilm":1};
 setTransform:{"oldFilm":0} -target=aaa -duration=500;
 ```

@@ -6,7 +6,7 @@ Use the statement `setAnimation:animation name -target=target;`
 
 **Example:**
 
-``` ws
+``` webgal
 ; // Set an animation for the center sprite to enter from the bottom, and proceed to the next line
 setAnimation:enter-from-bottom -target=fig-center -next;
 ```
@@ -125,7 +125,7 @@ In the file `animationTable.json`:
 
 Then, you can call it in the script:
 
-``` ws
+``` webgal
 setAnimation:enter-from-left -target=fig-left -next;
 ```
 
@@ -168,7 +168,7 @@ An animation with a duration of 0 milliseconds and only one time slice is a tran
 
 You can also override WebGAL's default fade-in and fade-out entrance and exit effects with your own animation effects. For example:
 
-```
+``` webgal
 setTransition: -target=fig-center -enter=enter-from-bottom -exit=exit;
 ```
 
@@ -202,13 +202,13 @@ Prepare the following differential sprites for the character:
 
 **1. Register differential images and show the sprite**
 
-```webgal
+``` webgal
 changeFigure:1/normal.png -id=charA -mouthOpen=1/mouth_open.png -mouthHalfOpen=1/mouth_half.png -mouthClose=1/normal.png;
 ```
 
 **2. Play voice and drive the mouth shape**
 
-```webgal
+``` webgal
 ; Drive a free sprite by id
 CharacterA:Hello, world! -vocal=charA_hello.wav -figureId=charA;
 ```
@@ -217,7 +217,7 @@ The engine switches between `mouthOpen`, `mouthHalfOpen`, and `mouthClose` accor
 
 ### Positioned Sprite Example
 
-```webgal
+``` webgal
 ; Show the center sprite and register differential images
 changeFigure:1/normal.png -mouthOpen=1/mouth_open.png -mouthHalfOpen=1/mouth_half.png -mouthClose=1/normal.png;
 

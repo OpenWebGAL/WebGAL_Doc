@@ -9,7 +9,7 @@
 
 When the value is `true`, the next statements are executed while the current statement is being executed, until a statement whose `next` value is `false` is found.
 
-```webgal
+``` webgal
 label:loop;
 ;
 changeBg:bg.png -next;
@@ -44,7 +44,7 @@ Some commands are not compatible with `next`. For example, adding `next` to the 
 
 Writes a conditional expression. The current statement is executed only when the condition is `true`.
 
-```webgal
+``` webgal
 label:start;
 ;
 setVar:coin=10;
@@ -68,7 +68,7 @@ jumpLabel:start;
 
 After this statement's performance ends, automatically executes the next statement even if the player has not enabled autoplay.
 
-```webgal
+``` webgal
 changeBg:bg.png -next;
 changeFigure:1/open_eyes.png -transform={"position":{"x":-500}} -id=aaa -next;
 changeFigure:2/open_eyes.png -transform={"position":{"x":500}} -id=bbb;

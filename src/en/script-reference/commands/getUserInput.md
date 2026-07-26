@@ -6,7 +6,7 @@ Gets user input.
 
 Sets the variable name. The value entered by the user will be saved to this variable.
 
-```webgal
+``` webgal
 CharacterB:Thank you so much. Could you tell me your name?;
 getUserInput:player_name -title=Your Name -buttonText=Confirm -defaultValue=Bob;
 CharacterB:{player_name}, I'll remember that.;
@@ -21,7 +21,7 @@ After the player confirms input, the engine writes the variable, closes the inpu
 
 Sets the title of the input box.
 
-```webgal
+``` webgal
 getUserInput:player_name -title=Your Name;
 ```
 
@@ -30,7 +30,7 @@ getUserInput:player_name -title=Your Name;
 
 Sets the confirmation button text.
 
-```webgal
+``` webgal
 getUserInput:player_name -buttonText=Confirm;
 ```
 
@@ -39,7 +39,7 @@ getUserInput:player_name -buttonText=Confirm;
 
 Sets the default value of the input box.
 
-```webgal
+``` webgal
 getUserInput:player_name -defaultValue=Bob;
 ```
 
@@ -50,7 +50,7 @@ If the player confirms without entering anything, the engine writes `defaultValu
 
 Sets the regular expression rule used to validate the input.
 
-```webgal
+``` webgal
 getUserInput:player_name -rule=^.{1,2}$;
 ```
 
@@ -61,7 +61,7 @@ Sets regular expression flags, such as `g` for global matching and `i` for case-
 
 For details, see [MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/RegExp#flags).
 
-```webgal
+``` webgal
 getUserInput:player_name -rule=^.{1,2}$ -ruleFlag=g;
 ```
 
@@ -70,7 +70,7 @@ getUserInput:player_name -rule=^.{1,2}$ -ruleFlag=g;
 
 Sets the text shown in the error popup when validation fails. You can use `$0` to get the user's input.
 
-```webgal
+``` webgal
 getUserInput:player_name -rule=^.{1,2}$ -ruleText=$0 must be 1-2 characters;
 ```
 
@@ -81,6 +81,6 @@ Sets the button text of the error popup when validation fails.
 
 Default: `OK`
 
-```webgal
+``` webgal
 getUserInput:player_name -rule=^.{1,2}$ -ruleText=$0 must be 1-2 characters -ruleButtonText=OK;
 ```

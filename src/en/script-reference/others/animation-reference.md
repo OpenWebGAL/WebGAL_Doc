@@ -4,7 +4,7 @@ WebGAL supports setting consecutive [transform and effect](../others/transform-r
 
 A transform and effect object looks like this:
 
-```json
+``` json
 {
   "position": {
     "x": -500,
@@ -17,7 +17,7 @@ A transform and effect object looks like this:
 
 An animation segment object is a transform and effect object with additional properties such as duration:
 
-```json
+``` json
 {
   "position": {
     "x": -500,
@@ -32,7 +32,7 @@ An animation segment object is a transform and effect object with additional pro
 
 Multiple animation segment objects can form an animation:
 
-```json
+``` json
 [
   {
     "duration": 0
@@ -61,7 +61,7 @@ Except for required properties such as `duration`, many properties in animation 
 The "existing value" inherited here means the target object's transform and effect snapshot before the animation starts, not the ending state of the previous animation segment.
 :::
 
-```webgal
+``` webgal
 ; The figure object's initial coordinate is (-500,0)
 changeFigure:character_a/normal.png -id=aaa -transform={"position":{"x":-500,"y":0}};
 ; The multi-segment animation coordinates are:
@@ -72,7 +72,7 @@ setTempAnimation:[{"duration":0},{"position":{"x":500},"duration":500},{"positio
 The first segment in an animation is the starting state. Its duration is usually set to 0. Even if it is greater than 0, it will not produce an animation effect.
 You can still set transform and effect properties on the first segment so the animation jumps directly to a specified state when it starts.
 
-```webgal
+``` webgal
 ; The figure object's initial coordinate is (0,0)
 changeFigure:character_a/normal.png -id=aaa;
 ; Walk from left to right, jumping directly to the left side when the animation starts
@@ -88,14 +88,14 @@ setTempAnimation:[{"position":{"x":-500},"duration":0},{"position":{"x":500},"du
 
 The duration of each animation segment.
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa;
 setTempAnimation:[{"position":{"x":-500},"duration":0},{"position":{"x":500},"duration":1000}] -target=aaa;
 ```
 
 <!-- @include: ../arguments/ease.md -->
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa;
 setTempAnimation:[{"position":{"x":-500},"duration":0},{"position":{"x":500},"duration":1000,"ease":"bounceOut"}] -target=aaa;
 ```

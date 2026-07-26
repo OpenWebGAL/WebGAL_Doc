@@ -8,7 +8,7 @@
 
 使用 `pixiInit` 初始化 Pixi。
 
-``` ws
+``` webgal
 pixiInit;
 ```
 
@@ -22,7 +22,7 @@ pixiInit;
 
 使用 `pixiPerform` 添加特效。
 
-``` ws
+``` webgal
 pixiPerform:rain; // 添加一个下雨的特效
 ```
 
@@ -41,7 +41,7 @@ pixiPerform:rain; // 添加一个下雨的特效
 
 如果你想要叠加两种及以上效果，你可以在不使用 `pixiInit` 指令的情况下叠加不同的效果。
 
-``` ws
+``` webgal
 pixiPerform:rain;
 pixiPerform:snow;
 ```
@@ -56,7 +56,7 @@ pixiPerform:snow;
 
 特效层分为前景层和背景层，这里以前景层为例。
 
-``` ts
+``` typescript
 // 获取当前的 Pixi 效果 Container
 const effectsContainer = WebGAL.gameplay.pixiStage!.foregroundEffectsContainer!;
 // 调用 Pixi App 的方式，对确定屏幕尺寸等可能有用
@@ -73,7 +73,7 @@ effectsContainer.addChild(container);
 
 在文件末尾使用其注册你的特效, 第一个参数是特效名, 第二个是调用特效的方法.
 
-``` ts
+``` typescript
 import {registerPerform} from '../pixiPerformManager';
 
 // 假设这是你的特效
@@ -87,12 +87,12 @@ registerPerform('myPerform', { fg: () => myPerform(参数) });
 
 最后，编译出支持你自定义特效的 WebGAL
 
-``` shell
+``` bash
 yarn run build;
 ```
 
 这样，你就可以在脚本中调用你的特效了
 
-``` ws
+``` webgal
 pixiPerform:myPerform;
 ```

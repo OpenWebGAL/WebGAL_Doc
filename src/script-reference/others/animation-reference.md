@@ -58,7 +58,7 @@ WebGAL 支持设置连续的 [变换效果](../others/transform-reference.md) �
 继承现有值的「现有值」是指，在执行动画前，目标对象的变换效果快照，而不是上一个动画片段的结束状态。
 :::
 
-```webgal
+``` webgal
 ; 立绘对象初始坐标为 (-500,0)
 changeFigure:character_a/normal.png -id=aaa -transform={"position":{"x":-500,"y":0}};
 ; 多段动画的坐标依次为
@@ -69,7 +69,7 @@ setTempAnimation:[{"duration":0},{"position":{"x":500},"duration":500},{"positio
 动画里的第一个片段为起始状态，通常 duration 设为 0 即可，即使设置了大于 0 的数，也不会有动画效果。
 您仍然可以为第一个片段设置变换效果属性，这样可以在动画开始时直接跳转到指定状态。
 
-```webgal
+``` webgal
 ; 立绘对象初始坐标为 (0,0)
 changeFigure:character_a/normal.png -id=aaa;
 ; 从左走到右，动画开始时直接跳转到左边
@@ -85,14 +85,14 @@ setTempAnimation:[{"position":{"x":-500},"duration":0},{"position":{"x":500},"du
 
 每个动画片段的持续时间。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa;
 setTempAnimation:[{"position":{"x":-500},"duration":0},{"position":{"x":500},"duration":1000}] -target=aaa;
 ```
 
 <!-- @include: ../arguments/ease.md -->
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa;
 setTempAnimation:[{"position":{"x":-500},"duration":0},{"position":{"x":500},"duration":1000,"ease":"bounceOut"}] -target=aaa;
 ```

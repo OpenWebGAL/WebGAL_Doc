@@ -10,19 +10,19 @@
 - `universalSoftIn`：通用透明度淡入
 - `universalSoftOff`：通用透明度淡出
 
-```webgal
+``` webgal
 setComplexAnimation:universalSoftIn -target=aaa -duration=1000;
 ```
 
 ## 参数
 
 <!-- @include: ../arguments/target.md -->
-```webgal
+``` webgal
 setComplexAnimation:universalSoftIn -target=fig-center -duration=1000;
 ```
 
 <!-- @include: ../arguments/duration.md -->
 作用于复杂动画的持续时间。
-```webgal
+``` webgal
 setComplexAnimation:universalSoftIn -target=fig-center -duration=1000;
 ```

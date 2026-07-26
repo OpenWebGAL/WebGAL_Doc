@@ -9,7 +9,7 @@ global 并非一个命令。此页面介绍的是所有命令均可使用的通�
 
 当值为 `true` 时，在执行当前语句的同时，同步执行接下来的语句，直至找到 `next` 为 `false` 的语句为止。
 
-```webgal
+``` webgal
 label:loop;
 ;
 changeBg:bg.png -next;
@@ -44,7 +44,7 @@ jumpLabel:loop;
 
 书写条件表达式，仅当条件为 `true` 时，执行当前语句。
 
-```webgal
+``` webgal
 label:start;
 ;
 setVar:coin=10;
@@ -68,7 +68,7 @@ jumpLabel:start;
 
 在这一句的演出结束后，自动执行下一句，即使玩家未开启自动播放。
 
-```webgal
+``` webgal
 changeBg:bg.png -next;
 changeFigure:1/open_eyes.png -transform={"position":{"x":-500}} -id=aaa -next;
 changeFigure:2/open_eyes.png -transform={"position":{"x":500}} -id=bbb;

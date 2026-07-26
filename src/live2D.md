@@ -29,6 +29,6 @@
 
 你可以使用 `-motion=motionName` 或 `-expression=expressionName` 参数来切换表情，如：
 
-```
+``` webgal
 changeFigure:xxx.json -motion=angry -expression=angry01;
 ```

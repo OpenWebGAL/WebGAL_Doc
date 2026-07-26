@@ -7,7 +7,7 @@
 填写背景音乐的路径。当文件路径为空或为 none 时，表示停止播放。
 详情请见[音频](../../webgal-script/audio.md)。
 
-```webgal
+``` webgal
 ; 如果没有背景音乐，则此句表示播放背景音乐。
 bgm:01.wav;
 ; 如果已有背景音乐存在，则此句表示切换背景音乐。
@@ -18,7 +18,7 @@ bgm:;
 
 若背景音乐的路径不变，则不会打断背景音乐, 而是将新参数应用到背景音乐上。
 
-```webgal
+``` webgal
 bgm:morning.wav;
 ; 调整音量，但不会打断背景音乐
 bgm:morning.wav -volume=50;
@@ -27,7 +27,7 @@ bgm:morning.wav -volume=50;
 ## 参数
 
 <!-- @include: ../arguments/volume.md -->
-```webgal
+``` webgal
 bgm:01.wav -volume=100;
 bgm:01.wav -volume=50; 调整音量
 ```
@@ -40,7 +40,7 @@ bgm:01.wav -volume=50; 调整音量
 
 背景音乐的淡入时间。
 
-```webgal
+``` webgal
 bgm:01.wav -enter=1500;
 bgm:02.wav -enter=1500;
 ```
@@ -48,7 +48,7 @@ bgm:02.wav -enter=1500;
 ### unlockname
 <!-- @include: ../arguments/name-bgm.md -->
 如果不填写该参数，或名称为空，则不会收录此音乐。
-```webgal
+``` webgal
 bgm:01.wav -unlockname=MyBgm01;
 ```
 
@@ -56,6 +56,6 @@ bgm:01.wav -unlockname=MyBgm01;
 <!-- @include: ../arguments/series-bgm.md -->
 单独填写 `series` 不会进行收录，请确保同时填写了 `unlockname`。
 
-```webgal
+``` webgal
 bgm:01.wav -unlockname=MyBgm01 -series=MySeries01;
 ```

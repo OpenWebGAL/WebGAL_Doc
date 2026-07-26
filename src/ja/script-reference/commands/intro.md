@@ -7,7 +7,7 @@
 画面全体に表示するテキストを指定します。`|` を使って複数行に分割できます。
 詳しくは[黒画面テキスト](../../webgal-script/dialogue.md#黒画面テキスト)を参照してください。
 
-```webgal
+``` webgal
 intro:これは1行目のテキストです|これは2行目のテキストです|これは3行目のテキストです;
 ```
 
@@ -23,7 +23,7 @@ intro:これは1行目のテキストです|これは2行目のテキストで�
 - `medium` - 中サイズフォント
 - `large` - 大きいフォント
 
-```webgal
+``` webgal
 intro:これは文章です -fontSize=large;
 ```
 
@@ -33,7 +33,7 @@ intro:これは文章です -fontSize=large;
 
 フォント色を設定します。`rgba(0,0,0,1)` は黒、`rgba(255,255,255,1)` は白を表します。透明度の範囲は 0 から 1 です。
 
-```webgal
+``` webgal
 intro:これは文章です -fontColor=rgba(48, 135, 206, 1);
 ```
 
@@ -43,7 +43,7 @@ intro:これは文章です -fontColor=rgba(48, 135, 206, 1);
 
 背景色を設定します。`rgba(0,0,0,1)` は黒、`rgba(255,255,255,1)` は白を表します。透明度の範囲は 0 から 1 です。
 
-```webgal
+``` webgal
 intro:これは文章です -backgroundColor=rgba(22,22,22,0.8);
 ```
 
@@ -52,7 +52,7 @@ intro:これは文章です -backgroundColor=rgba(22,22,22,0.8);
 
 全画面テキストの背景画像パスを指定します。このパラメータを設定しない場合は `backgroundColor` が使用されます。
 
-```webgal
+``` webgal
 intro:これは文章です -backgroundImage=bg.png;
 ```
 
@@ -66,7 +66,7 @@ intro:これは文章です -backgroundImage=bg.png;
 - `pixelateEffect`: ぼかし
 - `revealAnimation`: 巻物のように展開
 
-```webgal
+``` webgal
 intro:これは1行目のテキストです|これは2行目のテキストです|これは3行目のテキストです -animation=slideIn;
 ```
 
@@ -78,7 +78,7 @@ intro:これは1行目のテキストです|これは2行目のテキストで�
 
 各行の表示遅延時間を設定します。
 
-```webgal
+``` webgal
 intro:これは1行目のテキストです|これは2行目のテキストです|これは3行目のテキストです -delayTime=1000;
 ```
 
@@ -88,7 +88,7 @@ intro:これは1行目のテキストです|これは2行目のテキストで�
 値が `true` の場合、すべてのテキスト表示後、プレイヤーが画面をクリックするまで次の文を自動実行しません。
 値が `false` の場合、プレイヤーがオート再生を有効にしていなくても、すべてのテキスト表示後に次の文を自動実行します。
 
-```webgal
+``` webgal
 intro:これは文章です -hold;
 ```
 
@@ -98,6 +98,6 @@ intro:これは文章です -hold;
 値が `true` の場合、次の行を表示するにはユーザーが手動で画面をクリックする必要があります。また `hold` を `true` にし、`delayTime` を無視します。
 値が `false` の場合、次の行を自動表示します。
 
-```webgal
+``` webgal
 intro:これは文章です -userForward;
 ```

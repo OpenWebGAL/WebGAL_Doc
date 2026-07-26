@@ -10,7 +10,7 @@
 此命令只生成一段动画，如果您需要设置多段动画，请使用 [setAnimation](setAnimation.md) 或 [setTempAnimation](setTempAnimation.md) 命令。
 :::
 
-```webgal
+``` webgal
 changeFigure:character_a/normal.png -id=aaa;
 ; 向左移动
 setTransform:{"position":{"x":-500},"saturation":0.8} -target=aaa -duration=500;
@@ -21,31 +21,31 @@ setTransform:{"brightness":0.5,"contrast":1.2} -target=aaa -duration=500;
 ## 参数
 
 <!-- @include: ../arguments/target.md -->
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa;
 setTransform:{"brightness":0.5} -target=aaa -duration=500;
 ```
 
 <!-- @include: ../arguments/duration.md -->
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa;
 setTransform:{"brightness":0.5} -target=aaa -duration=500;
 ```
 
 <!-- @include: ../arguments/ease.md -->
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa;
 setTransform:{"brightness":0.5} -target=aaa -duration=500 -ease=linear;
 ```
 
 <!-- @include: ../arguments/writeDefault.md -->
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa;
 setTransform:{"brightness":0.5} -target=aaa -duration=500 -writeDefault;
 ```
 
 <!-- @include: ../arguments/keep.md -->
-```webgal
+``` webgal
 ; 假设这是一个特别长的动画
 setTransform:{"scale":{"x":2,"y":2}} -target=aaa -duration=10000 -keep -next;
 角色A: 第一句话;

@@ -57,7 +57,7 @@
 
 3. 运行以下命令：
 
-    ```bash
+    ``` bash
     npm i 
     # 或（如果你有安装yarn）
     yarn
@@ -75,7 +75,7 @@
 
 3. 运行以下命令：
 
-    ```bash
+    ``` bash
     node main.js
     ```
 
@@ -93,7 +93,7 @@
 
 克隆 [WebGAL_Terre](https://github.com/OpenWebGAL/WebGAL_Terre) 仓库。
 
-``` shell
+``` bash
 git clone https://github.com/OpenWebGAL/WebGAL_Terre.git
 ```
 
@@ -101,7 +101,7 @@ git clone https://github.com/OpenWebGAL/WebGAL_Terre.git
 
 安装 yarn （可选，推荐）  
 
-``` shell
+``` bash
 npm i -g yarn
 ```
 
@@ -113,7 +113,7 @@ npm i -g yarn
 
     在项目根目录执行依赖安装。
 
-    ```shell
+    ``` bash
     yarn
     ```
 
@@ -127,13 +127,13 @@ npm i -g yarn
 
 2. 安装依赖
 
-    ``` shell
+    ``` bash
     yarn
     ```
 
 3. 打包 *terre2*
 
-    ``` shell
+    ``` bash
     yarn run build
     ```
 
@@ -141,7 +141,7 @@ npm i -g yarn
 
 5. 在 *dist* 中添加 *package.json* 文件，内容（注意填写相关信息）：
 
-    ```json
+    ``` json
     {
         "name": "webgal-terre-2-win7-server",
         "version": "版本号",
@@ -169,7 +169,7 @@ npm i -g yarn
 
 1. 在可视化编辑器目录下安装依赖。
 
-    ``` shell
+    ``` bash
     npm i
     # 或（推荐yarn）
     yarn

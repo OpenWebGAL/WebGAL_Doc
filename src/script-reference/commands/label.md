@@ -7,7 +7,7 @@
 
 填写标签名称。该命令本身不执行任何操作，但可以配合 `choose` 和 `jumpLabel` 使用。
 
-```webgal
+``` webgal
 label:myLabel;
 ```
 

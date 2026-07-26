@@ -6,7 +6,7 @@
 
 ## 结构 {#structure}
 
-```tsx
+``` tsx
 return (
   <div class="Choose_Main">
     {getChoices().map((choice) => (

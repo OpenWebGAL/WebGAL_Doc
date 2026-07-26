@@ -9,7 +9,7 @@
 
 値が `true` の場合、現在のステートメントを実行しながら、`next` が `false` のステートメントに到達するまで後続のステートメントも同時に実行します。
 
-```webgal
+``` webgal
 label:loop;
 ;
 changeBg:bg.png -next;
@@ -44,7 +44,7 @@ jumpLabel:loop;
 
 条件式を記述します。条件が `true` の場合のみ、現在のステートメントを実行します。
 
-```webgal
+``` webgal
 label:start;
 ;
 setVar:coin=10;
@@ -68,7 +68,7 @@ jumpLabel:start;
 
 このステートメントの演出が終了した後、プレイヤーがオート再生を有効にしていなくても次のステートメントを自動的に実行します。
 
-```webgal
+``` webgal
 changeBg:bg.png -next;
 changeFigure:1/open_eyes.png -transform={"position":{"x":-500}} -id=aaa -next;
 changeFigure:2/open_eyes.png -transform={"position":{"x":500}} -id=bbb;

@@ -12,26 +12,26 @@ If you want to define a multi-segment animation directly in the script, use [set
 If you only want to set a single-segment animation, use [setTransform](setTransform.md).
 :::
 
-```webgal
+``` webgal
 setAnimation:shake -target=aaa;
 ```
 
 ## Parameters
 
 <!-- @include: ../arguments/target.md -->
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa;
 setAnimation:shake -target=aaa;
 ```
 
 <!-- @include: ../arguments/writeDefault.md -->
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa;
 setAnimation:shake -target=aaa -writeDefault;
 ```
 
 <!-- @include: ../arguments/keep.md -->
-```webgal
+``` webgal
 ; Assume this is a very long animation
 setAnimation:shake -target=aaa -keep -next;
 CharacterA:First line;

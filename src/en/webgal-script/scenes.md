@@ -14,13 +14,13 @@ If you are using WebGAL Terre visual editor, you should pay special attention to
 
 Suppose you have written two chapters of the script, namely `Chapter-1.txt` and `Chapter-2.txt`. After `Chapter-1.txt` is finished running, you want to jump to the scene corresponding to `Chapter-2.txt`, please use the following statement:
 
-``` ws
+``` webgal
 changeScene:Chapter-2.txt;
 ```
 
 Example:
 
-``` ws
+``` webgal
 (Chapter-1.txt)
 ......
 ......
@@ -40,13 +40,13 @@ If you need to call another scene in a scene, you can use `callScene`, and the o
 
 Statement:
 
-``` ws
+``` webgal
 callScene:Chapter-2.txt;
 ```
 
 Example:
 
-``` ws
+``` webgal
 (Chapter-1.txt)
 ......
 ......
@@ -67,7 +67,7 @@ callScene:Chapter-2.txt;
 If there are branch options in your script, and you want to enter different chapters by selecting different options, please use `choose`.
 Use `Option text: Chapter file name` to define an option. Use `|` to separate different options. An example is as follows:
 
-``` ws
+``` webgal
 choose:Stop her:Chapter-2.txt|Go home:Chapter-3.txt;
 ```
 
@@ -77,7 +77,7 @@ You only need to match the text of the option with the name of the script to be 
 
 You can also conditionally display choices or allow the user to click on them based on variables, with the following syntax:
 
-```ws
+``` webgal
 choose:(showConditionVar>1)[enableConditionVar>2]->Call out to her:Chapter-2.txt|Go home:Chapter-3.txt;
 ```
 
@@ -93,7 +93,7 @@ If your branch is very long, I do not recommend that you use this method, becaus
 
 ### Create a label (`label`)
 
-``` ws
+``` webgal
 ......
 jumpLabel:label_1; // Jump to label_1
 ......
@@ -110,7 +110,7 @@ If `jumpLabel` is compared to any door, then the end point of this any door is t
 
 With the above foundation, you can use `choose` to implement the use of branches to jump to the position of `label`:
 
-``` ws
+``` webgal
 ......
 choose:Branch 1:label_1|Branch 2:label_2;
 label:label_1; // Create a label named label_1
@@ -127,7 +127,7 @@ label:end; // Create a label named end
 
 Note that at the end of each branch, you should use `jumpLabel` to jump to the position you want. Since the program is executed linearly, if you do not jump to a location at the end of the branch, the program will continue to run down, for example:
 
-``` ws
+``` webgal
 ......
 choose:Branch 1:label_1|Branch 2:label_2;
 label:label_1; // Create a label named label_1

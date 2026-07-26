@@ -10,7 +10,7 @@
 
 在 `game/config.txt` 中填写 `Steam_AppID`，WebGAL 会在启动时初始化 Steam 集成。
 
-```text
+``` text
 Steam_AppID:480;
 ```
 
@@ -27,13 +27,13 @@ Steam_AppID:480;
 
 填写要解锁的 Steam 成就 ID，与 Steam 后台配置的成就 API 名称一致。
 
-```webgal
+``` webgal
 callSteam: -achievementId=ACH_WIN_ONE_GAME;
 ```
 
 ## 示例
 
-```webgal
+``` webgal
 ; 解锁成就
 callSteam: -achievementId=ACH_WIN_ONE_GAME;
 ```

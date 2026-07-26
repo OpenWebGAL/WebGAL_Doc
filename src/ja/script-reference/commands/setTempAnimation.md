@@ -12,7 +12,7 @@
 単段アニメーションだけを設定したい場合は、[setTransform](setTransform.md) コマンドを使用してください。
 :::
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa;
 ; 閃光弾アニメーション
 setTempAnimation:[{"duration":0},{"brightness":2,"contrast":0,"duration":200,"ease":"circIn"},{"brightness":1,"contrast":1,"duration":200},{"brightness":2,"contrast":0,"duration":200,"ease":"circIn"},{"brightness":1,"contrast":1,"duration":2500}] -target=aaa;
@@ -21,19 +21,19 @@ setTempAnimation:[{"duration":0},{"brightness":2,"contrast":0,"duration":200,"ea
 ## パラメータ
 
 <!-- @include: ../arguments/target.md -->
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa;
 setTempAnimation:[{"duration":0},{"brightness":2,"contrast":0,"duration":200,"ease":"circIn"},{"brightness":1,"contrast":1,"duration":200},{"brightness":2,"contrast":0,"duration":200,"ease":"circIn"},{"brightness":1,"contrast":1,"duration":2500}] -target=aaa;
 ```
 
 <!-- @include: ../arguments/writeDefault.md -->
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa;
 setTempAnimation:[{"duration":0},{"brightness":2,"contrast":0,"duration":200,"ease":"circIn"},{"brightness":1,"contrast":1,"duration":200},{"brightness":2,"contrast":0,"duration":200,"ease":"circIn"},{"brightness":1,"contrast":1,"duration":2500}] -target=aaa -writeDefault;
 ```
 
 <!-- @include: ../arguments/keep.md -->
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa;
 setTempAnimation:[{"duration":0},{"scale":{"x":2,"y":2},"duration":10000}] -target=aaa -keep -next;
 キャラA: 1行目;

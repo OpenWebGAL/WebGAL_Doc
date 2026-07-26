@@ -7,7 +7,7 @@ See [Label Jump](../../webgal-script/scenes.md#label-jump) for details.
 
 Sets the target label name to jump to.
 
-```webgal
+``` webgal
 label:think;
 ;
 CharacterA:I remember she likes...;
@@ -25,7 +25,7 @@ CharacterA:Right, it was the rabbit plush.;
 
 `jumpLabel` can be used with the common `-when` parameter. If the condition is not met, this statement is skipped and the story continues with the next statement.
 
-```webgal
+``` webgal
 setVar:score=2;
 jumpLabel:scoreHigh -when=score>1;
 CharacterA:You see this when the score is not enough.;

@@ -7,7 +7,7 @@
 填写立绘的路径。当文件路径为空或为 `none` 时，表示立绘退场。
 详情请见[背景与立绘](../../webgal-script/bg-and-figure.md)。
 
-```webgal
+``` webgal
 ; 如果没有立绘存在，则此句表示立绘入场。
 changeFigure:1/open_eyes.png;
 ; 如果已有立绘存在，则此句表示替换立绘。
@@ -18,7 +18,7 @@ changeFigure:none;
 
 如果立绘的路径与 `id` 保持不变，则不会触发入场或退场动画，而是将新参数应用到目标立绘上。
 
-```webgal
+``` webgal
 ; Live2d 立绘入场
 changeFigure:character_a/model.json -id=aaa;
 ; 修改 Live2d 立绘的动作表情
@@ -30,7 +30,7 @@ changeFigure:character_a/model.json -id=aaa -motion=smile -expression=sad;
 ### 图片立绘
 
 任何不是 Live2D 或 Spine 的格式，都将尝试作为图片立绘导入。
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png;
 ```
 
@@ -42,7 +42,7 @@ changeFigure:1/open_eyes.png;
 
 填入 Live2D 模型 (.json/.model3.json) 的路径，WebGAL 会加载 Live2D 模型。
 
-```webgal
+``` webgal
 changeFigure:character_a/model.json;
 ```
 
@@ -54,42 +54,42 @@ changeFigure:character_a/model.json;
 
 如果您的 Spine 模型是 .skel 格式，您可以直接填写该文件的路径。
 
-```webgal
+``` webgal
 changeFigure:character_x/model.skel;
 ```
 
 如果您的 Spine 模型是 .json 格式，您需要在路径后指定立绘类型为 Spine，避免误当作 Live2D 模型导入。
 
-```webgal
+``` webgal
 changeFigure:character_x/model.json?type=spine;
 ```
 
 ## 参数
 
 <!-- @include: ../arguments/transform.md -->
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -transform={"position":{"x":-50,"y":-20},"rotation":0.1,"scale":{"x":1.2,"y":1.2},"brightness":0.5,"blur":10};
 ```
 
 <!-- @include: ../arguments/enter.md -->
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -enter=enter-from-left;
 ```
 
 <!-- @include: ../arguments/exit.md -->
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -exit=exit-to-right;
 ```
 
 <!-- @include: ../arguments/duration.md -->
 作用于默认入场动画，默认值为 300。
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -duration=200;
 ```
 
 <!-- @include: ../arguments/ease.md -->
 作用于默认入场动画。
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -ease=easeOut;
 ```
 
@@ -100,7 +100,7 @@ changeFigure:1/open_eyes.png -ease=easeOut;
 
 入场动画时长。若未填写，默认取 `duration` 的值（默认 300）。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -enterDuration=200;
 ```
 
@@ -111,7 +111,7 @@ changeFigure:1/open_eyes.png -enterDuration=200;
 
 退场动画时长。若未填写，默认值为 450。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -exitDuration=300;
 ```
 
@@ -125,7 +125,7 @@ changeFigure:1/open_eyes.png -exitDuration=300;
 此参数仅在立绘出场，或替换立绘时生效。如果需要修改在场立绘的坐标，请使用 `setTransform`、`setAnimation`、`setTempAnimation` 等命令。
 :::
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -left;
 ```
 
@@ -139,7 +139,7 @@ changeFigure:1/open_eyes.png -left;
 此参数仅在立绘出场，或替换立绘时生效。如果需要修改在场立绘的坐标，请使用 `setTransform`、`setAnimation`、`setTempAnimation` 等命令。
 :::
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -right;
 ```
 
@@ -153,7 +153,7 @@ changeFigure:1/open_eyes.png -right;
 - 若 `right` 参数为 `true`，则默认赋予该立绘以 `fig-right` 的 id
 - 若 `left` 和 `right` 参数均为 `false`，则默认赋予该立绘以 `fig-center` 的 id
 
-```webgal
+``` webgal
 ; 填写了不同 id 后，即使初始位置相同，立绘也不会相互顶替。
 changeFigure:1/open_eyes.png -id=aaa;
 changeFigure:2/open_eyes.png -id=bbb;
@@ -168,7 +168,7 @@ changeFigure:3/open_eyes.png -id=ccc -left;
 立绘的层级，数值越大，立绘图层越靠上。如果数值相同，则入场较晚的立绘图层会更靠上。
 若不填写该参数，默认值为0。
 
-```webgal
+``` webgal
 ; 立绘 aaa 会在立绘 bbb 上方。
 changeFigure:1/open_eyes.png -id=aaa -zIndex=2;
 changeFigure:2/open_eyes.png -id=bbb -zIndex=1;
@@ -180,7 +180,7 @@ changeFigure:2/open_eyes.png -id=bbb -zIndex=1;
 
 设置立绘的混合模式。仅在立绘出场或替换立绘时生效。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -blendMode=add;
 ```
 
@@ -189,7 +189,7 @@ changeFigure:1/open_eyes.png -id=aaa -blendMode=add;
 
 将语句内容替换为空字符串。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -clear;
 ```
 
@@ -198,7 +198,7 @@ changeFigure:1/open_eyes.png -clear;
 
 将语句内容替换为空字符串。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -none;
 ```
 
@@ -212,7 +212,7 @@ changeFigure:1/open_eyes.png -none;
 
 填写图片立绘的路径，作为张嘴时的立绘差分。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -mouthOpen=1/open_mouth.png;
 ```
 
@@ -221,7 +221,7 @@ changeFigure:1/open_eyes.png -mouthOpen=1/open_mouth.png;
 
 填写图片立绘的路径，作为半张嘴时的立绘差分。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -mouthHalfOpen=1/halfopen_mouth.png;
 ```
 
@@ -230,7 +230,7 @@ changeFigure:1/open_eyes.png -mouthHalfOpen=1/halfopen_mouth.png;
 
 填写图片立绘的路径，作为闭嘴时的立绘差分。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -mouthClose=1/closed_mouth.png;
 ```
 
@@ -239,7 +239,7 @@ changeFigure:1/open_eyes.png -mouthClose=1/closed_mouth.png;
 
 填写图片立绘的路径，作为睁眼时的立绘差分。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -eyesOpen=1/open_eyes.png;
 ```
 
@@ -248,7 +248,7 @@ changeFigure:1/open_eyes.png -eyesOpen=1/open_eyes.png;
 
 填写图片立绘的路径，作为闭眼时的立绘差分。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -eyesClose=1/closed_eyes.png;
 ```
 
@@ -257,7 +257,7 @@ changeFigure:1/open_eyes.png -eyesClose=1/closed_eyes.png;
 
 对于 Live2D 立绘或 Spine 立绘，填写动作名称，播放对应的动作动画。
 
-```webgal
+``` webgal
 changeFigure:character_a/model.json -motion=sad;
 changeFigure:character_a/model.json -motion=smile;
 ```
@@ -268,7 +268,7 @@ changeFigure:character_a/model.json -motion=smile;
 对于 Spine 立绘，填写皮肤名称，切换到对应的 skin。
 如需同时切换 Spine 的动画与皮肤，继续使用 `motion` 指定动画，使用 `skin` 指定皮肤。
 
-```webgal
+``` webgal
 changeFigure:character_x/model.json?type=spine -skin=default;
 changeFigure:character_x/model.json?type=spine -motion=anime_00_wait -skin=03_surprise;
 ```
@@ -278,7 +278,7 @@ changeFigure:character_x/model.json?type=spine -motion=anime_00_wait -skin=03_su
 
 对于 Live2D 立绘，填写表情名称，切换对应的表情。
 
-```webgal
+``` webgal
 changeFigure:character_a/model.json -expression=smile;
 changeFigure:character_a/model.json -expression=sad;
 ```
@@ -294,7 +294,7 @@ x 轴以向右为正方向，y 轴以向下为正方向。
 此参数仅在立绘出场，或替换立绘时生效。
 :::
 
-```webgal
+``` webgal
 ; 往左和往右拓展 300 像素
 changeFigure:character_a/model.json -bounds=-300,0,300,0;
 ```
@@ -312,7 +312,7 @@ changeFigure:character_a/model.json -bounds=-300,0,300,0;
 - `"closedDuration"`: 数字，闭眼时间，单位毫秒，默认值 50
 - `"openingDuration"`: 数字，睁眼持续时间，单位毫秒，默认值 150
 
-```webgal
+``` webgal
 changeFigure:character_a/model.json -blink={"blinkInterval":5000,"blinkIntervalRandom":2000,"closingDuration":100,"closedDuration":50,"openingDuration":150};
 ```
 
@@ -328,6 +328,6 @@ x 轴以向右为正方向，y 轴以向上为正方向。
 - `"y"`: 数字，注视点的 y 坐标，范围 -1 到 1，默认值 0
 - `"instant"`: 布尔值，是否立即转向注视点，默认值 false
 
-```webgal
+``` webgal
 changeFigure:character_a/model.json -focus={"x":0.5,"y":0.2,"instant":false};
 ```

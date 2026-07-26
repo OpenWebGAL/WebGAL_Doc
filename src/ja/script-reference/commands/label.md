@@ -7,7 +7,7 @@
 
 ラベル名を指定します。このコマンド自体は何も実行しませんが、`choose` や `jumpLabel` と組み合わせて使用できます。
 
-```webgal
+``` webgal
 label:myLabel;
 ```
 

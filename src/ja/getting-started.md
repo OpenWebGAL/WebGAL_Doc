@@ -29,20 +29,20 @@ Windows 7ユーザーは**[Windows 7でビジュアルエディターを使用�
 
 ## 方法2：ソースコードからデバッグを開始する（より高いカスタマイズの程度を望む制作者向け）
 
-``` shell
+``` bash
 git clone https://github.com/OpenWebGAL/WebGAL.git
 ```
 
 yarnをインストールして依存関係をインストールします
 
-``` shell
+``` bash
 npm install yarn -g
 yarn
 ```
 
 WebGALはviteをバンドルとデバッグのツールとして使用しています。以下のスクリプトを実行して開発サーバーを起動することができます。
 
-``` shell
+``` bash
 yarn dev
 ```
 
@@ -54,7 +54,7 @@ yarn dev
 
 バンドルする場合は、以下を使用してください。
 
-``` shell
+``` bash
 yarn build
 ```
 

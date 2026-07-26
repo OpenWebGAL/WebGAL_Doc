@@ -4,7 +4,7 @@
 
 Put the video inside `video` folder, then use `playVideo` to play it.
 
-``` ws
+``` webgal
 playVideo:OP.mp4;
 ```
 

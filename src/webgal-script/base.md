@@ -8,7 +8,7 @@
 
 WebGAL 脚本只会解析每一行的分号前的内容，因此分号后的内容会被视作注释。
 
-``` ws
+``` webgal
 WebGAL:你好！; 分号后的内容会被视作注释
 ; 可以直接输入一个分号，然后写一条单行注释
 ```
@@ -27,7 +27,7 @@ WebGAL 脚本使用英文冒号 `:` 分隔命令和内容，使用英文分号 `
 | `;` | `\;` |
 | `|` | `\|` |
 
-```ws
+``` webgal
 intro:我会显示出来：\:\,\.\;不信你看看 -hold;
 WebGAL:我会显示出来：\:\,\.\;不信你看看;
 choose:我会显示出来：\:\,\.\;不信你看看:nextLabel;
@@ -45,7 +45,7 @@ choose:我会显示出来：\:\,\.\;不信你看看:nextLabel;
 
 示例：
 
-``` ws
+``` webgal
 changeBg:testBG03.jpg -next; // 会立刻执行下一条语句
 ```
 
@@ -60,7 +60,7 @@ changeBg:testBG03.jpg -next; // 会立刻执行下一条语句
 
 示例如下：这是一个在对话进行中切换立绘的演示。
 
-``` ws
+``` webgal
 WebGAL:测试语句插演出！马上切换立绘...... -notend;
 changeFigure:k1.png -next;
 切换立绘！马上切换表情...... -notend -concat;
@@ -70,7 +70,7 @@ changeFigure:k2.png -next;
 
 你也可以只使用 `-concat` 参数，将下一句连接在上一句对话之后，因为 `-notend` 参数会在对话渐显完成后转到下一句。
 
-``` ws
+``` webgal
 这是第一句......;
 用户点击鼠标后才会转到第二句 -concat;
 ```

@@ -7,7 +7,7 @@
 
 ジャンプ先のラベル名を指定します。
 
-```webgal
+``` webgal
 label:think;
 ;
 キャラA:彼女が好きだったのはたしか……;
@@ -25,7 +25,7 @@ label:correct;
 
 `jumpLabel` は共通パラメータ `-when` と組み合わせて使用できます。条件を満たさない場合、この文はスキップされ、物語は次の文を実行します。
 
-```webgal
+``` webgal
 setVar:score=2;
 jumpLabel:scoreHigh -when=score>1;
 キャラA:点数が足りない場合はここが表示されます。;

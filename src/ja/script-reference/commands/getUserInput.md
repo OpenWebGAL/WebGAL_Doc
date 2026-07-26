@@ -6,7 +6,7 @@
 
 変数名を指定します。ユーザーが入力した値はこの変数に保存されます。
 
-```webgal
+``` webgal
 キャラB:本当にありがとうございます。お名前を教えていただけますか？;
 getUserInput:player_name -title=あなたの名前 -buttonText=確認 -defaultValue=Bob;
 キャラB:{player_name}、覚えておきます。;
@@ -21,7 +21,7 @@ getUserInput:player_name -title=あなたの名前 -buttonText=確認 -defaultVa
 
 入力ボックスのタイトルを設定します。
 
-```webgal
+``` webgal
 getUserInput:player_name -title=あなたの名前;
 ```
 
@@ -30,7 +30,7 @@ getUserInput:player_name -title=あなたの名前;
 
 確認ボタンのテキストを設定します。
 
-```webgal
+``` webgal
 getUserInput:player_name -buttonText=確認;
 ```
 
@@ -39,7 +39,7 @@ getUserInput:player_name -buttonText=確認;
 
 入力ボックスのデフォルト値を設定します。
 
-```webgal
+``` webgal
 getUserInput:player_name -defaultValue=Bob;
 ```
 
@@ -50,7 +50,7 @@ getUserInput:player_name -defaultValue=Bob;
 
 入力検証に使う正規表現ルールを設定します。
 
-```webgal
+``` webgal
 getUserInput:player_name -rule=^.{1,2}$;
 ```
 
@@ -61,7 +61,7 @@ getUserInput:player_name -rule=^.{1,2}$;
 
 詳しくは [MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/RegExp#flags) を参照してください。
 
-```webgal
+``` webgal
 getUserInput:player_name -rule=^.{1,2}$ -ruleFlag=g;
 ```
 
@@ -70,7 +70,7 @@ getUserInput:player_name -rule=^.{1,2}$ -ruleFlag=g;
 
 検証に失敗したときに表示するエラーポップアップの文言を設定します。`$0` でユーザー入力を取得できます。
 
-```webgal
+``` webgal
 getUserInput:player_name -rule=^.{1,2}$ -ruleText=$0は1-2文字にしてください;
 ```
 
@@ -81,6 +81,6 @@ getUserInput:player_name -rule=^.{1,2}$ -ruleText=$0は1-2文字にしてくだ�
 
 デフォルトは `OK` です。
 
-```webgal
+``` webgal
 getUserInput:player_name -rule=^.{1,2}$ -ruleText=$0は1-2文字にしてください -ruleButtonText=OK;
 ```

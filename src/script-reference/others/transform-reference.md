@@ -2,12 +2,12 @@
 
 `transform` 是舞台对象的变换效果属性，包含位置、旋转、缩放与各种滤镜属性。其格式如下面例子所示：
 
-```json
+``` json
 {"position":{"x":0,"y":0},"rotation":0,"scale":{"x":1,"y":1},"alpha":1,"blur":0,"colorRed":255,"colorGreen":255,"colorBlue":255}
 ```
 
 通常不需要完整书写所有的属性，您可以只写入需要修改的属性，未修改的属性将根据具体情况，继承现有值或者使用默认值。
-```webgal
+``` webgal
 setTransform:{"position":{"x":100},"rotation":45} -target=aaa -duration=500;
 ; 此句会继承已有的变换效果，并在此基础上修改了模糊滤镜的值
 setTransform:{"blur":20} -target=aaa -duration=500;
@@ -16,7 +16,7 @@ setTransform:{"saturation":0} -target=aaa -duration=500 -writeDefault;
 ```
 
 对于滤镜属性，仅当该滤镜的所有值都为默认值时，该滤镜才会彻底关闭。否则该滤镜会持续存在，直至该对象退场，这可能会导致一些不必要的性能消耗，因此推荐开发者在必要时，显式修改相关属性为默认值以关闭滤镜。
-```webgal
+``` webgal
 changeBg:bg.png -transform={"brightness":0.5,"blur":10} -next;
 changeFigure:1/open_eyes.png -id=aaa;
 ;
@@ -51,7 +51,7 @@ setTransform:{"bloomBlur":0,"bloomThreshold":0} -target=aaa -duration=500;
 
 位置。修改其 x 和 y 属性可以改变对象在舞台中的坐标。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"position":{"x":500,"y":-50}};
 setTransform:{"position":{"x":-200,"y":50}} -target=aaa -duration=500;
 ```
@@ -62,7 +62,7 @@ setTransform:{"position":{"x":-200,"y":50}} -target=aaa -duration=500;
 
 旋转。改变对象的旋转弧度，以顺时针为正方向。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"rotation":-3.14};
 setTransform:{"rotation":1.57} -target=aaa -duration=500;
 ```
@@ -72,7 +72,7 @@ setTransform:{"rotation":1.57} -target=aaa -duration=500;
 
 缩放。修改其 x 和 y 属性可以改变对象的缩放比例。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"scale":{"x":0.5,"y":0.5}};
 setTransform:{"scale":{"x":2,"y":2}} -target=aaa -duration=500;
 ```
@@ -85,7 +85,7 @@ setTransform:{"scale":{"x":2,"y":2}} -target=aaa -duration=500;
 
 透明度。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"alpha":0.8};
 setTransform:{"alpha":0.2} -target=aaa -duration=500;
 ```
@@ -97,7 +97,7 @@ setTransform:{"alpha":0.2} -target=aaa -duration=500;
 
 模糊。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"blur":10};
 setTransform:{"blur":30} -target=aaa -duration=500;
 ```
@@ -109,7 +109,7 @@ setTransform:{"blur":30} -target=aaa -duration=500;
 
 亮度。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"brightness":0.3};
 setTransform:{"brightness":1.5} -target=aaa -duration=500;
 ```
@@ -119,7 +119,7 @@ setTransform:{"brightness":1.5} -target=aaa -duration=500;
 
 对比度。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"contrast":0.3};
 setTransform:{"contrast":2} -target=aaa -duration=500;
 ```
@@ -129,7 +129,7 @@ setTransform:{"contrast":2} -target=aaa -duration=500;
 
 饱和度。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"saturation":0.3};
 setTransform:{"saturation":2} -target=aaa -duration=500;
 ```
@@ -139,7 +139,7 @@ setTransform:{"saturation":2} -target=aaa -duration=500;
 
 伽马值。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"gamma":0.5};
 setTransform:{"gamma":1.2} -target=aaa -duration=500;
 ```
@@ -150,7 +150,7 @@ setTransform:{"gamma":1.2} -target=aaa -duration=500;
 
 色调的红色分量。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"colorRed":128};
 setTransform:{"colorRed":64} -target=aaa -duration=500;
 ```
@@ -161,7 +161,7 @@ setTransform:{"colorRed":64} -target=aaa -duration=500;
 
 色调的绿色分量。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"colorGreen":128};
 setTransform:{"colorGreen":64} -target=aaa -duration=500;
 ```
@@ -172,7 +172,7 @@ setTransform:{"colorGreen":64} -target=aaa -duration=500;
 
 色调的蓝色分量。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"colorBlue":128};
 setTransform:{"colorBlue":64} -target=aaa -duration=500;
 ```
@@ -185,7 +185,7 @@ setTransform:{"colorBlue":64} -target=aaa -duration=500;
 
 泛光的强度。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"bloom":0.5,"bloomBlur":10};
 setTransform:{"bloom":1,"bloomBlur":10} -target=aaa -duration=500;
 ```
@@ -195,7 +195,7 @@ setTransform:{"bloom":1,"bloomBlur":10} -target=aaa -duration=500;
 
 泛光的亮度。与颜色调整滤镜的 `brightness` 的区别在于，此参数不会影响泛光叠加层的亮度。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"bloom":1,"bloomBrightness":0.5,"bloomBlur":10};
 setTransform:{"bloom":1,"bloomBrightness":1,"bloomBlur":10} -target=aaa -duration=500;
 ```
@@ -207,7 +207,7 @@ setTransform:{"bloom":1,"bloomBrightness":1,"bloomBlur":10} -target=aaa -duratio
 
 泛光的模糊程度。若 `bloom` 和 `bloomBrightness` 均为默认值，单独调整此属性不会有任何视觉上的区别。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"bloom":1,"bloomBlur":0};
 setTransform:{"bloom":1,"bloomBlur":30} -target=aaa -duration=500;
 ```
@@ -218,7 +218,7 @@ setTransform:{"bloom":1,"bloomBlur":30} -target=aaa -duration=500;
 
 泛光的阈值。当数值调高时，仅图像中较亮的部分会产生泛光效果。若 `bloom` 和 `bloomBrightness` 均为默认值，单独调整此属性不会有任何视觉上的区别。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"bloom":1,"bloomBlur":10,"bloomThreshold":0};
 setTransform:{"bloom":1,"bloomBlur":10,"bloomThreshold":0.8} -target=aaa -duration=500;
 ```
@@ -231,7 +231,7 @@ setTransform:{"bloom":1,"bloomBlur":10,"bloomThreshold":0.8} -target=aaa -durati
 
 倒角的透明度。如果 `bevelThickness` 为 0，单独调整此属性不会有任何视觉上的区别。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"bevel":0.5,"bevelThickness":20};
 setTransform:{"bevel":1,"bevelThickness":20} -target=aaa -duration=500;
 ```
@@ -243,7 +243,7 @@ setTransform:{"bevel":1,"bevelThickness":20} -target=aaa -duration=500;
 
 倒角的厚度。如果 `bevel` 为 0，单独调整此属性不会有任何视觉上的区别。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"bevel":1,"bevelThickness":20};
 setTransform:{"bevel":1,"bevelThickness":30} -target=aaa -duration=500;
 ```
@@ -254,7 +254,7 @@ setTransform:{"bevel":1,"bevelThickness":30} -target=aaa -duration=500;
 
 倒角颜色的红色分量。如果 `bevel` 或 `bevelThickness` 为默认值，单独调整此属性不会有任何视觉上的区别。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"bevel":1,"bevelThickness":20,"bevelRed":128};
 setTransform:{"bevel":1,"bevelThickness":20,"bevelRed":64} -target=aaa -duration=500;
 ```
@@ -265,7 +265,7 @@ setTransform:{"bevel":1,"bevelThickness":20,"bevelRed":64} -target=aaa -duration
 
 倒角颜色的绿色分量。如果 `bevel` 或 `bevelThickness` 为默认值，单独调整此属性不会有任何视觉上的区别。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"bevel":1,"bevelThickness":20,"bevelGreen":128};
 setTransform:{"bevel":1,"bevelThickness":20,"bevelGreen":64} -target=aaa -duration=500;
 ```
@@ -276,7 +276,7 @@ setTransform:{"bevel":1,"bevelThickness":20,"bevelGreen":64} -target=aaa -durati
 
 倒角颜色的蓝色分量。如果 `bevel` 或 `bevelThickness` 为默认值，单独调整此属性不会有任何视觉上的区别。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"bevel":1,"bevelThickness":20,"bevelBlue":128};
 setTransform:{"bevel":1,"bevelThickness":20,"bevelBlue":64} -target=aaa -duration=500;
 ```
@@ -289,7 +289,7 @@ setTransform:{"bevel":1,"bevelThickness":20,"bevelBlue":64} -target=aaa -duratio
 
 老电影滤镜的开关。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"oldFilm":1};
 setTransform:{"oldFilm":0} -target=aaa -duration=500;
 ```
@@ -300,7 +300,7 @@ setTransform:{"oldFilm":0} -target=aaa -duration=500;
 
 点状滤镜的开关。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"dotFilm":1};
 setTransform:{"dotFilm":0} -target=aaa -duration=500;
 ```
@@ -311,7 +311,7 @@ setTransform:{"dotFilm":0} -target=aaa -duration=500;
 
 RGB 分离滤镜的开关。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"rgbFilm":1};
 setTransform:{"rgbFilm":0} -target=aaa -duration=500;
 ```
@@ -322,7 +322,7 @@ setTransform:{"rgbFilm":0} -target=aaa -duration=500;
 
 故障滤镜的开关。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"glitchFilm":1};
 setTransform:{"glitchFilm":0} -target=aaa -duration=500;
 ```
@@ -333,7 +333,7 @@ setTransform:{"glitchFilm":0} -target=aaa -duration=500;
 
 光辉滤镜的开关。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"godrayFilm":1};
 setTransform:{"godrayFilm":0} -target=aaa -duration=500;
 ```
@@ -344,7 +344,7 @@ setTransform:{"godrayFilm":0} -target=aaa -duration=500;
 
 反射滤镜的开关。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"reflectionFilm":1};
 setTransform:{"reflectionFilm":0} -target=aaa -duration=500;
 ```
@@ -354,7 +354,7 @@ setTransform:{"reflectionFilm":0} -target=aaa -duration=500;
 
 冲击波的相位。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"shockwave":0};
 setTransform:{"shockwave":1} -target=aaa -duration=500;
 ```
@@ -364,7 +364,7 @@ setTransform:{"shockwave":1} -target=aaa -duration=500;
 
 径向渐变透明的半径。
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -transform={"radiusAlpha":0.2};
 setTransform:{"radiusAlpha":1.5} -target=aaa -duration=500;
 ```

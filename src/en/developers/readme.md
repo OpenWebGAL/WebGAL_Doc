@@ -44,13 +44,13 @@ WebGAL currently uses yarn as a package manager and yarn workspace as a monorepo
 
 If you don't have yarn, please install it using the following command:
 
-```shell
+``` bash
 npm install yarn -g
 ```
 
 Then, execute the following command in the project root directory:
 
-```shell
+``` bash
 yarn
 ```
 
@@ -69,13 +69,13 @@ This project has 3 packages, each corresponding to different functionalities:
 
 You can start the development server by running the following script:
 
-```shell
+``` bash
 yarn dev
 ```
 
 If you want to build WebGAL, use:
 
-```shell
+``` bash
 yarn build
 ```
 

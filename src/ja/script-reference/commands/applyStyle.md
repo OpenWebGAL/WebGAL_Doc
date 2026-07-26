@@ -8,7 +8,7 @@ UI スタイルを変更します。
 元のスタイル名と新しいスタイル名は `->` で接続します。複数の置換を同時に指定でき、各置換は英語のカンマ `,` で区切ります。
 形式は、元スタイル名->新スタイル名,元スタイル名2->新スタイル名2,... です。
 
-```webgal
+``` webgal
 ; UI テンプレート内に新しいスタイルがある前提で、キャラ名背景を赤に置き換える
 applyStyle:TextBox_ShowName_Background->TextBox_ShowName_Background_Red;
 キャラ名:これは一文です;
@@ -18,7 +18,7 @@ applyStyle:TextBox_ShowName_Background->TextBox_ShowName_Background_Green,TextBo
 
 元のスタイルがどの新しいスタイルに置き換えられていても、置換は常に元のスタイル名から指定します。
 
-```webgal
+``` webgal
 applyStyle:元スタイル名->新スタイル名1;
 applyStyle:新スタイル名1->新スタイル名2; 誤り
 applyStyle:元スタイル名->新スタイル名2;
@@ -35,7 +35,7 @@ applyStyle:元スタイル名->新スタイル名2;
 | `Choose_item` | クリック可能な選択肢 |
 | `Choose_item_disabled` | 条件を満たさずクリックできない選択肢 |
 
-```webgal
+``` webgal
 ; クリック可能な選択肢をテンプレートで定義した Choose_item_Red に置き換える
 applyStyle:Choose_item->Choose_item_Red;
 ```

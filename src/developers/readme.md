@@ -44,13 +44,13 @@ WebGAL 目前使用 yarn 作为包管理器，以及 yarn workspace monorepo 管
 
 如果你没有 yarn ，请输入以下指令安装
 
-```shell
+``` bash
 npm install yarn -g
 ```
 
 然后在项目根目录执行
 
-```shell
+``` bash
 yarn
 ```
 以安装依赖。
@@ -68,13 +68,13 @@ yarn
 
 你可以通过运行以下脚本启动开发服务器
 
-```shell
+``` bash
 yarn dev
 ```
 
 如果你想要构建 WebGAL，请使用
 
-```shell
+``` bash
 yarn build
 ```
 

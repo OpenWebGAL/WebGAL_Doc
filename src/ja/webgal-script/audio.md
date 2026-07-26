@@ -4,25 +4,25 @@
 
 BGMを再生する方法はとても簡単で、BGMを`bgm`フォルダに配置して、`bgm`命令を使ってBGMを再生するだけです。
 
-``` ws
+``` webgal
 bgm:夏影.mp3;
 ```
 
 BGMには`-volume`パラメータを設定して、音量を調整することができます。
 
-``` ws
+``` webgal
 bgm:夏影.mp3 -volume=30;
 ```
 
 また、`-enter`パラメータを使って、フェードイン再生することができます。
 
-``` ws
+``` webgal
 bgm:夏影.mp3 -enter=3000;
 ```
 
 最後に、以下の文を使って、BGMをフェードアウトすることができます。
 
-``` ws
+``` webgal
 bgm:none -enter=3000;
 ```
 
@@ -36,20 +36,20 @@ bgm:none -enter=3000;
 
 ご存知の通り、ビジュアルノベルは優れた声優陣が演じることで、最も魅力的なものになります。音声ファイルを`vocal`フォルダに入れて、会話スクリプトに`-音声ファイル名`パラメータを追加すると、音声を再生することができます。構文の例を以下に示します。
 
-``` ws
+``` webgal
 比企谷八幡:今来たばかりだ -V3.ogg;
 ```
 
 連続会話の場合も、音声の導入方法は同じです。
 
-``` ws
+``` webgal
 雪ノ下雪乃:随分早いですね -V1.ogg;
 待たせちゃった？ -V2.ogg;
 ```
 
 同時に`-volume`パラメータを設定して、音量を調整することができます。
 
-``` ws
+``` webgal
 比企谷八幡:今来たばかりだ -V3.ogg -volume=30;
 ```
 
@@ -62,13 +62,13 @@ bgm:none -enter=3000;
 
 音声ファイルを`vocal`フォルダに入れた後、`playEffect`命令を使って効果音を再生することができます^_^
 
-``` ws
+``` webgal
 playEffect:xxx.mp3;
 ```
 
 効果音には`-volume`パラメータを設定して、音量を調整することができます。
 
-``` ws
+``` webgal
 playEffect:xxx.mp3 -volume=30;
 ```
 
@@ -81,7 +81,7 @@ playEffect:xxx.mp3 -volume=30;
 
 効果音に`id`を付与すると、自動的に効果音のループ再生が有効になり、同じ`id`を使用して停止することができます。
 
-``` ws
+``` webgal
 playEffect:xxx.mp3 -id=xxx;
 playEffect:none -id=xxx; // このループ効果音を停止する
 ```
@@ -90,7 +90,7 @@ playEffect:none -id=xxx; // このループ効果音を停止する
 
 `unlockBgm`を使って、鑑賞できる音声のロックを解除します。
 
-``` ws
+``` webgal
 ; // bgmのロックを解除して名前を付ける
 unlockBgm:s_Title.mp3 -name=Smiling-Swinging!!!;
 ```

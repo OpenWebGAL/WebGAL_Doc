@@ -34,7 +34,7 @@ Enable_Appreciation:true;
 
 If you also prepare multiple script languages, read the current interface language in your script and jump to the corresponding scene file. You can use the internal variable `$userData.optionData.language`:
 
-```webgal
+``` webgal
 setVar:lang=($userData.optionData.language);
 changeScene:start_zh.txt -when=lang==0;
 changeScene:start_en.txt -when=lang==1;

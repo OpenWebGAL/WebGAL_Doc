@@ -57,7 +57,7 @@
 
 3. 以下のコマンドを実行する。
 
-    ```bash
+    ``` bash
     npm i 
     # あるいは（yarn をインストールしている場合）
     yarn
@@ -75,7 +75,7 @@
 
 3. 以下のコマンドを実行する。
 
-    ```bash
+    ``` bash
     node main.js
     ```
 
@@ -93,7 +93,7 @@
 
 [WebGAL_Terre](https://github.com/OpenWebGAL/WebGAL_Terre) リポジトリをクローンする。
 
-``` shell
+``` bash
 git clone https://github.com/OpenWebGAL/WebGAL_Terre.git
 ```
 
@@ -101,7 +101,7 @@ git clone https://github.com/OpenWebGAL/WebGAL_Terre.git
 
 yarn をインストールする（任意だが推奨）。  
 
-``` shell
+``` bash
 npm i -g yarn
 ```
 
@@ -113,7 +113,7 @@ npm i -g yarn
 
     プロジェクトのルートディレクトリで依存関係をインストールする。
 
-    ```shell
+    ``` bash
     yarn
     ```
 
@@ -127,13 +127,13 @@ npm i -g yarn
 
 2. 依存関係をインストールする
 
-    ``` shell
+    ``` bash
     yarn
     ```
 
 3. *terre2* をパッケージ化する
 
-    ``` shell
+    ``` bash
     yarn run build
     ```
 
@@ -141,7 +141,7 @@ npm i -g yarn
 
 5. *dist* に *package.json* ファイルを追加する。内容は以下の通り（関連情報を必ず入力すること）。
 
-    ```json
+    ``` json
     {
         "name": "webgal-terre-2-win7-server",
         "version": "バージョン番号",
@@ -169,7 +169,7 @@ npm i -g yarn
 
 1. ビジュアルエディタのディレクトリで依存関係をインストールする。
 
-    ``` shell
+    ``` bash
     npm i
     # あるいは（yarn を推奨）
     yarn

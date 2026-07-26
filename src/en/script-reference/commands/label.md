@@ -7,7 +7,7 @@ See [Label Jump](../../webgal-script/scenes.md#label-jump) for details.
 
 Sets the label name. This command itself performs no action, but it can be used with `choose` and `jumpLabel`.
 
-```webgal
+``` webgal
 label:myLabel;
 ```
 

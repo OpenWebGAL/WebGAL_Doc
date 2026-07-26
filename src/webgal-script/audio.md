@@ -4,25 +4,25 @@
 
 播放背景音乐的方法极其简单，你只需要将背景音乐放置在 `bgm` 文件夹下，然后使用 `bgm` 指令来播放背景音乐。
 
-``` ws
+``` webgal
 bgm:夏影.mp3;
 ```
 
 可以为背景音乐设置一个 `-volume` 参数，来调整它的音量。
 
-``` ws
+``` webgal
 bgm:夏影.mp3 -volume=30;
 ```
 
 此外，还可以使用 `-enter` 参数，进行淡入播放。
 
-``` ws
+``` webgal
 bgm:夏影.mp3 -enter=3000;
 ```
 
 最后，可以使用以下语句，进行背景音乐的淡出。
 
-``` ws
+``` webgal
 bgm:none -enter=3000;
 ```
 
@@ -36,20 +36,20 @@ bgm:none -enter=3000;
 
 众所周知，视觉小说 最吸引人的地方往往在于其有优秀的配音。将配音文件放入 `vocal` 文件夹，然后在对话脚本中加入 `-语音文件名` 参数，就可以播放语音了。语法示例如下。
 
-``` ws
+``` webgal
 比企谷八幡:刚到而已 -V3.ogg;
 ```
 
 在连续对话时，语音的引入方式也是一样的。
 
-``` ws
+``` webgal
 雪之下雪乃:你到得真早 -V1.ogg;
 对不起，等很久了吗？ -V2.ogg;
 ```
 
 同时可以设置一个 `-volume` 参数，来调整它的音量。
 
-``` ws
+``` webgal
 比企谷八幡:刚到而已 -V3.ogg -volume=30;
 ```
 
@@ -62,13 +62,13 @@ bgm:none -enter=3000;
 
 将你的配音放入 `vocal` 文件夹之后，再使用 `playEffect` 指令就可以播放效果音了^_^
 
-``` ws
+``` webgal
 playEffect:xxx.mp3;
 ```
 
 可以为效果音设置一个 `-volume` 参数，来调整它的音量。
 
-``` ws
+``` webgal
 playEffect:xxx.mp3 -volume=30;
 ```
 
@@ -81,7 +81,7 @@ playEffect:xxx.mp3 -volume=30;
 
 为效果音赋予一个 `id` 将会自动启用效果音循环，后续使用相同的 `id` 来停止。
 
-``` ws
+``` webgal
 playEffect:xxx.mp3 -id=xxx;
 playEffect:none -id=xxx; // 停止这个循环的效果音
 ```
@@ -90,7 +90,7 @@ playEffect:none -id=xxx; // 停止这个循环的效果音
 
 使用 `unlockBgm` 解锁音频鉴赏中的音频。
 
-``` ws
+``` webgal
 ; // 解锁bgm并赋予名称
 unlockBgm:s_Title.mp3 -name=Smiling-Swinging!!!;
 ```
