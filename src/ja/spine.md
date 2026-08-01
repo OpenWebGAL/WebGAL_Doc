@@ -30,7 +30,7 @@ SPINE RUNTIMESは、ESOTERIC SOFTWARE LLCによって「現状のまま」提供
 
 2. `package/webgal`パッケージでyarnを使用してpixi-spineをインストールする
 
-```
+``` bash
 cd package/webgal
 yarn add pixi-spine@3.1.2
 ```
@@ -39,7 +39,7 @@ yarn add pixi-spine@3.1.2
 
 以下のコメントアウトされた行（約30行目から）のコメントを外します。
 
-```
+``` typescript
   // pixiSpineLoading = import('pixi-spine')
   //   .then((module) => {
   //     spineLoader = new PIXI.Loader();
@@ -63,23 +63,23 @@ yarn add pixi-spine@3.1.2
 
 例：
 ```
-game/
-  figure/
-    exampleSpine/
-      data.json
-      atlas.atlas
-      skeleton.skel
+game
+└── figure
+    └── exampleSpine
+        ├── data.json
+        ├── atlas.atlas
+        └── skeleton.skel
 ```
 
 JSON形式のSpine立ち絵を使用している場合は、エンジンがSpineタイプとして認識できるように、以下のようなスクリプトを使用してタイプを渡す必要があります。
 
-```
+``` webgal
 changeFigure:exampleSpine/data.json?type=spine;
 ```
 
 Spineのアニメーションを切り替える場合は `motion` 引数を使います。Spineのskinも切り替えたい場合は、追加で `skin` 引数を指定します。
 
-```
+``` webgal
 changeFigure:exampleSpine/data.json?type=spine -motion=anime_00_wait;
 changeFigure:exampleSpine/data.json?type=spine -skin=default;
 changeFigure:exampleSpine/data.json?type=spine -motion=anime_03_surprise -skin=03_surprise;

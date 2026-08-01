@@ -7,7 +7,7 @@
 
 填写要跳转的目标标签名称。
 
-```webgal
+``` webgal
 label:think;
 ;
 角色A:我记得她好像喜欢......;
@@ -25,7 +25,7 @@ label:correct;
 
 `jumpLabel` 可以配合通用参数 `-when` 使用。条件不满足时，本句会被跳过，剧情继续执行下一句。
 
-```webgal
+``` webgal
 setVar:score=2;
 jumpLabel:scoreHigh -when=score>1;
 角色A:分数不足时会看到这里。;

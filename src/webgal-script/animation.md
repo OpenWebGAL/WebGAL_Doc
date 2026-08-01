@@ -6,7 +6,7 @@
 
 **示例：**
 
-``` ws
+``` webgal
 ; // 为中间立绘设置一个从下方进入的动画，并转到下一句
 setAnimation:enter-from-bottom -target=fig-center -next;
 ```
@@ -125,7 +125,7 @@ setAnimation:enter-from-bottom -target=fig-center -next;
 
 然后，你就可以在脚本中调用：
 
-``` ws
+``` webgal
 setAnimation:enter-from-left -target=fig-left -next;
 ```
 
@@ -168,7 +168,7 @@ setAnimation:enter-from-left -target=fig-left -next;
 
 你还可以覆盖 WebGAL 默认的渐变进出场效果，替换为自己的动画效果，例如：
 
-```
+``` webgal
 setTransition: -target=fig-center -enter=enter-from-bottom -exit=exit;
 ```
 
@@ -202,13 +202,13 @@ WebGAL 支持通过差分图片实现图片立绘的嘴型同步动画。
 
 **1. 注册差分并上场立绘**
 
-```webgal
+``` webgal
 changeFigure:1/normal.png -id=charA -mouthOpen=1/mouth_open.png -mouthHalfOpen=1/mouth_half.png -mouthClose=1/normal.png;
 ```
 
 **2. 播放语音并驱动嘴型**
 
-```webgal
+``` webgal
 ; 通过 id 驱动自由立绘
 角色A:你好，世界！ -vocal=charA_hello.wav -figureId=charA;
 ```
@@ -217,7 +217,7 @@ changeFigure:1/normal.png -id=charA -mouthOpen=1/mouth_open.png -mouthHalfOpen=1
 
 ### 位置立绘示例
 
-```webgal
+``` webgal
 ; 上场中间立绘并注册差分
 changeFigure:1/normal.png -mouthOpen=1/mouth_open.png -mouthHalfOpen=1/mouth_half.png -mouthClose=1/normal.png;
 

@@ -7,7 +7,7 @@ A four-in-one command for figure entrance, figure replacement, figure exit, and 
 Sets the path of the figure. When the file path is empty or `none`, the figure exits.
 See [Backgrounds and Figures](../../webgal-script/bg-and-figure.md) for details.
 
-```webgal
+``` webgal
 ; If no figure exists, this makes the figure enter.
 changeFigure:1/open_eyes.png;
 ; If a figure already exists, this replaces it.
@@ -18,7 +18,7 @@ changeFigure:none;
 
 If the figure path and `id` stay the same, entrance or exit animation will not be triggered. Instead, the new parameters are applied to the target figure.
 
-```webgal
+``` webgal
 ; Live2D figure entrance
 changeFigure:character_a/model.json -id=aaa;
 ; Modify a Live2D figure's motion and expression
@@ -31,7 +31,7 @@ WebGAL currently supports image figures, Live2D figures, and Spine figures.
 
 Any format that is not Live2D or Spine will be imported as an image figure.
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png;
 ```
 
@@ -43,7 +43,7 @@ Using Live2D requires some preparation. See [About Live2D](../../live2D.md) for 
 
 Set the path of a Live2D model (.json/.model3.json), and WebGAL will load the Live2D model.
 
-```webgal
+``` webgal
 changeFigure:character_a/model.json;
 ```
 
@@ -55,42 +55,42 @@ Using Spine requires some preparation. See [About Spine](../../spine.md) for det
 
 If your Spine model is in .skel format, you can write the file path directly.
 
-```webgal
+``` webgal
 changeFigure:character_x/model.skel;
 ```
 
 If your Spine model is in .json format, specify the figure type as Spine after the path to avoid importing it as a Live2D model by mistake.
 
-```webgal
+``` webgal
 changeFigure:character_x/model.json?type=spine;
 ```
 
 ## Parameters
 
 <!-- @include: ../arguments/transform.md -->
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -transform={"position":{"x":-50,"y":-20},"rotation":0.1,"scale":{"x":1.2,"y":1.2},"brightness":0.5,"blur":10};
 ```
 
 <!-- @include: ../arguments/enter.md -->
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -enter=enter-from-left;
 ```
 
 <!-- @include: ../arguments/exit.md -->
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -exit=exit-to-right;
 ```
 
 <!-- @include: ../arguments/duration.md -->
 Applied to the default entrance animation. Default value: 300.
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -duration=200;
 ```
 
 <!-- @include: ../arguments/ease.md -->
 Applied to the default entrance animation.
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -ease=easeOut;
 ```
 
@@ -101,7 +101,7 @@ changeFigure:1/open_eyes.png -ease=easeOut;
 
 The entrance animation duration. If omitted, it defaults to the value of `duration`, whose default is 300.
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -enterDuration=200;
 ```
 
@@ -112,7 +112,7 @@ changeFigure:1/open_eyes.png -enterDuration=200;
 
 The exit animation duration. If omitted, the default value is 450.
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -exitDuration=300;
 ```
 
@@ -127,7 +127,7 @@ If `id` is omitted or an empty string, `left` gives the figure the default id `f
 These parameters only take effect when a figure enters or is replaced. To modify the coordinates of a figure already on stage, use commands such as `setTransform`, `setAnimation`, or `setTempAnimation`.
 :::
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -left;
 changeFigure:1/open_eyes.png -right;
 ```
@@ -142,7 +142,7 @@ If this parameter is omitted or its value is an empty string:
 - If `right` is `true`, the default id is `fig-right`
 - If both `left` and `right` are `false`, the default id is `fig-center`
 
-```webgal
+``` webgal
 ; Different ids mean figures do not replace each other even if their initial positions are the same.
 changeFigure:1/open_eyes.png -id=aaa;
 changeFigure:2/open_eyes.png -id=bbb;
@@ -157,7 +157,7 @@ changeFigure:3/open_eyes.png -id=ccc -left;
 The figure's layer. Larger values place the figure higher. If values are the same, the figure that entered later is placed higher.
 If omitted, the default value is 0.
 
-```webgal
+``` webgal
 ; Figure aaa is above figure bbb.
 changeFigure:1/open_eyes.png -id=aaa -zIndex=2;
 changeFigure:2/open_eyes.png -id=bbb -zIndex=1;
@@ -169,7 +169,7 @@ changeFigure:2/open_eyes.png -id=bbb -zIndex=1;
 
 Sets the figure blend mode. It only takes effect when the figure enters or is replaced.
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa -blendMode=add;
 ```
 
@@ -178,7 +178,7 @@ changeFigure:1/open_eyes.png -id=aaa -blendMode=add;
 
 Replaces the statement content with an empty string.
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -clear;
 changeFigure:1/open_eyes.png -none;
 ```
@@ -193,7 +193,7 @@ Image figure differential animation flag. The current cloud engine writes this v
 
 Sets image figure differential paths for open mouth, half-open mouth, and closed mouth.
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -mouthOpen=1/open_mouth.png;
 changeFigure:1/open_eyes.png -mouthHalfOpen=1/halfopen_mouth.png;
 changeFigure:1/open_eyes.png -mouthClose=1/closed_mouth.png;
@@ -204,7 +204,7 @@ changeFigure:1/open_eyes.png -mouthClose=1/closed_mouth.png;
 
 Sets image figure differential paths for open eyes and closed eyes.
 
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -eyesOpen=1/open_eyes.png;
 changeFigure:1/open_eyes.png -eyesClose=1/closed_eyes.png;
 ```
@@ -214,7 +214,7 @@ changeFigure:1/open_eyes.png -eyesClose=1/closed_eyes.png;
 
 For Live2D or Spine figures, sets the motion name and plays the corresponding motion animation.
 
-```webgal
+``` webgal
 changeFigure:character_a/model.json -motion=sad;
 changeFigure:character_a/model.json -motion=smile;
 ```
@@ -225,7 +225,7 @@ changeFigure:character_a/model.json -motion=smile;
 For Spine figures, sets the skin name and switches to the corresponding skin.
 To switch both Spine animation and skin, continue using `motion` for animation and `skin` for skin.
 
-```webgal
+``` webgal
 changeFigure:character_x/model.json?type=spine -skin=default;
 changeFigure:character_x/model.json?type=spine -motion=anime_00_wait -skin=03_surprise;
 ```
@@ -235,7 +235,7 @@ changeFigure:character_x/model.json?type=spine -motion=anime_00_wait -skin=03_su
 
 For Live2D figures, sets the expression name and switches to the corresponding expression.
 
-```webgal
+``` webgal
 changeFigure:character_a/model.json -expression=smile;
 changeFigure:character_a/model.json -expression=sad;
 ```
@@ -251,7 +251,7 @@ The x axis is positive to the right, and the y axis is positive downward.
 This parameter only takes effect when the figure enters or is replaced.
 :::
 
-```webgal
+``` webgal
 ; Expand 300 pixels to the left and right
 changeFigure:character_a/model.json -bounds=-300,0,300,0;
 ```
@@ -269,7 +269,7 @@ Parameters:
 - `"closedDuration"`: number, closed-eye duration in milliseconds, default 50
 - `"openingDuration"`: number, opening-eye duration in milliseconds, default 150
 
-```webgal
+``` webgal
 changeFigure:character_a/model.json -blink={"blinkInterval":5000,"blinkIntervalRandom":2000,"closingDuration":100,"closedDuration":50,"openingDuration":150};
 ```
 
@@ -285,6 +285,6 @@ Parameters:
 - `"y"`: number, y coordinate of the focus point, range -1 to 1, default 0
 - `"instant"`: boolean, whether to look at the focus point immediately, default false
 
-```webgal
+``` webgal
 changeFigure:character_a/model.json -focus={"x":0.5,"y":0.2,"instant":false};
 ```

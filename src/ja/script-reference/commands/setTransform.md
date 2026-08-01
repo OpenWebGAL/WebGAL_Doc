@@ -10,7 +10,7 @@
 このコマンドは 1 つのアニメーション片だけを生成します。多段アニメーションを設定する必要がある場合は、[setAnimation](setAnimation.md) または [setTempAnimation](setTempAnimation.md) コマンドを使用してください。
 :::
 
-```webgal
+``` webgal
 changeFigure:character_a/normal.png -id=aaa;
 ; 左へ移動
 setTransform:{"position":{"x":-500},"saturation":0.8} -target=aaa -duration=500;
@@ -21,31 +21,31 @@ setTransform:{"brightness":0.5,"contrast":1.2} -target=aaa -duration=500;
 ## パラメータ
 
 <!-- @include: ../arguments/target.md -->
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa;
 setTransform:{"brightness":0.5} -target=aaa -duration=500;
 ```
 
 <!-- @include: ../arguments/duration.md -->
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa;
 setTransform:{"brightness":0.5} -target=aaa -duration=500;
 ```
 
 <!-- @include: ../arguments/ease.md -->
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa;
 setTransform:{"brightness":0.5} -target=aaa -duration=500 -ease=linear;
 ```
 
 <!-- @include: ../arguments/writeDefault.md -->
-```webgal
+``` webgal
 changeFigure:1/open_eyes.png -id=aaa;
 setTransform:{"brightness":0.5} -target=aaa -duration=500 -writeDefault;
 ```
 
 <!-- @include: ../arguments/keep.md -->
-```webgal
+``` webgal
 ; とても長いアニメーションだと仮定
 setTransform:{"scale":{"x":2,"y":2}} -target=aaa -duration=10000 -keep -next;
 キャラA: 1行目;

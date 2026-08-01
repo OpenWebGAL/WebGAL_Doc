@@ -14,13 +14,13 @@
 
 假如你现在写了两个章节的剧本，分别是 `Chapter-1.txt` 与 `Chapter-2.txt` 。在 `Chapter-1.txt` 运行结束后，你希望跳转到 `Chapter-2.txt` 对应的场景，请使用以下语句：
 
-``` ws
+``` webgal
 changeScene:Chapter-2.txt;
 ```
 
 示例：
 
-``` ws
+``` webgal
 (Chapter-1.txt)
 ......
 ......
@@ -40,13 +40,13 @@ changeScene:Chapter-2.txt;
 
 语句：
 
-``` ws
+``` webgal
 callScene:Chapter-2.txt;
 ```
 
 示例：
 
-``` ws
+``` webgal
 (Chapter-1.txt)
 ......
 ......
@@ -69,7 +69,7 @@ callScene:Chapter-2.txt;
 如果你的剧本存在分支选项，你希望通过选择不同的选项进入不同的章节，请使用 `choose`。
 使用 `选择项文本:章节文件名` 定义一个选择项。使用 `|` 来分隔不同选择项。示例如下：
 
-``` ws
+``` webgal
 choose:叫住她:Chapter-2.txt|回家:Chapter-3.txt;
 ```
 
@@ -79,7 +79,7 @@ choose:叫住她:Chapter-2.txt|回家:Chapter-3.txt;
 
 你也可以根据变量，有条件地展示选项或允许用户点击选项，语法如下：
 
-```ws
+``` webgal
 choose:(showConditionVar>1)[enableConditionVar>2]->叫住她:Chapter-2.txt|回家:Chapter-3.txt;
 ```
 
@@ -95,7 +95,7 @@ choose:(showConditionVar>1)[enableConditionVar>2]->叫住她:Chapter-2.txt|回�
 
 ### 创建标签（`label`）
 
-``` ws
+``` webgal
 ......
 jumpLabel:label_1; // 跳转到 label_1
 ......
@@ -112,7 +112,7 @@ label:label_1; // 创建名为 label_1 的 label
 
 有了上面的基础，你就可以通过 `choose` 来实现用分支来跳转到 `label` 所在的位置了：
 
-``` ws
+``` webgal
 ......
 choose:分支 1:label_1|分支 2:label_2;
 label:label_1; // 创建名为 label_1 的 label
@@ -129,7 +129,7 @@ label:end; // 创建名为 end 的 label
 
 注意，在每个分支的结尾，你应该用 `jumpLabel` 来跳转到你希望的位置。由于程序是线性执行的，所以如果你没有在分支的结束跳转，那么程序会继续往下运行，比如说：
 
-``` ws
+``` webgal
 ......
 choose:分支 1:label_1|分支 2:label_2;
 label:label_1; // 创建名为 label_1 的 label

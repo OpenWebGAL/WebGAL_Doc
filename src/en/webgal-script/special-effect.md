@@ -8,7 +8,7 @@ Currently, WebGAL's effect system is powered by PixiJS.
 
 Initialize Pixi using `pixiInit`.
 
-``` ws
+``` webgal
 pixiInit;
 ```
 
@@ -22,7 +22,7 @@ If you want to clear the effects that have already taken effect, you can use thi
 
 Add effects using `pixiPerform`.
 
-``` ws
+``` webgal
 pixiPerform:rain; // Add a rain effect
 ```
 
@@ -41,7 +41,7 @@ Note: After the effect takes effect, if it is not re initialized, the effect wil
 
 If you want to superimpose two or more effects, you can superimpose different effects without using the `pixiInit` command.
 
-``` ws
+``` webgal
 pixiPerform:rain;
 pixiPerform:snow;
 ```
@@ -56,7 +56,7 @@ You can download the source code, then find `/Core/gameScripts/pixiPerformScript
 
 The effects container is divided into a foreground container and a background container, and the foreground container is used here as an example.
 
-``` ts
+``` typescript
 // Get the current Pixi effect Container
 const effectsContainer = WebGAL.gameplay.pixiStage!.foregroundEffectsContainer!;
 // Call the Pixi App method, which may be useful for determining screen size, etc.
@@ -73,7 +73,7 @@ Then, import the `effect registration method` at the beginning of the file to re
 
 At the end of the file, use it to register your effect, the first parameter is the effect name, and the second parameter is the method to call the effect.
 
-``` ts
+``` typescript
 import {registerPerform} from '../pixiPerformManager';
 
 // Let's say this is your effect
@@ -87,12 +87,12 @@ registerPerform('myPerform', { fg: () => myPerform(parameters) });
 
 Finally, compile WebGAL with support for your custom effects
 
-``` shell
+``` bash
 yarn run build;
 ```
 
 This way, you can call your effects in the script
 
-``` ws
+``` webgal
 pixiPerform:myPerform;
 ```

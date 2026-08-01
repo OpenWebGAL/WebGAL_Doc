@@ -6,7 +6,7 @@
 
 ## 结构 {#structure}
 
-```tsx
+``` tsx
 const renderButtonText = (text: string) => {
   if (isEqualOrNewer(WEBGAL.version, "4.5.19")) {
     return (

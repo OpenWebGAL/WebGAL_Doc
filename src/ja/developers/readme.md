@@ -44,13 +44,13 @@ WebGAL は現在、パッケージマネージャーとして yarn を、モノ�
 
 yarn がない場合は、次のコマンドを使用してインストールしてください。
 
-```shell
+``` bash
 npm install yarn -g
 ```
 
 次に、プロジェクトのルートディレクトリで次のコマンドを実行します。
 
-```shell
+``` bash
 yarn
 ```
 
@@ -69,13 +69,13 @@ yarn
 
 次のスクリプトを実行して開発サーバーを起動できます。
 
-```shell
+``` bash
 yarn dev
 ```
 
 WebGAL をビルドする場合は、次のコマンドを使用します。
 
-```shell
+``` bash
 yarn build
 ```
 

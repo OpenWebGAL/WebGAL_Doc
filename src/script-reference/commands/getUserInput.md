@@ -6,7 +6,7 @@
 
 填写变量名称，用户输入的值将保存在该变量中。
 
-```webgal
+``` webgal
 角色B:真的是太感谢您了，能告诉我您的名字吗？;
 getUserInput:player_name -title=您的名字 -buttonText=确认 -defaultValue=Bob;
 角色B:{player_name}，我记住了。;
@@ -21,7 +21,7 @@ getUserInput:player_name -title=您的名字 -buttonText=确认 -defaultValue=Bo
 
 设置输入框的标题。
 
-```webgal
+``` webgal
 getUserInput:player_name -title=您的名字;
 ```
 
@@ -30,7 +30,7 @@ getUserInput:player_name -title=您的名字;
 
 设置确认按钮文本。
 
-```webgal
+``` webgal
 getUserInput:player_name -buttonText=确认;
 ```
 
@@ -39,7 +39,7 @@ getUserInput:player_name -buttonText=确认;
 
 设置输入框的默认值。
 
-```webgal
+``` webgal
 getUserInput:player_name -defaultValue=Bob;
 ```
 
@@ -50,7 +50,7 @@ getUserInput:player_name -defaultValue=Bob;
 
 设置输入验证的正则表达式规则。输入的内容将以此正则进行校验。
 
-```webgal
+``` webgal
 getUserInput:player_name -rule=^.{1,2}$;
 ```
 
@@ -61,7 +61,7 @@ getUserInput:player_name -rule=^.{1,2}$;
 
 具体参数详情请查看 [MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/RegExp#flags)。
 
-```webgal
+``` webgal
 getUserInput:player_name -rule=^.{1,2}$ -ruleFlag=g;
 ```
 
@@ -70,7 +70,7 @@ getUserInput:player_name -rule=^.{1,2}$ -ruleFlag=g;
 
 设置校验不通过时弹出的错误弹窗的提示文本，可使用 `$0` 获取用户输入的内容。
 
-```webgal
+``` webgal
 getUserInput:player_name -rule=^.{1,2}$ -ruleText=$0不符合1-2个字符;
 ```
 
@@ -81,6 +81,6 @@ getUserInput:player_name -rule=^.{1,2}$ -ruleText=$0不符合1-2个字符;
 
 默认为`OK`
 
-```webgal
+``` webgal
 getUserInput:player_name -rule=^.{1,2}$ -ruleText=$0不符合1-2个字符 -ruleButtonText=确定;
 ```

@@ -7,7 +7,7 @@ Full-screen text command.
 Sets a paragraph of text that is displayed as full-screen text. Use `|` to split it into multiple lines.
 See [Blackout Text](../../webgal-script/dialogue.md#blackout-text) for details.
 
-```webgal
+``` webgal
 intro:This is the first line|This is the second line|This is the third line;
 ```
 
@@ -23,7 +23,7 @@ Sets the font size. Available values:
 - `medium` - medium font
 - `large` - large font
 
-```webgal
+``` webgal
 intro:This is a paragraph -fontSize=large;
 ```
 
@@ -33,7 +33,7 @@ intro:This is a paragraph -fontSize=large;
 
 Sets the font color. For example, `rgba(0,0,0,1)` means black and `rgba(255,255,255,1)` means white. The alpha range is 0 to 1.
 
-```webgal
+``` webgal
 intro:This is a paragraph -fontColor=rgba(48, 135, 206, 1);
 ```
 
@@ -43,7 +43,7 @@ intro:This is a paragraph -fontColor=rgba(48, 135, 206, 1);
 
 Sets the background color. For example, `rgba(0,0,0,1)` means black and `rgba(255,255,255,1)` means white. The alpha range is 0 to 1.
 
-```webgal
+``` webgal
 intro:This is a paragraph -backgroundColor=rgba(22,22,22,0.8);
 ```
 
@@ -52,7 +52,7 @@ intro:This is a paragraph -backgroundColor=rgba(22,22,22,0.8);
 
 Sets the path of the background image used by full-screen text. If this parameter is not set, `backgroundColor` is used.
 
-```webgal
+``` webgal
 intro:This is a paragraph -backgroundImage=bg.png;
 ```
 
@@ -66,7 +66,7 @@ Sets how the full-screen text appears. Supported animation effects:
 - `pixelateEffect`: blur
 - `revealAnimation`: scroll reveal
 
-```webgal
+``` webgal
 intro:This is the first line|This is the second line|This is the third line -animation=slideIn;
 ```
 
@@ -78,7 +78,7 @@ intro:This is the first line|This is the second line|This is the third line -ani
 
 Sets the display delay of each line.
 
-```webgal
+``` webgal
 intro:This is the first line|This is the second line|This is the third line -delayTime=1000;
 ```
 
@@ -88,7 +88,7 @@ intro:This is the first line|This is the second line|This is the third line -del
 When the value is `true`, the next statement is not automatically executed after all text is displayed, until the player clicks the screen.
 When the value is `false`, the next statement is automatically executed after all text is displayed, even if the player has not enabled autoplay.
 
-```webgal
+``` webgal
 intro:This is a paragraph -hold;
 ```
 
@@ -98,6 +98,6 @@ intro:This is a paragraph -hold;
 When the value is `true`, the user must click the screen manually to show the next line. It also sets `hold` to `true` and ignores `delayTime`.
 When the value is `false`, the next line is displayed automatically.
 
-```webgal
+``` webgal
 intro:This is a paragraph -userForward;
 ```

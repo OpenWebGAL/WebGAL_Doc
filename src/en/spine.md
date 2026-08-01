@@ -30,7 +30,7 @@ Note: The following steps are based on the WebGAL source code. You can find the 
 
 2. Install `pixi-spine` using yarn in the `package/webgal` directory:
 
-```
+``` bash
 cd package/webgal
 yarn add pixi-spine@3.1.2
 ```
@@ -39,7 +39,7 @@ yarn add pixi-spine@3.1.2
 
 Uncomment the following commented lines (starting around line 30):
 
-```
+``` typescript
   // pixiSpineLoading = import('pixi-spine')
   //   .then((module) => {
   //     spineLoader = new PIXI.Loader();
@@ -63,23 +63,23 @@ Uncomment the following commented lines (starting around line 30):
 
 For example:
 ```
-game/
-  figure/
-    exampleSpine/
-      data.json
-      atlas.atlas
-      skeleton.skel
+game
+└── figure
+    └── exampleSpine
+        ├── data.json
+        ├── atlas.atlas
+        └── skeleton.skel
 ```
 
 If you are using a JSON format Spine sprite, you need to pass in the type using a script similar to the following, so that the engine recognizes its type as Spine.
 
-```
+``` webgal
 changeFigure:exampleSpine/data.json?type=spine;
 ```
 
 Use the `motion` argument to switch Spine animations. If you also need to switch the Spine skin, pass the `skin` argument.
 
-```
+``` webgal
 changeFigure:exampleSpine/data.json?type=spine -motion=anime_00_wait;
 changeFigure:exampleSpine/data.json?type=spine -skin=default;
 changeFigure:exampleSpine/data.json?type=spine -motion=anime_03_surprise -skin=03_surprise;

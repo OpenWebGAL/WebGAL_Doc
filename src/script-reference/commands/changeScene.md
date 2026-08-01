@@ -9,7 +9,7 @@
 
 如果此命令成功执行，当前场景的后续命令将不会被执行。
 
-```webgal
+``` webgal
 角色A:该出发了。;
 changeScene:chapter_01/part_02.txt;
 调试对话:如果你看到了这句话，说明切换场景失败了。;
@@ -21,7 +21,7 @@ changeScene:chapter_01/part_02.txt;
 :::
 
 - chapter_01/part_01.txt
-```webgal
+``` webgal
 changeBg:home/character_a/bedroom.png;
 changeFigure:main_character/character_a/thinking.png -next;
 角色A:今天去她家里吧！;
@@ -31,7 +31,7 @@ changeFigure:none -next; 手动关闭立绘
 changeScene:chapter_01/part_02.txt;
 ```
 - chapter_01/part_02.txt
-```webgal
+``` webgal
 changeBg:home/character_b/living_room.png;
 changeFigure:main_character/character_b/smile.png -next;
 角色B:是你啊，有什么事吗？;

@@ -32,13 +32,13 @@ The WebGAL Terre repository is located at [WebGAL Terre - GitHub](https://github
 
 ### Installing Dependencies
 
-```bash
+``` bash
 yarn
 ```
 
 ### Starting the Development Server
 
-```bash
+``` bash
 yarn dev
 ```
 
@@ -59,13 +59,13 @@ Generally, we will update the latest version of the engine template to the Terre
 
 1. Clone the WebGAL engine project (it is recommended to clone in the adjacent directory, so that you can use the automation script)
 
-```
+``` bash
 git clone https://github.com/OpenWebGAL/WebGAL.git
 ```
 
 2. **(Assuming you cloned the WebGAL project in the directory adjacent to the Terre project, developers who did not do this please ignore)** Run the automation script in the WebGAL engine repository to build WebGAL to WebGAL Terre
 
-```
+``` bash
 sh release-to-terre.sh
 ```
 
@@ -75,7 +75,7 @@ sh release-to-terre.sh
 
 2. Build the WebGAL project (this step is executed in the WebGAL engine repository)
 
-```
+``` bash
 yarn
 yarn build
 ```
@@ -84,7 +84,7 @@ yarn build
 
 **Here we assume that you cloned the WebGAL project in the directory adjacent to the Terre project. If you have a different directory structure, please modify it according to the actual situation.**
 
-```
+``` bash
 # Enter the Terre directory
 cd ../WebGAL_Terre/packages/terre2/assets/templates/WebGAL_Template || exit
 # Delete other files
@@ -122,7 +122,7 @@ To make this process work correctly, pay attention to the following annotations 
 
 The following code example demonstrates the key annotations required for backend interfaces:
 
-```typescript
+``` typescript
 @Post('createGame')
   @ApiOperation({ summary: 'Create a new game' })
   @ApiResponse({ status: 200, description: 'Game creation result.' })

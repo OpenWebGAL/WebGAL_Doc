@@ -58,7 +58,7 @@ Manual method:
 
 3. Run the following command:
 
-    ```bash
+    ``` bash
     npm i 
     # or (if you have yarn installed)
     yarn
@@ -76,7 +76,7 @@ Manual method:
 
 3. Run the following command:
 
-    ```bash
+    ``` bash
     node main.js
     ```
 
@@ -94,7 +94,7 @@ If your computer has installed a version of node lower than 14, please switch to
 
 Clone the [WebGAL_Terre](https://github.com/OpenWebGAL/WebGAL_Terre) repository.
 
-``` shell
+``` bash
 git clone https://github.com/OpenWebGAL/WebGAL_Terre.git
 ```
 
@@ -102,7 +102,7 @@ git clone https://github.com/OpenWebGAL/WebGAL_Terre.git
 
 Install yarn (optional, recommended)
 
-``` shell
+``` bash
 npm i -g yarn
 ```
 
@@ -114,7 +114,7 @@ npm i -g yarn
 
     Install dependencies in the project root directory.
 
-    ```shell
+    ``` bash
     yarn
     ```
 
@@ -128,13 +128,13 @@ npm i -g yarn
 
 2. Install dependencies
 
-    ``` shell
+    ``` bash
     yarn
     ```
 
 3. Package *terre2*
 
-    ``` shell
+    ``` bash
     yarn run build
     ```
 
@@ -142,7 +142,7 @@ npm i -g yarn
 
 5. Add a *package.json* file in *dist*, content (note to fill in the relevant information):
 
-    ```json
+    ``` json
     {
         "name": "webgal-terre-2-win7-server",
         "version": "version number",
@@ -170,7 +170,7 @@ npm i -g yarn
 
 1. Install dependencies in the visual editor directory.
 
-    ``` shell
+    ``` bash
     npm i
     # or (yarn recommended)
     yarn

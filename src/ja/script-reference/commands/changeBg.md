@@ -7,7 +7,7 @@
 背景画像のパスを指定します。ファイルパスが空、または `none` の場合は背景が退場します。
 詳しくは[背景と立ち絵](../../webgal-script/bg-and-figure.md)を参照してください。
 
-```webgal
+``` webgal
 ; 背景が存在しない場合、この文は背景を登場させます。
 changeBg:bg.png;
 ; すでに背景が存在する場合、この文は背景を置き換えます。
@@ -21,36 +21,36 @@ changeBg:none;
 ## パラメータ
 
 <!-- @include: ../arguments/transform.md -->
-```webgal
+``` webgal
 changeBg:bg.png -transform={"position":{"x":-50,"y":-20},"rotation":0.1,"scale":{"x":1.2,"y":1.2},"brightness":0.5,"blur":10};
 ```
 
 <!-- @include: ../arguments/enter.md -->
-```webgal
+``` webgal
 changeBg:bg.png -enter=enter-from-left;
 ```
 
 <!-- @include: ../arguments/exit.md -->
-```webgal
+``` webgal
 changeBg:bg.png -exit=exit-to-right;
 ```
 
 <!-- @include: ../arguments/duration.md -->
 デフォルトの登場アニメーションに適用されます。デフォルト値は 1500 です。
-```webgal
+``` webgal
 changeBg:bg.png -duration=200;
 ```
 
 <!-- @include: ../arguments/ease.md -->
 デフォルトの登場アニメーションに適用されます。
-```webgal
+``` webgal
 changeBg:bg.png -ease=easeOut;
 ```
 
 ### unlockname
 <!-- @include: ../arguments/name-cg.md -->
 このパラメータを省略した場合、または名前が空の場合、この画像は収録されません。
-```webgal
+``` webgal
 changeBg:bg.png -unlockname=MyCg01;
 ```
 
@@ -58,7 +58,7 @@ changeBg:bg.png -unlockname=MyCg01;
 <!-- @include: ../arguments/series-cg.md -->
 `series` だけを指定しても収録は行われません。必ず `unlockname` も指定してください。
 
-```webgal
+``` webgal
 changeBg:bg.png -unlockname=MyCg01 -series=MySeries01;
 ```
 
@@ -69,7 +69,7 @@ changeBg:bg.png -unlockname=MyCg01 -series=MySeries01;
 
 登場アニメーションの持続時間です。省略した場合は `duration` の値を使用します（デフォルト 1500）。
 
-```webgal
+``` webgal
 changeBg:bg.png -enterDuration=500;
 ```
 
@@ -80,6 +80,6 @@ changeBg:bg.png -enterDuration=500;
 
 退場アニメーションの持続時間です。省略した場合のデフォルト値は 1500 です。
 
-```webgal
+``` webgal
 changeBg:bg.png -exitDuration=800;
 ```

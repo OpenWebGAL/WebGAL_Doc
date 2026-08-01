@@ -15,7 +15,7 @@
 - 発話内容とキャラクター名がどちらも空
 - __すべての UI を非表示__ が有効
 
-```webgal
+``` webgal
 キャラA:ある場所へ連れていくよ。;
 setTextbox:hide;
 changeBg:shop.png;

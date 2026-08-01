@@ -6,6 +6,6 @@
 
 不需要填写任何内容。
 
-```webgal
+``` webgal
 showVars;
 ```

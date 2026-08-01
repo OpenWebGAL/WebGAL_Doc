@@ -14,7 +14,7 @@
 
 WebGAL は認識できない値の型を文字列に変換しようとします。
 
-```webgal
+``` webgal
 setVar:char_b_fav=15; キャラ B の初期好感度
 ;
 キャラB:ねえねえ、今日の私どこが違うかわかる？;
@@ -56,7 +56,7 @@ changeScene:chapter_02/part_01.txt;
 値が `true` の場合、長期（グローバル）変数を設定します。長期変数はユーザーが全データを削除しない限り、ゲーム全体で有効です。
 値が `false` の場合、通常変数を設定します。通常変数は現在のシーン内でのみ有効で、セーブ時に保存され、ロード時に復元されます。
 
-```webgal
+``` webgal
 ; 新規ゲーム開始時だと仮定
 ; すでに周回プレイなら、周回専用の物語へ直接ジャンプする
 jumpLabel:another_life -when=multiple_playthroughs;

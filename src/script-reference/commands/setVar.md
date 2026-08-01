@@ -14,7 +14,7 @@
 
 WebGAL 会尝试将无法识别的值类型，转换为字符串。
 
-```webgal
+``` webgal
 setVar:char_b_fav=15; 角色 B 初始好感度
 ;
 角色B:呐呐，看不看得出来我今天哪里不一样？;
@@ -56,7 +56,7 @@ changeScene:chapter_02/part_01.txt;
 当值为 `true` 时，表示设置一个长效（全局）变量。长效变量在整个游戏中生效，除非用户清除全部数据。
 当值为 `false` 时，表示设置一个普通变量。普通变量只在当前场景中生效，存档后会被保存，读档后恢复。
 
-```webgal
+``` webgal
 ; 假设这是新游戏的开头
 ; 如果已经是多周目了，就直接跳到多周目专用的剧情
 jumpLabel:another_life -when=multiple_playthroughs;

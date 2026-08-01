@@ -18,7 +18,7 @@ The way to write character dialogue is very simple, you just need to enter `Char
 
 Example:
 
-``` ws
+``` webgal
 Yukino Yukinoshita: Please have some tea;
 Yui Yuigahama: Ah, thank you;
 Komachi: Thank you, Sister Yukino!;
@@ -31,7 +31,7 @@ After each dialogue/script, use a semicolon as the end. (Sometimes it works if y
 
 If your multiple dialogues do not change the character name, you can use continuous dialogue, and you can omit the character name, and use it when you need it:
 
-``` ws
+``` webgal
 Yukino Yukinoshita: You're here early;
 ; // At this time, the character name of the dialogue is still "Yukino Yukinoshita"
 Sorry, have you been waiting long?;
@@ -42,7 +42,7 @@ Hachiman Hikigaya: Just arrived;
 
 If you want to create a monologue dialogue without a character name, leave a blank space before the colon (but do not omit the colon):
 
-``` ws
+``` webgal
 :This is a monologue;
 ```
 
@@ -50,13 +50,13 @@ If you want to create a monologue dialogue without a character name, leave a bla
 
 In many games, some text is displayed on a black screen, which is used to introduce the theme or express the character's mental activities. You can use the intro command to perform a monologue:
 
-``` ws
+``` webgal
 intro: Memories don't need a suitable script, | Anyway, once you say it, | It all becomes a joke. ;
 ```
 
 The monologue is split by the separator (|), that is, each | represents a line break. In the actual performance, the above text will become:
 
-``` ws
+``` webgal
 Memories don't need a suitable script,
 Anyway, once you say it,
 It all becomes a joke.
@@ -64,7 +64,7 @@ It all becomes a joke.
 
 If you want to keep the monologue UI after the monologue ends instead of continuing the game flow, use the ` -hold` parameter.
 
-``` ws
+``` webgal
 intro:Recalling doesn't need a suitable script,|anyway, once it's spoken,|it all becomes a joke. -hold;
 ```
 
@@ -72,7 +72,7 @@ intro:Recalling doesn't need a suitable script,|anyway, once it's spoken,|it all
 
 Use the `getUserInput` instruction to get user input and write it into a variable, for example:
 
-```
+``` webgal
 getUserInput:name -title=What is your name -buttonText=OK; Write user input to variable name
 ```
 
@@ -82,13 +82,13 @@ Among them, the `title` parameter is the text of the prompt, and `buttonText` is
 
 You can use the `{}` syntax in a statement to perform variable interpolation and pass a variable into the statement, for example:
 
-```
+``` webgal
 WebGAL: Nice to meet you, {name}!
 ```
 
 Variable interpolation also applies to character names, for example:
 
-```
+``` webgal
 {name}: I like WebGAL the most too!;
 ```
 
@@ -100,7 +100,7 @@ The grammar of Ruby is `[Word to be annotated](annotation)`
 
 Example:
 
-```
+``` webgal
 『[笑顔](えがお)』なんて、『[笑う](わらう)』なんて、[誰](だれ)でも[出来](でき)るもん…！
 ```
 
@@ -112,7 +112,7 @@ Text enhancement syntax is an enhancement to a specific piece of text. Text encl
 
 In simple terms, it takes the following form:
 
-```
+``` webgal
 WebGAL:[Text](style-alltext=font-style:italic\;font-size:80%\; style=color:#66327C\; ruby=wen ben)
 ```
 
@@ -146,13 +146,13 @@ If the new text enhancement syntax is used, the phonetic annotation is written i
 
 Sometimes, for some special performance effects, you may want to temporarily close the text box, so you can use the following instructions to close the text box:
 
-``` ws
+``` webgal
 setTextbox:hide; // Close the text box
 ```
 
 When the value of the `setTextbox` instruction is `hide`, the text box will be closed and the user will not be able to open it in any way. If you want to display the text box again, call this command again and enter any value other than `hide`.
 
-``` ws
+``` webgal
 setTextbox:on; // Can be any value other than hide.
 ```
 
@@ -160,7 +160,7 @@ setTextbox:on; // Can be any value other than hide.
 
 If you want to end the game and return to the title after the plot, please use:
 
-``` ws
+``` webgal
 end;
 ```
 

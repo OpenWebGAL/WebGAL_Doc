@@ -11,7 +11,7 @@
 - 场景文件
 - 本场景的某个标签
 
-```webgal
+``` webgal
 角色A:今天去哪儿呢？;
 choose:去商店:chapter_01/shop.txt|某人家里:chapter_01/house_b.txt|待在家里:home;
 ;
@@ -32,7 +32,7 @@ label:home;
 - `[条件表达式]`：控制选项是否可点击。
 - `->`：分隔条件前缀和实际选项内容。
 
-```webgal
+``` webgal
 setVar:hasTicket=true;
 setVar:doorPower=1;
 choose:(hasTicket==true)->出示门票:ticket|(doorPower>0)[doorPower>1]->强行开门:force|回家:home;

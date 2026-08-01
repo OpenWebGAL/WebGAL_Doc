@@ -15,7 +15,7 @@
 - 说话内容与角色名均为空
 - 开启了 __隐藏所有 UI__
 
-```webgal
+``` webgal
 角色A:带你去一个地方。;
 setTextbox:hide;
 changeBg:shop.png;

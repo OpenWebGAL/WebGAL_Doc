@@ -7,7 +7,7 @@
 输入一段文字，这段文字会以全屏文字的形式显示在屏幕上。可以使用 `|` 来分割多行文字。
 详情请见[黑屏文字](../../webgal-script/dialogue.md#黑屏文字)。
 
-```webgal
+``` webgal
 intro:这是第一行文字|这是第二行文字|这是第三行文字;
 ```
 
@@ -23,7 +23,7 @@ intro:这是第一行文字|这是第二行文字|这是第三行文字;
 - `medium` - 中号字体
 - `large` - 大号字体
 
-```webgal
+``` webgal
 intro:这是一段话 -fontSize=large;
 ```
 
@@ -33,7 +33,7 @@ intro:这是一段话 -fontSize=large;
 
 设置字体颜色，格式如 `rgba(0,0,0,1)`，表示黑色，`rgba(255,255,255,1)` 表示白色。透明度范围为 0 到 1。
 
-```webgal
+``` webgal
 intro:这是一段话 -fontColor=rgba(48, 135, 206, 1);
 ```
 
@@ -43,7 +43,7 @@ intro:这是一段话 -fontColor=rgba(48, 135, 206, 1);
 
 设置背景颜色，格式如 `rgba(0,0,0,1)`，表示黑色，`rgba(255,255,255,1)` 表示白色。透明度范围为 0 到 1。
 
-```webgal
+``` webgal
 intro:这是一段话 -backgroundColor=rgba(22,22,22,0.8);
 ```
 
@@ -52,7 +52,7 @@ intro:这是一段话 -backgroundColor=rgba(22,22,22,0.8);
 
 填写背景图像的路径，将其作为全屏文字的背景图像。若未设置此参数，则使用 `backgroundColor`。
 
-```webgal
+``` webgal
 intro:这是一段话 -backgroundImage=bg.png;
 ```
 
@@ -66,7 +66,7 @@ intro:这是一段话 -backgroundImage=bg.png;
 - `pixelateEffect`：模糊
 - `revealAnimation`：卷轴展开
 
-```webgal
+``` webgal
 intro:这是第一行文字|这是第二行文字|这是第三行文字 -animation=slideIn;
 ```
 
@@ -78,7 +78,7 @@ intro:这是第一行文字|这是第二行文字|这是第三行文字 -animati
 
 设置每行文字的显示延迟时间。
 
-```webgal
+``` webgal
 intro:这是第一行文字|这是第二行文字|这是第三行文字 -delayTime=1000;
 ```
 
@@ -88,7 +88,7 @@ intro:这是第一行文字|这是第二行文字|这是第三行文字 -delayTi
 当值为 `true` 时，所有文字显示完毕后，不会自动执行下一句，直到玩家点击屏幕。
 当值为 `false` 时，所有文字显示完毕后，自动执行下一句，即使玩家未开启自动播放。
 
-```webgal
+``` webgal
 intro:这是一段话 -hold;
 ```
 
@@ -98,6 +98,6 @@ intro:这是一段话 -hold;
 当值为 `true` 时，需要用户手动点击屏幕，才会显示下一行文字，并设置 `hold` 为 `true`，忽略 `delayTime`。
 当值为 `false` 时，自动显示下一行文字。
 
-```webgal
+``` webgal
 intro:这是一段话 -userForward;
 ```

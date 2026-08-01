@@ -8,7 +8,7 @@ Don't use the variable system until you figure out how to use scene jumping and 
 
 To set a variable:
 
-``` ws
+``` webgal
 setVar:a=1; // You can set a number
 setVar:a=true // You can set a boolean
 setVar:a=Character Name // You can set a string
@@ -16,7 +16,7 @@ setVar:a=Character Name // You can set a string
 
 To set a random number, use `random()`
 
-```ws
+``` webgal
 setVar:a=random();
 ```
 
@@ -28,23 +28,23 @@ setVar:a=random();
 3. [floating] (boolean): Specifies whether to return a floating-point number.
 
 Instead of writing arguments, it generates a floating-point number in the range 0-1
-```ws
+``` webgal
 setVar:a=random();
 ```
 
 Of course, we can also specify **Range**. For example, if you want a random number between 5 and 10, You can write:
-```ws
+``` webgal
 SetVar: a = the random (5, 10);
 ```
 
 Of course you want it to use ranges to generate values that also have decimals, then specify a third argument:
-```ws
+``` webgal
 SetVar: a = the random (5, 10, true); # will generate a floating point number between 5 and 10
 ```
 
 You can also use previously defined variables when setting variables.
 
-``` ws
+``` webgal
 setVar:a=1;
 setVar:b=a+1;
 ```
@@ -55,7 +55,7 @@ You can add a `-when=(condition)` parameter after a statement to conditionally e
 
 For example:
 
-``` ws
+``` webgal
 setVar:a=1;
 ; // Jump to scene 1 when a is greater than 1
 changeScene:1.txt -when=a>1;
@@ -76,7 +76,7 @@ Any statement can be conditionally executed with the `-when` parameter. By combi
 
 Use the `getUserInput` statement to get user input, for example:
 
-```
+``` webgal
 getUserInput:name -title=What's your name? -buttonText=OK; Store the user input in the variable name
 ```
 
@@ -86,7 +86,7 @@ Where `title` is the prompt text, `buttonText` is the text on the OK button
 
 You can use the `{}` syntax in statements to interpolate variables, passing a variable into the statement, for example:
 
-```
+``` webgal
 setVar:name=WebGAL;
 setVar:engine=WebGAL;
 {name}:Welcome to {engine}! This is a brand new visual novel engine for web.;
@@ -100,7 +100,7 @@ In order to solve the problem that the author may want to set multiple weeks, a 
 
 Adding the `-global` parameter can set persistent (global) variables
 
-```ws
+``` webgal
 setVar:a=1 -global;
 ```
 
@@ -108,7 +108,7 @@ This sets a variable that does not change with存档 reading.
 
 Example of use:
 
-```ws
+``` webgal
 jumpLabel:turn-2 -when=a>0;
 setVar:a=1 -global;
 First playthrough;
@@ -176,14 +176,14 @@ The properties for `stage` can be found in the `state` TAB under the WebGAL edit
 
 You can access them using `$`, for example to get the value of BGM:
 
-```ws
+``` webgal
 setVar:a=($stage.bgm.volume);
 WebGAL:The current BGM volume is{a};
 ```
 
 Of course, you can also use it directly in a conversation:
 
-```ws
+``` webgal
 WebGAL:The current BGM volume is{$stage.bgm.volume};
 ```
 
@@ -193,7 +193,7 @@ WebGAL:The current BGM volume is{$stage.bgm.volume};
 
 We can also access the global variables in `config.txt` :
 
-```ws
+``` webgal
 setVar:title=(Game_name);
 WebGAL:The current title of the game is{title};
 ```
@@ -202,7 +202,7 @@ The same goes for modifications. When changing the game title to a new one, the 
 
 Adding the `global` flag indicates that we are modifying a configuration variable:
 
-```ws
+``` webgal
 setVar:Game_name=('New Game Title') -global;
 WebGAL:The current title of the game is{Game_name};
 ```
@@ -218,7 +218,7 @@ To do this, use `Clear all data` in the game options.
 
 Of course, you can also create a custom configuration variable in `config.txt`, such as a version number:
 
-```text
+``` text
 Game_name:欢迎使用WebGAL！;
 Game_key:f60ad5725c1588;
 Title_img:WebGAL_New_Enter_Image.png;
@@ -230,7 +230,7 @@ version:1;
 
 Then we can access it, modify it, and so on in a script:
 
-```ws
+``` webgal
 setVar:v=(version);
 WebGAL:The current version number is{v};
 setVar:version=version*2 -global;

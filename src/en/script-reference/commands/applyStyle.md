@@ -8,7 +8,7 @@ First, create a new style in the UI template. Then use the `applyStyle` command 
 Connect the original style name and the new style name with `->`. Multiple replacements can be written at once and separated by English commas `,`.
 The format is: originalStyle->newStyle,originalStyle2->newStyle2,...
 
-```webgal
+``` webgal
 ; Replace the speaker-name background with red, assuming the new style exists in the UI template
 applyStyle:TextBox_ShowName_Background->TextBox_ShowName_Background_Red;
 Character:This is a line.;
@@ -18,7 +18,7 @@ applyStyle:TextBox_ShowName_Background->TextBox_ShowName_Background_Green,TextBo
 
 No matter which new style the original style is replaced with, the replacement still starts from the original style name:
 
-```webgal
+``` webgal
 applyStyle:OriginalStyleName->NewStyleName1;
 applyStyle:NewStyleName1->NewStyleName2; Wrong
 applyStyle:OriginalStyleName->NewStyleName2;
@@ -35,7 +35,7 @@ Choices use the following style names:
 | `Choose_item` | Clickable choice |
 | `Choose_item_disabled` | Choice whose condition is not met and cannot be clicked |
 
-```webgal
+``` webgal
 ; Replace clickable choices with Choose_item_Red defined in the template
 applyStyle:Choose_item->Choose_item_Red;
 ```
