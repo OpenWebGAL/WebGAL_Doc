@@ -79,6 +79,7 @@ export const zhSidebar = sidebar({
             "jumpLabel",
             "setVar",
             "callScene",
+            "return",
             "showVars",
             "unlockCg",
             "unlockBgm",

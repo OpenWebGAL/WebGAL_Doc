@@ -76,3 +76,20 @@ changeScene:chapter_01/part_01_extra.txt;
 ; 假设这是最后一章的结束部分
 setVar:multiple_playthroughs=true -global; 设置为多周目
 ```
+
+### local
+- 布尔值
+
+当值为 `true` 时，写入当前场景的[局部变量](../../webgal-script/variable.md#局部变量)，也就是 `callScene` 传进来的参数所在的那个命名空间。局部变量随场景调用结束而消失，不会影响调用方的同名变量。
+
+```webgal
+; battle.txt，由 callScene:battle.txt -hp=100 调用
+setVar:hp=hp-30 -local; 改的是传进来的 hp
+旁白:受到攻击，剩余血量 {hp}。;
+```
+
+不加 `-local` 时，`setVar:hp=hp-30;` 写的是普通变量，而读取 `{hp}` 时局部变量优先，结果就是这次写入读不出来。要改传进来的参数，必须加 `-local`。
+
+::: warning
+`-local` 与 `-global` 互斥，同时写时按 `-global` 处理。
+:::

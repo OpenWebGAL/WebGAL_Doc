@@ -13,6 +13,50 @@ WebGAL:Hello!; The content after semicolon will be regarded as a comment
 ; You can directly input a semicolon, then write a single-line comment
 ```
 
+## Multi-line Statements
+
+When a statement has too many arguments, you can write it across multiple lines for readability.
+
+**A continuation line must start with whitespace, and its first non-whitespace character must be `-` or `|`.** Such a line is appended to the end of the previous statement, and the whole thing is still one statement.
+
+``` ws
+changeFigure:stand.webp
+  -left
+  -id=fig1
+  -next;
+```
+
+The above is equivalent to:
+
+``` ws
+changeFigure:stand.webp -left -id=fig1 -next;
+```
+
+The text segments of `intro` can be continued with `|` in the same way:
+
+``` ws
+intro:First segment
+  |Second segment
+  |Third segment -hold;
+```
+
+The graphical editor automatically emits this format when a statement gets too long; short statements stay on a single line.
+
+### Rules to Keep in Mind
+
+- **The semicolon and the inline comment may only appear on the last line.** Everything after a semicolon is treated as a comment, so putting it on the first line would swallow the continuation lines.
+- **An empty line terminates a multi-line statement.** Do not leave blank lines in the middle of one statement.
+- **Statements containing `-concat` are never continued automatically**, because `-concat` itself means "join this dialogue onto the previous one" and the two semantics would conflict.
+- **A trailing backslash `\` forces a continuation**, which lets you bypass the restrictions above:
+
+``` ws
+intro:First segment\
+|Second segment\
+|Third segment -concat;
+```
+
+- **Compatibility note:** a dialogue line starting with "space + `-`" will be mistaken for a continuation line. If you really want a dialogue to start with a dash, remove the leading space or put another character in front of it.
+
 ## Escaping Special Characters
 
 WebGAL scripts use the English colon `:` to separate commands and content, the English semicolon `;` to end statements and start inline comments, and some commands also use symbols such as `|`, `,`, and `.` as part of their content syntax. If you want these symbols to be displayed as plain text, add a backslash `\` before the symbol.

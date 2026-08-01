@@ -76,3 +76,20 @@ changeScene:chapter_01/part_01_extra.txt;
 ; 最終章の終盤だと仮定
 setVar:multiple_playthroughs=true -global; 周回プレイとして設定
 ```
+
+### local
+- 真偽値
+
+値が `true` の場合、現在のシーンの[ローカル変数](../../webgal-script/variable.md#ローカル変数)に書き込みます。これは `callScene` の引数が入るのと同じ名前空間です。ローカル変数はシーン呼び出しの終了とともに消滅し、呼び出し元の同名変数には影響しません。
+
+```webgal
+; battle.txt、callScene:battle.txt -hp=100 から呼び出される
+setVar:hp=hp-30 -local; 渡された hp を書き換える
+ナレーション:攻撃を受けた。残り HP は {hp}。;
+```
+
+`-local` を付けない `setVar:hp=hp-30;` は通常変数に書き込みますが、`{hp}` の読み取りはローカル変数を優先するため、書いた値を読み出せません。渡された引数を書き換えるには `-local` が必要です。
+
+::: warning
+`-local` と `-global` は排他です。両方を書いた場合は `-global` が優先されます。
+:::

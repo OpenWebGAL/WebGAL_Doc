@@ -76,3 +76,20 @@ changeScene:chapter_01/part_01_extra.txt;
 ; Assume this is the ending section of the final chapter
 setVar:multiple_playthroughs=true -global; Set as another playthrough
 ```
+
+### local
+- Boolean
+
+When the value is `true`, writes to the [local variables](../../webgal-script/variable.md#local-variables) of the current scene — the same namespace the arguments of `callScene` land in. Local variables disappear when the scene call ends and never affect variables of the same name in the caller.
+
+```webgal
+; battle.txt, called by callScene:battle.txt -hp=100
+setVar:hp=hp-30 -local; Modifies the hp that was passed in
+Narrator:You are hit. Your HP is now {hp}.;
+```
+
+Without `-local`, `setVar:hp=hp-30;` writes a normal variable, while reading `{hp}` prefers the local one, so the value you just wrote can never be read back. Modifying a passed-in argument requires `-local`.
+
+::: warning
+`-local` and `-global` are mutually exclusive. If both are given, `-global` wins.
+:::

@@ -118,6 +118,51 @@ label:turn-2;
 changeScene:二周目剧情.txt;
 ```
 
+## 局部变量
+
+`callScene` 传入的参数，会成为被调用场景的**局部变量**：
+
+```ws
+; start.txt
+callScene:battle.txt -enemy=史莱姆 -hp=100;
+
+; battle.txt
+旁白:遭遇了 {enemy}，我方剩余血量 {hp}。;
+```
+
+局部变量属于这一次场景调用：它随存档一起保存和恢复，但调用结束后就消失，不会留给调用方。同一个场景因此可以用不同的参数反复调用。
+
+要在场景内修改局部变量，给 `setVar` 加上 `-local`：
+
+```ws
+setVar:hp=hp-30 -local;
+```
+
+### 变量的查找顺序
+
+读取一个变量时，WebGAL 按下面的顺序查找，取第一个命中的：
+
+1. 当前场景的局部变量
+2. 普通变量
+3. 长效（全局）变量
+
+也就是说局部变量会**遮蔽**同名的普通变量。如果同时存在局部变量 `hp` 和普通变量 `hp`，那么 `{hp}` 读到的永远是局部的那个，而 `setVar:hp=1;`（不加 `-local`）写的却是普通的那个，写进去的值读不出来。给参数取名时，注意与普通变量区分开。
+
+### 返回值
+
+被调用的场景可以用 `return` 把一个值交回调用方，写到调用方的哪个变量由 `-writeReturnTo` 参数指定：
+
+```ws
+; start.txt
+callScene:battle.txt -enemy=史莱姆 -writeReturnTo=result;
+旁白:战斗结果是 {result}。;
+
+; battle.txt
+return:胜利;
+```
+
+详见 [callScene](../script-reference/commands/callScene.md) 与 [return](../script-reference/commands/return.md)。
+
 ## 高级用法（`>=4.5.4`）
 使用内置变量进行更为高级的操作，如对配置变量进行修改，根据内置变量进行指定条件的逻辑运行等。
 

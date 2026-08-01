@@ -118,6 +118,51 @@ Second playthrough;
 changeScene:Second playthrough plot.txt;
 ```
 
+## Local Variables
+
+The arguments passed to `callScene` become **local variables** of the called scene:
+
+```ws
+; start.txt
+callScene:battle.txt -enemy=Slime -hp=100;
+
+; battle.txt
+Narrator:You ran into a {enemy}. Your HP is {hp}.;
+```
+
+A local variable belongs to that one scene call: it is saved and restored along with save data, but it disappears once the call ends and is never handed back to the caller. This is what lets you reuse the same scene with different arguments.
+
+To modify a local variable inside the scene, add `-local` to `setVar`:
+
+```ws
+setVar:hp=hp-30 -local;
+```
+
+### Variable Lookup Order
+
+When reading a variable, WebGAL looks it up in the following order and takes the first hit:
+
+1. Local variables of the current scene
+2. Normal variables
+3. Persistent (global) variables
+
+In other words, a local variable **shadows** a normal variable with the same name. If both a local `hp` and a normal `hp` exist, `{hp}` always reads the local one, while `setVar:hp=1;` (without `-local`) writes the normal one, so the written value can never be read back. Keep argument names distinct from your normal variables.
+
+### Return Values
+
+A called scene can hand a value back with `return`. The caller decides which variable receives it through the `-writeReturnTo` argument:
+
+```ws
+; start.txt
+callScene:battle.txt -enemy=Slime -writeReturnTo=result;
+Narrator:The battle ended in {result}.;
+
+; battle.txt
+return:victory;
+```
+
+If the called scene ends without running `return`, an empty string is written back.
+
 ## Advanced Usage（`>=4.5.4`）
 Use built-in variables to perform more advanced operations, such as making changes to configuration variables, executing logic based on specified conditions, and so on.
 
