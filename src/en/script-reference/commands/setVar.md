@@ -82,7 +82,7 @@ setVar:multiple_playthroughs=true -global; Set as another playthrough
 
 When the value is `true`, writes to the [local variables](../../webgal-script/variable.md#local-variables) of the current scene — the same namespace the arguments of `callScene` land in. Local variables disappear when the scene call ends and never affect variables of the same name in the caller.
 
-```webgal
+``` webgal
 ; battle.txt, called by callScene:battle.txt -hp=100
 setVar:hp=hp-30 -local; Modifies the hp that was passed in
 Narrator:You are hit. Your HP is now {hp}.;

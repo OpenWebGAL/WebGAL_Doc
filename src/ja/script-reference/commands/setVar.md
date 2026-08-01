@@ -82,7 +82,7 @@ setVar:multiple_playthroughs=true -global; 周回プレイとして設定
 
 値が `true` の場合、現在のシーンの[ローカル変数](../../webgal-script/variable.md#ローカル変数)に書き込みます。これは `callScene` の引数が入るのと同じ名前空間です。ローカル変数はシーン呼び出しの終了とともに消滅し、呼び出し元の同名変数には影響しません。
 
-```webgal
+``` webgal
 ; battle.txt、callScene:battle.txt -hp=100 から呼び出される
 setVar:hp=hp-30 -local; 渡された hp を書き換える
 ナレーション:攻撃を受けた。残り HP は {hp}。;

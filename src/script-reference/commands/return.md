@@ -8,7 +8,7 @@
 
 冒号后面的内容是返回值，求值规则与 `setVar` 完全相同，可以是数字、布尔值、字符串、表达式或变量。返回值写回调用方的哪个变量，由调用方的 `-writeReturnTo` 参数决定；调用方没有写 `-writeReturnTo` 时，返回值被丢弃。
 
-```webgal
+``` webgal
 ; start.txt
 callScene:check_key.txt -writeReturnTo=has_key;
 jumpLabel:open_door -when=has_key;

@@ -82,7 +82,7 @@ setVar:multiple_playthroughs=true -global; 设置为多周目
 
 当值为 `true` 时，写入当前场景的[局部变量](../../webgal-script/variable.md#局部变量)，也就是 `callScene` 传进来的参数所在的那个命名空间。局部变量随场景调用结束而消失，不会影响调用方的同名变量。
 
-```webgal
+``` webgal
 ; battle.txt，由 callScene:battle.txt -hp=100 调用
 setVar:hp=hp-30 -local; 改的是传进来的 hp
 旁白:受到攻击，剩余血量 {hp}。;

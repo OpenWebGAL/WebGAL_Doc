@@ -19,7 +19,7 @@ When a statement has too many arguments, you can write it across multiple lines 
 
 **A continuation line must start with whitespace, and its first non-whitespace character must be `-` or `|`.** Such a line is appended to the end of the previous statement, and the whole thing is still one statement.
 
-``` ws
+``` webgal
 changeFigure:stand.webp
   -left
   -id=fig1
@@ -28,13 +28,13 @@ changeFigure:stand.webp
 
 The above is equivalent to:
 
-``` ws
+``` webgal
 changeFigure:stand.webp -left -id=fig1 -next;
 ```
 
 The text segments of `intro` can be continued with `|` in the same way:
 
-``` ws
+``` webgal
 intro:First segment
   |Second segment
   |Third segment -hold;
@@ -49,7 +49,7 @@ The graphical editor automatically emits this format when a statement gets too l
 - **Statements containing `-concat` are never continued automatically**, because `-concat` itself means "join this dialogue onto the previous one" and the two semantics would conflict.
 - **A trailing backslash `\` forces a continuation**, which lets you bypass the restrictions above:
 
-``` ws
+``` webgal
 intro:First segment\
 |Second segment\
 |Third segment -concat;

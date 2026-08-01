@@ -122,7 +122,7 @@ changeScene:二周目ストーリー.txt;
 
 `callScene` に渡した引数は、呼び出されたシーンの**ローカル変数**になります。
 
-```ws
+``` webgal
 ; start.txt
 callScene:battle.txt -enemy=スライム -hp=100;
 
@@ -134,7 +134,7 @@ callScene:battle.txt -enemy=スライム -hp=100;
 
 シーン内でローカル変数を書き換えるには、`setVar` に `-local` を付けます。
 
-```ws
+``` webgal
 setVar:hp=hp-30 -local;
 ```
 
@@ -152,7 +152,7 @@ setVar:hp=hp-30 -local;
 
 呼び出されたシーンは `return` で値を呼び出し元へ返せます。どの変数に書き戻すかは、呼び出し元の `-writeReturnTo` 引数で指定します。
 
-```ws
+``` webgal
 ; start.txt
 callScene:battle.txt -enemy=スライム -writeReturnTo=result;
 ナレーション:戦闘の結果は {result}。;

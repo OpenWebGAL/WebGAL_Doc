@@ -30,7 +30,7 @@ callScene:chapter_01/shop.txt;
 
 写成 `-参数名=值` 的参数会成为被调用场景的[局部变量](../../webgal-script/variable.md#局部变量)，同一个场景就可以用不同的参数复用。
 
-```webgal
+``` webgal
 ; start.txt
 callScene:battle.txt -enemy=史莱姆 -hp=100;
 
@@ -40,7 +40,7 @@ callScene:battle.txt -enemy=史莱姆 -hp=100;
 
 参数值的类型规则和其他参数一致：`100` 是数字，`true` / `false` 是布尔值，其余按字符串处理。要把调用方的某个变量传进去，用变量插值：
 
-```webgal
+``` webgal
 callScene:battle.txt -hp={player_hp};
 ```
 
@@ -53,7 +53,7 @@ callScene:battle.txt -hp={player_hp};
 
 指定被调用场景的[返回值](./return)写回调用方的哪个变量，写入方式与不带参数的 `setVar` 相同。
 
-```webgal
+``` webgal
 ; start.txt
 callScene:battle.txt -enemy=史莱姆 -writeReturnTo=result;
 旁白:战斗结果是 {result}。;

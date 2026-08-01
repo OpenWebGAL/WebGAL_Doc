@@ -122,7 +122,7 @@ changeScene:二周目剧情.txt;
 
 `callScene` 传入的参数，会成为被调用场景的**局部变量**：
 
-```ws
+``` webgal
 ; start.txt
 callScene:battle.txt -enemy=史莱姆 -hp=100;
 
@@ -134,7 +134,7 @@ callScene:battle.txt -enemy=史莱姆 -hp=100;
 
 要在场景内修改局部变量，给 `setVar` 加上 `-local`：
 
-```ws
+``` webgal
 setVar:hp=hp-30 -local;
 ```
 
@@ -152,7 +152,7 @@ setVar:hp=hp-30 -local;
 
 被调用的场景可以用 `return` 把一个值交回调用方，写到调用方的哪个变量由 `-writeReturnTo` 参数指定：
 
-```ws
+``` webgal
 ; start.txt
 callScene:battle.txt -enemy=史莱姆 -writeReturnTo=result;
 旁白:战斗结果是 {result}。;

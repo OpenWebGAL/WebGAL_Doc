@@ -122,7 +122,7 @@ changeScene:Second playthrough plot.txt;
 
 The arguments passed to `callScene` become **local variables** of the called scene:
 
-```ws
+``` webgal
 ; start.txt
 callScene:battle.txt -enemy=Slime -hp=100;
 
@@ -134,7 +134,7 @@ A local variable belongs to that one scene call: it is saved and restored along 
 
 To modify a local variable inside the scene, add `-local` to `setVar`:
 
-```ws
+``` webgal
 setVar:hp=hp-30 -local;
 ```
 
@@ -152,7 +152,7 @@ In other words, a local variable **shadows** a normal variable with the same nam
 
 A called scene can hand a value back with `return`. The caller decides which variable receives it through the `-writeReturnTo` argument:
 
-```ws
+``` webgal
 ; start.txt
 callScene:battle.txt -enemy=Slime -writeReturnTo=result;
 Narrator:The battle ended in {result}.;
