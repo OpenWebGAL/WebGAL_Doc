@@ -53,6 +53,10 @@ export default hopeTheme({
       metaLocales: {
         editLink: "Edit this page on GitHub",
       },
+
+      routeLocales: {
+        openInNewWindow: "(opens in new tab)",
+      },
     },
     "/ja/": {
       // navbar
@@ -104,6 +108,11 @@ export default hopeTheme({
 
     // All features are enabled for demo, only preserve features you need here
     mdEnhance: {
+      locales: {
+        "/en/": {
+          tip: "Tip:",
+        },
+      },
       align: true,
       attrs: true,
       chart: true,
