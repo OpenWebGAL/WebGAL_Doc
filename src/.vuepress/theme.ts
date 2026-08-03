@@ -53,10 +53,6 @@ export default hopeTheme({
       metaLocales: {
         editLink: "Edit this page on GitHub",
       },
-
-      routeLocales: {
-        openInNewWindow: "(opens in new tab)",
-      },
     },
     "/ja/": {
       // navbar
@@ -97,6 +93,8 @@ export default hopeTheme({
 
   //插件选项
   plugins: {
+    externalLinkIcon: false,
+
     // You should generate and use your own comment service
     // comment: {
     //   provider: "Giscus",
