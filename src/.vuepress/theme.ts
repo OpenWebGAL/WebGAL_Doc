@@ -93,6 +93,8 @@ export default hopeTheme({
 
   //插件选项
   plugins: {
+    externalLinkIcon: false,
+
     // You should generate and use your own comment service
     // comment: {
     //   provider: "Giscus",
@@ -104,6 +106,11 @@ export default hopeTheme({
 
     // All features are enabled for demo, only preserve features you need here
     mdEnhance: {
+      locales: {
+        "/en/": {
+          tip: "Tip:",
+        },
+      },
       align: true,
       attrs: true,
       chart: true,

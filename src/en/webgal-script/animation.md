@@ -1,6 +1,6 @@
 # Animation Effects
 
-## Setting Animations for Backgrounds or Sprites
+## Setting Animations for Backgrounds or Character Sprites
 
 Use the statement `setAnimation:animation name -target=target;`
 
@@ -11,17 +11,17 @@ Use the statement `setAnimation:animation name -target=target;`
 setAnimation:enter-from-bottom -target=fig-center -next;
 ```
 
-Currently, the following preset animations are available:
+The following built-in animations are available:
 
 | Animation Effect | Animation Name | Duration (ms) |
 | :--- | :--- | :--- |
 | Fade in | enter | 300 |
 | Fade out | exit | 300 |
-| Shake once | shake | 1000 |
+| Single Shake | shake | 1000 |
 | Enter from bottom | enter-from-bottom | 500 |
 | Enter from left | enter-from-left | 500 |
 | Enter from right | enter-from-right | 500 |
-| Move front and back once | move-front-and-back | 1000 |
+| Single Front-Back Movement | move-front-and-back | 1000 |
 | Blur in | blur | 300 |
 | Old film filter | oldFilm | 0 |
 | Dot film filter | dotFilm | 0 |
@@ -129,7 +129,7 @@ Then, you can call it in the script:
 setAnimation:enter-from-left -target=fig-left -next;
 ```
 
-### Omitting Some Properties
+### Omitting Properties
 
 If your animation only needs to manipulate some properties, you can leave the other properties that are not involved in the animation empty to keep them as default.
 

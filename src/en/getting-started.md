@@ -1,9 +1,9 @@
 # How to start making a WebGAL?
 
 ::: warning
-No matter which way you choose to make a WebGAL game, you should spend some time reading through the entirety of the development guide. It won't take long, and it will save you from running into problems due to improper operation.
+No matter which way you choose to make a WebGAL game, you should spend some time reading through the entirety of the development guide. It won't take long, and it will help you avoid issues caused by incorrect operations.
 
-You know, most of the questions you are wondering about can be found in the documentation. If you firmly believe that you have encountered a bug, please raise an issue at [issues](https://github.com/OpenWebGAL/WebGAL/issues) or send an email to <contact@openwebgal.com>, you can also find a way to join the WebGAL discussion community in the "More" column at the top right corner of the website.
+Note: most questions are already answered in the documentation. If you are confident that you have encountered a bug, please submit an issue on [GitHub](https://github.com/OpenWebGAL/WebGAL/issues) or email <contact@openwebgal.com>. You can also find links to the WebGAL community under "More" in the top-right corner of the website.
 :::
 
 ::: danger
@@ -40,13 +40,13 @@ npm install yarn -g
 yarn
 ```
 
-WebGAL uses vite as a packaging and debugging tool, you can start the development server by running the following script
+WebGAL uses Vite as its build and development tool. Start the dev server with the following command:
 
 ``` bash
 yarn dev
 ```
 
-It is recommended to use VS Code for development, and use plugins to achieve syntax highlighting:
+We recommend using VS Code with an extension that enables syntax highlighting:
 
 [Marketplace address of syntax highlighting plugin](https://marketplace.visualstudio.com/items?itemName=c6h5-no2.webgal-script-basics)
 

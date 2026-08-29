@@ -1,4 +1,4 @@
-# Effects
+# Special Effects
 
 Currently, WebGAL's effect system is powered by PixiJS.
 
@@ -26,9 +26,9 @@ Add effects using `pixiPerform`.
 pixiPerform:rain; // Add a rain effect
 ```
 
-Note: After the effect takes effect, if it is not re initialized, the effect will continue to run.
+Note: Once a special effect is applied, it will continue running until reinitialized.
 
-### List of Built-in Effects
+### Built-in Special Effects
 
 | Effect | Command |
 | :--- | :--- |

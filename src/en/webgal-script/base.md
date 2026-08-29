@@ -81,11 +81,11 @@ When writing CSS in text extension syntax, semicolons also need to be written as
 
 ## `none` Keyword
 
-When setting **resources** such as立ち絵, BGM, backgrounds, you can turn off this object by setting it to `none`.
+When setting **resources** such as character sprites, BGM, and backgrounds, you can disable the element by setting it to `none`.
 
 ## `-next` Parameter
 
-You can add the parameter `-next` after any statement. This will cause the next statement to be executed immediately after this statement is executed. This is very useful when you need to perform multiple operations at the same time.
+You can add the parameter `-next` after any statement. This causes the next statement to execute immediately after the current statement. This is particularly helpful when you need to perform multiple operations at the same time.
 
 Example:
 
@@ -102,7 +102,7 @@ At this time, you can use the `-notend` `-concat` parameters to insert any state
 
 `-notend` means that this dialogue is not over, and there may be 演出 or dialogue connected later.
 
-An example is given below: This is a demonstration of switching 立ち絵 in the middle of a dialogue.
+Example: switch character sprites in the middle of a dialogue.
 
 ``` webgal
 WebGAL:Test statement insert 演出！Switch 立ち絵 immediately...... -notend;

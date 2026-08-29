@@ -2,10 +2,30 @@ import { defineUserConfig } from "vuepress";
 import theme from "./theme.js";
 import { searchPlugin } from "@vuepress/plugin-search";
 import { shikiPlugin } from "@vuepress/plugin-shiki";
+import { externalLinkIconPlugin } from "@vuepress/plugin-external-link-icon";
 import path from "path";
 export default defineUserConfig({
   base: "/",
   plugins: [
+    externalLinkIconPlugin({
+      locales: {
+        "/": {
+          openInNewWindow: "(opens in new tab)",
+        },
+        "/en/": {
+          openInNewWindow: "(opens in new tab)",
+        },
+        "/ja/": {
+          openInNewWindow: "新しいウィンドウで開く",
+        },
+      },
+    }),
+    {
+      name: "localized-external-link-icon",
+      alias: {
+        "@vuepress/plugin-external-link-icon/client": path.resolve(__dirname, "./components/ExternalLinkIcon.ts"),
+      },
+    },
     searchPlugin({
       locales: {
         "/": {
