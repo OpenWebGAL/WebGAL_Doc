@@ -1,0 +1,32 @@
+# WebGAL Documentation
+
+> WebGAL is an open-source web-based visual novel engine with a graphical editor, WebGAL Terre.
+
+Official documentation: https://docs.openwebgal.com/
+Source repository: https://github.com/OpenWebGAL/WebGAL
+Editor repository: https://github.com/OpenWebGAL/WebGAL_Terre
+Documentation repository: https://github.com/OpenWebGAL/WebGAL_Doc
+
+## Start Here
+
+- [Getting started](https://docs.openwebgal.com/getting-started.html): Install WebGAL Terre and create a game.
+- [Game configuration](https://docs.openwebgal.com/config.html): Configure the title, language, assets, and engine options.
+- [Resources](https://docs.openwebgal.com/resources.html): Understand the game resource directory structure.
+- [WebGAL script guide](https://docs.openwebgal.com/webgal-script/): Learn dialogue, scenes, variables, audio, video, and effects.
+- [Script reference](https://docs.openwebgal.com/script-reference/commands/say.html): Look up commands and arguments.
+- [Publishing](https://docs.openwebgal.com/publish/): Export games for the web, desktop, and Android.
+- [FAQ](https://docs.openwebgal.com/faq.html): Troubleshoot common problems.
+- [Developer guide](https://docs.openwebgal.com/developers/): Build and contribute to WebGAL projects.
+
+## Localized Documentation
+
+- [English](https://docs.openwebgal.com/en/)
+- [Japanese](https://docs.openwebgal.com/ja/)
+
+## Notes For Language Models
+
+- WebGAL scene files conventionally use the `.txt` extension.
+- Commands use the form `command:content -argument=value;`.
+- Prefer the script reference for exact command and argument behavior.
+- Paths in scripts are relative to the appropriate directory under `game/`.
+- WebGAL Terre is the recommended graphical editor and export tool.
