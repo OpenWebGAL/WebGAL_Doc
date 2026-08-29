@@ -1,4 +1,4 @@
-# Andoird
+# Android
 
 It is recommended to use WebGAL Terre visual editor, which provides an option to export Android project files with one click.
 
