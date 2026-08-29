@@ -230,7 +230,7 @@ WebGAL 称这套方案为「模板」。您可以在 `您的游戏名称目录/g
 
 ## 动态切换 {#dynamic-switching}
 
-WebGAL 允许用户在游戏运行时动态切换不同的模板样式。请参考[applyStyle](../webgal-script/api.md#applystyle)命令的文档。
+WebGAL 允许用户在游戏运行时动态切换不同的模板样式。请参考 [applyStyle 教程](./apply-style.md)。
 
 ``` scss
 .outer {
