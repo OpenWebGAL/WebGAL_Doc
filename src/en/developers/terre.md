@@ -8,6 +8,18 @@ Before participating in this exciting project, we hope you can read the followin
 
 ## Contribution Requirements
 
+### Regarding the Use of AI
+
+AI has changed the way software is developed. While significantly increasing software development efficiency, it has also brought many challenges. When building UI, extensive use of AI often leads to issues known as "AI Slop"—AI-generated UIs frequently do not align with human usage habits, sometimes include meaningless explanatory text, and often suffer from layout issues such as overflow and misalignment. When writing code, AI is also prone to producing a large amount of redundant code or "defensive programming" code in an effort to quickly patch errors. AI also struggles to produce more concise code that is easy to read and maintain.
+
+The WebGAL project has established some guidelines regarding the use of AI. When writing code, please comply with these guidelines:
+
+1. Humans design the architecture and implementation plan, while AI writes the code. We do not accept coding approaches where goals are simply given to AI without human involvement in the design. After AI writes the code, manual code review and testing of the relevant modules are required before submitting a PR.
+
+2. AI-generated text is not allowed in Issues and PRs. Even if it is not very detailed, you only need to provide sufficient information to locate the issue or explain your intent. Overly detailed AI-generated descriptions make it harder to grasp key points and focus on truly important information.
+
+3. For UI, prototype design must be completed by humans; AI can only be used for implementation. Based on our experience over several past version iterations, UIs generated directly by AI based on features are considered far below expectations.
+
 To help us better understand and review your contributions, please note the following points:
 
 * **Code Comments:** To help us understand your code logic, it is recommended that you add comments to key parts.
