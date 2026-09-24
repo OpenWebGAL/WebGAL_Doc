@@ -64,6 +64,18 @@ changeFigure:none -id=test1;
 如果你要重设某个带ID立绘的位置，请先关闭再重新打开。
 :::
 
+## 切换立绘差分
+
+如果只想更换立绘的表情等差分，而不想重置立绘的位置、变换或触发退场动画，可以使用 `changeFigureDiff`：
+
+``` webgal
+changeFigure:hero/normal.png -id=hero;
+; 只更换图片，保留立绘的其余状态
+changeFigureDiff:hero/smile.png -id=hero;
+```
+
+详情请见 [changeFigureDiff](../script-reference/commands/changeFigureDiff.md)。
+
 ## 放置小头像
 
 很多游戏可以在文本框的左下角放置小头像，以下是在本引擎中使用的语法：

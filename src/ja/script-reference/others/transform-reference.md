@@ -13,7 +13,7 @@ setTransform:{"position":{"x":100},"rotation":45} -target=aaa -duration=500;
 ; この文は既存の変換・エフェクトを継承し、その上でぼかしフィルターの値を変更します
 setTransform:{"blur":20} -target=aaa -duration=500;
 ; この文は saturation 以外のすべての属性をデフォルト値にリセットします
-setTransform:{"saturation":0} -target=aaa -duration=500 -writeDefault;
+setTransform:{"saturation":0} -target=aaa -duration=500 -transformFrom=default;
 ```
 
 フィルター属性については、そのフィルターのすべての値がデフォルト値になったときだけ、フィルターが完全に無効になります。そうでない場合、フィルターはオブジェクトが退場するまで存在し続け、不要なパフォーマンスコストにつながる可能性があります。そのため、必要に応じて関連属性を明示的にデフォルト値へ戻し、フィルターを無効化することを推奨します。

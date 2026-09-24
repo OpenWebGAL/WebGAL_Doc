@@ -12,7 +12,7 @@ setTransform:{"position":{"x":100},"rotation":45} -target=aaa -duration=500;
 ; 此句会继承已有的变换效果，并在此基础上修改了模糊滤镜的值
 setTransform:{"blur":20} -target=aaa -duration=500;
 ; 此句会将除了 saturation 以外的所有属性都重置为默认值
-setTransform:{"saturation":0} -target=aaa -duration=500 -writeDefault;
+setTransform:{"saturation":0} -target=aaa -duration=500 -transformFrom=default;
 ```
 
 对于滤镜属性，仅当该滤镜的所有值都为默认值时，该滤镜才会彻底关闭。否则该滤镜会持续存在，直至该对象退场，这可能会导致一些不必要的性能消耗，因此推荐开发者在必要时，显式修改相关属性为默认值以关闭滤镜。

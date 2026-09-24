@@ -65,6 +65,7 @@ export const zhSidebar = sidebar({
             "say",
             "changeBg",
             "changeFigure",
+            "changeFigureDiff",
             "bgm",
             "playVideo",
             "pixiPerform",

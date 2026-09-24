@@ -24,6 +24,12 @@ changeFigure:1/open_eyes.png -id=aaa;
 setAnimation:shake -target=aaa;
 ```
 
+<!-- @include: ../arguments/transformFrom.md -->
+``` webgal
+changeFigure:1/open_eyes.png -id=aaa;
+setAnimation:shake -target=aaa -transformFrom=default;
+```
+
 <!-- @include: ../arguments/writeDefault.md -->
 ``` webgal
 changeFigure:1/open_eyes.png -id=aaa;

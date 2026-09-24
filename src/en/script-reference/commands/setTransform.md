@@ -38,6 +38,12 @@ changeFigure:1/open_eyes.png -id=aaa;
 setTransform:{"brightness":0.5} -target=aaa -duration=500 -ease=linear;
 ```
 
+<!-- @include: ../arguments/transformFrom.md -->
+``` webgal
+changeFigure:1/open_eyes.png -id=aaa;
+setTransform:{"brightness":0.5} -target=aaa -duration=500 -transformFrom=default;
+```
+
 <!-- @include: ../arguments/writeDefault.md -->
 ``` webgal
 changeFigure:1/open_eyes.png -id=aaa;

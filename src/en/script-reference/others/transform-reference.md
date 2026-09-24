@@ -13,7 +13,7 @@ setTransform:{"position":{"x":100},"rotation":45} -target=aaa -duration=500;
 ; This inherits the existing transform and changes only the blur filter value
 setTransform:{"blur":20} -target=aaa -duration=500;
 ; This resets all properties except saturation to default values
-setTransform:{"saturation":0} -target=aaa -duration=500 -writeDefault;
+setTransform:{"saturation":0} -target=aaa -duration=500 -transformFrom=default;
 ```
 
 For filter properties, a filter is fully disabled only when all values of that filter are set to defaults. Otherwise, the filter remains until the object exits, which may cause unnecessary performance cost. When needed, explicitly set related properties to default values to disable filters.

@@ -64,6 +64,18 @@ changeFigure:none -id=test1;
 If you want to reset the position of a figure with an ID, close it first and then reopen it.
 :::
 
+## Switching Figure Variants
+
+If you only want to change a figure's variant, such as its expression, without resetting its position or transform or triggering an exit animation, use `changeFigureDiff`:
+
+``` webgal
+changeFigure:hero/normal.png -id=hero;
+; Replace only the image and keep the rest of the figure's state
+changeFigureDiff:hero/smile.png -id=hero;
+```
+
+See [changeFigureDiff](../script-reference/commands/changeFigureDiff.md) for details.
+
 ## Placing Mini Avatars
 
 Many games allow mini avatars to be placed in the lower left corner of the text box. Here is the syntax used in this engine:

@@ -64,6 +64,18 @@ changeFigure:none -id=test1;
 ID付きの立ち絵の位置をリセットする場合は、まず閉じてから再度開いてください。
 :::
 
+## 立ち絵の差分を切り替える
+
+立ち絵の位置や変換をリセットせず、退場アニメーションも発生させずに、表情などの差分だけを変更したい場合は `changeFigureDiff` を使用します。
+
+``` webgal
+changeFigure:hero/normal.png -id=hero;
+; 画像のみを置き換え、立ち絵のその他の状態は保持する
+changeFigureDiff:hero/smile.png -id=hero;
+```
+
+詳しくは [changeFigureDiff](../script-reference/commands/changeFigureDiff.md) を参照してください。
+
 ## ミニアバターを配置する
 
 多くのゲームでは、テキストボックスの左下にミニアバターを配置できます。以下は、このエンジンで使用される構文です。

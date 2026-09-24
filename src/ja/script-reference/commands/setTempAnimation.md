@@ -26,6 +26,12 @@ changeFigure:1/open_eyes.png -id=aaa;
 setTempAnimation:[{"duration":0},{"brightness":2,"contrast":0,"duration":200,"ease":"circIn"},{"brightness":1,"contrast":1,"duration":200},{"brightness":2,"contrast":0,"duration":200,"ease":"circIn"},{"brightness":1,"contrast":1,"duration":2500}] -target=aaa;
 ```
 
+<!-- @include: ../arguments/transformFrom.md -->
+``` webgal
+changeFigure:1/open_eyes.png -id=aaa;
+setTempAnimation:[{"duration":0},{"brightness":2,"contrast":0,"duration":200,"ease":"circIn"},{"brightness":1,"contrast":1,"duration":200},{"brightness":2,"contrast":0,"duration":200,"ease":"circIn"},{"brightness":1,"contrast":1,"duration":2500}] -target=aaa -transformFrom=default;
+```
+
 <!-- @include: ../arguments/writeDefault.md -->
 ``` webgal
 changeFigure:1/open_eyes.png -id=aaa;
