@@ -16,13 +16,19 @@ changeFigure:2/open_eyes.png;
 changeFigure:none;
 ```
 
-立ち絵のパスと `id` が同じままの場合、登場・退場アニメーションは発火せず、新しいパラメータが対象立ち絵に適用されます。
+立ち絵のパス、`id`、配置が同じで、`bounds` による Live2D 描画範囲の変更もない場合、登場・退場アニメーションは発火せず、新しいパラメータが対象立ち絵に適用されます。
+
+::: warning
+v4.6.4 以降、配置（`-left`、`-right`、またはデフォルトの中央）や Live2D 描画範囲が変わると、パスと `id` が同じでも立ち絵が置き換わり、以前の変換やフィルター効果がリセットされます。モーションや表情を更新するときは元の配置を維持してください。`bounds` を省略すると、以前の描画範囲が維持されます。
+:::
 
 ``` webgal
 ; Live2D 立ち絵を登場させる
-changeFigure:character_a/model.json -id=aaa;
+changeFigure:character_a/model.json -id=aaa -left;
 ; Live2D 立ち絵のモーションと表情を変更する
-changeFigure:character_a/model.json -id=aaa -motion=smile -expression=sad;
+changeFigure:character_a/model.json -id=aaa -left -motion=smile -expression=sad;
+; -left を省略すると中央に移り、立ち絵が置き換わって以前の効果がリセットされます。
+changeFigure:character_a/model.json -id=aaa -motion=smile;
 ```
 
 現在 WebGAL は画像立ち絵、Live2D 立ち絵、Spine 立ち絵に対応しています。
@@ -124,7 +130,7 @@ changeFigure:1/open_eyes.png -exitDuration=300;
 `id` が省略されている、または空文字列の場合、`left` はデフォルト id `fig-left` を、`right` は `fig-right` を付与します。
 
 ::: warning
-これらのパラメータは、立ち絵の登場時または置き換え時にのみ有効です。すでに場に出ている立ち絵の座標を変更する場合は、`setTransform`、`setAnimation`、`setTempAnimation` などのコマンドを使用してください。
+v4.6.4 以降、同じ `id` の立ち絵の配置を変えると、立ち絵が置き換わり、以前の効果がリセットされます。効果を維持したまま既存の立ち絵を移動する場合は、`setTransform`、`setAnimation`、`setTempAnimation` などのコマンドを使用してください。
 :::
 
 ``` webgal
@@ -248,7 +254,7 @@ Live2D 立ち絵では number[4] 配列を指定し、立ち絵の表示領域�
 x 軸は右方向が正、y 軸は下方向が正です。
 
 ::: warning
-このパラメータは、立ち絵の登場時または置き換え時にのみ有効です。
+v4.6.4 以降、描画範囲を明示的に変更すると、立ち絵が置き換わり、以前の効果がリセットされます。このパラメータを省略すると、以前の描画範囲が維持されます。
 :::
 
 ``` webgal

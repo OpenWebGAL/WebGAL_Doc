@@ -183,6 +183,17 @@ Bevel opacity.
 
 Bevel thickness.
 
+### bevelRotation
+- Default: 0
+- Unit: degrees
+
+The angle of the bevel light source. Adjusting this property alone produces no visible difference if `bevel` or `bevelThickness` is at its default value.
+
+``` webgal
+changeFigure:1/open_eyes.png -id=aaa -transform={"bevel":1,"bevelThickness":20,"bevelRotation":45};
+setTransform:{"bevel":1,"bevelThickness":20,"bevelRotation":180} -target=aaa -duration=500;
+```
+
 ### bevelRed / bevelGreen / bevelBlue
 - Default: 255
 - Range: 0 to 255

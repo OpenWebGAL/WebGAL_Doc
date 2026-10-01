@@ -16,13 +16,19 @@ changeFigure:2/open_eyes.png;
 changeFigure:none;
 ```
 
-如果立绘的路径与 `id` 保持不变，则不会触发入场或退场动画，而是将新参数应用到目标立绘上。
+如果立绘的路径、`id` 和方位保持不变，且没有通过 `bounds` 改变 Live2D 绘制范围，则不会触发入场或退场动画，而是将新参数应用到目标立绘上。
+
+::: warning
+从 v4.6.4 起，同一路径、同一 `id` 的立绘在方位（`-left`、`-right` 或默认居中）或 Live2D 绘制范围变化时，也会按替换立绘处理，清除旧的变换、滤镜等效果。更新动作、表情时应保持原来的方位；省略 `bounds` 会沿用原来的绘制范围。
+:::
 
 ``` webgal
 ; Live2d 立绘入场
-changeFigure:character_a/model.json -id=aaa;
+changeFigure:character_a/model.json -id=aaa -left;
 ; 修改 Live2d 立绘的动作表情
-changeFigure:character_a/model.json -id=aaa -motion=smile -expression=sad;
+changeFigure:character_a/model.json -id=aaa -left -motion=smile -expression=sad;
+; 省略 -left 会改为居中，触发替换并重置旧效果。
+changeFigure:character_a/model.json -id=aaa -motion=smile;
 ```
 
 目前 WebGAL 支持图片立绘，Live2D 立绘和 Spine 立绘。
@@ -122,7 +128,7 @@ changeFigure:1/open_eyes.png -exitDuration=300;
 若参数 `id` 未填写或值为空字符串时，默认赋予该立绘以 `fig-left` 的 id。
 
 ::: warning
-此参数仅在立绘出场，或替换立绘时生效。如果需要修改在场立绘的坐标，请使用 `setTransform`、`setAnimation`、`setTempAnimation` 等命令。
+从 v4.6.4 起，改变同一 `id` 立绘的方位会触发替换并重置旧效果。如果只需移动在场立绘并保留效果，请使用 `setTransform`、`setAnimation`、`setTempAnimation` 等命令。
 :::
 
 ``` webgal
@@ -136,7 +142,7 @@ changeFigure:1/open_eyes.png -left;
 若参数 `id` 未填写或值为空字符串时，默认赋予该立绘以 `fig-right` 的 id。
 
 ::: warning
-此参数仅在立绘出场，或替换立绘时生效。如果需要修改在场立绘的坐标，请使用 `setTransform`、`setAnimation`、`setTempAnimation` 等命令。
+从 v4.6.4 起，改变同一 `id` 立绘的方位会触发替换并重置旧效果。如果只需移动在场立绘并保留效果，请使用 `setTransform`、`setAnimation`、`setTempAnimation` 等命令。
 :::
 
 ``` webgal
@@ -291,7 +297,7 @@ changeFigure:character_a/model.json -expression=sad;
 x 轴以向右为正方向，y 轴以向下为正方向。
 
 ::: warning
-此参数仅在立绘出场，或替换立绘时生效。
+从 v4.6.4 起，显式改变绘制范围会触发立绘替换并重置旧效果。省略此参数时，会沿用原来的绘制范围。
 :::
 
 ``` webgal

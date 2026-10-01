@@ -1,21 +1,12 @@
 import { defineUserConfig } from "vuepress";
 import theme from "./theme.js";
-import { searchPlugin } from "@vuepress/plugin-search";
+import { contentSearchPlugin } from "./search.js";
 import { shikiPlugin } from "@vuepress/plugin-shiki";
 import path from "path";
 export default defineUserConfig({
   base: "/",
   plugins: [
-    searchPlugin({
-      locales: {
-        "/": {
-          placeholder: "Search",
-        },
-        "/zh/": {
-          placeholder: "搜索",
-        },
-      },
-    }),
+    contentSearchPlugin(),
     shikiPlugin({
       theme: "dracula",
       langs: [
