@@ -10,9 +10,10 @@ export const contentSearchPlugin = (): Plugin => {
         "/": { placeholder: "Search" },
         "/zh/": { placeholder: "搜索" },
       },
-      // 渲染后的正文包含 @include 内容；去掉标签，再还原代码中的 HTML 实体。
+      // 标题由插件索引；正文包含 @include 内容，去掉标签后还原 HTML 实体。
       getExtraFields: (page) => [
         page.contentRendered
+          .replace(/<h[1-6]\b[^>]*>[\s\S]*?<\/h[1-6]>/gi, "")
           .replace(/<!--[\s\S]*?-->|<[^>]*>/g, "")
           .replace(/&(?:#x[\da-f]+|#\d+|[a-z][\da-z]*);/gi, decodeEntity)
           .replace(/\s+/g, " ")
