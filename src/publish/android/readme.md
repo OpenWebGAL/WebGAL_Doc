@@ -1,4 +1,4 @@
-# Andoird
+# Android
 
 推荐使用 WebGAL Terre 可视化编辑器，提供了一键导出安卓项目文件的选项。
 
