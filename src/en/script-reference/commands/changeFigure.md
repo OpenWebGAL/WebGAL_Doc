@@ -16,13 +16,19 @@ changeFigure:2/open_eyes.png;
 changeFigure:none;
 ```
 
-If the figure path and `id` stay the same, entrance or exit animation will not be triggered. Instead, the new parameters are applied to the target figure.
+If the figure path, `id`, and position stay the same, and `bounds` does not change the Live2D drawing area, entrance or exit animation will not be triggered. Instead, the new parameters are applied to the target figure.
+
+::: warning
+Since v4.6.4, changing the position (`-left`, `-right`, or the default center) or Live2D drawing area replaces the figure even when its path and `id` stay the same, clearing its previous transforms and filters. Keep the original position when updating motion or expression. Omitting `bounds` preserves the previous drawing area.
+:::
 
 ``` webgal
 ; Live2D figure entrance
-changeFigure:character_a/model.json -id=aaa;
+changeFigure:character_a/model.json -id=aaa -left;
 ; Modify a Live2D figure's motion and expression
-changeFigure:character_a/model.json -id=aaa -motion=smile -expression=sad;
+changeFigure:character_a/model.json -id=aaa -left -motion=smile -expression=sad;
+; Omitting -left changes the position to center, replacing the figure and resetting its effects.
+changeFigure:character_a/model.json -id=aaa -motion=smile;
 ```
 
 WebGAL currently supports image figures, Live2D figures, and Spine figures.
@@ -124,7 +130,7 @@ When `right` is `true`, the new figure appears on the right side of the stage, a
 If `id` is omitted or an empty string, `left` gives the figure the default id `fig-left`, and `right` gives it `fig-right`.
 
 ::: warning
-These parameters only take effect when a figure enters or is replaced. To modify the coordinates of a figure already on stage, use commands such as `setTransform`, `setAnimation`, or `setTempAnimation`.
+Since v4.6.4, changing the position of a figure with the same `id` replaces it and resets its effects. To move an existing figure while preserving its effects, use commands such as `setTransform`, `setAnimation`, or `setTempAnimation`.
 :::
 
 ``` webgal
@@ -248,7 +254,7 @@ Right and down are positive. The order is `left,top,right,bottom`.
 The x axis is positive to the right, and the y axis is positive downward.
 
 ::: warning
-This parameter only takes effect when the figure enters or is replaced.
+Since v4.6.4, explicitly changing the drawing area replaces the figure and resets its previous effects. Omitting this parameter preserves the previous drawing area.
 :::
 
 ``` webgal
