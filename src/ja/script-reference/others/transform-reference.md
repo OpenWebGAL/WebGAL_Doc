@@ -158,6 +158,17 @@ setTransform:{"bloom":1,"bloomBlur":10,"bloomThreshold":0.8} -target=aaa -durati
 
 ベベルの厚さです。
 
+### bevelRotation
+- デフォルト値: 0
+- 単位: 度
+
+ベベルの光源角度です。`bevel` または `bevelThickness` がデフォルト値の場合、この属性だけを調整しても見た目の違いはありません。
+
+``` webgal
+changeFigure:1/open_eyes.png -id=aaa -transform={"bevel":1,"bevelThickness":20,"bevelRotation":45};
+setTransform:{"bevel":1,"bevelThickness":20,"bevelRotation":180} -target=aaa -duration=500;
+```
+
 ### bevelRed / bevelGreen / bevelBlue
 - デフォルト値: 255
 - 範囲: 0 から 255

@@ -248,6 +248,17 @@ changeFigure:1/open_eyes.png -id=aaa -transform={"bevel":1,"bevelThickness":20};
 setTransform:{"bevel":1,"bevelThickness":30} -target=aaa -duration=500;
 ```
 
+### bevelRotation
+- 默认值：0
+- 单位：度
+
+倒角光源的角度。如果 `bevel` 或 `bevelThickness` 为默认值，单独调整此属性不会有任何视觉上的区别。
+
+``` webgal
+changeFigure:1/open_eyes.png -id=aaa -transform={"bevel":1,"bevelThickness":20,"bevelRotation":45};
+setTransform:{"bevel":1,"bevelThickness":20,"bevelRotation":180} -target=aaa -duration=500;
+```
+
 ### bevelRed
 - 默认值：255
 - 范围：0 到 255
