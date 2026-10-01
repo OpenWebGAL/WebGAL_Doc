@@ -39,6 +39,7 @@ export const zhSidebar = sidebar({
         "variable",
         "animation",
         "special-effect",
+        "apply-style",
         "custom-ui",
       ]
     },
