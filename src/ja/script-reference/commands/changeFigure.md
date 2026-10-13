@@ -88,6 +88,11 @@ changeFigure:1/open_eyes.png -enter=enter-from-left;
 changeFigure:1/open_eyes.png -exit=exit-to-right;
 ```
 
+<!-- @include: ../arguments/ignoreDefault.md -->
+``` webgal
+changeFigure:1/open_eyes.png -enter=my-enter -ignoreDefault;
+```
+
 <!-- @include: ../arguments/duration.md -->
 デフォルトの登場アニメーションに適用されます。デフォルト値は 300 です。
 ``` webgal

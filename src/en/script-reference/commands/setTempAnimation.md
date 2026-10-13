@@ -48,3 +48,11 @@ CharacterA:Third line;
 ; This interrupts aaa's cross-statement animation and plays a new animation
 setTempAnimation:[{"duration":0},{"scale":{"x":1,"y":1},"duration":10000}] -target=aaa -keep -next;
 ```
+
+<!-- @include: ../arguments/parallel.md -->
+``` webgal
+changeFigure:1/open_eyes.png -id=aaa;
+; Move and change brightness at the same time
+setTransform:{"position":{"x":-500}} -target=aaa -duration=1000 -next;
+setTempAnimation:[{"duration":0},{"brightness":0.5,"duration":1000}] -target=aaa -parallel;
+```

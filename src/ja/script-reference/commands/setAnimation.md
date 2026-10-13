@@ -46,3 +46,11 @@ setAnimation:shake -target=aaa -keep -next;
 ; aaa のステートメントをまたぐアニメーションを中断し、新しいアニメーションを再生します
 setAnimation:rotate -target=aaa -keep -next;
 ```
+
+<!-- @include: ../arguments/parallel.md -->
+``` webgal
+changeFigure:1/open_eyes.png -id=aaa;
+; 揺れと明るさの変化を同時に行う
+setAnimation:shake -target=aaa -next;
+setTransform:{"brightness":0.5} -target=aaa -duration=1000 -parallel;
+```

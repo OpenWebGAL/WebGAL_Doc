@@ -87,6 +87,11 @@ changeFigure:1/open_eyes.png -enter=enter-from-left;
 changeFigure:1/open_eyes.png -exit=exit-to-right;
 ```
 
+<!-- @include: ../arguments/ignoreDefault.md -->
+``` webgal
+changeFigure:1/open_eyes.png -enter=my-enter -ignoreDefault;
+```
+
 <!-- @include: ../arguments/duration.md -->
 作用于默认入场动画，默认值为 300。
 ``` webgal

@@ -60,3 +60,11 @@ setTransform:{"scale":{"x":2,"y":2}} -target=aaa -duration=10000 -keep -next;
 ; aaa のステートメントをまたぐアニメーションを中断し、新しいアニメーションを再生します
 setTransform:{"scale":{"x":1,"y":1}} -target=aaa -duration=10000 -keep -next;
 ```
+
+<!-- @include: ../arguments/parallel.md -->
+``` webgal
+changeFigure:1/open_eyes.png -id=aaa;
+; 移動と明るさの変化を同時に行う
+setTransform:{"position":{"x":-500}} -target=aaa -duration=1000 -next;
+setTransform:{"brightness":0.5} -target=aaa -duration=1000 -parallel;
+```

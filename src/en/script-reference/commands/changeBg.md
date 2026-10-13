@@ -35,6 +35,11 @@ changeBg:bg.png -enter=enter-from-left;
 changeBg:bg.png -exit=exit-to-right;
 ```
 
+<!-- @include: ../arguments/ignoreDefault.md -->
+``` webgal
+changeBg:bg.png -enter=my-enter -ignoreDefault;
+```
+
 <!-- @include: ../arguments/duration.md -->
 Applied to the default entrance animation. Default value: 1500.
 ``` webgal

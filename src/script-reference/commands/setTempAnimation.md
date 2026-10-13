@@ -48,3 +48,11 @@ setTempAnimation:[{"duration":0},{"scale":{"x":2,"y":2},"duration":10000}] -targ
 ; 这会打断 aaa 的跨语句动画，并播放新动画
 setTempAnimation:[{"duration":0},{"scale":{"x":1,"y":1},"duration":10000}] -target=aaa -keep -next;
 ```
+
+<!-- @include: ../arguments/parallel.md -->
+``` webgal
+changeFigure:1/open_eyes.png -id=aaa;
+; 平移和亮度变化同时进行
+setTransform:{"position":{"x":-500}} -target=aaa -duration=1000 -next;
+setTempAnimation:[{"duration":0},{"brightness":0.5,"duration":1000}] -target=aaa -parallel;
+```

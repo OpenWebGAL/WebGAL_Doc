@@ -40,3 +40,8 @@ setTransition: -target=aaa -exit=exit-to-right;
 changeFigure:none -id=aaa -next;
 角色A: 再见！
 ```
+
+<!-- @include: ../arguments/ignoreDefault.md -->
+``` webgal
+setTransition: -target=aaa -enter=my-enter -exit=my-exit -ignoreDefault;
+```
