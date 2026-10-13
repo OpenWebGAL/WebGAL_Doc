@@ -38,7 +38,7 @@ changeFigure:other/normal.png -id=hero;
 ### id
 - 字符串
 
-要切换差分的立绘 id。未填写时，按 `left`、`right` 参数确定目标立绘，默认为中间立绘。
+要切换差分的立绘 id。未填写时，按 `left`、`right` 等位置参数确定目标立绘，默认为中间立绘。
 
 ``` webgal
 changeFigureDiff:hero/smile.png -id=hero;
@@ -62,6 +62,16 @@ changeFigureDiff:hero/smile.png -left;
 ``` webgal
 changeFigure:hero/normal.png -right;
 changeFigureDiff:hero/smile.png -right;
+```
+
+### left13 / right13 / left14 / right14
+- 布尔值
+
+未填写 `id` 时，切换对应位置立绘的差分。
+
+``` webgal
+changeFigure:hero/normal.png -left13;
+changeFigureDiff:hero/smile.png -left13;
 ```
 
 ### mouthOpen、mouthHalfOpen、mouthClose、eyesOpen、eyesClose、animationFlag

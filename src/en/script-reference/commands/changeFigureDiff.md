@@ -38,7 +38,7 @@ Apart from the arguments below and general arguments such as `next`, `continue`,
 ### id
 - String
 
-The id of the figure whose variant is switched. If omitted, the target figure is determined by the `left` and `right` arguments, defaulting to the center figure.
+The id of the figure whose variant is switched. If omitted, the target figure is determined by position arguments such as `left` and `right`, defaulting to the center figure.
 
 ``` webgal
 changeFigureDiff:hero/smile.png -id=hero;
@@ -62,6 +62,16 @@ If `id` is omitted, switches the variant of the right figure.
 ``` webgal
 changeFigure:hero/normal.png -right;
 changeFigureDiff:hero/smile.png -right;
+```
+
+### left13 / right13 / left14 / right14
+- Boolean
+
+If `id` is omitted, switches the variant of the figure at the corresponding position.
+
+``` webgal
+changeFigure:hero/normal.png -left13;
+changeFigureDiff:hero/smile.png -left13;
 ```
 
 ### mouthOpen, mouthHalfOpen, mouthClose, eyesOpen, eyesClose, animationFlag

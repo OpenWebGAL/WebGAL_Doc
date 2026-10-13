@@ -41,6 +41,15 @@ changeFigure:none;
 changeFigure:none -right;
 ```
 
+Besides left, center, and right, you can also use `-left13`, `-right13`, `-left14`, and `-right14` to place figures at 1/3, 2/3, 1/4, and 3/4 of the stage width:
+
+``` webgal
+changeFigure:testFigure03.png -left14;
+changeFigure:testFigure04.png -left13;
+changeFigure:testFigure03.png -right13;
+changeFigure:testFigure04.png -right14;
+```
+
 If you want to execute the next statement immediately after the figure is changed, the operation is the same as before, that is, add the parameter `-next` :
 
 ``` webgal

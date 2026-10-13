@@ -143,6 +143,15 @@ WebGAL 支持声音文件的简化写法。
 角色A:你好，世界！ -center;
 ```
 
+### left13 / right13 / left14 / right14
+- 布尔值
+
+当值为 `true` 时，WebGAL 将尝试驱动对应位置的立绘张嘴说话。
+
+``` webgal
+角色A:你好，世界！ -left13;
+```
+
 ### figureId
 - 字符串
 

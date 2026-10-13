@@ -38,7 +38,7 @@ changeFigure:other/normal.png -id=hero;
 ### id
 - 文字列
 
-差分を切り替える立ち絵の id。省略した場合は `left`、`right` パラメータで対象の立ち絵が決まり、デフォルトは中央の立ち絵です。
+差分を切り替える立ち絵の id。省略した場合は `left`、`right` などの位置パラメータで対象の立ち絵が決まり、デフォルトは中央の立ち絵です。
 
 ``` webgal
 changeFigureDiff:hero/smile.png -id=hero;
@@ -62,6 +62,16 @@ changeFigureDiff:hero/smile.png -left;
 ``` webgal
 changeFigure:hero/normal.png -right;
 changeFigureDiff:hero/smile.png -right;
+```
+
+### left13 / right13 / left14 / right14
+- 真偽値
+
+`id` を省略した場合、対応する位置の立ち絵の差分を切り替えます。
+
+``` webgal
+changeFigure:hero/normal.png -left13;
+changeFigureDiff:hero/smile.png -left13;
 ```
 
 ### mouthOpen、mouthHalfOpen、mouthClose、eyesOpen、eyesClose、animationFlag

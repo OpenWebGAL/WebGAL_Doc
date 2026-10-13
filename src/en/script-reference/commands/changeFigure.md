@@ -143,6 +143,22 @@ changeFigure:1/open_eyes.png -left;
 changeFigure:1/open_eyes.png -right;
 ```
 
+### left13 / right13 / left14 / right14
+- Boolean
+
+Places the new figure at another preset position. Unlike `left` and `right`, which align to the stage edges, these four positions align the figure by its center:
+- `left13`: the figure's center is at 1/3 of the stage width from the left
+- `right13`: the figure's center is at 1/3 of the stage width from the right (2/3 from the left)
+- `left14`: the figure's center is at 1/4 of the stage width from the left
+- `right14`: the figure's center is at 1/4 of the stage width from the right (3/4 from the left)
+
+If `id` is omitted or an empty string, the figure gets the default id `fig-left13`, `fig-right13`, `fig-left14`, or `fig-right14`.
+
+``` webgal
+changeFigure:1/open_eyes.png -left13;
+changeFigure:2/open_eyes.png -right13;
+```
+
 ### id
 - String
 

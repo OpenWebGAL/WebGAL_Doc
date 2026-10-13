@@ -154,6 +154,22 @@ changeFigure:1/open_eyes.png -left;
 changeFigure:1/open_eyes.png -right;
 ```
 
+### left13 / right13 / left14 / right14
+- 布尔值
+
+将新立绘放在舞台的其他预设位置。与 `left`、`right` 靠边对齐不同，这四个位置以立绘中心对齐：
+- `left13`：立绘中心位于舞台左侧 1/3 处
+- `right13`：立绘中心位于舞台右侧 1/3 处（即 2/3 处）
+- `left14`：立绘中心位于舞台左侧 1/4 处
+- `right14`：立绘中心位于舞台右侧 1/4 处（即 3/4 处）
+
+若参数 `id` 未填写或值为空字符串时，默认赋予该立绘以 `fig-left13`、`fig-right13`、`fig-left14`、`fig-right14` 的 id。
+
+``` webgal
+changeFigure:1/open_eyes.png -left13;
+changeFigure:2/open_eyes.png -right13;
+```
+
 ### id
 - 字符串
 

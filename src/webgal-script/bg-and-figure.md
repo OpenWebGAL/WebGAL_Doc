@@ -41,6 +41,15 @@ changeFigure:none;
 changeFigure:none -right;
 ```
 
+除了左、中、右，还可以使用 `-left13`、`-right13`、`-left14`、`-right14`，把立绘放在舞台的 1/3、2/3、1/4、3/4 处：
+
+``` webgal
+changeFigure:testFigure03.png -left14;
+changeFigure:testFigure04.png -left13;
+changeFigure:testFigure03.png -right13;
+changeFigure:testFigure04.png -right14;
+```
+
 如果你想要在立绘改变后立刻执行下一条语句，操作方法与之前一样，即加上参数 `-next` :
 
 ``` webgal

@@ -143,6 +143,22 @@ changeFigure:1/open_eyes.png -left;
 changeFigure:1/open_eyes.png -right;
 ```
 
+### left13 / right13 / left14 / right14
+- 真偽値
+
+新しい立ち絵をステージのほかのプリセット位置に配置します。ステージの端に揃える `left`、`right` と異なり、この 4 つの位置は立ち絵の中心を基準に揃えます。
+- `left13`：立ち絵の中心がステージ左から 1/3 の位置
+- `right13`：立ち絵の中心がステージ右から 1/3 の位置（左から 2/3）
+- `left14`：立ち絵の中心がステージ左から 1/4 の位置
+- `right14`：立ち絵の中心がステージ右から 1/4 の位置（左から 3/4）
+
+`id` が省略されている、または空文字列の場合、デフォルト id として `fig-left13`、`fig-right13`、`fig-left14`、`fig-right14` が付与されます。
+
+``` webgal
+changeFigure:1/open_eyes.png -left13;
+changeFigure:2/open_eyes.png -right13;
+```
+
 ### id
 - 文字列
 
