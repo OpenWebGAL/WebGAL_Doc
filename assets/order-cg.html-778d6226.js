@@ -1,0 +1,1 @@
+import{_ as o}from"./plugin-vue_export-helper-c27b6911.js";import{o as t,c as l,a as e}from"./app-be1fcd84.js";const c={},n=e("ul",null,[e("li",null,"数字"),e("li",null,"默认值：0")],-1),r=e("p",null,"图片在所属系列中的排列顺序，数字越小越靠前。只在同一系列中有多张图片时生效。",-1),_=[n,r];function s(a,i){return t(),l("div",null,_)}const f=o(c,[["render",s],["__file","order-cg.html.vue"]]);export{f as default};
