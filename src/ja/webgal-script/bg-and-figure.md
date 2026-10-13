@@ -41,6 +41,15 @@ changeFigure:none;
 changeFigure:none -right;
 ```
 
+左・中央・右のほか、`-left13`、`-right13`、`-left14`、`-right14` を使うと、ステージの 1/3、2/3、1/4、3/4 の位置に立ち絵を配置できます。
+
+``` webgal
+changeFigure:testFigure03.png -left14;
+changeFigure:testFigure04.png -left13;
+changeFigure:testFigure03.png -right13;
+changeFigure:testFigure04.png -right14;
+```
+
 立ち絵を変更した後、すぐに次の文を実行したい場合は、以前と同様に`-next`パラメータを追加します。
 
 ``` webgal
@@ -63,6 +72,18 @@ changeFigure:none -id=test1;
 ::: tip
 ID付きの立ち絵の位置をリセットする場合は、まず閉じてから再度開いてください。
 :::
+
+## 立ち絵の差分を切り替える
+
+立ち絵の位置や変換をリセットせず、退場アニメーションも発生させずに、表情などの差分だけを変更したい場合は `changeFigureDiff` を使用します。
+
+``` webgal
+changeFigure:hero/normal.png -id=hero;
+; 画像のみを置き換え、立ち絵のその他の状態は保持する
+changeFigureDiff:hero/smile.png -id=hero;
+```
+
+詳しくは [changeFigureDiff](../script-reference/commands/changeFigureDiff.md) を参照してください。
 
 ## ミニアバターを配置する
 

@@ -35,6 +35,11 @@ changeBg:bg.png -enter=enter-from-left;
 changeBg:bg.png -exit=exit-to-right;
 ```
 
+<!-- @include: ../arguments/ignoreDefault.md -->
+``` webgal
+changeBg:bg.png -enter=my-enter -ignoreDefault;
+```
+
 <!-- @include: ../arguments/duration.md -->
 作用于默认入场动画，默认值为 1500。
 ``` webgal
@@ -60,6 +65,14 @@ changeBg:bg.png -unlockname=MyCg01;
 
 ``` webgal
 changeBg:bg.png -unlockname=MyCg01 -series=MySeries01;
+```
+
+### order
+<!-- @include: ../arguments/order-cg.md -->
+
+``` webgal
+changeBg:bg.png -unlockname=MyCg01 -series=MySeries01 -order=1;
+changeBg:bg2.png -unlockname=MyCg02 -series=MySeries01 -order=2;
 ```
 
 ### enterDuration

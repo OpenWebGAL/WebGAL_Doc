@@ -10,12 +10,16 @@
 | Title_bgm                    | タイトルの BGM、`bgm` フォルダに入れてください                                   |
 | Game_Logo                    | ゲームのロゴ、複数表示することができ、\| で区切ります                            |
 | Enable_Appreciation          | 鑑賞機能（CGおよび背景音楽の鑑賞を含む）を有効にするかどうか。                   |
-| Default_Language             | デフォルト言語、「zh_CN」、「zh_TW」、「en」、「ja」、「fr」、「de」に設定可能。 |
+| Enable_Continue              | タイトル画面に「続きから」ボタンを表示するかどうか、true または false に設定。デフォルトは true |
+| Enable_flowchart             | [フローチャート](webgal-script/flowchart.md)を有効にするかどうか、true または false に設定。デフォルトは false |
+| Flowchart_Locked_Node_Visibility | フローチャートで未解放ノードを表示する方法。node、all、none のいずれか。デフォルトは node。詳しくは[フローチャート](webgal-script/flowchart.md#未解放ノードの表示)を参照 |
+| Default_Language             | デフォルト言語、「zh_CN」、「zh_TW」、「en」、「ja」、「fr」、「de」、「pt_BR」、「ko」に設定可能。 |
 | Show_panic                   | パニックボタン機能を有効にするかどうか、true または false に設定                 |
 | Legacy_Expression_Blend_Mode | Live2D の旧表情ブレンドモードを有効にするかどうか、true または false に設定      |
 | Max_line                     | テキスト表示フレームの最大行数                                                   |
 | Line_height                  | テキストフレームの行高(単位:em)                                                  |
 | Steam_AppID                  | Steam アプリ ID。Steam 連携の初期化に使用します。Electron ビルド環境でのみ有効です |
+| Cubism_Memory_Reserved_Size_MB | Live2D（Cubism）用に予約するメモリサイズ、単位は MB。10 以上の値を指定してください。デフォルトは 32 |
 
 以下は設定ファイルの例です。
 
@@ -51,7 +55,23 @@ changeScene:start_ja.txt -when=lang==2;
 | 3 | Français |
 | 4 | Deutsch |
 | 5 | 繁體中文 |
+| 6 | Português do Brasil |
+| 7 | 한국어 |
 
 ::: tip
 メニューでの言語切り替えは、エンジン UI の言語を変更します。ゲーム本文も連動して切り替えたい場合は、上記のようにスクリプト側で言語ごとのシーンへ分岐してください。
 :::
+
+## Live2D のメモリ予約
+
+Live2D 立ち絵は、事前に確保されたメモリを使用します。同時に表示する Live2D 立ち絵が多く、使用量がこのメモリを超えると、表示中の立ち絵が更新されなくなることがあります。
+
+その場合は、`Cubism_Memory_Reserved_Size_MB` で予約するメモリを増やしてください。例：
+
+``` text
+Cubism_Memory_Reserved_Size_MB:64;
+```
+
+この値は 10 以上を指定してください。10 未満の値は反映されません。
+
+通常の演出であれば、デフォルトの 32 MB で十分です。立ち絵が更新されなくなる場合は、64、128 の順に試し、問題が解消する値を使用してください。予約するメモリが多いほど、ゲームのメモリ使用量も増えるため、必要以上に大きくしないでください。

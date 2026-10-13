@@ -228,9 +228,28 @@ WebGAL 称这套方案为「模板」。您可以在 `您的游戏名称目录/g
 
 虽然文件的后缀是 `.scss`，但实际上 WebGAL 并不支持 Sass 特性，比如 $变量、@mixin、@include 等等。
 
+## 全局样式表 {#user-style-sheet}
+
+除了模板，`game` 文件夹下还有一个 `userStyleSheet.css` 文件。游戏启动时，它会作为普通的 CSS 样式表加载到页面中，对整个页面生效。
+
+与模板中的 SCSS 文件不同，`userStyleSheet.css` 是标准 CSS，可以使用 `@font-face`、`@keyframes`、`@media` 等全部 CSS 特性，适合放置不属于某个具体界面的全局样式，例如：
+
+``` css
+@font-face {
+  font-family: 'MyFont';
+  src: url('./template/assets/fonts/my_font.woff2') format('woff2');
+}
+```
+
+样式表中的相对路径以 `game` 文件夹为基准。
+
+::: warning
+引擎内部界面的类名由构建工具生成，可能随版本变化。如果需要修改文本框、标题页、选项的样式，请使用上文介绍的模板，而不是在 `userStyleSheet.css` 中直接选择这些类名。
+:::
+
 ## 动态切换 {#dynamic-switching}
 
-WebGAL 允许用户在游戏运行时动态切换不同的模板样式。请参考[applyStyle](../webgal-script/api.md#applystyle)命令的文档。
+WebGAL 允许用户在游戏运行时动态切换不同的模板样式。请参考[applyStyle](../script-reference/commands/applyStyle.md)命令的文档。
 
 ``` scss
 .outer {

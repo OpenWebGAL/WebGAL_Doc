@@ -10,12 +10,16 @@
 | Title_bgm                    | 标题背景音乐，放在 `bgm` 文件夹                             |
 | Game_Logo                    | 游戏 Logo，可以显示多个，用 \| 分割                         |
 | Enable_Appreciation          | 是否启用鉴赏功能，包括 CG 和背景音乐鉴赏。                  |
-| Default_Language             | 默认语言，可设置为 'zh_CN', 'zh_TW', 'en', 'ja', 'fr', 'de' |
+| Enable_Continue              | 是否在标题界面显示「继续游戏」按钮，设置为 true 或 false，默认为 true |
+| Enable_flowchart             | 是否启用[流程图](webgal-script/flowchart.md)，设置为 true 或 false，默认为 false |
+| Flowchart_Locked_Node_Visibility | 流程图中未解锁节点的显示方式，可设置为 node、all、none，默认为 node，详见[流程图](webgal-script/flowchart.md#未解锁节点的显示) |
+| Default_Language             | 默认语言，可设置为 'zh_CN', 'zh_TW', 'en', 'ja', 'fr', 'de', 'pt_BR', 'ko' |
 | Show_panic                   | 是否启用紧急回避功能，设置为 true 或 false                  |
 | Legacy_Expression_Blend_Mode | 是否启用 Live2D 的旧表情混合模式，设置为 true 或 false      |
 | Max_line                     | 文本框的最大显示行数                                        |
 | Line_height                  | 文本框的行高（单位：em）                                    |
 | Steam_AppID                  | Steam 应用 ID，用于初始化 Steam 集成，仅在 Electron 构建环境下有效 |
+| Cubism_Memory_Reserved_Size_MB | 为 Live2D（Cubism）预留的内存大小，单位为 MB，需填写 10 及以上的数值，默认为 32 |
 
 以下是配置文件示例：
 
@@ -51,7 +55,23 @@ changeScene:start_ja.txt -when=lang==2;
 | 3 | Français |
 | 4 | Deutsch |
 | 5 | 繁體中文 |
+| 6 | Português do Brasil |
+| 7 | 한국어 |
 
 ::: tip
 菜单中的语言切换会改变引擎界面语言。如果你希望游戏正文也跟随切换，需要像上面这样在脚本里自行分流到不同语言的场景。
 :::
+
+## Live2D 内存预留
+
+Live2D 立绘使用一块预先分配的内存。同时显示的 Live2D 立绘较多、占用超出这块内存后，已经显示的立绘可能会停止更新。
+
+遇到这种情况时，可以用 `Cubism_Memory_Reserved_Size_MB` 调大预留的内存，例如：
+
+``` text
+Cubism_Memory_Reserved_Size_MB:64;
+```
+
+该值需填写 10 及以上，小于 10 时配置不会生效。
+
+默认的 32 MB 一般足够正常演出使用。如果立绘出现停止更新的问题，建议依次尝试 64、128，直到问题消失。预留得越多，游戏占用的内存也越多，不建议无限调大。

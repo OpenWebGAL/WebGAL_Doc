@@ -13,7 +13,7 @@ setTransform:{"position":{"x":100},"rotation":45} -target=aaa -duration=500;
 ; この文は既存の変換・エフェクトを継承し、その上でぼかしフィルターの値を変更します
 setTransform:{"blur":20} -target=aaa -duration=500;
 ; この文は saturation 以外のすべての属性をデフォルト値にリセットします
-setTransform:{"saturation":0} -target=aaa -duration=500 -writeDefault;
+setTransform:{"saturation":0} -target=aaa -duration=500 -transformFrom=default;
 ```
 
 フィルター属性については、そのフィルターのすべての値がデフォルト値になったときだけ、フィルターが完全に無効になります。そうでない場合、フィルターはオブジェクトが退場するまで存在し続け、不要なパフォーマンスコストにつながる可能性があります。そのため、必要に応じて関連属性を明示的にデフォルト値へ戻し、フィルターを無効化することを推奨します。
@@ -169,6 +169,16 @@ changeFigure:1/open_eyes.png -id=aaa -transform={"bevel":1,"bevelThickness":20,"
 setTransform:{"bevel":1,"bevelThickness":20,"bevelRotation":180} -target=aaa -duration=500;
 ```
 
+### bevelSoftness
+- デフォルト値: 0
+- 範囲: 0 から 1
+
+ベベルの縁の柔らかさです。値が大きいほど縁がぼやけます。`bevel` または `bevelThickness` がデフォルト値の場合、この属性だけを調整しても見た目の違いはありません。
+
+``` webgal
+setTransform:{"bevel":1,"bevelThickness":20,"bevelSoftness":1} -target=aaa -duration=500;
+```
+
 ### bevelRed / bevelGreen / bevelBlue
 - デフォルト値: 255
 - 範囲: 0 から 255
@@ -183,12 +193,12 @@ setTransform:{"bevel":1,"bevelThickness":20,"bevelRotation":180} -target=aaa -du
 
 オールドフィルム、ドット、RGB 分離、グリッチ、ゴッドレイ、反射フィルターのスイッチです。
 
-### shockwave
+### shockwaveFilter
 - デフォルト値: 0
 
-衝撃波の位相です。
+衝撃波の位相です。値を 0 から大きくしていくと、衝撃波が中心から外側へ広がります。0 にするとフィルターが無効になります。
 
-### radiusAlpha
+### radiusAlphaFilter
 - デフォルト値: 0
 
-放射状透明グラデーションの半径です。
+放射状透明グラデーションの半径です。オブジェクトの中心を基準に、半径の外側が透明になります。0 にするとフィルターが無効になります。

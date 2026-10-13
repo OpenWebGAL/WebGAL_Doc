@@ -16,3 +16,12 @@
 | vocal      | 用于存放配音文件             |
 | video      | 用于存放视频                 |
 | tex        | 用于存放特效纹理文件         |
+
+此外，`game` 文件夹下还有以下文件：
+
+| 文件 / 文件夹      | 用途 |
+| :----------------- | :-- |
+| config.txt         | 游戏配置，详见[编辑游戏配置](config.md) |
+| template           | 界面模板，详见[自定义 UI](webgal-script/custom-ui.md) |
+| userStyleSheet.css | 全局样式表，详见[自定义 UI](webgal-script/custom-ui.md#user-style-sheet) |
+| flowchart.json     | 流程图数据，详见[流程图](webgal-script/flowchart.md) |

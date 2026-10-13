@@ -98,6 +98,19 @@ WebGAL supports simplified voice file syntax.
 CharacterA:Hello, world! -hello_world.wav;
 ```
 
+The simplified syntax recognizes voice files with the `.ogg`, `.mp3`, `.wav`, and `.opus` extensions.
+
+### volume
+- Number
+- Range: 0 to 100
+- Default: 100
+
+Voice volume percentage.
+
+``` webgal
+CharacterA:Hello, world! -vocal=hello_world.wav -volume=30;
+```
+
 ### fontSize
 - String
 
@@ -125,6 +138,15 @@ When the value is `true`, WebGAL tries to drive the left, right, or center figur
 CharacterA:Hello, world! -left;
 CharacterA:Hello, world! -right;
 CharacterA:Hello, world! -center;
+```
+
+### left13 / right13 / left14 / right14
+- Boolean
+
+When the value is `true`, WebGAL tries to drive the figure at the corresponding position to speak with mouth movement.
+
+``` webgal
+CharacterA:Hello, world! -left13;
 ```
 
 ### figureId

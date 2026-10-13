@@ -24,6 +24,12 @@ changeFigure:1/open_eyes.png -id=aaa;
 setAnimation:shake -target=aaa;
 ```
 
+<!-- @include: ../arguments/transformFrom.md -->
+``` webgal
+changeFigure:1/open_eyes.png -id=aaa;
+setAnimation:shake -target=aaa -transformFrom=default;
+```
+
 <!-- @include: ../arguments/writeDefault.md -->
 ``` webgal
 changeFigure:1/open_eyes.png -id=aaa;
@@ -39,4 +45,12 @@ setAnimation:shake -target=aaa -keep -next;
 角色A: 第三句话;
 ; 这会打断 aaa 的跨语句动画，并播放新动画
 setAnimation:rotate -target=aaa -keep -next;
+```
+
+<!-- @include: ../arguments/parallel.md -->
+``` webgal
+changeFigure:1/open_eyes.png -id=aaa;
+; 抖动和亮度变化同时进行
+setAnimation:shake -target=aaa -next;
+setTransform:{"brightness":0.5} -target=aaa -duration=1000 -parallel;
 ```

@@ -13,7 +13,7 @@ setTransform:{"position":{"x":100},"rotation":45} -target=aaa -duration=500;
 ; This inherits the existing transform and changes only the blur filter value
 setTransform:{"blur":20} -target=aaa -duration=500;
 ; This resets all properties except saturation to default values
-setTransform:{"saturation":0} -target=aaa -duration=500 -writeDefault;
+setTransform:{"saturation":0} -target=aaa -duration=500 -transformFrom=default;
 ```
 
 For filter properties, a filter is fully disabled only when all values of that filter are set to defaults. Otherwise, the filter remains until the object exits, which may cause unnecessary performance cost. When needed, explicitly set related properties to default values to disable filters.
@@ -194,6 +194,16 @@ changeFigure:1/open_eyes.png -id=aaa -transform={"bevel":1,"bevelThickness":20,"
 setTransform:{"bevel":1,"bevelThickness":20,"bevelRotation":180} -target=aaa -duration=500;
 ```
 
+### bevelSoftness
+- Default: 0
+- Range: 0 to 1
+
+The softness of the bevel edge. Higher values blur the edge more. Adjusting this property alone produces no visible difference if `bevel` or `bevelThickness` is at its default value.
+
+``` webgal
+setTransform:{"bevel":1,"bevelThickness":20,"bevelSoftness":1} -target=aaa -duration=500;
+```
+
 ### bevelRed / bevelGreen / bevelBlue
 - Default: 255
 - Range: 0 to 255
@@ -218,12 +228,12 @@ changeFigure:1/open_eyes.png -id=aaa -transform={"oldFilm":1};
 setTransform:{"oldFilm":0} -target=aaa -duration=500;
 ```
 
-### shockwave
+### shockwaveFilter
 - Default: 0
 
-The phase of the shockwave.
+The phase of the shockwave. As the value increases from 0, the shockwave spreads outward from the center. Set to 0 to turn the filter off.
 
-### radiusAlpha
+### radiusAlphaFilter
 - Default: 0
 
-The radius of radial alpha gradient.
+The radius of the radial alpha gradient, centered on the object. Everything outside the radius becomes transparent. Set to 0 to turn the filter off.

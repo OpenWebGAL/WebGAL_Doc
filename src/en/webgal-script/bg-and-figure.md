@@ -41,6 +41,15 @@ changeFigure:none;
 changeFigure:none -right;
 ```
 
+Besides left, center, and right, you can also use `-left13`, `-right13`, `-left14`, and `-right14` to place figures at 1/3, 2/3, 1/4, and 3/4 of the stage width:
+
+``` webgal
+changeFigure:testFigure03.png -left14;
+changeFigure:testFigure04.png -left13;
+changeFigure:testFigure03.png -right13;
+changeFigure:testFigure04.png -right14;
+```
+
 If you want to execute the next statement immediately after the figure is changed, the operation is the same as before, that is, add the parameter `-next` :
 
 ``` webgal
@@ -63,6 +72,18 @@ changeFigure:none -id=test1;
 ::: tip
 If you want to reset the position of a figure with an ID, close it first and then reopen it.
 :::
+
+## Switching Figure Variants
+
+If you only want to change a figure's variant, such as its expression, without resetting its position or transform or triggering an exit animation, use `changeFigureDiff`:
+
+``` webgal
+changeFigure:hero/normal.png -id=hero;
+; Replace only the image and keep the rest of the figure's state
+changeFigureDiff:hero/smile.png -id=hero;
+```
+
+See [changeFigureDiff](../script-reference/commands/changeFigureDiff.md) for details.
 
 ## Placing Mini Avatars
 

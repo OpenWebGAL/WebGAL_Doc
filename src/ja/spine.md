@@ -28,10 +28,10 @@ SPINE RUNTIMESは、ESOTERIC SOFTWARE LLCによって「現状のまま」提供
 
 1. Spineエディターのライセンスを取得する [http://esotericsoftware.com/](http://esotericsoftware.com/)
 
-2. `package/webgal`パッケージでyarnを使用してpixi-spineをインストールする
+2. `packages/webgal`パッケージでyarnを使用してpixi-spineをインストールする
 
 ``` bash
-cd package/webgal
+cd packages/webgal
 yarn add pixi-spine@3.1.2
 ```
 
@@ -42,7 +42,6 @@ yarn add pixi-spine@3.1.2
 ``` typescript
   // pixiSpineLoading = import('pixi-spine')
   //   .then((module) => {
-  //     spineLoader = new PIXI.Loader();
   //     pixiSpineModule = module;
   //     return module;
   //   })
@@ -55,11 +54,15 @@ yarn add pixi-spine@3.1.2
   //   });
 ```
 
+:::warning
+以前のバージョンの WebGAL で Spine を有効にしていた場合は、アップグレード後に上記のコードから `spineLoader = new PIXI.Loader();` の行が削除されていることを確認してください。現在のエンジンは専用の Spine ローダーを使用しないため、この行が残っているとビルドエラーになるか、実行時に Spine が警告なく無効になります。
+:::
+
 4. プロジェクトのルートディレクトリで以下のスクリプトを実行してWebGALをデバッグします
 
 `yarn dev`
 
-5. これでSpineを立ち絵として使用できるようになりました。モデル全体のディレクトリを`game/figure`ディレクトリに配置する必要があります。立ち絵を呼び出す方法は、立ち絵のjsonファイルを呼び出すことです。
+5. これでSpineを立ち絵として使用できるようになりました。モデル全体のディレクトリを`game/figure`ディレクトリに配置する必要があります。立ち絵を呼び出すときは、スケルトンファイル（`.json` または `.skel`）のパスを指定します。
 
 例：
 ```
@@ -67,9 +70,11 @@ game
 └── figure
     └── exampleSpine
         ├── data.json
-        ├── atlas.atlas
-        └── skeleton.skel
+        ├── data.atlas
+        └── data.png
 ```
+
+アトラスファイルはスケルトンファイルと同じ名前で、拡張子を `.atlas` にする必要があります。例えば、`data.json` または `data.skel` には `data.atlas` が対応します。アトラス内で参照されるテクスチャのパスは、アトラスファイルのあるディレクトリからの相対パスです。
 
 JSON形式のSpine立ち絵を使用している場合は、エンジンがSpineタイプとして認識できるように、以下のようなスクリプトを使用してタイプを渡す必要があります。
 

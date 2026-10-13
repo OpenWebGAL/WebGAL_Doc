@@ -28,10 +28,10 @@ Note: The following steps are based on the WebGAL source code. You can find the 
 
 1. Obtain a Spine Editor license [http://esotericsoftware.com/](http://esotericsoftware.com/)
 
-2. Install `pixi-spine` using yarn in the `package/webgal` directory:
+2. Install `pixi-spine` using yarn in the `packages/webgal` directory:
 
 ``` bash
-cd package/webgal
+cd packages/webgal
 yarn add pixi-spine@3.1.2
 ```
 
@@ -42,7 +42,6 @@ Uncomment the following commented lines (starting around line 30):
 ``` typescript
   // pixiSpineLoading = import('pixi-spine')
   //   .then((module) => {
-  //     spineLoader = new PIXI.Loader();
   //     pixiSpineModule = module;
   //     return module;
   //   })
@@ -55,11 +54,15 @@ Uncomment the following commented lines (starting around line 30):
   //   });
 ```
 
+:::warning
+If you enabled Spine in an older version of WebGAL, make sure the code above no longer contains the line `spineLoader = new PIXI.Loader();` after upgrading. The engine no longer uses a separate Spine loader, and keeping this line will cause a build error or silently disable Spine at runtime.
+:::
+
 4. Run the following script in the project root directory to debug WebGAL:
 
 `yarn dev`
 
-5. Now you can use Spine for character sprites. You need to place the entire model directory into the `game/figure` directory.  The method to call a sprite is to call the sprite's JSON file.
+5. Now you can use Spine for character sprites. You need to place the entire model directory into the `game/figure` directory.  To call a sprite, use the path of its skeleton file (`.json` or `.skel`).
 
 For example:
 ```
@@ -67,9 +70,11 @@ game
 └── figure
     └── exampleSpine
         ├── data.json
-        ├── atlas.atlas
-        └── skeleton.skel
+        ├── data.atlas
+        └── data.png
 ```
+
+The atlas file must have the same name as the skeleton file, with the `.atlas` extension. For example, `data.json` or `data.skel` uses `data.atlas`. Texture paths in the atlas are relative to the atlas file's directory.
 
 If you are using a JSON format Spine sprite, you need to pass in the type using a script similar to the following, so that the engine recognizes its type as Spine.
 

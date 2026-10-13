@@ -41,6 +41,15 @@ changeFigure:none;
 changeFigure:none -right;
 ```
 
+除了左、中、右，还可以使用 `-left13`、`-right13`、`-left14`、`-right14`，把立绘放在舞台的 1/3、2/3、1/4、3/4 处：
+
+``` webgal
+changeFigure:testFigure03.png -left14;
+changeFigure:testFigure04.png -left13;
+changeFigure:testFigure03.png -right13;
+changeFigure:testFigure04.png -right14;
+```
+
 如果你想要在立绘改变后立刻执行下一条语句，操作方法与之前一样，即加上参数 `-next` :
 
 ``` webgal
@@ -63,6 +72,18 @@ changeFigure:none -id=test1;
 ::: tip
 如果你要重设某个带ID立绘的位置，请先关闭再重新打开。
 :::
+
+## 切换立绘差分
+
+如果只想更换立绘的表情等差分，而不想重置立绘的位置、变换或触发退场动画，可以使用 `changeFigureDiff`：
+
+``` webgal
+changeFigure:hero/normal.png -id=hero;
+; 只更换图片，保留立绘的其余状态
+changeFigureDiff:hero/smile.png -id=hero;
+```
+
+详情请见 [changeFigureDiff](../script-reference/commands/changeFigureDiff.md)。
 
 ## 放置小头像
 

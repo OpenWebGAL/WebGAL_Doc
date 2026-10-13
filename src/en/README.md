@@ -51,6 +51,8 @@
 
 - [Variables](webgal-script/variable.md)
 
+- [Flowchart](webgal-script/flowchart.md)
+
 - [Animation Effects](webgal-script/animation.md)
 
 - [Special Effects](webgal-script/special-effect.md)

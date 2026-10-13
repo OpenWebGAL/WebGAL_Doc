@@ -28,7 +28,7 @@ bgm:none -enter=3000;
 
 ::: tip
 `-volume` and `-enter` are both optional parameters.
-When `-volume` is not used, or a value other than 0 to 100 is used, the default value of 100 will be used.
+When `-volume` is not used, the default value of 100 is used. Values below 0 are treated as 0, and values above 100 are treated as 100.
 When `-enter` is not used, or a value other than 0 to is used, the default value of 0 will be used.
 :::
 
@@ -55,7 +55,7 @@ Hachiman Hikigaya:Just arrived -V3.ogg -volume=30;
 
 ::: tip
 `-volume` is an optional parameter.
-When `-volume` is not set, or a value other than 0 to 100 is used, the default value of 100 will be used.
+When `-volume` is not set, the default value of 100 is used. Values below 0 are treated as 0, and values above 100 are treated as 100.
 :::
 
 ## Playing Sound Effects
@@ -74,7 +74,7 @@ playEffect:xxx.mp3 -volume=30;
 
 ::: tip
 `-volume` is an optional parameter.
-When `-volume` is not set, or a value other than 0 to 100 is used, the default value of 100 will be used.
+When `-volume` is not set, the default value of 100 is used. Values below 0 are treated as 0, and values above 100 are treated as 100.
 :::
 
 ### Sound Effect Loop

@@ -24,6 +24,12 @@ changeFigure:1/open_eyes.png -id=aaa;
 setAnimation:shake -target=aaa;
 ```
 
+<!-- @include: ../arguments/transformFrom.md -->
+``` webgal
+changeFigure:1/open_eyes.png -id=aaa;
+setAnimation:shake -target=aaa -transformFrom=default;
+```
+
 <!-- @include: ../arguments/writeDefault.md -->
 ``` webgal
 changeFigure:1/open_eyes.png -id=aaa;
@@ -39,4 +45,12 @@ CharacterA:Second line;
 CharacterA:Third line;
 ; This interrupts aaa's cross-statement animation and plays a new animation
 setAnimation:rotate -target=aaa -keep -next;
+```
+
+<!-- @include: ../arguments/parallel.md -->
+``` webgal
+changeFigure:1/open_eyes.png -id=aaa;
+; Shake and change brightness at the same time
+setAnimation:shake -target=aaa -next;
+setTransform:{"brightness":0.5} -target=aaa -duration=1000 -parallel;
 ```

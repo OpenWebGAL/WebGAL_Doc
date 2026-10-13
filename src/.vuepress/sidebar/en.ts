@@ -27,6 +27,7 @@ export const enSidebar = sidebar({
         "video",
         "scenes",
         "variable",
+        "flowchart",
         "animation",
         "special-effect",
       ]
@@ -54,6 +55,7 @@ export const enSidebar = sidebar({
             "say",
             "changeBg",
             "changeFigure",
+            "changeFigureDiff",
             "bgm",
             "intro",
             "changeScene",

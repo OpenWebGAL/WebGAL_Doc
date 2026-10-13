@@ -63,6 +63,13 @@ Character:Not enough money for 3-coin soda, only {coin} coins left.;
 jumpLabel:start;
 ```
 
+Condition expressions can compare strings. Wrap strings in double quotes:
+
+``` webgal
+setVar:route=alice;
+jumpLabel:alice_route -when=route=="alice";
+```
+
 ### continue
 - Boolean
 

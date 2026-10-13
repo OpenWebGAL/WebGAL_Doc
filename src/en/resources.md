@@ -16,3 +16,12 @@ All your game scripts, pictures, and portraits should be placed under the `game`
 | vocal      | Used to store dubbing files             |
 | video      | Used to store videos                 |
 | tex        | Used to store special effects texture files         |
+
+The `game` folder also contains the following files:
+
+| File / Folder      | Purpose |
+| :----------------- | :-- |
+| config.txt         | Game configuration. See [Edit Game Configuration](config.md) |
+| template           | UI template |
+| userStyleSheet.css | Global style sheet loaded when the game starts |
+| flowchart.json     | Flowchart data. See [Flowchart](webgal-script/flowchart.md) |

@@ -98,6 +98,19 @@ WebGAL 支持声音文件的简化写法。
 角色A:你好，世界！ -hello_world.wav;
 ```
 
+简化写法可以识别 `.ogg`、`.mp3`、`.wav`、`.opus` 扩展名的声音文件。
+
+### volume
+- 数字
+- 范围：0 到 100
+- 默认值：100
+
+语音音量百分比。
+
+``` webgal
+角色A:你好，世界！ -vocal=hello_world.wav -volume=30;
+```
+
 ### fontSize
 - 字符串
 
@@ -141,6 +154,15 @@ WebGAL 支持声音文件的简化写法。
 
 ``` webgal
 角色A:你好，世界！ -center;
+```
+
+### left13 / right13 / left14 / right14
+- 布尔值
+
+当值为 `true` 时，WebGAL 将尝试驱动对应位置的立绘张嘴说话。
+
+``` webgal
+角色A:你好，世界！ -left13;
 ```
 
 ### figureId

@@ -63,6 +63,13 @@ label:not_enough_coin;
 jumpLabel:start;
 ```
 
+条件表达式中可以比较字符串，字符串需要用英文双引号包裹：
+
+``` webgal
+setVar:route=alice;
+jumpLabel:alice_route -when=route=="alice";
+```
+
 ### continue
 - 布尔值
 

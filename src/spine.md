@@ -28,10 +28,10 @@ THE SPINE RUNTIMES ARE PROVIDED BY ESOTERIC SOFTWARE LLC "AS IS" AND ANY EXPRESS
 
 1、获得 Spine 编辑器的授权 [http://esotericsoftware.com/](http://esotericsoftware.com/)
 
-2、在 `package/webgal` 包中使用 yarn 安装 pixi-spine
+2、在 `packages/webgal` 包中使用 yarn 安装 pixi-spine
 
 ``` bash
-cd package/webgal
+cd packages/webgal
 yarn add pixi-spine@3.1.2
 ```
 
@@ -42,7 +42,6 @@ yarn add pixi-spine@3.1.2
 ``` typescript
   // pixiSpineLoading = import('pixi-spine')
   //   .then((module) => {
-  //     spineLoader = new PIXI.Loader();
   //     pixiSpineModule = module;
   //     return module;
   //   })
@@ -55,11 +54,15 @@ yarn add pixi-spine@3.1.2
   //   });
 ```
 
+:::warning
+如果你曾在旧版本 WebGAL 中启用过 Spine，升级后请确认上述代码中已没有 `spineLoader = new PIXI.Loader();` 这一行。新版引擎不再使用单独的 Spine 加载器，保留这一行会导致构建报错，或在运行时使 Spine 被静默禁用。
+:::
+
 4、在项目根目录运行以下脚本以调试 WebGAL
 
 `yarn dev`
 
-5、现在开始你可以使用 Spine 作为立绘了。你需要将整个模型的目录放入 `game/figure` 目录中，调用立绘的方法是调用立绘的 json 文件。
+5、现在开始你可以使用 Spine 作为立绘了。你需要将整个模型的目录放入 `game/figure` 目录中，调用立绘时填写骨架文件（`.json` 或 `.skel`）的路径。
 
 例如：
 ```
@@ -67,9 +70,11 @@ game
 └── figure
     └── exampleSpine
         ├── data.json
-        ├── atlas.atlas
-        └── skeleton.skel
+        ├── data.atlas
+        └── data.png
 ```
+
+图集文件必须与骨架文件同名，扩展名为 `.atlas`，例如 `data.json` 或 `data.skel` 对应 `data.atlas`。图集中引用的贴图路径相对于图集文件所在目录。
 
 如果你使用的是 JSON 格式的 Spine 立绘，你需要使用类似以下脚本的方式传入类型，以使引擎识别其类型为 Spine。
 
