@@ -52,7 +52,7 @@ pixiPerform:snow;
 
 ## 添加自定义特效
 
-你可以下载源代码，然后找到 `/Core/gameScripts/pixiPerformScripts/` 然后新建一个 `PIXI.Container` 用于制作你所需要的特效。
+你可以下载源代码，在 `packages/webgal/src/Core/gameScripts/pixi/performs/` 下新建一个文件，然后新建一个 `PIXI.Container` 用于制作你所需要的特效。该目录下的文件会被引擎自动加载，无需手动引入。
 
 特效层分为前景层和背景层，这里以前景层为例。
 
@@ -67,22 +67,24 @@ const container = new PIXI.Container();
 effectsContainer.addChild(container);
 ```
 
-纹理文件可以放在 `game/tex` 目录下。
+纹理图片可以放在 `packages/webgal/src/assets/tex/` 下，并在代码中用 `import` 引入，这样会被打包进引擎；也可以放在游戏的 `game/tex` 目录下，用 `./game/tex/文件名` 的路径加载。
 
 然后，在 文件开头导入 `特效注册方法` 注册你写的新特效。
 
-在文件末尾使用其注册你的特效, 第一个参数是特效名, 第二个是调用特效的方法.
+在文件末尾使用其注册你的特效。第一个参数是特效名，第二个参数中的 `fg`、`bg` 分别是创建前景层、背景层特效的函数，函数需要返回特效的 `container`，以及注册帧动画时使用的 `tickerKey`。
 
 ``` typescript
-import {registerPerform} from '../pixiPerformManager';
+import { registerPerform } from '@/Core/util/pixiPerformManager/pixiPerformManager';
 
 // 假设这是你的特效
 function myPerform() {
-    // ...
+  const container = new PIXI.Container();
+  // ...
+  return { container, tickerKey: 'my-perform-ticker' };
 }
 
 // 注册
-registerPerform('myPerform', { fg: () => myPerform(参数) });
+registerPerform('myPerform', { fg: () => myPerform() });
 ```
 
 最后，编译出支持你自定义特效的 WebGAL
