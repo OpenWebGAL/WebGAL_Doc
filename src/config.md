@@ -11,6 +11,8 @@
 | Game_Logo                    | 游戏 Logo，可以显示多个，用 \| 分割                         |
 | Enable_Appreciation          | 是否启用鉴赏功能，包括 CG 和背景音乐鉴赏。                  |
 | Enable_Continue              | 是否在标题界面显示「继续游戏」按钮，设置为 true 或 false，默认为 true |
+| Enable_flowchart             | 是否启用[流程图](webgal-script/flowchart.md)，设置为 true 或 false，默认为 false |
+| Flowchart_Locked_Node_Visibility | 流程图中未解锁节点的显示方式，可设置为 node、all、none，默认为 node，详见[流程图](webgal-script/flowchart.md#未解锁节点的显示) |
 | Default_Language             | 默认语言，可设置为 'zh_CN', 'zh_TW', 'en', 'ja', 'fr', 'de', 'pt_BR', 'ko' |
 | Show_panic                   | 是否启用紧急回避功能，设置为 true 或 false                  |
 | Legacy_Expression_Blend_Mode | 是否启用 Live2D 的旧表情混合模式，设置为 true 或 false      |

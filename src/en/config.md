@@ -11,6 +11,8 @@ Under the `game` folder, there is a file named `config.txt`, you can fill in the
 | Game_Logo                    | Game Logo, multiple can be displayed, separated by \|                                       |
 | Enable_Appreciation          | Whether to enable the Appreciation feature, including CG and background music appreciation. |
 | Enable_Continue              | Whether to show the Continue button on the title screen, set to true or false. Defaults to true |
+| Enable_flowchart             | Whether to enable the [flowchart](webgal-script/flowchart.md), set to true or false. Defaults to false |
+| Flowchart_Locked_Node_Visibility | How locked nodes are displayed in the flowchart: node, all, or none. Defaults to node. See [Flowchart](webgal-script/flowchart.md#displaying-locked-nodes) |
 | Default_Language             | Default language, can be set to 'zh_CN', 'zh_TW', 'en', 'ja', 'fr', 'de', 'pt_BR', 'ko'     |
 | Show_panic                   | Whether to enable the panic button feature, set to true or false                            |
 | Legacy_Expression_Blend_Mode | Whether to enable legacy expression blend mode for Live2D, set to true or false             |

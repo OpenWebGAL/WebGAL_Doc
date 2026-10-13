@@ -27,6 +27,7 @@ export const enSidebar = sidebar({
         "video",
         "scenes",
         "variable",
+        "flowchart",
         "animation",
         "special-effect",
       ]

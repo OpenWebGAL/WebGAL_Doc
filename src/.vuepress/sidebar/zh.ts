@@ -37,6 +37,7 @@ export const zhSidebar = sidebar({
         "video",
         "scenes",
         "variable",
+        "flowchart",
         "animation",
         "special-effect",
         "custom-ui",

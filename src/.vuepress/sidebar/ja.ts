@@ -27,6 +27,7 @@ export const jaSidebar = sidebar({
         "video",
         "scenes",
         "variable",
+        "flowchart",
         "animation",
         "special-effect",
       ]

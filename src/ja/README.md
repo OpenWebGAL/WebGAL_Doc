@@ -50,6 +50,8 @@
 
 - [変数](webgal-script/variable.md)
 
+- [フローチャート](webgal-script/flowchart.md)
+
 - [アニメーション効果](webgal-script/animation.md)
 
 - [特殊効果](webgal-script/special-effect.md)

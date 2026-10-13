@@ -11,6 +11,8 @@
 | Game_Logo                    | ゲームのロゴ、複数表示することができ、\| で区切ります                            |
 | Enable_Appreciation          | 鑑賞機能（CGおよび背景音楽の鑑賞を含む）を有効にするかどうか。                   |
 | Enable_Continue              | タイトル画面に「続きから」ボタンを表示するかどうか、true または false に設定。デフォルトは true |
+| Enable_flowchart             | [フローチャート](webgal-script/flowchart.md)を有効にするかどうか、true または false に設定。デフォルトは false |
+| Flowchart_Locked_Node_Visibility | フローチャートで未解放ノードを表示する方法。node、all、none のいずれか。デフォルトは node。詳しくは[フローチャート](webgal-script/flowchart.md#未解放ノードの表示)を参照 |
 | Default_Language             | デフォルト言語、「zh_CN」、「zh_TW」、「en」、「ja」、「fr」、「de」、「pt_BR」、「ko」に設定可能。 |
 | Show_panic                   | パニックボタン機能を有効にするかどうか、true または false に設定                 |
 | Legacy_Expression_Blend_Mode | Live2D の旧表情ブレンドモードを有効にするかどうか、true または false に設定      |

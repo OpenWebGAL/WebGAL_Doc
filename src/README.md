@@ -50,6 +50,8 @@
 
 - [变量](webgal-script/variable.md)
 
+- [流程图](webgal-script/flowchart.md)
+
 - [动画效果](webgal-script/animation.md)
 
 - [特效](webgal-script/special-effect.md)
