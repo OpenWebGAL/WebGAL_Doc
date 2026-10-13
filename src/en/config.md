@@ -10,12 +10,14 @@ Under the `game` folder, there is a file named `config.txt`, you can fill in the
 | Title_bgm                    | Title background music, put it in the `bgm` folder                                          |
 | Game_Logo                    | Game Logo, multiple can be displayed, separated by \|                                       |
 | Enable_Appreciation          | Whether to enable the Appreciation feature, including CG and background music appreciation. |
-| Default_Language             | Default language, can be set to 'zh_CN', 'zh_TW', 'en', 'ja', 'fr', 'de'                    |
+| Enable_Continue              | Whether to show the Continue button on the title screen, set to true or false. Defaults to true |
+| Default_Language             | Default language, can be set to 'zh_CN', 'zh_TW', 'en', 'ja', 'fr', 'de', 'pt_BR', 'ko'     |
 | Show_panic                   | Whether to enable the panic button feature, set to true or false                            |
 | Legacy_Expression_Blend_Mode | Whether to enable legacy expression blend mode for Live2D, set to true or false             |
 | Max_line                     | Maximum number of displayed lines in the text box                                           |
 | Line_height                  | Line height of the text box (unit: em)                                                      |
 | Steam_AppID                  | Steam App ID, used to initialize Steam integration. Only effective in Electron builds        |
+| Cubism_Memory_Reserved_Size_MB | Memory reserved for Live2D (Cubism), in MB. Defaults to 32 |
 
 The following is a sample configuration file:
 
@@ -51,7 +53,21 @@ The numeric values map to languages as follows:
 | 3 | French |
 | 4 | German |
 | 5 | Traditional Chinese |
+| 6 | Brazilian Portuguese |
+| 7 | Korean |
 
 ::: tip
 Changing the language from the menu only changes the engine UI language. If you want the game script itself to switch too, branch to different scene files in your script as shown above.
 :::
+
+## Live2D Memory Reservation
+
+Live2D figures use a block of memory allocated in advance. When many Live2D figures are on screen and their usage exceeds this block, figures that are already displayed may stop updating.
+
+In that case, increase the reserved memory with `Cubism_Memory_Reserved_Size_MB`, for example:
+
+``` text
+Cubism_Memory_Reserved_Size_MB:64;
+```
+
+Reserving more memory also increases the game's memory usage. The default of 32 MB is usually enough for normal performances.

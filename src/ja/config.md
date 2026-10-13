@@ -10,12 +10,14 @@
 | Title_bgm                    | タイトルの BGM、`bgm` フォルダに入れてください                                   |
 | Game_Logo                    | ゲームのロゴ、複数表示することができ、\| で区切ります                            |
 | Enable_Appreciation          | 鑑賞機能（CGおよび背景音楽の鑑賞を含む）を有効にするかどうか。                   |
-| Default_Language             | デフォルト言語、「zh_CN」、「zh_TW」、「en」、「ja」、「fr」、「de」に設定可能。 |
+| Enable_Continue              | タイトル画面に「続きから」ボタンを表示するかどうか、true または false に設定。デフォルトは true |
+| Default_Language             | デフォルト言語、「zh_CN」、「zh_TW」、「en」、「ja」、「fr」、「de」、「pt_BR」、「ko」に設定可能。 |
 | Show_panic                   | パニックボタン機能を有効にするかどうか、true または false に設定                 |
 | Legacy_Expression_Blend_Mode | Live2D の旧表情ブレンドモードを有効にするかどうか、true または false に設定      |
 | Max_line                     | テキスト表示フレームの最大行数                                                   |
 | Line_height                  | テキストフレームの行高(単位:em)                                                  |
 | Steam_AppID                  | Steam アプリ ID。Steam 連携の初期化に使用します。Electron ビルド環境でのみ有効です |
+| Cubism_Memory_Reserved_Size_MB | Live2D（Cubism）用に予約するメモリサイズ、単位は MB。デフォルトは 32 |
 
 以下は設定ファイルの例です。
 
@@ -51,7 +53,21 @@ changeScene:start_ja.txt -when=lang==2;
 | 3 | Français |
 | 4 | Deutsch |
 | 5 | 繁體中文 |
+| 6 | Português do Brasil |
+| 7 | 한국어 |
 
 ::: tip
 メニューでの言語切り替えは、エンジン UI の言語を変更します。ゲーム本文も連動して切り替えたい場合は、上記のようにスクリプト側で言語ごとのシーンへ分岐してください。
 :::
+
+## Live2D のメモリ予約
+
+Live2D 立ち絵は、事前に確保されたメモリを使用します。同時に表示する Live2D 立ち絵が多く、使用量がこのメモリを超えると、表示中の立ち絵が更新されなくなることがあります。
+
+その場合は、`Cubism_Memory_Reserved_Size_MB` で予約するメモリを増やしてください。例：
+
+``` text
+Cubism_Memory_Reserved_Size_MB:64;
+```
+
+予約するメモリが多いほど、ゲームのメモリ使用量も増えます。通常の演出であれば、デフォルトの 32 MB で十分です。
