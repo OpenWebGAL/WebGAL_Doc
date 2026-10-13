@@ -35,6 +35,28 @@ Currently, the following preset animations are available:
 
 These names come from `game/animation/animationTable.json`. Presets with a duration of 0 are usually used to set or clear filter states immediately.
 
+Since v4.6.6, there is also a set of preset animations whose names end with `-v2`. They use the [new animation format](../script-reference/others/animation-reference.md#new-animation-format-animation-v2) and work from the object's current state. For example, `shake-v2` shakes around the current position, and `exit-v2` fades out from the current opacity:
+
+| Animation Effect | Animation Name | Duration (ms) |
+| :--- | :--- | :--- |
+| Fade in from transparent to the current opacity | enter-v2 | 300 |
+| Fade out from the current opacity | exit-v2 | 300 |
+| Shake left and right once around the current position | shake-v2 | 1000 |
+| Enter from the bottom to the current position | enter-from-bottom-v2 | 500 |
+| Enter from the left to the current position | enter-from-left-v2 | 500 |
+| Enter from the right to the current position | enter-from-right-v2 | 500 |
+| Move forward and back once from the current scale | move-front-and-back-v2 | 1000 |
+| Add blur on top of the current blur | blur-v2 | 300 |
+| Old film filter | oldFilm-v2 | 0 |
+| Dot film filter | dotFilm-v2 | 0 |
+| Reflection film filter | reflectionFilm-v2 | 0 |
+| Glitch film filter | glitchFilm-v2 | 0 |
+| RGB split filter | rgbFilm-v2 | 0 |
+| God ray filter | godrayFilm-v2 | 0 |
+| Remove film filters | removeFilm-v2 | 0 |
+| Shockwave in | shockwaveIn-v2 | 2000 |
+| Shockwave out | shockwaveOut-v2 | 2000 |
+
 Currently, the following animation targets are available:
 
 | target     | Actual Target       |
@@ -163,6 +185,25 @@ An animation with a duration of 0 milliseconds and only one time slice is a tran
   }
 ]
 ```
+
+### New Animation Format
+
+Since v4.6.6, an animation file can also use the new format: a JSON object containing `keyframes`. The new format works from the object's current state by default, and each keyframe only needs to write the properties that change.
+
+**Example: `shake-v2.json`**
+
+``` json
+{
+  "version": 2,
+  "keyframes": [
+    { "time": 250, "position": { "x": -100 }, "ease": "easeOut" },
+    { "time": 750, "position": { "x": 100 } },
+    { "time": 1000, "position": { "x": 0 }, "ease": "easeIn" }
+  ]
+}
+```
+
+See the [Animation Reference](../script-reference/others/animation-reference.md#new-animation-format-animation-v2) for the full format.
 
 ## Setting Entrance and Exit Effects
 

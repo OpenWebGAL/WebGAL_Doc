@@ -35,6 +35,28 @@ setAnimation:enter-from-bottom -target=fig-center -next;
 
 これらの名前は `game/animation/animationTable.json` に由来します。持続時間が 0 のプリセットは、通常、フィルター状態を即時に設定または解除するために使われます。
 
+v4.6.6 からは、名前が `-v2` で終わるプリセットアニメーションも用意されています。これらは[新しいアニメーション形式](../script-reference/others/animation-reference.md#新しいアニメーション形式-animation-v2)を使い、オブジェクトの現在の状態を基準に動作します。例えば `shake-v2` は現在の位置を中心に揺れ、`exit-v2` は現在の不透明度からフェードアウトします。
+
+| アニメーション効果 | アニメーション名 | 持続時間（ミリ秒） |
+| :--- | :--- | :--- |
+| 透明から現在の不透明度までフェードイン | enter-v2 | 300 |
+| 現在の不透明度からフェードアウト | exit-v2 | 300 |
+| 現在の位置を中心に左右へ 1 回揺れる | shake-v2 | 1000 |
+| 下から現在の位置へ登場 | enter-from-bottom-v2 | 500 |
+| 左から現在の位置へ登場 | enter-from-left-v2 | 500 |
+| 右から現在の位置へ登場 | enter-from-right-v2 | 500 |
+| 現在の拡大率を基準に前後へ 1 回移動 | move-front-and-back-v2 | 1000 |
+| 現在のぼかしにさらにぼかしを加える | blur-v2 | 300 |
+| 古い映画フィルター | oldFilm-v2 | 0 |
+| ドットフィルター | dotFilm-v2 | 0 |
+| 反射フィルター | reflectionFilm-v2 | 0 |
+| グリッチフィルター | glitchFilm-v2 | 0 |
+| RGB 分離フィルター | rgbFilm-v2 | 0 |
+| ゴッドレイフィルター | godrayFilm-v2 | 0 |
+| 映画系フィルターを解除 | removeFilm-v2 | 0 |
+| 衝撃波登場 | shockwaveIn-v2 | 2000 |
+| 衝撃波退場 | shockwaveOut-v2 | 2000 |
+
 現在、アニメーションの作用対象は以下の通りです。
 
 | target | 実際の対象 |
@@ -163,6 +185,25 @@ setAnimation:enter-from-left -target=fig-left -next;
   }
 ]
 ```
+
+### 新しいアニメーション形式
+
+v4.6.6 からは、アニメーションファイルを新しい形式、つまり `keyframes` を含む JSON オブジェクトで書くこともできます。新しい形式はデフォルトでオブジェクトの現在の状態を基準にし、各キーフレームには変化するプロパティだけを書けば十分です。
+
+**例：`shake-v2.json`**
+
+``` json
+{
+  "version": 2,
+  "keyframes": [
+    { "time": 250, "position": { "x": -100 }, "ease": "easeOut" },
+    { "time": 750, "position": { "x": 100 } },
+    { "time": 1000, "position": { "x": 0 }, "ease": "easeIn" }
+  ]
+}
+```
+
+形式の詳細は[アニメーションリファレンス](../script-reference/others/animation-reference.md#新しいアニメーション形式-animation-v2)を参照してください。
 
 ## 登場・退場のエフェクトを設定する
 

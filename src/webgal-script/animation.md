@@ -35,6 +35,28 @@ setAnimation:enter-from-bottom -target=fig-center -next;
 
 这些名称来自 `game/animation/animationTable.json`。持续时间为 0 的预设通常用于立刻设置或清除滤镜状态。
 
+从 v4.6.6 开始，还提供一组名称以 `-v2` 结尾的预制动画。它们使用[新版动画格式](../script-reference/others/animation-reference.md#新版动画格式-animation-v2)，以对象的当前状态为基准，例如 `shake-v2` 围绕当前位置摇晃，`exit-v2` 从当前透明度淡出：
+
+| 动画效果 | 动画名 | 持续时间（毫秒） |
+| :--- | :--- | :--- |
+| 从透明淡入到当前透明度 | enter-v2 | 300 |
+| 从当前透明度淡出 | exit-v2 | 300 |
+| 围绕当前位置左右摇晃一次 | shake-v2 | 1000 |
+| 从下侧进入到当前位置 | enter-from-bottom-v2 | 500 |
+| 从左侧进入到当前位置 | enter-from-left-v2 | 500 |
+| 从右侧进入到当前位置 | enter-from-right-v2 | 500 |
+| 在当前缩放的基础上前后移动一次 | move-front-and-back-v2 | 1000 |
+| 在当前模糊的基础上增加模糊 | blur-v2 | 300 |
+| 老电影滤镜 | oldFilm-v2 | 0 |
+| 点状滤镜 | dotFilm-v2 | 0 |
+| 反射滤镜 | reflectionFilm-v2 | 0 |
+| 故障滤镜 | glitchFilm-v2 | 0 |
+| RGB 分离滤镜 | rgbFilm-v2 | 0 |
+| 光辉滤镜 | godrayFilm-v2 | 0 |
+| 移除电影类滤镜 | removeFilm-v2 | 0 |
+| 冲击波入场 | shockwaveIn-v2 | 2000 |
+| 冲击波退场 | shockwaveOut-v2 | 2000 |
+
 目前，动画的作用目标有：
 
 | target     | 实际目标       |
@@ -163,6 +185,25 @@ setAnimation:enter-from-left -target=fig-left -next;
   }
 ]
 ```
+
+### 新版动画格式
+
+从 v4.6.6 开始，动画文件也可以写成新版格式：一个包含 `keyframes` 的 JSON 对象。新版格式默认以对象的当前状态为基准，并且每个关键帧只需写出要变化的属性。
+
+**示例：`shake-v2.json`**
+
+``` json
+{
+  "version": 2,
+  "keyframes": [
+    { "time": 250, "position": { "x": -100 }, "ease": "easeOut" },
+    { "time": 750, "position": { "x": 100 } },
+    { "time": 1000, "position": { "x": 0 }, "ease": "easeIn" }
+  ]
+}
+```
+
+详细的格式说明请见[动画参考](../script-reference/others/animation-reference.md#新版动画格式-animation-v2)。
 
 ## 设置进出场效果
 
