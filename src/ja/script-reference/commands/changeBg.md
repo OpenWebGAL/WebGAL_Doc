@@ -67,6 +67,14 @@ changeBg:bg.png -unlockname=MyCg01;
 changeBg:bg.png -unlockname=MyCg01 -series=MySeries01;
 ```
 
+### order
+<!-- @include: ../arguments/order-cg.md -->
+
+``` webgal
+changeBg:bg.png -unlockname=MyCg01 -series=MySeries01 -order=1;
+changeBg:bg2.png -unlockname=MyCg02 -series=MySeries01 -order=2;
+```
+
 ### enterDuration
 - 数値
 - 単位: ミリ秒

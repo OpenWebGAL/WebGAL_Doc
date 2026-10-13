@@ -70,6 +70,13 @@ changeScene:3.txt;
 `=` is the assignment operator, it cannot be used in conditional statements, `==` is the equality operator.
 :::
 
+Conditions can also compare strings. Wrap strings in double quotes:
+
+``` webgal
+setVar:name=Alice;
+jumpLabel:greet -when=name=="Alice";
+```
+
 Any statement can be conditionally executed with the `-when` parameter. By combining the `-when` parameter with `jumpLabel` `callScene` `changeScene`, you can achieve conditional flow control.
 
 ## Getting User Input

@@ -62,3 +62,16 @@ Condition expressions are written the same way as the common `-when` parameter. 
 ::: warning
 `() ` and `[]` must be written to the left of `->`. If the option text needs to display special symbols such as colons, semicolons, or vertical bars, use escaping. See [Escaping Special Characters](../../webgal-script/base.md#escaping-special-characters).
 :::
+
+## Parameters
+
+### defaultChoose
+- Number
+
+When the editor's live preview fast-forwards past this choice, automatically picks the option at this position (starting from 1), so the preview can continue to later statements. This parameter has no effect during normal play.
+
+If the specified option does not exist, or cannot be chosen because of conditional display or conditional enablement, nothing is picked automatically.
+
+``` webgal
+choose:Call her:Chapter-2.txt|Go home:Chapter-3.txt -defaultChoose=2;
+```

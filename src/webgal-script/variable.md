@@ -70,6 +70,13 @@ changeScene:3.txt;
 `=` 是赋值符号，不可用于条件判断，`==`是相等运算符。
 :::
 
+条件中也可以比较字符串，字符串需要用英文双引号包裹：
+
+``` webgal
+setVar:name=小明;
+jumpLabel:greet -when=name=="小明";
+```
+
 任何语句都可以加上 `-when` 参数来控制是否执行。通过组合 `-when` 参数和 `jumpLabel` `callScene` `changeScene`，你可以实现带条件判断的流程控制。
 
 ## 获取用户输入

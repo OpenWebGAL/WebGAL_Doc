@@ -67,6 +67,14 @@ Writing only `series` will not collect the image. Make sure `unlockname` is also
 changeBg:bg.png -unlockname=MyCg01 -series=MySeries01;
 ```
 
+### order
+<!-- @include: ../arguments/order-cg.md -->
+
+``` webgal
+changeBg:bg.png -unlockname=MyCg01 -series=MySeries01 -order=1;
+changeBg:bg2.png -unlockname=MyCg02 -series=MySeries01 -order=2;
+```
+
 ### enterDuration
 - Number
 - Unit: milliseconds

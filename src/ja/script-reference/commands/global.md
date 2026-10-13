@@ -63,6 +63,13 @@ label:not_enough_coin;
 jumpLabel:start;
 ```
 
+条件式では文字列を比較できます。文字列は半角のダブルクォートで囲んでください。
+
+``` webgal
+setVar:route=alice;
+jumpLabel:alice_route -when=route=="alice";
+```
+
 ### continue
 - 真偽値
 

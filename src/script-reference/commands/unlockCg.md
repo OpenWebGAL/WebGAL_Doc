@@ -25,3 +25,10 @@ unlockCg:chapter_03/date.png -name=第一次约会;
 ``` webgal
 unlockCg:chapter_03/date.png -name=第一次约会 -series=角色B;
 ```
+
+### order
+<!-- @include: ../arguments/order-cg.md -->
+``` webgal
+unlockCg:chapter_03/date.png -name=第一次约会 -series=角色B -order=1;
+unlockCg:chapter_04/date.png -name=第二次约会 -series=角色B -order=2;
+```
