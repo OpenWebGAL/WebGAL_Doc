@@ -259,6 +259,17 @@ changeFigure:1/open_eyes.png -id=aaa -transform={"bevel":1,"bevelThickness":20,"
 setTransform:{"bevel":1,"bevelThickness":20,"bevelRotation":180} -target=aaa -duration=500;
 ```
 
+### bevelSoftness
+- 默认值：0
+- 范围：0 到 1
+
+倒角边缘的柔和程度，值越大边缘越模糊。如果 `bevel` 或 `bevelThickness` 为默认值，单独调整此属性不会有任何视觉上的区别。
+
+``` webgal
+changeFigure:1/open_eyes.png -id=aaa -transform={"bevel":1,"bevelThickness":20,"bevelSoftness":0.5};
+setTransform:{"bevel":1,"bevelThickness":20,"bevelSoftness":1} -target=aaa -duration=500;
+```
+
 ### bevelRed
 - 默认值：255
 - 范围：0 到 255
@@ -360,22 +371,22 @@ changeFigure:1/open_eyes.png -id=aaa -transform={"reflectionFilm":1};
 setTransform:{"reflectionFilm":0} -target=aaa -duration=500;
 ```
 
-### shockwave
+### shockwaveFilter
 - 默认值：0
 
-冲击波的相位。
+冲击波的相位。值从 0 逐渐增大时，冲击波从中心向外扩散。为 0 时关闭滤镜。
 
 ``` webgal
-changeFigure:1/open_eyes.png -id=aaa -transform={"shockwave":0};
-setTransform:{"shockwave":1} -target=aaa -duration=500;
+changeFigure:1/open_eyes.png -id=aaa -transform={"shockwaveFilter":0};
+setTransform:{"shockwaveFilter":3} -target=aaa -duration=1000;
 ```
 
-### radiusAlpha
+### radiusAlphaFilter
 - 默认值：0
 
-径向渐变透明的半径。
+径向渐变透明的半径，以对象中心为圆心，半径以外的部分变为透明。为 0 时关闭滤镜。
 
 ``` webgal
-changeFigure:1/open_eyes.png -id=aaa -transform={"radiusAlpha":0.2};
-setTransform:{"radiusAlpha":1.5} -target=aaa -duration=500;
+changeFigure:1/open_eyes.png -id=aaa -transform={"radiusAlphaFilter":0.2};
+setTransform:{"radiusAlphaFilter":1.5} -target=aaa -duration=500;
 ```
