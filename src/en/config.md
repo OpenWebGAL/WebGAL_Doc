@@ -19,7 +19,7 @@ Under the `game` folder, there is a file named `config.txt`, you can fill in the
 | Max_line                     | Maximum number of displayed lines in the text box                                           |
 | Line_height                  | Line height of the text box (unit: em)                                                      |
 | Steam_AppID                  | Steam App ID, used to initialize Steam integration. Only effective in Electron builds        |
-| Cubism_Memory_Reserved_Size_MB | Memory reserved for Live2D (Cubism), in MB. Defaults to 32 |
+| Cubism_Memory_Reserved_Size_MB | Memory reserved for Live2D (Cubism), in MB. Must be 10 or greater. Defaults to 32 |
 
 The following is a sample configuration file:
 
@@ -72,4 +72,6 @@ In that case, increase the reserved memory with `Cubism_Memory_Reserved_Size_MB`
 Cubism_Memory_Reserved_Size_MB:64;
 ```
 
-Reserving more memory also increases the game's memory usage. The default of 32 MB is usually enough for normal performances.
+The value must be 10 or greater. Values below 10 have no effect.
+
+The default of 32 MB is usually enough for normal performances. If figures stop updating, try 64 and then 128 until the problem goes away. Reserving more memory also increases the game's memory usage, so do not raise it more than needed.

@@ -19,7 +19,7 @@
 | Max_line                     | 文本框的最大显示行数                                        |
 | Line_height                  | 文本框的行高（单位：em）                                    |
 | Steam_AppID                  | Steam 应用 ID，用于初始化 Steam 集成，仅在 Electron 构建环境下有效 |
-| Cubism_Memory_Reserved_Size_MB | 为 Live2D（Cubism）预留的内存大小，单位为 MB，默认为 32 |
+| Cubism_Memory_Reserved_Size_MB | 为 Live2D（Cubism）预留的内存大小，单位为 MB，需填写 10 及以上的数值，默认为 32 |
 
 以下是配置文件示例：
 
@@ -72,4 +72,6 @@ Live2D 立绘使用一块预先分配的内存。同时显示的 Live2D 立绘�
 Cubism_Memory_Reserved_Size_MB:64;
 ```
 
-预留得越多，游戏占用的内存也越多。默认的 32 MB 一般足够正常演出使用。
+该值需填写 10 及以上，小于 10 时配置不会生效。
+
+默认的 32 MB 一般足够正常演出使用。如果立绘出现停止更新的问题，建议依次尝试 64、128，直到问题消失。预留得越多，游戏占用的内存也越多，不建议无限调大。
