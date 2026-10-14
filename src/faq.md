@@ -12,6 +12,22 @@
 
 由于浏览器安全策略，你无法从文件打开一个本地网页。你需要使用一个http 服务器，按部署网站的方法部署 WebGAL。常见的有: Nginx, Apache http server, VS Code Live Server 插件, Python http server.
 
+## Edge 浏览器运行 WebGAL 时明显卡顿
+
+请先确认 Edge 的 `设置 -> 系统和性能 -> 系统` 中已开启“在可用时使用图形加速”，然后重启浏览器。关闭图形加速会让 WebGAL 的 Canvas 和 WebGL 渲染退回软件实现，可能造成明显卡顿。
+
+如果图形加速已开启但 Edge 仍然卡顿，可以尝试：
+
+1. 使用最新版 Google Chrome 测试同一个游戏；
+2. 在 Edge 的 `设置 -> 系统和性能 -> 系统` 中关闭“启动增强”；
+3. 关闭“在 Microsoft Edge 关闭后继续运行后台扩展和应用”，然后完全退出并重新打开 Edge。
+
+## Intel 核显设备运行 WebGAL 时卡顿或显示异常
+
+首先通过 Windows 更新或设备厂商官网下载并安装最新的 Intel 显卡驱动。系统自动安装的旧版驱动可能无法良好支持浏览器使用的 WebGL 功能。
+
+更新驱动并重启系统后，请在 `edge://gpu` 或 `chrome://gpu` 中检查 WebGL 是否启用了硬件加速。如果页面显示 WebGL 使用软件渲染，先确认浏览器图形加速已开启；问题仍然存在时，可换用最新版 Chrome 对比测试。
+
 ## Windows 7 上为什么可视化编辑器闪一下就没了
 
 由于 node.js 的版本高于 Windows 7 所支持的最高版本导致的。请参考 [Windows 7 使用可视化编辑器开始制作的方法](./win7) 解决。
