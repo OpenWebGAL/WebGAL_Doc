@@ -85,6 +85,23 @@ changeFigureDiff:hero/smile.png -id=hero;
 
 详情请见 [changeFigureDiff](../script-reference/commands/changeFigureDiff.md)。
 
+## 组合立绘
+
+如果角色立绘拆分为身体、服装、表情等多层部件图片，可以在 WebGAL Terre 左侧边栏的**角色**选项卡中新建角色并编排图层与预设（或在 `figure/<角色目录>/figure.json` 中定义），再通过 `character` 命令在剧本中显示和原地切换：
+
+``` webgal
+; 显示组合立绘（默认使用第一个预设）
+character:alice -left;
+; 原地切换预设，保留位置与变换效果
+character:alice.smile -left;
+; 直接按从底到顶的顺序指定部件组合
+character:alice -left -components=base,casual,smile;
+; 关闭组合立绘
+character:none -left;
+```
+
+详情请见 [character](../script-reference/commands/character.md)。
+
 ## 放置小头像
 
 很多游戏可以在文本框的左下角放置小头像，以下是在本引擎中使用的语法：

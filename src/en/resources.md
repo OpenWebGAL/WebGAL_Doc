@@ -10,7 +10,7 @@ All your game scripts, pictures, and portraits should be placed under the `game`
 | :--------- | :-------------------------- |
 | animation  | Animation description file                 |
 | background | Used to store background pictures, title page background  |
-| figure     | Used to store character portraits             |
+| figure     | Used to store character figures, models, and composite character folders (`figure.json`) |
 | scene      | Used to store user scripts             |
 | bgm        | Used to store background music             |
 | vocal      | Used to store dubbing files             |

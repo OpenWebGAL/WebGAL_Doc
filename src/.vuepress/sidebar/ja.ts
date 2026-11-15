@@ -56,6 +56,7 @@ export const jaSidebar = sidebar({
             "changeBg",
             "changeFigure",
             "changeFigureDiff",
+            "character",
             "bgm",
             "intro",
             "changeScene",

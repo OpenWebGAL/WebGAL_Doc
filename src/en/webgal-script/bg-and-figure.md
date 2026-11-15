@@ -85,6 +85,23 @@ changeFigureDiff:hero/smile.png -id=hero;
 
 See [changeFigureDiff](../script-reference/commands/changeFigureDiff.md) for details.
 
+## Composite Figures
+
+If a character's sprite is split into multiple part layers such as body, outfit, and expression, you can create a character and arrange its layers and presets in the **Character** tab on the left sidebar of WebGAL Terre (or define `figure/<characterDir>/figure.json`), and then display or switch presets in place with the `character` command:
+
+``` webgal
+; Display a composite figure (uses the first preset by default)
+character:alice -left;
+; Switch preset in place while keeping position and transform effects
+character:alice.smile -left;
+; Specify component layers directly from bottom to top
+character:alice -left -components=base,casual,smile;
+; Close the composite figure
+character:none -left;
+```
+
+See [character](../script-reference/commands/character.md) for details.
+
 ## Placing Mini Avatars
 
 Many games allow mini avatars to be placed in the lower left corner of the text box. Here is the syntax used in this engine:

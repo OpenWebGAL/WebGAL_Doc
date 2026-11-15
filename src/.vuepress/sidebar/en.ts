@@ -56,6 +56,7 @@ export const enSidebar = sidebar({
             "changeBg",
             "changeFigure",
             "changeFigureDiff",
+            "character",
             "bgm",
             "intro",
             "changeScene",

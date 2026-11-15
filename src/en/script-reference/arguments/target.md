@@ -8,6 +8,6 @@ Available targets:
 - `fig-left`: left figure
 - `fig-right`: right figure
 - `fig-left13`, `fig-right13`, `fig-left14`, `fig-right14`: the figure at the corresponding position
-- The id of a free figure
+- The custom id of a free figure or composite figure
 - `bg-main`: background
 - `stage-main`: stage

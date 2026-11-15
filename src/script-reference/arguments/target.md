@@ -8,6 +8,6 @@
 - `fig-left`：左侧立绘
 - `fig-right`：右侧立绘
 - `fig-left13`、`fig-right13`、`fig-left14`、`fig-right14`：对应位置的立绘
-- 自由立绘的 id
+- 自由立绘或组合立绘的自定义 id
 - `bg-main`：背景
 - `stage-main`：舞台

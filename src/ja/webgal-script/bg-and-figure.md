@@ -85,6 +85,23 @@ changeFigureDiff:hero/smile.png -id=hero;
 
 詳しくは [changeFigureDiff](../script-reference/commands/changeFigureDiff.md) を参照してください。
 
+## 合成立ち絵
+
+素体・衣装・表情のように立ち絵が複数のパーツ画像に分かれている場合は、WebGAL Terre 左サイドバーの**キャラクター**タブからキャラクターを作成してレイヤーやプリセットを編集（または `figure/<キャラクターディレクトリ>/figure.json` を定義）し、スクリプト内で `character` コマンドを使って表示・その場での切り替えを行えます。
+
+``` webgal
+; 合成立ち絵を表示する（デフォルトでは最初のプリセットを使用）
+character:alice -left;
+; 位置や変換効果を保ったままプリセットを切り替える
+character:alice.smile -left;
+; 下から上の順でパーツの組み合わせを直接指定する
+character:alice -left -components=base,casual,smile;
+; 合成立ち絵を閉じる
+character:none -left;
+```
+
+詳しくは [character](../script-reference/commands/character.md) を参照してください。
+
 ## ミニアバターを配置する
 
 多くのゲームでは、テキストボックスの左下にミニアバターを配置できます。以下は、このエンジンで使用される構文です。
