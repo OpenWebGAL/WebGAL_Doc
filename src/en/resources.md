@@ -22,6 +22,6 @@ The `game` folder also contains the following files:
 | File / Folder      | Purpose |
 | :----------------- | :-- |
 | config.txt         | Game configuration. See [Edit Game Configuration](config.md) |
-| template           | UI template |
-| userStyleSheet.css | Global style sheet loaded when the game starts |
+| template           | UI template. See [Custom UI](webgal-script/custom-ui.md) |
+| userStyleSheet.css | Global style sheet loaded when the game starts. See [Custom UI](webgal-script/custom-ui.md) |
 | flowchart.json     | Flowchart data. See [Flowchart](webgal-script/flowchart.md) |

@@ -57,6 +57,10 @@
 
 - [Special Effects](webgal-script/special-effect.md)
 
+- [Custom UI](webgal-script/custom-ui.md)
+
+- [Custom Screen Plugins (create-webgal-ui)](webgal-script/custom-screen-dev.md)
+
 ## Stargazers over time
 
 [![Stargazers over time](https://starchart.cc/OpenWebGAL/WebGAL.svg)](https://starchart.cc/OpenWebGAL/WebGAL)

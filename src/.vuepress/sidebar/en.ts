@@ -30,6 +30,8 @@ export const enSidebar = sidebar({
         "flowchart",
         "animation",
         "special-effect",
+        "custom-ui",
+        "custom-screen-dev",
       ]
     },
     {

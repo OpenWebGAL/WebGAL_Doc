@@ -1,18 +1,74 @@
 # 自定义 UI {#custom-ui}
 
-::: note
-本章默认读者对 HTML/CSS/JS 有一定的了解。
+::: warning 4.7.0 Preview
+本页前面介绍的可视化模板编辑器与自定义界面插件，属于 **4.7.0-preview.0（Preview）** 的新功能，正式版发布前细节可能还会变化。
 :::
+
+::: note
+以下传统 CSS 模板部分默认读者对 HTML/CSS/JS 有一定的了解。如果你使用 4.7.0 Preview 的可视化模板编辑器，可以直接拖拽和点选来修改界面。
+:::
+
+WebGAL 允许用户通过「模板」来自定义游戏各个界面的外观与布局。你可以在 `您的游戏名称目录/game/template/` 找到相关的模板文件，也可以直接在 WebGAL Terre 中切换界面风格并可视化调整样式。
+
+## 可视化模板编辑器（4.7.0 Preview） {#visual-template-editor}
+
+从 **4.7.0-preview.0** 起，模板新增了新版自定义模式（`"uiMode": "custom"`）。标题页、文本框、分支选择、存读档、设置、流程图等 12 个界面各自独立，你可以分别为它们挑选不同风格，互不影响。
+
+在 **WebGAL Terre** 中打开任意自定义模板，就会进入可视化模板编辑器，界面分成三块：
+
+### 左侧：界面列表与部件
+
+这里列出了全部 12 个界面以及每个界面里可以调整的部件。点击一个界面可以展开并切过去预览，再点一次已展开的界面就会收起并取消选中。
+
+如果某个部件旁边有锁图标，说明它的位置和大小由列表或父容器统一排版，只能改颜色、字体等外观，不能单独拖动。点击每个界面旁边的菜单，可以在几套内置风格之间直接切换，也可以点「导入自定义界面」加载别人分享或自己写的 `.zip` 插件。
+
+### 中间：画布预览
+
+打开「画布编辑」后，可以直接用鼠标拖拽部件改变位置，或者拉边框调整大小。工具栏里还可以打开「模拟数据」，这样即使当前游戏里还没有存档或通关记录，也能看到存读档格子、选择项、历史记录、鉴赏画廊填满时的效果；切到「预览交互」则可以像玩游戏一样实际点击试用。
+
+### 右侧：状态与样式编辑
+
+顶部可以切换 **默认**、**悬停（`:hover`）**、**按下（`:active`）** 和 **禁用（`.disabled`）** 四种状态，分别调整不同状态下的效果：
+
+- **简易模式**：不用手写代码，直接调节文字颜色、字号、粗细、行高字距、描边、文字阴影、背景（纯色、多色线性渐变、图片、九宫格、渐隐遮罩、毛玻璃）、圆角、边框、阴影和透明度。
+- **详细模式**：可以在「图形」视图里逐条修改 CSS 属性，也可以切到「代码」直接手写 SCSS 规则。之前写过的复杂 CSS 代码也会保留下来，不会丢失。
+
+::: tip
+内置模板（`WebGAL Refine 2026`、`WebGAL Classic`、`WebGAL Black`）仅作预览和参考，不能直接保存修改或切换界面。如果需要调整样式，请先新建一个自定义模板。
+:::
+
+### 支持的界面与内置风格 {#screen-slots-and-presets}
+
+默认模板已经自带了全部 12 个界面，部分界面还提供多套风格可以直接切换：
+
+| 界面 ID | 界面名称 | 内置预设风格 |
+| :--- | :--- | :--- |
+| `title` | 标题页 | `default`（Refine 2026）、`classic`（经典底栏）、`editorial-right`（右侧排版） |
+| `textbox` | 文本框 | `default`（Refine 2026）、`classic`（WebGAL Classic）、`black`（WebGAL Black）、`bare`（无样式基础） |
+| `choose` | 分支选择 | `default`（默认）、`sleek-dark`（暗色风格） |
+| `save` | 存档界面 | `grid-2x5`（2×5 网格）、`list-vertical`（纵向列表）、`split-preview`（分栏预览） |
+| `load` | 读档界面 | `grid-2x5`（2×5 网格）、`list-vertical`（纵向列表）、`split-preview`（分栏预览） |
+| `options` | 设置界面 | `tabbed-classic`（分页标签）、`single-scroll`（单页滚动） |
+| `extra` | 鉴赏界面 | `gallery-classic`（经典鉴赏）、`split-tabs`（分栏鉴赏） |
+| `flowchart` | 流程图 | `default`（默认） |
+| `menuPanel` | 菜单栏 | `default`（默认） |
+| `backlog` | 历史记录 | `default`（默认） |
+| `bottomControlPanel` | 底部快捷栏 | `default`（默认） |
+| `globalDialog` | 全局弹窗 | `default`（默认） |
+
+如果你觉得改样式还不够，想要重新设计界面的排版结构或功能，可以参考 [开发自定义界面插件（create-webgal-ui）](./custom-screen-dev.md)。
+
+## 使用 CSS / SCSS 自定义样式（传统模板） {#legacy-css-templates}
 
 WebGAL 允许用户使用 CSS 来自定义部分游戏界面的样式，如文本框、标题页等。通过修改模板中的 SCSS 文件，您可以改变这些界面的外观，以更好地符合您的游戏的美术风格和设计需求。
 
-WebGAL 称这套方案为「模板」。您可以在 `您的游戏名称目录/game/template/` 找到相关的模板文件。
+在传统模板的 `您的游戏名称目录/game/template/` 下（新版 `custom` 模式则位于 `screens/<界面ID>/<变体ID>/style.scss`），您可以找到这些主要文件：
 
 - [选择](../template-reference/ui/choose.md)：`Stage/Choose/choose.scss`
 - [文本框](../template-reference/ui/textbox.md)：`Stage/Textbox/textbox.scss`
 - [标题页](../template-reference/ui/title.md)：`UI/Title/title.scss`
 
-## 示例 {#example}
+### 示例 {#example}
 
 以标题页为例，您可以在 `您的游戏名称目录/game/template/UI/Title/title.scss` 中找到标题页的样式文件。打开该文件，您会看到一些 SCSS 代码，这些代码定义了标题页的样式。您可以根据需要修改这些代码，例如改变背景颜色、调整按钮的样式等。
 
@@ -66,7 +122,7 @@ WebGAL 称这套方案为「模板」。您可以在 `您的游戏名称目录/g
   border-color: transparent;
   border-style: solid;
   transform: none;
-  
+
   font-weight: bold;
   text-align: left;
   text-shadow: none;
@@ -112,7 +168,7 @@ WebGAL 称这套方案为「模板」。您可以在 `您的游戏名称目录/g
   height: 100%;
   align-items: center;
   justify-content: center;
-  
+
   white-space: nowrap;
 
   background-image: none;

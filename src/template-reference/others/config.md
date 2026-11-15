@@ -8,7 +8,22 @@
 {
   "name": "My New Template",
   "id": "my-new-template",
-  "webgal-version": "4.6.0",
+  "webgal-version": "4.7.0-preview.0",
+  "uiMode": "custom",
+  "screens": {
+    "title": "default",
+    "textbox": "default",
+    "choose": "default",
+    "save": "grid-2x5",
+    "load": "grid-2x5",
+    "options": "tabbed-classic",
+    "flowchart": "default",
+    "menuPanel": "default",
+    "backlog": "default",
+    "extra": "gallery-classic",
+    "bottomControlPanel": "default",
+    "globalDialog": "default"
+  },
   "fonts": [
     {
       "font-family": "某圆体",
@@ -18,7 +33,7 @@
       "style": "normal",
       "display": "auto"
     }
-  ],
+  ]
 }
 ```
 
@@ -38,9 +53,24 @@
 
 - 字符串
 
-模板适配的 WebGal 引擎版本。必须符合语义化版本规范（SemVer），例如 "4.6.0"。
+模板适配的 WebGAL 引擎版本。必须符合语义化版本规范（SemVer），例如 `"4.6.0"` 或 `"4.7.0-preview.0"`。
 
-如果模板不适配当前使用的 WebGal 引擎版本，可能会导致模板无法正常工作或出现兼容性问题。
+如果模板不适配当前使用的 WebGAL 引擎版本，可能会导致模板无法正常工作或出现兼容性问题。
+
+### uiMode <Badge text="4.7.0 Preview" type="warning" /> {#uimode}
+
+- 字符串，可选 `"custom"` 或 `"legacy"`
+
+指定模板使用的界面模式：
+
+- `"custom"`：使用 4.7.0 Preview 起引入的新版模板模式。各个界面可以单独切换风格或导入插件，对应文件放在 `screens/<界面ID>/<变体ID>/` 中。
+- `"legacy"`（或者不写 `uiMode` 和 `screens`）：使用传统的 `Stage/` 和 `UI/` SCSS 文件覆盖样式（例如经典模板 `WebGAL Classic`、`WebGAL Black`）。
+
+### screens <Badge text="4.7.0 Preview" type="warning" /> {#screens}
+
+- 对象（`Record<string, string>`），可选
+
+当使用 `"uiMode": "custom"`（或者设置了非空 `screens`）时，用来记录每个界面当前启用了哪一个风格变体，例如 `"title": "classic"`、`"textbox": "black"`、`"save": "split-preview"`。具体用法可以参考 [自定义 UI](../../webgal-script/custom-ui.md)。
 
 ### fonts
 

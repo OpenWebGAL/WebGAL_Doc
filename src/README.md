@@ -56,6 +56,10 @@
 
 - [特效](webgal-script/special-effect.md)
 
+- [自定义 UI（含 4.7.0 Preview 新版模板编辑器）](webgal-script/custom-ui.md)
+
+- [开发自定义界面插件（create-webgal-ui，4.7.0 Preview）](webgal-script/custom-screen-dev.md)
+
 ## Stargazers over time
 
 [![Stargazers over time](https://starchart.cc/OpenWebGAL/WebGAL.svg)](https://starchart.cc/OpenWebGAL/WebGAL)

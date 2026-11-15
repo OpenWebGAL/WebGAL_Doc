@@ -22,6 +22,6 @@
 | ファイル / フォルダ | 用途 |
 | :----------------- | :-- |
 | config.txt         | ゲーム設定。詳しくは[ゲーム設定を編集する](config.md)を参照 |
-| template           | UI テンプレート |
-| userStyleSheet.css | ゲーム起動時に読み込まれるグローバルスタイルシート |
+| template           | UI テンプレート。詳しくは[カスタム UI](webgal-script/custom-ui.md)を参照 |
+| userStyleSheet.css | ゲーム起動時に読み込まれるグローバルスタイルシート。詳しくは[カスタム UI](webgal-script/custom-ui.md)を参照 |
 | flowchart.json     | フローチャートのデータ。詳しくは[フローチャート](webgal-script/flowchart.md)を参照 |

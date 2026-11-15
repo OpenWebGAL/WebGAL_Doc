@@ -56,6 +56,10 @@
 
 - [特殊効果](webgal-script/special-effect.md)
 
+- [カスタム UI](webgal-script/custom-ui.md)
+
+- [カスタム画面プラグインの開発（create-webgal-ui）](webgal-script/custom-screen-dev.md)
+
 ## スターゲイザーの推移
 
 [![Stargazers over time](https://starchart.cc/OpenWebGAL/WebGAL.svg)](https://starchart.cc/OpenWebGAL/WebGAL)
