@@ -100,7 +100,7 @@ character:alice -left -components=base,casual,smile;
 character:none -left;
 ```
 
-详情请见 [character](../script-reference/commands/character.md)。
+详情请见[角色（组合立绘）](character.md)与 [character 命令参考](../script-reference/commands/character.md)。
 
 ## 放置小头像
 

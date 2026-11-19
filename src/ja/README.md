@@ -42,6 +42,8 @@
 
 - [背景と立ち絵](webgal-script/bg-and-figure.md)
 
+- [キャラクター（合成立ち絵）](webgal-script/character.md)
+
 - [オーディオ](webgal-script/audio.md)
 
 - [ビデオ](webgal-script/video.md)

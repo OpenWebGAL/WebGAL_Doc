@@ -100,7 +100,7 @@ character:alice -left -components=base,casual,smile;
 character:none -left;
 ```
 
-詳しくは [character](../script-reference/commands/character.md) を参照してください。
+詳しくは[キャラクター（合成立ち絵）](character.md)および [character コマンドリファレンス](../script-reference/commands/character.md)を参照してください。
 
 ## ミニアバターを配置する
 

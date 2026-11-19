@@ -4,7 +4,7 @@ Displays, updates in place, or exits a multi-layer composite figure.
 
 ## Statement Content
 
-Specify the character directory path under the `figure` folder (which must contain a `figure.json` file), optionally followed by `.<presetName>` to choose a preset. When the content is empty or `none`, the composite figure exits.
+Specify the character directory path under the `figure` folder (which must contain a `figure.json` file), optionally followed by `.<presetName>` to choose a preset. When the content is empty or `none`, the composite figure exits. See [Characters (Composite Figures)](../../webgal-script/character.md) for the step-by-step guide.
 
 ``` webgal
 ; Display a composite figure (uses the first non-empty preset in figure.json by default)

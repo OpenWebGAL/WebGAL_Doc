@@ -42,6 +42,8 @@
 
 - [背景与立绘](webgal-script/bg-and-figure.md)
 
+- [角色（组合立绘）](webgal-script/character.md)
+
 - [音频](webgal-script/audio.md)
 
 - [视频](webgal-script/video.md)

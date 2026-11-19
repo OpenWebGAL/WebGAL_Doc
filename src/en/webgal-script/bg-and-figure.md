@@ -100,7 +100,7 @@ character:alice -left -components=base,casual,smile;
 character:none -left;
 ```
 
-See [character](../script-reference/commands/character.md) for details.
+See [Characters (Composite Figures)](character.md) and the [character command reference](../script-reference/commands/character.md) for details.
 
 ## Placing Mini Avatars
 

@@ -23,6 +23,7 @@ export const jaSidebar = sidebar({
         "base",
         "dialogue",
         "bg-and-figure",
+        "character",
         "audio",
         "video",
         "scenes",

@@ -43,6 +43,8 @@
 
 - [Backgrounds and Figures](webgal-script/bg-and-figure.md)
 
+- [Characters (Composite Figures)](webgal-script/character.md)
+
 - [Audio](webgal-script/audio.md)
 
 - [Video](webgal-script/video.md)
